@@ -18,4 +18,3 @@ The VuePress configuration and components are not yet public, so are not include
 # License
 
 The documentation is covered by the terms of the [license](LICENSE.md).
-
