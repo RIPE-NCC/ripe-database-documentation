@@ -1,2 +1,5 @@
 node_modules
-.idea/
+.idea
+yarn.lock
+.DS_Store
+.npmrc

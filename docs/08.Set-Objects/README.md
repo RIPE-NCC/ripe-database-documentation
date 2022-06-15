@@ -4,7 +4,9 @@ Throughout this section we have used the **as-set** object as an example. The sa
 
 ## Creating Set Objects
 
-The set name can be hierarchical. The hierarchy consists of a series of other as-set names separated by colons (`:`). Anything to the left of a colon is considered a parent, anything to the right is considered a child. At each stage, the whole of the hierarchy, including the colons, is considered as a single string that forms an object name. The set hierarchy can optionally start with an AS number reference as the top-level parent.
+Newly created as-set names must be hierarchical. The hierarchy consists of a series of other as-set names separated by colons (`:`). Anything to the left of a colon is considered a parent, anything to the right is considered a child. At each stage, the whole of the hierarchy, including the colons, is considered as a single string that forms an object name. The set hierarchy can optionally start with an AS number reference as the top-level parent.
+
+Existing as-set names can be short (i.e. with a name only, e.g. AS-TEST) or hierarchical (i.e. with a name and AS number reference(s), e.g. AS3333:AS-TEST). It is now mandatory to use hierarchical names to create an **as-set** object, so that the creation is authenticated by the AS number holder. This restriction does not apply to the other set types.
 
 AS-LIST1:AS-CUST
 
@@ -32,7 +34,8 @@ So "AS3333:AS-RipeOriginAS1" is a valid set name but AS1 is not an **aut-num** o
 
 "AS3333:AS1:AS-CUSTOMERS" is also not valid as it would require "AS3333:AS1" to exist as the parent to authorise the creation of this set.
 
-If the set name is a single as-set (starting with AS- and with no colons) then it is considered to be non-hierarchical, for example "AS-CUSTOMERS". In this case, it does not have a parent. It does not require authorisation from a parent. So anyone can create this object in the RIPE Database.
+Only hierarchical AS-SET objects can be created.
+If the set name is a single as-set (starting with AS- and with no colons) then it is considered to be non-hierarchical,
 
 The **as-set** object can also list members of the set with a "members:" attribute. The **as-set** and **aut-num** objects referenced in a "members:" attribute do not need to exist.
 

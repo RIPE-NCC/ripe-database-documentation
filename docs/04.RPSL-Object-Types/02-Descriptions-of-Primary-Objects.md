@@ -258,7 +258,7 @@ The RIPE NCC has directly issued address space to its members and End Users from
 
 Within the hierarchy, these allocations and assignments made from the administrative blocks are on the same level. They all have the placeholder objects as their parent. All of these allocations and assignments are required to have a reference to an **organisation** object. Although the “org:” attribute is syntactically optional in an **inetnum** object, this requirement is set by software business rules.
 
-The member allocation objects are partly managed by the RIPE NCC and partly by the member. Because of this joint management, there are two maintainers on the object as the “mnt-by:” - these are the RIPE NCC **maintainer** and the LIR's [default maintainer](https://www.ripe.net/manage-ips-and-asns/db/support/security/maintainers#:~:text=The%20Default%20Maintainer). If no default maintainer is present yet, the LIR must select it on [the LIR Portal account details](https://my.ripe.net/#/account-details) page. After doing this, the default maintainer will be reflected on all existing and new objects that have joint responsibility. Business rules determine which attributes can only be changed by the RIPE NCC and which ones can be changed by the LIR.
+The member allocation objects are partly managed by the RIPE NCC and partly by the member. Because of this joint management, there are two maintainers on the object as the “mnt-by:” - these are the RIPE NCC **maintainer** and the LIR's [default maintainer](../19.Database-Support/03-Database-Security.md#maintainers). If no default maintainer is present yet, the LIR must select it on [the LIR Portal account details](https://my.ripe.net/#/account-details) page. After doing this, the default maintainer will be reflected on all existing and new objects that have joint responsibility. Business rules determine which attributes can only be changed by the RIPE NCC and which ones can be changed by the LIR.
 
 The same principle applies to the assignments made from these administrative blocks. These are jointly managed by the RIPE NCC and either the End User or the sponsoring organisation. The sponsoring organisation is a RIPE NCC member who handles the End User's administration for this resource with the RIPE NCC.
 
@@ -309,27 +309,27 @@ The range notation expresses addresses as 32-bit whole numbers in dotted quad no
 Below is the object template for the **route** object. It lists all possible attributes that are allowed in this object type.
 
     Attribute Name  Presence   Repeat     Indexed
-    route:          optional   single     primary/lookup key
-    descr:          mandatory  multiple  
+    route:          mandatory  single     primary/lookup key
+    descr:          optional   multiple   
     origin:         mandatory  single     primary/inverse key
-    pingable:       optional   multiple  
+    pingable:       optional   multiple   
     ping-hdl:       optional   multiple   inverse key
-    holes:          optional   multiple  
+    holes:          optional   multiple   
     org:            optional   multiple   inverse key
     member-of:      optional   multiple   inverse key
-    inject:         optional   multiple  
-    aggr-mtd:       optional   single    
-    aggr-bndry:     optional   single    
-    export-comps:   optional   single    
-    components:     optional   single    
-    remarks:        optional   multiple  
+    inject:         optional   multiple   
+    aggr-mtd:       optional   single     
+    aggr-bndry:     optional   single     
+    export-comps:   optional   single     
+    components:     optional   single     
+    remarks:        optional   multiple   
     notify:         optional   multiple   inverse key
     mnt-lower:      optional   multiple   inverse key
     mnt-routes:     optional   multiple   inverse key
     mnt-by:         mandatory  multiple   inverse key
-    created:        generated  single
-    last-modified:  generated  single
-    source:         mandatory  single
+    created:        generated  single     
+    last-modified:  generated  single     
+    source:         mandatory  single     
 
 A **route** object contains routing information for IPv4 address space resources. This is one of the main elements of the RIPE Internet Routing Registry.
 

@@ -17,7 +17,7 @@ In the single text area form of Webupdates, the “password:” pseudo-attribute
 
 Using the Syncupdates web form there is no ‘Session Passwords' field but again the “password:” pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the “password:” pseudo-attribute must be supplied as part of the message body.
 
-With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation on GitHub](https://github.com/RIPE-NCC/whois/wiki/WHOIS-REST-API).
+With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../06.Update-Methods/01-RESTful-API.md#ripe-database-restful-api).
 
 
 ## PGP Key
@@ -31,6 +31,40 @@ A signed update message can also be pasted into the Syncupdates web form. When u
 PGP-signed updates cannot be submitted using the RESTful API. As Webupdates uses the API in the background, you cannot paste a signed update into a Webupdates text area either.
 
 For your PGP-signed update to pass authorisation checks, you must have your public key in the database in a **key-cert** object.
+
+
+### Use in the MAINTAINER object
+
+PGP authentication can be activated by setting the value of an "auth:" attribute to PGPKEY-&lt;id&gt; where &lt;id&gt; is the PGP key ID to be used for authentication. This string is the same one which is used in the corresponding **key-cert** object's "key-cert:" attribute.
+
+Remember that if you have multiple "auth:" attributes in a **maintainer** or if you have multiple "mnt-by:" attributes in an object, all possible authentication methods are combined by a logical OR which means that any single one of the specified authentication methods can be used. There is not security advantage in using PGP authentication with an object which can also be updated with a crypted password authentication.
+
+There are currently no referential integrity checks carried out on the "auth:" attribute values. If you change your "auth:" to refer to a non existent **key-cert** object, or someone else's **key-cert** object you have locked your **mntner**. You will then have to [contact us](../17.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object) for assistance to un-lock it. Also, if you delete your **key-cert** object you will again lock your **mntner** until you re-create the **key-cert** object.
+
+This is an example of a valid **mntner** object which uses PGP authentication:
+
+    mntner:         EXAMPLE-MNT
+    descr:          Example maintainer
+    admin-c:        JOE1-RIPE
+    upd-to:         joe@example.net
+    auth:           PGPKEY-4B8AE00D
+    mnt-by:         EXAMPLE-MNT
+    created:        2022-10-26T11:38:51Z
+    last-modified:  2022-10-26T11:38:51Z
+    source:         RIPE
+
+
+### Using authentication when sending updates
+
+PGP signed updates can be sent to the database simply by signing the body of the message containing the updates and sending it to the server. Remember to use ASCII armoring. 
+
+Multiple GP-signed and non-signed parts can be supplied in a single update message, each part is processed separately. You can supply several objects which are protected by different PGP keys in a single update message, providing all required signatures are present.
+
+PGP parts with invalid signatures are handled as plain text. If the object is protected by an authentication method other than PGP, or has multiple authentication schemes in use and the required authentication is present, it will still be authorised. If PGP is the only form of authentication present the authentication will fail. 
+
+PGP authentication can be mixed with any of the other forms of authentication in the same **mntner** object. Each authentication method used can have multiple instances present. All the authentications present in a **mntner** object are processed with a logical 'OR' to determine if the authentication is passed.
+
+PGP can be used with updates submitted by e-mail or using the syncupdates facility. It cannot be used with the webupdates interface.
 
 
 ## X.509 Certificate

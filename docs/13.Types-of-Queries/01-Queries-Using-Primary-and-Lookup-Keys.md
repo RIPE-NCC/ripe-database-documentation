@@ -10,4 +10,7 @@ The terminology is a bit confusing. A query using a primary key is really a ‘l
 
 There are several query flags that can filter or limit the objects contained in the response.
 
-Examples of all queries using primary and lookup keys are shown in the "Tables of Query Types Supported by the RIPE Database" in the [RIPE Database Query Reference Manual](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual).
+Examples of all queries using primary and lookup keys are shown in the next table. See [Table 1: Queries Using Primary and Lookup Keys](../16.Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#table-1-queries-using-primary-and-lookup-keys)
+
+
+

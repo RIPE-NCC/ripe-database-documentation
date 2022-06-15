@@ -129,6 +129,20 @@ If it is a general error that does not relate to a specific attribute, but rathe
 If you are using the single text area, error messages cannot be added after the attribute that contains the error. Therefore, in this case, all error messages will appear at the top of the output:
 
 ![](~@imgs/9.1.35.png)
+=======
+![aa](../assets/images/9.1.31.png)
+
+A specific error will be added, immediately after the attribute that contains the actual error:
+
+![](../assets/images/9.1.32.png)
+
+If it is a general error that does not relate to a specific attribute, but rather to the whole update, this error message will be shown at the top of the output:
+
+![](../assets/images/9.1.34.png)
+
+If you are using the single text area, error messages cannot be added after the attribute that contains the error. Therefore, in this case, all error messages will appear at the top of the output:
+
+![](../assets/images/9.1.35.png)
 
 
 
