@@ -1,0 +1,12 @@
+# Protecting Membership of a Set
+
+When membership of a set is specified through the use of the "member-of:" attribute, the server checks the validity of the membership when creating or modifying a member object. This "member-of:" attribute can be used in **route(6)**, **aut-num** and **inet-rtr** objects. The value of the "member-of:" attribute identifies a **set** object that this object wants to be a member of.
+
+The **set** object must also have a related "mbrs-by-ref:" attribute, listing the maintainer of the object that wants to be a member of the **set**. The membership claim of an object with a "member-of:" attribute must be validated. Validation occurs by matching a "mnt-by:" attribute of the object with one of the "mbrs-by-ref:" attributes of the **set** object. If the claim is not valid at the time of creation or modification of a member object (**route(6)**, **aut-num** or **inet-rtr**), the operation fails. If a **set** object has no "mbrs-by-ref:" attributes, the **set** is defined explicitly by the "members:" attributes in the **set** object. In this case, no other object can validate a claim to be a member of this **set**. Below is an example of “member-of:” usage:
+
+    aut-num:     as3333
+    member-of:   as-ripe
+    mnt-by:      ripe-dbm-mnt
+
+    as-set:      as-ripe
+    mbrs-by-ref: ripe-dbm-mnt

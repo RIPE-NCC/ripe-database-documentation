@@ -1,0 +1,5 @@
+# Referencing an ORGANIZATION Object
+
+The **organization** object can be referenced in any object. This reference is made by adding an optional "org:" attribute to the referencing object, along with the name of the **organization** object. Adding this reference requires authorization from the **organization** object. Authorization can be approved by any of the **mntner** objects referenced in any of the "mnt-ref:" attributes of the **organization** object. The authorization will not default to the "mnt-by:" attributes if no suitable maintainer is found in the "mnt-ref:" attributes and, in this case, the update will fail.
+
+Authorization from the **organization** object is only required when an "org:" attribute is added to a referencing object, either on creation or by modification. This is in addition to the authorization of the referencing object itself.

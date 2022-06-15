@@ -1,0 +1,5 @@
+# Referencing an IRT Object
+
+The **irt** object can be referenced in **inetnum** and **inet6num** objects. This reference is made by adding an optional "mnt-irt:" attribute to the **inet(6)num** object with the value set to the name of the **irt** object. Adding a reference to an **irt** object requires authorization from the **irt** object. Authorization can be approved by any of the credentials referenced in any of the "auth:" attributes of the **irt** object. The authorization will not default to the "mnt-by:" attributes of the **irt** object if no suitable credential is found in the "auth:" attributes, and, in this case, the update will fail.
+
+Authorization from the **irt** object is only required when a "mnt-irt:" attribute is added to a referencing object, either on creation or by modification. The **irt** authorization is required in addition to the authorization of the individual object itself.

@@ -1,0 +1,13 @@
+# Queries Using Primary and Lookup Keys
+
+All objects have a primary key. (See the section "[Attributes in an Object](../03.RIPE-Database-Structure/07-Attributes-in-an-Object.md)" for more details) This is the most basic type of query that can be made in the RIPE Database. Based on the primary key, a very specific instance of an object type can be queried. In almost all cases, a query on a primary key will only return a single object (assuming the query has not selected to include directly referenced objects). In most of those situations, that object will have a primary key that exactly matches the query argument. For example, querying for ‘aardvark-mnt' will only return the **mntner** object that has this as its primary key. In this example, you cannot query for a random part of the primary key. For example querying for ‘aardv' will not return this object. However if you query for ‘aardvark', you will not return this **mntner** object, but you will return any object containing the word ‘aardvark' in a lookup attribute.
+
+In some cases, with hierarchical primary key values, the returned object may not exactly match the query argument. For example, if you query for ‘193.0.7.35' the returned **inetnum** object has the primary key value of ‘193.0.0.0 - 193.0.7.255'. Where address space is concerned, **route(6)** objects are usually returned with the address space object. So, in this case, you not only get objects with different primary keys, but also more than one object could be possibly returned in the query response.
+
+Many objects also have lookup keys. (See attribute section on "[Indexed](../03.RIPE-Database-Structure/09-Attribute-Properties.md#indexed)" for more details.) These are used for search type queries. If you query for ‘aardvark', the response will include any object where the word ‘aardvark' has been used in any attribute value of a lookup key, as well as any object where this is the primary key. For primary keys, the key would need to be an exact match with this word. A lookup key value only needs to include this word as part of the value. Individual words in lookup keys are separately indexed.
+
+The terminology is a bit confusing. A query using a primary key is really a ‘lookup' for a specific object exactly matching the query argument. A query using the lookup keys is really a ‘search' for any objects containing the query argument.
+
+There are several query flags that can filter or limit the objects contained in the response.
+
+Examples of all queries using primary and lookup keys are shown in the "Tables of Query Types Supported by the RIPE Database" in the [RIPE Database Query Reference Manual](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual).

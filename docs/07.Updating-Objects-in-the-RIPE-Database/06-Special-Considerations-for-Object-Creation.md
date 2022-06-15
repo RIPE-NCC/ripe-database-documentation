@@ -1,0 +1,42 @@
+# Special Considerations for Object Creation
+
+Most object types follow the same rules when created. Some object types have additional business rules that only apply to those types when they are created.
+
+## Creating PERSON and ROLE Objects
+
+To create **person** and **role** objects, you can either choose your own unique NIC handle or you can use ‘AUTO-n' where the server will automatically assign a NIC handle.
+
+To request the server to assign a NIC handle for you, specify the value of the "nic-hdl:" attribute as:
+
+nic-hdl: AUTO-&lt;number&gt;[&lt;initials&gt;]
+
+The number is required. It does not form part of the NIC handle but acts as an index. If your update message contains multiple objects, other objects can reference this NIC handle by the index. See the sub-section [Object Processing](./03-Object-Processing.md) for examples. The initials are optional. If you choose to specify the &lt;initials&gt; (between two and four characters), they will be used to try to make the NIC handle. Otherwise, the software will take the initials from the name in the "person:" or "role:" attribute.
+
+The syntax definition of a NIC handle allows for an optional suffix at the end of the character string. The default suffix is "-RIPE" when an ‘AUTO-n' NIC handle is used. If you want to use another suffix, or have no suffix, or you want to select the number part, then you must specify the full NIC handle and not use the ‘AUTO-n' option. Please note thatm if you specify a NIC handle that is currently in use, it may be considered as a modification operation, which may cause the operation to be refused depending on the update method used. See section 6.4 Update Operations for more details. If the operation continues, as a modification, it will usually result in an authentication error. If you select a NIC handle that has previously been used and deleted, an error will be returned.
+
+If you are creating your first **person** or **role** object in the database, you must follow the procedure described in the sub-section ['New Organisation Startup'](./06-Special-Considerations-for-Object-Creation.md#new-organisation-startup).
+
+
+## Reusing NIC Handles
+
+The **person** and **role** objects are identified by NIC handles. Historically, these were available to reuse as soon as an object was deleted. Many NIC handles have been used and reused by several different people. As that can lead to confusion, the NIC handles are no longer reusable. When a **person** or **role** object is created, the NIC handle is added to a list of used NIC handles. When the object is deleted the NIC handle remains on the list. It can never be reused. Please note that these objects cannot be deleted if they are referenced by any other object. This avoids accidental deletion of an object that is still in use. While some people try to create NIC handles with a ‘"meaningful'" name, it should be remembered that they are only meant as a database index. If you delete one that is unreferenced, then realise you still need it, you will need to create a new one.
+
+## Creating ORGANISATION Objects
+
+To create an **organization** object, you must specify the ID of the object as ‘AUTO-n'. It is not possible to select the ID yourself. It is always auto-generated.
+
+organization: AUTO-&lt;number&gt;[&lt;initials&gt;].
+
+The number is required. It does not form part of the ID but acts as an index. If your update message contains multiple objects, other objects can reference this ID by the index. See the sub-section ['Object Processing'](./03-Object-Processing.md) for examples. The initials are optional. If you choose to specify the &lt;initials&gt; (between two and four characters), they will be used to try to make the ID. Otherwise, the software will take the initials from the name in the "org-name:" attribute.
+
+For example, if you want ‘TTR' as the initials in the organization ID, you should put ‘AUTO-1TTR' into the "organization:" attribute, when you create the object. If you delete an **organization** object you cannot recreate one with the same ID as the one you deleted or with any other ID that has been used previously.
+
+## New Organization Startup
+
+When you first use the RIPE Database, you need to create some basic objects. Every object you create in the database must be maintained. That means you need a **mntner** object. This object must reference a **role** (or person) object as a contact. However, the **role** (or person) object must be maintained. Therefore, a user cannot create either of these two objects first using any of the usual update methods.
+
+There is separate page to create a role and maintainer pair, so that new users can get started.
+
+If errors occur during the creation process, these are reported back to the user. If successful, the **mntner** object name and the NIC handle are returned to the user. There is no partial success allowed. If one object can be successfully created during the intermediate stage, but the second object has errors, no object will be created.
+
+If you have nothing in the RIPE Database, this startup script is the only way to get started. Once you have this first pair of objects, you can use the normal update methods for all other objects.

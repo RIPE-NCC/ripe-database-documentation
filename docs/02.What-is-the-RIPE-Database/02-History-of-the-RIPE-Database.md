@@ -1,0 +1,42 @@
+# History of the RIPE Database
+
+* [Background of the RIPE Database](./02-History-of-the-RIPE-Database.md#background-of-the-ripe-database)
+* [Versions of the RIPE Database](./02-History-of-the-RIPE-Database.md#versions-of-the-ripe-database)
+
+
+
+## Background of the RIPE Database
+
+From the very first RIPE Meeting in 1989, the need for some sort of registry had been identified. In the early years of RIPE, this consisted of documenting the use of IPv4 address space in the RIPE region on a voluntary basis. The actual address space was not distributed by RIPE.
+
+From August 1992, the newly established RIPE NCC started distributing address space in its service region. Allocations made by the RIPE NCC have always been documented in the registry by the RIPE NCC and the Local Internet Registries (LIRs).
+The RIPE NCC address registry was set up to serve two purposes:
+
+1. A comprehensive public record of the address space for which the RIPE NCC has administrative responsibility. This concerns both address space allocated by the RIPE NCC and address space allocated by others and transferred to the administrative responsibility of the RIPE NCC.
+1. A comprehensive public recording of the current holders of the address space. With the exhaustion of IPv4 address space, there will be no more unallocated IPv4 address space. However, the need for an accurate registry will remain.
+
+Transparency and accountability about the administration of Internet number resources has always been very important. Publication of the registry is an essential element of this transparency and accountability.
+The registry plays an important part in the operational coordination between Internet operators.
+The Internet Routing Registry (IRR) was established in 1995. Its purpose is to ensure stability and consistency of the Internet-wide routing by sharing information between network operators.
+
+Originally, the RIPE Database was used by many Domain Name Registries as their ccTLD authoritative registry database. For some of the larger ccTLD registries, the RIPE Database was not their authoritative database but held a lot of duplicated information from the Domain Registries. In some cases, it just held a top-level forward domain object and used a “refer:” attribute to re-direct any queries to their authoritative whois service. Because this was a mixed up and incomplete system, it was decided at RIPE 57 in October 2008 to remove all forward domain information from the RIPE Database. This was completed in January 2011.
+
+
+
+## Versions of the RIPE Database
+
+The original first version of the RIPE Database no longer exists and we have no information about it.
+
+The second version of the RIPE Database was written in PERL and used files to store the data rather than a database. The data was in the [ripe-181](https://www.ripe.net/ripe/docs/ripe-181) format. This version provided a clear separation of routing information from allocation details.
+
+Version 3 was released in April 2001. In this version, the old RIPE Database ripe-181 format was converted to the new [RPSL format](https://datatracker.ietf.org/doc/html/rfc2622). The software was written in C and the data was stored in a MySQL database.
+
+The basic design of the data model is still the same now. Since its release several years ago, many additional features have been added. New object types were added in 2004, including the **organization** object. When the RIPE NCC started to encourage the adoption of IPv6, theRIPE Database software was made fully compliant with IPv6 and additional object types were added for this: **inet6num** and **route6**.
+
+Web forms were introduced for both queries and updates shortly after this version was released. These have been constantly revised over the years and are still subject to regular minor improvements and occasional major improvement.
+
+A RESTful API was introduced, which was deployed to production in 2013.
+
+The software underwent a major re-factor, still in C, in 2004. It was totally rewritten in Java in 2012, for queries, and early 2013- for updates. The database backend was switched from MySQL to MariaDB in 2016.
+
+This database software is also used, with some local modifications, by APNIC and AFRINIC.
