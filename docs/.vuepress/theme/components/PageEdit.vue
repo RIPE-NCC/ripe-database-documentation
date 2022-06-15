@@ -31,7 +31,12 @@ export default {
 
   computed: {
     lastUpdated () {
-      return this.$page.lastUpdated
+       // Use the date format from the RIPE NCC style guide
+       const d = new Date(this.$page.lastUpdatedTimestamp);
+       return d.toLocaleDateString(
+         "en-GB",
+         {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+       );
     },
 
     lastUpdatedText () {
