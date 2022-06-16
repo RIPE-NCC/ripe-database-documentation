@@ -26,18 +26,17 @@ build:              # This job runs in the build stage, which runs first.
     - npm run docs:build
   artifacts:
     paths:
-      - build/
+      - builds/
   only:
-    - main
+     - main
 
 deploy:
   image: "node:16.13.0"
   stage: deploy
   script:
-    - mkdir public
-    - cp -r build/* public  # Copy build output in deploy folder
+    - cp -r builds/* public/  # Copy build output in deploy folder
   artifacts:
     paths:
       - public
   only:
-    - main
+     - main
