@@ -30,7 +30,7 @@ if (item !=='' && item.title.includes("UI-")) { item.title = item.title.replace(
 
 module.exports = {
   title: "Docs",
-  description: "The RIPEstat Docs Center",
+  description: "The RIPE Docs Center",
   dest: process.env.BETA ? 'builds/docsbeta' : 'builds/docs',
   base: process.env.BETA ? '/docsbeta/' : '/docs/',
   head: [
