@@ -19,6 +19,7 @@ stages:             # List of stages for jobs, and their order of execution
   - deploy
 
 build:              # This job runs in the build stage, which runs first.
+  image: "node:16.13.0"
   stage: build
   script:
     - npm ci
@@ -30,6 +31,7 @@ build:              # This job runs in the build stage, which runs first.
     - main
 
 deploy:
+  image: "node:16.13.0"
   stage: deploy
   script:
     - mkdir public
