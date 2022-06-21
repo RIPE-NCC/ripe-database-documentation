@@ -13,13 +13,27 @@
 #
 # For more information, see: https://docs.gitlab.com/ee/ci/yaml/README.html#stages
 
+image: "node:16.13.0"
 
-stages:             # List of stages for jobs, and their order of execution
+
+variables:
+  PROJECT_NAME: "db-web-ui"
+
+include:
+    - project: 'swe-database-team/gitlab-ci'
+      file: '/templates/deployment-doc-template.yml'
+
+stages:
   - build
   - deploy
 
-build:              # This job runs in the build stage, which runs first.
-  image: "node:16.13.0"
+
+cache:
+  paths:
+    - node_modules
+    - package-lock.json
+
+build:
   stage: build
   script:
     - npm ci
@@ -27,16 +41,3 @@ build:              # This job runs in the build stage, which runs first.
   artifacts:
     paths:
       - builds/
-  only:
-     - main
-
-deploy:
-  image: "node:16.13.0"
-  stage: deploy
-  script:
-    - cp -r builds/* public/  # Copy build output in deploy folder
-  artifacts:
-    paths:
-      - public
-  only:
-     - main
