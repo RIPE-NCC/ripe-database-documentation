@@ -36,6 +36,7 @@
     "@material/mwc-textfield": "^0.25.1",
     "@mr-hope/vuepress-plugin-components": "1.21.0",
     "@technical-design/ripe-app-webcomponents": "^2.0.3",
+    "dayjs": "^1.11.3",
     "markdown-it-html5-embed": "^1.0.0",
     "markdown-it-html5-media": "^0.7.0",
     "node-fetch": "^3.1.0",

@@ -2,7 +2,6 @@ const path = require("path");
 
 const getConfig = require("vuepress-bar");
 
-
 const { nav, sidebar } = getConfig({addReadMeToFirstGroup: false, mixDirectoriesAndFilesAlphabetically: true, multipleSideBar: false});
 
 const apiServer = process.env.API_SERVER || "stat.ripe.net/data";
@@ -80,7 +79,7 @@ module.exports = {
   title: "Docs",
   description: "The RIS Docs Center",
   dest: process.env.BETA ? 'builds/docsbeta' : 'builds/docs',
-  base: process.env.BETA ? '/docsbeta/' : '/docs/',
+  base: process.env.BETA ? '/docsbeta/' : '/db-web-ui/docs/',
   themeConfig: {
     nav:[],
     sidebar,
@@ -105,8 +104,19 @@ module.exports = {
        }],
        ['@mr-hope/vuepress-plugin-components'],
        // ['vuepress-plugin-global-variables', { variables: { asn: '3333', ip: '193.0.0.0', prefix: '140.78/16', starttime: '2020-12-21T07:00', endtime: '2020-12-21T12:00' } }],
-       ['full-searchbar', { encode: 'icase', tokenize: 'full' }]
+       ['full-searchbar', { encode: 'icase', tokenize: 'full' }],
     // require('vuepress-plugin-full-searchbar')
+        ['@vuepress/last-updated', {
+          transformer: (timestamp, lang) => {
+            const dayjs = require('dayjs')
+            const utc = require('dayjs/plugin/utc')
+
+            dayjs.extend(utc)
+
+            return dayjs(timestamp).utc(true).format()
+          }
+        }
+      ]
 		],
   markdown: {
     extendMarkdown: md => {
