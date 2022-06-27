@@ -2,13 +2,13 @@
 
 **RIPE Database Documentation**
 
-* [Introduction to the RIPE Database](./01.introduction-to-the-RIPE-Database/README.md)
+* Introduction to the RIPE Database
     * [RIPE Database Documentation Overview](./01.introduction-to-the-RIPE-Database/01-RIPE-Database-Documentation-Overview.md)
     * [Intended Audience](./01.introduction-to-the-RIPE-Database/02-Intended-Audience.md)
     * [Conventions Used in the RIPE Database Documentation](./01.introduction-to-the-RIPE-Database/03-Conventions-Used-in-the-RIPE-Database-Documentation.md)
 
 
-* [What is the RIPE Database?](./02.What-is-the-RIPE-Database/README.md)
+* What is the RIPE Database?
     * [Purpose and Content of the RIPE Database](./02.What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database.md#purpose-and-content-of-the-ripe-database)
         * [Purpose of the RIPE Database](./02.What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database.md#purpose-of-the-ripe-database)
         * [RIPE Internet Number Registry](./02.What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database.md#ripe-internet-number-registry)
@@ -30,7 +30,7 @@
 
 
 
-* [RIPE Database Structure](./03.RIPE-Database-Structure/README.md)
+* RIPE Database Structure
     * [Database Objects](./03.RIPE-Database-Structure/01-Database-Object.md)
     * [Primary and Secondary Objects](./03.RIPE-Database-Structure/02-Primary-and-Secondary-Objects.md)
     * [List of Primary Objects](./03.RIPE-Database-Structure/03-List-of-Primary-Objects.md)
@@ -96,7 +96,7 @@
         * [Subject Line Keywords](./06.Update-Methods/04-Email-Updates.md#subject-line-keywords)
 
 
-* [Updating Objects in the RIPE Database](./07.Updating-Objects-in-the-RIPE-Database/README.md)
+* Updating Objects in the RIPE Database
     * [Format of the Update Message](./07.Updating-Objects-in-the-RIPE-Database/01-Format-of-the-Update-Message.md)
     * [Accessing the Object Templates](./07.Updating-Objects-in-the-RIPE-Database/02-Accessing-the-Object-Templates.md)
     * [Object Processing](./07.Updating-Objects-in-the-RIPE-Database/03-Object-Processing.md)

@@ -1,32 +1,3 @@
 # Types of Queries
 
-**Throughout this section, the query flags described allow specific types of queries. For command-line queries and for API searches, these flags can be used directly. For web queries, some of the flags can be selected by ticking appropriate check boxes, others can be typed as part of the query string. There are some flags that make no sense with web queries and streamed output, for example “-k” for a persistent connection or “–G” to turn off grouping, as grouping is disabled by default in the streamed output.**
-
-* [Queries Using Primary and Lookup Keys](./01-Queries-Using-Primary-and-Lookup-Keys.md)
-* [Queries for IP Networks](./02-Queries-for-IP-Networks#queries-for-ip-networks)
-    * [Default Queries for IP Network](./02-Queries-for-IP-Networks#queries-for-ip-networks)
-    * [Exact Match Queries](./02-Queries-for-IP-Networks#exact-match-queries)
-    * [More Specific Range Queries](./02-Queries-for-IP-Networks#more-specific-range-queries)
-    * [Less Specific Range Queries](./02-Queries-for-IP-Networks#less-specific-range-queries)
-    * [Less Specific Range Queries For Referenced IRT Objects](./02-Queries-for-IP-Networks#less-specific-range-queries-for-referenced-irt-objects)
-* [More and Less Specific Lookups For Reverse Domains](./03-More-and-Less-Specific-Lookups-For-Reverse-Domains.md)
-* [Inverse Queries](./04-Inverse-Queries.md)
-* [Grouping the RIPE Database Output](./05-Grouping-the-RIPE-Database-Output.md)
-* [Filtering the Query Response](./06-Filtering-the-Query-Reponse.md)
-* [IRR Toolset Support](./07-IRR-Toolset-Support.md)
-* [Persistent Connections and Keeping State](./08-Persistent-Connections-and-Keeping-State.md)
-* [RIPE NCC Global Resource Service](./09-RIPE-NCC-Global-Resource-Service.md)
-* [Other Query Flags](./10-Other-Query-Flags.md#other-query-flags)
-    * [The “-T” (“--select-types”) Query Flag](./10-Other-Query-Flags#the--t---select-types-query-flag)
-    * [The “-K” (“--primary-keys”) Query Flag](./10-Other-Query-Flags#the--k---primary-keys-query-flag)
-    * [The “-t” (“--template”) Query Flag](./10-Other-Query-Flags#the--t---template-query-flag)
-    * [The “-v” (“--verbose”) Query Flag](./10-Other-Query-Flags#the--v---verbose-query-flag)
-    * [The “-q” Query Flag](./10-Other-Query-Flags#the--q-query-flag)
-    * [The “-a” (“--all-sources”) Query Flag](./10-Other-Query-Flags#the--a---all-sources-query-flag)
-    * [The “-s” (“--sources”) Query Flag](./10-Other-Query-Flags#the--s---sources-query-flag)
-    * [The “-F” (“--brief”) Query Flag](./10-Other-Query-Flags#the--f---brief-query-flag)
-    * [The “--valid-syntax” and “--no-valid-syntax” Query Flags](./10-Other-Query-Flags#the---valid-syntax-and---no-valid-syntax-query-flags)
-    * [The “-c” (“--irt”) Query Flag](./10-Other-Query-Flags#the--c---irt-query-flag)
-    * [The “-C” (“--no-irt”) Query Flag](./10-Other-Query-Flags#the--c---no-irt-query-flag)
-* [Referenced Objects in Query Response](./11-Referenced-Objects-in-Query-Response.md)
-* [Historical Queries](./12-Historical-Queries.md)
+Throughout this section, the query flags described allow specific types of queries. For command-line queries and for API searches, these flags can be used directly. For web queries, some of the flags can be selected by ticking appropriate check boxes, others can be typed as part of the query string. There are some flags that make no sense with web queries and streamed output, for example “-k” for a persistent connection or “–G” to turn off grouping, as grouping is disabled by default in the streamed output.
