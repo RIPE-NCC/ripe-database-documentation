@@ -79,7 +79,7 @@ module.exports = {
   title: "Docs",
   description: "The RIS Docs Center",
   dest: process.env.BETA ? 'builds/docsbeta' : 'builds/docs',
-  base: process.env.BETA ? '/docsbeta/' : '/db-web-ui/docs/',
+  base: process.env.BETA ? '/docsbeta/' : '/docs/',
   themeConfig: {
     nav:[],
     sidebar,
