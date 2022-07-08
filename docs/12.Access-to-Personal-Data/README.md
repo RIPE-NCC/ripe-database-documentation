@@ -17,7 +17,7 @@ Sometimes an IP address may be acting as a proxy and submitting queries on behal
 Not all users can operate a proxy service and use this “-V” flag. You must contact RIPE Database Administration \[ripe-dbm \_at\_ ripe \_dot\_ net\] and explain why you need this facility. If your request is approved, the IP address of the proxy server will be added to an access control list. The proxy operator can then use the “-V” flag, but only from the IP address stated in the request.  
 Attempting to use the “-V” flag without approval, or from any IP address not on the access control list, may result in permanent denial of access to the RIPE Database. This denial of access will apply to the IP address that submits the query using the “-V” flag.
 
-## 12.1 Blocking Access to the RIPE Database
+## Blocking Access to the RIPE Database
 
 Each time a person or role object is returned as part of a query result, a counter increases. When it reaches the limit defined in the AUP, the query execution is aborted and the connection is terminated, displaying an error message to the client (see the section on Access errors in the RIPE Database Query Server Response Codes and Messages). There is also a separate counter, tracking the number of times your request is denied. Retrieving any other object type does not affect these counters.
 

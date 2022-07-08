@@ -1,5 +1,6 @@
 <template>
-  <header class="navbar">
+  <header     
+    :class="pageClasses">
     <div
       class="links"
     >
@@ -42,6 +43,21 @@ export default {
     isAlgoliaSearch() {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName;
     },
+    shouldNotShowNavbar() {
+      const { themeConfig } = this.$site;
+      const { frontmatter } = this.$page;
+      return (frontmatter.navbar === false || themeConfig.navbar === false)
+    },
+    pageClasses() {
+      const userPageClass = this.$page.frontmatter.pageClass;
+      return [
+        {
+          "no-navbar": this.shouldNotShowNavbar,
+          "navbar": !this.shouldNotShowNavbar,
+        },
+        userPageClass,
+      ];
+    }
   },
   mounted() {
     const MOBILE_DESKTOP_BREAKPOINT = 719; // refer to config.styl
@@ -60,7 +76,7 @@ export default {
     };
     handleLinksWrapWidth();
     window.addEventListener("resize", handleLinksWrapWidth, false);
-  },
+  }
 };
 function css(el, property) {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'

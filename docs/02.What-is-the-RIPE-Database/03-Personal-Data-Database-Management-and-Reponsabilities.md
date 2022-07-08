@@ -1,8 +1,8 @@
 # Personal Data, Database Management and Responsibilities
 
-* [Personal Data in the RIPE Database](./03-Personal-Data-Database-Management-and-Reponsabilities.md#personal-data-in-the-ripe-database)
-* [Database Management](./03-Personal-Data-Database-Management-and-Reponsabilities.md#database-management)
-* [Responsibilities of the RIPE NCC and Data Maintainers](./03-Personal-Data-Database-Management-and-Reponsabilities.md#responsibilities-of-the-ripe-ncc-and-data-maintainers)
+* [Personal Data in the RIPE Database](03-Personal-Data-Database-Management-and-Reponsabilities.md#personal-data-in-the-ripe-database)
+* [Database Management](03-Personal-Data-Database-Management-and-Reponsabilities.md#database-management)
+* [Responsibilities of the RIPE NCC and Data Maintainers](03-Personal-Data-Database-Management-and-Reponsabilities.md#responsibilities-of-the-ripe-ncc-and-data-maintainers)
 
 
 

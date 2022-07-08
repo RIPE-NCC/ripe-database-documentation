@@ -473,7 +473,7 @@ To specify policies, it is often useful to define sets of objects. An **as-set**
 
 **Description of Attributes Specific to the AS-SET Object**
 
-* **“as-set:”** – This attribute defines the name of the set which must start with ‘as-‘. It can be a hierarchical name with components separated by a colon (‘:'). At least one component must be an **as-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be as-set names. For more details see the section on sets.
+* **“as-set:”** – This attribute defines the name of the set which must start with ‘as-‘. It can be a hierarchical name with components separated by a colon (`:`). At least one component must be an **as-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be as-set names. For more details see the section on sets.
 * **“descr:”** – A short description related to the object.
 * **“members:”** – These attributes list the direct members of the set. They can be either lists of AS Numbers, or other **as-set** names.
 * **“mbrs-by-ref:”** – These attributes can be used in all set objects. They allow indirect population of a set. If this attribute is used, the set also includes objects of the corresponding type (**aut-num** objects for as-set, for example) that are protected by one of these maintainers and whose "member-of:" attributes refer to the name of the set. If the value of a "mbrs-by-ref:" attribute is ANY, any object of the corresponding type referring to the set is a member of the set. If there are no "mbrs-by-ref:" attributes, the set is defined explicitly by the "members:" attributes. For more details see the section about sets.
@@ -594,7 +594,7 @@ Sets can be built with hierarchical names. Unlike other set objects the **peerin
 **Description of Attributes Specific to the PEERING-SET Object**
 
 
-* **“peering-set:”** – This attribute defines the name of the set which must start with ‘prng-‘. It can be a hierarchical name with components separated by a colon (‘:'). At least one component must be a **peering-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be **peering-set** names. For more details see the section ['Set Objects'](../08.Set-Objects/README.md).
+* **“peering-set:”** – This attribute defines the name of the set which must start with ‘prng-‘. It can be a hierarchical name with components separated by a colon (`:`). At least one component must be a **peering-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be **peering-set** names. For more details see the section ['Set Objects'](../08.Set-Objects/README.md).
 * **“descr:”** – A short description related to the object.
 * **“peering:”** – This attribute defines a peering that you can use to import or export routes. A **peering-set** object is required by business rules to include either a “peering:” or an “mp-peering:” attribute. One of these must exist, but you cannot include both attributes.
 * **“mp-peering:”** – This attribute extends the "peering:" attribute to allow you to specify IPv4 or IPv6 prefixes and prefix ranges. A **peering-set** object is required by business rules to include either a “peering:” or an “mp-peering:” attribute. One of these must exist, but you cannot include both attributes.
@@ -630,7 +630,7 @@ Where a **route-set** is expected (e.g. “members:” attribute of the **route-
 
 **Description of Attributes Specific to the ROUTE-SET Object**
 
-* **“route-set:”** – This attribute defines the name of the set which must start with ‘rs-‘. It can be a hierarchical name with components separated by a colon (‘:'). At least one component must be a **route-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be **route-set** names. For more details see the section on Sets.
+* **“route-set:”** – This attribute defines the name of the set which must start with ‘rs-‘. It can be a hierarchical name with components separated by a colon (`:`). At least one component must be a **route-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be **route-set** names. For more details see the section on Sets.
 * **“descr:”** – A short description related to the object.
 * **“members:”** – These attributes list the direct members of the set. They can be either address prefixes or ranges, other **route-set** names, lists of AS Numbers, or as-set names. An address prefix or a **route-set** name in a members attribute can be optionally followed by a range operator.
 * **“mp-members:”** – Extends the “members:” attribute to include IPv6 address prefixes.
@@ -666,7 +666,7 @@ A **rtr-set** object defines a set of routers. Sets can be built with hierarchic
 **Description of Attributes Specific to the RTR-SET Object**
 
 
-* **“rtr-set:”** – This attribute defines the name of the set which must start with ‘rtrs-‘. It can be a hierarchical name with components separated by a colon (‘:'). At least one component must be an **rtr-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be rtr-set names. For more details, see the section ['Set Objects'](../08.Set-Objects/README.md).
+* **“rtr-set:”** – This attribute defines the name of the set which must start with ‘rtrs-‘. It can be a hierarchical name with components separated by a colon (`:`). At least one component must be an **rtr-set** name. The others can be more set names or AS Numbers. All the set name components of a hierarchical name have to be rtr-set names. For more details, see the section ['Set Objects'](../08.Set-Objects/README.md).
 * **“descr:”** – A short description related to the object.
 * **“members:”** – These attributes list the direct members of the set. They can be **inet-rtr** names, or IPv4 addresses, or other **rtr-set** names.
 * **“mp-members:”** – This attribute extends the “members:” attribute to include IPv6 addresses.
