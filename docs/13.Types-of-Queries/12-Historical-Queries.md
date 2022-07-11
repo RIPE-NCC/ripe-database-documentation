@@ -72,7 +72,7 @@ This query will return the textual difference between two versions from the hist
     +org:            ORG-RIEN1-RIPE
     descr:          Amsterdam, Netherlands
 
-We can see that a reference to an **organization** object was added. If you reverse the version numbers, then the logical diff will show that the reference to an organization object was removed when looking back over the timeline of changes, from more recent to older changes:
+We can see that a reference to an **organisation** object was added. If you reverse the version numbers, then the logical diff will show that the reference to an organisation object was removed when looking back over the timeline of changes, from more recent to older changes:
 
     $ whois --diff-versions 11:10 193.0.0.0 - 193.0.7.255
 

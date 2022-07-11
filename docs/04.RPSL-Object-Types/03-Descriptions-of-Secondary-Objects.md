@@ -42,7 +42,7 @@ Leading zeroes (AS1 - AS065536) are not allowed and will be removed (AS1 - AS655
 
 * **"as-block:"** – the range of AS Numbers covered by this block.
 * **“descr:”** - A short description related to the object.
-* **“mnt-lower:”** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../10.Authorisation/README.md) for more information.
+* **“mnt-lower:”** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../10.Authorisation/README.md#authorisation) for more information.
 
 
 
@@ -174,7 +174,7 @@ To update an object protected by a **mntner** the authorisation must be passed f
 
 The "mnt-lower:", "mnt-routes:" and "mnt-domains:" attributes all provide for hierarchical authorisation. These also work in a logical 'OR' when multiple values are included in an object. How they are used is described in the object descriptions where these attributes are valid.
 
-For more detailed information about using mntner attributes, see the section [‘Authorisation'](../10.Authorisation/README.md).
+For more detailed information about using mntner attributes, see the section [‘Authorisation'](../10.Authorisation/README.md#authorisation).
 
 **Description of Attributes Specific to the MNTNER Object**
 
@@ -232,24 +232,24 @@ The member **organisation** objects are partly managed by the RIPE NCC and partl
 **Description of Attributes Specific to the ORGANISATION Object**
 
 
-* **"organization:"** – This attribute specifies the ID of an **organization** object. When creating an object, you must specify an "AUTO" ID by setting the value of the attribute to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;", so the database will assign the ID automatically. The ID will always start with the string ‘ORG-‘. If deleted, it is not possible to recreate an **organization** object with the same ID.
-* **“org-name:”** – This attribute specifies the name of the organization that this **organization** object represents in the RIPE Database.
-* **“org-type:”** – This attribute specifies the type of the organization. It takes one of the following fixed values. Uses can only create organization objects with the type ‘OTHER'. The rest of the values can only be set by the RIPE NCC.
+* **"organisation:"** – This attribute specifies the ID of an **organisation** object. When creating an object, you must specify an "AUTO" ID by setting the value of the attribute to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;", so the database will assign the ID automatically. The ID will always start with the string ‘ORG-‘. If deleted, it is not possible to recreate an **organisation** object with the same ID.
+* **“org-name:”** – This attribute specifies the name of the organisation that this **organisation** object represents in the RIPE Database.
+* **“org-type:”** – This attribute specifies the type of the organisation. It takes one of the following fixed values. Uses can only create organisation objects with the type ‘OTHER'. The rest of the values can only be set by the RIPE NCC.
     * 'IANA' – Only used for Internet Assigned Numbers Authority
     * 'RIR' – Only used for the five Regional Internet Registries
     * 'NIR' – This is for National Internet Registries (there are no NIRs in the RIPE NCC service region, but it is used by APNIC)
     * 'LIR' – This represents all the Local Internet Registries (the RIPE NCC members)
     * 'WHITEPAGES' – A little-used historical idea for people who have a ‘significant' presence in the industry but who don't manage any resources in the RIPE Database.
-    * 'DIRECT_ASSIGNMENT' – Used for organizations who have a direct contract with RIPE NCC
-    * 'OTHER' – This represents all organizations that do not fit any of the above categories.
+    * 'DIRECT_ASSIGNMENT' – Used for organisations who have a direct contract with RIPE NCC
+    * 'OTHER' – This represents all organisations that do not fit any of the above categories.
 * **“descr:”** – A short description related to the object.
-* **“phone:”** – This is a phone number for the business contact represented by this **organization** object. It specifies a telephone number in international shorthand. It must start with a '+' followed by the international country code, area code and number, optionally followed by an extension number.
-* **“fax-no:”** – This is a fax number for the business contact represented by this **organization** object.
-* **“e-mail:”** – This is a business email address for the organization represented by this object.
+* **“phone:”** – This is a phone number for the business contact represented by this **organisation** object. It specifies a telephone number in international shorthand. It must start with a '+' followed by the international country code, area code and number, optionally followed by an extension number.
+* **“fax-no:”** – This is a fax number for the business contact represented by this **organisation** object.
+* **“e-mail:”** – This is a business email address for the organisation represented by this object.
 * **“geoloc:”** – The geolocation coordinates for the resource in decimal degrees notation. Format is latitude followed by longitude, separated by a space. Latitude ranges from [-90,+90] and longitude from [-180,+180].
 * **“language:”** – Identifies the language as a two-letter code from the ISO 639-1 language code list.
 * **“abuse-c:”** – This attribute references an abuse contact object. This can only be a **role** object that contains an "abuse-mailbox:" attribute. Making this reference will remove any query limits for that **role** object, which must only include business data (no personal information).
-* **“ref-nfy:”** – This attribute specifies an email address where a notification will be sent when a reference to an **organization** object is added or removed. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
+* **“ref-nfy:”** – This attribute specifies an email address where a notification will be sent when a reference to an **organisation** object is added or removed. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
 * **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **organisation** object in any other object.
 * **“address:”** – This is a full postal address for the business contact represented by this **organisation** object.
 

@@ -1,6 +1,6 @@
 # IRR Toolset Support
 
-The IRRToolset is a third-party suite of routing policy analysis tools. Some of the tools in this set access Routing Registry servers through an authorization whois interface.
+The IRRToolset is a third-party suite of routing policy analysis tools. Some of the tools in this set access Routing Registry servers through an authorisation whois interface.
 
 The RIPE Database server includes support for these query types. This section describes the additions to the RIPE Database user interface that allow it to support the IRRToolset. The required queries are:
 

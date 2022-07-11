@@ -26,7 +26,7 @@ Sometimes an update fails one or more of the required authentications. This is c
 
 The optional "irt-nfy:" attribute is only allowed in an **irt** object. This is used when a reference to an **irt** object is added to, or removed from, an **inetnum** or **inet6num** object (by means of the "mnt-irt:" attribute).
 
-The optional "ref-nfy:" attribute is only allowed in an **organization** object. This is used when a reference to an **organization** object is added to an object (using the "org:" attribute).
+The optional "ref-nfy:" attribute is only allowed in an **organisation** object. This is used when a reference to an **organisation** object is added to an object (using the "org:" attribute).
 
 
 
@@ -37,6 +37,6 @@ The format of a notification message is similar to the ack message for an email 
 
 If using passwords in an update message, be cautious when entering this. If you mistype the password pseudo-attribute (eg "pasword: clear_password") the notification will include your clear text password.
 
-The "upd-to:" attribute in a MNTNER object should only include the email address of a person or team in your organization who deals with security issues. If this team receives a notification containing a clear text password, they should advise the user to change their password.
+The "upd-to:" attribute in a MNTNER object should only include the email address of a person or team in your organisation who deals with security issues. If this team receives a notification containing a clear text password, they should advise the user to change their password.
 
 Each notification message is only sent to a single email address. There is no email address copied (via CC) in any notification. When multiple email addresses need to be notified of the same update, each address will receive its own email. This email will contain all notification details of objects that are contained in the update message that relates to that email address. For an update with multiple objects, referencing several **mntner** objects, where several objects have a variety of notification attributes, the software builds a matrix of email addresses and updated objects. This ensures that only the appropriate details are sent to each email address.

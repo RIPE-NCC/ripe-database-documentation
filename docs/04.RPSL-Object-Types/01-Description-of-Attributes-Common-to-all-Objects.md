@@ -1,13 +1,13 @@
 # Description of Attributes Common to all Objects
 
-* **“org:” –** this optional attribute references the primary key, or id, of an **organization** object that currently exists in the database.
-The referenced object contains details of the organization that holds Internet resources or secondary objects to help manage resources in the RIPE Database. In some situations, this attribute is required.
+* **“org:” –** this optional attribute references the primary key, or id, of an **organisation** object that currently exists in the database.
+The referenced object contains details of the organisation that holds Internet resources or secondary objects to help manage resources in the RIPE Database. In some situations, this attribute is required.
 
 * **“admin-c:” –** this attribute is optional in some objects and mandatory in others. It references the primary key, or NIC Handle, of either a **role** or **person** object. It should always reference a **role** object, except in the **role** object where it optionally references nested **role** objects or a **person** object.
-The reference must be the contact details of an on-site administrative contact. This contact may be a single person, or it may be a role within the organization that more than one person takes on. These people may or may not be listed in the role object.
+The reference must be the contact details of an on-site administrative contact. This contact may be a single person, or it may be a role within the organisation that more than one person takes on. These people may or may not be listed in the role object.
 
 * **“tech-c:” –** this attribute is optional in some objects and mandatory in others. It references the primary key, or Nic Handle, of either a **role** or **person** object. It should always reference a **role** object, except in the **role** object where it optionally references nested **role** objects or a **person** object.
-The reference must be the contact details of a technical contact. This contact may be a single person, or it may be a role within the organization that more than one person takes on. These people may or may not be listed in the **role** object.
+The reference must be the contact details of a technical contact. This contact may be a single person, or it may be a role within the organisation that more than one person takes on. These people may or may not be listed in the **role** object.
 
 * **"remarks:" –** this optional attribute can be any free format text, within the allowable encoding. This attribute can even have a blank value and be used as a spacer to separate different parts of the information in an object.
 Some objects have very complex arrangements in their remarks with lots of formatting and style to create a layout that almost personalises their data. Keep in mind that it is data and the RIPE Database is not the best place to display ASCII art. The best advice on using remarks is to ‘keep it simple'.
@@ -16,7 +16,7 @@ Some objects have very complex arrangements in their remarks with lots of format
 Within the RIPE NCC, we can override this notification mechanism. For example, if the community agrees on a syntax change that affects many objects in the database, this change may be done as a bulk update by the RIPE NCC. In some cases, the RIPE NCC does not want to trigger hundreds of thousands or even millions of emails to be sent as part of the implementation of an agreed change.
 
 * **"mnt-by:" –** this mandatory attribute references the primary key, or name, of a **mntner** object that currently exists in the database. This **mntner** object's credentials must authorise any operations performed on the object that contains this attribute. The **mntner** object must exist in the database before it can be referenced in other objects.
-In some objects, the **mntner** object referenced in a “mnt-by:” attribute can have a range of additional powers. This is explained in more detail in the section ['Authorisation'](../10.Authorisation/README.md). When this applies, it will be stated in the object template descriptions.
+In some objects, the **mntner** object referenced in a “mnt-by:” attribute can have a range of additional powers. This is explained in more detail in the section ['Authorisation'](../10.Authorisation/README.md#authorisation). When this applies, it will be stated in the object template descriptions.
 
 * **“created:” –** This attribute reflects when the object was created in the RIPE Database. Because a large number of objects were imported in bulk from a previous incarnation of the RIPE Database on 21 September 2001, the actual "created" time for these objects can be very difficult or impossible to find. Because ISO 8601 does not support an "undefined" notation, the following date and time is used: 1970-01-01T00:00:00Z
 

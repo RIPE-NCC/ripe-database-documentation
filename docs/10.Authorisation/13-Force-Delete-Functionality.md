@@ -7,17 +7,17 @@ In some cases it can occur that objects in the RIPE Database that fall under you
 
 Force delete allows you to remove these objects even though you do not have the credentials for the maintainer on them. Instead, you can use the maintainer of the covering address space object, i.e. the "mnt-lower:" of the allocation or the "mnt-by:" of the PI or anycast assignment.
 
-There are very strict rules about which objects can be force deleted and whose authorization is allowed to override the object's authorization. Also keep in mind that it is only possible to _delete_ objects: modifying them is not possible.
+There are very strict rules about which objects can be force deleted and whose authorisation is allowed to override the object's authorisation. Also keep in mind that it is only possible to _delete_ objects: modifying them is not possible.
 
-## Authorization to Force Delete
+## Authorisation to Force Delete
 
-Normally an object can only be deleted if the operation is authorized by one of the **mntner** objects in the "mnt-by:" attributes of the object to be deleted. With force delete, the RIPE Database also looks for the exact match, encompassing, or less specific address space object that was allocated or assigned by the RIPE NCC.
+Normally an object can only be deleted if the operation is authorised by one of the **mntner** objects in the "mnt-by:" attributes of the object to be deleted. With force delete, the RIPE Database also looks for the exact match, encompassing, or less specific address space object that was allocated or assigned by the RIPE NCC.
 
 The result is that in addition to the "mnt-by:" attribute of the object itself, the "mnt-lower:" of an allocation or the "mnt-by:" of a PI or anycast assignment each have the authority to force delete any more specific or related primary object.
 
 ## Example of Force Delete
 
-The force delete functionality only applies to holders of resources that are issued directly by the RIPE NCC. In the example below, the **mntner** object LIR-MNT can authorize the deletion of any of the objects shown, except for the allocation object itself. The holder of a sub-allocation does not have the authority to delete an assignment from that sub-allocation. So in this example, SUB-MNT cannot be used to delete the ASSIGNED PA block.
+The force delete functionality only applies to holders of resources that are issued directly by the RIPE NCC. In the example below, the **mntner** object LIR-MNT can authorise the deletion of any of the objects shown, except for the allocation object itself. The holder of a sub-allocation does not have the authority to delete an assignment from that sub-allocation. So in this example, SUB-MNT cannot be used to delete the ASSIGNED PA block.
 
 The same applies to the **route** and **domain** object in this example. Even though they fall under the sub-allocation, SUB-MNT cannot be used. Only LIR-MNT can force delete these objects.
 

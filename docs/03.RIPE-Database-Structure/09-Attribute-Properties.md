@@ -6,7 +6,7 @@ Attributes can be used in different ways in different objects. Currently, there 
 * Repeat
 * Indexed
 
-The allowed attributes for any object type are shown in the object templates (see the section ['RPSL Object Types'](../04.RPSL-Object-Types/README.md)).
+The allowed attributes for any object type are shown in the object templates (see the section ['RPSL Object Types'](../04.RPSL-Object-Types/README.md#rpsl-object-types)).
 
 
 ## Presence

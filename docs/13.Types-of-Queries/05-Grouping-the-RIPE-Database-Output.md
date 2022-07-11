@@ -2,7 +2,7 @@
 
 There are two ways to order the objects in a query response.
 
-One way is for the first part of the response to list the objects that are the direct results of the query. Then, the second part of the response lists all the secondary objects that are directly referenced from the objects in the first part of the response, like **organization** and **person**. If any of these secondary objects are referenced by more than one of the returned objects, it will only be listed once in the response.
+One way is for the first part of the response to list the objects that are the direct results of the query. Then, the second part of the response lists all the secondary objects that are directly referenced from the objects in the first part of the response, like **organisation** and **person**. If any of these secondary objects are referenced by more than one of the returned objects, it will only be listed once in the response.
 
     $ whois  -i mb aardvark-mnt
 
@@ -17,7 +17,7 @@ One way is for the first part of the response to list the objects that are the d
     mnt-by:         AARDVARK-MNT
     org:            ORG-EIP1-RIPE
 
-    organization:   ORG-EIP1-RIPE
+    organisation:   ORG-EIP1-RIPE
     mnt-ref:        ripe-ncc-hm-mnt
     tech-c:         TCP-RIPE
     mnt-by:         RIPE-NCC-HM-MNT
@@ -51,7 +51,7 @@ One way is for the first part of the response to list the objects that are the d
     mnt-by:         AARDVARK-MNT
     org:            ORG-EIP1-RIPE
 
-    organization:   ORG-EIP1-RIPE
+    organisation:   ORG-EIP1-RIPE
     mnt-ref:        ripe-ncc-hm-mnt
     tech-c:         TCP-RIPE
     mnt-by:         RIPE-NCC-HM-MNT

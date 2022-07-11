@@ -31,7 +31,7 @@ The value of an attribute has a type. Some of the most commonly used and complex
 | &lt;nic-handle&gt; | From two to four characters, optionally followed by up to five digits, optionally followed by either a source specification of up to nine characters or two-letter country code. Source specification and country codes start with "-".<br><br>(&lt;alpha&gt;{2,4}(\[1-9\]&lt;digit&gt;{0,5})?(-&lt;alpha&gt;<br><br>(\[a-zA-Z0-9_-\]{0,7}&lt;alnum&gt;))?)\|<br><br>(AUTO-&lt;digit&gt;+(&lt;alpha&gt;{2,4})?) |
 | &lt;object-name&gt; | Many objects in RPSL have a name. An &lt;object-name&gt; is made up of letters, digits, the character underscore "_", and the character hyphen "-". The first character of a name must be a letter and the last character of a name must be a letter or a digit. The following words are reserved by RPSL, and they can not be used as names:  <br>any, as-any, RS-any, peeras, and, or, not, atomic, from, to, at, action, accept, announce, except, refine, networks, into, inbound, outbound.<br><br>Names starting with certain prefixes are reserved for certain object types.  <br>Names starting with "as-" are reserved for **as-set** names.  <br>Names starting with "rs" are reserved for **route-set** names.  <br>Names starting with "rtrs-" are reserved for **rtr-set** names.  <br>Names starting with "fltr-" are reserved for **filter-set** names.  <br>Names starting with "prng-" are reserved for **peering-set** names.  <br>Names starting with "irt-" are reserved for **irt** object names. |
 | &lt;org-id&gt; | The 'org-' string followed by two to four characters, followed by up to five digits, followed by a source specification. The first digit must not be "0". Source specification starts with "-" followed by a source name up to nine-characters in length.<br><br>org-&lt;alpha&gt;{2,4}(\[1-9\]&lt;digit&gt;{0,4})-&lt;registry-name&gt; |
-| &lt;organization-name&gt; | A list of up to 12 words, each with up to 64 characters. Words can contain alphanumeric characters in addition to any of the following: asterisk, plus and minus signs, forward slash and backslash, dash, quotes, at sign, comma, dot, underscore, ampersand, exclamation mark, colon, semicolon, brackets and square brackets. |
+| &lt;organisation-name&gt; | A list of up to 12 words, each with up to 64 characters. Words can contain alphanumeric characters in addition to any of the following: asterisk, plus and minus signs, forward slash and backslash, dash, quotes, at sign, comma, dot, underscore, ampersand, exclamation mark, colon, semicolon, brackets and square brackets. |
 | &lt;peering&gt; | Please see [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) |
 | &lt;person-name&gt; | A list of at least two words separated by white space. The first and the last word cannot end with dot ("."). A word is made up of letters, digits, the character underscore "_", and the character hyphen "-". The first character of a name must be a letter and the last character of a name must be a letter or digit. |
 | &lt;protocol&gt; | Please see [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) |
@@ -82,10 +82,10 @@ A descriptive name associated with an AS Number.
 Defines the name of the set.
 
 **auth:** &lt;auth-scheme&gt; &lt;scheme-info&gt;  
-Defines an authorization scheme to be used. For a description, see the section, ['Authorization Model'](../10.Authorization/01-Authorization-Model.md)  
+Defines an authorisation scheme to be used. For a description, see the section, ['Authorisation Model'](../10.Authorisation/01-Authorisation-Model.md#authorisation-model)  
 &lt;auth-scheme&gt; and &lt;scheme-info&gt; can take the values listed below:
 
-**Authorization Schemes**
+**Authorisation Schemes**
 
 |     |     |
 | --- | --- |
@@ -125,7 +125,7 @@ A short description that is related to the object.
 Reverse delegation for IPv4 or IPv6 address space.
 
 **e-mail:** &lt;e-mail&gt;  
-Specifies an email address of a person, role, organization or IRT team.
+Specifies an email address of a person, role, organisation or IRT team.
 
 **encryption**: PGPKEY-&lt;id&gt;  
 References a **key-cert** object representing a Computer Security Incident Report Team (CSIRT) public key used to encrypt correspondence sent to the CSIRT. &lt;id&gt; is the key-id of the PGP public key in eight-digit hexadecimal format without "0x" prefix.
@@ -260,27 +260,27 @@ This attribute can be used in all the set objects. It allows indirect population
 A unique identifier of the **mntner** object.
 
 **mnt-by:** list of &lt;mntner-name&gt;  
-Specifies the identifier of a registered **mntner** object used for the authorization of operations performed on the object containing this attribute.
+Specifies the identifier of a registered **mntner** object used for the authorisation of operations performed on the object containing this attribute.
 
 **mnt-domains:** list of &lt;mntner-name&gt;
 
-Specifies the identifier of a registered **mntner** object used for reverse domain authorization. Controls creation of **domain** objects. The authorization method of this **mntner** object will be used to authorize the creation of an exact match or more specific reverse **domain** object.
+Specifies the identifier of a registered **mntner** object used for reverse domain authorisation. Controls creation of **domain** objects. The authorisation method of this **mntner** object will be used to authorise the creation of an exact match or more specific reverse **domain** object.
 
 **mnt-irt:** list of &lt;irt-name&gt;  
 May appear in an **inetnum** or **inet6num** object. It references an existing **irt** object representing a CSIRT that handles security incidents for the address space specified by the **inetnum** or **inet6num** object.
 
 **mnt-lower:** list of &lt;mntner-name&gt;  
-Specifies the identifier of a registered **mntner** object used for hierarchical authorization. Controls creation of objects that are one level more specific in the hierarchy of an object type (i.e. **inetnum**, **inet6num**, **as-block**, **aut-num**, **route, route6** objects). The authorization method of this **mntner** object will then be used to authorize the creation of any object one level more specific to the object that contains the "mnt-lower:" attribute.
+Specifies the identifier of a registered **mntner** object used for hierarchical authorisation. Controls creation of objects that are one level more specific in the hierarchy of an object type (i.e. **inetnum**, **inet6num**, **as-block**, **aut-num**, **route, route6** objects). The authorisation method of this **mntner** object will then be used to authorise the creation of any object one level more specific to the object that contains the "mnt-lower:" attribute.
 
 **mnt-nfy:** &lt;e-mail&gt;  
 Specifies the email address to be notified when an object protected by a **mntner** is successfully updated.
 
 **mnt-ref:** list of &lt;mntner-name&gt;
 
-This attribute is only in an organization object. It specifies the **mntner** objects that can authorize the addition of references to the **organization** object from other objects.
+This attribute is only in an organisation object. It specifies the **mntner** objects that can authorise the addition of references to the **organisation** object from other objects.
 
 **mnt-routes:** &lt;mnt-name&gt; \[ { list of &lt;address-prefix-range&gt; } | ANY \]  
-May be used in an **aut-num**, **inetnum**, **inet6num**, **route** or **route6** object. Specifies the identifier of a registered **mntner** object that controls the authorization of the creation of **route** and **route6** objects. After the reference to the maintainer, an optional list of prefix ranges inside of curly brackets ‘{}' or the keyword ‘ANY' may follow. The default, when no additional set items are specified, is ‘ANY' or all more specifics. The address prefix range can contain only IPv4 prefix ranges in **inetnum** and **route** objects, only IPv6 prefix ranges in **inet6num** and **route6** objects, and it can contain both IPv4 and IPv6 prefix ranges in **aut-num** objects. Please refer to [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) and [RPSLng RFC 4012](https://tools.ietf.org/html/rfc4012) for more information.
+May be used in an **aut-num**, **inetnum**, **inet6num**, **route** or **route6** object. Specifies the identifier of a registered **mntner** object that controls the authorisation of the creation of **route** and **route6** objects. After the reference to the maintainer, an optional list of prefix ranges inside of curly brackets ‘{}' or the keyword ‘ANY' may follow. The default, when no additional set items are specified, is ‘ANY' or all more specifics. The address prefix range can contain only IPv4 prefix ranges in **inetnum** and **route** objects, only IPv6 prefix ranges in **inet6num** and **route6** objects, and it can contain both IPv4 and IPv6 prefix ranges in **aut-num** objects. Please refer to [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) and [RPSLng RFC 4012](https://tools.ietf.org/html/rfc4012) for more information.
 
 **mp-default**: to &lt;peering&gt; \[action &lt;action&gt;\] \[networks &lt;filter&gt;\]
 
@@ -366,21 +366,21 @@ Specifies the name servers of the domain, optionally followed by a glue record.
 
 **org:** &lt;org-id&gt;
 
-This optional attribute may be used in any object type. It references an existing **organization** object. For some resource objects, it is a required attribute. In these cases, the referenced organization object represents the entity that holds the resource. In other objects, it can be used to specify a business relationship. The value of this attribute is the ID of the **organization** object. It is required in the **inetnum** and **inet6num** objects with ‘ALLOCATED-BY-RIR', ‘ALLOCATED PA', ‘ALLOCATED PI' and ‘ALLOCATED UNSPECIFIED' status values.
+This optional attribute may be used in any object type. It references an existing **organisation** object. For some resource objects, it is a required attribute. In these cases, the referenced organisation object represents the entity that holds the resource. In other objects, it can be used to specify a business relationship. The value of this attribute is the ID of the **organisation** object. It is required in the **inetnum** and **inet6num** objects with ‘ALLOCATED-BY-RIR', ‘ALLOCATED PA', ‘ALLOCATED PI' and ‘ALLOCATED UNSPECIFIED' status values.
 
 The "org:" attribute is single-valued in the **inetnum**, **inet6num** and **aut-num** objects, and it is multi-valued in all other objects.
 
-**org-name:** &lt;organization-name&gt;
+**org-name:** &lt;organisation-name&gt;
 
-Specifies the name of the organization that this **organization** object represents in the RIPE Database. This is an ASCII-only text attribute. This restriction is because the attribute is a look-up key and the RIPE Database protocol does not allow specifying character sets in queries. The user can put the name of the organization using Latin 1 character set in the "descr:" attribute if required. But any use of non-ASCII characters in any object may cause problems during the update process.
+Specifies the name of the organisation that this **organisation** object represents in the RIPE Database. This is an ASCII-only text attribute. This restriction is because the attribute is a look-up key and the RIPE Database protocol does not allow specifying character sets in queries. The user can put the name of the organisation using Latin 1 character set in the "descr:" attribute if required. But any use of non-ASCII characters in any object may cause problems during the update process.
 
 **org-type:**
 
-Specifies the type of the organization. The possible values are shown in the section '[Description of the ORGANIZATION Object](../04.RPSL-Object-Types/03-Descriptions-of-Secondary-Objects.md#description-of-the-organization-object)'.
+Specifies the type of the organisation. The possible values are shown in the section ['Description of the ORGANIZATION Object'](../04.RPSL-Object-Types/03-Descriptions-of-Secondary-Objects.md#description-of-the-organisation-object)'.
 
-**organization**: &lt;org-id&gt;
+**organisation**: &lt;org-id&gt;
 
-Specifies the ID of an organization object. When creating this object, the value of this attribute is automatically generated. The user has to specify an "AUTO" ID by setting the value to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;, so that the database will assign the ID automatically.
+Specifies the ID of an organisation object. When creating this object, the value of this attribute is automatically generated. The user has to specify an "AUTO" ID by setting the value to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;, so that the database will assign the ID automatically.
 
 **origin:** &lt;as-number&gt;  
 Specifies the AS Number that originates the route. The corresponding **aut-num** object should exist in the database.
@@ -419,7 +419,7 @@ Specifies the title of a poem.
 Specifies the poem type.
 
 **ref-nfy:** &lt;e-mail&gt;  
-Specifies the email address, as defined in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt), to be notified when a reference to the **organization** object is added or removed.
+Specifies the email address, as defined in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt), to be notified when a reference to the **organisation** object is added or removed.
 
 **remarks:** &lt;freeform&gt;  
 Contains remarks.
@@ -450,7 +450,7 @@ References a **key-cert** object representing a CSIRT public key used by the tea
 Specifies the registry where the object is registered. This should be "RIPE" for the RIPE Database.
 
 **status:** &lt;status&gt;  
-Specifies the status of the address range represented by an **inetnum** or **inet6num** object or the status of an AS Number represented by an **aut-num** object. For the possible values, see the sections '[Description of the INETNUM Object](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-inetnum-object)', '[Description of the INET6NUM Object](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-inet6num-object)' and '[Description of the AUT-NUM Object](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-aut-num-object)'.
+Specifies the status of the address range represented by an **inetnum** or **inet6num** object or the status of an AS Number represented by an **aut-num** object. For the possible values, see the sections ['Description of the INETNUM Object'](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-inetnum-object), ['Description of the INET6NUM Object'](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-inet6num-object) and ['Description of the AUT-NUM Object'](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-aut-num-object).
 
 Please refer to the RIPE Document ripe-622, ["IPv4 Address Allocation and Assignment Policies in the RIPE NCC Service Region"](https://www.ripe.net/ripe/docs/ipv4-policies), for further information.
 
@@ -461,7 +461,7 @@ References a technical contact.
 Contains text of the poem. Should be humorous, but must not be malicious or insulting.
 
 **upd-to:** &lt;e-mail&gt;  
-Specifies the email address to be notified when an object protected by a **mntner** is unsuccessfully updated. See also the section, '[Notifications](../09.Notifications/README.md)'.
+Specifies the email address to be notified when an object protected by a **mntner** is unsuccessfully updated. See also the section, ['Notifications'](../09.Notifications/README.md#notifications)'.
 
 **zone-c:** &lt;nic-handle&gt;  
 References a zone contact.

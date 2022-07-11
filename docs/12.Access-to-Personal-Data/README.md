@@ -4,7 +4,7 @@ For privacy and data protection reasons, there is a limit to how much personal d
 
 Personal information is contained in the person object. There may also be some personal information in some role objects. The access control mechanism built into the database software therefore applies to both person and role objects.
 
-The access control mechanism used is based on the number of these objects that are returned in the results of any queries made. Limits are applied to the IP address of a user sending queries to the database server by any of the query methods. (See '[How to Query the RIPE Database](../11.How-to-Query-the-RIPE-Database/README.md)' for more details of the methods.)
+The access control mechanism used is based on the number of these objects that are returned in the results of any queries made. Limits are applied to the IP address of a user sending queries to the database server by any of the query methods. (See ['How to Query the RIPE Database'](../11.How-to-Query-the-RIPE-Database/README.md#how-to-query-the-ripe-database) for more details of the methods.)
 
 Sometimes an IP address may be acting as a proxy and submitting queries on behalf of other IP addresses (for example, a webserver providing an interface to the RIPE Database). The database software provides a facility for proxy operators, which allows accounting to be based on the IP address of the End Users using the proxy to query the RIPE Database, and not on the IP address of the proxy operator. This is done using the “-V” flag as follows:
 

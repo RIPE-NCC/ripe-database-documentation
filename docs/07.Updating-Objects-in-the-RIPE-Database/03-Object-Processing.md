@@ -13,7 +13,7 @@ The below figure shows an example of two objects that will be created but in a d
 
 In the example of the figure above. the second, **person** object must be created first. This gives a real value to ‘auto-1'. Then the first, **inetnum** object can be created referencing that real value for ‘auto-1'.
 
-    organization:    auto-1
+    organisation:    auto-1
     admin-c:         auto-2
 
 
@@ -28,7 +28,7 @@ You can avoid these complex arrangements of, and circular references to, auto-ge
 When processing each individual object, the software makes many checks including that:
 
 * The syntax of the object is correct.
-* The object passes all required authorization checks.
+* The object passes all required authorisation checks.
 * All references to other objects can be resolved without conflicts.
 * The operation does not compromise referential integrity. For example, when an object is to be deleted, the server checks that it is not referenced from any other object in the RIPE Database.
 * The object complies with all software business rules, for example, not creating an allocation resource object without including the optional “org:” attribute. This is required in an allocation object.

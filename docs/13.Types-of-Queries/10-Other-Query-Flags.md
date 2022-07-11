@@ -25,15 +25,15 @@ There are some exceptions to this:
 
 * With **set** objects, the "members:" attributes will also be returned.
 * With **route** and **route6** objects both the prefix and the “origin:” attribute are returned as these jointly provide the primary key.
-* No information is returned for **person**, **role** or **organization** objects.
+* No information is returned for **person**, **role** or **organisation** objects.
 
 ## The “-t” (“--template”) Query Flag
 
-The “-t” (“--template”) query flag returns a template of the specified object type as shown for each object in the section [RPSL Object Types](../04.RPSL-Object-Types/README.md).
+The “-t” (“--template”) query flag returns a template of the specified object type as shown for each object in the section [RPSL Object Types](../04.RPSL-Object-Types/README.md#rpsl-object-types).
 
 ## The “-v” (“--verbose”) Query Flag
 
-The “-v” (“--verbose”) query flag returns a verbose description of the specified object type as shown for each object in the section [RPSL Object Types](../04.RPSL-Object-Types/README.md).
+The “-v” (“--verbose”) query flag returns a verbose description of the specified object type as shown for each object in the section [RPSL Object Types](../04.RPSL-Object-Types/README.md#rpsl-object-types).
 
 ## The “-q” Query Flag
 

@@ -52,7 +52,7 @@ Example of a POST request:
     ----------------------------466af99a9520
     Content-Disposition: form-data; name="DATA"
     
-    organization:   ORG-TS1-TEST
+    organisation:   ORG-TS1-TEST
     org-name:       RIPE NCC Training Services
     org-type:       LIR
     address:        Singel 258, 1016 AB Amsterdam

@@ -31,7 +31,7 @@ The second version of the RIPE Database was written in PERL and used files to st
 
 Version 3 was released in April 2001. In this version, the old RIPE Database ripe-181 format was converted to the new [RPSL format](https://datatracker.ietf.org/doc/html/rfc2622). The software was written in C and the data was stored in a MySQL database.
 
-The basic design of the data model is still the same now. Since its release several years ago, many additional features have been added. New object types were added in 2004, including the **organization** object. When the RIPE NCC started to encourage the adoption of IPv6, theRIPE Database software was made fully compliant with IPv6 and additional object types were added for this: **inet6num** and **route6**.
+The basic design of the data model is still the same now. Since its release several years ago, many additional features have been added. New object types were added in 2004, including the **organisation** object. When the RIPE NCC started to encourage the adoption of IPv6, theRIPE Database software was made fully compliant with IPv6 and additional object types were added for this: **inet6num** and **route6**.
 
 Web forms were introduced for both queries and updates shortly after this version was released. These have been constantly revised over the years and are still subject to regular minor improvements and occasional major improvement.
 

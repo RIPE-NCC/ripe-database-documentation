@@ -29,7 +29,7 @@ The RIPE Database contains information for the following purposes:
 
 Global Internet resources are allocated by the Internet Assigned Numbers Authority (IANA) to five Regional Internet Registries (RIRs). The RIPE Internet Number Registry (RIPE INR) contains details of the Internet resources managed by the RIPE NCC within the RIPE NCC service region. These details in the RIPE Database are maintained jointly by the RIPE NCC and the Registrants of those resources. The RIPE INR also contains details of sub-allocations and assignments made from these resources by the Registrants. This information is maintained in the RIPE Database by the Registrants of those resources.
 
-The information includes the organizations that hold the resources, where the allocations were made, and contact details for the networks. Dates of when changes were made to this information are also included, and some of the historical information is also available.
+The information includes the organisations that hold the resources, where the allocations were made, and contact details for the networks. Dates of when changes were made to this information are also included, and some of the historical information is also available.
 
 ## The RIPE Internet Routing Registry
 
@@ -60,7 +60,7 @@ IANA is responsible for ensuring the uniqueness of the full set of Internet reso
 
 The RIPE Database contains large placeholder allocation objects to represent the range of IPv4 and IPv6 addresses that have been allocated by IANA to the RIPE NCC. Not all of this address space has been allocated yet by the RIPE NCC to LIRs or end users.
 
-The RIPE Database also holds details of legacy Internet resources. "Legacy" is the term given to those Internet number resources that were distributed before (or outside of) the current system of hierarchical distribution by the Regional Internet Registries (RIRs). Legacy Internet resources were transferred to the RIPE NCC from the IANA's central registry according to the location of their legal organization contact at the time.
+The RIPE Database also holds details of legacy Internet resources. "Legacy" is the term given to those Internet number resources that were distributed before (or outside of) the current system of hierarchical distribution by the Regional Internet Registries (RIRs). Legacy Internet resources were transferred to the RIPE NCC from the IANA's central registry according to the location of their legal organisation contact at the time.
 
 Legacy address space represented in the RIPE Database is structured into an administrative hierarchy. For every legacy hierarchy in the RIPE Database there is one **inetnum** that sits at the top of the hierarchy. The RIPE NCC considers the holder of this **inetnum** as the top-level legacy resource holder. All more specifics to this object are considered to have some business or contractual or historical relationship with the top-level legacy resource holder.
 

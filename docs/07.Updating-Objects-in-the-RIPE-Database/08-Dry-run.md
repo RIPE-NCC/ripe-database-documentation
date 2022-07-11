@@ -2,7 +2,7 @@
 
 The TEST Database has always been promoted as the place to "try" an update to see what happens. But the TEST Database has very little data. It is also reset every 24 hours. So if you want to test anything that has dependencies on other data, you have to reproduce it all in the TEST Database to do the test. That in itself can be a major effort. And tomorrow it is all gone.
 
-To address this, there is a "dry-run" feature that lets you test updates on the production RIPE Database. All your data is there with the correct authorization tokens. All dependencies are taken care of. You can submit your update and see what the result would be, but nothing is actually changed in the database.
+To address this, there is a "dry-run" feature that lets you test updates on the production RIPE Database. All your data is there with the correct authorisation tokens. All dependencies are taken care of. You can submit your update and see what the result would be, but nothing is actually changed in the database.
 
 To use the dry-run feature, submit an update by any available update method.
 
@@ -16,7 +16,7 @@ The update is received by the RIPE Database production software. All the checks 
 
 * Syntax
 * Business rules
-* Authorization
+* Authorisation
 * Referential integrity
 
 Then it stops! Nothing is changed in the RIPE Database.

@@ -1,22 +1,22 @@
 # Personal Data, Database Management and Responsibilities
 
-* [Personal Data in the RIPE Database](03-Personal-Data-Database-Management-and-Reponsabilities.md#personal-data-in-the-ripe-database)
-* [Database Management](03-Personal-Data-Database-Management-and-Reponsabilities.md#database-management)
-* [Responsibilities of the RIPE NCC and Data Maintainers](03-Personal-Data-Database-Management-and-Reponsabilities.md#responsibilities-of-the-ripe-ncc-and-data-maintainers)
+* [Personal Data in the RIPE Database](#personal-data-in-the-ripe-database)
+* [Database Management](#database-management)
+* [Responsibilities of the RIPE NCC and Data Maintainers](#responsibilities-of-the-ripe-ncc-and-data-maintainers)
 
 
 
 ## Personal Data in the RIPE Database
 
-The RIPE NCC provides the software and the hardware infrastructure to operate the RIPE Database service. The RIPE NCC also provides 24/7 monitoring and engineering support to maximise reliability, availability and performance. There is a customer support service to provide assistance to those using the RIPE Database..
+The RIPE NCC provides the software and the hardware infrastructure to operate the RIPE Database service. The RIPE NCC also provides 24/7 monitoring and engineering support to maximise reliability, availability and performance. There is a customer support service to provide assistance to those using the RIPE Database.
 
-Most personal data is not registered in the RIPE Database by the RIPE NCC but by others (generally, those responsible for the specific Internet number resources or by the data subjects themselves). The RIPE NCC has only limited, control (and in some cases, no control) over the personal data stored in the RIPE Database. The purpose and means of processing personal data registered in the RIPE Database are not determined by the RIPE NCC but by the RIPE community. However, the RIPE NCC is the organization that implements and/or oversees the implementation of instructions given by the RIPE community. In that sense, the RIPE NCC could be seen as the responsible party for processing personal data in the RIPE Database in accordance with the Dutch Data Protection Act.
+Most personal data is not registered in the RIPE Database by the RIPE NCC but by others (generally, those responsible for the specific Internet number resources or by the data subjects themselves). The RIPE NCC has only limited, control (and in some cases, no control) over the personal data stored in the RIPE Database. The purpose and means of processing personal data registered in the RIPE Database are not determined by the RIPE NCC but by the RIPE community. However, the RIPE NCC is the organisation that implements and/or oversees the implementation of instructions given by the RIPE community. In that sense, the RIPE NCC could be seen as the responsible party for processing personal data in the RIPE Database in accordance with the Dutch Data Protection Act.
 
-Steps are taken to prevent bulk access to personal data and limits exist on how many personal data objects can be queried in a 24-hour period. In some situations, the data made available in some forms is dummified. This is a process by which information that could identify a person or organization is removed from the output.
+Steps are taken to prevent bulk access to personal data and limits exist on how many personal data objects can be queried in a 24-hour period. In some situations, the data made available in some forms is dummified. This is a process by which information that could identify a person or organisation is removed from the output.
 
-Anyone whose personal details have been entered into the public RIPE Database should have been informed by the person/organization that entered those details. If you find your personal details within the RIPE Database and you had no knowledge of this, you should, firstly, raise this issue with the person/organization that entered those details. You may find it is a condition of a contract that provides your Internet services, but you had not realised it.
+Anyone whose personal details have been entered into the public RIPE Database should have been informed by the person/organisation that entered those details. If you find your personal details within the RIPE Database and you had no knowledge of this, you should, firstly, raise this issue with the person/organisation that entered those details. You may find it is a condition of a contract that provides your Internet services, but you had not realised it.
 
-If you want these details corrected or completely removed from the RIPE Database you should again, in the first instance, contact that same person/organization that maintains this data in the RIPE Database. If they do not comply with your request to your satisfaction, the RIPE NCC has a procedure for the removal of personal contact details from the RIPE Database. You must realise that the consequences of removing such data may result in the cancellation of some services. That is a matter you must take up with the service provider.
+If you want these details corrected or completely removed from the RIPE Database you should again, in the first instance, contact that same person/organisation that maintains this data in the RIPE Database. If they do not comply with your request to your satisfaction, the RIPE NCC has a procedure for the removal of personal contact details from the RIPE Database. You must realise that the consequences of removing such data may result in the cancellation of some services. That is a matter you must take up with the service provider.
 
 For more information regarding Personal Data in the RIPE Database, please refer to the RIPE NCC Data Protection Report where more information can be found about the processing of personal data and the applicable legal framework.
 
