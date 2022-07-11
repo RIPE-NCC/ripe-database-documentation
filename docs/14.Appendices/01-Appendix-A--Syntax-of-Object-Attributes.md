@@ -12,7 +12,7 @@ The value of an attribute has a type. Some of the most commonly used and complex
 | &lt;quad&gt; | &lt;xdigit&gt;.){1,4} |
 | &lt;dlabel&gt; | Domain name label as specified in [RFC 1034](https://www.ietf.org/rfc/rfc1034.txt). The total length should not exceed 63 characters (octets)<br><br>&lt;alnum&gt;((-\|&lt;alnum&gt;)*&lt;alnum&gt;)? |
 | &lt;action&gt; | Please see [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) |
-| &lt;address-prefix&gt; | An address prefix is represented as an IPv4 address followed by the character slash "/" followed by an integer in the range from 0 to 32. The following are valid address prefixes: 128.9.128.5/32, 128.9.0.0/16, 0.0.0.0/0. The following address prefixes are invalid: 0/0, 128.9/16 since 0 or 128.9 are not strings containing four integers.<br><br>&lt;ipv4-address&gt;/&lt;integer&gt; |
+| &lt;address-prefix&gt; | An address prefix is represented as an IPv4 address followed by the character slash "/" followed by an integer in the range from 0 to 32. The following are valid address prefixes: 192.0.2.5/32, 192.0.2.0/24, 0.0.0.0/0. The following address prefixes are invalid: 0/0, 192.0.2/24 since 0 or 192.0.2 are not strings containing four integers.<br><br>&lt;ipv4-address&gt;/&lt;integer&gt; |
 | &lt;address-prefix-range&gt; | An address prefix range is an address prefix followed by an optional range operator. Please see [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622). |
 | &lt;as-expression&gt; | Please see [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) |
 | &lt;as-number&gt; | An "AS" string followed by a 32-bit integer<br><br>AS&lt;integer&gt; |
@@ -22,7 +22,7 @@ The value of an attribute has a type. Some of the most commonly used and complex
 | &lt;filter&gt; | Please see [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) |
 | &lt;freeform&gt; | A sequence of Latin 1 characters |
 | &lt;inet-rtr-name&gt; | Specifies the name of an **inet-rtr** object.  <br>It is a &lt;domain-name&gt;. |
-| &lt;ipv4-address&gt; | An IPv4 address is represented as a sequence of four integers in the range from 0 to 255, separated by the character dot ("."). For example, 128.9.128.5 represents a valid IPv4 address.<br><br>\[0-9\]+(\\.\[0-9\]+){3,3} |
+| &lt;ipv4-address&gt; | An IPv4 address is represented as a sequence of four integers in the range from 0 to 255, separated by the character dot ("."). For example, 192.0.2.5 represents a valid IPv4 address.<br><br>\[0-9\]+(\\.\[0-9\]+){3,3} |
 | &lt;ipv6-address&gt; | &lt;quad&gt;(:&lt;quad&gt;){7,7} |
 | &lt;ipv6-address-prefix&gt; | An IPv6 address prefix is represented as an IPv6 address followed by the character slash "/" followed by an integer in the range from 0 to 128.<br><br>&lt;ipv6-address&gt;/integer |
 | &lt;ipv6-filter&gt; | Please see [RPSLng RFC 4012](https://tools.ietf.org/html/rfc4012) |
