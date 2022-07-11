@@ -72,27 +72,5 @@ PGP parts with invalid signatures are handled as plain text. If the object is pr
 PGP authentication can be mixed with any of the other forms of authentication in the same **mntner** object. Each authentication method used can have multiple instances present. All the authentications present in a **mntner** object are processed with a logical 'OR' to determine if the authentication is passed.
 
 PGP can be used with updates submitted by e-mail or using the syncupdates facility. It cannot be used with the webupdates interface.
-
-
-## X.509 Certificate
-
-This is handled in a similar way to PGP. You need a certificate and private key. There is third-party software available to generate these as well as command-line tools, for example OpenSSL. The certificate must be included in a **key-cert** object in the database. The generated certificate and private key are in binary files. The OpenSSL tool will convert the certificate into plain text to be included in the **key-cert** object. For X.509 **key-cert** objects, you must specify the "key-cert:" value as ‘AUTO-1'. The database software will then set this value. These values cannot be reused. Once deleted, an X.509 **key-cert** object cannot be recreated.
-
-If your email client supports S/MIME you can import the certificate and private key into the client. Email updates can now be signed with your X.509 private key. Alternatively, you can sign your update using your private key with OpenSSL and paste it into the email message body.
-
-A signed update message can also be pasted into the Syncupdates web form. When using the HTTP POST and GET requests for Syncupdates, the signed update must be supplied in the message body.
-
-X.509 signed updates cannot be submitted via the RESTful API. Additionally, since Webupdates utilizes the API in the background, you are unable to paste a signed update into a Webupdates text area. 
-However, you can submit updates through the RESTful API using [Client Certificate Authentication](../Appendices/Appendix-I--Client-Certificate-Authentication/#appendix-i-client-certificate-authentication).
-
-For your X.509 signed update to pass authorisation checks, you must have your certificate in the database in a **key-cert** object.
-
-
-
-## Single Sign-On
-
-The SSO (single sign-on) authorisation is different to all the other methods. This one provides some authentication as well. SSO is based on RIPE NCC Access. To use SSO as an authorisation method in the RIPE Database, you must first create a RIPE NCC Access account. This provides some details about who you are. It is no longer a totally anonymous password in a box (where the box is the **mntner** object).
-
-The RIPE NCC Access account username, which is your email address, becomes the authorisation credential used by the database software. If you change your RIPE NCC Access username to a different email address, this is immediately reflected in the **mntner** object.
-
+For your PGP-signed update to pass authorisation checks, you must have your public key in the database in a **key-cert** object.
 Currently SSO authorisation only works with web-based update methods. This includes Webupdates and the Syncupdates web form. You need to sign in to your RIPE NCC Access account in order to authorise an update.
