@@ -25,7 +25,6 @@ include:
       file: '/templates/deployment-doc-template.yml'
     - project: 'swe-database-team/gitlab-ci'
       file: '/templates/deployment-salt-template.yml'
-      ref: DB-4055-doc-salt-template
 
 stages:
   - build
