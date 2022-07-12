@@ -1,37 +1,33 @@
-# ripestat-docs
 
-VuePress documentation for RIPEstat.
+# RIPE Database Documentation
 
-This repo contains all the documentation for RIPEstat, and is built automatically from nothing more than markdown files in the tree.
+VuePress documentation for RIPE Database Documentation.
 
-## Editing the docs
+This repo contains the documentation from [Database Documentation webpage](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-documentation). This documentation is built automatically from nothing more than markdown files in the tree.
 
-The docs can be edited directly within Gitlab or by cloning the repo, changing the files locally and checking them back in.
+# Editing the docs
 
-### Editing in Gitlab
+The docs can be edited directly within Gitlab or by cloning the repository, changing the files locally and checking them back in.
 
-Gitlab has a handy built in editor that understands most of the markdown that is in the markdown files. There are a few exceptions that are particular to VuePress (which this docs system is based on):
+# Editing in Gitlab
 
+GitLab has handy built in editor that undestands most of the markdown that is in the markdown files. There are a few excetions that are particular to VuePress:
 
-| Gitlab markdown | Vuepress markdown |
-| ------ | ------ |
-| collapsible sections are rendered with `<details><summary></summary><content></content></details>` | collapsible sections rendered same as gitlab OR by `::: details summaryText contentText :::` |
-| Embedded vue components are ignored | Embedded vue components (like `<RestRepl />`) are recognized and rendered |
-| cell | cell |
-| cell | cell |
-| cell | cell |
-| cell | cell |
+| **Gitlab markdown** | **Vuepress markdown** |
+| --- | --- |
+| collapsible sections are rendered with &lt;details&gt;&lt;summary&gt;&lt;/summary&gt;&lt;content&gt;&lt;/content&gt;&lt;/details&gt; | collapsible sections rendered same as gitlab OR by ::: details summaryText contentText ::: |
+Embedded vue components are ignored | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered |
 
-## Cloning/Development
+# Running commands
 
-To use this with a different set of docs:
+**Do not use yarn command, it has problems with some dependency**
 
-1. Clone the repo
-2. Replace all subfolders of `/docs` (EXCEPT `/docs/.vuepress`) with your own docs
-3. run `npm docs:dev` to test your docs
-4. run `npm docs:build` to build your (static) site
-5. upload your build to any web server
+Once you download the repository in your local machine you have to run the next commands.
 
-### Development notes
+    npm install
 
-For the most part, this should all just work out of the box, but there may be a few settings you will want to tweak in the `/docs/.vuepress/config.js` file. You will probably also want to replace references to RIPEstat in a few places with your own.
+This command is going to install the required dependencies for vuepress and those dependencies specified in package-lock.json file. The output of this command is a new folder called node_modules that contains all the installed dependencies.
+
+    npm run docs:dev
+
+This command is going to launch a local server in http://localhost:8080/docs/

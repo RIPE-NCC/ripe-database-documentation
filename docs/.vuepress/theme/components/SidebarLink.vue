@@ -31,7 +31,6 @@ export default {
     const link = item.type === 'external'
       ? renderExternal(h, item.path, item.title || item.path)
       : renderLink(h, item.path, item.title || item.path, active)
-
     const maxDepth = [
       $page.frontmatter.sidebarDepth,
       sidebarDepth,
@@ -53,6 +52,7 @@ export default {
     }
   }
 }
+
 
 function renderLink (h, to, text, active, level) {
   const component = {

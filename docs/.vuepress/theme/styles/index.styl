@@ -129,8 +129,8 @@ padding-left 1.5rem
 .content__default:not(.custom)>h1 {
 }
 
-.navbar {
-	position: fixed;
+.theme-container:not(.no-navbar) .navbar {
+  position: fixed;
 	z-index: 10;
 	top: 70px;
 	right: 0;
@@ -226,6 +226,11 @@ padding-top:10px;
 
 .theme-container ripe-header::part(button.light-theme) {
   background: var(--ripe-app-primary-50, white) !important;
+}
+
+
+.theme-container.custom-page-class {
+  all: initial;
 }
 
 :root {

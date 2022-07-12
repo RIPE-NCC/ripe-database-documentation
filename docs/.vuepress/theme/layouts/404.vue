@@ -121,8 +121,6 @@ import NavLinks from "@theme/components/NavLinks.vue";
 import { resolveSidebarItems } from "@vuepress/theme-default/util";
 // this doesn't work for SSR, but on dev *not* including this
 // throws errors (without consequences, but still annoying)
-// import "@technical-design/ripe-app-webcomponents";
-
 export default {
   name: "Layout",
 
@@ -181,17 +179,17 @@ export default {
     },
   },
   mounted() {
-    import("@technical-design/ripe-app-webcomponents").then((_) => {
-      const header = document.querySelector("ripe-header");
-      header.addEventListener("ripe-header-menu-toggle", (e) => {
-        this.isSidebarOpen = !this.isSidebarOpen;
-        this.$emit("toggle-sidebar", this.isSidebarOpen);
-      });
-    });
+   import("@technical-design/ripe-app-webcomponents").then((_) => {
+     const header = document.querySelector("ripe-header");
+     header.addEventListener("ripe-header-menu-toggle", (e) => {
+       this.isSidebarOpen = !this.isSidebarOpen;
+       this.$emit("toggle-sidebar", this.isSidebarOpen);
+     });
+   });
 
-    this.$router.afterEach(() => {
-      this.isSidebarOpen = false;
-    });
+   this.$router.afterEach(() => {
+     this.isSidebarOpen = false;
+   });
   },
   methods: {
     toggleSidebar(to) {

@@ -1,0 +1,11 @@
+# Format of the Update Message
+
+Historically updates were only sent to the database using email messages. Currently, there are many other methods of submitting update information to the database. However, we still refer to an update as an update message.
+
+The different ways of submitting the update message are described in section 5.2 Update Methods. The method that is used passes the data to an appropriate handler in the software. These handlers extract the one or more database objects from the update message along with any credentials, including passwords, PGP signatures and single sign-on session details. An object must start with one of the recognised object type attributes. These are described in section 4. RPSL Object Types. The object ends with the first blank line found after the type attribute. This is technically defined as two consecutive new-line characters (“\n\n”). An object cannot contain a blank line. If a blank line is required for the visual representation of an object it must be either a “remarks:” attribute with no ‘value' part or, if it is a continuation line of any attribute, it must start with a plus sign (“+”). See section 3.8.1 Split Values for more details.
+
+We apply a heuristic method to each paragraph of text in the update message to determine if it is an RPSL object. Any part of the message that is not recognised as an RPSL object is ignored. These ignored parts are grouped together at the end of the acknowledgement message.
+
+The object(s) presented in the update message must each match one of the object templates described in section 4. RPSL Object Types. These templates can be accessed in several ways. See section 6.2 Accessing the Object Templates.
+
+Each instance of an object must contain at least one of each of the mandatory attributes for that object type. The optional attributes can be left out, unless the software business rules require them. If any of the optional attributes are included they must have a ‘value' part, unless the value is defined as free text. Free text values can be blank. Depending on the update method, one update message may contain several objects, with a mixture of creation, modification and deletion operations.
