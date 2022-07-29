@@ -5,11 +5,6 @@ Welcome to the RIPE Database Documentation.
 
 The Documentation is divided into sections that are featured in the sidebar to the left. You can switch between these sections and items at any time by clicking on the links.
 
-* Introduction to the RIPE Database
-    * [RIPE Database Documentation Overview](01.introduction-to-the-RIPE-Database/01-RIPE-Database-Documentation-Overview.md)
-    * [Intended Audience](01.introduction-to-the-RIPE-Database/02-Intended-Audience.md)
-    * [Conventions Used in the RIPE Database Documentation](01.introduction-to-the-RIPE-Database/03-Conventions-Used-in-the-RIPE-Database-Documentation.md)
-
 * What is the RIPE Database?
     * [Purpose and Content of the RIPE Database](02.What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database.md#purpose-and-content-of-the-ripe-database)
         * [Purpose of the RIPE Database](02.What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database.md#purpose-of-the-ripe-database)
