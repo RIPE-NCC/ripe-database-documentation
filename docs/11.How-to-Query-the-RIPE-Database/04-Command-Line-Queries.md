@@ -55,7 +55,7 @@ This is a small program that connects to the RIPE Whois Database, passes the sea
 
 ### Windows
 
-To install whois in Windows you can click [here]{https://docs.microsoft.com/en-us/sysinternals/downloads/whois}. Example to query using whois from Windows.
+To install whois in Windows you can click [here](https://docs.microsoft.com/en-us/sysinternals/downloads/whois). Example to query using whois from Windows.
 
     $ whois /?
 
