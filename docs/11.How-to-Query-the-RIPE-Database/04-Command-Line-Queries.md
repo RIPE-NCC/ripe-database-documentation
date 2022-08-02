@@ -434,9 +434,41 @@ You can install whois in this platform running apt-get install whois, however th
     In Europe, at +44.02032062220
     --
 
+
+To obtain contact information about an administrator located in Europe, use the -c option as shown in the following example, where CONTACT-ID is substituted with the actual contact identifier.
+
+    whois -c EU CONTACT-ID
+
+To write a complex query you can use the next syntax. You can use -- option to separate whois command options from whois server query options. A query containing spaces must be quoted as one argument to the whois command.
+
+    whois -r -- '-t domain'
+
+
+    $ whois -r -- '-rBGTroute 193.0.7.35'
+
+    % This is the RIPE Database query service.
+    % The objects are in RPSL format.
+    %
+    % The RIPE Database is subject to Terms and Conditions.
+    % See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+    route:          193.0.0.0/21
+    descr:          RIPE-NCC
+    origin:         AS3333
+    mnt-by:         RIPE-NCC-MNT
+    created:        1970-01-01T00:00:00Z
+    last-modified:  2008-09-10T14:27:53Z
+    source:         RIPE
+
+    % This query was served by the RIPE Database Query Service version 1.103 (WAGYU)
+
+
 Whois has more options in this platform than Windows, if you want to know all the options just run 
 
     $ man whois
+
+
+
 
 ### OSX
 
@@ -566,6 +598,28 @@ Whois is a common tool that is currently installed in this platform, however if 
     DNSSEC: unsigned
     URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
     >>> Last update of WHOIS database: 2022-08-02T07:05:44+0000 <<<
+
+
+To obtain contact information about an administrator located in Europe, use the -c option as shown in the following example, where CONTACT-ID is substituted with the actual contact identifier.
+
+    whois -c EU CONTACT-ID
+
+
+To write a complex query you can use the next syntax. You can use -- option to separate whois command options from whois server query options. A query containing spaces must be quoted as one argument to the whois command.
+
+    whois -r -- '-t domain'
+
+
+    $ whois -r -- '-rBGTroute 193.0.7.35'
+    route:          193.0.0.0/21
+    descr:          RIPE-NCC
+    origin:         AS3333
+    mnt-by:         RIPE-NCC-MNT
+    created:        1970-01-01T00:00:00Z
+    last-modified:  2008-09-10T14:27:53Z
+    source:         RIPE
+
+    % This query was served by the RIPE Database Query Service version 1.103 (BLAARKOP)
 
 
 Whois has more options in this platform than Windows, if you want to know all the options just run 
