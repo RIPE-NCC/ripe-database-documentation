@@ -57,8 +57,8 @@ This is a small program that connects to the RIPE Whois Database, passes the sea
 
 To install whois in Windows you can click [here](https://docs.microsoft.com/en-us/sysinternals/downloads/whois). Example to query using whois from Windows.
 
+```
     $ whois /?
-
 
     Whois v1.121    -   Domain information lookup
     Copyright (C) 2005-2019 Mark Russinovich
@@ -68,7 +68,9 @@ To install whois in Windows you can click [here](https://docs.microsoft.com/en-u
         -v Print whois information for referrals
         -nobanner
             Do not display the startup banner and copyright message
+```
 
+```
     $ whois -v google.com
     Connecting to COM.whois-servers.net...
     Server COM.whois-servers.net returned the following for GOOGLE.COM
@@ -279,19 +281,21 @@ To install whois in Windows you can click [here](https://docs.microsoft.com/en-u
     Contact us at +1.8007459229
     In Europe, at +44.02032062220
     --
-
+```
 
 ### Linux
 
-You can install whois in this platform running apt-get install whois, however this is a common tool that should be intalled.
-
+You can install whois in this platform running _apt-get install whois_, however this is a common tool that should be intalled.
+```
     $ whois --version
 
     Version 5.5.13.
 
     Report bugs to <md+whois@linux.it>.
+```
 
 
+```
     $ whois google.com
 
         Domain Name: GOOGLE.COM
@@ -433,17 +437,17 @@ You can install whois in this platform running apt-get install whois, however th
     Contact us at +1.8007459229
     In Europe, at +44.02032062220
     --
-
+```
 
 To obtain contact information about an administrator located in Europe, use the -c option as shown in the following example, where CONTACT-ID is substituted with the actual contact identifier.
-
+```
     whois -c EU CONTACT-ID
-
+```
 To write a complex query you can use the next syntax. You can use -- option to separate whois command options from whois server query options. A query containing spaces must be quoted as one argument to the whois command.
-
+```
     whois -r -- '-t domain'
-
-
+```
+```
     $ whois -r -- '-rBGTroute 193.0.7.35'
 
     % This is the RIPE Database query service.
@@ -461,19 +465,19 @@ To write a complex query you can use the next syntax. You can use -- option to s
     source:         RIPE
 
     % This query was served by the RIPE Database Query Service version 1.103 (WAGYU)
-
+```
 
 Whois has more options in this platform than Windows, if you want to know all the options just run 
-
+```
     $ man whois
-
+```
 
 
 
 ### OSX
 
 Whois is a common tool that is currently installed in this platform, however if you don't have whois installed follow this [steps](https://formulae.brew.sh/formula/whois). 
-
+```
     $ whois google.com
 
     % IANA WHOIS server
@@ -598,18 +602,18 @@ Whois is a common tool that is currently installed in this platform, however if 
     DNSSEC: unsigned
     URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
     >>> Last update of WHOIS database: 2022-08-02T07:05:44+0000 <<<
-
+```
 
 To obtain contact information about an administrator located in Europe, use the -c option as shown in the following example, where CONTACT-ID is substituted with the actual contact identifier.
-
+```
     whois -c EU CONTACT-ID
-
+```
 
 To write a complex query you can use the next syntax. You can use -- option to separate whois command options from whois server query options. A query containing spaces must be quoted as one argument to the whois command.
-
+```
     whois -r -- '-t domain'
-
-
+```
+```
     $ whois -r -- '-rBGTroute 193.0.7.35'
     route:          193.0.0.0/21
     descr:          RIPE-NCC
@@ -620,12 +624,12 @@ To write a complex query you can use the next syntax. You can use -- option to s
     source:         RIPE
 
     % This query was served by the RIPE Database Query Service version 1.103 (BLAARKOP)
-
+```
 
 Whois has more options in this platform than Windows, if you want to know all the options just run 
-
+```
     $ man whois
-
+```
 
 
 
