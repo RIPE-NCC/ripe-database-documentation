@@ -140,13 +140,13 @@ A query containing spaces must be quoted as one argument to the whois command.
 
 Whois is a command-line tool that is installed by default on this platform. As an alternative, Whois can also be installed using the [Homebrew package manager](https://formulae.brew.sh/formula/whois). 
 
-To query the RIPE database, use the format: whois -r -- \<query-string\>
+To query the RIPE database, use the format: whois -h whois.ripe.net -- \<query-string\>
 You can use -- option to separate whois command options from whois server query options.
 A query containing spaces must be quoted as one argument to the whois command.
 
 
 ```
-    $ whois -r -- '-rBGTroute 193.0.7.35'
+    $ whois -h whois.ripe.net -- '-rBGTroute 193.0.7.35'
     
     route:          193.0.0.0/21
     descr:          RIPE-NCC
