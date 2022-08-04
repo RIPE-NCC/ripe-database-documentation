@@ -72,14 +72,12 @@ For more information, refer to [https://github.com/rfc1036/whois](https://github
 
 To query the RIPE database, use the format: whois \<query-string\>
 
-
+```
     $ whois --version
 
     Version 5.5.13.
 
     Report bugs to <md+whois@linux.it>.
-
-
 
     $ whois -rBGTroute 193.0.7.35
 
@@ -98,7 +96,7 @@ To query the RIPE database, use the format: whois \<query-string\>
     source:         RIPE
 
     % This query was served by the RIPE Database Query Service version 1.103 (WAGYU)
-
+```
 
 
 
@@ -109,14 +107,13 @@ To query the RIPE database, use the format: whois -h whois.ripe.net -- \<query-s
 You can use -- option to separate whois command options from whois server query options.
 A query containing spaces must be quoted as one argument to the whois command.
 
-
+```
     $ whois --version
 
     jwhois version 4.0, Copyright (C) 1999-2007 Free Software Foundation, INC.
     This program is free software with ABSOLUTELY NO WARRANTY; you may
     redistribute it under the terms of the GNU General Publi Licence
-
-
+    
     $ whois -h whois.ripe.net -- -rBGTroute 193.0.7.35
 
     [Querying whois.ripe.net]
@@ -137,6 +134,7 @@ A query containing spaces must be quoted as one argument to the whois command.
 
     % This query was served by the RIPE Database Query Service version 1.103 (WAGYU)
 
+```
 
 
 
@@ -150,7 +148,7 @@ You can use -- option to separate whois command options from whois server query 
 A query containing spaces must be quoted as one argument to the whois command.
 
 
-
+```
     $ whois -h whois.ripe.net -- '-rBGTroute 193.0.7.35'
     
     route:          193.0.0.0/21
@@ -162,7 +160,7 @@ A query containing spaces must be quoted as one argument to the whois command.
     source:         RIPE
 
     % This query was served by the RIPE Database Query Service version 1.103 (BLAARKOP)
-
+```
 
 
 
