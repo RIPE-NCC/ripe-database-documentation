@@ -58,6 +58,7 @@ This is a small program that connects to the RIPE Whois Database, passes the sea
 There is no default whois client in Windows. There are some alternatives which allows you to use a [simplified version of whois](https://docs.microsoft.com/en-us/sysinternals/downloads/whois).
 
 
+
 ### Linux
 
 - Debian-based distributions: You can install Whois on this distribution using _apt install whois_
