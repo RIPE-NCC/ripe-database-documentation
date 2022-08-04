@@ -55,7 +55,8 @@ This is a small program that connects to the RIPE Whois Database, passes the sea
 
 ### Windows
 
-There is not default whois client in Windows. There are some alternatives which allows you to use a [simplified version of whois](https://docs.microsoft.com/en-us/sysinternals/downloads/whois).
+There is no default whois client in Windows. There are some alternatives which allows you to use a [simplified version of whois](https://docs.microsoft.com/en-us/sysinternals/downloads/whois).
+
 
 
 ### Linux
