@@ -60,7 +60,13 @@ There is not default whois client in Windows. There are some alternatives which 
 
 ### Linux
 
-You can install whois in this platform running _apt-get install whois_. However this is a common tool that should be intalled.
+- Debian-based distributions: You can install Whois on this distribution using _apt install whois_
+
+This installs the Intelligent WHOIS Client by [Marco d'Itri](mailto:md@linux.it).
+For more information, refer to [https://github.com/rfc1036/whois](https://github.com/rfc1036/whois)
+
+To query the RIPE database, use the format: whois \<query-string\>
+
 ```
     $ whois --version
 
@@ -69,16 +75,8 @@ You can install whois in this platform running _apt-get install whois_. However 
     Report bugs to <md+whois@linux.it>.
 ```
 
-To obtain contact information about an administrator located in Europe, use the -c option as shown in the following example, where CONTACT-ID is substituted with the actual contact identifier.
 ```
-    whois -c EU CONTACT-ID
-```
-To write a complex query you can use the next syntax. You can use -- option to separate whois command options from whois server query options. A query containing spaces must be quoted as one argument to the whois command.
-```
-    whois -r -- '-t domain'
-```
-```
-    $ whois -r -- '-rBGTroute 193.0.7.35'
+    $ whois -rBGTroute 193.0.7.35
 
     % This is the RIPE Database query service.
     % The objects are in RPSL format.
@@ -97,28 +95,59 @@ To write a complex query you can use the next syntax. You can use -- option to s
     % This query was served by the RIPE Database Query Service version 1.103 (WAGYU)
 ```
 
-Whois has more options in this platform than Windows, if you want to know all the options just run 
+
+
+- Fedora-based distributions: You can install Whois using _yum install whois_
+
+This also installs the Intelligent WHOIS Client.
+To query the RIPE database, use the format: whois -h whois.ripe.net -- \<query-string\>
+You can use -- option to separate whois command options from whois server query options.
+A query containing spaces must be quoted as one argument to the whois command.
+
 ```
-    $ man whois
+    $ whois --version
+
+    jwhois version 4.0, Copyright (C) 1999-2007 Free Software Foundation, INC.
+    This program is free software with ABSOLUTELY NO WARRANTY; you may
+    redistribute it under the terms of the GNU General Publi Licence
 ```
+``` 
+    $ whois -h whois.ripe.net -- -rBGTroute 193.0.7.35
+
+    [Querying whois.ripe.net]
+    [whois.ripe.net]
+    % This is the RIPE Database query service.
+    % The objects are in RPSL format.
+    %
+    % The RIPE Database is subject to Terms and Conditions.
+    % See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+    route:          193.0.0.0/21
+    descr:          RIPE-NCC
+    origin:         AS3333
+    mnt-by:         RIPE-NCC-MNT
+    created:        1970-01-01T00:00:00Z
+    last-modified:  2008-09-10T14:27:53Z
+    source:         RIPE
+
+    % This query was served by the RIPE Database Query Service version 1.103 (WAGYU)
+```
+
 
 
 
 ### OSX
 
-Whois is a common tool that is currently installed in this platform. However if you don't have whois installed follow this [steps](https://formulae.brew.sh/formula/whois). 
+Whois is a command-line tool that is installed by default on this platform. As an alternative, Whois can also be installed using the [Homebrew package manager](https://formulae.brew.sh/formula/whois). 
 
-To obtain contact information about an administrator located in Europe, use the -c option as shown in the following example, where CONTACT-ID is substituted with the actual contact identifier.
-```
-    whois -c EU CONTACT-ID
-```
+To query the RIPE database, use the format: whois -r -- \<query-string\>
+You can use -- option to separate whois command options from whois server query options.
+A query containing spaces must be quoted as one argument to the whois command.
 
-To write a complex query you can use the next syntax. You can use -- option to separate whois command options from whois server query options. A query containing spaces must be quoted as one argument to the whois command.
-```
-    whois -r -- '-t domain'
-```
+
 ```
     $ whois -r -- '-rBGTroute 193.0.7.35'
+    
     route:          193.0.0.0/21
     descr:          RIPE-NCC
     origin:         AS3333
@@ -128,11 +157,6 @@ To write a complex query you can use the next syntax. You can use -- option to s
     source:         RIPE
 
     % This query was served by the RIPE Database Query Service version 1.103 (BLAARKOP)
-```
-
-Whois has more options in this platform than Windows, if you want to know all the options just run 
-```
-    $ man whois
 ```
 
 
