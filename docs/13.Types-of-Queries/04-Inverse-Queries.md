@@ -19,3 +19,17 @@ You can specify several query flag arguments to request searches against several
 whois --inverse mb,mnt-lower &lt;**mntner** name&gt;
 
 will return all objects where the “mnt-by:” or the “mnt-lower:” attributes contain the &lt;**mntner** name&gt; specified as the query argument.
+
+**Example:**
+
+Find the user in different objects is another utility that this inverse queries allows. To find the user occurrences you can use "admin-c", "tech-c", "abuse-c", "zone-c" attributes. However, you need to specify a lot of attributes just to find the occurrences for one user, therefore there is an attribute that includes these 4 attributes. "person" or "pn" attribute.
+
+whois -i admin-c,tech-c,abuse-c,zone-c  &lt;**person** value&gt; 
+
+will return the same results as 
+
+whois -i pn &lt;**person** value&gt; or whois -i person &lt;**person** value&gt;
+
+Finding the references for a person is very useful when someone leaves the company and we want to delete all the registers from this person. However, there is another functionability for this flag, specify a role instead of a person.
+
+whois -i pn &lt;**role** value&gt;
