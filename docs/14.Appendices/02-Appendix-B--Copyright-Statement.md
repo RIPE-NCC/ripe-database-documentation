@@ -6,5 +6,5 @@ This documentation can be used externally for research, educational and other no
 
 If you want to use these materials for advertising, marketing or other commercial purposes, please get in touch with us first at <ncc@ripe.net>
 
-For more information, please see our Copyright Statement: https://www.ripe.net/about-us/legal/copyright-statement
+For more information, please see our [Copyright Statement](https://www.ripe.net/about-us/legal/copyright-statement).
 
