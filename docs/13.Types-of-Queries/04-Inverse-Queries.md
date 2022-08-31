@@ -22,7 +22,7 @@ will return all objects where the “mnt-by:” or the “mnt-lower:” attribut
 
 **Example:**
 
-An inverse query can be used to search person attributes in objects. To find a user you could search on “admin-c:”, “tech-c:”, “abuse-c:”, “zone-c:” attributes, however you need to specify all these attributes just to find the results for one user. There is an attribute that includes these 4 attributes: the “person:” or “pn:” attribute:
+An inverse query can be used to search for references to a person or role in objects. To find a person or role you could search for matching "admin-c", "tech-c", "abuse-c", "zone-c" attributes, however you need to specify all attributes separately. Instead you can specify "person" or "pn" to search all such attributes.
 
 whois -i admin-c,tech-c,abuse-c,zone-c  &lt;**person** value&gt; 
 
@@ -30,6 +30,6 @@ will return the same results as
 
 whois -i pn &lt;**person** value&gt; or whois -i person &lt;**person** value&gt;
 
-Finding the references for a person is very useful when someone leaves the company and we want to delete all the registers from this person. Note that you can also specify a role instead of a person:
+Finding the references for a person is very useful when someone leaves the company and you want to delete all the registers from this person. Note that you can also specify a role instead of a person:
 
 whois -i pn &lt;**role** value&gt;
