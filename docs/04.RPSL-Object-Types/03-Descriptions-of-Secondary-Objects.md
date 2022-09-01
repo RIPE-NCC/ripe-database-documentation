@@ -21,7 +21,7 @@ Below is the object template for the **as-block** object. It lists all possible 
     as-block:       mandatory  single     primary/lookup
     descr:          optional   multiple  
     remarks:        optional   multiple  
-    org:            optional   single     inverse
+    org:            optional   multiple   inverse
     notify:         optional   multiple   inverse
     mnt-lower:      optional   multiple   inverse
     mnt-by:         mandatory  multiple   inverse
@@ -150,7 +150,7 @@ Below is the object template for the **mntner** object. It lists all possible at
 
     Attribute Name  Presence   Repeat     Indexed
     mntner:         mandatory  single     primary/lookup key
-    descr:          mandatory  multiple  
+    descr:          optional   multiple  
     org:            optional   multiple   inverse key
     admin-c:        mandatory  multiple   inverse key
     tech-c:         optional   multiple   inverse key
@@ -199,7 +199,8 @@ Below is the object template for the **organisation** object. It lists all possi
     org-type:         mandatory  single    
     descr:            optional   multiple  
     remarks:          optional   multiple  
-    address:          mandatory  multiple  
+    address:          mandatory  multiple 
+    country:          optional   single 
     phone:            optional   multiple  
     fax-no:           optional   multiple  
     e-mail:           mandatory  multiple   lookup key
@@ -208,7 +209,7 @@ Below is the object template for the **organisation** object. It lists all possi
     org:              optional   multiple   inverse key
     admin-c:          optional   multiple   inverse key
     tech-c:           optional   multiple   inverse key
-    abuse-c:          optional*  single     inverse key
+    abuse-c:          optional   single     inverse key
     ref-nfy:          optional   multiple   inverse key
     mnt-ref:          mandatory  multiple   inverse key
     notify:           optional   multiple   inverse key
@@ -243,6 +244,7 @@ The member **organisation** objects are partly managed by the RIPE NCC and partl
     * 'DIRECT_ASSIGNMENT' – Used for organisations who have a direct contract with RIPE NCC
     * 'OTHER' – This represents all organisations that do not fit any of the above categories.
 * **“descr:”** – A short description related to the object.
+* **"country:"** - This is the country for the organisation and can only be added, modified or removed by the RIPE NCC.
 * **“phone:”** – This is a phone number for the business contact represented by this **organisation** object. It specifies a telephone number in international shorthand. It must start with a '+' followed by the international country code, area code and number, optionally followed by an extension number.
 * **“fax-no:”** – This is a fax number for the business contact represented by this **organisation** object.
 * **“e-mail:”** – This is a business email address for the organisation represented by this object.
@@ -354,7 +356,7 @@ A **poetic-form** object defines the supported poem types. A new ‘poetic form'
 
 ## Description of the ROLE Object
 
-Below is the object template for the **role** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘optional*'.
+Below is the object template for the **role** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘mandatory'.
 
     Attribute Name  Presence   Repeat     Indexed
     role:           mandatory  single     lookup key
@@ -368,7 +370,7 @@ Below is the object template for the **role** object. It lists all possible attr
     nic-hdl:        mandatory  single     primary/lookup key
     remarks:        optional   multiple  
     notify:         optional   multiple   inverse key
-    abuse-mailbox:  optional*  multiple   inverse key
+    abuse-mailbox:  optional   single     inverse key
     mnt-by:         mandatory  multiple   inverse key
     created:        generated  single
     last-modified:  generated  single
