@@ -309,7 +309,7 @@ The range notation expresses addresses as 32-bit whole numbers in dotted quad no
 Below is the object template for the **route** object. It lists all possible attributes that are allowed in this object type.
 
     Attribute Name  Presence   Repeat     Indexed
-    route:          mandatory  single     primary/lookup key
+    route:          optional   single     primary/lookup key
     descr:          mandatory  multiple  
     origin:         mandatory  single     primary/inverse key
     pingable:       optional   multiple  
@@ -528,24 +528,24 @@ Sets can be built with hierarchical names. Unlike other set objects **the filter
 Below is the object template for the **inet-rtr** object. It lists all possible attributes that are allowed in this object type.
 
     Attribute Name  Presence     Repeat       Indexed
-    inet-rtr:       [mandatory]  [single]     [primary/lookup key]
-    descr:          [optional]   [multiple]   [ ]
-    alias:          [optional]   [multiple]   [ ]
-    local-as:       [mandatory]  [single]     [inverse key]
-    ifaddr:         [mandatory]  [multiple]   [inverse key]
-    interface:      [optional]   [multiple]   [ ]
-    peer:           [optional]   [multiple]   [ ]
-    mp-peer:        [optional]   [multiple]   [ ]
-    member-of:      [optional]   [multiple]   [inverse key]
-    remarks:        [optional]   [multiple]   [ ]
-    org:            [optional]   [multiple]   [inverse key]
-    admin-c:        [mandatory]  [multiple]   [inverse key]
-    tech-c:         [mandatory]  [multiple]   [inverse key]
-    notify:         [optional]   [multiple]   [inverse key]
-    mnt-by:         [mandatory]  [multiple]   [inverse key]
-    created:        [generated]  [single]     [ ]
-    last-modified:  [generated]  [single]     [ ]
-    source:         [mandatory]  [single]     [ ]
+    inet-rtr:       mandatory    single       primary/lookup key
+    descr:          optional     multiple  
+    alias:          optional     multiple   
+    local-as:       mandatory    single       inverse key
+    ifaddr:         mandatory    multiple     inverse key
+    interface:      optional     multiple   
+    peer:           optional     multiple   
+    mp-peer:        optional     multiple   
+    member-of:      optional     multiple     inverse key
+    remarks:        optional     multiple   
+    org:            optional     multiple     inverse key
+    admin-c:        mandatory    multiple     inverse key
+    tech-c:         mandatory    multiple     inverse key
+    notify:         optional     multiple     inverse key
+    mnt-by:         mandatory    multiple     inverse key
+    created:        generated    single     
+    last-modified:  generated    single     
+    source:         mandatory    single     
 
 An **inet-rtr** object specifies a router and its peering protocols with other routers. Canonical DNS name aliases can be set up as well as specifying which AS Number owns/operates the router.
 
