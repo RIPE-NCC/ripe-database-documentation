@@ -1100,5 +1100,622 @@ This pseudo attribute applies to one object only in an update message. It must b
 Objects can still be deleted from the database even if they are not syntactically correct. This allows for old objects to be deleted long after the syntax has been changed.
 
 
+<font color = "orange">
+
+### 2.5.5 Special considerations for person and role objects
+There are a few additional issues that relate specifically to these objects.
+
+#### 2.5.5.1 Re-use of NIC handles
+A person and role object is identified by a NIC handle. Historically these were available for re-use as soon as it the object was deleted. Many NIC handles have been used by several people over time and this can lead to confusion. NIC handles are no longer re-usable. When a **person** or **role** object is deleted, the NIC handle cannot be used again by anyone. Note that these objects cannot be deleted if they are referenced in any other object. So it is not possible to accidentally delete an object when it is still in use. While some people try to create NIC handles with a "meaningful" name, it should be remembered that they are only meant as a database index. If you delete one that is unreferenced, then realise you still need it, you will have to create a new one.
+
+#### 2.5.5.2 Garbage collection
+For data protection reasons we cannot allow personal data to remain in the database, beyond a reasonable "work in progress" period, if it is not related to Internet resources. When a **person** or **role** object has been unreferenced for a continuous period (currently set at three weeks) it will be marked as suitable for deletion. The automatic garbage collection script will then delete it at some point after this time. If the **person** or **role** object is referenced in a **mntner** object and this **mntner** object only maintains the referenced **person** or **role** object, the deletion will still occur and the **mntner** object will also be deleted. If a group of **person**, **role** and **mntner** objects form a self contained group, not referenced in any other object outside of this group, then the whole group will be deleted. This process applies to newly created objects that have not yet been referenced and also to existing objects that have recently become unreferenced.
+
+Notifications of the deletion of objects will be sent to anyone who has optionally included a "notify:" attribute in the **person**, **role** or **mntner** objects, or a "mnt-nfy:" attribute in the mntner objects.
+
+This process will be expanded in the future to include other object types, for example **organisation** and **key-cert**. The intention is to remove collections of data that do not fit with the purpose of the RIPE Database as defined in the [Terms and Conditions](http://www.ripe.net/db/support/db-terms-conditions.pdf).
+
+
+
+OR 
+
 
 ### 2.5.5 Garbage Collection
+When certain object types have existed in the database unreferenced for a continuous period of time it becomes eligible for automatic deletion. When querying for an object it is possible to see if it’s eligible for deletion and if so, how long it will remain in the database before deletion. The message “Unreferenced # &lt;object key&gt;' will be deleted in X days” will be returned together with the object if the query-flag --SHOW-TAG-INFO is given. 
+
+The object types include **person**, **role**, **mntner**, **organisation** (not of type LIR) and **key-cert**. Clusters of these objects that form a self referencing group, without any reference from resource data, will also be deleted.
+
+
+### 2.5.6 Special Considerations for person and role Objects
+There are a few additional issues that relate specifically to these objects.
+
+#### 2.5.6.1 Re-use of NIC Handles
+A **person** and **role** object is identified by a NIC handle. Historically, these were available for re-use as soon as the object was deleted. Many NIC handles have been (re-)used by several people over the course of time. Since that can lead to confusion, the NIC handles are no longer re-usable. When a **person** or **role** object is deleted, the NIC handle cannot be re-used. Note that these objects cannot be deleted if they are referenced by any other object. This avoids accidental deletion of an object that is still in use. While some people try to create NIC handles with a ‘"meaningful’" name, it should be remembered that they are only meant as a database index. If you delete one that is unreferenced, then realise you still need it, you will have to create a new one.
+
+
+#### 2.5.6.2 White Pages
+The RIPE Community recognises that there are some people with a high profile within the Community but who do not manage Internet resources. Some of these
+people may have a **person** object in the RIPE Database and may use the NIC handle as a signature and for contact purposes. The White Pages is a facility for these people to ‘opt in’ to having their personal data in the Database. Strict conditions apply to limit the number of people using this [facility](http://www.ripe.net/db/support/white-pages-instructions.pdf). Anyone listed in the White Pages will be exempt from the garbage collection.
+
+### 2.5.7 Dry-run
+The TEST Database has always been promoted as the place to "try" an update to see what happens. But the TEST Database is a sterile land with hardly any data in it. It is also reset every day. So if you want to test anything that has dependencies on other data you have to reproduce it all in the TEST Database to do the test. That in itself can be a major effort. And tomorrow it is all gone. 
+
+To address this, there is a "dry-run" feature that lets you test updates on the production RIPE Database. All your data is there. All dependencies are taken care of. Submit your update and see what the result will be. But nothing actually changes. The details are explained in a [RIPE Labs article](https://labs.ripe.net/Members/denis/dry-run-testing-in-the-ripe-database).
+
+</font>
+
+
+## 2.6 Email Updates
+This section describes the way that email messages are processed and the features available with email updates.
+
+### 2.6.1 MIME Support
+The database software supports MIME. This means that you can cryptographically sign an update message using email agents that attach the signature in a separate MIME part, not in the body of the message. However encryption of the text is not allowed. All update messages must be sent in plain text.
+
+It also allows the definition of scopes of authorisation within the message (for example, parts where different passwords apply) and nested signing of messages. This may be necessary under some conditions when updating objects whose authorisation must be derived from more than one party.
+
+It is **strongly** recommended to keep MIME encapsulation simple. Complex MIME structures are more likely to generate errors. <font color="green">MIME support may also be dropped from a future version of the RIPE Database software.</font>
+
+The following rules apply when submitting updates using MIME encapsulation:
+
+The software will recognise the following headers and take the appropriate actions:
+
+* multipart/signed
+
+* multipart/alternative
+
+* multipart/mixed
+
+* multipart/unknown
+
+* application/pgp-signature
+
+* application/x-pkcs7-signature
+
+* application/pkcs7-signature
+
+* text/plain
+
+All other content-types are treated as text/plain.
+
+Each MIME part is treated as a separate message with the following implications (except where a signature part is closely coupled with a text part in which case the two parts are treated together as a message):
+
+* Authorisation information is valid only within a single message part.
+
+* AUTO NIC handle assignment is made only within a single message part (see Section 2.6.2, 'PGP and X.509 support').
+
+
+
+### 2.6.2 PGP and X.509 Support
+
+The database supports PGP and X.509 signed messages. The following rules apply when submitting updates using these authorisation schemes.
+
+* When using MIME encapsulation a signed portion of an update message should be submitted using multipart/signed composite type. In this case, the first body part contains the update message (which may also be a MIME encapsulated message), and the second body contains a signature. For a PGP signature, it is encapsulated with application/pgp-signature MIME discrete type. For an X.509-signature it is encapsulated with either application/x-pkcs7-signature or application/pkcs7-signature MIME discrete types.
+
+Regarding AUTO NIC handle assignment, the signed portion is treated as a separate message.
+
+If one of the signatures fails in a nested signed portion, the whole portion is rejected.
+
+
+### 2.6.3 Subject Line Processing
+
+The subject line may have a special meaning in email update messages <font color="green">by using keywords</font>. <font color="green">Some keywords can be used in certain circumstances. Sometimes users also want to use the subject line for their own reference.</font> <font color="orange">All keywords are case insensitive. The available keywords are: OR The available keywords, which are case insensitive, are: </font>
+
+* NEW
+
+* HELP <font color="green">or HOWTO</font>
+<font color="green">
+* DIFF
+
+* KEYWORDS:
+</font>
+
+One way to use a keyword is to put it in the subject line of the email message, with NO other words present. If any other word is found that is not one of the available keywords (for example, Subject: NEW objects) then none of the words will be treated as keywords. All words in the subject line will be reported in the acknowledgement reply as invalid keywords, along with a WARNING message. In this context it is impossible <font color="green">for dbupdate</font> to know if a word is meant as a keyword or just part of a comment.
+
+Many users often include their own references in the subject line. Using this method it is not possible to also use a keyword. The user's references are reported in the WARNING message as invalid keywords.
+
+<font color="green">
+Another way to use keywords is with the KEYWORDS: tag. When this tag is found in a subject line all text up to and including the KEYWORDS: tag is ignored by dbupdate. Only the text following this tag is checked against the list of valid keywords. The same rules apply as before: if a word that is not a valid keyword is found after the KEYWORDS: tag, none of the words are actioned as keywords. In this case all the words following the KEYWORDS: tag are reported as invalid keywords in the acknowledgement reply WARNING message.
+
+Adding the KEYWORDS: tag at the end of the Subject: line with no keywords following it means that the user references will not be reported as invalid keywords. This allows you to avoid receiving a WARNING message.
+</font>
+
+Some examples:
+
+Subject: new
+
+This is an accepted keyword.
+
+Subject: sending my new objects
+
+None of these words are accepted as a keyword and all reported in the Warning message.
+
+<font color="green">
+Subject: sending my new objects KEYWORDS: new
+
+The last word, "new", is accepted as a keyword, the rest of the line is ignored. No Warning message is generated.
+
+Subject: sending my new objects KEYWORDS:
+
+No keywords, but no Warning message is generated. The whole line is ignored.
+
+Subject: KEYWORDS: sending my new objects
+
+None of these words are accepted as a keyword and all reported in the Warning message.
+</font>
+
+
+#### 2.6.3.1 NEW Keyword
+
+Use NEW keyword if you want the database to only accept new objects. In this case, all objects found in the update are assumed to be creation operations. If an object already exists in the database, that object will result in an error message in the acknowledgment.
+
+
+#### 2.6.3.2 HELP (HOWTO) Keyword
+The HELP keyword causes a help text to be returned in the acknowledgement that contains information about how to query and update the database. When this keyword is used the body of the update message is ignored. <font color="green">HOWTO has the same effect as HELP</font>.
+
+
+<font color="green">
+#### 2.6.3.3 DIFF Keyword
+
+The DIFF keyword will highlight changes in the notification message between the old and new objects for a modification operation. This is particularly useful when "import:" and "export:" attributes are changed in large **aut-num** objects. In this case the subject line may contain this:
+
+Subject: changes to aut-num: as1234 KEYWORDS: diff
+
+When the DIFF keyword is used each object in a notification message that has been modified will include a section specifying the changes made, followed by the old version of the full object, and finally the new version of the full object. The output will have the difference listing followed by the old and new objects.
+
+The difference is the standard unix diff, but with one slight change. In the acknowledgement and notification messages three dashes (---) followed by a new line (\n) signifies the start of a section in the message relating to one specific object. This is to make it easy to parse the output and find the start of each object in the message. Note that the standard unix diff also uses --- to separate lines that have changed, so we have replaced --- with === in the diff output presented in the notification messages.
+
+Using a simple **person** object as the example, the output is as follows:
+
+---
+
+OBJECT BELOW MODIFIED:
+
+Differences in [person] TP10-DB-TEST
+
+8c8,9
+< notify: case040-1@localhost
+===
+> changed: dbtest@localhost 20040101
+> notify: case040-2@localhost
+
+person: Test Person
+address: Singel 258
+address: Amsterdam
+phone: +31 20 535 4444
+nic-hdl: TP10-DB-TEST
+mnt-by: TEST-MNT
+changed: dbtest@localhost 20020101
+notify: case040-1@localhost
+source: DB-TEST
+
+REPLACED BY:
+
+
+person: Test Person
+address: Singel 258
+address: Amsterdam
+phone: +31 20 535 4444
+nic-hdl: TP10-DB-TEST
+mnt-by: TEST-MNT
+changed: dbtest@localhost 20020101
+changed: dbtest@localhost 20040101
+notify: case040-2@localhost
+source: DB-TEST
+
+</font>
+
+## Acknowledgements and Notifications
+### Acknowledgements
+
+One acknowledgement message (ACK) is returned to the user for each update received. <font color="green">This is split into sections.</font>
+
+<font color="green">The first section shows where the update was received from. This may be a copy of the update email header or the IP address for a synchronous connection. This section also includes a summary of the update results, explaining how many objects were recognised by the database software, how many operations were successful and how many failed.</font><font color="green">If the update was sent by email, </font> The subject line of the ACK message states "SUCCESS" or "FAILED". If the update message contains no objects or any one of the operations fails, the ACK reports "FAILED". Otherwise it reports "SUCCESS". Following this status is the original subject line.
+
+An example first section would look like this:
+
+From: RIPE Database Administration <ripe-dbm@ripe.net>
+To: admin@here.com
+Subject: SUCCESS: UPDATE person
+Reply-To: ripe-dbm@ripe.net
+
+<font color="green">
+The acknowledgement message content is split into sections.
+
+The first section shows from where the update was received. This may be a copy of the update email header or the IP address for a synchronous connection. This section also includes a summary of the update results, explaining how many objects were recognised by the database software, how many operations were successful and how many failed.
+An example first section would look like this:
+</font>
+
+> From: admin@here.com
+> Subject: UPDATE person
+> Date: Wed, 28 Mar 2007 01:00:06 +0300 (EEST)
+> Reply-To: admin@here.com
+> Message-ID: <20070327170006.983D6124225@here.com >
+
+SUMMARY OF UPDATE:
+ 
+Number of objects found: 2
+Number of objects processed successfully: 1
+Create: 1
+Modify: 1
+Delete: 0
+No Operation: 0
+Number of objects processed with errors: 0
+Create: 0
+Modify: 0
+Delete: 0
+Syntax Errors: 0
+For a synchronous update the details of where the update was received from would look like this:
+- From-Host: 193.0.0.1
+- Date/Time: Wed Mar 28 00:17:29 2007
+
+
+
+
+The next section is the "DETAILED EXPLANATION". This is split into three parts. The first part lists all the objects where the operation failed. This will include "Error" messages as well as possible "Info" and "Warning" messages. The next part shows all the operations that were successful. This may include additional "Info" and "Warning" messages with each operation listed. The third part lists all the paragraphs from the update message that were not recognised as objects. Each part is separated in the ACK by a line containing several '~' characters. Within each part the objects and paragraphs are listed in the order they were processed. This is generally the order they appear in the update message unless AUTO-n nic-hdls are referenced. The line before each object contains three '-' characters. This allows for easy parsing by script.
+
+
+An example of this section would look like this:
+
+DETAILED EXPLANATION:
+
+ 
+
+ 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following object(s) were found to have ERRORS:
+
+ 
+
+ 
+
+---
+
+Update FAILED: [person] dn1172-ripe de nis
+
+***Error: Syntax error in object
+
+ 
+
+person: de nis
+address: here
+phone: 1
+***Error: Syntax error in "1"
+nic-hdl: dn1172-ripe
+mnt-by: TEST-MNT
+changed: admin@here.com 20070327
+source: ripe
+
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following object(s) were processed SUCCESSFULLY:
+
+ 
+---
+Modify SUCCEEDED: [person] dn1172-ripe de nis
+
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following paragraph(s) do not look like objects
+and were NOT PROCESSED:
+
+ 
+This is a private email.
+It is intended only for the named recipient.
+
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are many reasons why the operation may fail for the object, including syntax error, authorisation failure and failed policy check.
+
+
+### 2.7.2 Notifications
+
+There are a number of attributes that may cause notification messages to be generated:
+
+* "notify:"
+* "mnt-nfy:"
+* "upd-to:"
+* "irt-nfy:"
+* "ref-nfy:"
+
+<font color="green">
+Where there are multiple instances of any notification attribute, all the email valueswill be sent a notification email. Where the notification attribute is contained in a
+referenced object, for example in a **mntner**, and there are multiple references, all the referenced objects will be taken to form a list of email address. All these addresses
+will be sent a notification email.
+</font>
+
+The "notify:" attribute is an option in <font color="orange">all OR most</font> object types, and is used when an object is successfully updated. The "notify:" attribute of the old version of the object is used if the object is being modified or deleted. The "notify:" attribute of the new version of the object is used if the object is being created.<font color="green"> If there are multiple "notify:" attributes, an email will be sent to the addresses contained in all of these, subject to the above conditions on the operation.</font> If the update fails for any reason then no notifications will be sent to any "notify:" email addresses.
+
+The "mnt-nfy:" and "upd-to:" attributes can only be included in **mntner** objects. <font color="green">The "upd-to:" is mandatory and "mnt-nfy:" is optional. These are used to inform users of successful updates to a maintained object or attempted updates where the authorisation failed.</font>
+
+When a maintained object is updated successfully a notification message will be sent to email addresses contained in the "mnt-nfy:" attributes of the **mntner** objects. <font color="green">If the updated object has one or more "mnt-by:" attributes, notifications will be sent to all the email address listed in all the "mnt-nfy:" attributes in all the referenced **mntner** objects.</font>
+
+When an **inet(6)num**, **route(6)** or a **domain** object is created, authentication is required from the parent object. If the parent has a "mnt-lower:" (or "mnt-routes:" or "mnt-domains:") attribute, this is the **mntner** that will need to be authenticated against. Otherwise the parent "mnt-by:" attribute be used. <font color="green">The email address listed in all the "mnt-nfy:" attributes of all the parent's appropriate mntner objects will be notified.</font>
+
+When an update to a maintained object fails the authentication, the notifications are sent to all the email address contained in the "upd-to:" attributes. The rules for finding the appropriate "upd-to:" attributes are the same as for the "mnt-nfy:" above.
+
+The optional irt-nfy:" attribute is only allowed in an **irt** object. This is used when a reference to an **irt** object is added to or removed from an **inetnum** or **inet6num** object (by means of "mnt-irt:" attribute). <font color="green">If the irt object contains one or more "irt-nfy:" attribute(s), all the email addresses listed in all the "irt-nfy:" attributes will be sent a notification.</font>
+
+The optional "ref-nfy:" attribute is only allowed in an **organisation** object. This is used when a reference to an **organisation** object is added to an object (by means of "org:" attribute).
+
+The format of a notification message is similar to the ACK message. The first section explains why you are being sent this notification. The next section has the email header or IP address details showing where the update came from. The final section shows the changes that were contained in the update message, if it was successful. <font color="orange">If it failed for authorisation reasons, it shows the object for which a change was attempted, but not the actual change details. OR For a modification a ‘diff’ is included to show the difference between the original object and the new object. If the update failed for authorisation reasons, it shows the object for which a change was attempted, but not the actual change details.</font>
+
+<font color="orange">A OR Each</font> notification message is only sent to a single email address. <font color="green">There is no CC: included in any notification. So when multiple email addresses need to be notified of the same update, each address will receive it’s own email.</font>It will contain all the notification details of objects from an update message that relate to that email address. <font color="orange">If the same details need to be sent to two different email addresses, then two separate emails will be generated by the database software 
+OR  
+For an update with multiple objects, referencing several **mntner** objects, where several objects have a variety of notification attributes, the software builds a matrix of email addresses and updated objects</font>. This ensures that when an update contains many objects covered by overlapping notification email addresses, only the appropriate details are sent to each email address.
+
+
+## 2.8 Protecting Data
+
+The RIPE Database provides mechanisms to protect objects and control who can make changes to them. In some cases there are also restrictions over who can create <font color="green">,modify or delete</font> certain objects.
+
+* Authentication is the way we determine <font color="orange">whose authentication token OR who</font> is attempting to make a change.
+
+* Authorisation is how we decide whether a transaction passing a specific authentication check is allowed to perform a given operation.
+
+Different types of objects in the database require different levels of protection. <font color="orange">Authentication based on strong encryption is the preferred method, however, this may not always be legally available. For this reason, the server supports multiple authentication methods. 
+OR 
+The server supports multiple authentication methods. Because of the model used, it is not possible to identify who is making an update. The **mntner** objects only hold tokens – for example, encrypted password hashes or references to cryptographic keys. There is no connection between these tokens and any identifiable person.</font>
+
+<font color="green">In order to make the password tokens a stronger form of protection, the encrypted hashes are hidden from public view. These can only be seen if you can supply the clear text password.</font>
+
+
+### 2.8.1 Authorisation Model
+
+The **mntner** objects serve as a <font color="green">anonymous</font> container to hold authentication tokens. A reference to a **mntner** object within any object defines authorisation necessary to perform operations on that object or on a set of related objects. Such reference is provided by means of the "mnt-by:", "mnt-lower:", "mnt-routes:", "mnt-domains:", "mnt-ref:", <font color="green">"mnt-irt:"</font> and "mbrs-by-ref:" attributes.
+
+The **mntner** object contains one or more "auth:" attributes. Each begins with a keyword identifying the authentication method followed by the authentication information or token needed to enforce that method.<font color="green">The **irt** object also has mandatory “auth:” attributes used for authorisation.</font>
+
+When submitting an update that requires authorisation, the authentication information valid for one of the authentication tokens of one of the relevant **mntner** objects should be supplied. Different methods require different authentication information, as shown below.
+
+Authentication methods currently supported include the following:
+
+| Method  | Description  |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| MD5-PW | This scheme is based on the MD5 hash algorithm. The authentication information stored in the database is a passphrase encrypted using md5 -crypt algorithm, which is a concatenation of the "$1$" string, the salt, and the 128-bit hash output. Because it uses an 8-character salt and an almost unlimited pass phrase <font color="green">and the encrypted hash is hidden from public view</font>, this scheme is quite stable against dictionary attacks . <font color="green">However, since the encrypted form is exposed it cannot be considered as a strong form of authentication</font>. Authentication information is supplied using a "password:"   pseudo-attribute . The value of this attribute is a clear-text pass phrase. It can appear anywhere in the body of the message, but not within mail headers. Line continuation is not allowed for this attribute. The attribute and the passphrase should fit on one line. If you split the passphrase across multiple lines this will be treated as a syntax error. <font color="green">Example:
+auth: MD5 $1$abcd4321$HyM/GVhPqXkkIMVerxxQ3z</font> |
+| PGPKEY  | This is a strong form of authentication. The authentication information is a signature identity pointing to a public key certificate, which is stored in a separate   **key-cert** object. The user is authenticated if the transaction is signed by the corresponding private key. The RIPE NCC does not guarantee that a key belongs to any specific entity. Anyone can supply any public keys with any ownership information to the RIPE Database. These keys can be used to protect other objects by checking that the update comes from a user who knows the corresponding secret key. <font color="green">The database software does not check expiry dates of the key or dates when an update message was signed.
+Example: auth: PGPKEY-1380K9U1</font>|
+| X.509   | This is another strong form of authentication. It works in the same way as PGPKEY, but uses an X.509 certificate as the key. This is currently not supported with webupdates or syncupdates.  |
+| <font color="green">SSO</font>     | <font color="green">This scheme is based on the RIPE NCC Access single sign-on (SSO) system. It takes the management of these authentication tokens outside of the RIPE Database. To use this, you must first create an account with RIPE NCC Access from the sign-in page: https://access.ripe.net/ The SSO system was introduced so that when somebody signs in once with RIPE NCC Access, that account authorises them to use certain services that support it, such as Webupdates or Syncupdates. The credential in the mntner object uses the keyword SSO followed by the email address used to sign in to your SSO account. You can add many different SSO credentials to a mntner object and add your SSO credential to as many mntner objects as you wish (providing you have authority to update each mntner object using existing authorisation). If you change your email address in your RIPE NCC Access preferences, this will immediately be reflected in any mntner objects where this access account is referenced. Authentication using SSO can be done from Webupdates and Syncupdates. You can sign into your RIPE NCC Access account directly from Webupdates and Syncupdates. Using any of the update features from these pages you can create, modify and delete objects. No password is needed - you are already authenticated to make these updates, assuming the object(s) are maintained by one of your SSO mntner objects. Example: auth: SSO dbtest@ripe.net</font>|
+
+### 2.8.2 Protection of Individual Objects
+
+Individual objects can be protected with a **mntner** object. The **mntner** is referenced by the "mnt-by:" attribute in the object. The attribute type is multiple, so several **mntner** objects can be used to protect one object.
+
+Only those **mntner** objects referenced by the "mnt-by:" attributes are authorised to modify or delete the object. Note that authentication checks are logically OR-ed (e.g. A or B or C). If the information required by at least one authentication token from one **mntner** object is supplied, the operation will be authorised. That means that object's protection level is determined by the weakest authentication method used in the **mntner** objects referenced by that object.
+
+When the "mnt-by:" attribute is added to an object for the first time (as part of object creation or modification), the operation should pass authentication checks for at least one of the **mntner** objects referenced by one of the "mnt-by:" attributes.
+
+If the operation is a modification and the old object already has one or more "mnt-by:" attributes, then one of the **mntner** objects referenced in one of the "mnt-by:" attributes in the old object must authenticate the change. If the old object does not have any "mnt-by:" attributes, then one of the **mntner** objects referenced in one of the "mnt-by:" attributes in the new object must authenticate the change. All new objects must have at least one "mnt-by:". There are still some old **person** and **role** objects that do not have any.
+
+<font color="green">If the operation is a creation then one of the **mntner** objects referenced in one of the "mnt-by:" attributes in the new object must authenticate the change.</font>
+
+
+
+### 2.8.3 Protection of person and role objects
+
+When "mnt-by:" was made mandatory on these objects a circular dependency was created. A **person** object must be maintained and a **mntner** must reference an existing **person**. A new user who has no data in the RIPE Database must follow the procedure in [2.3 to get started](#23-new-starter-update-method).
+
+There is a legacy of **person** and **role** object that still do not have a "mnt-by:" attribute. <font color="orange">Some of these will persist for a while. The objects themselves cannot be modified without adding a **mntner** reference. But some of these objects have not changed for many years. In order to remind users to maintain their personal data some new Warning messages will be generated in the acknowledgement message. Every time a **person** or **role** object is referenced that is not maintained, a Warning will remind the user to protect their personal object. Every time a **mntner** object is referenced where the **mntner** has a reference to a **person** or **role** object that is not maintained another Warning message will be generated.
+OR
+This must be added when the object is next modified.
+In order to remind users to maintain their personal data, Warning messages are generated in the acknowledgement message. Every time a **person** or **role** object is referenced that is not maintained, a Warning will remind the user to protect their personal object. Every time a **mntner** object is referenced where the **mntner** has a reference to a **person** or **role** object that is not maintained another Warning message is generated.
+</font>
+
+
+
+### 2.8.4 Protection of aut-num Object Space
+
+Protection of **aut-num** object space is done using **as-block** objects. The **mntner** object that authorises the creation of
+<font color="green">more specific **as-block** objects or</font> **aut-num** objects is specified by any one of the "mnt-lower:" attributes of the parent **as-block** object. When no "mnt-lower:" attribute exists, the **mntner** object from any one of the parent "mnt-by:" attributes is used.
+
+This parent authorisation is only required when an object is created. It is in addition to the authorisation of the individual object itself.
+
+
+### 2.8.5 Protection of Address Space
+
+The **inetnum** and **inet6num** objects represent address space allocations and assignments. The "mnt-lower:" attribute is used to reference a **mntner** object that authorises the creation of more specific **inetnum** or **inet6num** objects. If no "mnt-lower:" attribute is specified, one of the "mnt-by:" attributes of the parent object must be used instead.
+
+This parent authorisation is only required when an object is created. It is in addition to the authorisation of the individual object itself.
+
+
+
+### 2.8.6 Protection of Route Object Space
+
+The **route** object creation must satisfy several authentication criteria. <font color="green">This is described in a flow chart [29](http://www.ripe.net/data-tools/db/faq/faq-route-object/what-are-the-authorisation-rules-for-route-object-creation) The same sequence applies to route6 and inet6num objects.</font>
+
+<font color="orange">
+It must match the authentication specified in the **aut-num** object referenced by the "origin:" attribute of the **route** object submission.
+
+It must also match the authentication specified in an exact match **route** object, if one exists. If none exist, it must use a **route** object with the longest prefix match that is less specific than the prefix of the **route** object submission, if one exists. If no applicable **route** object exists, then an exact match **inetnum** will be used, if one exists. If one does not exist it must use the most specific **inetnum** object that is less specific than the **route** object submission. The order that these checks are tried is fixed and as stated here. The sequence is only followed until an appropriate object is found. As soon as one of the appropriate objects is found, the authentication from that object will be used. If it fails that authentication it will not continue the sequence.
+
+Finally, the creation must be authorised by the **mntner** of the **route** object itself referenced by the "mnt-by:" attribute of the **route** object submission.
+
+For the checks against the **aut-num**, **route** and **inetnum** objects, authorisation shall be tested using the **mntner** object referenced in the "mnt-routes:" attribute(s) first. If there are no "mnt-routes:" attributes, the "mnt-lower:" attributes are checked. If there are no "mnt-lower:" attributes, the "mnt-by:" attributes are used for the authorisation check. Again, the order that these checks are performed is fixed and as stated here. The sequence is only followed until an appropriate attribute is found. As soon as one of the appropriate attributes is found, the authentication from that attribute will be used. If it fails that authentication it will not continue the sequence.
+
+The same sequence applies to **route6** and **inet6num** objects.
+
+OR
+
+
+#### 2.8.6.1 Pending authentication
+
+In order to simplify the authentication of **route** and **route6**, it’s now possible to partially authenticate an update. If a **route** object contains a correct **autnum** authentication, the update will be saved internally until the same update is submitted with correct address space authentication. Some rules apply:
+* Submitting a second update with the same hierarchical authorisation as the first update will result in an error since it doesn’t complete the updating of the object.
+* If the update contains any errors other than missing hierarchical authorisation it will fail.
+* A pending update will only be stored for seven days
+When the first update has been stored, notifications are sent to the remaining parties that need to authorise the object. If the remaining parties fail to complete the update within seven days, all parties will be sent a notification that the update failed.
+
+</font>
+
+
+### 2.8.7 Protection of Objects with Hierarchical Names
+
+<font color="green">Many</font> RPSL objects do not have a natural hierarchy of their own, but allow hierarchical names, <font color="green">such as the **as-set** objects. <font color="green">Some examples are the object types **as-set** and **route-set**.</font> <font color="orange>"An **as-set** may have a name corresponding to no naming hierarchy such as "AS-Foo" or it may have a hierarchical name in the form "AS1:AS-BAR".  OR  An as-set object may have a non-hierarchical name such as "AS-Foo" or a hierarchical name in the form "AS1:AS-BAR".</font>
+
+When a hierarchical name is not used, authorisation for objects such as **as-set** and **route-set** corresponds to the rules for individual objects described in Section 2.8.2, 'Protection of Individual Objects'.
+
+If hierarchical names are used, then the creation of an object must be authorised by the object whose class primary key is named by everything to the left of the rightmost colon in the class primary key name of the object being created. Continuing the hierarchy from above to create the object "AS1:AS-BAR:AS2". This would need to be authorised by "AS1:AS-BAR". This object is considered to be the 'parent' of the object being created.
+
+Authorisation is determined by first using any **mntner** object referenced by any "mnt-lower:" attribute in the parent object. If none exist, then any **mntner** object referenced by any "mnt-by:" attribute in the parent object will be used.
+
+The parent authorisation is required in addition to the authorisation of the individual object itself. Parent authorisation is only required when an object is created.
+
+The object descriptions for each object type in [Section 1.2, 'Object Types'](#12-object-types) shows which objects are hierarchical.
+
+
+### 2.8.8 Protection of Domain Object Space
+
+Protection of the reverse domain object space for "in-addr.arpa" and "ip6.arpa" domains is done with separate methods for creation, deletion and modification. <font color="green">The **domain** object creation is described in a [flow chart](http://www.ripe.net/data-tools/dns/reverse-dns/create.pdf)</font>
+
+<font color="green">
+For creation, first look for an exact match **inet(6)num** object. If this is not found look for a less specific **inet(6)num** object. If either of these is found, use this as the first stage of authorisation. Authorisation can be approved by any **mntner** object referenced in any of the "mnt-domains:" attributes of the selected **inet(6)num** object. If no "mnt-domains:" attributes exist in the selected **inet(6)num** object, use any mntner object referenced from any "mnt-lower:" attribute in the selected **inet(6)num** object. If none of these exist, use any **mntner** object referenced from any "mnt-by:" attribute in the selected **inet(6)num** object.
+
+If there is no inet(6)num object found, or if the authorisation from the selected inet(6)num object fails, then look for a parent domain object that is directly above (one level less specific to) the domain object to be created. If none is found then the authorisation fails. If it is found then follow the same process to check the authorisation as for the inet(6)num above. Use the "mnt-lower:" attributes if present, otherwise check the "mnt-by:" attributes.
+</font>
+
+This is different to the authentication processes for all other types of objects. Normally when an appropriate object is found to check authorisation against (for example an <font color="orange">**inet(6)num** OR **inetnum**</font>) the search sequence ends. For other object types, the authorisation will pass or fail with the selected object's referenced maintainers. In this case, if the authorisation is checked against a selected <font color="orange">**inet(6)num** OR **inetnum**</font> object and fails, the search sequence continues to look for the parent **domain** object.
+
+For modification and deletion, any **mntner** referenced in a "mnt-by" attribute of the object can authorise the update. Where a deletion fails, **mntners** referenced in a "mnt-domains", "mnt-lower" or "mnt-by" attribute of the corresponding **inet(6)num** object can authorise the deletion. They will be checked in this order. The first attribute type found will be taken as the only one to use.
+
+
+### 2.8.9 Protecting Membership of a Set
+
+When membership of a set is specified through the use of the "member-of:" attribute, the server checks the validity of the membership when creating or modifying an object-member. This "member-of:" attribute can be used in **route(6)**, **aut-num** and **inet-rtr** objects. The value of the "member-of:" attribute identifies a **set** object that this object wants to be a member of.
+
+<font color="green">However, specifying "member-of:" is not enough.</font> The **set** object must also have a <font color="green">related</font> "mbrs-by-ref:" attribute listing the maintainer of the object wanting to be a member of the **set**. The <font color="green">set owner must validate the</font> membership claim of an object with a "member-of:" attribute <font color="green">must be validated</font>. It does that by matching a "mnt-by:" attribute of the object with one of the <font color="green">maintainers in a</font> "mbrs-by-ref:" attribute of the **set** object. If the claim is not valid at the time <font color="orange">when the server creates or modifies OR of creation or modification of</font> an object-member (**route(6)**, **aut-num** or **inet-rtr**), the operation fails. If a **set** object has no "mbrs-by-ref:" attributes, the **set** is defined explicitly by the "members:" attributes in the **set** object. In this case, no other object can validate a claim to be a member of this **set**.
+
+
+### 2.8.10 Referencing an irt Object
+
+The **irt** object can be referenced in **inetnum** and **inet6num** objects. This reference is made by adding an optional "mnt-irt:" attribute to the **inet(6)num** object with the name of the **irt** object. Adding a reference to an **irt** object requires authorisation from the **irt** object. Authorisation can be approved by any of the credentials referenced in any of the "auth:" attributes of the **irt** object. <font color="green">In this case</font> the authorisation does not default to <font color="green">any maintainers listed in</font> the "mnt-by:" attributes of the **irt** object if no suitable credential is found in the "auth:" attributes.
+
+Authorisation from the **irt** object is only required when a "mnt-irt:" attribute is added to a referencing object, either on creation or by modification. <font color="green">Deletion of the referencing object or any modification that does not add an "mnt-irt:" attribute does not require authorisation from the irt object. Removing the "mnt-irt:" attribute does not require authorisation from the irt object either.</font> The **irt** authorisation is required in addition to the authorisation of the individual object itself.
+
+
+### 2.8.11 Referencing an Organisation Object
+
+The **organisation** object can be referenced in any object. This reference is made by adding an optional "org:" attribute <font color="orange">to the object being updated OR to the referencing object</font>, along with the name of the **organisation** object. Adding <font color="orange">a OR this</font> reference <font color="green">to an organisation object</font> requires authorisation from the **organisation** object <font color="green">itself</font>. Authorisation can be approved by any of the **mntner** objects referenced in any of the "mnt-ref:" attributes of the **organisation** object. <font color="green">In this case</font> the authorisation does not default to <font color="green">any maintainers listed in</font> the "mnt-by:" attributes if no suitable maintainer is found in the "mnt-ref:" attributes.
+
+Authorisation from the **organisation** object is only required when an "org:" attribute is added to a referencing object, either on creation or by modification. This is in addition to the authorisation of the referencing object itself. <font color="green">Deletion of the referencing object or any modification that does not add an "org:" attribute (including removing an existing "org:" attribute) does not require authorisation from the organisation object.</font>
+
+<font color="green">
+### 2.8.12 Reclaim Functionality
+
+There is a process for resource holders to take back or regain control of a resource and any related operational objects. Only the delete operation is possible. The reclaimed objects are deleted by overriding the authentication on those objects. There are very strict rules about which objects can be reclaimed and whose authentication is allowed to override the object's authentication. 
+
+For more details, see the article on [RIPE Labs](https://labs.ripe.net/Members/denis/reclaim-functionality-for-resource-holders).
+</font>
+
+
+
+# 3 Using the RIPE Database Efficiently
+
+Most of this manual provides technical details of how the RIPE Database works. This section <font color="orange">provides OR offers</font> advice on how to use the RIPE Database efficiently</font color="green">, and hopefully make your life easier. Future releases of this document may include additional advice from users.</font>
+
+## 3.1 Using the Role Object
+
+The **person** and **role** objects are often said to be interchangeable:
+
+* They share the same name space in the <font color="green">RIPE</font> database
+* The nic-hdls are only unique across the two object types combined
+* <font color="orange">A **person** object can be used everywhere that a **role** object can be used. OR A **role** object can be used everywhere that a **person** object can be used. </font>
+
+But these two objects have very different functions. A **person** object holds personal details about an individual. A **role** object should describe a business function or operational unit and <font color="orange">will OR may</font> reference the individual people responsible for this activity.
+
+<font color="orange">Although it is possible to do everything you want in the RIPE Database without ever using a role object, large scale changes can be costly. By careful planning, you can make future changes very easy to handle.
+OR
+Using role objects makes large-scale changes easy.
+</font The principle is the same if you have 10 objects or 10,000 objects in the database. However, problems most commonly occur when dealing with a very large number of objects.
+
+Many organisations create a large number of objects which directly reference a <font color="green">specific</font> **person** object, and find themselves in trouble if this person leaves the company. The organisation may be responsible for many objects of different types, possibly with several different **mntner** objects protecting them, and finding them and getting all the authorisations right to change the references can easily become a problem.
+
+A few basic principles will help to avoid this situation. Only use a **person** object as a holder of personal information, and only reference a **person** object in **role** objects. Reference the **role** objects in all the other objects where contact data is required. If the person responsible for a role changes, then it is simply necessary to modify a few **role** objects to reference a different **person** object. All references to the **role** objects remain valid.
+
+Even if you have only a handful of objects in the database, it is good practice to do this. Your business may grow, and human nature means you will not go back and change things until you have to do so. This is how these objects were intended to be used, but as this practice was never enforced, <font color="orange">half OR much of</font> the database still makes direct references to **person** objects.
+
+
+## 3.2 Using the Organisation Object
+
+The **organisation** object was introduced long after the <font color="green">RIPE</font> database was designed. When this object was introduced it was intended to be used in a certain way, but again, this practice was never enforced, and many database users have not adopted it. It is worth knowing how the **organisation** object can make life easier in some situations.
+
+Consider all users as entities, whether they are multinational companies, universities or individuals. To use the RIPE Database, each of these entities needs a set of data objects that represent their business model. They will need:
+
+* People who can be contacted
+* Who have defined roles in the business
+* Which are responsible for Internet resources
+* That need authentication tokens to protect them
+* Which may need public keys
+
+This set of objects represents the organisation of the entity. When the entity is an individual who has been assigned some PI space, they may need several objects in the database. Multinational companies may have many thousands of objects.
+
+The **organisation** object was introduced as a way of keeping track of these sets of objects. The idea is to put the organisational identity of the entity at the centre by defining its **organisation** object. The organisation's business model can then be mapped out by creating the objects from the list above as appropriate. Each of these objects can be directly 'tagged' with a reference to the **organisation** object using the "org:" attribute. Or for a simplified model, tag the **mntner** objects using the "org:" attribute in the **mntner** object. If all objects are maintained, then there is an indirect reference back to the **organisation** object through the **mntner** objects.
+
+Some multinational companies may have a devolved business model with different parts of the organisation responsible for different parts of their network. In this situation additional **organisation** objects can be created. These objects can reference the main **organisation** object through their own "org:" attribute. This allows users to keep track of the entire company's data or the parts delegated to different sections of the company.
+
+<font color="green">If this is done, it is easy to 'see' the map of all the data for an entity.</font> Any bulk changes to data are very much simplified. Tools can be written and deployed more easily. New ideas can be rolled out quickly across an entire data set.<font color="green"> Concepts like abuse handling could be re-visited. This could be applied with a default, centralised abuse handler in the organisation object, as well as more localised, optional ones in the mntner objects or the individual objects themselves.</font>
+
+
+## 3.3 Abuse Handling
+
+The **irt** (Internet Response Team) object was <font color="green">originally</font> introduced to identify teams for handling serious network problems like DOS attacks. <font color="orange">It has since been adapted to not only fulfil that role, but to also try to handle abuse complaints at all levels. OR It should not be used to handle
+general abuse complaints.</font>
+
+<font color="red">NOTES: incorrect, choose the next green solution
+Several objects can optionally include an "abuse-mailbox:" attribute. This includes the **irt** object. The **irt** object can be referenced from **inetnum** and **inet6num** objects. When an **irt** object, including an "abuse-mailbox:" attribute, is referenced from an **inet(6)num** object, this defines the abuse handler for this address space. It also defines the abuse handler for some of the more specific address space to that specified by the **inet(6)num** object referencing the **irt** object.</font>
+
+
+<font color="green">General abuse is handled by the **organisation** object. This should reference an abuse handling role object with an “abuse-c:” attribute. This **role** object must include an "abuse-mailbox:" attribute. All address space, represented by inet(6)num objects, should reference an organisation object either directly or via its less specific objects. This reference defines the abuse handler for this address space and all the more specific address space to that specified by the inet(6)num object which references the organisation object.</font>
+
+There is a query flag ("-c") which will return the **irt** object, if one exists, for any specified **inet(6)num** object. There is also another query flag ("-b") that will find the <font color="orange">indirectly **role** OR **irl**</font> object, extract the "abuse-mailbox:" attribute and return brief details including the <font color="orange">contact address from the **irt** object and others OR email address from the **role** objects.</font> For details of how these queries work see Section <font color="red">should we create a new section for this documentation? [2.4, 'Abuse Contacts'](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual).</font>
+
+# Appendices
+## A1. Object Attributes
+
+Shown below are the syntax definitions of the object attributes that the RIPE Database supports.
+
+The value of an attribute has a type. Some of the most commonly used types are shown in Table A1. Others are explained in the descriptions of the attributes.
+
+Table A1. Commonly used attribute types
+&lt;label&gt;
+| Type                                   | Description                                                                                                                                                                         ||----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| &lt;quad&gt;                                  | &lt;xdigit&gt; .){1,4}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| &lt;dlabel&gt;                                | Domain name label as specified in [RFC 1034](ftp://ftp.ripe.net/rfc/rfc1034.txt). The total length should not exceed 63 characters (octets)  &lt;alnum&gt; ((-\|&lt;alnum&gt; )*&lt;alnum&gt; )?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| &lt;action&gt;                               | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2622.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| &lt;address-prefix&gt;                        | An address prefix is represented as an IPv4 address  followed by the character slash "/" followed by an integer  in the range from 0 to 32. The following are valid address  prefixes: 128.9.128.5/32, 128.9.0.0/16, 0.0.0.0/0; and the  following address prefixes are invalid: 0/0, 128.9/16 since  0 or 128.9 are not strings containing four integers. &lt;ipv4-address&gt; /&lt;integer&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| &lt;address-prefix-range&gt;                  | An address prefix range is an address prefix followed by  an optional range operator. Please see [RFC-2622](ftp://ftp.ripe.net/rfc/rfc2622.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| &lt;as-expression&gt;                         | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2622.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| &lt;as-number&gt;                             | An "AS" string followed by an 32 -bit integer AS&lt;integer&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| &lt;condition&gt;                             | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2622.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| &lt;domain-name&gt;                           | Domain name as specified in [RFC 1034](ftp://ftp.ripe.net/rfc/rfc1034.txt) without trailing  dot ("."). The total length should not exceed 255 characters (octets)  &lt;dlabel&gt; (\.&lt;dlabel&gt; )*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| &lt;e-mail&gt;                                | Email address specification as defined in [RFC 2822](ftp://ftp.ripe.net/rfc/rfc2822.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| &lt;filter&gt;                                | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2622.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| &lt;freeform&gt;                              | <font color="orange"> A sequence of ASCII characters OR A sequence of Latin 1 characters</font>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| &lt;inet-rtr-name&gt;                         | Specifies the name of an inet-rtr object. It is a &lt;domain-name&gt; .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| &lt;ipv4-address&gt;                          | An IPv4 address is represented as a sequence of four  integers in the range from 0 to 255 separated by the  character dot ("."). For example, 128.9.128.5 represents a  valid IPv4 address. [0-9]+(\.[0-9]+){3,3}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| &lt;ipv6-address&gt;                          | &lt;quad&gt; (:&lt;quad&gt; ){7,7}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| &lt;ipv6-address-prefix&gt;                   | &lt;ipv6-address&gt; /integer (between 0 and 128)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| &lt;ipv6-filter&gt;                           | Please see [RPSLng](https://datatracker.ietf.org/doc/html/draft-blunk-rpslng-08)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| &lt;irt-name&gt;                              | Specifies the name of an **irt** object. It is an &lt;object-name&gt;  starting with "IRT-" prefix reserved for this object class.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| &lt;mntner-name&gt;                           | &lt;object-name&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| &lt;nic-handle&gt;                           | From 2 to 4 characters, optionally followed by <font color="green">a source specifications of</font>up to  <font color="orange">5 digits optionally followed by a source specification OR 9 characters or two-character country code</font> . <font color="orange">Source  specification starts with "-" followed by source name up to 9-character length. OR Source specification and country codes start with "-".</font> (&lt;alpha&gt; {2,4}([1-9]&lt;digit&gt; {0,5})?(-&lt;alpha&gt;  ([a-zA-Z0-9_-]{0,7}&lt;alnum&gt; ))?)\| (AUTO-&lt;digit&gt; +(&lt;alpha&gt; {2,4})?)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| &lt;object-name&gt;                           | Many objects in RPSL have a name. An &lt;object-name&gt;  is  made up of letters, digits, the character underscore "_", and  the character hyphen "-"; the first character of a name  must  be a letter, and the last character of a name must be a letter  or a digit. The following words are reserved by RPSL, and  they can not be used as names:  any as-any RS-any peeras and or not atomic from to at action accept announce except refine networks into inbound outbound  Names starting with certain prefixes are reserved for  certain object types. Names starting with "as-" are  reserved for as-set names. Names starting with "RS" are  reserved for route-set names. Names starting with "rtrs-"  are reserved for rtr-set names. Names starting with "fltr-"  are reserved for filter-set names. Names starting with  "prng-" are reserved for peering-set names. Names  starting with "irt-" are reserved for irt object names. This is  the RIPE Database extension. |
+| &lt;org-id&gt;                                | The 'ORG-' string followed by 2 to 4 characters, followed by  up to 5 digits followed by a source specification. The first  digit must not be "0". Source specification starts with "-"  followed by source name up to 9-character length.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| &lt;organisation-name&gt;                     | Is a list of a most 12 words, each at most 64 characters in  length. Words can contain alphanumeric characters,  asterisk, plus and minus signs, forward slash and  backslash, dash, quotes, at sign, commas, dots,  underscores, ampersands, exclamation marks, colons,  semicolons, brackets and square brackets.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| &lt;peering&gt;                               | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2822.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| &lt;person-name&gt;                           | Is a list of at least 2 words separated by white space. The  first and the last word cannot end with dot ("."). <font color="green">The  following words are not allowed: "Dr", "Prof", "Mv", "Ms",  "Mr", no matter whether they end with dot (".") or not</font>. A  word is made up of letters, digits, the character  underscore "_", and the character hyphen "-"; the first  character of a name must be a letter, and the last  character of a name must be a letter or a digit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| &lt;protocol&gt;                              | Please see RFC 2622(ftp://ftp.ripe.net/rfc/rfc2822.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| &lt;registry-name&gt;                         | RIPE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| <font color="green">&lt;role-name&gt; </font> | <font color="green">Is a list of at most 12 words, each at most 64 characters in length. Words can contain alphanumeric characters, asterisk, plus and minus signs, forward slash and backslash, dash, quotes, at sign, commas, dots, underscores, ampersands, exclamation marks, colons, semicolons, brackets and square brackets.</font>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| &lt;router-expression&gt;                     | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2822.txt) and [RPSLng](https://datatracker.ietf.org/doc/html/draft-blunk-rpslng-08)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| &lt;telephone-number&gt;                      | Contact telephone number. Can take one of the forms: '+' &lt;integer-list&gt;  '+' &lt;integer-list&gt;  "(" &lt;integer-list&gt;  ")" &lt;integer-list&gt;  '+' &lt;integer-list&gt;  ext. &lt;integer list&gt;  '+' &lt;integer-list&gt;  "(" integer list ")" &lt;integer-list&gt;  ext. &lt;integer-list&gt;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| &lt;integer&gt;                               | An integer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| &lt;alpha&gt;                                 | Any alphabetical character. [A-Za-z]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| &lt;alnum&gt;                                 | Any alphabetical or numeric character. [A-Za-z0-9]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| list of                                | A list of words separated by comma (","). Cannot be empty.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Ripe-list of                           | A list of words separated by white space. Cannot be empty.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| &lt;integer-list&gt;                          | A list of &lt;integer&gt;  with white space or dash ("-")  as separators.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
