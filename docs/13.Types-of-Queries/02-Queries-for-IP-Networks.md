@@ -4,7 +4,16 @@ The RIPE Database provides information about IP networks allocated or assigned w
 
 The **route** and **route6** objects use prefix notation to specify the single address or range of addresses about which they contain information.
 
-The **inetnum** objects represent an IPv4 address space in range notation. The **inet6num** objects represent IPv6 address space in standard prefix notation.
+
+<font color="green">
+“Prex notation” species ranges using two parts: the prex and its length.
+
+* For IPv4, the prex is a 32-bit integer written in dotted quad notation with the value ofthe lowest IP address in the range. The prex length is a whole number in the range 0-32 (for example 193.0.0.0/22 species the range of 1024 IPv4 addresses starting with,and including, 193.0.0.0).
+* For IPv6 address ranges, the prex length must be in the range 0-128 and is a 128-bitwhole number, written in hexadecimal groups of two bytes separated by colons andwith the possible use of shorthand notation for strings of consecutive 0s.
+</font>
+
+
+The **inetnum** objects represent an IPv4 address space in range notation <font color="red">Miguel notes, Seem the same as the last green comments: where the rangeis explicitly specied as two 32-bit whole numbers written in dotted quad notationseparated by a dash (for example 193.0.0.0 - 193.0.3.255, this is the same range as in theabove example)</font>. The **inet6num** objects represent IPv6 address space in standard prefix notation <font color="red">Miguel notes, Seem the same as the last green comments: separated by a dash (for example 193.0.0.0 - 193.0.3.255, this is the same range as in theabove example)</font>.
 
 When you query the RIPE Database for information about IP addresses, you can specify query arguments with the following notations:
 
