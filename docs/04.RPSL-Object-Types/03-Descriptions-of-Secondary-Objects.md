@@ -349,7 +349,6 @@ A **poetic-form** object defines the supported poem types. A new ‘poetic form'
 * **"mnt-by:"** - The poetic-form object must contain a single "mnt-by:" attribute. The object must be maintained by RIPE-DBM-MNT.
 
 
-
 ## Description of the ROLE Object
 
 Below is the object template for the **role** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘mandatory'.
