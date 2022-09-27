@@ -151,15 +151,7 @@ A set of object templates show which attributes are allowed in each object type.
 
 In an object template the first column represents an attribute, the second and third columns specify the type of the attribute and the fourth column tells whether the attribute is (part of) a database key for the object.
 
-The "changed:" and "source:" attributes are mandatory in all objects. <font color="green">The information in this attribute may show who created or modified the object and when. It is not reliable as a full audit trail. It is used as a reference for the benefit of the maintainer of the object. It is not intended to give any reliable information to a user who queries for an object.</font> 
-
-* The "changed:" attribute is for the user's own reference. It must contain an email address and a timestamp. If the timestamp is not included the database software will add the current timestamp at the time of the update.<font color="green">Nothing can be reliably determined by anyone other than the user about the object or its change history by looking at the "changed:" attributes. There are a set of rules applicable to this attribute, but they are loose enough to allow the user to do almost anything with it.</font> 
-
-* There must be at least one “changed:” attribute. <font color="green">If there are more they must be in ascending date order.</font>
-
-* <font color="orange">The dates can be set to any date after April 2001 (when Version 3 of the RIPE Database was launched). or The dates can be set to any date after April 1984.</font>
-
-* Any changed "attribute:" can be modified or deleted by the user as long as at least one remains.
+* The "source:" attribute is mandatory in all objects. The information in this attribute may show who created the object and when. It is not reliable as a full audit trail. It is used as a reference for the benefit of the maintainer of the object. It is not intended to give any reliable information to a user who queries for an object.
 
 * The "source:" attribute specifies the registry where the object is registered. This should be "RIPE" for the RIPE Database. <font color="green">“TEST” is also a valid “source:” attribute, it indicates that the object belongs to the RIPE TEST database.</font>
 
@@ -271,10 +263,6 @@ The domain object represents reverse delegations.
 * You should write the domain name in fully qualified format, without a trailing dot. If a trailing dot is included it will be removed by the software and a warning message returned to the user.
 * If the nameserver name in the "nserver:" attribute is inside the domain being delegated it may be optionally followed by an IP address (IPv4 or IPv6).
 * The "ds-rdata:" attribute holds information about a signed delegation record for DNSSEC (short for DNS Security Extensions)
-* <font color="red">(Miguel notes: Not in the template) The "sub-dom:" attribute specifies a list of sub-domains of a domain. Domain names are relative to the domain represented by the **domain** object that contains this attribute.</font>
-* <font color="red">(Miguel notes: Not in the template) The "dom-net:" attribute contains a list of IP networks in a domain.</font>
-* <font color="red">(Miguel notes: Template does not have "mnt-lower") The domain object sets the authorisation required for the creation of other **domain** objects one level down in a hierarchy. This is set by the "mnt-lower:" and "mnt-by:" attributes.</font>
-* <font color="red">(Miguel notes: Template does not have "refer" aatribute)The "refer:" attribute is used to refer a query to another authorative database. See the [RIPE Database Query Reference Manual](../01.introduction-to-the-RIPE-Database/01-RIPE-Database-Documentation-Overview.md#ripe-database-documentation-overview) for an explanation of its use. This will be redundant when forward domains are removed and may be deprecated.</font>
 
 Here is a **domain** object template:
 
@@ -301,7 +289,7 @@ A **filter-set** object defines a set of routes that match the criteria that you
 * The "filter-set:" attribute defines the name of your filter. It is an RPSL name that starts with "fltr-".
 * The "filter:" attribute defines the policy filter of the set.
     * A policy filter is a logical expression which, when applied to a set of routes, returns a subset of these routes – the ones that you have said you want to see.
-* The "mp-filter:" attribute extends the "filter:" attribute to allow you to specify <font color="green">IPv4, </font>IPv6 prefixes and prefix ranges.
+* The "mp-filter:" attribute extends the "filter:" attribute to allow you to specify IPv4, IPv6 prefixes and prefix ranges.
 * The "filter:" and "mp-filter:" attributes are optional. However, if you plan to use a filter-set object, it must contain at least one of these two attributes.
 * The name of a **filter-set** object can be hierarchical.
     * A hierarchical filter-set name is a sequence of filter-set names and AS Numbers separated by colons. At least one component of the name must be an actual filter-set name (i.e. start with "fltr-"). All the set name components of a hierarchical filter-name have to be filter-set names.
@@ -467,7 +455,7 @@ Here are the attributes of the **inet-rtr** object:
 
 ####  1.2.9 irt
 
-An irt object represents a Computer Security Incident Response Team (CSIRT). It includes contact information and <font color="green">may</font> include security information. It may be referenced from **inetnum** or **inet6num** objects to show which CSIRT is responsible for handling computer and network incidents for that address range.
+An irt object represents a Computer Security Incident Response Team (CSIRT). It includes contact information and include security information. It may be referenced from **inetnum** or **inet6num** objects to show which CSIRT is responsible for handling computer and network incidents for that address range.
 
 * The irt object name starts with "IRT-".
 * The "signature:" attribute references a **key-cert** object representing a CSIRT public key used by the team to sign their correspondence.
@@ -505,9 +493,7 @@ A **key-cert** object is a database public key certificate that is stored on the
 * For PGP **key-cert** objects, the value of the "key-cert:" attribute must be PGP-"key-id". These keys are compliant with the [Open PGP Internet Standard](https://www.ietf.org/rfc/rfc2440.txt).
 * For X.509 **key-cert** objects, the database software assigns this value as X.509-n. Here, 'n' is the next available number assigned by the software. If you want to create an X.509 **key-cert** object, you should specify the value as AUTO-xx. If you delete an X.509 **key-cert** object, it is not possible to recreate it with the same name.
 * The "method:", "owner:" and "fingerpr:" attributes are all generated by the software. It is not necessary to include these attributes when you create or modify this object. If they are supplied, the software will check the values. If necessary the software will replace the supplied values with generated values. In this case a warning is returned to the user.
-* The "certif:" attribute contains the public key. <font color="orange">The value of the public key should be supplied either using multiple "certif:" attributes, or in one "certif:" attribute split over several lines. In the first case, this is easily done by exporting the key from your local key ring in ASCII armored format and adding the string "certif:" to the start of each line of the key. In the second case, line continuation should be used to represent an ASCII armored format of the key. All the lines of the exported key must be included, as well as the start/end markers and the empty line which separates the header from the key body.
-or
-All the lines of an exported key in ASCII armoured format must be included, as well as the start/end markers and the empty line which separates the header from the key body.</font>
+* The "certif:" attribute contains the public key. The value of the public key should be supplied either using multiple "certif:" attributes, or in one "certif:" attribute split over several lines. In the first case, this is easily done by exporting the key from your local key ring in ASCII armored format and adding the string "certif:" to the start of each line of the key. In the second case, line continuation should be used to represent an ASCII armored format of the key. All the lines of the exported key must be included, as well as the start/end markers and the empty line which separates the header from the key body.
 
 Here is a **key-cert** object template:
 
@@ -532,7 +518,6 @@ Here is a **key-cert** object template:
 Objects in the RIPE Database are protected by using **mntner** objects. A **mntner** object contains the information needed to authorise creation, deletion or modification of any objects that it protects.
 
 * Objects are protected by a **mntner**, if they contain a reference to the **mntner** in the object. This is done by including a "mnt-by:" attribute. Other attributes offer hierarchical protection. The "mnt-by:" attribute is mandatory in all object types. Most users set the "mnt-by:" value in a **mntner** to reference itself.
-* The "referral-by:" attribute can refer to the **mntner** object itself. The database software does not currently use this attribute, even though it is mandatory to include it.
 * The "upd-to:" attribute specifies the email address to be notified when an attempt to update an object protected by this mntner is unsuccessful.
 * The "mnt-nfy:" attribute specifies the email address to be notified when an object protected by this mntner is successfully updated.
 * The "auth:" attribute defines an authentication scheme to be used. Any of the current authentication schemes used by the RIPE Database are allowed.
@@ -696,7 +681,7 @@ A **poetic-form** object defines the supported poem types.
 
 * The "poetic-form:" attribute starts with "FORM-". It is followed by the name of an internationally recognised poetic format of humorous writing. For example, limerick or English-sonnet.
 * The "descr:" attribute describes the style of the poetic form, written in the form style. For example, if it is a FORM-LIMERICK, the description will be written as a limerick.
-* <font color="green"> This object cannot be created automatically. It will be forwarded to the Database Administrators for approval of the content.</font>
+* This object cannot be created automatically. It will be forwarded to the Database Administrators for approval of the content.
 
 Here is a **poetic-form** object template:
 
@@ -720,7 +705,6 @@ A **role** object is similar to a **person** object. However, instead of describ
 * The "nic-hdl:" can use an international country code instead of the database source as the suffix or omit the suffix (for example CREW-NL or just CREW).
 * The user can specify the "nic-hdl:" when the object is created or can use the "AUTO-n&lt;optional letter Combination&gt;" construction, where n is any number greater than 0. 
 * The "nic-hdl:" attributes of the **person** and **role** objects share the same name space in the database. You cannot create a **person** and **role** using the same "nic-hdl:". The "nic-hdl:" must be unique across both object types.
-* <font color="green">Under exceptional circumstances the Database Administrator can convert a **person** object into a **role** object.</font>
 * The "abuse-mailbox:" attribute specifies the email address to which abuse complaints should be sent. When this attribute is specified no other email address should be used for abuse complaints.
 
 Here is a **role** object template:
@@ -830,7 +814,7 @@ Here is a **route** object template:
 A **route-set** object is a set of route prefixes and not a set of database **route** objects. 
 
 * The "route-set:" attribute defines the name of the set. It is an RPSL name that starts with "rs-".
-    * It defines a set of routes that can be represented by route objects or by <font color="green">route</font> address prefixes.
+    * It defines a set of routes that can be represented by route objects or by address prefixes.
     * It can be hierarchical. A hierarchical route-set name is a sequence of route-set names and AS numbers separated by colons. At least one component of such a name must be an actual route-set name (i.e. start with "rs-").
 * In the case of **route** objects, the set is populated by means of the "mbrs-by-ref:" attribute. In the case of address prefixes, the members of the set are explicitly listed in the "members:" attribute.
     * The "members:" attribute is a list of address prefixes or other route-set names.
@@ -971,18 +955,11 @@ whois –v &lt;object-type&gt;
 
 ####  2.5.1 Object Processing
 
-As a rule, the order of objects in the message is not changed. The database software processes objects one by one, starting with the first recognised object in the message. <font color="orange">It is the user's responsibility to order the objects in the message to make sure that all references can be resolved. The only exception to this is when "AUTO NIC handles" are used. These generate an automatically assigned value for the "nic-hdl:" attribute in the **person** or **role** objects. When the database software finds an object that references an "AUTO NIC handle", this object is placed on an internal queue for later processing. This is to ensure that all objects containing "AUTO NIC handle" are processed before any other object that can reference them. This internal queue is processed after the first pass through all objects in the update message.
+As a rule, the order of objects in the message is not changed. The database software processes objects one by one, starting with the first recognised object in the message. It is the user's responsibility to order the objects in the message to make sure that all references can be resolved. The only exception to this is when "AUTO NIC handles" are used. These generate an automatically assigned value for the "nic-hdl:" attribute in the **person** or **role** objects. When the database software finds an object that references an "AUTO NIC handle", this object is placed on an internal queue for later processing. This is to ensure that all objects containing "AUTO NIC handle" are processed before any other object that can reference them. This internal queue is processed after the first pass through all objects in the update message.
 
 The same process applies to organisation object names. These are specified with an "AUTO name". References can also be made from other objects in the update message to this "AUTO name".
 
 It is recommended that you avoid complex arrangements of auto generated values in a single update message. An example of a complex arrangement might be an update containing a **person** object with a "nic-hdl:" value of &lt;auto-1&gt;, a **role** object with a "nic-hdl:" value of &lt;auto-2&gt; and referencing the **person** &lt;auto-1&gt; and a **mntner** referencing the **role** object &lt;auto-2&gt;. This can be made to work with careful ordering of the objects in the update message, but the wrong ordering will cause part of this update to fail. Such an update is better done with multiple update messages. "Keep it simple" and you will avoid many potential problems.
-
-OR
-
-Since the order can matter, the database software tries to figure out the best order of execution. “AUTO-n” attributes to be referenced by other objects in the same update will be resolved, as long as the “n” number is consistent.
-
-You can avoid complex arrangements of auto generated values in a single update message by sending consecutive updates instead. An example of a complex
-arrangement might be an update containing a **person** object with "nic-hdl: auto-1”, a **role** object with "nic-hdl: auto-2” and referencing the **person** auto-1 and a **mntner** referencing the **role** object auto-2. </font>
 
 When processing each individual object, the software makes many checks including that:
 
@@ -1044,7 +1021,7 @@ delete: &lt;comment&gt;
 
 The software will only accept this request if the object in the message is exactly the same as the one in the database which is to be deleted. When comparing the versions, white space characters are not considered. If you query the database for an object to delete so that you get the exact copy of the object, you should make sure to use the "-B" query flag. Otherwise you will get a filtered object that will not pass the identical check. The delete operation will fail if the object to be deleted is referenced from any other object in the database.
 
-This pseudo attribute applies to one object only in an update message. It must be a part of the object in the update message that is to be deleted. It can be added at any point within the object or immediately <font color="green"> before or </font>after the object. <font color="green">It cannot be placed before the object (this would result in the object not being recognised by the database software as a valid type).</font>
+This pseudo attribute applies to one object only in an update message. It must be a part of the object in the update message that is to be deleted. It can be added at any point within the object or immediately before or after the object.
 
 Objects can still be deleted from the database even if they are not syntactically correct. This allows for old objects to be deleted long after the syntax has been changed.
 
@@ -1132,7 +1109,7 @@ The subject line may have a special meaning in email update messages by using ke
 * HOWTO
 
 
-One way to use a keyword is to put it in the subject line of the email message, with NO other words present. If any other word is found that is not one of the available keywords (for example, Subject: NEW objects) then none of the words will be treated as keywords. All words in the subject line will be reported in the acknowledgement reply as invalid keywords, along with a WARNING message. In this context it is impossible <font color="green">for dbupdate</font> to know if a word is meant as a keyword or just part of a comment.
+One way to use a keyword is to put it in the subject line of the email message, with NO other words present. If any other word is found that is not one of the available keywords (for example, Subject: NEW objects) then none of the words will be treated as keywords. All words in the subject line will be reported in the acknowledgement reply as invalid keywords, along with a WARNING message. In this context it is impossible for dbupdate to know if a word is meant as a keyword or just part of a comment.
 
 Many users often include their own references in the subject line. Using this method it is not possible to also use a keyword. The user's references are reported in the WARNING message as invalid keywords.
 
@@ -1328,8 +1305,8 @@ Authentication methods currently supported include the following:
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | MD5-PW | This scheme is based on the MD5 hash algorithm. The authentication information stored in the database is a passphrase encrypted using md5 -crypt algorithm, which is a concatenation of the "$1$" string, the salt, and the 128-bit hash output. Because it uses an 8-character salt and an almost unlimited pass phrase and the encrypted hash is hidden from public view, this scheme is quite stable against dictionary attacks . However, since the encrypted form is exposed it cannot be considered as a strong form of authentication. Authentication information is supplied using a "password:"   pseudo-attribute . The value of this attribute is a clear-text pass phrase. It can appear anywhere in the body of the message, but not within mail headers. Line continuation is not allowed for this attribute. The attribute and the passphrase should fit on one line. If you split the passphrase across multiple lines this will be treated as a syntax error. Example:
 auth: MD5 $1$abcd4321$HyM/GVhPqXkkIMVerxxQ3z|
-| PGPKEY  | This is a strong form of authentication. The authentication information is a signature identity pointing to a public key certificate, which is stored in a separate   **key-cert** object. The user is authenticated if the transaction is signed by the corresponding private key. The RIPE NCC does not guarantee that a key belongs to any specific entity. Anyone can supply any public keys with any ownership information to the RIPE Database. These keys can be used to protect other objects by checking that the update comes from a user who knows the corresponding secret key. <font color="green">The database software does not check expiry dates of the key or dates when an update message was signed.
-Example: auth: PGPKEY-1380K9U1</font>|
+| PGPKEY  | This is a strong form of authentication. The authentication information is a signature identity pointing to a public key certificate, which is stored in a separate   **key-cert** object. The user is authenticated if the transaction is signed by the corresponding private key. The RIPE NCC does not guarantee that a key belongs to any specific entity. Anyone can supply any public keys with any ownership information to the RIPE Database. These keys can be used to protect other objects by checking that the update comes from a user who knows the corresponding secret key. The database software does check the expiry date of the key and when an update message was signed.
+Example: auth: PGPKEY-1380K9U1|
 | X.509   | This is another strong form of authentication. It works in the same way as PGPKEY, but uses an X.509 certificate as the key. This is currently not supported with webupdates or syncupdates.  |
 | SSO   | This scheme is based on the RIPE NCC Access single sign-on (SSO) system. It takes the management of these authentication tokens outside of the RIPE Database. To use this, you must first create an account with RIPE NCC Access from the sign-in page: https://access.ripe.net/ The SSO system was introduced so that when somebody signs in once with RIPE NCC Access, that account authorises them to use certain services that support it, such as Webupdates or Syncupdates. The credential in the mntner object uses the keyword SSO followed by the email address used to sign in to your SSO account. You can add many different SSO credentials to a mntner object and add your SSO credential to as many mntner objects as you wish (providing you have authority to update each mntner object using existing authorisation). If you change your email address in your RIPE NCC Access preferences, this will immediately be reflected in any mntner objects where this access account is referenced. Authentication using SSO can be done from Webupdates and Syncupdates. You can sign into your RIPE NCC Access account directly from Webupdates and Syncupdates. Using any of the update features from these pages you can create, modify and delete objects. No password is needed - you are already authenticated to make these updates, assuming the object(s) are maintained by one of your SSO mntner objects. Example: auth: SSO dbtest@ripe.net|
 
@@ -1375,30 +1352,6 @@ This parent authorisation is only required when an object is created. It is in a
 
 The **route** object creation must satisfy several authentication criteria. <font color="green">This is described in a flow chart [29](http://www.ripe.net/data-tools/db/faq/faq-route-object/what-are-the-authorisation-rules-for-route-object-creation) The same sequence applies to route6 and inet6num objects.</font>
 
-<font color="orange">
-It must match the authentication specified in the **aut-num** object referenced by the "origin:" attribute of the **route** object submission.
-
-It must also match the authentication specified in an exact match **route** object, if one exists. If none exist, it must use a **route** object with the longest prefix match that is less specific than the prefix of the **route** object submission, if one exists. If no applicable **route** object exists, then an exact match **inetnum** will be used, if one exists. If one does not exist it must use the most specific **inetnum** object that is less specific than the **route** object submission. The order that these checks are tried is fixed and as stated here. The sequence is only followed until an appropriate object is found. As soon as one of the appropriate objects is found, the authentication from that object will be used. If it fails that authentication it will not continue the sequence.
-
-Finally, the creation must be authorised by the **mntner** of the **route** object itself referenced by the "mnt-by:" attribute of the **route** object submission.
-
-For the checks against the **aut-num**, **route** and **inetnum** objects, authorisation shall be tested using the **mntner** object referenced in the "mnt-routes:" attribute(s) first. If there are no "mnt-routes:" attributes, the "mnt-lower:" attributes are checked. If there are no "mnt-lower:" attributes, the "mnt-by:" attributes are used for the authorisation check. Again, the order that these checks are performed is fixed and as stated here. The sequence is only followed until an appropriate attribute is found. As soon as one of the appropriate attributes is found, the authentication from that attribute will be used. If it fails that authentication it will not continue the sequence.
-
-The same sequence applies to **route6** and **inet6num** objects.
-
-OR
-
-
-#####  2.8.6.1 Pending authentication
-
-In order to simplify the authentication of **route** and **route6**, it’s now possible to partially authenticate an update. If a **route** object contains a correct **autnum** authentication, the update will be saved internally until the same update is submitted with correct address space authentication. Some rules apply:
-* Submitting a second update with the same hierarchical authorisation as the first update will result in an error since it doesn’t complete the updating of the object.
-* If the update contains any errors other than missing hierarchical authorisation it will fail.
-* A pending update will only be stored for seven days
-When the first update has been stored, notifications are sent to the remaining parties that need to authorise the object. If the remaining parties fail to complete the update within seven days, all parties will be sent a notification that the update failed.
-
-</font>
-
 
 ####  2.8.7 Protection of Objects with Hierarchical Names
 
@@ -1439,14 +1392,14 @@ The **set** object must also have a "mbrs-by-ref:" attribute listing the maintai
 
 The **irt** object can be referenced in **inetnum** and **inet6num** objects. This reference is made by adding an optional "mnt-irt:" attribute to the **inet(6)num** object with the name of the **irt** object. Adding a reference to an **irt** object requires authorisation from the **irt** object. Authorisation can be approved by any of the credentials referenced in any of the "auth:" attributes of the **irt** object. The authorisation does not default to the "mnt-by:" attributes of the irt object if no suitable credential is found in the "auth:" attributes.
 
-Authorisation from the **irt** object is only required when a "mnt-irt:" attribute is added to a referencing object, either on creation or by modification. <font color="green">Deletion of the referencing object or any modification that does not add an "mnt-irt:" attribute does not require authorisation from the irt object. Removing the "mnt-irt:" attribute does not require authorisation from the irt object either.</font> The **irt** authorisation is required in addition to the authorisation of the individual object itself.
+Authorisation from the **irt** object is only required when a "mnt-irt:" attribute is added to a referencing object, either on creation or by modification. Deletion of the referencing object or any modification that does not add an "mnt-irt:" attribute does not require authorisation from the irt object. Removing the "mnt-irt:" attribute does not require authorisation from the irt object either. The **irt** authorisation is required in addition to the authorisation of the individual object itself.
 
 
 ####  2.8.11 Referencing an Organisation Object
 
 The **organisation** object can be referenced in any object. This reference is made by adding an optional "org:" attribute to the referencing object, along with the name of the **organisation** object. Adding this reference to an organisation object requires authorisation from the **organisation** object. Authorisation can be approved by any of the **mntner** objects referenced in any of the "mnt-ref:" attributes of the **organisation** object. The authorisation does not default to the "mnt-by:" attributes if no suitable maintainer is found in the "mnt-ref:" attributes.
 
-Authorisation from the **organisation** object is only required when an "org:" attribute is added to a referencing object, either on creation or by modification. This is in addition to the authorisation of the referencing object itself. <font color="green">Deletion of the referencing object or any modification that does not add an "org:" attribute (including removing an existing "org:" attribute) does not require authorisation from the organisation object.</font>
+Authorisation from the **organisation** object is only required when an "org:" attribute is added to a referencing object, either on creation or by modification. This is in addition to the authorisation of the referencing object itself. Deletion of the referencing object or any modification that does not add an "org:" attribute (including removing an existing "org:" attribute) does not require authorisation from the organisation object.
 
 
 ####  2.8.12 Reclaim Functionality
@@ -1498,7 +1451,7 @@ The **organisation** object was introduced as a way of keeping track of these se
 
 Some multinational companies may have a devolved business model with different parts of the organisation responsible for different parts of their network. In this situation additional **organisation** objects can be created. These objects can reference the main **organisation** object through their own "org:" attribute. This allows users to keep track of the entire company's data or the parts delegated to different sections of the company.
 
-Any bulk changes to data are very much simplified. Tools can be written and deployed more easily. New ideas can be rolled out quickly across an entire data set.<font color="green"> Concepts like abuse handling could be re-visited. This could be applied with a default, centralised abuse handler in the organisation object, as well as more localised, optional ones in the mntner objects or the individual objects themselves.</font>
+Any bulk changes to data are very much simplified. Tools can be written and deployed more easily. New ideas can be rolled out quickly across an entire data set.
 
 
 ###  3.3 Abuse Handling
@@ -1508,7 +1461,7 @@ general abuse complaints.
 
 General abuse is handled by the **organisation** object. This should reference an abuse handling role object with an “abuse-c:” attribute. This **role** object must include an "abuse-mailbox:" attribute. All address space, represented by inet(6)num objects, should reference an organisation object either directly or via its less specific objects. This reference defines the abuse handler for this address space and all the more specific address space to that specified by the inet(6)num object which references the organisation object.
 
-There is a query flag ("-c") which will return the **irt** object, if one exists, for any specified **inet(6)num** object. There is also another query flag ("-b") that will find the <font color="orange">indirectly **role** OR **irl**</font> object, extract the "abuse-mailbox:" attribute and return brief details including the <font color="orange">contact address from the **irt** object and others OR email address from the **role** objects.</font> For details of how these queries work see Section <font color="red">should we create a new section for this documentation? [2.4, 'Abuse Contacts'](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual).</font>
+There is a query flag ("-c") which will return the **irt** object, if one exists, for any specified **inet(6)num** object. There is also another query flag ("-b") that will find the indirectly referenced **role** object, extract the "abuse-mailbox:" attribute and return brief details including the email address from the **role** objects. For details of how these queries work see Section <font color="red">should we create a new section for this documentation? [2.4, 'Abuse Contacts'](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual).</font>
 
 ##  Appendices
 ### A1. Object Attributes
@@ -1546,7 +1499,8 @@ Table A1. Commonly used attribute types
 | &lt; org-id &gt;               | The 'ORG-' string followed by 2 to 4 characters, followed by  up to 5 digits followed by a source specification. The first  digit must not be "0". Source specification starts with "-"  followed by source name up to 9-character length.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | &lt; organisation-name &gt;    | Is a list of a most 12 words, each at most 64 characters in  length. Words can contain alphanumeric characters,  asterisk, plus and minus signs, forward slash and  backslash, dash, quotes, at sign, commas, dots,  underscores, ampersands, exclamation marks, colons,  semicolons, brackets and square brackets.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | &lt; peering &gt;              | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2822.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| &lt; person-name &gt;          | Is a list of at least 2 words separated by white space. The  first and the last word cannot end with dot (".").  <font color="green"> The  following words are not allowed: "Dr", "Prof", "Mv", "Ms",  "Mr", no matter whether they end with dot (".") or not </font>. A  word is made up of letters, digits, the character  underscore "_", and the character hyphen "-"; the first  character of a name must be a letter, and the last  character of a name must be a letter or a digit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| &lt; person-name &gt;          | It should contain 2 to 10 words. Each word consists of letters, digits or the following symbols:
+                    .`'_- The first word should begin with a letter. At least one other word should also begin with a letter. Max 64 characters can be used in each word.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | &lt; protocol &gt;             | Please see [RFC 2622](ftp://ftp.ripe.net/rfc/rfc2822.txt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | &lt; registry-name &gt;        | RIPE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | &lt;  role-name &gt;           | Is a list of at most 12 words, each at most 64 characters in length. Words can contain alphanumeric characters, asterisk, plus and minus signs, forward slash and backslash, dash, quotes, at sign, commas, dots, underscores, ampersands, exclamation marks, colons, semicolons, brackets and square brackets.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -1613,12 +1567,10 @@ References a poem author.
 The autonomous system number.
 
 **certif:** &lt;public-key&gt; 
-Contains the public key for a PGP key or an X509 certificate. The value of the public key <font color="orange">should be supplied either using multiple "certif:" attributes, or in one "certif:" attribute. In the first case, this is easily done by exporting the key from your local key ring in ASCII armored format or the certificate from your browser and prepending each line of the key with the string "certif:". In the second case, line continuation should be used to represent the key. All the lines of the exported key must be included. 
-OR
+Contains the public key for a PGP key or an X509 certificate. The value of the public key 
 exported from your local key ring in ASCII-armored
 format or the certificate from your browser. All the lines of the
 exported key must be included.
-</font>
 For PGP, this includes the begin and end markers and the empty line which separates the header from the key body. For X509 certificates, this includes the BEGIN CERTIFICATE and END CERTIFICATE lines.
 
 **changed:** &lt;email&gt;  [&lt;date&gt;]
@@ -1783,7 +1735,7 @@ Specifies the identifier of a registered **mntner** object used for reverse doma
 May appear in an **inetnum** or **inet6num** object. It references an existing **irt** object representing CSIRT that handles security incidents or general abuse handler for the address space specified by the **inetnum** or **inet6num** object.
 
 **mnt-lower:** list of &lt;mntner-name&gt;
-Specifies the identifier of a registered **mntner** object used for hierarchical authorisation. Controls creation of objects one level more specific in the hierarchy of an object type (only for **inetnum**, **inet6num**, **as-block**, **aut-num**, **route**, **route6** <font color="green">or domain</font> objects). The authentication method of this **mntner** object will then be used to authorise the creation of any object one level more specific to the object that contains the "mnt-lower:" attribute.
+Specifies the identifier of a registered **mntner** object used for hierarchical authorisation. Controls creation of objects one level more specific in the hierarchy of an object type (only for **inetnum**, **inet6num**, **as-block**, **route**, **route6**, and **sets** objects). The authentication method of this **mntner** object will then be used to authorise the creation of any object one level more specific to the object that contains the "mnt-lower:" attribute.
 
 **mnt-nfy:** &lt;e-mail&gt;
 Specifies the email address to be notified when an object protected by a **mntner** is successfully updated.
@@ -1940,7 +1892,10 @@ Defines a peering that can be used for importing or exporting routes. Please ref
 Specifies the name of the peering-set. Please refer to [RFC-2622] (ftp://ftp.ripe.net/rfc/rfc2622.txt) for more information.
 
 **person:** &lt;person-name&gt;
-Specifies the full name of an administrative, technical or zone contact person for other objects in the database. <font color="green">&lt;Person name&gt; cannot contain titles such as "Dr.", "Prof.", "MV", "Ms.", "Mr.", etc. It is composed of alphabetic characters.</font>
+It should contain 2 to 10 words. Each word consists of letters, digits or the following symbols: .`'_-
+The first word should begin with a letter. At least one other word should also begin with a letter.
+Max 64 characters can be used in each word.
+
 
 **peering-set:** &lt;object-name&gt;
 Specifies the name of the peering-set. Please refer to RFC-2622] (ftp://ftp.ripe.net/rfc/rfc2622.txt) for more information.
@@ -1956,28 +1911,6 @@ Specifies the poem type.
 
 **ref-nfy:** &lt;e-mail&gt;
 Specifies the email address to be notified when a reference to the **organisation** object is added or removed. An email address as defined in [RFC 2822](ftp://ftp.ripe.net/rfc/rfc2822.txt).
-
-<font color="green">
-**refer:** &lt;type&gt; &lt;hostname&gt; [&lt;port&gt;]
-Specifies the referral type, hostname and port that the server should use to redirect the query when using referral mechanism for lookups for forward domain objects. For more information, please see <font color=red>ADD CORRECT REFERENCE: Section 2.7, 'Referral Mechanism for Domains' of the "RIPE Database Query Reference Manual" [18]</font>. This attribute may be deprecated when forward domains are removed from the RIPE Database.
-
-&lt;type&gt; specifies the type of referral to be used. Please see the table below for the supported types.
-&lt;hostname&gt; is the DNS name or &lt;ipv4 address&gt; of the referred host.
-&lt;port&gt; is an integer specifying TCP port number at which queries are accepted by the referred host. If &lt;port&gt; is omitted, the default number of 43 is used.
-
-
-
-| **Referral type** | **Description**                                                                                                                                                                                                                                                                                                                                                      |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SIMPLE            | Only lookup key (domain name) is passed to the referred server. All query flags are stripped.                                                                                                                                                                                                                                                                                         |
-| INTERNIC          | Same as SIMPLE. Supported for backward compatibility.                                                                                                                                                                                                                                                                                                                                 |
-| RIPE              | Used when the referred server understands RIPE query flags. With this type of referral, all query flags specified by the client will be passed to the referred server unmodified.                                                                                                                                                                                                     |
-| CLIENTADDRESS     | Same as SIMPLE, but the server will add "-V  &lt;version&gt;, &lt;ipv4 address&gt;" flag to the query, where  &lt;version&gt; is the version number of the server and  &lt;ipv4 address&gt; is the IP address of the client that  made this query. This referral type allows the  referred host to perform accounting and implement  an access control for clients using the RIPE Database server as a proxy. |
-
-</font>
-
-
-
 
 **referral-by:** &lt;mntner-name&gt;
 This attribute is required in the **mntner** object. It is not currently used by the database software.
@@ -2032,11 +1965,10 @@ Specifies the status of the address range represented by **inetnum** or **inet6n
 
 * SUB-ALLOCATED PA
 
-* <font color="green">EARLY-REGISTRATION</font>
-
 * NOT-SET
 
-Please refer to the RIPE Document [IPv4 Address Allocation and Assignment Policies in the RIPE NCC Service Region](https://www.ripe.net/ripe/docs/ipv4-policies) for further information. Please refer to <font color="red">OBSOLETE LINK [10](https://www.ripe.net/ripe/docs/ripe-239)</font> regarding usage of the LIR-PARTITIONED status value.
+Please refer to the RIPE Document [IPv4 Address Allocation and Assignment Policies in the RIPE NCC Service Region](https://www.ripe.net/ripe/docs/ipv4-policies) for further information.
+
 For **inet6num**, &lt;status&gt; can have one of the following values:
 
 * ALLOCATED-BY-RIR - For allocations made by an RIR to an LIR.
@@ -2051,12 +1983,7 @@ For **inet6num**, &lt;status&gt; can have one of the following values:
 
 * ASSIGNED ANYCAST
 
-Please refer to <font color="red">OBSOLETE LINK  [13](https://www.ripe.net/publications/docs/ripe-243)</font> regarding usage of the status value for **inet6num** objects.
-
-<font color="green">
-**sub-dom:** ripe-list of &lt;domain-name&gt;
-Specifies list of sub-domains of a domain. Domain names are relative to the domain represented by the **domain** object that contains this attribute.
-</font>
+Please refer to [13](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-inet6num-object) regarding usage of the status value for **inet6num** objects.
 
 **tech-c:** &lt;nic-handle&gt;
 References a technical contact.
