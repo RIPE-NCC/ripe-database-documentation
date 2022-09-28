@@ -1,15 +1,15 @@
 # Syncupdates
 
-Syncupdates enables updates to the RIPE Database synchronously, meaning, the result is returned immediately to the user. It is intended for use by applications that need to update the RIPE Database and are able to process the result afterwards. An interface can easily be created in any language that supports the HTTP protocol. Syncupdates supports HTTP GET and POST methods (both multipart and URL-encoded formats). It can also be used directly via a web form.
+[Syncupdates](https://apps.db.ripe.net/db-web-ui/syncupdates) enables updates to the RIPE Database synchronously, meaning, the result is returned immediately to the user. It is intended for use by applications that need to update the RIPE Database and are able to process the result afterwards. An interface can easily be created in any language that supports the HTTP protocol. Syncupdates supports HTTP GET and POST methods (both multipart and URL-encoded formats). It can also be used directly via a web form.
 
 Syncupdates accepts the following parameters (query params for GET, form params for POST):
 
 
-* **DATA** <br> 
+* **DATA** &lt;br&gt; 
 This variable should contain the actual update message.
-* **NEW** <br> 
+* **NEW** &lt;br&gt; 
 This variable can be either yes or no. If it contains yes, the update will fail if it contains changes to existing objects.
-* **HELP** <br> 
+* **HELP** &lt;br&gt; 
 This variable can be either yes or no. If it contains yes, the help message of the whois server will be given as the output.
 
 Multiple objects are accepted in the body, and any required passwords must also be supplied in the body using the “password:” attribute.
