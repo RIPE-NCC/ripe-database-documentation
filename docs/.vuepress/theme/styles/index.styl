@@ -346,3 +346,14 @@ $sugLeft = $mobileSidebarWidth + 24
       margin 0.85rem -1.5rem
       border-radius 0
 
+@media print {
+   .sidebar,.navbar,.page-nav,.page-edit,.back-to-top,.theme-container ripe-header {display: none;}
+   .theme-default-content:not(.custom)>:first-child{padding-top: 0px;}
+   .content__default:not(.custom)>h1, 
+   .content__default:not(.custom)>h2, 
+   .content__default:not(.custom)>h3, 
+   .content__default:not(.custom)>h4, 
+   .content__default:not(.custom)>h5, 
+   .content__default:not(.custom)>h6{margin-top: 0; padding-top:2rem;}
+}
+
