@@ -1,6 +1,6 @@
 # Abuse Contacts
 
-There are many attributes in objects within the RIPE Database containing e-mail addresses. These addresses cover a number of functions. A growing concern to engineers and administrators that maintain networks is receiving spam and abuse complaints that are sent to every e-mail address displayed. This will get the message to the right person,but it also causes more spam and abuse to people who are not responsible for solvingthese problems.
+There are many attributes in objects within the RIPE Database containing e-mail addresses. These addresses cover a number of functions. A growing concern to engineers and administrators that maintain networks is receiving spam and abuse complaints that are sent to every e-mail address displayed. This will get the message to the right person,but it also causes more spam and abuse to people who are not responsible for solving these problems.
 
 To solve this issue, an “abuse-c:" attribute is available in the **organisation** object. This optional attribute references a role object which is required to contain an “abuse-mailbox:” attribute. Any Internet resource object (**inetnum**, **inet6num**, **aut-num**) that references this **organisation** object is then “covered” by this abuse email address.
 

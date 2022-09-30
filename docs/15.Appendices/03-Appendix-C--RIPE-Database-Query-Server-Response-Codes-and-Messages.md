@@ -27,16 +27,16 @@ No entries were found in the selected source(s).
 Unknown source was supplied as argument to the “-s” query ag. Use “-q sources” for a list of available sources.
 
 **%ERROR:103: unknown object type** 
-Unknown object type is specied as an argument to the “-T” query flag.
+Unknown object type is specified as an argument to the “-T” query flag.
 
 **%ERROR:104: unknown attribute**
-Unknown argument is specied to the inverse query ag (“-I”). See [Queryingthe RIPE Database](../11.How-to-Query-the-RIPE-Database/README.md) for more information.
+Unknown argument is specified to the inverse query flag (“-I”). See [Queryingthe RIPE Database](../11.How-to-Query-the-RIPE-Database/README.md#how-to-query-the-ripe-database) for more information.
 
 **%ERROR:105: attribute is not searchable**
-The argument specified for the inverse query flag is not a searchable attribute. See [Queryingthe RIPE Database](../11.How-to-Query-the-RIPE-Database/README.md) for more information.
+The argument specified for the inverse query flag is not a searchable attribute. See [Queryingthe RIPE Database](../11.How-to-Query-the-RIPE-Database/README.md#how-to-query-the-ripe-database) for more information.
 
 **%ERROR:106: no query argument specified**
-No query argument has been specied in the query.
+No query argument has been specified in the query.
 
 **%ERROR:107: input line too long**
 Input exceeds the maximum line length.
@@ -60,13 +60,13 @@ Query flag that does not exist was given. Use the help query to see the valid op
 Search key doesn't match any known query types.
 
 **%ERROR:115: invalid search key**
-Search key entered is not valid for the specied object type(s).
+Search key entered is not valid for the specified object type(s).
 
 **%ERROR:116: unsupported query**
 Versions are not supported for PERSON/ROLE objects.
 
 **%ERROR:117: version cannot exceed X for this object**
-Versions are numbers greater or equal to 1 but cannot exceed the object's current versionnumber.
+Versions are numbers greater or equal to 1 but cannot exceed the object's current version number.
 
 
 ## Access Errors
@@ -75,10 +75,10 @@ Versions are numbers greater or equal to 1 but cannot exceed the object's curren
 Access from the host has been temporarily or permanently denied because of excessive querying. You should [contact a customer service representative](https://www.ripe.net/contact-form?topic=ripe_dbm) to discuss this problem.
 
 **%ERROR:202: access control limit reached**
-Limit of returned objects has been reached. The connection is terminated. Continued attempts to excessively query the database will result in permanent denial of service. See section [Access Control for Queries](../13.Types-of-Queries/12-Access-Control-for-Queries.md) for more information.
+Limit of returned objects has been reached. The connection is terminated. Continued attempts to excessively query the database will result in permanent denial of service. See section [Access Control for Queries](../13.Types-of-Queries/12-Access-Control-for-Queries.md#access-control-for-queries) for more information.
 
 **%ERROR:203: address passing not allowed** 
-The host is not registered as a proxy and is not allowed to pass addresses on the query line (“-V” ag). See section [Access Control for Queries](../13.Types-of-Queries/12-Access-Control-for-Queries.md) for more information.
+The host is not registered as a proxy and is not allowed to pass addresses on the query line (“-V” ag). See section [Access Control for Queries](../13.Types-of-Queries/12-Access-Control-for-Queries.md#access-control-for-queries) for more information.
 
 
 ## Connection Errors
@@ -113,5 +113,5 @@ This happens when the requested range or part of it is outside the serial number
 **%WARNING:901: duplicate IP ags passed** 
 More than one IP flag (-x, -M, -m, -L, -l, -c, or -b) was passed to the server. Only the last one in the list of query flags will be used for this query.
 
-**%WARNING:902: useless IP ag passed**
+**%WARNING:902: useless IP flag passed**
 An IP flag (-x, -M, -m, -L, -l, -c, or -b) was passed to the server when query did not include an IP key as the argument.
