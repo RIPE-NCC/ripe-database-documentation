@@ -2,7 +2,7 @@
 
 In [RPSL](../04.RPSL-Object-Types/README.md), an object can be a member of a set object in two ways.
 
-* You can list objects in a “members:” attribute in the set object. This is the kind of member relationship present in <font color="red">MIGUEL Notes: Broken lin[Representation of IP Routing Policies in a Routing Registry](https://www.ripe.net/docs/ripe-181.html).</font>
+* You can list objects in a “members:” attribute in the set object. This is the kind of member relationship present in [Representation of IP Routing Policies in a Routing Registry](https://www.ripe.net/docs/ripe-181.html).
 
 * You can use the “member-of:” attribute. You can use this in **route**, **route6**, **aut-num** and **inet-rtr** object types. The value of the “member-of:” attribute identies a set objectthat this object wants to be a member of.
 
