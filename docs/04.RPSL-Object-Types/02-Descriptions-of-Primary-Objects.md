@@ -16,12 +16,12 @@
 
 ## Description of the AUT-NUM Object
 
-Below is the object template for the **aut-num** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘optional*'.
+Below is the object template for the **aut-num** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘mandatory'.
 
     Attribute Name   Presence   Repeat     Indexed 
     aut-num:         mandatory  single     primary/lookup
     as-name:         mandatory  single    
-    descr:           mandatory  multiple  
+    descr:           optional   multiple  
     member-of:       optional   multiple   inverse
     import-via:      optional   multiple  
     import:          optional   multiple  
@@ -32,7 +32,7 @@ Below is the object template for the **aut-num** object. It lists all possible a
     default:         optional   multiple  
     mp-default:      optional   multiple  
     remarks:         optional   multiple  
-    org:             optional*  single     inverse
+    org:             optional   single     inverse
     sponsoring-org:  optional   single
     admin-c:         mandatory  multiple   inverse
     tech-c:          mandatory  multiple   inverse
@@ -85,7 +85,7 @@ Below is the object template for the **domain** object. It lists all possible at
 
     Attribute Name    Presence       Repeat       Indexed
     domain:           mandatory      single       primary/lookup
-    descr:            mandatory      multiple
+    descr:            optional       multiple
     org:              optional       multiple     inverse
     admin-c:          mandatory      multiple     inverse
     tech-c:           mandatory      multiple     inverse
@@ -132,23 +132,23 @@ Reverse DNS zones in the RIPE Database do not allow child objects. From a DNS vi
 
 ## Description of the INET6NUM Object
 
-Below is the object template for the **inet6num** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘optional*'.
+Below is the object template for the **inet6num** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘mandatory'.
 
     Attribute Name    Presence    Repeat     Indexed
     inet6num:         mandatory   single     primary/lookup key
     netname:          mandatory   single     lookup key
-    descr:            mandatory   multiple  
+    descr:            optional    multiple  
     country:          mandatory   multiple  
     geofeed:          optional    single
     geoloc:           optional    single    
     language:         optional    multiple  
-    org:              optional*   single     inverse key
+    org:              optional    single     inverse key
     sponsoring-org:   optional    single    
     admin-c:          mandatory   multiple   inverse key
     tech-c:           mandatory   multiple   inverse key
     abuse-c:          optional    single     inverse key
     status:           mandatory   single    
-    assignment-size:  optional*   single    
+    assignment-size:  optional    single    
     remarks:          optional    multiple  
     notify:           optional    multiple   inverse key
     mnt-by:           mandatory   multiple   inverse key
@@ -215,7 +215,7 @@ With the **inet6num** object there is no equivalent to the **inetnum** ‘LIR-PA
 
 ## Description of the INETNUM Object
 
-Below is the object template for the **inetnum** object. It lists all possible attributes allowed in this object type. Required attributes are shown as ‘optional*'.
+Below is the object template for the **inetnum** object. It lists all possible attributes allowed in this object type. Required attributes are shown as ‘mandatory'.
 
     Attribute Name    Presence   Repeat     Indexed
     inetnum:          mandatory  single     primary/lookup key
@@ -225,7 +225,7 @@ Below is the object template for the **inetnum** object. It lists all possible a
     geofeed:          optional   single
     geoloc:           optional   single    
     language:         optional   multiple  
-    org:              optional*  single     inverse key
+    org:              optional   single     inverse key
     sponsoring-org:   optional   single    
     admin-c:          mandatory  multiple   inverse key
     tech-c:           mandatory  multiple   inverse key
@@ -309,7 +309,7 @@ The range notation expresses addresses as 32-bit whole numbers in dotted quad no
 Below is the object template for the **route** object. It lists all possible attributes that are allowed in this object type.
 
     Attribute Name  Presence   Repeat     Indexed
-    route:          mandatory  single     primary/lookup key
+    route:          optional   single     primary/lookup key
     descr:          mandatory  multiple  
     origin:         mandatory  single     primary/inverse key
     pingable:       optional   multiple  
@@ -369,7 +369,7 @@ Below is the object template for the **route6** object. It lists all possible at
 
     Attribute Name  Presence   Repeat     Indexed
     route6:         mandatory  single     primary/lookup key
-    descr:          mandatory  multiple  
+    descr:          optional   multiple  
     origin:         mandatory  single     primary/inverse key
     pingable:       optional   multiple  
     ping-hdl:       optional   multiple   inverse key
@@ -455,7 +455,7 @@ Below is the object template for the **as-set** object. It lists all possible at
 
     Attribute Name  Presence   Repeat     Indexed
     as-set:         mandatory  single     primary/lookup key
-    descr:          mandatory  multiple
+    descr:          optional   multiple
     members:        optional   multiple  
     mbrs-by-ref:    optional   multiple   inverse key
     remarks:        optional   multiple  
@@ -485,11 +485,11 @@ To specify policies, it is often useful to define sets of objects. An **as-set**
 
 ## Description of the FILTER-SET Object
 
-Below is the object template for the **filter-set** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘optional*'.
+Below is the object template for the **filter-set** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘mandatory'.
 
     Attribute Name  Presence   Repeat     Indexed
     filter-set:     mandatory  single     primary/lookup key
-    descr:          mandatory  multiple
+    descr:          optional   multiple
     filter:         optional   single  
     mp-filter:      optional   single     
     remarks:        optional   multiple  
@@ -528,24 +528,24 @@ Sets can be built with hierarchical names. Unlike other set objects **the filter
 Below is the object template for the **inet-rtr** object. It lists all possible attributes that are allowed in this object type.
 
     Attribute Name  Presence     Repeat       Indexed
-    inet-rtr:       [mandatory]  [single]     [primary/lookup key]
-    descr:          [mandatory]  [multiple]   [ ]
-    alias:          [optional]   [multiple]   [ ]
-    local-as:       [mandatory]  [single]     [inverse key]
-    ifaddr:         [mandatory]  [multiple]   [inverse key]
-    interface:      [optional]   [multiple]   [ ]
-    peer:           [optional]   [multiple]   [ ]
-    mp-peer:        [optional]   [multiple]   [ ]
-    member-of:      [optional]   [multiple]   [inverse key]
-    remarks:        [optional]   [multiple]   [ ]
-    org:            [optional]   [multiple]   [inverse key]
-    admin-c:        [mandatory]  [multiple]   [inverse key]
-    tech-c:         [mandatory]  [multiple]   [inverse key]
-    notify:         [optional]   [multiple]   [inverse key]
-    mnt-by:         [mandatory]  [multiple]   [inverse key]
-    created:        [generated]  [single]     [ ]
-    last-modified:  [generated]  [single]     [ ]
-    source:         [mandatory]  [single]     [ ]
+    inet-rtr:       mandatory    single       primary/lookup key
+    descr:          optional     multiple  
+    alias:          optional     multiple   
+    local-as:       mandatory    single       inverse key
+    ifaddr:         mandatory    multiple     inverse key
+    interface:      optional     multiple   
+    peer:           optional     multiple   
+    mp-peer:        optional     multiple   
+    member-of:      optional     multiple     inverse key
+    remarks:        optional     multiple   
+    org:            optional     multiple     inverse key
+    admin-c:        mandatory    multiple     inverse key
+    tech-c:         mandatory    multiple     inverse key
+    notify:         optional     multiple     inverse key
+    mnt-by:         mandatory    multiple     inverse key
+    created:        generated    single     
+    last-modified:  generated    single     
+    source:         mandatory    single     
 
 An **inet-rtr** object specifies a router and its peering protocols with other routers. Canonical DNS name aliases can be set up as well as specifying which AS Number owns/operates the router.
 
@@ -569,13 +569,13 @@ An **inet-rtr** object specifies a router and its peering protocols with other r
 
 ## Description of the PEERING-SET Object
 
-Below is the object template for the **peering-set** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘optional*'.
+Below is the object template for the **peering-set** object. It lists all possible attributes that are allowed in this object type. Required attributes are shown as ‘mandatory'.
 
     Attribute  Name  Presence   Repeat     Indexed 
     peering-set:     mandatory  single     primary/lookup key
-    descr:           mandatory  multiple
-    peering:         optional*  single  
-    mp-peering:      optional*  single
+    descr:           optional   multiple
+    peering:         optional   multiple  
+    mp-peering:      optional   multiple
     remarks:         optional   multiple  
     org:             optional   multiple   inverse key
     tech-c:          mandatory  multiple   inverse key
@@ -610,7 +610,7 @@ Below is the object template for the **route-set** object. It lists all possible
 
     Attribute Name  Presence   Repeat     Indexed
     route-set:      mandatory  single     primary/lookup key
-    descr:          mandatory  multiple
+    descr:          optional   multiple
     members:        optional   multiple  
     mp-members:     optional   multiple  
     mbrs-by-ref:    optional   multiple   inverse key
@@ -647,7 +647,7 @@ Below is the object template for the **rtr-set** object. It lists all possible a
 
     Attribute Name  Presence   Repeat     Indexed
     rtr-set:        mandatory  single     primary/lookup key
-    descr:          mandatory  multiple
+    descr:          optional   multiple
     members:        optional   multiple  
     mp-members:     optional   multiple  
     mbrs-by-ref:    optional   multiple   inverse key
