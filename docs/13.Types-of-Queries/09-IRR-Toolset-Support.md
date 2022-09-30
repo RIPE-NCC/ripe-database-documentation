@@ -15,4 +15,4 @@ The RIPE Database server does not support this and it is up to the client to per
 * Return **route** and **route6** objects that exactly match a specified prefix - whois –BGxTroute,route6 193.0.0.0/21
 * Return **route** and **route6** objects that exactly match a specified prefix (as above), but return only the “route:” or “route6:” attributes prefix - whois –KxTroute,route6 193.0.0.0/21
 
-There are details of query support for tools in the "[Tables of Query Types Supported by the RIPE Database](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual)" found in the RIPE Database Query Reference Manual.
+See [Table 4: Query Support For Tools](../14.Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#table-4-query-support-for-tools)

@@ -1,0 +1,9 @@
+# Getting All the Members of Set Objects
+
+In [RPSL](../04.RPSL-Object-Types/README.md#rpsl-object-types), an object can be a member of a set object in two ways.
+
+* You can list objects in a “members:” attribute in the set object.
+
+* You can use the “member-of:” attribute. You can use this in **route**, **route6**, **aut-num** and **inet-rtr** object types. The value of the “member-of:” attribute identifies a set object that this object wants to be a member of.
+
+However, just specifying “member-of:” is not enough. The referenced set object must also have a “mbrs-by-ref:” attribute. This lists the maintainer of the object that wants to be a member of the set. This means that the set owner must validate the membership claim of an object with a “member-of:” attribute. It does this by matching the “mnt-by” line of the object with one of the maintainers in the “mbrs-by-ref:” attributes of the **set** object.
