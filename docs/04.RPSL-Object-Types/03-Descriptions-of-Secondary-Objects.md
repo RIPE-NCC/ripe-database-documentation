@@ -339,7 +339,7 @@ Below is the object template for the **poetic-form** object. It lists all possib
     admin-c:        mandatory  multiple   inverse key
     remarks:        optional   multiple  
     notify:         optional   multiple   inverse key
-    mnt-by:         mandatory  multiple   inverse key
+    mnt-by:         mandatory  single     inverse key
     created:        generated  single
     last-modified:  generated  single
     source:         mandatory  single  
@@ -350,8 +350,7 @@ A **poetic-form** object defines the supported poem types. A new ‘poetic form'
 
 * **"poetic-form:"** – This attribute starts with "FORM-". It is followed by the name of an internationally recognised poetic format of humorous writing. For example, limerick or haiku.
 * **“descr:”** – This attribute describes the style of the poetic form, written in the form style. For example, if it is a FORM-LIMERICK, the description will be written as a limerick.
-
-
+* **"mnt-by:"** - The poetic-form object must contain a single "mnt-by:" attribute. The object must be maintained by RIPE-DBM-MNT.
 
 
 ## Description of the ROLE Object

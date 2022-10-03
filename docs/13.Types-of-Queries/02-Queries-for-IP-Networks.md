@@ -4,6 +4,12 @@ The RIPE Database provides information about IP networks allocated or assigned w
 
 The **route** and **route6** objects use prefix notation to specify the single address or range of addresses about which they contain information.
 
+“Prefix notation” specifies ranges using two parts: the prefix and its length.
+
+* For IPv4, the prefix is a 32-bit integer written in dotted quad notation with the value of the lowest IP address in the range. The prefix length is a whole number in the range 0-32 (for example 193.0.0.0/22 specifies the range of 1024 IPv4 addresses starting with,and including, 193.0.0.0).
+* For IPv6 address ranges, the prefix length must be in the range 0-128 and is a 128-bit whole number, written in hexadecimal groups of two bytes separated by colons and with the possible use of shorthand notation for strings of consecutive 0s.
+
+
 The **inetnum** objects represent an IPv4 address space in range notation. The **inet6num** objects represent IPv6 address space in standard prefix notation.
 
 When you query the RIPE Database for information about IP addresses, you can specify query arguments with the following notations:
@@ -12,9 +18,12 @@ When you query the RIPE Database for information about IP addresses, you can spe
 * An explicit range (IPv4 only).
 * A single IP address. This is interpreted as a range of just one address. For IPv4, this can be written in range notation using the same start and end address. It could also be written as a single address. For IPv6, this has a prefix length of 128 or again it could also be written as a single address.
 
-For IPv4 address space, the query argument can be specified with either prefix or range notation. When prefix notation is used, the database software converts this into range notation before it executes the query. An information message is included in the query response showing the conversions performed. For IPv6 address space, the query argument can only be specified in prefix notation. The single IP address is accepted as a short hand notation for a prefix.
+For IPv4 address space, the query argument can be specified with either prefix or range notation. When prefix notation is used, the database software converts this into range notation. An information message is included in the query response showing the conversions performed. For IPv6 address space, the query argument can only be specified in prefix notation. The single IP address is accepted as a short hand notation for a prefix. See [Table 2: Queries For IP Networks table](../14.Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#table-2-queries-for-ip-networks-table)
 
-There is a list of queries for IP networks in the "Tables of Query Types Supported by the RIPE Database" in the [RIPE Database Query Reference Manual](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual).
+We use three terms in these types of queries. These are all defined relative to the specified(reference) range:
+* An exact match refers to a range that is identical to the reference range.
+* A more specic range is contained within the reference range and is smaller. It contains fewer IP addresses than the reference range. We also call this a sub range.
+* A less specic range contains the whole of the reference range and is bigger. It has a greater number of IP addresses than the reference range. We also call this an encompassing range.
 
 There are a number of options that describe how you can retrieve different types of information relative to a particular range of IP addresses (IPv4 or IPv6) including more and less specific queries.
 
