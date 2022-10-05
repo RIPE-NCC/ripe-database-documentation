@@ -7,6 +7,7 @@
 * [The “-q” Query Flag](#the--q-query-flag)
 * [The “-a” (“--all-sources”) Query Flag](#the--a---all-sources-query-flag)
 * [The “-s” (“--sources”) Query Flag](#the--s---sources-query-flag)
+* [The "-S" ("--resources" Query Flag)](#the--s---resources-query-flag)
 * [The “-F” (“--brief”) Query Flag](#the--f---brief-query-flag)
 * [The “--valid-syntax” and “--no-valid-syntax” Query Flags](#the---valid-syntax-and---no-valid-syntax-query-flags)
 * [The “-c” (“--irt”) Query Flag](#the--c---irt-query-flag)
@@ -51,7 +52,15 @@ The “-a” (“--all-sources”) query flag requests that the server searches 
 
 ## The “-s” (“--sources”) Query Flag
 
-The “-s” (“--sources”) query flag requests that the server searches all the sources specified and the response will include any output found from any of these sources. The available sources are the sources listed by using the “–q sources” query. The argument to this flag can be a comma-separated list of sources. They will be queried in the order specified by the user.
+The “-s” (“--sources”) query flag requests that the server searches all the sources specified and the response will include any output found from any of these sources. The available sources are the sources listed by using the “–q sources” query. The argument to this flag can be a comma-separated list of sources. They will be queried in the order specified by the user. Seach other **mirrored** databases, not only the RIPE Database.
+
+
+## The “-S” (“--resources) Query Flag
+
+The "-S" ("--resources") query flag seach in other **mirrored** databases, such as: RIPE-GRS or ARIN-GRS, not only the RIPE Database.
+    For example:
+        whois -S ARIN-GRS 193.201.1.1
+
 
 ## The “-F” (“--brief”) Query Flag
 
