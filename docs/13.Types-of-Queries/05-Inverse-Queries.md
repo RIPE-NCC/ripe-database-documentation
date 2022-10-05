@@ -1,10 +1,19 @@
 # Inverse Queries
 
-Inverse queries search for object's inverse keys that are supplied as an argument to a query. The query flag “-i” (or --inverse) must also be specified with appropriate query flag arguments. Inverse keys are defined in the templates of the RIPE Database objects. (See section ['RPSL Object Types'](../04.RPSL-Object-Types/README.md#rpsl-object-types) for more details.) These templates can be listed by querying the RIPE Database. See section ['Accessing the Object Templates'](../07.Updating-Objects-in-the-RIPE-Database/02-Accessing-the-Object-Templates.md#accessing-the-object-templates) for more details.
-
-A complete listing of the inverse query flag arguments is available in the "Tables of Query Types Supported by the RIPE Database" in the [RIPE Database Query Reference Manual](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/query-ref-manual).
+Inverse queries search for object's inverse keys that are supplied as an argument to a query. The query flag “-i” (or --inverse) must also be specified with appropriate query flag arguments. Inverse keys are defined in the templates of the RIPE Database objects. (See section ['RPSL Object Types'](../04.RPSL-Object-Types/README.md#rpsl-object-types) for more details.) These templates can be listed by querying the RIPE Database. See section ['Accessing the Object Templates'](../07.Updating-Objects-in-the-RIPE-Database/02-Accessing-the-Object-Templates.md#accessing-the-object-templates) for more details. See [Table 3: Query Flag Arguments to the “-” Query Flag and the Corresponding Inverse Keys](../14.Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#table-3-query-flag-arguments-to-the---query-flag-and-the-corresponding-inverse-keys)
 
 By performing an inverse query, the user requests all objects to be returned from the database that contain the specified query argument in the attribute(s) specified in the query flag arguments.
+
+
+| If you are looking for this...                                      | ...then type this in the query interface: |
+|---------------------------------------------------------------------|-------------------------------------------|
+| All objects where contact person (or role) is XY-RIPE               | **-i person** XY-RIPE                     |
+| All objects that are protected by XY-MNT                            | **-i mnt-by** XY-MNT                      |
+| All objects that have XY-MNT as **mnt-lower**                       | **-i mnt-lower** XY-MNT                   |
+| All objects that have XY-MNT as **mnt-routes**                      | **-i mnt-routes** XY-MNT                  |
+| All objects that have ORG-XYZ-RIPE as their **organisation** object | **-i org** ORG-XYZ-RIPE                   |
+| All **route/route6** objects that are originated by ASx             | **-i origin** ASx                         |
+
 
 **Example:**
 
