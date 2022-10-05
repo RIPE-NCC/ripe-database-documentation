@@ -4,6 +4,17 @@ Inverse queries search for object's inverse keys that are supplied as an argumen
 
 By performing an inverse query, the user requests all objects to be returned from the database that contain the specified query argument in the attribute(s) specified in the query flag arguments.
 
+
+| If you are looking for this...                                      | ...then type this in the query interface: |
+|---------------------------------------------------------------------|-------------------------------------------|
+| All objects where contact person (or role) is XY-RIPE               | **-i person** XY-RIPE                     |
+| All objects that are protected by XY-MNT                            | **-i mnt-by** XY-MNT                      |
+| All objects that have XY-MNT as **mnt-lower**                       | **-i mnt-lower** XY-MNT                   |
+| All objects that have XY-MNT as **mnt-routes**                      | **-i mnt-routes** XY-MNT                  |
+| All objects that have ORG-XYZ-RIPE as their **organisation** object | **-i org** ORG-XYZ-RIPE                   |
+| All **route/route6** objects that are originated by ASx             | **-i origin** ASx                         |
+
+
 **Example:**
 
 whois -i admin-c &lt;nic-handle&gt;
