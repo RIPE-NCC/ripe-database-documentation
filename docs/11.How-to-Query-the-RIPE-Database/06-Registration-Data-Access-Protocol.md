@@ -16,7 +16,7 @@ List of supported object types
 | entity      | PERSON, ROLE and MNTNER objects |
 
 
-The value of {key} depends on the object type.
+The value of `{key}` depends on the object type.
 
 For example:
 
