@@ -117,27 +117,10 @@ module.exports = {
             const disableSideNavBar='---\nsidebar: false\nnavbar: false\nsearch: false\n---\n'
             const initialValue = `${disableSideNavBar}# Entire Documentation (HTML)\n\n[[TOC]]\n${pageBreak}`
 
-            //Relative links with more than one dash must have just one dash
-            var dashRegex= /\-+/g;
-            //Link always has the next structure: [*](*#*). We have to remove the second * because now we are pointing to the same doc
-            var regex = /(\[.+?(?=\]\())(.+?(?=\#))(.+?(?=\)))/g;
-
-
-            const totalPages = pages
-              .reduce((acc, current) => {
-                const contentWithCorrectLinks = current.content.replace(regex, function(matchingWord,firstMatchingPart,secondMatchingPart,thirdMatchingPart){
-                  if(secondMatchingPart.startsWith("](http") || secondMatchingPart.startsWith("](https")){ //dont change absolute links
-                    return matchingWord;
-                  }
-                  var contentNoMoreThanOneDashInLinks = thirdMatchingPart.replace(dashRegex, '-')
-                  if(contentNoMoreThanOneDashInLinks.startsWith("#x509")){
-                    contentNoMoreThanOneDashInLinks = contentNoMoreThanOneDashInLinks.replace('#x509', '#x-509')
-                  }
-                  return firstMatchingPart+ '](' + contentNoMoreThanOneDashInLinks;
-                })
-                return `${acc}${contentWithCorrectLinks}\n\n${pageBreak}`
-              }, initialValue)
-            return totalPages
+            return pages
+                .reduce((acc, current) => {
+                  return `${acc}${current.content}\n\n${pageBreak}`
+                }, initialValue)
           }
         }]
       }
@@ -171,6 +154,9 @@ module.exports = {
     }]
 	],
   markdown: {
+    toc: {
+      includeLevel: [1,2],
+    },
     extendMarkdown: md => {
       md.use(require('markdown-it-html5-embed'), {
         html5embed: {

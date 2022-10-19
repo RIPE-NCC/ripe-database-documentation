@@ -25,7 +25,7 @@
   "license": "ISC",
   "devDependencies": {
     "@xiaopanda/vuepress-plugin-code-copy": "^1.0.3",
-    "vuepress": "^1.7.0",
+    "vuepress": "^1.9.0",
     "vuepress-plugin-dehydrate": "^1.1.5",
     "vuepress-plugin-flexsearch": "^0.3.0",
     "vuepress-plugin-global-variables": "^0.2.0",
