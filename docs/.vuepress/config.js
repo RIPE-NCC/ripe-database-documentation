@@ -9,71 +9,26 @@ const apiServer = process.env.API_SERVER || "stat.ripe.net/data";
 
 sidebar.forEach((item) => {
 if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Database-")) { item.title = item.title.replace("Database-", "Database "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("in-")) { item.title = item.title.replace("in-", "In "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Is-")) { item.title = item.title.replace("Is-", "Is "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Object-")) { item.title = item.title.replace("Object-", "Object "); }
-}
-})
-
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Objects-")) { item.title = item.title.replace("Objects-", "Objects "); }
+if (item !=='' && item.title.includes("Database-")) { item.title = item.title.replace("Database-", "Database "); };
+if (item !=='' && item.title.includes("in-")) { item.title = item.title.replace("in-", "In "); };
+if (item !=='' && item.title.includes("Is-")) { item.title = item.title.replace("Is-", "Is "); };
+if (item !=='' && item.title.includes("Object-")) { item.title = item.title.replace("Object-", "Object "); };
+if (item !=='' && item.title.includes("Objects-")) { item.title = item.title.replace("Objects-", "Objects "); };
+if (item !=='' && item.title.includes("of-")) { item.title = item.title.replace("of-", "of "); };
+if (item !=='' && item.title.includes("Personal-")) { item.title = item.title.replace("Personal-", "Personal "); };
+if (item !=='' && item.title.includes("Query-")) { item.title = item.title.replace("Query-", "Query "); };
+if (item !=='' && item.title.includes("Ripe")) { item.title = item.title.replace("Ripe", "RIPE"); };
+if (item !=='' && item.title.includes("RIPE-")) { item.title = item.title.replace("RIPE-", "RIPE "); };
+if (item !=='' && item.title.includes("Rpsl")) { item.title = item.title.replace("Rpsl", "RPSL"); };
+if (item !=='' && item.title.includes("the-")) { item.title = item.title.replace("the-", "the "); };
+if (item !=='' && item.title.includes("to-")) { item.title = item.title.replace("to-", "to "); };
+if (item !=='' && item.title.includes("Types-")) { item.title = item.title.replace("Types-", "Types "); };
+if (item !=='' && item.title.includes("Supported-")) { item.title = item.title.replace("Supported-", "Supported "); };
+if (item !=='' && item.title.includes("by-")) { item.title = item.title.replace("by-", "by "); };
 }
 })
 
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("of-")) { item.title = item.title.replace("of-", "of "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Personal-")) { item.title = item.title.replace("Personal-", "Personal "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Query-")) { item.title = item.title.replace("Query-", "Query "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Ripe")) { item.title = item.title.replace("Ripe", "RIPE"); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("RIPE-")) { item.title = item.title.replace("RIPE-", "RIPE "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Rpsl")) { item.title = item.title.replace("Rpsl", "RPSL"); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("the-")) { item.title = item.title.replace("the-", "the "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("to-")) { item.title = item.title.replace("to-", "to "); }
-}
-})
+
 
 module.exports = {
   title: "Docs",
@@ -118,6 +73,7 @@ module.exports = {
             const initialValue = `${disableSideNavBar}# Entire Documentation (HTML)\n\n[[TOC]]\n${pageBreak}`
 
             //Relative links with more than one dash must have just one dash
+
             var dashRegex= /\-+/g;
             //Link always has the next structure: [*](*#*). We have to remove the second * because now we are pointing to the same doc
             var regex = /(\[.+?(?=\]\())(.+?(?=\#))(.+?(?=\)))/g;
@@ -171,6 +127,9 @@ module.exports = {
     }]
 	],
   markdown: {
+    toc: {
+      includeLevel: [1,2],
+    },
     extendMarkdown: md => {
       md.use(require('markdown-it-html5-embed'), {
         html5embed: {
