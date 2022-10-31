@@ -10,7 +10,7 @@ List of supported object types
 
 | Object Type | Description                    |
 |-------------|---------------------------------|
-| autnum      | AUT-NUM and AS-SET objects      |
+| autnum      | AUT-NUM objects                 |
 | domain      | DOMAIN objects                  |
 | ip          | INETNUM and INET6NUM objects    |
 | entity      | PERSON, ROLE and MNTNER objects |
