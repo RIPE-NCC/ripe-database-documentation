@@ -73,7 +73,6 @@ module.exports = {
             const initialValue = `${disableSideNavBar}# Entire Documentation (HTML)\n\n[[TOC]]\n${pageBreak}`
 
             //Relative links with more than one dash must have just one dash
-
             var dashRegex= /\-+/g;
             //Link always has the next structure: [*](*#*). We have to remove the second * because now we are pointing to the same doc
             var regex = /(\[.+?(?=\]\())(.+?(?=\#))(.+?(?=\)))/g;
@@ -127,9 +126,6 @@ module.exports = {
     }]
 	],
   markdown: {
-    toc: {
-      includeLevel: [1,2],
-    },
     extendMarkdown: md => {
       md.use(require('markdown-it-html5-embed'), {
         html5embed: {
