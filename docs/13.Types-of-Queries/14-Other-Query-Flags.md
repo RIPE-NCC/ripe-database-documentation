@@ -7,7 +7,7 @@
 * [The “-q” Query Flag](#the--q-query-flag)
 * [The “-a” (“--all-sources”) Query Flag](#the--a---all-sources-query-flag)
 * [The “-s” (“--sources”) Query Flag](#the--s---sources-query-flag)
-* [The "-S" ("--resources" Query Flag)](#the--s---resources-query-flag)
+* [The “-S“ (“--resources" Query Flag)](#the--s---resources-query-flag)
 * [The “-F” (“--brief”) Query Flag](#the--f---brief-query-flag)
 * [The “--valid-syntax” and “--no-valid-syntax” Query Flags](#the---valid-syntax-and---no-valid-syntax-query-flags)
 * [The “-c” (“--irt”) Query Flag](#the--c---irt-query-flag)
