@@ -57,7 +57,7 @@ The “-s” (“--sources”) query flag requests that the server searches all 
 
 ## The “-S” (“--resources) Query Flag
 
-The "-S" ("--resources") query flag seach in other **mirrored** databases, such as: RIPE-GRS or ARIN-GRS, not only the RIPE Database.
+The “-S” (“--resources”) query flag seach in other **mirrored** databases, such as: RIPE-GRS or ARIN-GRS, not only the RIPE Database.
     For example:
         whois -S ARIN-GRS 193.201.1.1
 
