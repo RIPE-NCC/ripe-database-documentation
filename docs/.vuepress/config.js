@@ -7,28 +7,35 @@ const { nav, sidebar } = getConfig({addReadMeToFirstGroup: false, mixDirectories
 const apiServer = process.env.API_SERVER || "stat.ripe.net/data";
 
 
+const titleMap = new Map([
+  ["Database-", "Database "],
+  ["in-", "In "],
+  ["Is-", "Is "],
+  ["Object-", "Object "],
+  ["Objects-", "Objects "],
+  ["of-", "of "],
+  ["Personal-", "Personal "],
+  ["Query-", "Query "],
+  ["Ripe", "RIPE"],
+  ["RIPE-", "RIPE "],
+  ["Rpsl", "RPSL"],
+  ["the-", "the "],
+  ["to-", "to "],
+  ["Types-", "Types "],
+  ["Supported-", "Supported "],
+  ["by-", "by "]
+]);
+
+
 sidebar.forEach((item) => {
 if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Database-")) { item.title = item.title.replace("Database-", "Database "); };
-if (item !=='' && item.title.includes("in-")) { item.title = item.title.replace("in-", "In "); };
-if (item !=='' && item.title.includes("Is-")) { item.title = item.title.replace("Is-", "Is "); };
-if (item !=='' && item.title.includes("Object-")) { item.title = item.title.replace("Object-", "Object "); };
-if (item !=='' && item.title.includes("Objects-")) { item.title = item.title.replace("Objects-", "Objects "); };
-if (item !=='' && item.title.includes("of-")) { item.title = item.title.replace("of-", "of "); };
-if (item !=='' && item.title.includes("Personal-")) { item.title = item.title.replace("Personal-", "Personal "); };
-if (item !=='' && item.title.includes("Query-")) { item.title = item.title.replace("Query-", "Query "); };
-if (item !=='' && item.title.includes("Ripe")) { item.title = item.title.replace("Ripe", "RIPE"); };
-if (item !=='' && item.title.includes("RIPE-")) { item.title = item.title.replace("RIPE-", "RIPE "); };
-if (item !=='' && item.title.includes("Rpsl")) { item.title = item.title.replace("Rpsl", "RPSL"); };
-if (item !=='' && item.title.includes("the-")) { item.title = item.title.replace("the-", "the "); };
-if (item !=='' && item.title.includes("to-")) { item.title = item.title.replace("to-", "to "); };
-if (item !=='' && item.title.includes("Types-")) { item.title = item.title.replace("Types-", "Types "); };
-if (item !=='' && item.title.includes("Supported-")) { item.title = item.title.replace("Supported-", "Supported "); };
-if (item !=='' && item.title.includes("by-")) { item.title = item.title.replace("by-", "by "); };
+  titleMap.forEach((key, value) => {
+    if (item.title.includes(value)){
+      item.title = item.title.replace(value, key)
+    }
+  })
 }
 })
-
-
 
 module.exports = {
   title: "Docs",
