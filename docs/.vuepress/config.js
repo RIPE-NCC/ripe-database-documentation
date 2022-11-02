@@ -29,9 +29,9 @@ const titleMap = new Map([
 
 sidebar.forEach((item) => {
 if (typeof item.title !== 'undefined') {
-  titleMap.forEach((key, value) => {
-    if (item.title.includes(value)){
-      item.title = item.title.replace(value, key)
+  titleMap.forEach((value, key) => {
+    if (item.title.includes(key)){
+      item.title = item.title.replace(key, value)
     }
   })
 }
