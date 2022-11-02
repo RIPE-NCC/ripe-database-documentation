@@ -11,7 +11,7 @@
 If you are an IRT and want to create an **irt** object in the RIPE Database, you need to following:
 
 * A maintainer for that object. This should be a **mntner** object in the RIPE Database
-* A **key-cert** object in the RIPE Database and the appropiate private PGP key
+* A **key-cert** object in the RIPE Database containing a public PGP key
 * An IP address (range) for which you are responsible as an IRT. This should be in the form of an **inet(6)num** object in the RIPE Database.
 * Any other information that is mandatory for an **irt** object
 
