@@ -205,9 +205,9 @@ Alternatively you can seach for any other entry in that object with -i, for exam
 
 **Here is an example:**
 
-    marco@eumel> whois -h whois.ripe.net -r 193.174.13.99 > inetnum.txt
+    $ whois -h whois.ripe.net -r 193.174.13.99 > inetnum.txt
 
-    marco@eumel> cat inetnum.txt
+    $ cat inetnum.txt
 
     inetnum:        193.174.13.0 - 193.174.13.255
     netname:        DFNCERT-NET
@@ -226,7 +226,7 @@ Add an **mnt-irt:** attribute. If you have only **inet(6)num** to change, you ca
 
 **Here is an example:**
 
-    marco@eumel> cat inetnum-irt.txt
+    $ cat inetnum-irt.txt
 
     inetnum:        193.174.13.0 - 193.174.13.255
     netname:        DFNCERT-NET
@@ -249,13 +249,13 @@ Sign the new text file, making sure that the "auth:" section of your **irt** obj
 
 **Here is an example:**
 
-    marco@eumel> whois -h whois.ripe.net irt-dfn-cert | grep auth
+    $ whois -h whois.ripe.net irt-dfn-cert | grep auth
 
     auth: PGPKEY-6DFC4771
 
-    marco@eumel> gpg --clearsign -a -u 0x*234567 inetnum.txt
+    $ gpg --clearsign -a -u 0x*234567 inetnum.txt
 
-    marco@eumel> cat inetnum.txt.asc
+    $ cat inetnum.txt.asc
 
 
     -----BEGIN PGP SIGNED MESSAGE-----
@@ -293,11 +293,11 @@ Send the new file to the maintainer of the **inet(6)num** object. If you do not 
     
 **Here is an example:**
 
-    marco@eumel> whois -h whois.ripe.net -r 193.174.13.99 | grep mnt-by
+    $ whois -h whois.ripe.net -r 193.174.13.99 | grep mnt-by
 
     mnt-by: DFN-LIR-MNT
 
-    marco@eumel> whois -h whois.ripe.net DFN-LIR-MNT | grep e-mail
+    $ whois -h whois.ripe.net DFN-LIR-MNT | grep e-mail
 
     e-mail:       hostmaster@dfn.de
 
@@ -332,7 +332,7 @@ You will see a list of objects, separated by an empty line.
 
 * **Here is an example:**
 
-    marco@eumel> whois -h whois.ripe.net -r -i mnt-by DFN-LIR-MNT > inetnums.txt
+    $ whois -h whois.ripe.net -r -i mnt-by DFN-LIR-MNT > inetnums.txt
 
 Add an "mnt-irt:" attribute to every object in the list.
 
@@ -342,9 +342,9 @@ Sign the new textfile with the PGP key from the "auth:" section of your **irt** 
 
 * **Here is an example:**
 
-    marco@eumel> whois -h whois.ripe.net irt-dfn-cert | grep auth
+    $ whois -h whois.ripe.net irt-dfn-cert | grep auth
     auth: PGPKEY-6DFC4771
-    marco@eumel> gpg --clearsign -a -u 0x6DFC4771 inetnums.txt
+    $ gpg --clearsign -a -u 0x6DFC4771 inetnums.txt
 
 Send that file to the other maintainer. He should authenticate the request by either signing the file (inetnum.txt.asc) with the PGP key referenced in his **mntner** object or send the file, along with his RIPE maintainer password to the RIPE NCC. The address to use is [auto-dbm@ripe.net](mailto:auto-dbm@ripe.net)
 
