@@ -309,27 +309,27 @@ The range notation expresses addresses as 32-bit whole numbers in dotted quad no
 Below is the object template for the **route** object. It lists all possible attributes that are allowed in this object type.
 
     Attribute Name  Presence   Repeat     Indexed
-    route:          optional   single     primary/lookup key
-    descr:          mandatory  multiple  
+    route:          mandatory  single     primary/lookup key
+    descr:          optional   multiple   
     origin:         mandatory  single     primary/inverse key
-    pingable:       optional   multiple  
+    pingable:       optional   multiple   
     ping-hdl:       optional   multiple   inverse key
-    holes:          optional   multiple  
+    holes:          optional   multiple   
     org:            optional   multiple   inverse key
     member-of:      optional   multiple   inverse key
-    inject:         optional   multiple  
-    aggr-mtd:       optional   single    
-    aggr-bndry:     optional   single    
-    export-comps:   optional   single    
-    components:     optional   single    
-    remarks:        optional   multiple  
+    inject:         optional   multiple   
+    aggr-mtd:       optional   single     
+    aggr-bndry:     optional   single     
+    export-comps:   optional   single     
+    components:     optional   single     
+    remarks:        optional   multiple   
     notify:         optional   multiple   inverse key
     mnt-lower:      optional   multiple   inverse key
     mnt-routes:     optional   multiple   inverse key
     mnt-by:         mandatory  multiple   inverse key
-    created:        generated  single
-    last-modified:  generated  single
-    source:         mandatory  single
+    created:        generated  single     
+    last-modified:  generated  single     
+    source:         mandatory  single     
 
 A **route** object contains routing information for IPv4 address space resources. This is one of the main elements of the RIPE Internet Routing Registry.
 
