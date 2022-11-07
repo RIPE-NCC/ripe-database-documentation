@@ -7,71 +7,33 @@ const { nav, sidebar } = getConfig({addReadMeToFirstGroup: false, mixDirectories
 const apiServer = process.env.API_SERVER || "stat.ripe.net/data";
 
 
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Database-")) { item.title = item.title.replace("Database-", "Database "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("in-")) { item.title = item.title.replace("in-", "In "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Is-")) { item.title = item.title.replace("Is-", "Is "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Object-")) { item.title = item.title.replace("Object-", "Object "); }
-}
-})
+const titleMap = new Map([
+  ["Database-", "Database "],
+  ["in-", "In "],
+  ["Is-", "Is "],
+  ["Object-", "Object "],
+  ["Objects-", "Objects "],
+  ["of-", "of "],
+  ["Personal-", "Personal "],
+  ["Query-", "Query "],
+  ["Ripe", "RIPE"],
+  ["RIPE-", "RIPE "],
+  ["Rpsl", "RPSL"],
+  ["the-", "the "],
+  ["to-", "to "],
+  ["Types-", "Types "],
+  ["Supported-", "Supported "],
+  ["by-", "by "]
+]);
+
 
 sidebar.forEach((item) => {
 if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Objects-")) { item.title = item.title.replace("Objects-", "Objects "); }
-}
-})
-
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("of-")) { item.title = item.title.replace("of-", "of "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Personal-")) { item.title = item.title.replace("Personal-", "Personal "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Query-")) { item.title = item.title.replace("Query-", "Query "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Ripe")) { item.title = item.title.replace("Ripe", "RIPE"); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("RIPE-")) { item.title = item.title.replace("RIPE-", "RIPE "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("Rpsl")) { item.title = item.title.replace("Rpsl", "RPSL"); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("the-")) { item.title = item.title.replace("the-", "the "); }
-}
-})
-sidebar.forEach((item) => {
-if (typeof item.title !== 'undefined') {
-if (item !=='' && item.title.includes("to-")) { item.title = item.title.replace("to-", "to "); }
+  titleMap.forEach((value, key) => {
+    if (item.title.includes(key)){
+      item.title = item.title.replace(key, value)
+    }
+  })
 }
 })
 
@@ -123,7 +85,7 @@ module.exports = {
             var regex = /(\[.+?(?=\]\())(.+?(?=\#))(.+?(?=\)))/g;
 
 
-            const totalPages = pages
+            return pages
               .reduce((acc, current) => {
                 const contentWithCorrectLinks = current.content.replace(regex, function(matchingWord,firstMatchingPart,secondMatchingPart,thirdMatchingPart){
                   if(secondMatchingPart.startsWith("](http") || secondMatchingPart.startsWith("](https")){ //dont change absolute links
@@ -137,7 +99,6 @@ module.exports = {
                 })
                 return `${acc}${contentWithCorrectLinks}\n\n${pageBreak}`
               }, initialValue)
-            return totalPages
           }
         }]
       }
