@@ -18,7 +18,7 @@ Additional resources:
 
 ***
 
-### Locations**
+### Environments**
 * `http://rest.db.ripe.net`
 * `https://rest.db.ripe.net`
 * `http://rest-test.db.ripe.net`
@@ -43,7 +43,7 @@ Additional resources:
 
 ### HTTP Response Body**
 
-A [WhoisResource]() containing the object, which is filtered by default.
+A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources) containing the object, which is filtered by default.
 
 ### HTTP status Codes**
 |code|description|
@@ -310,7 +310,7 @@ None.
 
 ### HTTP Response Body
 
-A [WhoisResource](WHOIS-REST-API-WhoisResources) containing the query result.
+A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources) containing the query result.
 
 ### HTTP Status Codes
 |code|description|
@@ -319,7 +319,7 @@ A [WhoisResource](WHOIS-REST-API-WhoisResources) containing the query result.
 |400|Illegal input - incorrect value in one or more of the parameters|
 |404|No object(s) found|
 
-Note that search response can be enormous. Hence, it is streamed on the server side, which means that if there is any error during processing your search, the HTTP response will still be 200. In this case, there will be the corresponding error messages inside the errormessages element in the response body (see [Whois Resources](WHOIS-REST-API-WhoisResources)).
+Note that search response can be enormous. Hence, it is streamed on the server side, which means that if there is any error during processing your search, the HTTP response will still be 200. In this case, there will be the corresponding error messages inside the errormessages element in the response body (see [Whois Resources](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources)).
 
 
 ### Examples
@@ -644,7 +644,7 @@ None.
 
 #### HTTP Response Body
 
-A [WhoisResource]() containing all available sources.
+A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources) containing all available sources.
 
 #### HTTP Status Codes
 
@@ -734,7 +734,7 @@ Returns the RPSL template for given object type.
 
 #### HTTP Response Body
 
-A [WhoisResource]() containing the template of the specified type.
+A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources) containing the template of the specified type.
 
 #### HTTP Status Codes
 |code |description                             |
@@ -908,7 +908,7 @@ None.
 	
 ### HTTP Response Body
 
-A [WhoisResource]() containing locator URIs to matching objects.
+A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources) containing locator URIs to matching objects.
 
 For non-200 OK responses, the response body will be in plaintext.
 
@@ -1086,7 +1086,7 @@ Lists all versions of RIPE Database object, including the date and operation for
 	
 ### Response Body
 
-A [WhoisResource]() containing information about updates for the requested object or the error message in case of Bad request (see [GET](#api-lookup)).
+A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources) containing information about updates for the requested object or the error message in case of Bad request (see [GET](#api-lookup)).
 
 #### Status Codes
 |code|description|
