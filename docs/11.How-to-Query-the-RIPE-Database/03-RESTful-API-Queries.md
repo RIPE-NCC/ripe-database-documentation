@@ -2,7 +2,7 @@
 
 Queries are supported by the RESTful API using the GET method. There are two ways of using the API. One way looks up a specific object and only returns a single object. The other searches for objects matching specified criteria. The search may return large numbers of objects.
 
-Full documentation on the RESTful API is available on [GitHub](https://github.com/RIPE-NCC/whois/wiki/WHOIS-REST-API).
+Full documentation on the RESTful API is available [here](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#restful-api-queries).
 
 
 ## API Lookup
