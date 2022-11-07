@@ -13,8 +13,8 @@ Returns an object from the RIPE Database.
 
 Additional resources:
 
-* [Version list]()
-* [Version lookup]()
+* [Version list](#api-versions)
+* [Version lookup](#api-versions)
 
 ***
 
@@ -1010,7 +1010,7 @@ None.
 	
 ### HTTP Response Body
 
-An [AbuseResources]() containing locator URIs to matching objects.
+An [AbuseResources](#api-abuse-contact) containing locator URIs to matching objects.
 
 ### HTTP Status Codes
 |code|description|
