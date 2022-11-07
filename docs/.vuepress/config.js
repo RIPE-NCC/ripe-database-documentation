@@ -85,7 +85,7 @@ module.exports = {
             var regex = /(\[.+?(?=\]\())(.+?(?=\#))(.+?(?=\)))/g;
 
 
-            const totalPages = pages
+            return pages
               .reduce((acc, current) => {
                 const contentWithCorrectLinks = current.content.replace(regex, function(matchingWord,firstMatchingPart,secondMatchingPart,thirdMatchingPart){
                   if(secondMatchingPart.startsWith("](http") || secondMatchingPart.startsWith("](https")){ //dont change absolute links
@@ -99,7 +99,6 @@ module.exports = {
                 })
                 return `${acc}${contentWithCorrectLinks}\n\n${pageBreak}`
               }, initialValue)
-            return totalPages
           }
         }]
       }
