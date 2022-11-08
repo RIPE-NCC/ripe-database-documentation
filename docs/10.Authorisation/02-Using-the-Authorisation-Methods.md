@@ -17,7 +17,7 @@ In the single text area form of Webupdates, the “password:” pseudo-attribute
 
 Using the Syncupdates web form there is no ‘Session Passwords' field but again the “password:” pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the “password:” pseudo-attribute must be supplied as part of the message body.
 
-With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation on GitHub](https://github.com/RIPE-NCC/whois/wiki/WHOIS-REST-API).
+With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../06.Update-Methods/01-RESTful-API.md#ripe-database-restful-api).
 
 
 ## PGP Key

@@ -2,14 +2,22 @@
 
 Queries are supported by the RESTful API using the GET method. There are two ways of using the API. One way looks up a specific object and only returns a single object. The other searches for objects matching specified criteria. The search may return large numbers of objects.
 
-Full documentation on the RESTful API is available [here](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#restful-api-queries).
-
 
 ## API Lookup
 
 This can be done from the command line using a third party software package, from a script or in a browser. It will only return the one specific object requested. For lookups on address space, it will not return the encompassing object if the specified object does not exist.
 
 Returns an object from the RIPE Database.
+
+```
+curl 'https://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255?unfiltered'
+```
+
+Any spaces in the command must be encoded. The response will be returned by default in XML format. Alternatively JSON can be returned:
+
+```
+curl -H 'Accept: application/json'
+```
 
 Additional resources:
 
@@ -18,17 +26,17 @@ Additional resources:
 
 ***
 
-### Environments**
+### Environments
 * `http://rest.db.ripe.net`
 * `https://rest.db.ripe.net`
 * `http://rest-test.db.ripe.net`
 * `https://rest-test.db.ripe.net`
 
-### Method: GET**
+### Method: GET
 
-### URI Format: /{source}/{objectType}/{key}**
+### URI Format: /{source}/{objectType}/{key}
 
-### Path Parameters**
+### Path Parameters
 |name|description|
 |----|-----------|
 |source|Source name (RIPE, TEST or a GRS source name).|
@@ -41,17 +49,27 @@ Additional resources:
 |unfiltered|The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed).|
 |unformatted|Return the resource in its original formatting (including spaces, end-of-lines).|
 
-### HTTP Response Body**
+### HTTP Response Body
 
 A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisresources) containing the object, which is filtered by default.
 
-### HTTP status Codes**
+### HTTP status Codes
+
+Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
+
+Possible reasons for varios HTTP status codes are as follows:
+
 |code|description|
 |----|-----------|
-|200|Object found for the specified key|
-|400|Bad request|
-|404|The query didn't return any valid object|
-|429|Access denied due to excessive querying for personal data|
+|OK (200)|Successful update|
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
+|Authentication failure (401)| Incorrect password|
+|Forbidden (403)| <font color="red">Miguel notes: This error is due to not necessary permissions, why is "Query limit exceeded".</font> Query limit exceeded.|
+|Not Found (404)|No results were found (on a seach request), or object specified in URI does not exist.|
+|Method not Allowed (405)|<font color="red">Miguel notes: must be method not allowed, when you use a POST and that endpoint just accept GET for example.</font>No results were found (on a seach request), or object specified in URI does not exist.|
+|Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
+|Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
+|Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
 
 ### Examples
 

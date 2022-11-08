@@ -26,7 +26,7 @@ The new service is accessible at:
 | Update    | PUT         | https://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT?password=... |  
 | Delete    | DELETE      | https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...     |
 
-* CRUD services (create, update, delete) are only available with https:// - using http:// will result in a 404 error code
+* Create, Update and Delete services are only available with https:// - using http:// will result in a 404 error code
 
 ```
 https://rest.db.ripe.net/
@@ -99,11 +99,11 @@ Use the following examples for testing your client implementation. (These tests 
 ### Create
 
 * Create a new object  
-    * Use the an example request on [WHOIS-REST-API-create](../06.Update-Methods/01-RESTful-API.md#post) 
+    * Use an example request on [WHOIS-REST-API-create](../06.Update-Methods/01-RESTful-API.md#post) 
     * Change the _source_ attribute to TEST
     * Change the _mntner_ attribute to TEST-DBM-MNT
     * POST HTTP method
-    * Request URL: https://rest-test.db.ripe.net/test?password=emptypassword
+    * Request URL: https://rest-test.db.ripe.net/test/person?password=emptypassword
     * Request header: "Content-Type: application/xml" for an XML response
     * Request header: "Content-Type: application/json" for a JSON response
     * Expect a 200 response status code and the full object as payload.

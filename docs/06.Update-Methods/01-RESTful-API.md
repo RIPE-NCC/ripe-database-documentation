@@ -1,6 +1,6 @@
 # RIPE Database RESTful API
 
-For mre information about the REST paradigm, see https://en.wikipedia.org/wiki/Representational_state_transfer.
+For more information about the REST paradigm, see https://en.wikipedia.org/wiki/Representational_state_transfer.
 If you used the old (beta) API, consider reading [migration guide for old API users](../17.Database-Support/07-Migration-guide.md#whois-rest-api-migration-guide)
 All the services are accessible via HTTPS.
 Use of the Whois REST API is governed by the RIPE Database [terms and conditions](../17.Terms-And-Conditions.md#ripe-database-terms-and-conditions)
@@ -53,6 +53,16 @@ HTTPS is mandatory.
 
 A [WhoisResource](#whois-rest-api-whoisresources) containing the object to be created.
 
+The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
+
+The HTTP request must include a `Content-Type:` header for POST, PUT and DELETE. The HTTP response will include a `Content-Type:` header, and the response body will be encoded in the requested format.
+
+The possible values that you can specify for the Accept/Content-Type header are:
+
+* `application/xml` for XML
+* `application/json` for JSON
+
+Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension.
 
 #### HTTP Response Body
 
@@ -60,12 +70,21 @@ A [WhoisResource](#whois-rest-api-whoisresources) containing the newly created, 
 
 
 #### HTTP Status Codes
+Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
+
+Possible reasons for varios HTTP status codes are as follows:
+
 |code|description|
 |----|-----------|
-|200|Success (object created).|
-|400|Bad request.|
-|401|Incorrect password.|
-|409|Object already exists in the database.|
+|OK (200)|Successful update|
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
+|Authentication failure (401)| Incorrect password|
+|Forbidden (403)| <font color="red">Miguel notes: This error is due to not necessary permissions, why is "Query limit exceeded".</font> Query limit exceeded.|
+|Not Found (404)|No results were found (on a seach request), or object specified in URI does not exist.|
+|Method not Allowed (405)|<font color="red">Miguel notes: must be method not allowed, when you use a POST and that endpoint just accept GET for example.</font>No results were found (on a seach request), or object specified in URI does not exist.|
+|Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
+|Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
+|Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
 
 
 #### Examples
@@ -464,18 +483,6 @@ Clients can also append an extension of `.xml` or `.json` to the request URL ins
 A [WhoisResource](#whois-rest-api-whoisresources) containing either the newly created, unfiltered object or the error message in case of a bad/unauthorized request.
 
 
-#### Request / Response Encoding
-
-Please take into account the following points to avoid unexpected encoding behaviour:
-
-* Objects are stored using the latin-1 (ISO-8859-1) character set.
-* If the request character set is not latin-1, then the request body is converted to latin-1. A question mark character ('?' or 0x3F) is used as a substitution character, if the character is outside the latin-1 character set.
-* The response should contain a warning, if conversion was necessary. [known issue #291](https://github.com/RIPE-NCC/whois/issues/291)
-* Unrecognised encodings that cannot be converted to latin-1 will result in an unsuccessful operation.
-* To be absolutely certain of what was stored in the database, do a follow-up query.
-* The REST API response will be in UTF-8.
-* We recommend to use UTF-8 character encoding in all REST API requests, but restrict the content to valid latin-1 characters.
-
 #### HTTP Status Codes
 Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
 
@@ -484,7 +491,7 @@ Possible reasons for varios HTTP status codes are as follows:
 |code|description|
 |----|-----------|
 |OK (200)|Successful update|
-|Bad request (400)| Incorrect value for object type or key. The server is unable to undestand and process the request.|
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
 |Authentication failure (401)| Incorrect password|
 |Forbidden (403)| <font color="red">Miguel notes: This error is due to not necessary permissions, why is "Query limit exceeded".</font> Query limit exceeded.|
 |Not Found (404)|No results were found (on a seach request), or object specified in URI does not exist.|
@@ -780,19 +787,37 @@ HTTPS is mandatory.
 
 #### HTTP Request Body
 
-Must be empty.
+The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
+
+The HTTP request must include a `Content-Type:` header for POST, PUT and DELETE. The HTTP response will include a `Content-Type:` header, and the response body will be encoded in the requested format.
+
+The possible values that you can specify for the Accept/Content-Type header are:
+
+* `application/xml` for XML
+* `application/json` for JSON
+
+Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension.
 
 #### HTTP Response Body
 A [WhoisResource](#whois-rest-api-whoisresources) containing the (filtered) deleted object.
 
 
 #### HTTP Status Codes
+Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
+
+Possible reasons for varios HTTP status codes are as follows:
+
 |code|description|
 |----|-----------|
-|200|Successful delete.|
-|400|Bad request - invalid syntax for object type or key.|
-|401|Incorrect password.|
-|404|Object not found.|
+|OK (200)|Successful update|
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
+|Authentication failure (401)| Incorrect password|
+|Forbidden (403)| <font color="red">Miguel notes: This error is due to not necessary permissions, why is "Query limit exceeded".</font> Query limit exceeded.|
+|Not Found (404)|No results were found (on a seach request), or object specified in URI does not exist.|
+|Method not Allowed (405)|<font color="red">Miguel notes: must be method not allowed, when you use a POST and that endpoint just accept GET for example.</font>No results were found (on a seach request), or object specified in URI does not exist.|
+|Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
+|Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
+|Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
 
 ### Examples
 
@@ -1129,6 +1154,18 @@ curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-
 curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true&password=...'
 ```
 
+
+## Request / Response Encoding
+
+Please take into account the following points to avoid unexpected encoding behaviour:
+
+* Objects are stored using the latin-1 (ISO-8859-1) character set.
+* If the request character set is not latin-1, then the request body is converted to latin-1. A question mark character ('?' or 0x3F) is used as a substitution character, if the character is outside the latin-1 character set.
+* The response should contain a warning, if conversion was necessary. [known issue #291](https://github.com/RIPE-NCC/whois/issues/291)
+* Unrecognised encodings that cannot be converted to latin-1 will result in an unsuccessful operation.
+* To be absolutely certain of what was stored in the database, do a follow-up query.
+* The REST API response will be in UTF-8.
+* We recommend to use UTF-8 character encoding in all REST API requests, but restrict the content to valid latin-1 characters.
 
 
 ## WHOIS REST API WhoisResources
@@ -1512,7 +1549,6 @@ Example JSON error response:
  * One of: Error, Warning, Info.
 * Source
  * One of: RIPE, TEST, or a GRS source (AFRINIC-GRS, APNIC-GRS, ARIN-GRS, JPIRR-GRS, LACNIC-GRS, RADB-GRS, RIPE-GRS).
-
 
 
  ## Update latency
