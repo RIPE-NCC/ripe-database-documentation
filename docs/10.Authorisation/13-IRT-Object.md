@@ -85,40 +85,43 @@ You will get a reply from the RIPE NCC asking you to acknowledge your request.
 You need to become a TI accredited team. The TI will register and maintain your **IRT** object.
 
 **Here is an example:**
-    This is the body of an example e-mail with which the TI creates object for a newly accredited team:
 
-    -----BEGIN PGP SIGNED MESSAGE-----
-    Hash: SHA1
+```
+This is the body of an example e-mail with which the TI creates object for a newly accredited team:
 
-    irt:        IRT-TCERT
-    address:    Telia AB, HQ
-    address:    TeliaCERT
-    address:    SE-123 86 Farsta
-    address:    Sweden
-    phone:      +46 8 713 1872
-    fax-no:     +46 706 175 101
-    e-mail:     tcert@telia.se
-    signature:  PGPKEY-D47485CF
-    encryption: PGPKEY-D47485CF
-    admin-c:    TI123-RIPE
-    tech-c:     TI123-RIPE
-    auth:       PGPKEY-D47485CF
-    remarks:    Emergency telephone number +46 8 713 1872 (GMT+1/GMT+2 with DST)
-    remarks:    http://www.trusted-introducer.org/teams/tcert.html
-    remarks:    This is an accredited IRT (level 2)
-    irt-nfy:    tcert@telia.se
-    notify:     tiirt@s-cure.nl
-    notify:     tcert@telia.se
-    mnt-by:     TRUSTED-INTRODUCER-MNT
-    source:     RIPE
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
 
-    -----BEGIN PGP SIGNATURE-----
-    Version: GnuPG v1.2.1 (MingW32) - WinPT 0.5.13
+irt:        IRT-TCERT
+address:    Telia AB, HQ
+address:    TeliaCERT
+address:    SE-123 86 Farsta
+address:    Sweden
+phone:      +46 8 713 1872
+fax-no:     +46 706 175 101
+e-mail:     tcert@telia.se
+signature:  PGPKEY-D47485CF
+encryption: PGPKEY-D47485CF
+admin-c:    TI123-RIPE
+tech-c:     TI123-RIPE
+auth:       PGPKEY-D47485CF
+remarks:    Emergency telephone number +46 8 713 1872 (GMT+1/GMT+2 with DST)
+remarks:    http://www.trusted-introducer.org/teams/tcert.html
+remarks:    This is an accredited IRT (level 2)
+irt-nfy:    tcert@telia.se
+notify:     tiirt@s-cure.nl
+notify:     tcert@telia.se
+mnt-by:     TRUSTED-INTRODUCER-MNT
+source:     RIPE
 
-    iD8DBQE/O1yZHxjOrs1gxBcRAn5TAJ9lBL4op6txrM17m1SF1pIIjptTTgCcCt4n
-    P0fRecfQHzFxhvASPKfTt1Q=
-    =Q9fl
-    -----END PGP SIGNATURE-----
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.1 (MingW32) - WinPT 0.5.13
+
+iD8DBQE/O1yZHxjOrs1gxBcRAn5TAJ9lBL4op6txrM17m1SF1pIIjptTTgCcCt4n
+P0fRecfQHzFxhvASPKfTt1Q=
+=Q9fl
+-----END PGP SIGNATURE-----
+```
 
 
 
@@ -139,34 +142,37 @@ Authorisation can be provided by a PGP signature, password or SSO account. All p
 This is done by sending an email to [auto-dbm@ripe.net](mailto:auto-dbm@ripe.net). You provide the **inet(6)num** object with the necessary changes. In most cases you just need to add a "mnt-irt:" attribute.
 
 **Here is an example:**
-    An inet(6)num object as you find it in the RIPE Database before the change:
 
-    inetnum:        193.174.13.0 - 193.174.13.255
-    netname:        DFNCERT-NET
-    descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
-    country:        DE
-    admin-c:        KM4692-RIPE
-    tech-c:         KM4692-RIPE
-    status:         ASSIGNED PA
-    mnt-by:         DFN-LIR-MNT
-    created:        2022-08-14T11:48:28Z
-    last-modified:  2022-10-25T12:22:39Z 
-    source:         RIPE
+```
+An inet(6)num object as you find it in the RIPE Database before the change:
 
-    And this is the same object linked to an irt object:
+inetnum:        193.174.13.0 - 193.174.13.255
+netname:        DFNCERT-NET
+descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
+country:        DE
+admin-c:        KM4692-RIPE
+tech-c:         KM4692-RIPE
+status:         ASSIGNED PA
+mnt-by:         DFN-LIR-MNT
+created:        2022-08-14T11:48:28Z
+last-modified:  2022-10-25T12:22:39Z 
+source:         RIPE
 
-    inetnum:        193.174.13.0 - 193.174.13.255
-    netname:        DFNCERT-NET
-    descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
-    country:        DE
-    admin-c:        KM4692-RIPE
-    tech-c:         KM4692-RIPE
-    status:         ASSIGNED PA
-    mnt-by:         DFN-LIR-MNT
-    mnt-irt:        IRT-DFN-CERT
-    created:        2022-08-14T11:48:28Z
-    last-modified:  2022-10-25T12:22:39Z 
-    source:         RIPE
+And this is the same object linked to an irt object:
+
+inetnum:        193.174.13.0 - 193.174.13.255
+netname:        DFNCERT-NET
+descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
+country:        DE
+admin-c:        KM4692-RIPE
+tech-c:         KM4692-RIPE
+status:         ASSIGNED PA
+mnt-by:         DFN-LIR-MNT
+mnt-irt:        IRT-DFN-CERT
+created:        2022-08-14T11:48:28Z
+last-modified:  2022-10-25T12:22:39Z 
+source:         RIPE
+```
 
 Now both the team and the maintainer of the **inet(6)num** object have to authorise the link request.
 
@@ -205,42 +211,46 @@ Alternatively you can seach for any other entry in that object with -i, for exam
 
 **Here is an example:**
 
-    $ whois -h whois.ripe.net -r 193.174.13.99 > inetnum.txt
+```
+$ whois -h whois.ripe.net -r 193.174.13.99 > inetnum.txt
 
-    $ cat inetnum.txt
+$ cat inetnum.txt
 
-    inetnum:        193.174.13.0 - 193.174.13.255
-    netname:        DFNCERT-NET
-    descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
-    country:        DE
-    admin-c:        KM4692-RIPE
-    tech-c:         KM4692-RIPE
-    status:         ASSIGNED PA
-    mnt-by:         DFN-LIR-MNT
-    created:        2022-08-14T11:48:28Z
-    last-modified:  2022-10-25T12:22:39Z 
-    source:         RIPE
+inetnum:        193.174.13.0 - 193.174.13.255
+netname:        DFNCERT-NET
+descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
+country:        DE
+admin-c:        KM4692-RIPE
+tech-c:         KM4692-RIPE
+status:         ASSIGNED PA
+mnt-by:         DFN-LIR-MNT
+created:        2022-08-14T11:48:28Z
+last-modified:  2022-10-25T12:22:39Z 
+source:         RIPE
 
+```
 
 Add an **mnt-irt:** attribute. If you have only **inet(6)num** to change, you can do this by hand using a standard text editor.
 
 **Here is an example:**
 
-    $ cat inetnum-irt.txt
 
-    inetnum:        193.174.13.0 - 193.174.13.255
-    netname:        DFNCERT-NET
-    descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
-    country:        DE
-    admin-c:        KM4692-RIPE
-    tech-c:         KM4692-RIPE
-    status:         ASSIGNED PA
-    mnt-by:         DFN-LIR-MNT
-    mnt-irt:        IRT-DFN-CERT
-    created:        2022-08-14T11:48:28Z
-    last-modified:  2022-10-25T12:22:39Z 
-    source:         RIPE
+```
+$ cat inetnum-irt.txt
 
+inetnum:        193.174.13.0 - 193.174.13.255
+netname:        DFNCERT-NET
+descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
+country:        DE
+admin-c:        KM4692-RIPE
+tech-c:         KM4692-RIPE
+status:         ASSIGNED PA
+mnt-by:         DFN-LIR-MNT
+mnt-irt:        IRT-DFN-CERT
+created:        2022-08-14T11:48:28Z
+last-modified:  2022-10-25T12:22:39Z 
+source:         RIPE
+```
 
 Sign the new text file, making sure that the "auth:" section of your **irt** object contains your PGP key. You can find out the correct key by using:
 
@@ -249,40 +259,43 @@ Sign the new text file, making sure that the "auth:" section of your **irt** obj
 
 **Here is an example:**
 
-    $ whois -h whois.ripe.net irt-dfn-cert | grep auth
 
-    auth: PGPKEY-6DFC4771
+```
+$ whois -h whois.ripe.net irt-dfn-cert | grep auth
 
-    $ gpg --clearsign -a -u 0x*234567 inetnum.txt
+auth: PGPKEY-6DFC4771
 
-    $ cat inetnum.txt.asc
+$ gpg --clearsign -a -u 0x*234567 inetnum.txt
+
+$ cat inetnum.txt.asc
 
 
-    -----BEGIN PGP SIGNED MESSAGE-----
+-----BEGIN PGP SIGNED MESSAGE-----
 
-    inetnum:        193.174.13.0 - 193.174.13.255
-    netname:        DFNCERT-NET
-    descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
-    country:        DE
-    admin-c:        KM4692-RIPE
-    tech-c:         KM4692-RIPE
-    status:         ASSIGNED PA
-    mnt-by:         DFN-LIR-MNT
-    mnt-irt:        IRT-DFN-CERT
-    created:        2022-08-14T11:48:28Z
-    last-modified:  2022-10-25T12:22:39Z 
-    source:         RIPE
-    -----BEGIN PGP SIGNATURE-----
-    Version: GnuPG v1.2.2 (SunOS)
+inetnum:        193.174.13.0 - 193.174.13.255
+netname:        DFNCERT-NET
+descr:          DFN-CERT  Zentrum fuer sichere Netzdienste GmbH
+country:        DE
+admin-c:        KM4692-RIPE
+tech-c:         KM4692-RIPE
+status:         ASSIGNED PA
+mnt-by:         DFN-LIR-MNT
+mnt-irt:        IRT-DFN-CERT
+created:        2022-08-14T11:48:28Z
+last-modified:  2022-10-25T12:22:39Z 
+source:         RIPE
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.2 (SunOS)
 
-    iQEVAwUBP4VPg1FwV5Zt/EdxAQFk+Af/dUMEyjeQATGZ+8LVerSIyWHFmntjxh6Z
-    hQE3jP5dbtklCaRiCpdgRKw0sBiNG6fPyhmno4kcFYInKYxukhkLH+5HRXzQxk5R
-    Ay/oW4fn7K8hl1SgZn5cbN61UcMRDgDV88SeWOnCtc/CQ3bqv6N+l9TbTbzFS6kF
-    3e4a9G3G8tEKjilCWvDYgEhnYAlEPZr0+jvxFaEEN/4UuX2q0npE0269x2sybQlD
-    hfPQ++RtQ5vstablHW9/6m4r+bqlgfcAirVucmHaw/mgd4yK6CLrQEh9MRXcVest
-    0LVwuHI/HQGZ4bwbwUB+pnlMvU/W+wiD7ct3rwoqP2xKI8BUzPkjDg==
-    =7JK5
-    -----END PGP SIGNATURE-----
+iQEVAwUBP4VPg1FwV5Zt/EdxAQFk+Af/dUMEyjeQATGZ+8LVerSIyWHFmntjxh6Z
+hQE3jP5dbtklCaRiCpdgRKw0sBiNG6fPyhmno4kcFYInKYxukhkLH+5HRXzQxk5R
+Ay/oW4fn7K8hl1SgZn5cbN61UcMRDgDV88SeWOnCtc/CQ3bqv6N+l9TbTbzFS6kF
+3e4a9G3G8tEKjilCWvDYgEhnYAlEPZr0+jvxFaEEN/4UuX2q0npE0269x2sybQlD
+hfPQ++RtQ5vstablHW9/6m4r+bqlgfcAirVucmHaw/mgd4yK6CLrQEh9MRXcVest
+0LVwuHI/HQGZ4bwbwUB+pnlMvU/W+wiD7ct3rwoqP2xKI8BUzPkjDg==
+=7JK5
+-----END PGP SIGNATURE-----
+```
 
 Send the new file to the maintainer of the **inet(6)num** object. If you do not know the maintainer, you can find out the person behind the **mntner** object by using the RIPE Database:
 
