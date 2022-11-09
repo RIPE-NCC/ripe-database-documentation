@@ -14,10 +14,10 @@ Lost your maintainer MD5 password? This [web interface](https://apps.db.ripe.net
 * [Using PGP with the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#pgp-key)
 This page explains how to set up PGP authentication for the RIPE Database, which is recommended for sending updates via email.
 
-* [IRT Object - Technical How To Guide]()
+* [IRT Object - Technical How To Guide](../10.Authorisation/13-IRT-Object.md#irt-object)
 How to handle the Incident Response Team (IRT) object in the RIPE Database
 
-* [IRT Object - Frequently Asked Questions]()
+* [IRT Object - Frequently Asked Questions](../10.Authorisation/13-IRT-Object.md#irt-object)
 Help with the Incident Response Team (IRT) object in the RIPE Database
 
 
