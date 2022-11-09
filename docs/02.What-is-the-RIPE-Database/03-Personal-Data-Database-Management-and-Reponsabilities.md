@@ -50,4 +50,4 @@ In terms of managing the RIPE Database public service, there are some things the
  * The RIPE NCC is not responsible for the use of any registered Internet number resources nor is the RIPE NCC responsible for any issues that may arise from this use.
  * The RIPE NCC is not responsible for any issues arising from the use of any information contained within the public RIPE Database.
 
-This list may change over time and is not exhaustive. For further details please refer to the [Terms and Conditions](../16.Terms-And-Conditions.md#ripe-database-terms-and-conditions).
+This list may change over time and is not exhaustive. For further details please refer to the [Terms and Conditions](../18.Terms-And-Conditions.md#ripe-database-terms-and-conditions).

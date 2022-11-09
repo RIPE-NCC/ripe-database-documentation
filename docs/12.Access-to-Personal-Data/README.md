@@ -19,7 +19,7 @@ Attempting to use the “-V” flag without approval, or from any IP address not
 
 ## Blocking Access to the RIPE Database
 
-Each time a person or role object is returned as part of a query result, a counter increases. When it reaches the limit defined in the AUP, the query execution is aborted and the connection is terminated, displaying an error message to the client (see the section on [Access errors in the RIPE Database Query Server Response Codes and Messages](../15.Appendices/03-Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages.md#appendix-c--ripe-database-query-server-response-codes-and-messages)). There is also a separate counter, tracking the number of times your request is denied. Retrieving any other object type does not affect these counters.
+Each time a person or role object is returned as part of a query result, a counter increases. When it reaches the limit defined in the AUP, the query execution is aborted and the connection is terminated, displaying an error message to the client (see the section on [Access errors in the RIPE Database Query Server Response Codes and Messages](../17.Appendices/03-Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages.md#appendix-c--ripe-database-query-server-response-codes-and-messages)). There is also a separate counter, tracking the number of times your request is denied. Retrieving any other object type does not affect these counters.
 
 Any role object used for abuse contacts with an “abuse-mailbox:” attribute is an exception to this rule. No accounting is done on these objects.
 
