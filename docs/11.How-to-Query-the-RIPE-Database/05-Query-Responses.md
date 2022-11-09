@@ -4,7 +4,7 @@ There is a set of general rules that apply to server responses:
 
 * The same response will be returned from the server for all query methods.
 * Output lines starting with the % sign are either a server response code or server messages (a comment, information message or an error with description).
-* A message contains a white space after the % sign, while a server response code starts right after the % sign. See [Appendix C, RIPE Database Query Server Response Codes and Messages](../15.Appendices/03-Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages.md#appendix-c--ripe-database-query-server-response-codes-and-messages) for more information. 
+* A message contains a white space after the % sign, while a server response code starts right after the % sign. See [Appendix C, RIPE Database Query Server Response Codes and Messages](../17.Appendices/03-Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages.md#appendix-c--ripe-database-query-server-response-codes-and-messages) for more information. 
 * Do not write scripts to parse the messages. The text is subject to change at any time.
 * An empty line terminates a database object in the output. This is a line containing only a newline character (\n).
 * Two empty lines, each containing only a new-line character (\n), mean the end of a server response.
