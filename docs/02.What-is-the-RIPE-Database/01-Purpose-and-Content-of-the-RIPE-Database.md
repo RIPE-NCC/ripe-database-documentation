@@ -101,7 +101,7 @@ Before importing the data we transform objects into RIPE RPSL syntax by carrying
 * Converting attributes values
 * All these transformations are marked by "End Of Line" comments in the objects
 
-To use GRP from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropiate radio button below the seach box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
+To use GRS from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropiate radio button below the seach box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
 
 ![](~@imgs/GRSquery.png)
 
