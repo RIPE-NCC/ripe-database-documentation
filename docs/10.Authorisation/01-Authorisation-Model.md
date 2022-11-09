@@ -6,7 +6,7 @@ The **mntner** object contains one or more mandatory "auth:" attributes. Each at
 
 All updates require authorisation. A credential that is valid for one of the authorisation tokens of one of the relevant **mntner** objects, must be supplied. Different methods of authorisation require different authorisation tokens, as shown in the table below of authorisation methods that are currently supported.
 
-Visit [this section](../17.Database-Support/03.Database-Security.md#maintainers) to know more about **mntner** object.
+Visit [this section](../18.Database-Support/03-Database-Security.md#maintainers) to know more about **mntner** object.
 
 | **Authorisation Method** | **Description** |
 | --- | --- |
@@ -38,4 +38,4 @@ Depending on your use case, it is important to carefully consider which authenti
 
 For cases 1 and 2, you need to ask the administrative or technical contact of the maintainer to give you the appropriate access. For case 2, you can use another update method that does support your authentication, such as email.
 
-Lastly, in case your maintainer is protected with a MD5 password that you forgot, you can [reset it here](../16.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object).
+Lastly, in case your maintainer is protected with a MD5 password that you forgot, you can [reset it here](../15.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object).

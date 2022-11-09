@@ -5,10 +5,10 @@
 * [Recommendations for protecting your data in the RIPE Database](../10.Authorisation/01-Authorisation-Model.md#authorisation-model)
 This page provides best practices and recommendations for protecting your objects in the RIPE Database.
 
-* [Security and the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md)
+* [Security and the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#using-the-authorisation-methods)
 Protecting your objects in the RIPE Database.
 
-* [Requesting Change of Authorisation of a Maintainer Object](../16.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object)
+* [Requesting Change of Authorisation of a Maintainer Object](../15.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object)
 Lost your maintainer MD5 password? This [web interface](https://apps.db.ripe.net/db-web-ui/query) allows you to recover a lost password. Please note that you will be required to log in with your RIPE NCC Access (SSO) account. You can create one if you do not have one yet.
 
 * [Using PGP with the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#pgp-key)
