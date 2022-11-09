@@ -63,7 +63,7 @@ Keep in mind that sharing a maintainer doesn't mean sharing the credentials as w
 
 ### Delegating Authorisation Using Maintainers
 
-The idea behing delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation]() by creating a **domain** object and nothing else.
+The idea behing delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation](04-Configuring-Reverse-DNS.md#configuring-reverse-dns) by creating a **domain** object and nothing else.
 
 For this purpose, three attributes exist:
 
