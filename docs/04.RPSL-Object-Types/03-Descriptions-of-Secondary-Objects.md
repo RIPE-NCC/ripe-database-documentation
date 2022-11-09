@@ -244,7 +244,7 @@ The member **organisation** objects are partly managed by the RIPE NCC and partl
     * 'DIRECT_ASSIGNMENT' – Used for organisations who have a direct contract with RIPE NCC
     * 'OTHER' – This represents all organisations that do not fit any of the above categories.
 * **“descr:”** – A short description related to the object.
-* **"country:"** - This is the country for the organisation and can only be added, modified or removed by the RIPE NCC.
+* **"country:"** - This is the country for the organisation. Can only be added, modified or removed by the RIPE NCC if the organisation is referenced from RIPE NCC (jointly) maintained resources.
 * **“phone:”** – This is a phone number for the business contact represented by this **organisation** object. It specifies a telephone number in international shorthand. It must start with a '+' followed by the international country code, area code and number, optionally followed by an extension number.
 * **“fax-no:”** – This is a fax number for the business contact represented by this **organisation** object.
 * **“e-mail:”** – This is a business email address for the organisation represented by this object.
