@@ -5,7 +5,7 @@
 
 ## How to access the NRTM stream
 
-You will find all technical requirements to access the stream and more information about NRTM <font color="red">Miguel comment: need to merge Mirroring the RIPE database first of all [in this document]()</font>.
+You will find all technical requirements to access the stream and more information about NRTM [in this document](./02-Access-to-NRTM.md#access-to-nrtm).
 
 
 ## Legal Framework
