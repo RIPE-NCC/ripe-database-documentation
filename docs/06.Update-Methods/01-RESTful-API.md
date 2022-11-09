@@ -23,7 +23,7 @@ Where:
     * Use the `nic-hdl` attribute value for person or role object types.
     * Combine the `route(6)` attribute value and `origin` attribute value for route or route6 object types (e.g. route 193.0.22.0/23AS3333).
 
-Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter “password=”. One parameter should be used for each password supplied. The pseudo attribute “password:” cannot be used in the HTTP request body. See ["Email Updates"](./04-Email-Updates.md#email-updates) for more information.
+Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter “password=”. One parameter should be used for each password supplied. The pseudo attribute “password:” cannot be used in the HTTP request body. See ["Email Updates"](04-Email-Updates.md#email-updates) for more information.
 
 ### Environments
 
