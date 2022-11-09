@@ -6,7 +6,7 @@ The mirrored databases are referenced by the source of the data. A list of curre
 
 All mirrored databases are made available by the RIPE NCC in RPSL syntax with the same RPSL extensions as the RIPE Database. If the mirrored data stream has some other syntax, it is converted into RIPE Database syntax before submission to the local database copy. This means that the data returned to a user who queries a RIPE NCC mirror may not be in the same format as data returned by querying the original data source directly.
 
-Users can query the RIPE NCC mirrored databases as if they were querying the RIPE Database by adding the [“-s” query flag](./10-Other-Query-Flags.md#the--s---sources-query-flag) or ["-a” query flag](./10-Other-Query-Flags.md#the--a---all-sources-query-flag). Bulk access to any of the mirrored databases is not possible. The access control mechanism, described in the section on Access to Personal Data, applies to all data returned, regardless of the source.
+Users can query the RIPE NCC mirrored databases as if they were querying the RIPE Database by adding the [“-s” query flag](./10-Other-Query-Flags.md#the--s---sources-query-flag) or [“-a” query flag](./10-Other-Query-Flags.md#the--a---all-sources-query-flag). Bulk access to any of the mirrored databases is not possible. The access control mechanism, described in the section on Access to Personal Data, applies to all data returned, regardless of the source.
 
 The mirrors of the other RIRs' databases only contain the resource information. They do not include all the personal data. To access the personal data users must query the other RIR databases directly.
 
