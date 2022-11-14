@@ -4,8 +4,8 @@ The RIPE NCC has been tasked by the RIPE community to maintain a database of Int
 
 The RIPE Database holds data for three separate registries:
 
-* [RIPE Internet Number Registry (RIPE INR)](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/glossary/ripe-internet-number-registry-ripe-inr)
-* [RIPE Internet Routing Registry (RIPE IRR)](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/glossary/ripe-internet-routing-registry-ripe-irr)
+* [RIPE Internet Number Registry (RIPE INR)](../19.Glossary.md#ripe-internet-number-registry-ripe-inr)
+* [RIPE Internet Routing Registry (RIPE IRR)](../19.Glossary.md#ripe-internet-routing-registry-ripe-irr)
 * Reverse Delegation and ENUM Registry
 
 These could be three independent databases, however the information in each of them is related to each other. It was therefore decided to integrate the three registries into one logical database. In practise, it is also one physical database.
@@ -91,7 +91,21 @@ To view the up-to-date list of mirrored databases, perform the following query:
 
     whois.ripe.net -q sources
 
-More information about this is available in the [RIPE Database Query Reference Manual](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-query-reference-manual).
+Because the RIPE NCC is bound by Dutch and European data privacy laws, we are obligated to remove all personal data received from other databases. This is either removed at the source or stripped out and deleted during the transformation process. THe RIPE NCC does not store any personal data from other registries. Where necessary, we create and reference dummy objects to keep data integrity intact.
+
+Before importing the data we transform objects into RIPE RPSL syntax by carrying out the following steps:
+
+* Adding missing mandatory attributes
+* Wrapping unrecognised attributes with "remarks"
+* Creating dummy objects for missing data to keep referential integrity
+* Converting attributes values
+* All these transformations are marked by "End Of Line" comments in the objects
+
+To use GRS from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropiate radio button below the seach box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
+
+![](~@imgs/GRSquery.png)
+
+Using the API, you can specify one or multiple GRS source names as parameters, e.g. "source=arin-grs" or "source=arin-grs&source=apnic-grs". For more information, please refer to the [documentation on Github](https://github.com/RIPE-NCC/whois/wiki/WHOIS-REST-API-search).
 
 
 ## Criteria for a Mirrored Database
@@ -115,4 +129,4 @@ Changes can be proposed to the RIPE Database purpose and content by anyone from 
 
 ## RIPE Database Terms and Conditions
 
-The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/documentation/terms?searchterm=ripe+database+terms). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
+The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../20.Terms-And-Conditions.md#introduction). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
