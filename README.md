@@ -3,7 +3,7 @@
 
 VuePress documentation for RIPE Database Documentation.
 
-This repo contains the documentation from [Database Documentation webpage](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-documentation). This documentation is built automatically from nothing more than markdown files in the tree.
+This documentation is built automatically from nothing more than markdown files in the tree.
 
 # Updating Documentation
 
