@@ -42,4 +42,4 @@ The RDAP protocol is specified in the RFCs:
 
 ## Known Issues
 
-Known issues with the RDAP implementation for RIPE Database can be found on GitHub.
+Known issues with the RDAP implementation for RIPE Database can be found on [GitHub](https://github.com/RIPE-NCC/whois/blob/master/README.RDAP.md).
