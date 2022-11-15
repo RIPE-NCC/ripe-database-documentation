@@ -2,7 +2,7 @@
 
 ## RIPE Database Tools
 
-The RIPE Database is a BSN licensed [open source project on Github](https://github.com/RIPE-NCC/whois). You can read, verify and contribute to the source code. If you find a bug in the RIPE Databse, [please ket us know](https://www.ripe.net/support/contact). On this page you can find an overview of all tools to help you manage your RIPE Database objects.
+The RIPE Database is a BSD licensed [open source project on Github](https://github.com/RIPE-NCC/whois). You can read, verify and contribute to the source code. If you find a bug in the RIPE Databse, [please ket us know](https://www.ripe.net/support/contact). On this page you can find an overview of all tools to help you manage your RIPE Database objects.
 
 
 ### Reset a lost MD5 maintainer password

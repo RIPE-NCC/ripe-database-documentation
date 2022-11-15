@@ -5,11 +5,11 @@
 Syncupdates accepts the following parameters (query params for GET, form params for POST):
 
 
-* **DATA** &lt;br&gt; 
+* **DATA** <br> 
 This variable should contain the actual update message.
-* **NEW** &lt;br&gt; 
+* **NEW** <br> 
 This variable can be either yes or no. If it contains yes, the update will fail if it contains changes to existing objects.
-* **HELP** &lt;br&gt; 
+* **HELP** <br> 
 This variable can be either yes or no. If it contains yes, the help message of the whois server will be given as the output.
 
 Multiple objects are accepted in the body, and any required passwords must also be supplied in the body using the “password:” attribute.
