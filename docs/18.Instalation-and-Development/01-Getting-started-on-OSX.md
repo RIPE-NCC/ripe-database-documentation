@@ -48,12 +48,12 @@ Maven needs more memory by default to complete the build.
 * Download and install Git bash (https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
 * Update `~/.bash_profile`
 
-```bash
-# Git
-. /usr/local/git/contrib/completion/git-completion.bash
-. /usr/local/git/contrib/completion/git-prompt.sh
-PS1='\u@local:\w$(__git_ps1 " (%s)")\$ '
-```
+
+  # Git
+  . /usr/local/git/contrib/completion/git-completion.bash
+  . /usr/local/git/contrib/completion/git-prompt.sh
+  PS1='\u@local:\w$(__git_ps1 " (%s)")\$ '
+
 
 ## MariaDB 10.2
 
@@ -73,16 +73,16 @@ There are multiple ways to install MariaDB on OS X.
 
 ### Configuration
 
-[Configure MariaDB](./03-Configure-MariaDB.md#configure-mariadb)
+[Configure MariaDB](03-Configure-MariaDB.md#configure-mariadb)
 
 ## Prepare /export directory
 
 Some tests need /export directory to be readable/writable by your user:
-```bash
-sudo mkdir /export
-sudo chown YOUR_USERNAME /export
-```
+
+  sudo mkdir /export
+  sudo chown YOUR_USERNAME /export
+
 
 > Note that since Catalina, it is not possible to directly create directories under `/` as it is now read only. See this [guide](https://derflounder.wordpress.com/2020/01/18/creating-root-level-directories-and-symbolic-links-on-macos-catalina/) on how to create `/export`
 
-[Continue to Development](./02-Building-whois.md#building-whois)
+[Continue to Development](02-Building-whois.md#building-whois)

@@ -9,15 +9,15 @@ This can be done from the command line using a third party software package, fro
 
 Returns an object from the RIPE Database.
 
-```
-curl 'https://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255?unfiltered'
-```
+
+  curl 'https://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255?unfiltered'
+
 
 Any spaces in the command must be encoded. The response will be returned by default in XML format. Alternatively JSON can be returned:
 
-```
-curl -H 'Accept: application/json'
-```
+
+  curl -H 'Accept: application/json'
+
 
 Additional resources:
 
@@ -74,216 +74,216 @@ Possible reasons for varios HTTP status codes are as follows:
 ### Examples
 
 Example request:
-```sh
-curl 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
-```
+
+  curl 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
+
 
 Example XML response:
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<whois-resources service="lookup" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <objects>
-        <object type="mntner">
-            <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT"/>
-            <source id="ripe"/>
-            <primary-key>
-                <attribute name="mntner" value="RIPE-DBM-MNT"/>
-            </primary-key>
-            <attributes>
-                <attribute name="mntner" value="RIPE-DBM-MNT"/>
-                <attribute name="descr" value="Mntner for RIPE DBM objects."/>
-                <attribute name="admin-c" value="RD132-RIPE" referenced-type="role">
-                    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/role/RD132-RIPE"/>
-                </attribute>
-                <attribute name="tech-c" value="RD132-RIPE" referenced-type="role">
-                    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/role/RD132-RIPE"/>
-                </attribute>
-                <attribute name="org" value="ORG-NCC1-RIPE" referenced-type="organisation">
-                    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/lookup/ripe/organisation/ORG-NCC1-RIPE"/>
-                </attribute>
-                <attribute name="auth" value="PGPKEY-1290F9D2" referenced-type="key-cert">
-                    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/key-cert/PGPKEY-1290F9D2"/>
-                </attribute>
-                <attribute name="auth" value="MD5-PW" comment="Filtered"/>
-                <attribute name="mnt-by" value="RIPE-DBM-MNT" referenced-type="mntner">
-                    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT"/>
-                </attribute>
-                <attribute name="source" value="RIPE" comment="Filtered"/>
-            </attributes>
-        </object>
-    </objects>
-    <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</whois-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+  <whois-resources service="lookup" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <objects>
+          <object type="mntner">
+              <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT"/>
+              <source id="ripe"/>
+              <primary-key>
+                  <attribute name="mntner" value="RIPE-DBM-MNT"/>
+              </primary-key>
+              <attributes>
+                  <attribute name="mntner" value="RIPE-DBM-MNT"/>
+                  <attribute name="descr" value="Mntner for RIPE DBM objects."/>
+                  <attribute name="admin-c" value="RD132-RIPE" referenced-type="role">
+                      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/role/RD132-RIPE"/>
+                  </attribute>
+                  <attribute name="tech-c" value="RD132-RIPE" referenced-type="role">
+                      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/role/RD132-RIPE"/>
+                  </attribute>
+                  <attribute name="org" value="ORG-NCC1-RIPE" referenced-type="organisation">
+                      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/lookup/ripe/organisation/ORG-NCC1-RIPE"/>
+                  </attribute>
+                  <attribute name="auth" value="PGPKEY-1290F9D2" referenced-type="key-cert">
+                      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/key-cert/PGPKEY-1290F9D2"/>
+                  </attribute>
+                  <attribute name="auth" value="MD5-PW" comment="Filtered"/>
+                  <attribute name="mnt-by" value="RIPE-DBM-MNT" referenced-type="mntner">
+                      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT"/>
+                  </attribute>
+                  <attribute name="source" value="RIPE" comment="Filtered"/>
+              </attributes>
+          </object>
+      </objects>
+      <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </whois-resources>
+
 
 Example JSON request:
-```sh
-curl -H 'Accept: application/json' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
-```
+
+  curl -H 'Accept: application/json' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
+
 
 Example JSON response:
-```json
-{
-  "objects": {
-    "object": [
-      {
-        "type": "mntner",
-        "link": {
-          "xlink:type": "locator",
-          "xlink:href": "http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT"
-        },
-        "source": {
-          "id": "ripe"
-        },
-        "primary-key": {
-          "attribute": [
-            {
-              "name": "mntner",
-              "value": "RIPE-DBM-MNT"
-            }
-          ]
-        },
-        "attributes": {
-          "attribute": [
-            {
-              "name": "mntner",
-              "value": "RIPE-DBM-MNT"
-            },
-            {
-              "name": "descr",
-              "value": "Mntner for RIPE DBM objects."
-            },
-            {
-              "link": {
-                "xlink:type": "locator",
-                "xlink:href": "http://rest.db.ripe.net/ripe/role/RD132-RIPE"
+
+  {
+    "objects": {
+      "object": [
+        {
+          "type": "mntner",
+          "link": {
+            "xlink:type": "locator",
+            "xlink:href": "http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT"
+          },
+          "source": {
+            "id": "ripe"
+          },
+          "primary-key": {
+            "attribute": [
+              {
+                "name": "mntner",
+                "value": "RIPE-DBM-MNT"
+              }
+            ]
+          },
+          "attributes": {
+            "attribute": [
+              {
+                "name": "mntner",
+                "value": "RIPE-DBM-MNT"
               },
-              "name": "admin-c",
-              "value": "RD132-RIPE",
-              "referenced-type": "role"
-            },
-            {
-              "link": {
-                "xlink:type": "locator",
-                "xlink:href": "http://rest.db.ripe.net/ripe/role/RD132-RIPE"
+              {
+                "name": "descr",
+                "value": "Mntner for RIPE DBM objects."
               },
-              "name": "tech-c",
-              "value": "RD132-RIPE",
-              "referenced-type": "role"
-            },
-            {
-              "link": {
-                "xlink:type": "locator",
-                "xlink:href": "http://rest.db.ripe.net/ripe/organisation/ORG-NCC1-RIPE"
+              {
+                "link": {
+                  "xlink:type": "locator",
+                  "xlink:href": "http://rest.db.ripe.net/ripe/role/RD132-RIPE"
+                },
+                "name": "admin-c",
+                "value": "RD132-RIPE",
+                "referenced-type": "role"
               },
-              "name": "organisation",
-              "value": "ORG-NCC1-RIPE",
-              "referenced-type": "organisation"
-            },
-            {
-              "link": {
-                "xlink:type": "locator",
-                "xlink:href": "http://rest.db.ripe.net/ripe/key-cert/PGPKEY-1290F9D2"
+              {
+                "link": {
+                  "xlink:type": "locator",
+                  "xlink:href": "http://rest.db.ripe.net/ripe/role/RD132-RIPE"
+                },
+                "name": "tech-c",
+                "value": "RD132-RIPE",
+                "referenced-type": "role"
               },
-              "name": "auth",
-              "value": "PGPKEY-1290F9D2",
-              "referenced-type": "key-cert"
-            },
-            {
-              "name": "auth",
-              "value": "MD5-PW",
-              "comment": "Filtered"
-            },
-            {
-              "link": {
-                "xlink:type": "locator",
-                "xlink:href": "http://rest.db.ripe.net/ripe/mntner/OWNER-MNT"
+              {
+                "link": {
+                  "xlink:type": "locator",
+                  "xlink:href": "http://rest.db.ripe.net/ripe/organisation/ORG-NCC1-RIPE"
+                },
+                "name": "organisation",
+                "value": "ORG-NCC1-RIPE",
+                "referenced-type": "organisation"
               },
-              "name": "mnt-by",
-              "value": "RIPE-DBM-MNT",
-              "referenced-type": "mntner"
-            },
-            {
-              "name": "source",
-              "value": "RIPE",
-              "comment": "Filtered"
-            }
-          ]
+              {
+                "link": {
+                  "xlink:type": "locator",
+                  "xlink:href": "http://rest.db.ripe.net/ripe/key-cert/PGPKEY-1290F9D2"
+                },
+                "name": "auth",
+                "value": "PGPKEY-1290F9D2",
+                "referenced-type": "key-cert"
+              },
+              {
+                "name": "auth",
+                "value": "MD5-PW",
+                "comment": "Filtered"
+              },
+              {
+                "link": {
+                  "xlink:type": "locator",
+                  "xlink:href": "http://rest.db.ripe.net/ripe/mntner/OWNER-MNT"
+                },
+                "name": "mnt-by",
+                "value": "RIPE-DBM-MNT",
+                "referenced-type": "mntner"
+              },
+              {
+                "name": "source",
+                "value": "RIPE",
+                "comment": "Filtered"
+              }
+            ]
+          }
         }
-      }
-    ]
-  }, 
-  "terms-and-conditions": {
-     "xlink:type": "locator",
-     "xlink:href": "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+      ]
+    }, 
+    "terms-and-conditions": {
+      "xlink:type": "locator",
+      "xlink:href": "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+    }
   }
-}
-```
+
 
 Example unfiltered request:
 
-```sh
-curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
-```
+
+  curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
+
 
 Example unfiltered response:
 
-```xml
-<?xml version="1.0" ?>
-<whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-    <objects>
-        <object xmlns="" type="person">
-            <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/AA1-TEST"></link>
-            <source id="test"/>
-            <primary-key>
-                <attribute name="nic-hdl" value="AA1-TEST"></attribute>
-            </primary-key>
-            <attributes>
-                <attribute name="person" value="Test Person"></attribute>
-                <attribute name="mnt-by" value="TEST-ROOT-MNT" referenced-type="mntner">
-                    <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/mntner/TEST-ROOT-MNT"></link>
-                </attribute>
-                <attribute name="address" value="Somewhere in nowhere"></attribute>
-                <attribute name="phone" value="+12 34 5678900"></attribute>
-                <attribute name="fax-no" value="+12 34 5678900"></attribute>
-                <attribute name="e-mail" value="bitbucket@ripe.net"></attribute>
-                <attribute name="nic-hdl" value="AA1-TEST"></attribute>
-                <attribute name="remarks" value="This is an automatically created object."></attribute>
-                <attribute name="source" value="TEST"></attribute>
-            </attributes>
-            <tags></tags>
-        </object>
-    </objects>
-    <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</whois-resources>
-```
+
+  <?xml version="1.0" ?>
+  <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+      <objects>
+          <object xmlns="" type="person">
+              <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/AA1-TEST"></link>
+              <source id="test"/>
+              <primary-key>
+                  <attribute name="nic-hdl" value="AA1-TEST"></attribute>
+              </primary-key>
+              <attributes>
+                  <attribute name="person" value="Test Person"></attribute>
+                  <attribute name="mnt-by" value="TEST-ROOT-MNT" referenced-type="mntner">
+                      <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/mntner/TEST-ROOT-MNT"></link>
+                  </attribute>
+                  <attribute name="address" value="Somewhere in nowhere"></attribute>
+                  <attribute name="phone" value="+12 34 5678900"></attribute>
+                  <attribute name="fax-no" value="+12 34 5678900"></attribute>
+                  <attribute name="e-mail" value="bitbucket@ripe.net"></attribute>
+                  <attribute name="nic-hdl" value="AA1-TEST"></attribute>
+                  <attribute name="remarks" value="This is an automatically created object."></attribute>
+                  <attribute name="source" value="TEST"></attribute>
+              </attributes>
+              <tags></tags>
+          </object>
+      </objects>
+      <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </whois-resources>
+
 
 Example bad request when source is incorrect:
 
-```sh
-curl 'http://rest.db.ripe.net/pez/person/PP1-RIPE'
-```
+
+  curl 'http://rest.db.ripe.net/pez/person/PP1-RIPE'
+
 
 Example response for bad request:
 
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/pez/person/PP1-RIPE"/>
-    <errormessages>
-        <errormessage severity="Error" text="Invalid source '%s'">
-            <args value="pez"/>
-        </errormessage>
-    </errormessages>
-    <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</whois-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/pez/person/PP1-RIPE"/>
+      <errormessages>
+          <errormessage severity="Error" text="Invalid source '%s'">
+              <args value="pez"/>
+          </errormessage>
+      </errormessages>
+      <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </whois-resources>
+
 
 Example request with encoded query parameter:
 
-```sh
-curl 'http://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255.json'
-```
+
+  curl 'http://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255.json'
+
 
 
 ## API Search
@@ -343,297 +343,297 @@ Note that search response can be enormous. Hence, it is streamed on the server s
 ### Examples
 
 * Valid inverse lookup query on an org value, filtering by inetnum:
-```
-http://rest.db.ripe.net/search?inverse-attribute=org&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
-```
+
+  http://rest.db.ripe.net/search?inverse-attribute=org&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
+
 * Search for objects of type organisation on the same query-string and specifying a preference for non recursion:
-```
-http://rest.db.ripe.net/search?inverse-attribute=org&flags=no-referenced&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
-```
+
+  http://rest.db.ripe.net/search?inverse-attribute=org&flags=no-referenced&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
+
 * A search on multiple sources:
-```
-http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&flags=no-referenced&flags=no-irt&query-string=MAINT-APNIC-AP
-```
+
+  http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&flags=no-referenced&flags=no-irt&query-string=MAINT-APNIC-AP
+
 * A search on multiple sources and multiple type-filters:
-```
-http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&query-string=google&type-filter=person&type-filter=organisation
-```
+
+  http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&query-string=google&type-filter=person&type-filter=organisation
+
 * A search using multiple flags:
-```
-http://rest.db.ripe.net/search?source=ripe&query-string=aardvark-mnt&flags=no-filtering&flags=no-referenced
-```
+
+  http://rest.db.ripe.net/search?source=ripe&query-string=aardvark-mnt&flags=no-filtering&flags=no-referenced
+
 
 Example XML response:
-```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-    <service name="search"/>
-    <parameters>
-        <inverse-lookup/>
-        <type-filters/>
-        <flags/>
-        <query-strings>
-            <query-string value="AS102"/>
-        </query-strings>
-        <sources>
-            <source id="TEST"/>
-        </sources>
-    </parameters>
-    <objects>
-        <object type="aut-num">
-            <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/aut-num/AS102"/>
-            <source id="test"/>
-            <primary-key>
-                <attribute name="aut-num" value="AS102"/>
-            </primary-key>
-            <attributes>
-                <attribute name="aut-num" value="AS102"/>
-                <attribute name="as-name" value="End-User-2"/>
-                <attribute name="descr" value="description"/>
-                <attribute name="admin-c" value="TP1-TEST" referenced-type="person">
-                    <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
-                </attribute>
-                <attribute name="tech-c" value="TP1-TEST" referenced-type="person">
-                    <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
-                </attribute>
-                <attribute name="mnt-by" value="OWNER-MNT" referenced-type="mntner">
-                    <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"/>
-                </attribute>
-                <attribute name="source" value="TEST"/>
-            </attributes>
-            <tags/>
-        </object>
-        <object type="person">
-            <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
-            <source id="test"/>
-            <primary-key>
-                <attribute name="nic-hdl" value="TP1-TEST"/>
-            </primary-key>
-            <attributes>
-                <attribute name="person" value="Test Person"/>
-                <attribute name="address" value="Singel 258"/>
-                <attribute name="phone" value="+31 6 12345678"/>
-                <attribute name="nic-hdl" value="TP1-TEST"/>
-                <attribute name="mnt-by" value="OWNER-MNT" referenced-type="mntner">
-                    <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"/>
-                </attribute>
-                <attribute name="source" value="TEST" comment="Filtered"/>
-            </attributes>
-            <tags/>
-        </object>
-    </objects>
-    <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</whois-resources>
-```
+
+  <?xml version='1.0' encoding='UTF-8'?>
+  <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+      <service name="search"/>
+      <parameters>
+          <inverse-lookup/>
+          <type-filters/>
+          <flags/>
+          <query-strings>
+              <query-string value="AS102"/>
+          </query-strings>
+          <sources>
+              <source id="TEST"/>
+          </sources>
+      </parameters>
+      <objects>
+          <object type="aut-num">
+              <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/aut-num/AS102"/>
+              <source id="test"/>
+              <primary-key>
+                  <attribute name="aut-num" value="AS102"/>
+              </primary-key>
+              <attributes>
+                  <attribute name="aut-num" value="AS102"/>
+                  <attribute name="as-name" value="End-User-2"/>
+                  <attribute name="descr" value="description"/>
+                  <attribute name="admin-c" value="TP1-TEST" referenced-type="person">
+                      <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
+                  </attribute>
+                  <attribute name="tech-c" value="TP1-TEST" referenced-type="person">
+                      <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
+                  </attribute>
+                  <attribute name="mnt-by" value="OWNER-MNT" referenced-type="mntner">
+                      <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"/>
+                  </attribute>
+                  <attribute name="source" value="TEST"/>
+              </attributes>
+              <tags/>
+          </object>
+          <object type="person">
+              <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
+              <source id="test"/>
+              <primary-key>
+                  <attribute name="nic-hdl" value="TP1-TEST"/>
+              </primary-key>
+              <attributes>
+                  <attribute name="person" value="Test Person"/>
+                  <attribute name="address" value="Singel 258"/>
+                  <attribute name="phone" value="+31 6 12345678"/>
+                  <attribute name="nic-hdl" value="TP1-TEST"/>
+                  <attribute name="mnt-by" value="OWNER-MNT" referenced-type="mntner">
+                      <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"/>
+                  </attribute>
+                  <attribute name="source" value="TEST" comment="Filtered"/>
+              </attributes>
+              <tags/>
+          </object>
+      </objects>
+      <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </whois-resources>
+
 
 Example JSON response:
-```json
-{"service": {
-    "name": "search"
-},
-"parameters": {
-    "inverse-lookup": {
-        "inverse-attribute": []
-    },
-    "type-filters": {
-        "type-filter": []
-    },
-    "flags": {
-        "flag": []
-    },
-    "query-strings": {
-        "query-string": [
-            {
-                "value": "AS102"
-            }
-        ]
-    },
-    "sources": {
-        "source": [
-            {
-                "id": "TEST"
-            }
-        ]
-    }
-}, "objects": {
-    "object": [
-        {
-            "type": "aut-num",
-            "link": {
-                "xlink:type": "locator",
-                "xlink:href": "http://rest-test.db.ripe.net/test/aut-num/AS102"
-            },
-            "source": {
-                "id": "test"
-            },
-            "primary-key": {
-                "attribute": [
-                    {
-                        "name": "aut-num",
-                        "value": "AS102"
-                    }
-                ]
-            },
-            "attributes": {
-                "attribute": [
-                    {
-                        "name": "aut-num",
-                        "value": "AS102"
-                    },
-                    {
-                        "name": "as-name",
-                        "value": "End-User-2"
-                    },
-                    {
-                        "name": "descr",
-                        "value": "description"
-                    },
-                    {
-                        "link": {
-                            "xlink:type": "locator",
-                            "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
-                        },
-                        "name": "admin-c",
-                        "value": "TP1-TEST",
-                        "referenced-type": "person"
-                    },
-                    {
-                        "link": {
-                            "xlink:type": "locator",
-                            "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
-                        },
-                        "name": "tech-c",
-                        "value": "TP1-TEST",
-                        "referenced-type": "person"
-                    },
-                    {
-                        "link": {
-                            "xlink:type": "locator",
-                            "xlink:href": "http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"
-                        },
-                        "name": "mnt-by",
-                        "value": "OWNER-MNT",
-                        "referenced-type": "mntner"
-                    },
-                    {
-                        "name": "source",
-                        "value": "TEST"
-                    }
-                ]
-            },
-            "tags": {
-                "tag": []
-            }
-        },
-        {
-            "type": "person",
-            "link": {
-                "xlink:type": "locator",
-                "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
-            },
-            "source": {
-                "id": "test"
-            },
-            "primary-key": {
-                "attribute": [
-                    {
-                        "name": "nic-hdl",
-                        "value": "TP1-TEST"
-                    }
-                ]
-            },
-            "attributes": {
-                "attribute": [
-                    {
-                        "name": "person",
-                        "value": "Test Person"
-                    },
-                    {
-                        "name": "address",
-                        "value": "Singel 258"
-                    },
-                    {
-                        "name": "phone",
-                        "value": "+31 6 12345678"
-                    },
-                    {
-                        "name": "nic-hdl",
-                        "value": "TP1-TEST"
-                    },
-                    {
-                        "link": {
-                            "xlink:type": "locator",
-                            "xlink:href": "http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"
-                        },
-                        "name": "mnt-by",
-                        "value": "OWNER-MNT",
-                        "referenced-type": "mntner"
-                    },
-                    {
-                        "name": "source",
-                        "value": "TEST",
-                        "comment": "Filtered"
-                    }
-                ]
-            },
-            "tags": {
-                "tag": []
-            }
-        }
-    ]
-}, 
-"terms-and-conditions": {
-    "xlink:type": "locator",
-    "xlink:href": "http://www.ripe.net/db/support/db-terms-conditions.pdf"
-}
-}
-```
+
+  {"service": {
+      "name": "search"
+  },
+  "parameters": {
+      "inverse-lookup": {
+          "inverse-attribute": []
+      },
+      "type-filters": {
+          "type-filter": []
+      },
+      "flags": {
+          "flag": []
+      },
+      "query-strings": {
+          "query-string": [
+              {
+                  "value": "AS102"
+              }
+          ]
+      },
+      "sources": {
+          "source": [
+              {
+                  "id": "TEST"
+              }
+          ]
+      }
+  }, "objects": {
+      "object": [
+          {
+              "type": "aut-num",
+              "link": {
+                  "xlink:type": "locator",
+                  "xlink:href": "http://rest-test.db.ripe.net/test/aut-num/AS102"
+              },
+              "source": {
+                  "id": "test"
+              },
+              "primary-key": {
+                  "attribute": [
+                      {
+                          "name": "aut-num",
+                          "value": "AS102"
+                      }
+                  ]
+              },
+              "attributes": {
+                  "attribute": [
+                      {
+                          "name": "aut-num",
+                          "value": "AS102"
+                      },
+                      {
+                          "name": "as-name",
+                          "value": "End-User-2"
+                      },
+                      {
+                          "name": "descr",
+                          "value": "description"
+                      },
+                      {
+                          "link": {
+                              "xlink:type": "locator",
+                              "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
+                          },
+                          "name": "admin-c",
+                          "value": "TP1-TEST",
+                          "referenced-type": "person"
+                      },
+                      {
+                          "link": {
+                              "xlink:type": "locator",
+                              "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
+                          },
+                          "name": "tech-c",
+                          "value": "TP1-TEST",
+                          "referenced-type": "person"
+                      },
+                      {
+                          "link": {
+                              "xlink:type": "locator",
+                              "xlink:href": "http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"
+                          },
+                          "name": "mnt-by",
+                          "value": "OWNER-MNT",
+                          "referenced-type": "mntner"
+                      },
+                      {
+                          "name": "source",
+                          "value": "TEST"
+                      }
+                  ]
+              },
+              "tags": {
+                  "tag": []
+              }
+          },
+          {
+              "type": "person",
+              "link": {
+                  "xlink:type": "locator",
+                  "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
+              },
+              "source": {
+                  "id": "test"
+              },
+              "primary-key": {
+                  "attribute": [
+                      {
+                          "name": "nic-hdl",
+                          "value": "TP1-TEST"
+                      }
+                  ]
+              },
+              "attributes": {
+                  "attribute": [
+                      {
+                          "name": "person",
+                          "value": "Test Person"
+                      },
+                      {
+                          "name": "address",
+                          "value": "Singel 258"
+                      },
+                      {
+                          "name": "phone",
+                          "value": "+31 6 12345678"
+                      },
+                      {
+                          "name": "nic-hdl",
+                          "value": "TP1-TEST"
+                      },
+                      {
+                          "link": {
+                              "xlink:type": "locator",
+                              "xlink:href": "http://rest-test.db.ripe.net/test/mntner/OWNER-MNT"
+                          },
+                          "name": "mnt-by",
+                          "value": "OWNER-MNT",
+                          "referenced-type": "mntner"
+                      },
+                      {
+                          "name": "source",
+                          "value": "TEST",
+                          "comment": "Filtered"
+                      }
+                  ]
+              },
+              "tags": {
+                  "tag": []
+              }
+          }
+      ]
+  }, 
+  "terms-and-conditions": {
+      "xlink:type": "locator",
+      "xlink:href": "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+  }
+  }
+
 
 * A search request with invalid flag
 
-```
-http://rest.db.ripe.net/search?source=ripe&query-string=PP1-RIPE&flags=k
-```
+
+  http://rest.db.ripe.net/search?source=ripe&query-string=PP1-RIPE&flags=k
+
 
 Example XML response:
 
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-    <link xlink:type="locator"
-          xlink:href="http://rest.db.ripe.net/search?query-string=PP1-RIPE&amp;source=RIPE&amp;flags=k"/>
-    <errormessages>
-        <errormessage severity="Error" text="Invalid source '%s'">
-            <args value="RIPE"/>
-        </errormessage>
-    </errormessages>
-    <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</whois-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+      <link xlink:type="locator"
+            xlink:href="http://rest.db.ripe.net/search?query-string=PP1-RIPE&amp;source=RIPE&amp;flags=k"/>
+      <errormessages>
+          <errormessage severity="Error" text="Invalid source '%s'">
+              <args value="RIPE"/>
+          </errormessage>
+      </errormessages>
+      <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </whois-resources>
+
 
 Example JSON response:
 
-```json
-{
-  "link" : {
-    "type" : "locator",
-    "href" : "http://rest.db.ripe.net/search?query-string=PP1-RIPE&source=RIPE&flags=k"
-  },
-  "errormessages" : {
-    "errormessage" : [ {
-      "severity" : "Error",
-      "text" : "Invalid source '%s'",
-      "args" : [ {
-        "value" : "RIPE"
+
+  {
+    "link" : {
+      "type" : "locator",
+      "href" : "http://rest.db.ripe.net/search?query-string=PP1-RIPE&source=RIPE&flags=k"
+    },
+    "errormessages" : {
+      "errormessage" : [ {
+        "severity" : "Error",
+        "text" : "Invalid source '%s'",
+        "args" : [ {
+          "value" : "RIPE"
+        } ]
       } ]
-    } ]
-  },
-  "terms-and-conditions" : {
-    "type" : "locator",
-    "href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+    },
+    "terms-and-conditions" : {
+      "type" : "locator",
+      "href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+    }
   }
-}
-```
+
 
 
 
@@ -672,59 +672,59 @@ A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisres
 
 #### Examples
 
-```
-http://rest.db.ripe.net/metadata/sources.json
-```
+
+  http://rest.db.ripe.net/metadata/sources.json
+
 
 Example XML response:
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-<link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/sources"/>
-<service name="getSupportedDataSources"/>
-<sources>
-    <source name="RIPE" id="ripe"/>
-    <source name="TEST" id="test"/>
-</sources>
-<grs-sources>
-    <source name="TEST-GRS" id="test-grs" grs-id="test-grs"/>
-</grs-sources>
-</whois-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/sources"/>
+  <service name="getSupportedDataSources"/>
+  <sources>
+      <source name="RIPE" id="ripe"/>
+      <source name="TEST" id="test"/>
+  </sources>
+  <grs-sources>
+      <source name="TEST-GRS" id="test-grs" grs-id="test-grs"/>
+  </grs-sources>
+  </whois-resources>
+
 
 Example JSON response:
-```json
-{
-  "link": {
-    "xlink:type": "locator",
-    "xlink:href": "http://rest.db.ripe.net/metadata/sources"
-  }, 
-  "service" : {
-    "name" : "getSupportedDataSources"
-  },
-  "sources": {
-    "source": [
-      {
-        "name": "RIPE",
-        "id": "ripe"
-      },
-      {
-        "name": "TEST",
-        "id": "test"
-      }
-    ]
-  },
-  "grs-sources": {
-    "source": [
-      {
-        "name": "TEST-GRS",
-        "id": "test-grs",
-        "grs-id": "test-grs"
-      }
-    ]
+
+  {
+    "link": {
+      "xlink:type": "locator",
+      "xlink:href": "http://rest.db.ripe.net/metadata/sources"
+    }, 
+    "service" : {
+      "name" : "getSupportedDataSources"
+    },
+    "sources": {
+      "source": [
+        {
+          "name": "RIPE",
+          "id": "ripe"
+        },
+        {
+          "name": "TEST",
+          "id": "test"
+        }
+      ]
+    },
+    "grs-sources": {
+      "source": [
+        {
+          "name": "TEST-GRS",
+          "id": "test-grs",
+          "grs-id": "test-grs"
+        }
+      ]
+    }
   }
-}
-```
+
 
 ***
 
@@ -763,137 +763,137 @@ A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisres
 #### Examples
 
 Example querying for the template of PERSON:
-```
-curl http://rest.db.ripe.net/metadata/templates/person.xml
-```
+
+  curl http://rest.db.ripe.net/metadata/templates/person.xml
+
 
 Example XML response:
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<template-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-<link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/templates/person"/>
-<service name="getObjectTemplate"/>
-<templates>
-    <template type="person">
-        <source id="ripe"/>
-        <attributes>
-            <attribute name="person" requirement="MANDATORY" cardinality="SINGLE" keys="LOOKUP_KEY"/>
-            <attribute name="address" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
-            <attribute name="phone" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
-            <attribute name="fax-no" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
-            <attribute name="e-mail" requirement="OPTIONAL" cardinality="MULTIPLE" keys="LOOKUP_KEY"/>
-            <attribute name="org" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-            <attribute name="nic-hdl" requirement="MANDATORY" cardinality="SINGLE" keys="PRIMARY_KEY LOOKUP_KEY"/>
-            <attribute name="remarks" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
-            <attribute name="notify" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-            <attribute name="abuse-mailbox" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-            <attribute name="mnt-by" requirement="MANDATORY" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-            <attribute name="source" requirement="MANDATORY" cardinality="SINGLE" keys=""/>
-        </attributes>
-    </template>
-</templates>
-</template-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <template-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+  <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/templates/person"/>
+  <service name="getObjectTemplate"/>
+  <templates>
+      <template type="person">
+          <source id="ripe"/>
+          <attributes>
+              <attribute name="person" requirement="MANDATORY" cardinality="SINGLE" keys="LOOKUP_KEY"/>
+              <attribute name="address" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
+              <attribute name="phone" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
+              <attribute name="fax-no" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
+              <attribute name="e-mail" requirement="OPTIONAL" cardinality="MULTIPLE" keys="LOOKUP_KEY"/>
+              <attribute name="org" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+              <attribute name="nic-hdl" requirement="MANDATORY" cardinality="SINGLE" keys="PRIMARY_KEY LOOKUP_KEY"/>
+              <attribute name="remarks" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
+              <attribute name="notify" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+              <attribute name="abuse-mailbox" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+              <attribute name="mnt-by" requirement="MANDATORY" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+              <attribute name="source" requirement="MANDATORY" cardinality="SINGLE" keys=""/>
+          </attributes>
+      </template>
+  </templates>
+  </template-resources>
+
 
 Example JSON response:
-```json
-{
-  "service": "getObjectTemplate",
-  "link": {
-    "xlink:type": "locator",
-    "xlink:href": "http://rest.db.ripe.net/metadata/templates/peering-set"
-  },
-  "service" : {
-    "name" : "getObjectTemplate"
-  },
-  "templates": {
-    "template": [
-      {
-        "type": "peering-set",
-        "source": {
-          "id": "ripe"
-        },
-        "attributes": {
-          "attribute": [
-            {
-              "name": "peering-set",
-              "requirement": "MANDATORY",
-              "cardinality": "SINGLE",
-              "keys": ["PRIMARY_KEY","LOOKUP_KEY"]
-            },
-            {
-              "name": "descr",
-              "requirement": "MANDATORY",
-              "cardinality": "MULTIPLE",
-              "keys": []
-            },
-            {
-              "name": "peering",
-              "requirement": "OPTIONAL",
-              "cardinality": "MULTIPLE",
-              "keys": []
-            },
-            {
-              "name": "mp-peering",
-              "requirement": "OPTIONAL",
-              "cardinality": "MULTIPLE",
-              "keys": []
-            },
-            {
-              "name": "remarks",
-              "requirement": "OPTIONAL",
-              "cardinality": "MULTIPLE",
-              "keys": []
-            },
-            {
-              "name": "org",
-              "requirement": "OPTIONAL",
-              "cardinality": "MULTIPLE",
-              "keys": ["INVERSE_KEY"]
-            },
-            {
-              "name": "tech-c",
-              "requirement": "MANDATORY",
-              "cardinality": "MULTIPLE",
-              "keys": ["INVERSE_KEY"]
-            },
-            {
-              "name": "admin-c",
-              "requirement": "MANDATORY",
-              "cardinality": "MULTIPLE",
-              "keys": ["INVERSE_KEY"]
-            },
-            {
-              "name": "notify",
-              "requirement": "OPTIONAL",
-              "cardinality": "MULTIPLE",
-              "keys": ["INVERSE_KEY"]
-            },
-            {
-              "name": "mnt-by",
-              "requirement": "MANDATORY",
-              "cardinality": "MULTIPLE",
-              "keys": ["INVERSE_KEY"]
-            },
-            {
-              "name": "mnt-lower",
-              "requirement": "OPTIONAL",
-              "cardinality": "MULTIPLE",
-              "keys": ["INVERSE_KEY"]
-            },
-            {
-              "name": "source",
-              "requirement": "MANDATORY",
-              "cardinality": "SINGLE",
-              "keys": []
-            }
-          ]
+
+  {
+    "service": "getObjectTemplate",
+    "link": {
+      "xlink:type": "locator",
+      "xlink:href": "http://rest.db.ripe.net/metadata/templates/peering-set"
+    },
+    "service" : {
+      "name" : "getObjectTemplate"
+    },
+    "templates": {
+      "template": [
+        {
+          "type": "peering-set",
+          "source": {
+            "id": "ripe"
+          },
+          "attributes": {
+            "attribute": [
+              {
+                "name": "peering-set",
+                "requirement": "MANDATORY",
+                "cardinality": "SINGLE",
+                "keys": ["PRIMARY_KEY","LOOKUP_KEY"]
+              },
+              {
+                "name": "descr",
+                "requirement": "MANDATORY",
+                "cardinality": "MULTIPLE",
+                "keys": []
+              },
+              {
+                "name": "peering",
+                "requirement": "OPTIONAL",
+                "cardinality": "MULTIPLE",
+                "keys": []
+              },
+              {
+                "name": "mp-peering",
+                "requirement": "OPTIONAL",
+                "cardinality": "MULTIPLE",
+                "keys": []
+              },
+              {
+                "name": "remarks",
+                "requirement": "OPTIONAL",
+                "cardinality": "MULTIPLE",
+                "keys": []
+              },
+              {
+                "name": "org",
+                "requirement": "OPTIONAL",
+                "cardinality": "MULTIPLE",
+                "keys": ["INVERSE_KEY"]
+              },
+              {
+                "name": "tech-c",
+                "requirement": "MANDATORY",
+                "cardinality": "MULTIPLE",
+                "keys": ["INVERSE_KEY"]
+              },
+              {
+                "name": "admin-c",
+                "requirement": "MANDATORY",
+                "cardinality": "MULTIPLE",
+                "keys": ["INVERSE_KEY"]
+              },
+              {
+                "name": "notify",
+                "requirement": "OPTIONAL",
+                "cardinality": "MULTIPLE",
+                "keys": ["INVERSE_KEY"]
+              },
+              {
+                "name": "mnt-by",
+                "requirement": "MANDATORY",
+                "cardinality": "MULTIPLE",
+                "keys": ["INVERSE_KEY"]
+              },
+              {
+                "name": "mnt-lower",
+                "requirement": "OPTIONAL",
+                "cardinality": "MULTIPLE",
+                "keys": ["INVERSE_KEY"]
+              },
+              {
+                "name": "source",
+                "requirement": "MANDATORY",
+                "cardinality": "SINGLE",
+                "keys": []
+              }
+            ]
+          }
         }
-      }
-    ]
+      ]
+    }
   }
-}
-```
+
 
 
 ## API Geolocation
@@ -939,64 +939,64 @@ For non-200 OK responses, the response body will be in plaintext.
 
 ### Examples
 
-```
-curl https://rest.db.ripe.net/geolocation?ipkey=10.0.0.0
-```
+
+  curl https://rest.db.ripe.net/geolocation?ipkey=10.0.0.0
+
 
 Example XML response:
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-    <link xlink:type="locator" xlink:href="https://rest.db.ripe.net/geolocation?source=test&ipkey=10.0.0.0"/>
-    <service name="geolocation-finder"/>
-    <geolocation-attributes>
-        <location value="52.375599 4.899902">
-            <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"/>
-        </location>
-        <language value="EN">
-            <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"/>
-        </language>
-    </geolocation-attributes>
-    <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</whois-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+      <link xlink:type="locator" xlink:href="https://rest.db.ripe.net/geolocation?source=test&ipkey=10.0.0.0"/>
+      <service name="geolocation-finder"/>
+      <geolocation-attributes>
+          <location value="52.375599 4.899902">
+              <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"/>
+          </location>
+          <language value="EN">
+              <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"/>
+          </language>
+      </geolocation-attributes>
+      <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </whois-resources>
+
 
 Example JSON response:
-```json
-{
-  "link": {
-    "xlink:type": "locator",
-    "xlink:href": "https://rest.db.ripe.net/geolocation?source=test&ipkey=10.0.0.0"
-  },
-  "service" : {
-    "name" : "geolocation-finder"
-  },
-  "geolocation-attributes": {
-    "location": [
-      {
-        "value": "52.375599 4.899902",
-        "link": {
-          "xlink:type": "locator",
-          "xlink:href": "https://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"
+
+  {
+    "link": {
+      "xlink:type": "locator",
+      "xlink:href": "https://rest.db.ripe.net/geolocation?source=test&ipkey=10.0.0.0"
+    },
+    "service" : {
+      "name" : "geolocation-finder"
+    },
+    "geolocation-attributes": {
+      "location": [
+        {
+          "value": "52.375599 4.899902",
+          "link": {
+            "xlink:type": "locator",
+            "xlink:href": "https://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"
+          }
         }
-      }
-    ],
-    "language": [
-      {
-        "value": "EN",
-        "link": {
-          "xlink:type": "locator",
-          "xlink:href": "https://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"
+      ],
+      "language": [
+        {
+          "value": "EN",
+          "link": {
+            "xlink:type": "locator",
+            "xlink:href": "https://rest.db.ripe.net/lookup/test/inetnum/10.0.0.0 - 10.255.255.255"
+          }
         }
-      }
-    ]
-  },
-  "terms-and-conditions" : {
-      "xlink:type" : "locator",
-      "xlink:href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+      ]
+    },
+    "terms-and-conditions" : {
+        "xlink:type" : "locator",
+        "xlink:href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+    }
   }
-}
-```
+
 
 
 
@@ -1039,46 +1039,46 @@ An [AbuseResources](#api-abuse-contact) containing locator URIs to matching obje
 
 ### Examples
 
-```
-curl http://rest-test.db.ripe.net/abuse-contact/AS3333
-```
+
+  curl http://rest-test.db.ripe.net/abuse-contact/AS3333
+
 
 Example XML response:
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<abuse-resources xmlns:xlink="http://www.w3.org/1999/xlink" service="abuse-contact">
-    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/abuse-contact/AS3333"/>
-    <parameters>
-        <primary-key value="AS3333"/>
-    </parameters>
-    <abuse-contacts key="AA1-RIPE" email="abuse@ripe.net"/>
-    <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</abuse-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <abuse-resources xmlns:xlink="http://www.w3.org/1999/xlink" service="abuse-contact">
+      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/abuse-contact/AS3333"/>
+      <parameters>
+          <primary-key value="AS3333"/>
+      </parameters>
+      <abuse-contacts key="AA1-RIPE" email="abuse@ripe.net"/>
+      <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </abuse-resources>
+
 
 Example JSON response:
-```json
-{
-  "service" : "abuse-contact",
-  "link" : {
-    "type" : "locator",
-    "href" : "http://rest.db.ripe.net/abuse-contact/AS3333"
-  },
-  "parameters" : {
-    "primary-key" : {
-      "value" : "AS3333"
+
+  {
+    "service" : "abuse-contact",
+    "link" : {
+      "type" : "locator",
+      "href" : "http://rest.db.ripe.net/abuse-contact/AS3333"
+    },
+    "parameters" : {
+      "primary-key" : {
+        "value" : "AS3333"
+      }
+    },
+    "abuse-contacts" : {
+      "key": "AS1-RIPE",
+      "email" : "abuse@ripe.net"
+    },
+    "terms-and-conditions" : {
+      "type" : "locator",
+      "href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
     }
-  },
-  "abuse-contacts" : {
-    "key": "AS1-RIPE",
-    "email" : "abuse@ripe.net"
-  },
-  "terms-and-conditions" : {
-    "type" : "locator",
-    "href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
   }
-}
-```
+
 
 
 
@@ -1116,62 +1116,62 @@ A [WhoisResource](../06.Update-Methods/01-RESTful-API.md#whois-rest-api-whoisres
 ### Examples
 
 Example Request:
-```
-curl 'http://rest-test.db.ripe.net/TEST/aut-num/AS102/versions'
-```
+
+  curl 'http://rest-test.db.ripe.net/TEST/aut-num/AS102/versions'
+
 
 Example XML response:
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<whois-resources>
-<versions type="aut-num" key="AS102">
-    <source id="TEST"/>
-    <version deleted="2013-06-27 13:22"/>
-    <version>
-        <revision>1</revision>
-        <date>2013-06-27 13:22</date>
-        <operation>ADD/UPD</operation>
-    </version>
-    <version>
-        <revision>2</revision>
-        <date>2013-06-27 13:22</date>
-        <operation>ADD/UPD</operation>
-    </version>
-</versions>
-<terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
-</whois-resources>
-```
+
+  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  <whois-resources>
+  <versions type="aut-num" key="AS102">
+      <source id="TEST"/>
+      <version deleted="2013-06-27 13:22"/>
+      <version>
+          <revision>1</revision>
+          <date>2013-06-27 13:22</date>
+          <operation>ADD/UPD</operation>
+      </version>
+      <version>
+          <revision>2</revision>
+          <date>2013-06-27 13:22</date>
+          <operation>ADD/UPD</operation>
+      </version>
+  </versions>
+  <terms-and-conditions xlink:type="locator" xlink:href="http://www.ripe.net/db/support/db-terms-conditions.pdf"/>
+  </whois-resources>
+
 
 Example JSON response:
-```json
-{
-  "versions": {
-    "source": {
-      "id": "TEST"
-    },
-    "type": "aut-num",
-    "key": "AS102",
-    "version": [
-      {
-        "deleted": null,
-        "revision": 1,
-        "date": "2013-06-27 13:22",
-        "operation": "ADD/UPD"
+
+  {
+    "versions": {
+      "source": {
+        "id": "TEST"
       },
-      {
-        "deleted": null,
-        "revision": 2,
-        "date": "2013-06-27 13:22",
-        "operation": "ADD/UPD"
-      }
-    ]
-  },
-  "terms-and-conditions" : {
-    "xlink:type" : "locator",
-    "xlink:href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+      "type": "aut-num",
+      "key": "AS102",
+      "version": [
+        {
+          "deleted": null,
+          "revision": 1,
+          "date": "2013-06-27 13:22",
+          "operation": "ADD/UPD"
+        },
+        {
+          "deleted": null,
+          "revision": 2,
+          "date": "2013-06-27 13:22",
+          "operation": "ADD/UPD"
+        }
+      ]
+    },
+    "terms-and-conditions" : {
+      "xlink:type" : "locator",
+      "xlink:href" : "http://www.ripe.net/db/support/db-terms-conditions.pdf"
+    }
   }
-}
-```
+
 
 
 

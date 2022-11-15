@@ -30,11 +30,11 @@ Restart MariaDB once all configuration changes have been made.
 * Login to mysql using `mysql -u root -p`
 * Create user dbint with no (empty) password
 
-```sql
-CREATE USER 'dbint'@'localhost' IDENTIFIED BY '';
-GRANT ALL PRIVILEGES ON *.* TO 'dbint'@'localhost';
-CREATE USER 'rdonly'@'localhost' IDENTIFIED BY '';
-GRANT SELECT PRIVILEGES ON *.* TO 'rdonly'@'localhost';
-FLUSH PRIVILEGES;
-````
+
+  CREATE USER 'dbint'@'localhost' IDENTIFIED BY '';
+  GRANT ALL PRIVILEGES ON *.* TO 'dbint'@'localhost';
+  CREATE USER 'rdonly'@'localhost' IDENTIFIED BY '';
+  GRANT SELECT PRIVILEGES ON *.* TO 'rdonly'@'localhost';
+  FLUSH PRIVILEGES;
+
 Logout with `CTRL+D`

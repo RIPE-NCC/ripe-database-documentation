@@ -1,10 +1,10 @@
 # Building whois
 
-```
-git clone git@github.com:RIPE-NCC/whois.git
-cd whois
-mvn clean install
-```
+
+  git clone git@github.com:RIPE-NCC/whois.git
+  cd whois
+  mvn clean install
+
 
 ## Goals
 
@@ -34,9 +34,9 @@ The release jar will be created in `whois-db/target/whois-db-<pom-xml-version>.j
 
 If there are compilation errors, make sure to perform a maven build first, since it will generate required sources:
 
-```
-mvn clean install
-```
+
+  mvn clean install
+
 
 ### Running whois from within Intellij
 
@@ -48,20 +48,20 @@ mvn clean install
   - hazelcast.xml
   - log4j2.xml
 - Ensure a local property is available in `tools` directory. Copy `whois/whois-commons/src/main/resources/whois.properties` into `whois/tools` directory and ensure the following properties are updated to allow running locally, for example have the following:
-```
-port.query=1043
-port.api=1080
-port.nrtm=1081
-```
+
+  port.query=1043
+  port.api=1080
+  port.nrtm=1081
+
 Also ensure database username and password matches what you have locally. (Normally this should be `dbint` with no password)
 
 - In `Run/Debug configuration` Set VM options to:
 
-```
--Dwhois.config=./tools/whois-local.properties
--Dhazelcast.config=./tools/hazelcast.xml
--Dlog4j.configurationFile=file:./tools/log4j2.xml
-```
+
+  -Dwhois.config=./tools/whois-local.properties
+  -Dhazelcast.config=./tools/hazelcast.xml
+  -Dlog4j.configurationFile=file:./tools/log4j2.xml
+
 - Run `mvn clean install -Prelease` to ensure property variables set in `version.properties` is available.
 - Start whois by running the Main class `net.ripe.db.whois.db.WhoisServer`
 
@@ -83,10 +83,10 @@ If there are problems in the project just remove the IntelliJ files and re-impor
 * Re-import the projects as described above. 
 
 If you want to delete all your IntelliJ project files you can use the following commands:
-```bash
-find . -iname '*.iml' -print0 | xargs -0 rm
-find . -type d -name '.idea' -print0 | xargs -0 rm -rf
-````
+
+  find . -iname '*.iml' -print0 | xargs -0 rm
+  find . -type d -name '.idea' -print0 | xargs -0 rm -rf
+
 
 ### Suggested IntelliJ IDE Preferences
 

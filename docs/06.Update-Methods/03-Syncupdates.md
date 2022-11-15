@@ -1,6 +1,6 @@
 # Syncupdates
 
-Syncupdates enables updates to the RIPE Database synchronously, meaning, the result is returned immediately to the user. It is intended for use by applications that need to update the RIPE Database and are able to process the result afterwards. An interface can easily be created in any language that supports the HTTP protocol. Syncupdates supports HTTP GET and POST methods (both multipart and URL-encoded formats). It can also be used directly via a web form.
+[Syncupdates](https://apps.db.ripe.net/db-web-ui/syncupdates) enables updates to the RIPE Database synchronously, meaning, the result is returned immediately to the user. It is intended for use by applications that need to update the RIPE Database and are able to process the result afterwards. An interface can easily be created in any language that supports the HTTP protocol. Syncupdates supports HTTP GET and POST methods (both multipart and URL-encoded formats). It can also be used directly via a web form.
 
 Syncupdates accepts the following parameters (query params for GET, form params for POST):
 
