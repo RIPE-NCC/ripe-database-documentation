@@ -199,7 +199,7 @@ Exact the **inet(6)num** object from the RIPE Database:
 
     whois -h whois.ripe.net -r <ipadress> > inetnum.txt
 
-Alternatively you can seach for any other entry in that object with -i, for example for the "mntner:" attribute.
+Alternatively you can search for any other entry in that object with -i, for example for the "mntner:" attribute.
 
     whois -h whois.ripe.net -i mnt-by <mntner-name> > inetnum.txt
 
