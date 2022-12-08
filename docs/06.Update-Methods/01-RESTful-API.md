@@ -79,12 +79,14 @@ Possible reasons for varios HTTP status codes are as follows:
 |OK (200)|Successful update|
 |Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
 |Authentication failure (401)| Incorrect password|
-|Forbidden (403)| <font color="red">Miguel notes: This error is due to not necessary permissions, why is "Query limit exceeded".</font> Query limit exceeded.|
+|Forbidden (403)| Query limit exceeded.|
+|Too Many Request (429)| Query limit exceeded.|
 |Not Found (404)|No results were found (on a search request), or object specified in URI does not exist.|
-|Method not Allowed (405)|<font color="red">Miguel notes: must be method not allowed, when you use a POST and that endpoint just accept GET for example.</font>No results were found (on a search request), or object specified in URI does not exist.|
+|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.|
 |Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
 |Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
 |Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
+
 
 
 #### Examples
@@ -168,12 +170,14 @@ Possible reasons for varios HTTP status codes are as follows:
 |OK (200)|Successful update|
 |Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
 |Authentication failure (401)| Incorrect password|
-|Forbidden (403)| <font color="red">Miguel notes: This error is due to not necessary permissions, why is "Query limit exceeded".</font> Query limit exceeded.|
+|Forbidden (403)| Query limit exceeded.|
+|Too Many Request (429)| Query limit exceeded.|
 |Not Found (404)|No results were found (on a search request), or object specified in URI does not exist.|
-|Method not Allowed (405)|<font color="red">Miguel notes: must be method not allowed, when you use a POST and that endpoint just accept GET for example.</font>No results were found (on a search request), or object specified in URI does not exist.|
+|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.|
 |Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
 |Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
 |Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
+
 
 
 #### Error Response
@@ -276,12 +280,14 @@ Possible reasons for varios HTTP status codes are as follows:
 |OK (200)|Successful update|
 |Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
 |Authentication failure (401)| Incorrect password|
-|Forbidden (403)| <font color="red">Miguel notes: This error is due to not necessary permissions, why is "Query limit exceeded".</font> Query limit exceeded.|
+|Forbidden (403)| Query limit exceeded.|
+|Too Many Request (429)| Query limit exceeded.|
 |Not Found (404)|No results were found (on a search request), or object specified in URI does not exist.|
-|Method not Allowed (405)|<font color="red">Miguel notes: must be method not allowed, when you use a POST and that endpoint just accept GET for example.</font>No results were found (on a search request), or object specified in URI does not exist.|
+|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.|
 |Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
 |Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
 |Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
+
 
 ### Examples
 
