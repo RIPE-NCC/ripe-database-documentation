@@ -32,7 +32,8 @@ So "AS3333:AS-RipeOriginAS1" is a valid set name but AS1 is not an **aut-num** o
 
 "AS3333:AS1:AS-CUSTOMERS" is also not valid as it would require "AS3333:AS1" to exist as the parent to authorise the creation of this set.
 
-If the set name is a single as-set (starting with AS- and with no colons) then it is considered to be non-hierarchical, for example "AS-CUSTOMERS". In this case, it does not have a parent. It does not require authorisation from a parent. So anyone can create this object in the RIPE Database.
+Only hierarchical AS-SET objects can be created.
+If the set name is a single as-set (starting with AS- and with no colons) then it is considered to be non-hierarchical,
 
 The **as-set** object can also list members of the set with a "members:" attribute. The **as-set** and **aut-num** objects referenced in a "members:" attribute do not need to exist.
 
