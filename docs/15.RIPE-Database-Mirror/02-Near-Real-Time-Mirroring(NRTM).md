@@ -80,7 +80,7 @@ There is no support in the NRTM protocol for polling, so a client or server may 
 
 ## How to access the NRTM stream
 
-You will find all technical requirements to access the stream and more information about NRTM [in this document](02-Access-to-NRTM.md#access-to-nrtm).
+You will find all technical requirements to access the stream and more information about NRTM [in this document](03-Access-to-NRTM.md#access-to-nrtm).
 
 
 ## Legal Framework

@@ -721,7 +721,8 @@ The root object type is called whoisResources.
 ***
 
 
-* <a id="link">**Link**</a>: pointer to the resource. 
+* #### Link: 
+    Pointer to the resource. 
 * The XLink format is used for the links (ref: http://en.wikipedia.org/wiki/XLink).
 
         <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
@@ -735,17 +736,18 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="parameters">**Parameters**</a>: part of a search response, indicating which query flags were used.
- * Inverse-lookup: wraps a set of _inverse-attribute_
- * Inverse-attribute: _value_ of an inverse query flag
- * Type-filters: wraps a set of _type-filter_
- * Type-filter: _id_ = the RPSL object type to limit the search to
- * Flags: wraps a set of _flag_
- * Flag: the _value_ of a query flag
- * Query-strings: wraps a set of _query-string_
- * Query-string: the _value_ of the query string
- * Sources: wraps a set of _source_
- * Source: _id_ of RIPE database source
+* #### Parameters: 
+    part of a search response, indicating which query flags were used.
+* Inverse-lookup: wraps a set of _inverse-attribute_
+* Inverse-attribute: _value_ of an inverse query flag
+* Type-filters: wraps a set of _type-filter_
+* Type-filter: _id_ = the RPSL object type to limit the search to
+* Flags: wraps a set of _flag_
+* Flag: the _value_ of a query flag
+* Query-strings: wraps a set of _query-string_
+* Query-string: the _value_ of the query string
+* Sources: wraps a set of _source_
+* Source: _id_ of RIPE database source
 
         <parameters>
             <inverse-lookup/>
@@ -780,18 +782,19 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="objects">**Objects**</a>: a set of (RPSL-) _object_ representations.
- * Type: the RPSL object type
- * Link: see above
- * Source: indication of which RIPE source object is registered in
- * Primary-key: searchable key in the RIPE database
- * Attributes: set of _attribute_ describing the RPSL object
- * Attribute: 
-      * can be divided by mandatory:
-          * name, value
-      * and non-mandatory:
-          * link (see Link), referenced-type: used to describe pointer to resource where _referenced-type_ is the RIPE object type.
-  * comment
+* #### Objects: 
+    a set of (RPSL-) _object_ representations.
+* Type: the RPSL object type
+* Link: see above
+* Source: indication of which RIPE source object is registered in
+* Primary-key: searchable key in the RIPE database
+* Attributes: set of _attribute_ describing the RPSL object
+* Attribute: 
+    * can be divided by mandatory:
+        * name, value
+    * and non-mandatory:
+        * link (see Link), referenced-type: used to describe pointer to resource where _referenced-type_ is the RIPE object type.
+* comment
 
             <objects>
                 <object>...</object>
@@ -805,7 +808,8 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="object">**Object**</a>: representation of a RPSL object. Contained within [Objects](#objects).
+* #### Object: 
+    representation of a RPSL object. Contained within [Objects](#objects).
 
         <object type="person">
             <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/LP1-TEST"/>
@@ -836,8 +840,9 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="tags">**Tags**</a>: set of _tag_
- * Tag: extra data about a particular object in the RIPE database. Consists of _id_ - the name of the tag, and _data_
+* #### Tags: 
+    set of _tag_
+* Tag: extra data about a particular object in the RIPE database. Consists of _id_ - the name of the tag, and _data_
 
 
         <tags>
@@ -852,9 +857,10 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="geolocation">**Geolocation-attributes**</a>: extra information for inetnum / inet6num RPSL objects.
- * Location: a link (see Link) to the inet(6)num and a longitude latitude value
- * Language: a link (see Link) to the inet(6)num and an ISO 639-1 language code
+* #### Geolocation-attributes: 
+    Extra information for inetnum / inet6num RPSL objects.
+* Location: a link (see Link) to the inet(6)num and a longitude latitude value
+* Language: a link (see Link) to the inet(6)num and an ISO 639-1 language code
 
 
         <geolocation-attributes>
@@ -870,9 +876,10 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="sources">**Sources**</a>: a set of available _source_ for the RIPE database
- * Source: _name_, _id_
- * Valid values: RIPE, TEST
+* #### Sources: 
+    a set of available _source_ for the RIPE database
+* Source: _name_, _id_
+* Valid values: RIPE, TEST
 
 
         <sources>
@@ -887,9 +894,10 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="grs-sources">**Grs-sources**</a>: a set of available _grs-source_ for the RIPE database
- * Source: _name_, _id_ and _grs-id_
- * Valid Values: AFRINIC-GRS, APNIC-GRS, ARIN-GRS, JPIRR-GRS, LACNIC-GRS, RADB-GRS
+* #### Grs-sources: 
+    a set of available _grs-source_ for the RIPE database
+* Source: _name_, _id_ and _grs-id_
+* Valid Values: AFRINIC-GRS, APNIC-GRS, ARIN-GRS, JPIRR-GRS, LACNIC-GRS, RADB-GRS
 
         <grs-sources>
             <source name="APNIC-GRS" id="apnic-grs" grs-id="apnic-grs"/>
@@ -902,8 +910,9 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="versions">**Versions**</a>: enumeration of the changes of a particular object. Will only be in the [versions](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-versions) response payload. Consists of _type_ (see Type), _key_ (see Primary key) and _version_.
- * Version: information about a particular version of the object. It can either be _deleted_, in which case there's only a date, or show information about the revision.
+* #### Versions: 
+    enumeration of the changes of a particular object. Will only be in the [versions](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-versions) response payload. Consists of _type_ (see Type), _key_ (see Primary key) and _version_.
+* Version: information about a particular version of the object. It can either be _deleted_, in which case there's only a date, or show information about the revision.
 
 
         <versions type="aut-num" key="...">
@@ -930,7 +939,8 @@ The root object type is called whoisResources.
 
 ***
 
-* <a id="errormessages">Error messages</a>: A set of _errormessage_ containing information about the performed operation. A message concerns the operation, an object of the operation, or an attribute of an object. It has a severity (Error, Warning, Info), a text description and a set of arguments supplied to the operation.
+* #### Error messages: 
+    A set of _errormessage_ containing information about the performed operation. A message concerns the operation, an object of the operation, or an attribute of an object. It has a severity (Error, Warning, Info), a text description and a set of arguments supplied to the operation.
 
 
         <errormessages>
@@ -992,13 +1002,13 @@ The root object type is called whoisResources.
 ### Data Types
 
 * Inverse Attribute
- * One of: abuse-c, abuse-mailbox, admin-c, auth, author, ds-rdata, fingerprint, form, ifaddr, irt-nfy, local-as, mbrs-by-ref, member-of, mnt-by, mnt-domains, mnt-irt, mnt-lower, mnt-nfy, mnt-ref, mnt-routes, notify, nserver, org, origin, person, ping-hdl, ref-nfy, tech-c, upd-to, zone-c.
+* One of: abuse-c, abuse-mailbox, admin-c, auth, author, ds-rdata, fingerprint, form, ifaddr, irt-nfy, local-as, mbrs-by-ref, member-of, mnt-by, mnt-domains, mnt-irt, mnt-lower, mnt-nfy, mnt-ref, mnt-routes, notify, nserver, org, origin, person, ping-hdl, ref-nfy, tech-c, upd-to, zone-c.
 * Object Type
- * One of: as-block, as-set, aut-num, domain, filter-set, inet6num, inetnum, inet-rtr, irt, key-cert, mntner, organisation, peering-set, person, poem, poetic-form, role, route, route6, route-set, rtr-set.
+* One of: as-block, as-set, aut-num, domain, filter-set, inet6num, inetnum, inet-rtr, irt, key-cert, mntner, organisation, peering-set, person, poem, poetic-form, role, route, route6, route-set, rtr-set.
 * Severity
- * One of: Error, Warning, Info.
+* One of: Error, Warning, Info.
 * Source
- * One of: RIPE, TEST, or a GRS source (AFRINIC-GRS, APNIC-GRS, ARIN-GRS, JPIRR-GRS, LACNIC-GRS, RADB-GRS, RIPE-GRS).
+* One of: RIPE, TEST, or a GRS source (AFRINIC-GRS, APNIC-GRS, ARIN-GRS, JPIRR-GRS, LACNIC-GRS, RADB-GRS, RIPE-GRS).
 
 
 

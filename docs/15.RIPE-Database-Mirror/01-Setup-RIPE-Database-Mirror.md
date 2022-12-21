@@ -45,23 +45,21 @@ There are two ways to set up a mirror of the RIPE database.
 
     - The GRS import will run automatically every midnight. Or, connect to the process using JMX, and start the GRS import.
 
-
-        $ java -jar jmxterm-<version>-uber.jar
-        > open <pid>
-        > bean net.ripe.db.whois:name=GrsImport
-        > run grsImport "RIPE-GRS" "test"
-        #calling operation grsImport of mbean net.ripe.db.whois:name=GrsImport
-        #operation returns:
-        GRS import started
+            $ java -jar jmxterm-<version>-uber.jar
+            > open <pid>
+            > bean net.ripe.db.whois:name=GrsImport
+            > run grsImport "RIPE-GRS" "test"
+            #calling operation grsImport of mbean net.ripe.db.whois:name=GrsImport
+            #operation returns:
+            GRS import started
 
 
     - Monitor progress by checking the log4j console output, the import will take around 2 hours to complete.
 
     - You can query for objects in the mirror using for example:
 
-
-        -s RIPE-GRS 82.185.158.240 - 82.185.158.247
-        --resource 82.185.158.240 - 82.185.158.247
+            -s RIPE-GRS 82.185.158.240 - 82.185.158.247
+            --resource 82.185.158.240 - 82.185.158.247
 
 
 
@@ -103,29 +101,29 @@ There are two ways to set up a mirror of the RIPE database.
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
     - if jmxterm complains about JDK version or similar, check the [Installation-instructions](../18.Installation-and-Development/06-Installation-instructions.md#installation-instructions) because it could be a bug in jmxterm.
     
-        ./whois.init jmx
-        bean net.ripe.db.whois:name=Bootstrap
-        run loadDump initialimport <path to ripe.db.gz>
+            ./whois.init jmx
+            bean net.ripe.db.whois:name=Bootstrap
+            run loadDump initialimport <path to ripe.db.gz>
     
     - When the import is finished exit the jmx console, and test that it worked by executing a query using telnet:
     
-        telnet localhost 1043
-        193.0.0.1 - 193.0.7.255
+            telnet localhost 1043
+            193.0.0.1 - 193.0.7.255
     
     The above jmx call will load the LOCAL database with the snapshot of the objects from the FTP dump.
 
     - Now you need to stop the server and copy the LOCAL database to WHOIS_MIRROR_RIPE_GRS. 
     
-        ./whois.init stop
-        mysqldump -udbint -p  LOCAL > LOCAL.sql
-        mysql -udbint -p WHOIS_MIRROR_RIPE_GRS < LOCAL.sql
+            ./whois.init stop
+            mysqldump -udbint -p  LOCAL > LOCAL.sql
+            mysql -udbint -p WHOIS_MIRROR_RIPE_GRS < LOCAL.sql
     
     - The above steps are important because you cannot mirror a remote database directly to the main source (LOCAL), and also you cannot load directly with the JMX call an FTP dump to the mirrored database. 
     - The mirrored content has to be persisted to WHOIS_MIRROR_grs.source, in our case WHOIS_MIRROR_RIPE_GRS. 
     - Note that the properties:
     
-        whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
-        whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+            whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+            whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
     
     have to be like that, because they are dynamically suffixed by the grs.sources (RIPE-GRS)
 
@@ -133,10 +131,10 @@ There are two ways to set up a mirror of the RIPE database.
     - Start the server and check that the mirrored source is working:
 
     
-        ./whois.init start
-        <wait>
-        telnet localhost 1043
-        -s RIPE-GRS 193.0.0.1 - 193.0.7.255
+            ./whois.init start
+            <wait>
+            telnet localhost 1043
+            -s RIPE-GRS 193.0.0.1 - 193.0.7.255
     
 
     - If the query is successful, we can proceed with [Setup automatic updating with NRTM](02-Near-Real-Time-Mirroring(NRTM).md#near-real-time-Mirroring(nrtm)). 

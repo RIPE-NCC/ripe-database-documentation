@@ -9,14 +9,13 @@ This can be done from the command line using a third party software package, fro
 
 Returns an object from the RIPE Database.
 
-
-  curl 'https://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255?unfiltered'
+    curl 'https://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255?unfiltered'
 
 
 Any spaces in the command must be encoded. The response will be returned by default in XML format. Alternatively JSON or text/plain can be returned:
 
 
-  curl -H 'Accept: application/json'
+    curl -H 'Accept: application/json'
 
 
 Additional resources:
@@ -74,27 +73,27 @@ Possible reasons for varios HTTP status codes are as follows:
 
 ### Examples
 
-Example request:
+* Example request:
 
     curl 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
 
-Example JSON request:
+* Example JSON request:
 
     curl -H 'Accept: application/json' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
 
-Example text/plain request:
+* Example text/plain request:
 
     curl -H 'Accept: text/plain' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT' 
 
-Example unfiltered request:
+* Example unfiltered request:
 
     curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
 
-Example bad request when source is incorrect:
+* Example bad request when source is incorrect:
 
     curl 'http://rest.db.ripe.net/pez/person/PP1-RIPE'
 
-Example request with encoded query parameter:
+* Example request with encoded query parameter:
 
     curl 'http://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255.json'
 
@@ -311,7 +310,7 @@ A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisr
 
 Example querying for the template of PERSON:
 
-  curl http://rest.db.ripe.net/metadata/templates/person.xml
+    curl http://rest.db.ripe.net/metadata/templates/person.xml
 
 
 
@@ -359,7 +358,6 @@ For non-200 OK responses, the response body will be in plaintext.
 
 ### Examples
 
-
   curl https://rest.db.ripe.net/geolocation?ipkey=10.0.0.0
 
 
@@ -404,7 +402,6 @@ An [AbuseResources](#api-abuse-contact) containing locator URIs to matching obje
 
 
 ### Examples
-
 
   curl http://rest-test.db.ripe.net/abuse-contact/AS3333
 
@@ -490,7 +487,7 @@ A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#templa
 
 Example Request:
 
-  curl 'http://rest-test.db.ripe.net/TEST/aut-num/AS102/versions'
+    curl 'http://rest-test.db.ripe.net/TEST/aut-num/AS102/versions'
 
 
 

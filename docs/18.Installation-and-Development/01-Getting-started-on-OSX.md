@@ -78,8 +78,8 @@ There are multiple ways to install MariaDB on OS X.
 
 Some tests need /export directory to be readable/writable by your user:
 
-  sudo mkdir /export
-  sudo chown YOUR_USERNAME /export
+    sudo mkdir /export
+    sudo chown YOUR_USERNAME /export
 
 
 > Note that since Catalina, it is not possible to directly create directories under `/` as it is now read only. See this [guide](https://derflounder.wordpress.com/2020/01/18/creating-root-level-directories-and-symbolic-links-on-macos-catalina/) on how to create `/export`
