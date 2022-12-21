@@ -6,7 +6,7 @@ The **mntner** object contains one or more mandatory "auth:" attributes. Each at
 
 All updates require authorisation. A credential that is valid for one of the authorisation tokens of one of the relevant **mntner** objects, must be supplied. Different methods of authorisation require different authorisation tokens, as shown in the table below of authorisation methods that are currently supported.
 
-Visit [this section](../18.Database-Support/03-Database-Security.md#maintainers) to know more about **mntner** object.
+Visit [this section](../19.Database-Support/03-Database-Security.md#maintainers) to know more about **mntner** object.
 
 | **Authorisation Method** | **Description** |
 | --- | --- |

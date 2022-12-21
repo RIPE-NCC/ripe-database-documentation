@@ -23,7 +23,9 @@ const titleMap = new Map([
   ["to-", "to "],
   ["Types-", "Types "],
   ["Supported-", "Supported "],
-  ["by-", "by "]
+  ["by-", "by "],
+  ["Software-", "Software "],
+  ["and-", "and "]
 ]);
 
 
