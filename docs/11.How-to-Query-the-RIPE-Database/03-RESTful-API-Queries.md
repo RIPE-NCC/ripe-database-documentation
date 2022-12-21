@@ -420,6 +420,50 @@ An [AbuseResources](#api-abuse-contact) containing locator URIs to matching obje
 
 
 
+
+## REST API Version
+
+Show a specific version of a RIPE Database object.
+
+### Resources
+
+* `http://rest.db.ripe.net`
+* `https://rest.db.ripe.net`
+* `http://rest-test.db.ripe.net`
+* `https://rest-test.db.ripe.net`
+
+### Method: GET
+
+### URI Format: /{source}/{objecttype}/{key}/version/{versionnumber}
+
+### URI Parameters
+|name|description|
+|----|-----------|
+|source|RIPE or TEST|
+|objecttype|Object type|
+|key|RPSL object key|
+|version|Object version|
+	
+### Response Body
+
+A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#template-resources) containing the requested version of the object or the error message in case of Bad request (see [GET](#api-lookup)).
+
+
+### Status Codes
+|code|description|
+|----|-----------|
+|200|Version was found|
+|400|Bad request - invalid source, key or version|
+|404|Requested object version not found|
+
+### Examples
+
+  curl 'https://rest-test.db.ripe.net/TEST/aut-num/AS102/versions/2'
+
+
+
+
+
 ## REST API Versions
 
 Lists all versions of RIPE Database object, including the date and operation for each version.

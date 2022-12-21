@@ -1,10 +1,11 @@
-# Data Model
+# REST API Data model
 
 ## WhoisResources
 
 ### Description
 
 The RIPE Database REST API uses a uniform format for transferring structured data.
+The root object type is called whoisResources.
 
 #### XML 
 
@@ -1133,15 +1134,3 @@ RPSL templates object type.
       ]
     }
   }
-
-
-
-
-
- ## Update latency
-
-It could take up to 10 seconds before an update becomes visible for lookup or search operations. For non-hierarchical object types (person, role, organisation,...), the typical latency is less than 1 second. For hierarchical objects types (inet(6)num, route(6), domain), it is about 3-5 seconds on average, up to 10 seconds maximum.
-
-A way to work around this limitation is to rely on the response of the muting operation in REST API (PUT, POST, DELETE). These all return the object as it appears in the database in their response body after the successful update. This object is never filtered or altered in any way.
-
-Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter “password=”. One parameter should be used for each password supplied. The pseudo attribute “password:” cannot be used in the HTTP request body. See ["Email Updates"](04-Email-Updates.md#email-updates) for more information.

@@ -85,4 +85,4 @@ Some tests need /export directory to be readable/writable by your user:
 
 > Note that since Catalina, it is not possible to directly create directories under `/` as it is now read only. See this [guide](https://derflounder.wordpress.com/2020/01/18/creating-root-level-directories-and-symbolic-links-on-macos-catalina/) on how to create `/export`
 
-[Continue to Development](02-Building-whois.md#building-whois)
+[Continue to Development](03-Building-whois.md#building-whois)

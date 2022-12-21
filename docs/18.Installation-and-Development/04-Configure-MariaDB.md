@@ -36,5 +36,8 @@ Restart MariaDB once all configuration changes have been made.
   CREATE USER 'rdonly'@'localhost' IDENTIFIED BY '';
   GRANT SELECT PRIVILEGES ON *.* TO 'rdonly'@'localhost';
   FLUSH PRIVILEGES;
+* Set global isolation to READ-COMMITTED:
 
+  SET GLOBAL tx_isolation='READ-COMMITTED'; 
+  
 Logout with `CTRL+D`

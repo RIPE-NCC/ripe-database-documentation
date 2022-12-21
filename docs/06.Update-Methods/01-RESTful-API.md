@@ -51,7 +51,7 @@ HTTPS is mandatory.
 
 #### HTTP Request Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#data-model) containing the object to be created.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the object to be created.
 
 The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
 
@@ -66,7 +66,7 @@ Clients can also append an extension of `.xml` or `.json` to the request URL ins
 
 #### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#data-model) containing the newly created, unfiltered object.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the newly created, unfiltered object.
 
 
 #### HTTP Status Codes
@@ -143,7 +143,7 @@ HTTPS is mandatory.
 |dry-run|Optional. Perform validation but don't perform the update. |
 
 #### HTTP Request Body
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#data-model) containing the new version of the specified objects.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the new version of the specified objects.
 
 The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
 
@@ -157,7 +157,7 @@ The possible values that you can specify for the Accept/Content-Type header are:
 Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension.
 
 #### HTTP Response Body
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#data-model) containing either the newly created, unfiltered object or the error message in case of a bad/unauthorized request.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing either the newly created, unfiltered object or the error message in case of a bad/unauthorized request.
 
 
 #### HTTP Status Codes
@@ -182,7 +182,7 @@ Possible reasons for varios HTTP status codes are as follows:
 
 #### Error Response
 
-If the request fails, any error messages will be returned in the response body, using the request Accept format (XML or JSON). This element will not be included on a successful response. Examples in [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#data-model).
+If the request fails, any error messages will be returned in the response body, using the request Accept format (XML or JSON). This element will not be included on a successful response. Examples in [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model).
 
 
 
@@ -267,7 +267,7 @@ The possible values that you can specify for the Accept/Content-Type header are:
 Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension.
 
 #### HTTP Response Body
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#data-model) containing the (filtered) deleted object.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the (filtered) deleted object.
 
 
 #### HTTP Status Codes
@@ -315,5 +315,15 @@ Please take into account the following points to avoid unexpected encoding behav
 * To be absolutely certain of what was stored in the database, do a follow-up query.
 * The REST API response will be in UTF-8.
 * We recommend to use UTF-8 character encoding in all REST API requests, but restrict the content to valid latin-1 characters.
+
+
+
+ ## Update latency
+
+It could take up to 10 seconds before an update becomes visible for lookup or search operations. For non-hierarchical object types (person, role, organisation,...), the typical latency is less than 1 second. For hierarchical objects types (inet(6)num, route(6), domain), it is about 3-5 seconds on average, up to 10 seconds maximum.
+
+A way to work around this limitation is to rely on the response of the muting operation in REST API (PUT, POST, DELETE). These all return the object as it appears in the database in their response body after the successful update. This object is never filtered or altered in any way.
+
+Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter “password=”. One parameter should be used for each password supplied. The pseudo attribute “password:” cannot be used in the HTTP request body. See ["Email Updates"](04-Email-Updates.md#email-updates) for more information.
 
 
