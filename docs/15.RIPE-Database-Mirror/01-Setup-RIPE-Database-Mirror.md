@@ -195,3 +195,4 @@ A server with 16GB RAM, 8 GB swap, and 160GB disk space is recommended for mirro
      ensuring synchronisation with the latest changes in the database.
 
    For more detailed explanations about how to use IRRd client please refer to their [documentation](https://github.com/irrdnet/irrd)
+*Please note that running your own mirror is not supported!*
