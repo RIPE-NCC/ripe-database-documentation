@@ -18,7 +18,7 @@ The IRR that the RIPE NCC operated is tightly coupled with the RIPE Database, wh
 
 To create a **route(6)** (i.e. a **route** or **route(6)**) object in the RIPE database, you must authenticate against the address space you are referring to. Only address space within the RIPE region can be referred to.
 
-When creating a **route(6)** object you must authenticate against multiple [maintainers](../18.Database-Support/03-Database-Security.md#maintainers) to verify that you have control over the address space you are referring to. This means the related **inet(6)num** object must exist in the RIPE Database and you can authenticate against it, before you can create a **route(6)** object in the IRR.
+When creating a **route(6)** object you must authenticate against multiple [maintainers](../19.Database-Support/03-Database-Security.md#maintainers) to verify that you have control over the address space you are referring to. This means the related **inet(6)num** object must exist in the RIPE Database and you can authenticate against it, before you can create a **route(6)** object in the IRR.
 
 When you submit a new **route(6)** object, the following validation process is triggered:
 
@@ -37,7 +37,7 @@ Here is a [flowchart outlining the entire authorisation process](https://www.rip
 
 You can only create a **route(6)** object for a prefix you manage. If these objects are maintained by your organisation's single shared maintainer, you just need to supply one credentials to satisfy all of the requirements. However, when you use multiple maintainers, you may need to supply different credentials to create a single **route(6)** objects.
 
-If you wish to avoid having to supply multiple credentials, it is best to set up [hierarchical authorisation](../18.Database-Support/03-Database-Security.md#maintainers) by adding a "mnt-routes:" attribute to all of your resource objects and consistently use this maintainer to create and manage **route(6)** objects.
+If you wish to avoid having to supply multiple credentials, it is best to set up [hierarchical authorisation](../19.Database-Support/03-Database-Security.md#maintainers) by adding a "mnt-routes:" attribute to all of your resource objects and consistently use this maintainer to create and manage **route(6)** objects.
 
 
 ## Creating route objects referring to resources you don't manage

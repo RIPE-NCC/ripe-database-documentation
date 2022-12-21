@@ -4,8 +4,8 @@ The RIPE NCC has been tasked by the RIPE community to maintain a database of Int
 
 The RIPE Database holds data for three separate registries:
 
-* [RIPE Internet Number Registry (RIPE INR)](../20.Glossary.md#ripe-internet-number-registry-ripe-inr)
-* [RIPE Internet Routing Registry (RIPE IRR)](../20.Glossary.md#ripe-internet-routing-registry-ripe-irr)
+* [RIPE Internet Number Registry (RIPE INR)](../21.Glossary.md#ripe-internet-number-registry-ripe-inr)
+* [RIPE Internet Routing Registry (RIPE IRR)](../21.Glossary.md#ripe-internet-routing-registry-ripe-irr)
 * Reverse Delegation and ENUM Registry
 
 These could be three independent databases, however the information in each of them is related to each other. It was therefore decided to integrate the three registries into one logical database. In practise, it is also one physical database.
@@ -101,7 +101,7 @@ Before importing the data we transform objects into RIPE RPSL syntax by carrying
 * Converting attributes values
 * All these transformations are marked by "End Of Line" comments in the objects
 
-To use GRS from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropiate radio button below the seach box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
+To use GRS from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropiate radio button below the search box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
 
 ![](~@imgs/GRSquery.png)
 
@@ -129,4 +129,4 @@ Changes can be proposed to the RIPE Database purpose and content by anyone from 
 
 ## RIPE Database Terms and Conditions
 
-The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../21.Terms-And-Conditions.md#introduction). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
+The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../22.Terms-And-Conditions.md#introduction). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
