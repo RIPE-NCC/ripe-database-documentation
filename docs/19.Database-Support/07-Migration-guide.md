@@ -73,13 +73,13 @@ The new service is accessible at:
 * The `whois-resources` root element is no longer included in the JSON response. The new format is:
 
 
-    {
-    "objects": {
-        "object": [
-        { ...
-        } ]
-    }
-    }
+        {
+        "objects": {
+            "object": [
+            { ...
+            } ]
+        }
+        }
 
 
 * The non-standard MIME types `text/xml` and `text/json` are no longer supported. Use `application/xml` or `application/json`.
@@ -163,7 +163,3 @@ Use the following examples for testing your client implementation. (These tests 
     * Expect a 204 response status code
     * More information [here](../06.Update-Methods/01-RESTful-API.md#delete)
 
-
-## Reference Documentation
-
-The new REST API is documented on the project wiki at: https://github.com/RIPE-NCC/whois/wiki/WHOIS-REST-API

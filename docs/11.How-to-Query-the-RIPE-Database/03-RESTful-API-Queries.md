@@ -21,8 +21,8 @@ Any spaces in the command must be encoded. The response will be returned by defa
 
 Additional resources:
 
-* [Version list](#api-versions)
-* [Version lookup](#api-versions)
+* [Version list](#rest-api-versions)
+* [Version lookup](#rest-api-version)
 
 ***
 
@@ -43,7 +43,7 @@ Additional resources:
 |objectType|Type of given object.|
 |key|Primary key of the given object.|
 
-### Query Parameters**
+### Query Parameters
 |name|description|
 |----|-----------|
 |unfiltered|The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed).|
@@ -51,7 +51,7 @@ Additional resources:
 
 ### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources) containing the object, which is filtered by default.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing the object, which is filtered by default.
 
 ### HTTP status Codes
 
@@ -76,35 +76,27 @@ Possible reasons for varios HTTP status codes are as follows:
 
 Example request:
 
-  curl 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
-
+    curl 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
 
 Example JSON request:
 
-  curl -H 'Accept: application/json' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
+    curl -H 'Accept: application/json' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
 
 Example text/plain request:
 
-  curl -H 'Accept: text/plain' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT'
-
-Example 
+    curl -H 'Accept: text/plain' 'http://rest.db.ripe.net/ripe/mntner/RIPE-DBM-MNT' 
 
 Example unfiltered request:
 
-
-  curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
-
+    curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
 
 Example bad request when source is incorrect:
 
-
-  curl 'http://rest.db.ripe.net/pez/person/PP1-RIPE'
-
+    curl 'http://rest.db.ripe.net/pez/person/PP1-RIPE'
 
 Example request with encoded query parameter:
 
-
-  curl 'http://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255.json'
+    curl 'http://rest.db.ripe.net/ripe/inetnum/193.0.0.0%20-%20193.0.7.255.json'
 
 
 
@@ -152,7 +144,7 @@ None.
 
 ### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources) containing the query result.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing the query result.
 
 ### HTTP Status Codes
 |code|description|
@@ -161,36 +153,35 @@ A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources)
 |400|Illegal input - incorrect value in one or more of the parameters|
 |404|No object(s) found|
 
-Note that search response can be enormous. Hence, it is streamed on the server side, which means that if there is any error during processing your search, the HTTP response will still be 200. In this case, there will be the corresponding error messages inside the errormessages element in the response body (see [Whois Resources](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources)).
+Note that search response can be enormous. Hence, it is streamed on the server side, which means that if there is any error during processing your search, the HTTP response will still be 200. In this case, there will be the corresponding error messages inside the errormessages element in the response body (see [Whois Resources](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources)).
 
 
 ### Examples
 
 * Valid inverse lookup query on an org value, filtering by inetnum:
 
-  http://rest.db.ripe.net/search?inverse-attribute=org&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
+    http://rest.db.ripe.net/search?inverse-attribute=org&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
 
 * Search for objects of type organisation on the same query-string and specifying a preference for non recursion:
 
-  http://rest.db.ripe.net/search?inverse-attribute=org&flags=no-referenced&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
+    http://rest.db.ripe.net/search?inverse-attribute=org&flags=no-referenced&type-filter=inetnum&source=ripe&query-string=ORG-RIEN1-RIPE
 
 * A search on multiple sources:
 
-  http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&flags=no-referenced&flags=no-irt&query-string=MAINT-APNIC-AP
+    http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&flags=no-referenced&flags=no-irt&query-string=MAINT-APNIC-AP
 
 * A search on multiple sources and multiple type-filters:
 
-  http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&query-string=google&type-filter=person&type-filter=organisation
+    http://rest.db.ripe.net/search?source=ripe&source=apnic-grs&query-string=google&type-filter=person&type-filter=organisation
 
 * A search using multiple flags:
 
-  http://rest.db.ripe.net/search?source=ripe&query-string=aardvark-mnt&flags=no-filtering&flags=no-referenced
+    http://rest.db.ripe.net/search?source=ripe&query-string=aardvark-mnt&flags=no-filtering&flags=no-referenced
 
 
 * A search request with invalid flag
 
-
-  http://rest.db.ripe.net/search?source=ripe&query-string=PP1-RIPE&flags=k
+    http://rest.db.ripe.net/search?source=ripe&query-string=PP1-RIPE&flags=k
 
 
 
@@ -218,7 +209,7 @@ None.
 
 #### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources) containing all available sources.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing all available sources.
 
 #### HTTP Status Codes
 
@@ -234,52 +225,52 @@ A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources)
 
 Example XML response:
 
-  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-  <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/sources"/>
-  <service name="getSupportedDataSources"/>
-  <sources>
-      <source name="RIPE" id="ripe"/>
-      <source name="TEST" id="test"/>
-  </sources>
-  <grs-sources>
-      <source name="TEST-GRS" id="test-grs" grs-id="test-grs"/>
-  </grs-sources>
-  </whois-resources>
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+      <whois-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+      <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/sources"/>
+      <service name="getSupportedDataSources"/>
+      <sources>
+          <source name="RIPE" id="ripe"/>
+          <source name="TEST" id="test"/>
+      </sources>
+      <grs-sources>
+          <source name="TEST-GRS" id="test-grs" grs-id="test-grs"/>
+      </grs-sources>
+      </whois-resources>
 
 
 Example JSON response:
 
-  {
-    "link": {
-      "xlink:type": "locator",
-      "xlink:href": "http://rest.db.ripe.net/metadata/sources"
-    }, 
-    "service" : {
-      "name" : "getSupportedDataSources"
-    },
-    "sources": {
-      "source": [
-        {
-          "name": "RIPE",
-          "id": "ripe"
-        },
-        {
-          "name": "TEST",
-          "id": "test"
-        }
-      ]
-    },
-    "grs-sources": {
-      "source": [
-        {
-          "name": "TEST-GRS",
-          "id": "test-grs",
-          "grs-id": "test-grs"
-        }
-      ]
+    {
+      "link": {
+        "xlink:type": "locator",
+        "xlink:href": "http://rest.db.ripe.net/metadata/sources"
+      }, 
+      "service" : {
+        "name" : "getSupportedDataSources"
+      },
+      "sources": {
+        "source": [
+          {
+            "name": "RIPE",
+            "id": "ripe"
+          },
+          {
+            "name": "TEST",
+            "id": "test"
+          }
+        ]
+      },
+      "grs-sources": {
+        "source": [
+          {
+            "name": "TEST-GRS",
+            "id": "test-grs",
+            "grs-id": "test-grs"
+          }
+        ]
+      }
     }
-  }
 
 
 ***
@@ -308,7 +299,7 @@ Returns the RPSL template for given object type.
 
 #### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources) containing the template of the specified type.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing the template of the specified type.
 
 #### HTTP Status Codes
 |code |description                             |
@@ -355,7 +346,7 @@ None.
 	
 ### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#whoisresources) containing locator URIs to matching objects.
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing locator URIs to matching objects.
 
 For non-200 OK responses, the response body will be in plaintext.
 
@@ -446,7 +437,7 @@ Show a specific version of a RIPE Database object.
 	
 ### Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#template-resources) containing the requested version of the object or the error message in case of Bad request (see [GET](#api-lookup)).
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#template-resources) containing the requested version of the object or the error message in case of Bad request (see [GET](#api-lookup)).
 
 
 ### Status Codes
@@ -486,7 +477,7 @@ Lists all versions of RIPE Database object, including the date and operation for
 	
 ### Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-Data-Model.md#template-resources) containing information about updates for the requested object or the error message in case of Bad request (see [GET](#api-lookup)).
+A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#template-resources) containing information about updates for the requested object or the error message in case of Bad request (see [GET](#api-lookup)).
 
 #### Status Codes
 |code|description|

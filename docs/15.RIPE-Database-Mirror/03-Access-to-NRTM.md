@@ -116,10 +116,17 @@ A client may request a persistent connection by including the “-k“ query fla
 A client can use the “-q sources“ flag with the mirror server to retrieve information regarding available mirroring possibilities. Please see [this section](../13.Types-of-Queries/13-RIPE-NCC-Global-Resource-Service.md#ripe-ncc-global-resource-service) for more details.
 
 At the beginning of the data stream, the server will send the following string:
+
     %START Version: NRTM_Protocol_version_# source first-last
+
 For example:
+
     %START Version: 3 RIPE:1539595-1539597
+
 After the last piece of data is sent to the client, the server will send to string:
+
     %END *source*
+
 to signal the end of transmission. For example:
+
     %END RIPE

@@ -2,7 +2,7 @@
 
 Installing a MariaDB server is useful for development, or for running your own Whois server.
 
-#### Configuration
+## Configuration
 
 Set the following variables in the MariaDB configuration (location varies depending on installation, the configuration file is normally called my.cnf).
 
@@ -24,7 +24,7 @@ Set the following variables in the MariaDB configuration (location varies depend
 
 Restart MariaDB once all configuration changes have been made.
 
-#### Configure access to the database
+## Configure access to the database
 
 * Check if MariaDB is running `mysqladmin -u root -p ping`
 * Login to mysql using `mysql -u root -p`
@@ -36,8 +36,5 @@ Restart MariaDB once all configuration changes have been made.
   CREATE USER 'rdonly'@'localhost' IDENTIFIED BY '';
   GRANT SELECT PRIVILEGES ON *.* TO 'rdonly'@'localhost';
   FLUSH PRIVILEGES;
-* Set global isolation to READ-COMMITTED:
-
-  SET GLOBAL tx_isolation='READ-COMMITTED'; 
   
 Logout with `CTRL+D`

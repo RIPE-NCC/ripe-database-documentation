@@ -716,22 +716,21 @@ The root object type is called whoisResources.
 * [sources](#sources) 
 * [errorMessages](#errorMessages) 
 * [versions](#versions) 
-* [errormessages](#errormessages)
 
 
 ***
 
 
 * <a id="link">**Link**</a>: pointer to the resource. 
- * The XLink format is used for the links (ref: http://en.wikipedia.org/wiki/XLink).
+* The XLink format is used for the links (ref: http://en.wikipedia.org/wiki/XLink).
 
-    <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
+        <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/TP1-TEST"/>
 
 
-    "link": {
-        "xlink:type": "locator",
-        "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
-    }
+        "link": {
+            "xlink:type": "locator",
+            "xlink:href": "http://rest-test.db.ripe.net/test/person/TP1-TEST"
+        }
 
 
 ***
@@ -748,35 +747,35 @@ The root object type is called whoisResources.
  * Sources: wraps a set of _source_
  * Source: _id_ of RIPE database source
 
-    <parameters>
-        <inverse-lookup/>
-        <type-filters/>
-        <flags>
-            <flag value="r"/>
-            ...
-        </flags>
-        <query-strings>
-            <query-string value="LP1-TEST"/>
-        </query-strings>
-        <sources>
-            <source id="TEST"/>
-        </sources>
-    </parameters>
+        <parameters>
+            <inverse-lookup/>
+            <type-filters/>
+            <flags>
+                <flag value="r"/>
+                ...
+            </flags>
+            <query-strings>
+                <query-string value="LP1-TEST"/>
+            </query-strings>
+            <sources>
+                <source id="TEST"/>
+            </sources>
+        </parameters>
 
 
-    "parameters": {
-        "inverse-lookup": {"inverse-attribute": []},
-        "type-filters": {"type-filter": []},
-        "flags": {
-            "flag": [{"value": "r"}, ...]
-        },
-        "query-strings": {
-            "query-string": [{"value": "LP1-TEST"}]
-        },
-        "sources": {
-            "source": [{"id": "TEST"}]
+        "parameters": {
+            "inverse-lookup": {"inverse-attribute": []},
+            "type-filters": {"type-filter": []},
+            "flags": {
+                "flag": [{"value": "r"}, ...]
+            },
+            "query-strings": {
+                "query-string": [{"value": "LP1-TEST"}]
+            },
+            "sources": {
+                "source": [{"id": "TEST"}]
+            }
         }
-    }
 
 
 ***
@@ -794,45 +793,45 @@ The root object type is called whoisResources.
           * link (see Link), referenced-type: used to describe pointer to resource where _referenced-type_ is the RIPE object type.
   * comment
 
-    <objects>
-        <object>...</object>
-        ...
-    </objects>
+            <objects>
+                <object>...</object>
+                ...
+            </objects>
 
-    "objects": {
-        "object": [ ... ]
-    }
+            "objects": {
+                "object": [ ... ]
+            }
 
 
 ***
 
 * <a id="object">**Object**</a>: representation of a RPSL object. Contained within [Objects](#objects).
 
-    <object type="person">
-        <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/LP1-TEST"/>
-        <source id="test"/>
-        <primary-key>
-            <attribute name="nic-hdl" value="LP1-TEST"/>
-        </primary-key>
-        <attributes>
-            <attribute .../>
-            ...
-        </attributes>
-        <tags/>
-    </object>
+        <object type="person">
+            <link xlink:type="locator" xlink:href="http://rest-test.db.ripe.net/test/person/LP1-TEST"/>
+            <source id="test"/>
+            <primary-key>
+                <attribute name="nic-hdl" value="LP1-TEST"/>
+            </primary-key>
+            <attributes>
+                <attribute .../>
+                ...
+            </attributes>
+            <tags/>
+        </object>
 
-    "object": [
-        {"type": "person",
-        "link": {
-                    "xlink:type": "locator",
-                    "xlink:href": "http://rest-test.db.ripe.net/test/person/LP1-TEST"
-                },
-        "source": {"id": "test"},
-        "primary-key": { "attribute": [{ "name": "nic-hdl", "value": "LP1-TEST" }] },
-        "attributes": { "attribute": [ ... ] },
-        "tags": { "tag": [] }
-    }
-    ]
+        "object": [
+            {"type": "person",
+            "link": {
+                        "xlink:type": "locator",
+                        "xlink:href": "http://rest-test.db.ripe.net/test/person/LP1-TEST"
+                    },
+            "source": {"id": "test"},
+            "primary-key": { "attribute": [{ "name": "nic-hdl", "value": "LP1-TEST" }] },
+            "attributes": { "attribute": [ ... ] },
+            "tags": { "tag": [] }
+        }
+        ]
 
 
 ***
@@ -841,14 +840,14 @@ The root object type is called whoisResources.
  * Tag: extra data about a particular object in the RIPE database. Consists of _id_ - the name of the tag, and _data_
 
 
-    <tags>
-        <tag id="..." data="..."/>
-        ...
-    </tags>
+        <tags>
+            <tag id="..." data="..."/>
+            ...
+        </tags>
 
-    "tags": {
-        "tag": [ {"id": "...", "data": "..."}, ...]
-    }
+        "tags": {
+            "tag": [ {"id": "...", "data": "..."}, ...]
+        }
 
 
 ***
@@ -858,15 +857,15 @@ The root object type is called whoisResources.
  * Language: a link (see Link) to the inet(6)num and an ISO 639-1 language code
 
 
-    <geolocation-attributes>
-        <location value="52.375599 4.899902">
-            <link xlink:type="locator" xlink:href="..."/>
-        </location>
-    </geolocation-attributes>
+        <geolocation-attributes>
+            <location value="52.375599 4.899902">
+                <link xlink:type="locator" xlink:href="..."/>
+            </location>
+        </geolocation-attributes>
 
-    "geolocation-attributes": {
-        "location": [{"value": "52.375599 4.899902", "link": {"xlink:type": "locator", "xlink:href": "..."}}]
-    }
+        "geolocation-attributes": {
+            "location": [{"value": "52.375599 4.899902", "link": {"xlink:type": "locator", "xlink:href": "..."}}]
+        }
 
 
 ***
@@ -876,14 +875,14 @@ The root object type is called whoisResources.
  * Valid values: RIPE, TEST
 
 
-    <sources>
-        <source name="RIPE" id="ripe"/>
-        <source name="TEST" id="test"/>
-    </sources>
+        <sources>
+            <source name="RIPE" id="ripe"/>
+            <source name="TEST" id="test"/>
+        </sources>
 
-    "sources" : {
-        "source" : [ {"name" : "RIPE", "id" : "ripe"}, {"name" : "TEST","id" : "test"} ]
-    }
+        "sources" : {
+            "source" : [ {"name" : "RIPE", "id" : "ripe"}, {"name" : "TEST","id" : "test"} ]
+        }
 
 
 ***
@@ -892,41 +891,41 @@ The root object type is called whoisResources.
  * Source: _name_, _id_ and _grs-id_
  * Valid Values: AFRINIC-GRS, APNIC-GRS, ARIN-GRS, JPIRR-GRS, LACNIC-GRS, RADB-GRS
 
-    <grs-sources>
-        <source name="APNIC-GRS" id="apnic-grs" grs-id="apnic-grs"/>
-    </grs-sources>
+        <grs-sources>
+            <source name="APNIC-GRS" id="apnic-grs" grs-id="apnic-grs"/>
+        </grs-sources>
 
-    "grs-sources" : {
-        "source" : [ {"name" : "APNIC-GRS", "id" : "apnic-grs", "grs-id" : "apnic-grs"} ]
-    }
+        "grs-sources" : {
+            "source" : [ {"name" : "APNIC-GRS", "id" : "apnic-grs", "grs-id" : "apnic-grs"} ]
+        }
 
 
 ***
 
-* <a id="versions">**Versions**</a>: enumeration of the changes of a particular object. Will only be in the [versions](Whois-Rest-api-versions) response payload. Consists of _type_ (see Type), _key_ (see Primary key) and _version_.
+* <a id="versions">**Versions**</a>: enumeration of the changes of a particular object. Will only be in the [versions](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-versions) response payload. Consists of _type_ (see Type), _key_ (see Primary key) and _version_.
  * Version: information about a particular version of the object. It can either be _deleted_, in which case there's only a date, or show information about the revision.
 
 
-    <versions type="aut-num" key="...">
-        <version>
-            <revision>1</revision>
-            <date>2013-08-27 11:23</date>
-            <operation>ADD/UPD</operation>
-        </version>
-    </versions>
+        <versions type="aut-num" key="...">
+            <version>
+                <revision>1</revision>
+                <date>2013-08-27 11:23</date>
+                <operation>ADD/UPD</operation>
+            </version>
+        </versions>
 
 
 
-    "versions" : {
-        "type" : "aut-num",
-        "key" : "...",
-        "version" : [ {
-            "deleted" : null,
-            "revision" : 1,
-            "date" : "2013-08-27 11:26",
-            "operation" : "ADD/UPD"
-        } ]
-    }
+        "versions" : {
+            "type" : "aut-num",
+            "key" : "...",
+            "version" : [ {
+                "deleted" : null,
+                "revision" : 1,
+                "date" : "2013-08-27 11:26",
+                "operation" : "ADD/UPD"
+            } ]
+        }
 
 
 ***
@@ -934,23 +933,23 @@ The root object type is called whoisResources.
 * <a id="errormessages">Error messages</a>: A set of _errormessage_ containing information about the performed operation. A message concerns the operation, an object of the operation, or an attribute of an object. It has a severity (Error, Warning, Info), a text description and a set of arguments supplied to the operation.
 
 
-    <errormessages>
-        <errormessage severity="..." text="...">
-        <args value="..."/>
-        <!--...more "args" elements...-->
-        </errormessage>
-        <!--...more "errormessage" elements...-->
-    </errormessages>
+        <errormessages>
+            <errormessage severity="..." text="...">
+            <args value="..."/>
+            <!--...more "args" elements...-->
+            </errormessage>
+            <!--...more "errormessage" elements...-->
+        </errormessages>
 
 
 
-    "errormessages" : {
-        "errormessage" : [ {
-            "severity" : "...",
-            "text" : "...",
-            "args" : [ ]
-            } ]
-    }
+        "errormessages" : {
+            "errormessage" : [ {
+                "severity" : "...",
+                "text" : "...",
+                "args" : [ ]
+                } ]
+        }
 
 
 **Example XML error response:**
@@ -1003,7 +1002,7 @@ The root object type is called whoisResources.
 
 
 
-## Template-resources
+## Template Resources
 
 ### Description
 
@@ -1011,126 +1010,126 @@ RPSL templates object type.
 
 #### XML 
 
-  <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <template-resources xmlns:xlink="http://www.w3.org/1999/xlink">
-  <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/templates/person"/>
-  <service name="getObjectTemplate"/>
-  <templates>
-      <template type="person">
-          <source id="ripe"/>
-          <attributes>
-              <attribute name="person" requirement="MANDATORY" cardinality="SINGLE" keys="LOOKUP_KEY"/>
-              <attribute name="address" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
-              <attribute name="phone" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
-              <attribute name="fax-no" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
-              <attribute name="e-mail" requirement="OPTIONAL" cardinality="MULTIPLE" keys="LOOKUP_KEY"/>
-              <attribute name="org" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-              <attribute name="nic-hdl" requirement="MANDATORY" cardinality="SINGLE" keys="PRIMARY_KEY LOOKUP_KEY"/>
-              <attribute name="remarks" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
-              <attribute name="notify" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-              <attribute name="abuse-mailbox" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-              <attribute name="mnt-by" requirement="MANDATORY" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
-              <attribute name="source" requirement="MANDATORY" cardinality="SINGLE" keys=""/>
-          </attributes>
-      </template>
-  </templates>
-  </template-resources>
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <template-resources xmlns:xlink="http://www.w3.org/1999/xlink">
+    <link xlink:type="locator" xlink:href="http://rest.db.ripe.net/metadata/templates/person"/>
+    <service name="getObjectTemplate"/>
+    <templates>
+        <template type="person">
+            <source id="ripe"/>
+            <attributes>
+                <attribute name="person" requirement="MANDATORY" cardinality="SINGLE" keys="LOOKUP_KEY"/>
+                <attribute name="address" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
+                <attribute name="phone" requirement="MANDATORY" cardinality="MULTIPLE" keys=""/>
+                <attribute name="fax-no" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
+                <attribute name="e-mail" requirement="OPTIONAL" cardinality="MULTIPLE" keys="LOOKUP_KEY"/>
+                <attribute name="org" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+                <attribute name="nic-hdl" requirement="MANDATORY" cardinality="SINGLE" keys="PRIMARY_KEY LOOKUP_KEY"/>
+                <attribute name="remarks" requirement="OPTIONAL" cardinality="MULTIPLE" keys=""/>
+                <attribute name="notify" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+                <attribute name="abuse-mailbox" requirement="OPTIONAL" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+                <attribute name="mnt-by" requirement="MANDATORY" cardinality="MULTIPLE" keys="INVERSE_KEY"/>
+                <attribute name="source" requirement="MANDATORY" cardinality="SINGLE" keys=""/>
+            </attributes>
+        </template>
+    </templates>
+    </template-resources>
 
 #### JSON
 
-  {
-    "service": "getObjectTemplate",
-    "link": {
-      "xlink:type": "locator",
-      "xlink:href": "http://rest.db.ripe.net/metadata/templates/peering-set"
-    },
-    "service" : {
-      "name" : "getObjectTemplate"
-    },
-    "templates": {
-      "template": [
-        {
-          "type": "peering-set",
-          "source": {
-            "id": "ripe"
-          },
-          "attributes": {
-            "attribute": [
-              {
-                "name": "peering-set",
-                "requirement": "MANDATORY",
-                "cardinality": "SINGLE",
-                "keys": ["PRIMARY_KEY","LOOKUP_KEY"]
-              },
-              {
-                "name": "descr",
-                "requirement": "MANDATORY",
-                "cardinality": "MULTIPLE",
-                "keys": []
-              },
-              {
-                "name": "peering",
-                "requirement": "OPTIONAL",
-                "cardinality": "MULTIPLE",
-                "keys": []
-              },
-              {
-                "name": "mp-peering",
-                "requirement": "OPTIONAL",
-                "cardinality": "MULTIPLE",
-                "keys": []
-              },
-              {
-                "name": "remarks",
-                "requirement": "OPTIONAL",
-                "cardinality": "MULTIPLE",
-                "keys": []
-              },
-              {
-                "name": "org",
-                "requirement": "OPTIONAL",
-                "cardinality": "MULTIPLE",
-                "keys": ["INVERSE_KEY"]
-              },
-              {
-                "name": "tech-c",
-                "requirement": "MANDATORY",
-                "cardinality": "MULTIPLE",
-                "keys": ["INVERSE_KEY"]
-              },
-              {
-                "name": "admin-c",
-                "requirement": "MANDATORY",
-                "cardinality": "MULTIPLE",
-                "keys": ["INVERSE_KEY"]
-              },
-              {
-                "name": "notify",
-                "requirement": "OPTIONAL",
-                "cardinality": "MULTIPLE",
-                "keys": ["INVERSE_KEY"]
-              },
-              {
-                "name": "mnt-by",
-                "requirement": "MANDATORY",
-                "cardinality": "MULTIPLE",
-                "keys": ["INVERSE_KEY"]
-              },
-              {
-                "name": "mnt-lower",
-                "requirement": "OPTIONAL",
-                "cardinality": "MULTIPLE",
-                "keys": ["INVERSE_KEY"]
-              },
-              {
-                "name": "source",
-                "requirement": "MANDATORY",
-                "cardinality": "SINGLE",
-                "keys": []
-              }
-            ]
-          }
+    {
+        "service": "getObjectTemplate",
+        "link": {
+        "xlink:type": "locator",
+        "xlink:href": "http://rest.db.ripe.net/metadata/templates/peering-set"
+        },
+        "service" : {
+        "name" : "getObjectTemplate"
+        },
+        "templates": {
+        "template": [
+            {
+            "type": "peering-set",
+            "source": {
+                "id": "ripe"
+            },
+            "attributes": {
+                "attribute": [
+                {
+                    "name": "peering-set",
+                    "requirement": "MANDATORY",
+                    "cardinality": "SINGLE",
+                    "keys": ["PRIMARY_KEY","LOOKUP_KEY"]
+                },
+                {
+                    "name": "descr",
+                    "requirement": "MANDATORY",
+                    "cardinality": "MULTIPLE",
+                    "keys": []
+                },
+                {
+                    "name": "peering",
+                    "requirement": "OPTIONAL",
+                    "cardinality": "MULTIPLE",
+                    "keys": []
+                },
+                {
+                    "name": "mp-peering",
+                    "requirement": "OPTIONAL",
+                    "cardinality": "MULTIPLE",
+                    "keys": []
+                },
+                {
+                    "name": "remarks",
+                    "requirement": "OPTIONAL",
+                    "cardinality": "MULTIPLE",
+                    "keys": []
+                },
+                {
+                    "name": "org",
+                    "requirement": "OPTIONAL",
+                    "cardinality": "MULTIPLE",
+                    "keys": ["INVERSE_KEY"]
+                },
+                {
+                    "name": "tech-c",
+                    "requirement": "MANDATORY",
+                    "cardinality": "MULTIPLE",
+                    "keys": ["INVERSE_KEY"]
+                },
+                {
+                    "name": "admin-c",
+                    "requirement": "MANDATORY",
+                    "cardinality": "MULTIPLE",
+                    "keys": ["INVERSE_KEY"]
+                },
+                {
+                    "name": "notify",
+                    "requirement": "OPTIONAL",
+                    "cardinality": "MULTIPLE",
+                    "keys": ["INVERSE_KEY"]
+                },
+                {
+                    "name": "mnt-by",
+                    "requirement": "MANDATORY",
+                    "cardinality": "MULTIPLE",
+                    "keys": ["INVERSE_KEY"]
+                },
+                {
+                    "name": "mnt-lower",
+                    "requirement": "OPTIONAL",
+                    "cardinality": "MULTIPLE",
+                    "keys": ["INVERSE_KEY"]
+                },
+                {
+                    "name": "source",
+                    "requirement": "MANDATORY",
+                    "cardinality": "SINGLE",
+                    "keys": []
+                }
+                ]
+            }
+            }
+        ]
         }
-      ]
     }
-  }

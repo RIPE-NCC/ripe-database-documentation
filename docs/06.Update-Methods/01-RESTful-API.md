@@ -93,22 +93,18 @@ Possible reasons for varios HTTP status codes are as follows:
 
 * Example XML Request:
 
-
-    curl -X POST -H 'Content-Type: application/xml' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
-
+        curl -X POST -H 'Content-Type: application/xml' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
 
 * Example JSON Request:
 
-
-    curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
+        curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
 
 
 * Example dry-run requests:
 
+        curl -X POST --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run&password=...'
 
-    curl -X POST --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run&password=...'
-
-    curl -X POST --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run=true&password=...'
+        curl -X POST --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run=true&password=...'
 
 
 
@@ -200,23 +196,20 @@ Example JSON Request:
 
 Example of a bad XML request when updating a mntner object using as request the person object from the first example:
 
-
     curl -X PUT -H 'Content-Type: application/xml' --data @form.txt 'https://rest.db.ripe.net/ripe/mntner/PP1-RIPE?password=...'
 
 
 
 Example of a bad JSON request when updating a mntner object using as request the person object from the first example:
 
-
     curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...'
 
 
 * Example dry-run requests:
 
+        curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
 
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
-
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true&password=...'
+        curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true&password=...'
 
 
 
@@ -293,14 +286,13 @@ Possible reasons for varios HTTP status codes are as follows:
 
 * Example Request:
 
-    curl -X DELETE 'https://rest.db.ripe.net/ripe/person/pp1-ripe?password=123'
+        curl -X DELETE 'https://rest.db.ripe.net/ripe/person/pp1-ripe?password=123'
 
 * Example dry-run requests:
 
+        curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
 
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
-
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true&password=...'
+        curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true&password=...'
 
 
 

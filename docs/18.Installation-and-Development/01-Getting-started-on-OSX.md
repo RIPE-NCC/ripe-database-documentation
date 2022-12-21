@@ -48,11 +48,10 @@ Maven needs more memory by default to complete the build.
 * Download and install Git bash (https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
 * Update `~/.bash_profile`
 
-
-  # Git
-  . /usr/local/git/contrib/completion/git-completion.bash
-  . /usr/local/git/contrib/completion/git-prompt.sh
-  PS1='\u@local:\w$(__git_ps1 " (%s)")\$ '
+        # Git
+        . /usr/local/git/contrib/completion/git-completion.bash
+        . /usr/local/git/contrib/completion/git-prompt.sh
+        PS1='\u@local:\w$(__git_ps1 " (%s)")\$ '
 
 
 ## MariaDB 10.2
@@ -73,7 +72,7 @@ There are multiple ways to install MariaDB on OS X.
 
 ### Configuration
 
-[Configure MariaDB](03-Configure-MariaDB.md#configure-mariadb)
+[Configure MariaDB](04-Configure-MariaDB.md#configure-mariadb)
 
 ## Prepare /export directory
 

@@ -12,26 +12,26 @@
 
 * Stop whois using `./whois.init stop`
 
-    # NRTM server
-    nrtm.enabled=false
-    nrtm.update.interval=15
+        # NRTM server
+        nrtm.enabled=false
+        nrtm.update.interval=15
 
-    # NRTM client
-    nrtm.import.enabled=true
-    nrtm.import.sources=RIPE-GRS
-    nrtm.import.RIPE-GRS.source=RIPE
-    nrtm.import.RIPE-GRS.host=whois.ripe.net
-    nrtm.import.RIPE-GRS.port=4444
+        # NRTM client
+        nrtm.import.enabled=true
+        nrtm.import.sources=RIPE-GRS
+        nrtm.import.RIPE-GRS.source=RIPE
+        nrtm.import.RIPE-GRS.host=whois.ripe.net
+        nrtm.import.RIPE-GRS.port=4444
 
 * Update the last serial number in the mirrored database with RIPE.CURRENTSERIAL the using the following commands:
 
-    mysql -udbint -p
-    USE WHOIS_MIRROR_RIPE_GRS;
-    SELECT max(serial_id) AS max_serial_id FROM serials;
+        mysql -udbint -p
+        USE WHOIS_MIRROR_RIPE_GRS;
+        SELECT max(serial_id) AS max_serial_id FROM serials;
 
-    ## copy the result of the previous query and use it to the following query:
-    UPDATE serials SET serial_id = RIPE.CURRENTSERIAL WHERE serial_id = max_serial_id;
-    ALTER TABLE serials AUTO_INCREMENT = RIPE.CURRENTSERIAL;
+        ## copy the result of the previous query and use it to the following query:
+        UPDATE serials SET serial_id = RIPE.CURRENTSERIAL WHERE serial_id = max_serial_id;
+        ALTER TABLE serials AUTO_INCREMENT = RIPE.CURRENTSERIAL;
 
 * Start whois using `./whois.init start` and check the ouput (var/console.log) for updates. 
 
@@ -43,8 +43,8 @@ if the above line is repeated multiple times, something is wrong. please stop th
 
 * Test that it worked by executing a query on the mirrored source using telnet:
 
-    telnet localhost 1043
-    -s RIPE-GRS 193.0.0.1 - 193.0.7.255
+        telnet localhost 1043
+        -s RIPE-GRS 193.0.0.1 - 193.0.7.255
 
 or by checking that the max(serial_id) in the database is bigger than RIPE.CURRENTSERIAL
 
@@ -76,7 +76,7 @@ There is no support in the NRTM protocol for polling, so a client or server may 
 * Windows
   * Set the SIO_KEEPALIVE_VALS control code.
   * Ref: https://msdn.microsoft.com/en-us/library/windows/desktop/ee470551(v=vs.85).aspx
-  
+
 
 ## How to access the NRTM stream
 

@@ -16,25 +16,25 @@ There are two ways to set up a mirror of the RIPE database.
     - Configure the properties file as follows (you will need to customise the example whois.properties):
 
 
-        whois.source=LOCAL
-        ...
-        grs.sources=RIPE-GRS
-        grs.sources.dummify=
-        ...
-        grs.import.sources=RIPE-GRS
-        grs.import.enabled=true
-        ...
-        grs.import.ripe.resourceDataUrl=ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest
-        grs.import.ripe.download=ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
-        grs.import.ripe.source=RIPE-GRS
-        ...
-        whois.db.master.url=jdbc:mariadb://localhost/LOCAL;driver=org.mariadb.jdbc.Driver
-        ...
-        whois.db.slave.url=jdbc:mariadb://localhost/LOCAL
-        ...
-        whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
-        whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
-        ...
+            whois.source=LOCAL
+            ...
+            grs.sources=RIPE-GRS
+            grs.sources.dummify=
+            ...
+            grs.import.sources=RIPE-GRS
+            grs.import.enabled=true
+            ...
+            grs.import.ripe.resourceDataUrl=ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest
+            grs.import.ripe.download=ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
+            grs.import.ripe.source=RIPE-GRS
+            ...
+            whois.db.master.url=jdbc:mariadb://localhost/LOCAL;driver=org.mariadb.jdbc.Driver
+            ...
+            whois.db.slave.url=jdbc:mariadb://localhost/LOCAL
+            ...
+            whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+            whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+            ...
 
 
     Start whois, using either the `./whois.init start` command or something like the following command:
@@ -79,25 +79,25 @@ There are two ways to set up a mirror of the RIPE database.
     -  If you want to use automatic updates using NRTM, the dump should be at most 2 weeks old.
     - Configure the properties file as follows (you will need to customise the example whois.properties):
     
-        whois.source=LOCAL
-        …
-        grs.sources=RIPE-GRS
-        grs.sources.dummify=
-        …
-        # GRS source-specific properties to acquire dumps
-        grs.import.enabled=false
-        grs.import.sources=
+            whois.source=LOCAL
+            …
+            grs.sources=RIPE-GRS
+            grs.sources.dummify=
+            …
+            # GRS source-specific properties to acquire dumps
+            grs.import.enabled=false
+            grs.import.sources=
 
-        # NRTM client
-        nrtm.import.enabled=false
-        nrtm.import.sources=
-        ...
-        whois.db.master.url=jdbc:log:mariadb://localhost/LOCAL;driver=org.mariadb.jdbc.Driver
-        ...
-        whois.db.slave.url=jdbc:mariadb://localhost/LOCAL
-        …
-        whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
-        whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+            # NRTM client
+            nrtm.import.enabled=false
+            nrtm.import.sources=
+            ...
+            whois.db.master.url=jdbc:log:mariadb://localhost/LOCAL;driver=org.mariadb.jdbc.Driver
+            ...
+            whois.db.slave.url=jdbc:mariadb://localhost/LOCAL
+            …
+            whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+            whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
     
     - Start the whois server using `./whois.init start`
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
