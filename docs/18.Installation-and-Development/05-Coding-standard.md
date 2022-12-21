@@ -1,6 +1,6 @@
 # Coding standard
 
-In general, we follow the standard Java Coding Standard: [Code Conventions for the Java Programming Language](http://www.oracle.com/technetwork/java/codeconv-138413.html), with the following additions.
+In general, we follow the standard Java Coding Standard: [Code Conventions for the Java Programming Language](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html), with the following additions.
 
 ### Code Format
 * Use modern IDE (import organisation, variable expansion, code generation features are essential). IntelliJ is recommended.

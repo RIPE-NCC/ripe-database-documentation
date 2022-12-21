@@ -712,16 +712,16 @@ The root object type is called whoisResources.
 * [objects](#objects) 
 * [object](#object) 
 * [tags](#tags)
-* [geolocation-attributes](#geolocation)
+* [geolocation-attributes](#geolocation-attributes)
 * [sources](#sources) 
-* [errorMessages](#errorMessages) 
+* [errorMessages](#error-messages) 
 * [versions](#versions) 
 
 
 ***
 
 
-* #### Link: 
+#### Link: 
     Pointer to the resource. 
 * The XLink format is used for the links (ref: http://en.wikipedia.org/wiki/XLink).
 
@@ -736,7 +736,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Parameters: 
+#### Parameters: 
     part of a search response, indicating which query flags were used.
 * Inverse-lookup: wraps a set of _inverse-attribute_
 * Inverse-attribute: _value_ of an inverse query flag
@@ -782,7 +782,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Objects: 
+#### Objects: 
     a set of (RPSL-) _object_ representations.
 * Type: the RPSL object type
 * Link: see above
@@ -808,7 +808,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Object: 
+#### Object: 
     representation of a RPSL object. Contained within [Objects](#objects).
 
         <object type="person">
@@ -840,7 +840,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Tags: 
+#### Tags: 
     set of _tag_
 * Tag: extra data about a particular object in the RIPE database. Consists of _id_ - the name of the tag, and _data_
 
@@ -857,7 +857,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Geolocation-attributes: 
+#### Geolocation-attributes: 
     Extra information for inetnum / inet6num RPSL objects.
 * Location: a link (see Link) to the inet(6)num and a longitude latitude value
 * Language: a link (see Link) to the inet(6)num and an ISO 639-1 language code
@@ -876,7 +876,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Sources: 
+#### Sources: 
     a set of available _source_ for the RIPE database
 * Source: _name_, _id_
 * Valid values: RIPE, TEST
@@ -894,7 +894,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Grs-sources: 
+#### Grs-sources: 
     a set of available _grs-source_ for the RIPE database
 * Source: _name_, _id_ and _grs-id_
 * Valid Values: AFRINIC-GRS, APNIC-GRS, ARIN-GRS, JPIRR-GRS, LACNIC-GRS, RADB-GRS
@@ -910,7 +910,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Versions: 
+#### Versions: 
     enumeration of the changes of a particular object. Will only be in the [versions](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-versions) response payload. Consists of _type_ (see Type), _key_ (see Primary key) and _version_.
 * Version: information about a particular version of the object. It can either be _deleted_, in which case there's only a date, or show information about the revision.
 
@@ -939,7 +939,7 @@ The root object type is called whoisResources.
 
 ***
 
-* #### Error messages: 
+#### Error messages: 
     A set of _errormessage_ containing information about the performed operation. A message concerns the operation, an object of the operation, or an attribute of an object. It has a severity (Error, Warning, Info), a text description and a set of arguments supplied to the operation.
 
 
