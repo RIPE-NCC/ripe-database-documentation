@@ -30,7 +30,7 @@ The number is required. It does not form part of the ID but acts as an index. If
 
 For example, if you want ‘TTR' as the initials in the organisation ID, you should put ‘AUTO-1TTR' into the "organisation:" attribute, when you create the object. If you delete an **organisation** object you cannot recreate one with the same ID as the one you deleted or with any other ID that has been used previously.
 
-## New Organisation Startup
+## New Organisation Startup (creating first object)
 
 When you first use the RIPE Database, you need to create some basic objects. Every object you create in the database must be maintained. That means you need a **mntner** object. This object must reference a **role** (or person) object as a contact. However, the **role** (or person) object must be maintained. Therefore, a user cannot create either of these two objects first using any of the usual update methods.
 
@@ -39,3 +39,8 @@ There is separate page to create a role and maintainer pair, so that new users c
 If errors occur during the creation process, these are reported back to the user. If successful, the **mntner** object name and the NIC handle are returned to the user. There is no partial success allowed. If one object can be successfully created during the intermediate stage, but the second object has errors, no object will be created.
 
 If you have nothing in the RIPE Database, this startup script is the only way to get started. Once you have this first pair of objects, you can use the normal update methods for all other objects.
+
+
+## White Pages
+The RIPE Community recognises that there are some people with a high profile within the Community but who do not manage Internet resources. Some of these
+people may have a **person** object in the RIPE Database and may use the NIC handle as a signature and for contact purposes. The White Pages is a facility for these people to ‘opt in’ to having their personal data in the Database. Strict conditions apply to limit the number of people using this [facility](http://www.ripe.net/db/support/white-pages-instructions.pdf). Anyone listed in the White Pages will be exempt from the garbage collection.
