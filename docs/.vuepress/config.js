@@ -131,7 +131,8 @@ module.exports = {
 
         return dayjs(timestamp).utc(true).format()
       }
-    }]
+    }],
+    ['@renovamen/vuepress-plugin-mermaid']
 	],
   markdown: {
     extendMarkdown: md => {

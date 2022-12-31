@@ -112,7 +112,7 @@
         <ul class="sidebar-links"><li><a href="/docs/entire-documentation-(HTML)" aria-current="page" class="sidebar-link">Entire Documentation (HTML)</a></li></ul>
       </template>
     </Sidebar>
-
+    <SvgZoom />
     <Home v-if="$page.frontmatter.home"></Home>
 
     <Page v-else :sidebar-items="sidebarItems">
@@ -139,6 +139,7 @@ import Home from "@theme/components/Home.vue";
 import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
+import SvgZoom from "@theme/components/SvgZoom.vue";
 
 import SearchBox from "@SearchBox";
 import NavLinks from "@theme/components/NavLinks.vue";
@@ -156,6 +157,7 @@ export default {
     Navbar,
     SearchBox,
     NavLinks,
+    SvgZoom,
   },
   data() {
     return {
