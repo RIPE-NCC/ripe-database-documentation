@@ -34,7 +34,7 @@ The order in which the RIPE Database will verify available maintainers is:
 This means that if a **route(6)** or **inet(6)num** object has all three kinds of maintainers defined, you **must** use the "mnt-routes:" attributes to authenticate. In this case, you cannot use the "mnt-lower:" or "mnt-by:" attributes. Likewise, if you have a "mnt-lower:" and a "mnt-by:" attribute on the objects, the "mnt-lower:" attribute must be used.
 
 
-**Route object creationg flowchart**
+**Route object creation flowchart**
 
 
 ```mermaidjs
