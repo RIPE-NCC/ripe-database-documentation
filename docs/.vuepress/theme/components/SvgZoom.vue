@@ -9,14 +9,14 @@ import Panzoom from '@panzoom/panzoom'
 export default {
     name: "svgZoom",
     mounted() {
-            let div = document.querySelector("div[id^='mermaid']");
-            let insideDiv = document.getElementById("svg_inside_div");
-            div.parentNode.insertBefore(insideDiv,div);
+        let div = document.querySelector("div[id^='mermaid']");
+        let insideDiv = document.getElementById("svg_inside_div");
+        div.parentNode.insertBefore(insideDiv,div);
 
 
-            this.panzoom = Panzoom(document.querySelector("div[id^='mermaid']"), {
-                maxScale: 5
-            })
+        this.panzoom = Panzoom(document.querySelector("div[id^='mermaid']"), {
+            maxScale: 5
+        })
     },
     methods: {
         zoom(event){
@@ -31,7 +31,7 @@ svg[id^="mermaid"] {
     width: 100%;
     height: 100%;
     overflow: scroll;
-    z-index: 20;
+    z-index: 2;
 }
 .vuepress-mermaid{
     overflow: scroll;
@@ -39,7 +39,7 @@ svg[id^="mermaid"] {
 #svg_inside_div {
     text-align: center;
     padding: 9px 4px 9px 4px;
-    z-index: 10;
+    z-index: 1;
     position: relative;
 }
 #zoom_in, #zoom_out{

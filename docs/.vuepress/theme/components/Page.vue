@@ -1,7 +1,7 @@
 <template>
   <main class="page">
     <slot name="top" />
-    <div class="custom-theme-content" v-if="$page.frontmatter.theme === 'svg theme'">      
+    <div class="custom-theme-content" v-if="$page.frontmatter.theme === 'svg theme'">    
       <Content />
       <slot name="workspace" />
     </div>
