@@ -1,60 +1,59 @@
-<template></template>
+<template>
+    <div id="svg_inside_div">
+        <button type="submit" id="zoom_in" name="zoom_in" @click="zoom(1)">Zoom out</button>
+        <button type="submit" id="zoom_out" name="zoom_out" @click="zoom(-1)">Zoom in</button>
+    </div>
+</template>
 <script>
-import * as d3 from "d3";
+import Panzoom from '@panzoom/panzoom'
 export default {
     name: "svgZoom",
     mounted() {
-        window.addEventListener('load', function () {
-            // Create buttons
             let div = document.querySelector("div[id^='mermaid']");
-            let p = document.createElement("p");
-
-            let zoom_in = document.createElement("button");
-            zoom_in.type="submit"
-            zoom_in.name="zoom_in";
-            zoom_in.innerHTML="Zoom in";
-            zoom_in.id="zoom_in";
-
-            console.log(div)
-
-            let zoom_out = document.createElement("button");
-            zoom_out.type="submit"
-            zoom_out.name="zoom_out";
-            zoom_out.innerHTML="Zoom out";
-            zoom_out.id="zoom_out";
-
-            p.append(zoom_in); 
-            p.append(zoom_out); 
-            div.parentNode.insertBefore(p,div);
+            let insideDiv = document.getElementById("svg_inside_div");
+            div.parentNode.insertBefore(insideDiv,div);
 
 
-            //Zoom logic
-
-            console.log("a1")
-            //let zoom = d3.zoom().on("zoom", zoomed);
-
-            let svg = d3.select("svg[id^='mermaid']")
-                .attr("width", "100%")
-                .attr("height", "100%")
-                .style("background-color", "#eeeeee");
-            svg.html("<g>" + svg.html() + "</g>");
-            var inner = svg.select("g");
-
-            var zoom = d3.zoom().on("zoom", function(event) {
-                inner.attr("transform", event.transform);
-            });
-            /*d3.select("#zoom_in").on("click", function() {
-                console.log("zoom in");
-                zoom.scaleBy(svg.transition().duration(750), 1.2);
-            });
-            d3.select("#zoom_out").on("click", function() {
-                console.log("zoom out");
-                zoom.scaleBy(svg.transition().duration(750), 0.8);
-            });*/
-
-            svg.call(zoom).call(zoom.transform, d3.zoomIdentity.translate(-880.3226965549293,-755.7167138457196).scale(1.7195129724860199));
-        });
-        
+            this.panzoom = Panzoom(document.querySelector("div[id^='mermaid']"), {
+                maxScale: 5
+            })
+    },
+    methods: {
+        zoom(event){
+            event === -1 ? this.panzoom.zoomOut() : this.panzoom.zoomIn()
+        }
     }
 }
 </script>
+
+<style lang="stylus">
+svg[id^="mermaid"] {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    z-index: 20;
+}
+.vuepress-mermaid{
+    overflow: scroll;
+}
+#svg_inside_div {
+    text-align: center;
+    padding: 9px 4px 9px 4px;
+    z-index: 10;
+    position: relative;
+}
+#zoom_in, #zoom_out{
+    cursor: pointer;
+    border: 1px solid white;
+    width: 10%;
+    padding: 9px 4px 9px 4px;
+    background-image: url("../../../assets/imgs/zoom-in.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+#zoom_out{
+    background-image: url("../../../assets/imgs/zoom-out.png");
+}
+</style>
