@@ -2,7 +2,10 @@
 theme: svg theme
 title: Route object creation flowchart
 ---
-
+<script setup>
+    import CustomComponent from '../.vuepress/components/SvgZoom.vue'
+</script>
+<CustomComponent />
 
 ```mermaidjs
 flowchart TB

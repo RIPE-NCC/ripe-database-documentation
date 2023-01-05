@@ -1,7 +1,7 @@
 <template>
     <div id="svg_inside_div">
-        <button type="submit" id="zoom_in" name="zoom_in" @click="zoom(1)">Zoom out</button>
-        <button type="submit" id="zoom_out" name="zoom_out" @click="zoom(-1)">Zoom in</button>
+        <button type="submit" id="zoom_in" name="zoom_in" @click="zoom(1)">Zoom in</button>
+        <button type="submit" id="zoom_out" name="zoom_out" @click="zoom(-1)">Zoom out</button>
     </div>
 </template>
 <script>
@@ -47,13 +47,13 @@ svg[id^="mermaid"] {
     border: 1px solid white;
     width: 10%;
     padding: 9px 4px 9px 4px;
-    background-image: url("../../../assets/imgs/zoom-in.png");
+    background-image: url("assets/zoom-in.png");
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 10px center;
 }
 
 #zoom_out{
-    background-image: url("../../../assets/imgs/zoom-out.png");
+    background-image: url("assets/zoom-out.png");
 }
 </style>

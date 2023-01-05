@@ -9,6 +9,7 @@
       <Content />
       <slot name="workspace" />
     </div>
+
     <PageEdit />
     <PageNav v-bind="{ sidebarItems }" />
     <slot name="bottom" />
