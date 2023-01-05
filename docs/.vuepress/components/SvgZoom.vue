@@ -7,7 +7,7 @@
 <script>
 import Panzoom from '@panzoom/panzoom'
 export default {
-    name: "svgZoom",
+    name: "svgZoomComponent",
     mounted() {
         let div = document.querySelector("div[id^='mermaid']");
         let insideDiv = document.getElementById("svg_inside_div");
@@ -55,5 +55,9 @@ svg[id^="mermaid"] {
 
 #zoom_out{
     background-image: url("assets/zoom-out.png");
+}
+
+h1{
+    text-align: center;
 }
 </style>

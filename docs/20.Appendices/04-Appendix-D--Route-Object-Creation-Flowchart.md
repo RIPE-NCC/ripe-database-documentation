@@ -1,11 +1,13 @@
 ---
 theme: svg theme
-title: Route object creation flowchart
+title: Appendix-D--Route-Object-Creation-Flowchart
 ---
 <script setup>
-    import CustomComponent from '../.vuepress/components/SvgZoom.vue'
+    import svgZoomComponent from '../.vuepress/components/SvgZoom.vue'
 </script>
-<CustomComponent />
+<svgZoomComponent />
+
+# Route Object Creation Flowchart
 
 ```mermaidjs
 flowchart TB
