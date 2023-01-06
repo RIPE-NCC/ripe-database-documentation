@@ -1,10 +1,15 @@
 <template>
   <main class="page">
     <slot name="top" />
-    <div class="theme-default-content">
+    <div class="custom-theme-content" v-if="$page.frontmatter.theme === 'svg theme'">    
       <Content />
       <slot name="workspace" />
     </div>
+    <div class="theme-default-content" v-else>
+      <Content />
+      <slot name="workspace" />
+    </div>
+
     <PageEdit />
     <PageNav v-bind="{ sidebarItems }" />
     <slot name="bottom" />
