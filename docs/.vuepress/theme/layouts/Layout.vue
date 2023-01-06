@@ -112,7 +112,7 @@
         <ul class="sidebar-links"><li><a href="/docs/entire-documentation-(HTML)" aria-current="page" class="sidebar-link">Entire Documentation (HTML)</a></li></ul>
       </template>
     </Sidebar>
-
+    
     <Home v-if="$page.frontmatter.home"></Home>
 
     <Page v-else :sidebar-items="sidebarItems">

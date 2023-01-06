@@ -86,6 +86,16 @@ module.exports = {
             //Link always has the next structure: [*](*#*). We have to remove the second * because now we are pointing to the same doc
             var regex = /(\[.+?(?=\]\())(.+?(?=\#))(.+?(?=\)))/g;
 
+            //frontmatter always start with --- and finish with ---
+            var frontmatterRegex=/(---(.|\n)*---)/g;
+
+            //we dont want to apply any markdown custom script
+            var scriptRegex=/(<script(.|\n)*<\/script>)/g;
+
+            //we dont want to apply any markdown custom component
+            var customComponentRegex=/(.+?(?=Component \/>)Component \/>)/g;
+
+
 
             return pages
               .reduce((acc, current) => {
@@ -99,7 +109,12 @@ module.exports = {
                   }
                   return firstMatchingPart+ '](' + contentNoMoreThanOneDashInLinks;
                 })
-                return `${acc}${contentWithCorrectLinks}\n\n${pageBreak}`
+                
+                const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
+                const contentWithoutCustomScripts= contentWithoutFrontmatter.replace(scriptRegex, '')
+                const contentWithoutCustomComponent = contentWithoutCustomScripts.replace(customComponentRegex, '')
+
+                return `${acc}${contentWithoutCustomComponent}\n\n${pageBreak}`
               }, initialValue)
           }
         }]
@@ -131,9 +146,13 @@ module.exports = {
 
         return dayjs(timestamp).utc(true).format()
       }
-    }]
+    }],
+    ['@renovamen/vuepress-plugin-mermaid']
 	],
   markdown: {
+    toc: {
+      includeLevel: [1,2],
+    },
     extendMarkdown: md => {
       md.use(require('markdown-it-html5-embed'), {
         html5embed: {

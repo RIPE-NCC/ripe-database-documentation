@@ -33,7 +33,7 @@ The order in which the RIPE Database will verify available maintainers is:
 
 This means that if a **route(6)** or **inet(6)num** object has all three kinds of maintainers defined, you **must** use the "mnt-routes:" attributes to authenticate. In this case, you cannot use the "mnt-lower:" or "mnt-by:" attributes. Likewise, if you have a "mnt-lower:" and a "mnt-by:" attribute on the objects, the "mnt-lower:" attribute must be used.
 
-Here is a [flowchart outlining the entire authorisation process](https://www.ripe.net/support/training/material/bgp-operations-and-security-training-course/route-object-creation-flowchart.pdf) in PDF format.
+Here is a [flowchart outlining the entire authorisation process](../20.Appendices/04-Appendix-D--Route-Object-Creation-Flowchart.md#route-object-creation-flowchart).
 
 You can only create a **route(6)** object for a prefix you manage. If these objects are maintained by your organisation's single shared maintainer, you just need to supply one credentials to satisfy all of the requirements. However, when you use multiple maintainers, you may need to supply different credentials to create a single **route(6)** objects.
 
