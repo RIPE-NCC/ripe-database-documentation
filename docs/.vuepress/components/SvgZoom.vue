@@ -41,6 +41,7 @@ svg[id^="mermaid"] {
     padding: 9px 4px 9px 4px;
     z-index: 1;
     position: relative;
+    background-color: var(--mdc-text-field-fill-color, white);
 }
 #zoom_in, #zoom_out{
     cursor: pointer;
@@ -59,5 +60,8 @@ svg[id^="mermaid"] {
 
 h1{
     text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: var(--mdc-text-field-fill-color, white);
 }
 </style>
