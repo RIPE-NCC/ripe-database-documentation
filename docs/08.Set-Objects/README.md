@@ -6,7 +6,7 @@ Throughout this section we have used the **as-set** object as an example. The sa
 
 The set name can be hierarchical. The hierarchy consists of a series of other as-set names separated by colons (`:`). Anything to the left of a colon is considered a parent, anything to the right is considered a child. At each stage, the whole of the hierarchy, including the colons, is considered as a single string that forms an object name. The set hierarchy can optionally start with an AS number reference as the top-level parent.
 
-It is mandatory the use of the hierarchical way to create an **as-set** object due to collisions between IRR databases. This is just required only for **as-set** objects, it is not required for the rest of the set objects.
+Existing as-set names can be short (i.e. with a name only, e.g. AS-TEST) or hierarchical (i.e. with a name and AS number reference(s), e.g. AS3333:AS-TEST). It is now mandatory to use hierarchical names to create an **as-set** object, so that the creation is authenticated by the AS number holder. This restriction does not apply to the other set types.
 
 AS-LIST1:AS-CUST
 
