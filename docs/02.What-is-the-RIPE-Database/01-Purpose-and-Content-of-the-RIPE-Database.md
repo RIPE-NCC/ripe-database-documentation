@@ -129,4 +129,4 @@ Changes can be proposed to the RIPE Database purpose and content by anyone from 
 
 ## RIPE Database Terms and Conditions
 
-The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../22.Terms-And-Conditions.md#introduction). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
+The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](https://apps.db.ripe.net/db-web-ui/legal#terms-and-conditions). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
