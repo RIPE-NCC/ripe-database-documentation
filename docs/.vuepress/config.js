@@ -74,7 +74,7 @@ module.exports = {
         bundles: [{
           path: 'entire-documentation-(HTML)',
           filter: (pages) => {
-            return pages.filter(({ path }) => path.match(new RegExp('/([0-9]+)')))
+            return pages.filter(({ path }) => path.match(new RegExp('/([0-9]+)')) && !path.includes('18.Legal-Information'))
           },
           mergePages: pages => {
             const pageBreak = '<hr class="page-break" />\n\n'
