@@ -9,10 +9,11 @@
       <Content />
       <slot name="workspace" />
     </div>
-
-    <PageEdit />
-    <PageNav v-bind="{ sidebarItems }" />
-    <slot name="bottom" />
+    <footer v-if="$page.frontmatter.footer !== false">
+      <PageEdit/>
+      <PageNav v-bind="{ sidebarItems }" />
+      <slot name="bottom" />
+    </footer>
   </main>
 </template>
 

@@ -39,6 +39,7 @@ if (typeof item.title !== 'undefined') {
 }
 })
 
+const disableSideNavBar = "---\nsidebar: false\nnavbar: false\nsearch: false\nfooter: false\n---\n'";
 module.exports = {
   title: "Docs",
   description: "The RIS Docs Center",
@@ -120,9 +121,9 @@ module.exports = {
           filter: (pages) => {
             return pages.filter(({ path }) => path.match(new RegExp('/([0-9]+)')) && !path.includes('23.Legal-Information'))
           },
+          disableSideNavBar: function(){ return '---\nsidebar: false\nnavbar: false\nsearch: false\nfooter: false\n---\n'},
           mergePages: pages => {
             const pageBreak = '<hr class="page-break" />\n\n'
-            const disableSideNavBar='---\nsidebar: false\nnavbar: false\nsearch: false\n---\n'
             const initialValue = `${disableSideNavBar}# Entire Documentation (HTML)\n\n[[TOC]]\n${pageBreak}`
 
             //frontmatter always start with --- and finish with ---
@@ -149,10 +150,9 @@ module.exports = {
           path: 'terms-conditions-(HTML)',
           filter: (pages) => {
             return pages.filter(({ path }) => path.includes('23.HTML-Terms-And-Conditions'))
-          },
+          }, 
           mergePages: pages => {
             const pageBreak = '<hr class="page-break" />\n\n'
-            const disableSideNavBar='---\nsidebar: false\nnavbar: false\nsearch: false\n---\n'
             return pages
               .reduce((acc, current) => {
                 return `${acc}${module.exports.referencesOtherPageFormatter(current)}\n\n${pageBreak}`
@@ -166,7 +166,6 @@ module.exports = {
           },
           mergePages: pages => {
             const pageBreak = '<hr class="page-break" />\n\n'
-            const disableSideNavBar='---\nsidebar: false\nnavbar: false\nsearch: false\n---\n'
             return pages
               .reduce((acc, current) => {
                 return `${acc}${module.exports.referencesOtherPageFormatter(current)}\n\n${pageBreak}`
@@ -192,9 +191,7 @@ module.exports = {
         buttonColor: 'grey'
        }],
     ['@mr-hope/vuepress-plugin-components'],
-    // ['vuepress-plugin-global-variables', { variables: { asn: '3333', ip: '193.0.0.0', prefix: '140.78/16', starttime: '2020-12-21T07:00', endtime: '2020-12-21T12:00' } }],
     ['full-searchbar', { encode: 'icase', tokenize: 'full' }],
-    // require('vuepress-plugin-full-searchbar')
     ['@vuepress/last-updated', {
       transformer: (timestamp, lang) => {
         const dayjs = require('dayjs')
