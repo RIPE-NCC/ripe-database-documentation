@@ -80,7 +80,7 @@
 
     "@renovamen/vuepress-plugin-mermaid": "^0.3.0",
 
-    "@technical-design/ripe-app-webcomponents": "^2.0.3",
+    "@technical-design/ripe-app-webcomponents": "^3.3.0",
 
     "dayjs": "^1.11.3",
 
