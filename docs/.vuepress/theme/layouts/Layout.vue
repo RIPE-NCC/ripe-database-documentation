@@ -110,9 +110,9 @@
         <slot name="sidebar-bottom" />
         <!-- Add static path to reach the generated documentation-->
         <ul class="sidebar-links">
+          <li><a href="/docs/terms-conditions" aria-current="page" class="sidebar-link">Terms and Conditions (HTML)</a></li>
+          <li><a href="/docs/acceptable-use-policy" aria-current="page" class="sidebar-link">Acceptable Use Policy (HTML)</a></li>
           <li><a href="/docs/entire-documentation-(HTML)" aria-current="page" class="sidebar-link">Entire Documentation (HTML)</a></li>
-          <li><a href="/docs/terms-conditions-(HTML)" aria-current="page" class="sidebar-link">Terms and Conditions (HTML)</a></li>
-          <li><a href="/docs/acceptable-use-policy-(HTML)" aria-current="page" class="sidebar-link">Acceptable Use Policy (HTML)</a></li>
         </ul>
       </template>
     </Sidebar>

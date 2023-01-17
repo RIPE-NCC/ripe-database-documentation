@@ -99,10 +99,10 @@ module.exports = {
     return current.content.replace(regex, function(matchingWord,firstMatchingPart,secondMatchingPart,thirdMatchingPart){   
       //We could call from one static class to another, for example from t&c static page we could call aup page. We can not target to current page, we have to modify the reference to target the correct page
       if(secondMatchingPart.startsWith("](../23.Legal-Information.md") || secondMatchingPart.startsWith("](23.Legal-Information.md")){
-        return firstMatchingPart+ '](' + "terms-conditions-(HTML)"+ ')';
+        return firstMatchingPart+ '](' + "terms-conditions"+ ')';
       }
       if(secondMatchingPart.startsWith("](../22.RIPE-Database-Acceptable-Use-Policy.md") || secondMatchingPart.startsWith("](22.RIPE-Database-Acceptable-Use-Policy.md")){
-        return firstMatchingPart+ '](' + "acceptable-use-policy-(HTML)"+ ')';
+        return firstMatchingPart+ '](' + "acceptable-use-policy"+ ')';
       }
       if(secondMatchingPart.startsWith("](http") || secondMatchingPart.startsWith("](https")){ //dont change absolute links
         return matchingWord;
@@ -146,7 +146,7 @@ module.exports = {
           }
         },
         {
-          path: 'terms-conditions-(HTML)',
+          path: 'terms-conditions',
           filter: (pages) => {
             return pages.filter(({ path }) => path.includes('23.HTML-Terms-And-Conditions'))
           }, 
@@ -159,7 +159,7 @@ module.exports = {
           }
         },
         {
-          path: 'acceptable-use-policy-(HTML)',
+          path: 'acceptable-use-policy',
           filter: (pages) => {
             return pages.filter(({ path }) => path.includes('22.RIPE-Database-Acceptable-Use-Policy'))
           },
@@ -177,9 +177,9 @@ module.exports = {
     [
       'vuepress-plugin-dehydrate',{
         noScript: [
-          '**/entire-documentation-(HTML)',
-          '**/terms-conditions-(HTML)',
-          '**/acceptable-use-policy-(HTML)',
+          '**/entire-documentation',
+          '**/terms-conditions',
+          '**/acceptable-use-policy',
         ],
       },
     ],
