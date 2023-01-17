@@ -1,8 +1,6 @@
-
 # RIPE Database Documentation
 
 VuePress documentation for RIPE Database Documentation.
-
 This documentation is built automatically from nothing more than markdown files in the tree.
 
 # Editing the docs
