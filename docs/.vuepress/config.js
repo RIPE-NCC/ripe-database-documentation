@@ -42,7 +42,7 @@ if (typeof item.title !== 'undefined') {
 const disableSideNavBar = "---\nsidebar: false\nnavbar: false\nsearch: false\nfooter: false\n---\n";
 module.exports = {
   title: "Docs",
-  description: "The RIS Docs Center",
+  description: "The Database Docs Center",
   dest: process.env.BETA ? 'builds/docsbeta' : 'builds/docs',
   base: process.env.BETA ? '/docsbeta/' : '/docs/',
   themeConfig: {
