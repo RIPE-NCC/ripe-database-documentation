@@ -3,7 +3,7 @@
 For more information about the REST paradigm, see https://en.wikipedia.org/wiki/Representational_state_transfer.
 If you used the old (beta) API, consider reading [migration guide for old API users](../19.Database-Support/07-Migration-guide.md#whois-rest-api-migration-guide)
 All the services are accessible via HTTPS.
-Use of the Whois REST API is governed by the RIPE Database [terms and conditions](../22.Terms-And-Conditions.md#ripe-database-terms-and-conditions)
+Use of the Whois REST API is governed by the RIPE Database [terms and conditions](../23.Legal-Information.md#)
 
 ## RESTful URI format
 

@@ -127,6 +127,6 @@ The RIPE NCC reserves the final judgement on mirroring a database. You can reque
 Changes can be proposed to the RIPE Database purpose and content by anyone from the RIPE community using the [RIPE Policy Development Process](https://www.ripe.net/publications/docs/ripe-614).
 
 
-## RIPE Database Terms and Conditions
+## Terms and Conditions
 
-The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../22.Terms-And-Conditions.md#introduction). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
+The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../23.Legal-Information.md#). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
