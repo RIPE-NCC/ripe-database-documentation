@@ -30,7 +30,7 @@ The number is required. It does not form part of the ID but acts as an index. If
 
 For example, if you want ‘TTR' as the initials in the organisation ID, you should put ‘AUTO-1TTR' into the "organisation:" attribute, when you create the object. If you delete an **organisation** object you cannot recreate one with the same ID as the one you deleted or with any other ID that has been used previously.
 
-## New Organisation Startup
+## New Organisation Startup (Creating First Objects)
 
 When you first use the RIPE Database, you need to create some basic objects. Every object you create in the database must be maintained. That means you need a **mntner** object. This object must reference a **role** (or person) object as a contact. However, the **role** (or person) object must be maintained. Therefore, a user cannot create either of these two objects first using any of the usual update methods.
 
