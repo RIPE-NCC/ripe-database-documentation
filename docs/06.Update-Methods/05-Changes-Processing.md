@@ -29,7 +29,7 @@ Please also see an announcement recently sent to the [RIPE Database Working Grou
 
 ## Changes related to INETNUM Objects
 
-* If an IP address prefix is specified, it will be converted to a IP address range
+* If an IP address prefix is specified, it will be converted to a IP address range.
 * An Info message "address prefix converted to range notation" is added to the acknowledgement.
 * This applies to create, modify and delete.
 * If the prefix cannot be converted into a single range, an error is displayed.
@@ -54,14 +54,14 @@ Please also see an announcement recently sent to the [RIPE Database Working Grou
 ## Changes related to DOMAIN objects
 
 * The "nserver:" attribute is a mandatory attribute and does not allow lists of values.
-* The "nserver:" value can only contain a glue record (optional IP address following the hostname) if the hostname ends with the DOMAIN name
-* the following glue records are valid:
+* The "nserver:" value can only contain a glue record (optional IP address following the hostname) if the hostname ends with the DOMAIN name.
+* The following glue records are valid:
     domain:     144.102.10.in-addr.arpa 
     nserver:    144.102.10.in-addr.arpa 10.20.133.177
     domain:     64.67.10.in-addr.arpa 
     nserver:    a.ns.64.67.10.in-addr.arpa 10.46.210.1 
     nserver:    ns1.64.67.10.in-addr.arpa 2001:db8::1
-* the following glue records are invalid:
+* The following glue records are invalid:
     domain:     144.102.10.in-addr.arpa 
     nserver:    ns1.host.com 10.20.133.177
     domain:     64.67.10.in-addr.arpa 
@@ -70,14 +70,14 @@ Please also see an announcement recently sent to the [RIPE Database Working Grou
 * IPv6 glue values are canonicalised.
 * The glue IP address always represents a single IP address.
 * So no ranges or prefixes are allowed.
-* Any trailing dots are removed from nserver: host names
+* Any trailing dots are removed from nserver: host names.
 
 
 
 ## Changes related to ROUTE objects
 
 * When multiple exact matching ROUTE objects exist, all are checked for authorisation. Any one of the existing ROUTE objects can authorise creation of a new ROUTE object with the same prefix.
-* Community values can only be 16 bit numbers, e.g.: community.contains(65535:65535) (ED: I think 32-bits are now supported, check)
+* Community values can only be 16 bit numbers, e.g.: community.contains(65535:65535) (ED: I think 32-bits are now supported, check).
 
 
 
@@ -85,19 +85,19 @@ Please also see an announcement recently sent to the [RIPE Database Working Grou
 
 * The IPv6 address is normalised into a standard format. See details in INET6NUM object above.
 * When multiple exact matching ROUTE6 objects exist, all are checked for authorisation. Any one of the existing ROUTE6 objects can authorise creation of a new ROUTE6 object with the same prefix.
-* Community values can only be 16 bit numbers, e.g.  community.contains(65535:65535) (ED: I think 32-bits are now supported, check)
+* Community values can only be 16 bit numbers, e.g.  community.contains(65535:65535) (ED: I think 32-bits are now supported, check).
 
 
 
 ## Changes related to AUT-NUM objects
 
-* Community values can only be 16 bit numbers, e.g.  community.contains(65535:65535) (ED: I think 32-bits are now supported, check)
+* Community values can only be 16 bit numbers, e.g.  community.contains(65535:65535) (ED: I think 32-bits are now supported, check).
 
 
 
 ## Changes related to KEY-CERT objects
 
-* Expired certificates generate warnings, but are still accepted
+* Expired certificates generate warnings, but are still accepted.
 * Values for "method:", "owner:" and "fingerpr:" are all generated from the key data. Any values supplied by the user are ignored. These attributes can be omitted on create and modify and will be generated. If you include the attributes they cannot be blank. Tthey must contain a syntactically correct value.
 * Sub keys are allowed in a key. So the key data can contain a master key and multiple sub keys.
 * The primary key value for a PGP KEY-CERT object (the "key-cert:" attribute value) does NOT have to be the key id matching the key data. It must match the syntax rules, PGPKEY-&lt;number&gt;, where number is any 8 digit hex value. This allows you to change the key data so the same object can represent a different public key without having to create a new object and change all the references.
