@@ -19,7 +19,7 @@ Please also see an announcement recently sent to the [RIPE Database Working Grou
 * The "password:" value has white spaces removed from start and end.
 * The "changed:" dates can be in any order.
 * The "changed:" dates can be one day in the future (to allow for time variations across the region).
-* No notification is sent to "irt-nfy:" or "mnt-ref:" when an object is deleted referencing a corresponding IRT or ORGANISATIOIN object.
+* No notification is sent to "irt-nfy:" or "mnt-ref:" when an object is deleted referencing a corresponding IRT or ORGANISATION object.
 * We no longer support the keywords 'DIFF' and 'KEYWORD' on email subject lines.
 * Where multiple types of notifications are required to be sent to the same email address resulting from a single update message, these will all be combined into a single email message. Previously if an update had, for example, an object failing on authentication and another successful object change to add an organisation reference, this would have generated two email messages to the same address.
 * When an object is deleted and a 'reason' is specified in the "delete:" attribute, this reason is included in both the acknowledgement message and all notification messages.
