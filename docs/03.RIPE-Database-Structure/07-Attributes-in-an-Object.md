@@ -1,7 +1,6 @@
 # Attributes in an Object
 
-
-The first attribute must have the same name as the object type. This identifies the object type. The currently available object types are shown in the sub-sections, ['List of Primary Objects'](./03-List-of-Primary-Objects.md#list-of-primary-objects) and ['List of Secondary Objects'](./04-List-of-Secondary-Objects.md#list-of-secondary-objects). If the type is not recognised, that part of an update message will be seen as a paragraph of text and will be disregarded with an appropriate error message. If the unrecognised type is in a query, it will be rejected with an error.
+The first attribute must have the same name as the object type. This identifies the object type. The currently available object types are shown in the sub-sections, ['List of Primary Objects'](03-List-of-Primary-Objects.md#list-of-primary-objects) and ['List of Secondary Objects'](04-List-of-Secondary-Objects.md#list-of-secondary-objects). If the type is not recognised, that part of an update message will be seen as a paragraph of text and will be disregarded with an appropriate error message. If the unrecognised type is in a query, it will be rejected with an error.
 
 Other attributes can appear in any order, but most people stick to the order as shown in the object templates (see the section ['RPSL Object Types'](../04.RPSL-Object-Types/README.md#rpsl-object-types)). Each object type is defined to have a set of possible attributes. The set for each object type is defined within the software and shown in the template.
 
