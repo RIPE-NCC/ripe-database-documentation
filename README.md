@@ -1,3 +1,4 @@
+
 # RIPE Database Documentation
 
 VuePress documentation for RIPE Database Documentation.
@@ -30,3 +31,7 @@ This command is going to install the required dependencies for vuepress and thos
     npm run docs:dev
 
 This command is going to launch a local server in http://localhost:8080/docs/
+
+# Legal
+
+**IMPORTANT!** Any change done to [legal](./docs/23.Legal-Information.md), [T&C](./docs/23.HTML-Terms-And-Conditions.md) or [AUP](./docs/22.RIPE-Database-Acceptable-Use-Policy.md) require approval from Legal. So please don't edit those files unless you have the permission from Legal.
