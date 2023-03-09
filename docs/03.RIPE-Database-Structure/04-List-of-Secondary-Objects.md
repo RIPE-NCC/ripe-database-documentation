@@ -3,7 +3,7 @@
 These are the currently supported objects in the RIPE Database that are considered to be secondary data.
 
 | Object Type | Short name |Description |
-| --- | --- |
+| --- | --- | --- |
 | **as-block** | ak | Delegation of a range of Autonomous System (AS) Numbers to a given Regional Internet Registry or marked as reserved. |
 | **irt** | it | Contact and authentication information about a Computer Security Incident Response Team (CSIRT). |
 | **key-cert** | kc | Public key certificate that is stored on the server, to be used with a **mntner** object for authentication when performing updates. |
