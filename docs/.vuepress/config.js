@@ -126,7 +126,7 @@ module.exports = {
             const initialValue = `${disableSideNavBar}# Entire Documentation (HTML)\n\n[[TOC]]\n${pageBreak}`
 
             //frontmatter always start with --- and finish with ---
-            var frontmatterRegex=/(---(.|\n)*---)/g;
+            var frontmatterRegex=/(^(?!|)*---(.|\n)*---)/g;
 
             //we dont want to apply any markdown custom script
             var scriptRegex=/(<script(.|\n)*<\/script>)/g;
