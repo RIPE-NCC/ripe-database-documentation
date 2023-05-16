@@ -116,7 +116,6 @@ The Webupdates ack message is very different to both the email and Syncupdates a
 
 If the update fails, the errors are shown in different ways depending on the web format that you are using. If you are using the field format, a general error message may be displayed at the top of the form:
 
-<<<<<<< HEAD
 ![](~@imgs/9.1.31.png)
 
 A specific error will be added, immediately after the attribute that contains the actual error:

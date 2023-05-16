@@ -1,0 +1,39 @@
+# Coding standard
+
+In general, we follow the standard Java Coding Standard: [Code Conventions for the Java Programming Language](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html), with the following additions.
+
+### Code Format
+* Use modern IDE (import organisation, variable expansion, code generation features are essential). IntelliJ is recommended.
+* Wrap long lines where it makes sense. Disable automatic line wrapping in IDE; break it where you think it improves readability.
+* Don't include unnecessary comments, code should be self-documenting. Remember: comments have to be maintained too, but they are not covered by tests.
+* Use readable variable names, which are descriptive of the purpose. Rely on variable name completion of your IDE.
+* Don't embed tab characters, expand tabs to 4 spaces. No extra/trailing whitespace.
+* When in doubt, look at existing code & follow conventions.
+* Use explicit imports, not .*
+
+### Java Conventions
+* Use the final keyword on variables, so they cannot change unexpectedly (no side-effects).
+* Use static imports when it makes sense. E.g. do not use them when there are more than one libraries providing the methods you are importing.
+
+### Commits
+* You spend hours, days before making a commit. Do spend that 30 seconds to break it into meaningful parts (e.g. using git gui).
+* Commit cosmetic changes separately (e.g. as 'reformatted code') to make code review easier.
+* Add good explanation as a commit message. Focus on why, not the how.
+* Add warnings where you find necessary (e.g. 'will have to apply sql patch before deployment').
+
+### File Naming Conventions
+* Unit Test classes are named `<Component>Test.java`, located under src/test/java.
+* Java Integration test classes are named `<Functionality>TestIntegration.java`, also under src/test/java.
+* Groovy Integration tests are named `<Functionality>Spec.groovy`, under src/test/groovy.
+
+### Testing
+* Use Hamcrest assertions (ie assertThat(..., is(..)) instead of assertEquals(..,..))
+
+### IntelliJ Editor Settings
+* Settings / Code Style / Java / Wrapping / Field Annotations = 'do not wrap'
+* Settings / Code Style / Java / Imports / class count = 999, names count = 999
+
+### Git
+
+* Please use "git pull --rebase" to merge remote changes.
+* git config --global pull.rebase true

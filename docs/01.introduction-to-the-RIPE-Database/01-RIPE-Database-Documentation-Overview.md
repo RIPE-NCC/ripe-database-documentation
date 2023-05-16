@@ -4,7 +4,7 @@ This is the starting point for information about the RIPE Database. Everything t
 
 The format of this documentation is a Master Index with headings and sub-headings. Each of these (sub-)headings links to a separate web page. This web page may be an index page to a series of other web pages. This documentation explains the RIPE Database in a large collection of small documents on specific topics with a comprehensive index so that the information is easy to find.
 
-There is a [Glossary of Terms and Definitions](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/glossary) that explains the meaning of commonly used terminology, phrases, words and acronyms related to the RIPE Database. There is also a set of references to other articles, standards and agreements relating to the RIPE Database.
+There is a [Glossary of Terms and Definitions](../22.Glossary.md#glossary) that explains the meaning of commonly used terminology, phrases, words and acronyms related to the RIPE Database. There is also a set of references to other articles, standards and agreements relating to the RIPE Database.
 
 There is a strong relationship between the full set of documentation and software releases. With every new release, the whole set of documents will be updated to reflect the changes in the software. The previous sets of documentation will still be available to view online or download as a PDF document.
 

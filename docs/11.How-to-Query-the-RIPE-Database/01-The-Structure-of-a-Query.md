@@ -26,4 +26,8 @@ The query argument is not case-sensitive. As shown in the examples above, it can
     -rBG –Tinetnum,inet6num –imb ripe-ncc-hm-mnt
 
     -rBG –T inetnum,inet6num –i MB ripe-ncc-hm-mnt
-A list of query flags and query flag arguments are [available](https://www.ripe.net/data-tools/support/documentation/ripe-database-query-reference-manual#tables-of-query-types-supported-by-the-ripe-database).
+A list of query flags and query flag arguments are [available](../16.Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#tables-of-query-types-supported-by-the-ripe-database).
+
+If you type an IP range you will get an exact match IP range if it exists. Otherwise smallest IP range containing it. (**inetnum/inet6num** and **route/route6** objects).
+
+If you type a single IP address you will get the smallest IP range containing this IP address. (**inetnum/inet6num** and **route/route6** objects).
