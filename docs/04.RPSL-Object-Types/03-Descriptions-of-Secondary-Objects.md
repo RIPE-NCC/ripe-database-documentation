@@ -95,7 +95,7 @@ The contact details provided by an **irt** object must be business information a
 * **“encryption:”** – This attribute references a **key-cert** object in the RIPE Database representing a public key used to encrypt correspondence sent to the CSIRT team.
 * **“auth:”** – This attribute defines the authentication scheme to be used to authorise the addition of a reference to this **irt** object. It has the same authentication options as described in the the sub-section ['Description of the mntner Object'](#description-of-the-mntner-object).
 * **“irt-nfy:”** – This attribute specifies a business email address to be notified when a reference to this **irt** object is added or removed.
-
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **irt** object in any other object.
 
 
 
@@ -185,6 +185,7 @@ For more detailed information about using mntner attributes, see the section [�
 * **“descr:”** – A short description related to the object.
 * **“upd-to:”** – This attribute specifies an email address where a notification will be sent when an attempt to update an object protected by this **mntner** is unsuccessful due to authorisation failure. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
 * **“mnt-nfy:”** – This attribute specifies the email address where a notification will be sent when an object protected by this **mntner** is successfully updated. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **mntner** object in any other object.
 * **“auth:”** – This attribute defines an authentication scheme to be used. Any of the current authentication schemes used by the RIPE Database are allowed.
 
 
@@ -297,6 +298,7 @@ If a **person** object is deleted, it is not possible to recreate it with the sa
 * **“fax-no:”** – This is a fax number for the contact represented by this object.
 * **“e-mail:”** – This is an email address for the contact represented by this object.
 * **“nic-hdl:”** – This attribute specifies the ID of a **person** object. When creating an object, you can specify an "AUTO" ID by setting the value of the attribute to ‘AUTO-1' or ‘AUTO-1&lt;letterCombination&gt;', so the database will assign the ID automatically. If an AUTO ID is requested, it will always end with the source name, e.g. ‘-RIPE'. If you choose the value yourself you can use a two-letter international country code instead of the source at the end or you can just leave out this suffix. For example DW-RIPE, DW-NL and DW are all valid NIC Handles.
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **person** object in any other object.
 
 
 
@@ -399,3 +401,4 @@ References to **person** objects is optional. A help desk can be represented by 
 * **“e-mail:”** – This is an email address for the role represented by this object.
 * **“abuse-mailbox:”** – The **role** object is the only place that this attribute should be used. It represents the email address to be used when someone wants to report abuse from an Internet resource. A **role** object with an “abuse-mailbox:” attribute can be referenced by an “abuse-c:” attribute in an **organisation** object. For more details see the section on Abuse Handling.
 * **“nic-hdl:”** – This attribute specifies the ID of a **role** object. When creating an object, you can specify an "AUTO" ID by setting the value of the attribute to ‘AUTO-1' or ‘AUTO-1&lt;letterCombination&gt;', so the database will assign the ID automatically. If an AUTO ID is requested, it will always end with the source name, e.g. ‘-RIPE'. If you choose the value yourself you can use a two-letter international country code instead of the source at the end or you can just leave out this suffix. For example DW-RIPE, DW-NL and DW are all valid NIC handles.
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **role** object in any other object.
