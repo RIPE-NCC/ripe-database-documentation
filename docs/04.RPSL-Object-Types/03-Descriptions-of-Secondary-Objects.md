@@ -70,6 +70,7 @@ Below is the object template for the **irt** object. It lists all possible attri
     irt-nfy:        optional   multiple   inverse key
     notify:         optional   multiple   inverse key
     mnt-by:         mandatory  multiple   inverse key
+    mnt-ref:        optional   multiple   inverse key
     created:        generated  single
     last-modified:  generated  single
     source:         mandatory  single   
@@ -159,7 +160,8 @@ Below is the object template for the **mntner** object. It lists all possible at
     auth:           mandatory  multiple   inverse key
     remarks:        optional   multiple  
     notify:         optional   multiple   inverse key
-    mnt-by:         mandatory  multiple   inverse key   
+    mnt-by:         mandatory  multiple   inverse key
+    mnt-ref:        optional   multiple   inverse key 
     created:        generated  single
     last-modified:  generated  single
     source:         mandatory  single  
@@ -275,6 +277,7 @@ Below is the object template for the **person** object. It lists all possible at
     remarks:          optional   multiple  
     notify:           optional   multiple   inverse key
     mnt-by:           mandatory  multiple   inverse key
+    mnt-ref:          optional   multiple   inverse key
     created:          generated  single
     last-modified:    generated  single
     source:           mandatory  single  
@@ -371,6 +374,7 @@ Below is the object template for the **role** object. It lists all possible attr
     notify:         optional   multiple   inverse key
     abuse-mailbox:  optional   single     inverse key
     mnt-by:         mandatory  multiple   inverse key
+    mnt-ref:        optional   multiple   inverse key
     created:        generated  single
     last-modified:  generated  single
     source:         mandatory  single   
