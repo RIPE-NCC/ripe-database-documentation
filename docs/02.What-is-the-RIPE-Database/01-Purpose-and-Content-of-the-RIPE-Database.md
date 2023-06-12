@@ -4,8 +4,8 @@ The RIPE NCC has been tasked by the RIPE community to maintain a database of Int
 
 The RIPE Database holds data for three separate registries:
 
-* [RIPE Internet Number Registry (RIPE INR)](../21.Glossary.md#ripe-internet-number-registry-ripe-inr)
-* [RIPE Internet Routing Registry (RIPE IRR)](../21.Glossary.md#ripe-internet-routing-registry-ripe-irr)
+* [RIPE Internet Number Registry (RIPE INR)](../22.Glossary.md#ripe-internet-number-registry-ripe-inr)
+* [RIPE Internet Routing Registry (RIPE IRR)](../22.Glossary.md#ripe-internet-routing-registry-ripe-irr)
 * Reverse Delegation and ENUM Registry
 
 These could be three independent databases, however the information in each of them is related to each other. It was therefore decided to integrate the three registries into one logical database. In practise, it is also one physical database.
@@ -129,4 +129,4 @@ Changes can be proposed to the RIPE Database purpose and content by anyone from 
 
 ## Terms and Conditions
 
-The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../23.Legal-Information.md#). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
+The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../24.Legal-Information.md#). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.

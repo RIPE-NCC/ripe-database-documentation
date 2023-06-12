@@ -3,7 +3,7 @@
 These are the currently supported objects in the RIPE Database that are considered to be primary data.
 
 | Object Type | Short name | Description |
-| --- | --- |
+| --- | --- | --- |
 | **aut-num** | an | Holds information about an Automonous System (AS) Number. If it has “status: ASSIGNED” it is an authoritative resource assigned by the RIPE NCC and is part of the number registry (INR). It can also describe the external routing policy of the AS and is then part of the routing registry (IRR). |
 | **domain** | dn | Reverse domain registrations. Any changes made to **domain** objects in the RIPE Database are reflected in the DNS zone files. |
 | **inet6num** | i6 | Allocations and assignments of IPv6 address space. |
