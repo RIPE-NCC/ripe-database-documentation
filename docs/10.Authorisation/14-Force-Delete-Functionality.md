@@ -1,11 +1,11 @@
 # Force Delete Functionality
 
 
-**Force delete allows you to delete inet(6)num, route(6) and domain objects by using the maintainer of a covering address space object, instead of the maintainer of the object itself. This means the "mnt-lower:" of an allocation or the "mnt-by:" of a provider independent (PI) or anycast assignment each have the authority to force delete any more specific or related object.**
+**Force delete allows you to delete inet(6)num, route(6) and domain objects by using the maintainer of a covering address space object, instead of the maintainer of the object itself. This means the "mnt-lower:" of an allocation or the "mnt-by:" of a provider independent (PI) or anycast assignment or legacy under contract, each have the authority to force delete any more specific or related object.**
 
 In some cases it can occur that objects in the RIPE Database that fall under your address space have a maintainer that you do not control. For example, when you give joint control over an object to another user by using their "mnt-by:", you and the other party now have equal permissions. Now they have the ability to remove your maintainer from the object and take complete control. Another common issue is where an existing **route** object blocks the creation of a new exact matching **route** object.
 
-Force delete allows you to remove these objects even though you do not have the credentials for the maintainer on them. Instead, you can use the maintainer of the covering address space object, i.e. the "mnt-lower:" of the allocation or the "mnt-by:" of the PI or anycast assignment.
+Force delete allows you to remove these objects even though you do not have the credentials for the maintainer on them. Instead, you can use the maintainer of the covering address space object, i.e. the "mnt-lower:" of the allocation or the "mnt-by:" of the PI or anycast assignment or legacy under contract.
 
 There are very strict rules about which objects can be force deleted and whose authorisation is allowed to override the object's authorisation. Also keep in mind that it is only possible to _delete_ objects: modifying them is not possible.
 
@@ -13,7 +13,7 @@ There are very strict rules about which objects can be force deleted and whose a
 
 Normally an object can only be deleted if the operation is authorised by one of the **mntner** objects in the "mnt-by:" attributes of the object to be deleted. With force delete, the RIPE Database also looks for the exact match, encompassing, or less specific address space object that was allocated or assigned by the RIPE NCC.
 
-The result is that in addition to the "mnt-by:" attribute of the object itself, the "mnt-lower:" of an allocation or the "mnt-by:" of a PI or anycast assignment each have the authority to force delete any more specific or related primary object.
+The result is that in addition to the "mnt-by:" attribute of the object itself, the "mnt-lower:" of an allocation or the "mnt-by:" of a PI or anycast assignment or legacy under contract, each have the authority to force delete any more specific or related primary object.
 
 ## Example of Force Delete
 
