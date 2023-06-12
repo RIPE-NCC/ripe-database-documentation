@@ -37,7 +37,7 @@ cache:
 build:
   stage: build
   script:
-    - npm install
+    - npm install --legacy-peer-deps
     - npm run docs:build
   artifacts:
     paths:
