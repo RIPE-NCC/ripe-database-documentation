@@ -124,7 +124,10 @@ Reverse DNS zones in the RIPE Database do not allow child objects. From a DNS vi
 * **“descr:”** - A short description related to the object.
 * **“zone-c:”** - This attribute references the primary key, or NIC Handle, of either a **role** or **person** object. It should always reference a **role** object, except in the **role** object where it optionally references nested **role** objects or a **person** object.
 * **“nserver:”** - The "nserver:" attributes in each **domain** object define the officially delegated DNS nameservers (the ‘NS' in DNS zone contents). If a trailing dot is included it will be removed from the stored record. The nameserver name can optionally be followed by an IPv4 or IPv6 address as a glue record.
-* **“ds-rdata:”** – This attribute holds information about a signed delegation record for DNS Security Extensions (DNSSEC).
+* **“ds-rdata:”** – This attribute holds information about a signed delegation record for DNS Security Extensions (DNSSEC). In DNSSEC the Delegation Signer (DS) Resource Record is created from a DNSKEY Resource Record by comparing it with the public key. The parent publishes the [DS Resource Record](http://www.ietf.org/rfc/rfc4034.txt).
+The "ds-rdata:" attribute contains the RDATA of the DS Resource Records related to the domain (as shown in the "domain:" attribute).
+    ds-rdata: 64431 5 1 278BF194C29A812B33935BB2517E17D1486210FA
+The tools provided with BIND (version 9.3.0 and later) will generate a "ds set" during signing. Before an update, you can copy the DS Rdata into the attributes.
 
 
 

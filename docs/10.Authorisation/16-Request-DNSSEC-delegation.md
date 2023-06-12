@@ -1,0 +1,21 @@
+# DNSSEC Delegations
+This procedure is in addition to the normal procedure for requesting reverse delegations.
+
+
+## The DOMAIN Object
+You can request reverse delegation by submitting **domain** objects. DNSSEC will not mean any change the existing authorisation mechanisms. The [delegation checker](http://dnscheck.ripe.net/) will only carry out DNSSEC specific tests if DNSSEC related information is being exchanged.
+
+To allow for the exchange of DNSSEC related information, the **domain** object now includes a ["ds-rdata:" attribute](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-domain-object). 
+
+
+## Delegation Checks
+When it receives an update, the update engine will perform a number of checks. These are the most important:
+
+* Is there a matching DNSKEY available in the DNS for each "ds-rdata:" attribute that is submitted in the **domain** object?
+* Is there a valid RRSIG made with the DNSKEY matching the "ds-rdata:"? - [The resolution protocol](http://www.ietf.org/rfc/rfc4035.txt) needs this, without it the update will fail.
+* Does the DNSKEY has its "SEP" flag set? Setting the SEP flag is not mandatory. If it is not set, a warning will be produced, however the "ds-rdata:" content will still be copied to the zone.
+* Is the signature validity period close to expiring and are the Times To Live (TTLs) a reasonable fraction of the signature validity period? We suggest the Maximum Zone TTL of your zone data to be a fraction of your signature validity period. If the TTL would be of similar order as the signature validity period, then all RRsets fetched during the validity period would be cached until the signature expiration time. Section 7.1 of [Resource Records for the DNS Security Extension](http://www.ietf.org/rfc/rfc4034.txt) suggests that "the resolver may use the time remaining before expiration of the signature validity period of a signed RRset as an upper bound for the TTL". As a result query load on authoritative servers would peak at signature expiration time, as this is also the time at which records simultaneously expire from caches. To avoid query load peaks we suggest the TTL on all the RRs in your zone to be at least a few times smaller than your signature validity period. We currently test on the TTL being at least two times smaller than the signature validity period.
+
+These tests will only be done for "ds-rdata:" attributes using supported digest types, [section 5.1.3 from RFC4033](https://www.ietf.org/rfc/rfc4033.txt). Currently we support digest type 1(SHA1).
+
+If the "ds-rdata:" attribute uses an unsupported digest type, you will see a warning message, however the "ds-rdata:" content will still be copied into the parent zone.

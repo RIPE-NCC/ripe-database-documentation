@@ -58,7 +58,7 @@ svg[id^="mermaid"] {
     background-image: url("assets/zoom-out.png");
 }
 
-#route-object-creation-flowchart{
+#route-object-creation-flowchart, #domain-object-creation-flowchart{
     text-align: center;
     position: relative;
     z-index: 1;

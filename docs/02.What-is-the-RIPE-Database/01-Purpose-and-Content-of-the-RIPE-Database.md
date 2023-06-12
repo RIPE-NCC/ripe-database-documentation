@@ -42,7 +42,19 @@ Only resources allocated to the RIPE region can be registered in the RIPE IRR.
 The benefits of the IRR are only realised when registered routing policies are kept up-to-date, and reflect routing announcements in the 'real world'.
 
 
-## Reverse Delegation in the RIPE Database
+## Reverse Delegation
+
+### What is Reverse Delegation?
+
+The Domain Name System (DNS) is a globally distributed Internet service. It provides name-to-number (forward) and number-to-name (reverse) translations, using defined client-server and server-server protocols. The DNS is a public service - any Internet user is freely able to query the DNS system for forward or reverse translations.
+
+Reverse DNS delegations allow applications to map to a domain name from an IP address. Reverse delegation is achieved by use of the special domain names in-addr.arpa (IPv4) and ip6.arpa (IPv6).
+
+For all IP address blocks that IANA allocates to the RIPE NCC, they also delegate the corresponding reverse DNS zones within the centrally administered 'in-addr.arpa' and 'ip6.arpa' zones.
+
+The RIPE NCC also publishes 'zone fragments'. These are the parts of zones managed by other parties - the other Regional Internet Registries (RIRs), who share zone management of early registration networks.
+
+### Reverse Delegation in the RIPE Database
 
 The RIPE Database is used as the management database to produce the DNS zones RIPE Internet Number Resources. It can provide the information for each delegated IPv4 and IPv6 range registered in the reverse DNS.
 
