@@ -202,7 +202,7 @@ module.exports = {
       }
     }],
     ['@renovamen/vuepress-plugin-mermaid'],
-    ['fulltext-search']
+    'fulltext-search'
 	],
   markdown: {
     toc: {
