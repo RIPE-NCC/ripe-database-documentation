@@ -190,7 +190,7 @@ module.exports = {
         buttonColor: 'grey'
        }],
     ['@mr-hope/vuepress-plugin-components'],
-    ['full-searchbar', { encode: 'icase', tokenize: 'full' }],
+    ['fulltext-searchbar', { encode: 'icase', tokenize: 'full' }],
     ['@vuepress/last-updated', {
       transformer: (timestamp, lang) => {
         const dayjs = require('dayjs')
@@ -202,7 +202,6 @@ module.exports = {
       }
     }],
     ['@renovamen/vuepress-plugin-mermaid'],
-    'fulltext-search'
 	],
   markdown: {
     toc: {
