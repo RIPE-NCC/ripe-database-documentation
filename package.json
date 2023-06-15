@@ -98,7 +98,7 @@
 
     "vuepress-plugin-flowchart": "^1.5.0",
 
-    "vuepress-plugin-full-searchbar": "git+https://gitlab.ripe.net/ssuess/vuepress-plugin-full-searchbar",
+    "vuepress-plugin-fulltext-search": "^1.0.2",
 
     "webpack": "^4.46.0"
 

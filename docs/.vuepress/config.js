@@ -201,7 +201,8 @@ module.exports = {
         return dayjs(timestamp).utc(true).format()
       }
     }],
-    ['@renovamen/vuepress-plugin-mermaid']
+    ['@renovamen/vuepress-plugin-mermaid'],
+    ['fulltext-search']
 	],
   markdown: {
     toc: {
