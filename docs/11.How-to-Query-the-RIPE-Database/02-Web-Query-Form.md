@@ -19,16 +19,16 @@ Personal data may be returned by the Full Text search API. You may be blocked if
 ### URI Format: /fulltextsearch/select?...
 
 ### Query Parameters
-|name|required|Default|description|
-|----|----|----|-----------|
-|q|Yes||This parameter is used to specify the query for requesting documents. This query allows to filter by the attribute type and/or the object type. This is the only required attribute <ul><li>Query by "RIPE": q=(RIPE)</li><li>Query by "RIPE", filtering by attribute type: q=(org:(RIPE))</li><li>Query by "RIPE", filtering by object type: q=(RIPE)%20AND%20(object-type:mntner)</li><li>Query by "RIPE", filtering by attribute and object type: q=(org:(RIPE))%20AND%20(object-type:mntner)</li><li>Logic expressions are allowed to concatenate more than one term:<ul><li>Querying by "RIPE" and "NCC": q=(RIPE%20AND%20NCC)</li><li>Querying by "RIPE" or "NCC": q=(RIPE%20OR%20NCC)</li><li>Querying by "RIPE NCC": q=(%22RIPE%20NCC%22)</li><li>Querying by "RIPE", filtering by multiple attributes and object types: q=(e-mail:(RIPE)%20OR%20org:(RIPE))%20AND%20(object-type:organisation%20OR%20object-type:person)</li></ul></li></ul>|
-|rows|No|10|The amount of documents to return.|
-|start|No|0|The starting row. |
-|hl|No|false|Highlight the matching values from the fetching documents. |
-|hl.simple.pre|No|&lt;b&gt;|The highlight PRE value. |
-|ht.simple.post|No|&lt;/b&gt;|The highlight POST value. |
-|wt|No|xml|The format of the highlights. If the format is not xml "hl.simple.pre" and "hl.simple.post" will be discarded. |
-|facet|No|true|Count the object types.|
+|name|Default|description|
+|----|----|-----------|
+|q||This parameter is used to specify the query for requesting documents. This query allows to filter by the attribute type and/or the object type. This parameter is required. <ul><li>Query for "RIPE": q=(RIPE)</li><li>Query for "RIPE", filtering by attribute type: q=(org:(RIPE))</li><li>Query for "RIPE", filtering by object type: q=(RIPE)%20AND%20(object-type:mntner)</li><li>Query for "RIPE", filtering by attribute and object type: q=(org:(RIPE))%20AND%20(object-type:mntner)</li><li>Logic expressions are allowed to concatenate more than one term:<ul><li>Querying by "RIPE" and "NCC": q=(RIPE%20AND%20NCC)</li><li>Querying by "RIPE" or "NCC": q=(RIPE%20OR%20NCC)</li><li>Querying by "RIPE NCC": q=(%22RIPE%20NCC%22)</li><li>Querying by "RIPE", filtering by multiple attributes and object types: q=(e-mail:(RIPE)%20OR%20org:(RIPE))%20AND%20(object-type:organisation%20OR%20object-type:person)</li></ul></li></ul>|
+|rows|10|The amount of documents to return. The maximum value is 10,000|
+|start|0|The starting row. The maximum value is 100,000|
+|hl|false|Highlight the matching values from the fetching documents. |
+|hl.simple.pre|&lt;b&gt;|The highlight PRE value. |
+|ht.simple.post|&lt;/b&gt;|The highlight POST value. |
+|wt|xml|The format of the highlights. If the format is not xml "hl.simple.pre" and "hl.simple.post" will be discarded. |
+|facet|true|Count the object types.|
 
 
 There a some limitations to take care on:
