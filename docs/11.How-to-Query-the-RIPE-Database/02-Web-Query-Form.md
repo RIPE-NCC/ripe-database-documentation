@@ -36,7 +36,6 @@ There a some limitations to take care on:
 * Not allowed to fetch more than 10,000 documents per request.
 * There is a maximum of 100,000 results per query (with paging).
 * The maximum highlight characters is trim to 100,000 characters.
-* If more than 5,000 person object or role object with abuse-mailbox information is requested, the user's IP will be temporarily blocked.
 
 The possible values that you can specify for the Accept/Content-Type header are:
 
