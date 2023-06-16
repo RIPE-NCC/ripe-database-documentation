@@ -21,16 +21,7 @@ Personal data may be returned by the Full Text search API. You may be blocked if
 ### Query Parameters
 |name|required|Default|description|
 |----|----|----|-----------|
-|q|Yes||This parameter is used to specify the query for requesting documents. This query allows to filter by the attribute type and/or the object type. This is the only required attribute
-* Query by "RIPE": q=(RIPE)
-* Query by "RIPE", filtering by attribute type: q=(org:(RIPE))
-* Query by "RIPE", filtering by object type: q=(RIPE)%20AND%20(object-type:mntner)
-* Query by "RIPE", filtering by attribute and object type: q=(org:(RIPE))%20AND%20(object-type:mntner)
-* Logic expressions are allowed to concatenate more than one term:
-    * Querying by "RIPE" and "NCC": q=(RIPE%20AND%20NCC)
-    * Querying by "RIPE" or "NCC": q=(RIPE%20OR%20NCC)
-    * Querying by "RIPE NCC": q=(%22RIPE%20NCC%22)
-    * Querying by "RIPE", filtering by multiple attributes and object types: q=(e-mail:(RIPE)%20OR%20org:(RIPE))%20AND%20(object-type:organisation%20OR%20object-type:person)|
+|q|Yes||This parameter is used to specify the query for requesting documents. This query allows to filter by the attribute type and/or the object type. This is the only required attribute <ul><li>Query by "RIPE": q=(RIPE)</li><li>Query by "RIPE", filtering by attribute type: q=(org:(RIPE))</li><li>Query by "RIPE", filtering by object type: q=(RIPE)%20AND%20(object-type:mntner)</li><li>Query by "RIPE", filtering by attribute and object type: q=(org:(RIPE))%20AND%20(object-type:mntner)</li><li>Logic expressions are allowed to concatenate more than one term:<li>Querying by "RIPE" and "NCC": q=(RIPE%20AND%20NCC)</li><li>Querying by "RIPE" or "NCC": q=(RIPE%20OR%20NCC)</li><li>Querying by "RIPE NCC": q=(%22RIPE%20NCC%22)</li><li>Querying by "RIPE", filtering by multiple attributes and object types: q=(e-mail:(RIPE)%20OR%20org:(RIPE))%20AND%20(object-type:organisation%20OR%20object-type:person)</li></li></ul>|
 |rows|No|10|The amount of documents to return.|
 |start|No|0|The starting row. |
 |hl|No|false|Highlight the matching values from the fetching documents. |
@@ -46,8 +37,6 @@ There a some limitations to take care on:
 * The sum between start and rows parameters can not be higher than 100,000.
 * The maximum highlight characters is trim to 100,000 characters.
 * If more than 5,000 person object or role object with abuse-mailbox information is requested, the user's IP will be temporarily blocked.
-
-
 
 The possible values that you can specify for the Accept/Content-Type header are:
 
