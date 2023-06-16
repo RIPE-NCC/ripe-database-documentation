@@ -13,3 +13,33 @@ The results are limited to 250 objects. If your query exceeds this, the output i
 ## Using Full Text Search
 
 If you are looking for a specific piece of information and you don't know one of the values required to find what you are looking for, you may consider using the [Full Text Search](https://apps.db.ripe.net/search/full-text.html) instead of doing a standard query. [Full Text Search](https://apps.db.ripe.net/search/full-text.html) treats the entire database as a flat text file and allows you to search for anything. The search is done on object text without regard for any relationships. As such, results may be very unstructed, but it can provide a good starting point for more specific standard queries later on. Keep in mind that [Full Text Search](https://apps.db.ripe.net/search/full-text.html) is only available on the RIPE NCC website and not in other methods to query the RIPE Database.
+
+Personal data may be returned by the Full Text search API. You may be blocked if excessive amounts of personal data is returned. For more information refer to [blocking access section](../12.Access-to-Personal-Data/README.md#blocking-access-to-the-ripe-database)
+
+### URI Format: /fulltextsearch/select?...
+
+### Query Parameters
+|name|Default|description|
+|----|----|-----------|
+|q||This parameter is used to specify the query for requesting documents. This query allows to filter by the attribute type and/or the object type. This parameter is required. <ul><li>Query for "RIPE": q=(RIPE)</li><li>Query for "RIPE", filtering by attribute type: q=(org:(RIPE))</li><li>Query for "RIPE", filtering by object type: q=(RIPE)%20AND%20(object-type:mntner)</li><li>Query for "RIPE", filtering by attribute and object type: q=(org:(RIPE))%20AND%20(object-type:mntner)</li><li>Logic expressions are allowed to concatenate more than one term:<ul><li>Querying by "RIPE" and "NCC": q=(RIPE%20AND%20NCC)</li><li>Querying by "RIPE" or "NCC": q=(RIPE%20OR%20NCC)</li><li>Querying by "RIPE NCC": q=(%22RIPE%20NCC%22)</li><li>Querying by "RIPE", filtering by multiple attributes and object types: q=(e-mail:(RIPE)%20OR%20org:(RIPE))%20AND%20(object-type:organisation%20OR%20object-type:person)</li></ul></li></ul>|
+|rows|10|The amount of documents to return. The maximum value is 10,000|
+|start|0|The starting row. The maximum value is 100,000|
+|hl|false|Highlight the matching values from the fetching documents. |
+|hl.simple.pre|&lt;b&gt;|The highlight PRE value. |
+|ht.simple.post|&lt;/b&gt;|The highlight POST value. |
+|wt|xml|The format of the highlights. If the format is not xml "hl.simple.pre" and "hl.simple.post" will be discarded. |
+|facet|true|Count the object types.|
+
+
+There a some limitations to take care on:
+
+* Not allowed to fetch more than 10,000 documents per request.
+* There is a maximum of 100,000 results per query (with paging).
+* The maximum highlight characters is trim to 100,000 characters.
+
+The possible values that you can specify for the Accept/Content-Type header are:
+
+* `application/xml` for XML
+* `application/json` for JSON
+
+Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension. XML format is the default one.
