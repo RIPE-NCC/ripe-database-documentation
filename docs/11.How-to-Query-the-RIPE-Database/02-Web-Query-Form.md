@@ -16,12 +16,7 @@ If you are looking for a specific piece of information and you don't know one of
 
 Personal data may be returned by the Full Text search API. You may be blocked if excessive amounts of personal data is returned. For more information refer to [blocking access section](../12.Access-to-Personal-Data/README.md#blocking-access-to-the-ripe-database)
 
-### URI Format: /fulltextsearch/select.{extension}?...
-
-### Path Parameters
-|name|description|
-|----|-----------|
-|extension|json or xml are the allowed formats for the output|
+### URI Format: /fulltextsearch/select?...
 
 ### Query Parameters
 |name|required|Default|description|
@@ -51,3 +46,12 @@ There a some limitations to take care on:
 * The sum between start and rows parameters can not be higher than 100,000.
 * The maximum highlight characters is trim to 100,000 characters.
 * If more than 5,000 person object or role object with abuse-mailbox information is requested, the user's IP will be temporarily blocked.
+
+
+
+The possible values that you can specify for the Accept/Content-Type header are:
+
+* `application/xml` for XML
+* `application/json` for JSON
+
+Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension. XML format is the default one.
