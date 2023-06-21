@@ -342,6 +342,8 @@ Authorisation for creating **route** objects is quite complex. There are multipl
 
 Please refer to [RFC 2622](https://tools.ietf.org/html/rfc2622) for more information on the specific routing information attributes in the **route** object. 
 
+The route consistency could be checked using [as routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency#w.resource=AS3333). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistences in the RIPE Database.
+
 **Description of Attributes Specific to the ROUTE Object**
 
 
@@ -398,6 +400,8 @@ A **route6** object contains routing information for IPv6 address space resource
 Each interAS route (also known as an interdomain route) originated by an Autonomous System can be specified by using a **route6** object for IPv6 addresses.
 
 Authorisation for creating **route6** objects is quite complex. There are four scenarios depending on who administers the address space and the AS Number. Because the RIPE INR and IRR are part of the same logical database, they can both be used for authorisation if the address space and/or AS Number are RIPE NCC administered resources. Where one or both are not administered by the RIPE NCC authorisation is bypassed but with the illusion of being genuine authorisation. For more details see the section ['Authorisation'](../10.Authorisation/README.md#authorisation).
+
+The route consistency could be checked using [as routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency#w.resource=AS3333). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistences in the RIPE Database.
 
 **Example ROUTE6 object including all optional attributes:**
 
