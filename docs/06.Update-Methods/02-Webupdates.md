@@ -32,19 +32,19 @@ You need to create a number of objects in the RIPE Database in order to fill in 
 Please follow the steps below in order to create them.
 
 1. RIPE NCC Access Account
-You need to hae a RIPE NCC Access account in order to be able to use the web interface of the RIPE Database.
+You need to have a RIPE NCC Access account in order to be able to use the web interface of the RIPE Database.
 
-You can create tour RIPE NCC Access account using https://access.ripe.net/registration
+You can create your RIPE NCC Access account using https://access.ripe.net/registration
 
 
 1. **Role** Object and **Maintainer** Object
-**Role** objects describe a business function. Each object has a unique NIC handle.
+Each **role** objects describe a business function. Each object has a unique NIC handle as primary key.
 
 **Maintainer** objects protect object in the RIPE Database. They contain the information needed to authorise creation, deletion or modification of the objects they protect.
 
 You can create your first **role** and **maintainer** objects using the [object creationg tool](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/role/self).
 
-Choose a name for your **maintainer** object and enter it in the "mntner" field.
+Choose a name for your **maintainer** object and enter it in the "mntner" field which will be the primary key.
 
     ![](~@imgs/assignment-size.png)
 
@@ -66,12 +66,12 @@ You can create **organisation** object using [RIPE Database Webupdates](https://
 
     ![](~@imgs/organisation_object.png)
 
-Keep "AUTO-1" in the "organisation" field. The ID will be created automatically.
+Keep "AUTO-1" in the "organisation" field. The organisation ID will be created automatically.
 Enter the primary key of your **mntner** object in the "mnt-ref" field.
 Use the "bell" icon to fill in the "abuse-c" field.
 
     ![](~@imgs/abuse-c.png)
 
-When you receive this message: "Your object has been successfully created", "organisation ORG-XYZ-RIPE", make a note of the new organisation ID (ORG-XYZ-RIPE).
+When you receive this message: "Your object has been successfully created". For example, "organisation ORG-XYZ-RIPE", make a note of the new organisation ID (ORG-XYZ-RIPE).
 
-You can use the rganisation ID in the "org:" field.
+You can use the organisation ID in the "org:" field.
