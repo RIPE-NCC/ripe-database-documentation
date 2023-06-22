@@ -20,6 +20,7 @@ Ensure MariaDB and the needed databases are created and populated
 * MariaDB set up (for more instructions, see [Getting Started with development manuals](01-Getting-started-on-OSX.md#getting-started-on-osx))
 * `jmxterm-1.0-alpha-4-uber.jar`, downloadable from http://wiki.cyclopsgroup.org/jmxterm.
    * For MAC OSX the 1.0-alpha-4 version of jmxterm has a problem but there is a fix here: https://github.com/jiaqi/jmxterm. You can checkout the latest version and build the jar using mvn clean package.
+   * For SDK 17 the 1.0-alpha-4 version of jmxterm has a problem. As a workaround you can add `--add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED` to Java for jmxterm to make use of the jconsole module.
 * `logrotate`
 * `pgrep`
 * `/usr/lib/sendmail`-compatible mailer, like exim
