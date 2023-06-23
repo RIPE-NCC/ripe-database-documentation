@@ -5,7 +5,7 @@ Queries are supported by the RESTful API using the GET method. There are two way
 
 ## REST API Lookup
 
-This can be done from the command line using a third party software package, from a script or in a browser. It will only return the one specific object requested. For lookups on address space, it will not return the encompassing object if the specified object does not exist.
+This can be done from the command line using a third party software package, from a script or in a browser. It will only return the one specific object requested. For lookups on address space, it will not return the encompassing object if the specified object does not exist. By default the objects are filtered: "notify:", "e-mail:" and those "auth:" attributes that do not reference a **key-cert** object will we removed from the response.
 
 Returns an object from the RIPE Database.
 
