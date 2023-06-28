@@ -5,7 +5,7 @@ Queries are supported by the RESTful API using the GET method. There are two way
 
 ## REST API Lookup
 
-This can be done from the command line using a third party software package, from a script or in a browser. It will only return the one specific object requested. For lookups on address space, it will not return the encompassing object if the specified object does not exist.
+This can be done from the command line using a third party software package, from a script or in a browser. It will only return the one specific object requested. For lookups on address space, it will not return the encompassing object if the specified object does not exist. By default objects are filtered as described in [Filtering the Query Response](../13.Types-of-Queries/08-Filtering-the-Query-Reponse.md#filtering-the-query-response).
 
 Returns an object from the RIPE Database.
 
