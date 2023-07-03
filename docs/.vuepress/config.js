@@ -109,7 +109,7 @@ module.exports = {
       }
 
       //if link doesn't go to legal or aup static page then it is targeting the full documentation (remember that we are working just with the generated HTML pages, there is not sense to redirect to JS documentation)
-      return firstMatchingPart+ '](' + "entire-documentation-(HTML)" + thirdMatchingPart;
+      return firstMatchingPart+ '](' + "entire-documentation-HTML" + thirdMatchingPart;
     })
   },
   plugins: [
@@ -117,13 +117,13 @@ module.exports = {
       'vuepress-plugin-merge-pages',
       {
         bundles: [{
-          path: 'entire-documentation-(HTML)',
+          path: 'entire-documentation-HTML',
           filter: (pages) => {
             return pages.filter(({ path }) => path.match(new RegExp('/([0-9]+)')) && !path.includes('24.Legal-Information'))
           },
           mergePages: pages => {
             const pageBreak = '<hr class="page-break" />\n\n'
-            const initialValue = `${disableSideNavBar}# Entire Documentation (HTML)\n\n[[TOC]]\n${pageBreak}`
+            const initialValue = `${disableSideNavBar}# Entire Documentation HTML\n\n[[TOC]]\n${pageBreak}`
 
             //frontmatter always start with --- and finish with ---
             var frontmatterRegex=/(^(?!|)*---(.|\n)*---)/g;
