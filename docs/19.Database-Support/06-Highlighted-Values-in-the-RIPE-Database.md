@@ -11,7 +11,7 @@ This function highlights values in the RIPE Database that are maintained by the 
 
 Objects in the RIPE Database are mostly created and updated by users. The RIPE NCC makes every effort possible within its resources to keep the RIPE Database clean of false, obsolete and unnecessary data. However, the RIPE NCC cannot guarantee the accuracy of all data in the RIPE Database.
 
-Inaccurate values in the RIPE Database, whether highlighted or not, should be reported to the RIPE NCC via the [contact form](https://www.ripe.net/contact-form/).
+Inaccurate values in the RIPE Database, whether highlighted or not, should be reported to the RIPE NCC via the [report form](https://www.ripe.net/contact-form/@@ripe-ncc-contact-form).
 
 
 ## Data not Published in the RIPE Database
