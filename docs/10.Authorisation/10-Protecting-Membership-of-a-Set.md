@@ -1,3 +1,7 @@
+---
+permalink: /Authorisation/Protecting-Membership-of-a-Set
+---
+
 # Protecting Membership of a Set
 
 When membership of a set is specified through the use of the "member-of:" attribute, the server checks the validity of the membership when creating or modifying a member object. This "member-of:" attribute can be used in **route(6)**, **aut-num** and **inet-rtr** objects. The value of the "member-of:" attribute identifies a **set** object that this object wants to be a member of.

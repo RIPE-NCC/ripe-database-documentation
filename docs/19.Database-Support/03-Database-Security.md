@@ -1,3 +1,7 @@
+---
+permalink: /Database-Support/Database-Security
+---
+
 # RIPE Database Security
 
 **A collection of documents designed to help with security of whois data stored in the RIPE Database**

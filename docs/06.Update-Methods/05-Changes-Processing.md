@@ -1,3 +1,7 @@
+---
+permalink: /Update-Methods/Changes-Processing
+---
+
 # Changes Processing Updates
 
 The RIPE NCC has now deployed utterly new software for the processing of RIPE Database updates. This was done in a stepped approach. Each object type was taken one at a time and all the handling needed for that type was re-developed and deployed. Obviously, the first one required much of the infrastructure to be re-developed. This included the backend SQL interface, authentication checks, acknowledgment, and notification processing. Other parts of the infrastructure were developed at a later stage, like handling multiple objects and multipart signed messages.

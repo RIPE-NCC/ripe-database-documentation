@@ -1,3 +1,7 @@
+---
+permalink: /Authorisation/IRT-Object
+---
+
 # IRT Object
 
 **IRT**: **I**ncident **R**esponse **T**eam - handles security incidents and/or cases of abuse of omputer networks or its components.

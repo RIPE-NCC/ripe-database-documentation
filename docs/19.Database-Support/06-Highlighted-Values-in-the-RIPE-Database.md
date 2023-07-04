@@ -1,3 +1,7 @@
+---
+permalink: /Database-Support/Highlighted-Values-in-the-RIPE-Database
+---
+
 # Highlighted Values in the RIPE Database
 
 This function highlights values in the RIPE Database that are maintained by the RIPE NCC. These values are subject to an established due diligence process, which is described in the RIPE NCC procedural document [Due Diligence for the Quality of the RIPE NCC Registration Data](https://www.ripe.net/publications/docs/ripe-770).

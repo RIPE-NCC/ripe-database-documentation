@@ -1,3 +1,8 @@
+---
+permalink: /Types-of-Queries/Grouping-the-RIPE-Database-Output
+---
+
+
 # Grouping the RIPE Database Output
 
 There are two ways to order the objects in a query response.

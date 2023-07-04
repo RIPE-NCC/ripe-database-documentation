@@ -1,3 +1,7 @@
+---
+permalink: /Database-Support
+---
+
 # Database Support
 ## RIPE Database Support
 
