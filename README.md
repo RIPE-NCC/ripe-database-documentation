@@ -9,6 +9,8 @@ This documentation is built automatically from nothing more than markdown files 
 
 The docs can be edited directly within Gitlab or by cloning the repository, changing the files locally and checking them back in.
 
+To avoid variation numbers from the link, it is advised to utilise permalinks.
+
 # Editing in Gitlab
 
 GitLab has handy built in editor that undestands most of the markdown that is in the markdown files. There are a few excetions that are particular to VuePress:
