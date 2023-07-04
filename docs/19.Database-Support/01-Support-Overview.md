@@ -1,5 +1,5 @@
 ---
-permalink: /Database-Support
+permalink: /Database-Support/Support-Overview
 ---
 
 # Support Overview
