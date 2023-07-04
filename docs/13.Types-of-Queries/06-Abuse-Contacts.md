@@ -1,3 +1,7 @@
+---
+permalink: /Types-of-Queries/Abuse-Contacts
+---
+
 # Abuse Contacts
 
 There are many attributes in objects within the RIPE Database containing e-mail addresses. These addresses cover a number of functions. A growing concern to engineers and administrators that maintain networks is receiving spam and abuse complaints that are sent to every e-mail address displayed. This will get the message to the right person,but it also causes more spam and abuse to people who are not responsible for solving these problems.

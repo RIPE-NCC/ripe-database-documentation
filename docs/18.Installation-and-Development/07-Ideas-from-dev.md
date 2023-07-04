@@ -1,3 +1,7 @@
+---
+permalink: /Installation-and-Development/Ideas-from-dev
+---
+
 # Ideas from dev
 
 ## REST API

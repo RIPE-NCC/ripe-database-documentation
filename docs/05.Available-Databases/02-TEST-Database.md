@@ -1,3 +1,7 @@
+---
+permalink: /Available-Databases/TEST-Database
+---
+
 # TEST Database
 
 This database is provided as an operational service to all users. It allows anyone to try out updates or changes to their data. New users can set up any data they like and practise making updates and doing queries.

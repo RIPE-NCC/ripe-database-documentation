@@ -1,3 +1,7 @@
+---
+permalink: /Appendices/Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages
+---
+
 # Appendix C- RIPE Database Query Server Response Codes and Messages
 
 If the server encounters a problem, an error message is returned as a query result. The format of an error message is as follows:
@@ -30,10 +34,10 @@ Unknown source was supplied as argument to the “-s” query ag. Use “-q sour
 Unknown object type is specified as an argument to the “-T” query flag.
 
 **%ERROR:104: unknown attribute**
-Unknown argument is specified to the inverse query flag (“-I”). See [Queryingthe RIPE Database](../11.How-to-Query-the-RIPE-Database/README.md#how-to-query-the-ripe-database) for more information.
+Unknown argument is specified to the inverse query flag (“-I”). See [Queryingthe RIPE Database](../How-to-Query-the-RIPE-Database/README.md#how-to-query-the-ripe-database) for more information.
 
 **%ERROR:105: attribute is not searchable**
-The argument specified for the inverse query flag is not a searchable attribute. See [Queryingthe RIPE Database](../11.How-to-Query-the-RIPE-Database/README.md#how-to-query-the-ripe-database) for more information.
+The argument specified for the inverse query flag is not a searchable attribute. See [Queryingthe RIPE Database](../How-to-Query-the-RIPE-Database/README.md#how-to-query-the-ripe-database) for more information.
 
 **%ERROR:106: no query argument specified**
 No query argument has been specified in the query.
@@ -75,10 +79,10 @@ Versions are numbers greater or equal to 1 but cannot exceed the object's curren
 Access from the host has been temporarily or permanently denied because of excessive querying. You should [contact a customer service representative](https://www.ripe.net/contact-form?topic=ripe_dbm) to discuss this problem.
 
 **%ERROR:202: access control limit reached**
-Limit of returned objects has been reached. The connection is terminated. Continued attempts to excessively query the database will result in permanent denial of service. See section [Access Control for Queries](../13.Types-of-Queries/12-Access-Control-for-Queries.md#access-control-for-queries) for more information.
+Limit of returned objects has been reached. The connection is terminated. Continued attempts to excessively query the database will result in permanent denial of service. See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries.md#access-control-for-queries) for more information.
 
 **%ERROR:203: address passing not allowed** 
-The host is not registered as a proxy and is not allowed to pass addresses on the query line (“-V” ag). See section [Access Control for Queries](../13.Types-of-Queries/12-Access-Control-for-Queries.md#access-control-for-queries) for more information.
+The host is not registered as a proxy and is not allowed to pass addresses on the query line (“-V” ag). See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries.md#access-control-for-queries) for more information.
 
 
 ## Connection Errors

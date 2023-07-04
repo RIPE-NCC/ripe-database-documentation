@@ -1,3 +1,7 @@
+---
+permalink: /Notifications/Notification-Messages
+---
+
 # Notification Messages
 
 There are a number of attributes that may cause notification (notif) messages to be generated:

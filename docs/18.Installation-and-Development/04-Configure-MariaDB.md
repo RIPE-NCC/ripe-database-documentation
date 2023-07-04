@@ -1,3 +1,7 @@
+---
+permalink: /Installation-and-Development/Configure-MariaDB
+---
+
 # Configure MariaDB
 
 Installing a MariaDB server is useful for development, or for running your own Whois server.

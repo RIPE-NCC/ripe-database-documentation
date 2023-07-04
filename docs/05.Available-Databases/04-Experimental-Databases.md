@@ -1,3 +1,7 @@
+---
+permalink: /Available-Databases/Experimental-Databases
+---
+
 # Experimental Databases
 
 There are times when some features need to be deployed in a proof of concept mode. It may be an idea that some community users have suggested but does not yet have widespread support. A proof of concept software release can be made and a temporary database, similar to the RC Database, set up to demonstrate the feature. That database will be a full copy of the production database with dummified personal data and modified **mntner** object credentials.

@@ -1,3 +1,7 @@
+---
+permalink: /RIPE-Database-Structure/Attribute-Properties
+---
+
 # Attribute Properties
 
 Attributes can be used in different ways in different objects. Currently, there are three properties that apply to all attributes:
@@ -6,7 +10,7 @@ Attributes can be used in different ways in different objects. Currently, there 
 * Repeat
 * Indexed
 
-The allowed attributes for any object type are shown in the object templates (see the section ['RPSL Object Types'](../04.RPSL-Object-Types/README.md#rpsl-object-types)).
+The allowed attributes for any object type are shown in the object templates (see the section ['RPSL Object Types'](../RPSL-Object-Types/README.md#rpsl-object-types)).
 
 
 ## Presence

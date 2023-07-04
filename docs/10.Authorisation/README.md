@@ -1,3 +1,7 @@
+---
+permalink: /Authorisation
+---
+
 # Authorisation
 
 Authorisation in the RIPE Database is based on the Routing Policy System Security (RPSS) that is explained in more detail in [RFC 2725](https://tools.ietf.org/html/rfc2725).

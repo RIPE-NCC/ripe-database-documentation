@@ -1,3 +1,8 @@
+---
+permalink: /Authorisation/Force-Delete-Functionality
+---
+
+
 # Force Delete Functionality
 
 

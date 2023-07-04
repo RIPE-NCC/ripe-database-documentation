@@ -1,3 +1,7 @@
+---
+permalink: /Appendices/Appendix-A--Syntax-of-Object-Attributes
+---
+
 # Appendix A- Syntax of Object Attributes
 
 The syntax definitions of the object attributes that the RIPE Database supports are shown below.
@@ -82,7 +86,7 @@ A descriptive name associated with an AS Number.
 Defines the name of the set.
 
 **auth:** &lt;auth-scheme&gt; &lt;scheme-info&gt;  
-Defines an authorisation scheme to be used. For a description, see the section, ['Authorisation Model'](../10.Authorisation/01-Authorisation-Model.md#authorisation-model)  
+Defines an authorisation scheme to be used. For a description, see the section, ['Authorisation Model'](../Authorisation/Authorisation-Model.md#authorisation-model)  
 &lt;auth-scheme&gt; and &lt;scheme-info&gt; can take the values listed below:
 
 **Authorisation Schemes**
@@ -376,7 +380,7 @@ Specifies the name of the organisation that this **organisation** object represe
 
 **org-type:**
 
-Specifies the type of the organisation. The possible values are shown in the section ['Description of the ORGANIZATION Object'](../04.RPSL-Object-Types/03-Descriptions-of-Secondary-Objects.md#description-of-the-organisation-object)'.
+Specifies the type of the organisation. The possible values are shown in the section ['Description of the ORGANIZATION Object'](../RPSL-Object-Types/Descriptions-of-Secondary-Objects.md#description-of-the-organisation-object)'.
 
 **organisation**: &lt;org-id&gt;
 
@@ -450,7 +454,7 @@ References a **key-cert** object representing a CSIRT public key used by the tea
 Specifies the registry where the object is registered. This should be "RIPE" for the RIPE Database.
 
 **status:** &lt;status&gt;  
-Specifies the status of the address range represented by an **inetnum** or **inet6num** object or the status of an AS Number represented by an **aut-num** object. For the possible values, see the sections ['Description of the INETNUM Object'](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-inetnum-object), ['Description of the INET6NUM Object'](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-inet6num-object) and ['Description of the AUT-NUM Object'](../04.RPSL-Object-Types/02-Descriptions-of-Primary-Objects.md#description-of-the-aut-num-object).
+Specifies the status of the address range represented by an **inetnum** or **inet6num** object or the status of an AS Number represented by an **aut-num** object. For the possible values, see the sections ['Description of the INETNUM Object'](../RPSL-Object-Types/Descriptions-of-Primary-Objects.md#description-of-the-inetnum-object), ['Description of the INET6NUM Object'](../RPSL-Object-Types/Descriptions-of-Primary-Objects.md#description-of-the-inet6num-object) and ['Description of the AUT-NUM Object'](../RPSL-Object-Types/Descriptions-of-Primary-Objects.md#description-of-the-aut-num-object).
 
 Please refer to the RIPE Document ripe-622, ["IPv4 Address Allocation and Assignment Policies in the RIPE NCC Service Region"](https://www.ripe.net/ripe/docs/ipv4-policies), for further information.
 
@@ -461,7 +465,7 @@ References a technical contact.
 Contains text of the poem. Should be humorous, but must not be malicious or insulting.
 
 **upd-to:** &lt;e-mail&gt;  
-Specifies the email address to be notified when an object protected by a **mntner** is unsuccessfully updated. See also the section, ['Notifications'](../09.Notifications/README.md#notifications)'.
+Specifies the email address to be notified when an object protected by a **mntner** is unsuccessfully updated. See also the section, ['Notifications'](../Notifications/README.md#notifications)'.
 
 **zone-c:** &lt;nic-handle&gt;  
 References a zone contact.

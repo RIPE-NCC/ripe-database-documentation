@@ -1,3 +1,7 @@
+---
+permalink: /RIPE-Database-Structure/List-of-Primary-Objects
+---
+
 # List of Primary Objects
 
 These are the currently supported objects in the RIPE Database that are considered to be primary data.

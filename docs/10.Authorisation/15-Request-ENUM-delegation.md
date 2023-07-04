@@ -1,3 +1,7 @@
+---
+permalink: /Authorisation/Request-ENUM-delegation
+---
+
 # Request ENUM Delegation
 
 ENUM is a protocol that is the result of work of the Internet Engineering Task Force's (IETF's) Telephone Number Mapping Working Group. The charter of this working group was to define a Domain Name System (DNS)-based architecture and protocols for mapping a telephone number to a Unirform Resource Identifier (URI) which can be used to contact a resource associated with that number.
@@ -39,7 +43,7 @@ The RIPE NCC provides DNS operations for [e164.arpa](https://www.rfc-editor.org/
         * Use the 'Add New Field' feature to add at least two "nserver:" attributes. Here, you supply the names of the name servers that are serving the zones as set up in Step 3 and that you have specified in the NS resource records of those zones
         * For the "mnt-by:" attribute use the **mntner** you prepared in Step 1
     1. By email
-        You need to create a **domain** object containing information about the zone you need reverse delegation for. For further information go [here](../06.Update-Methods/04-Email-Updates.md#email-updates)
+        You need to create a **domain** object containing information about the zone you need reverse delegation for. For further information go [here](../Update-Methods/Email-Updates.md#email-updates)
 
     1. Verifying the setup
         Once you have submitted the **domain** object you will receive a notification.
@@ -52,11 +56,11 @@ The RIPE NCC provides DNS operations for [e164.arpa](https://www.rfc-editor.org/
 
         Please [contact us](https://www.ripe.net/contact-form?topic=ripe_dbm) if, six hours after the appearance of your **domain** object in the database, your delegation does not appear. Include the details such as name server addresses and the **domain** object in your request. Also include the full response, including headers, as received from the database.
 
-        Any resolver which has the [DNSSEC](16-Request-DNSSEC-delegation.md#dnssec-delegations) public key for e164.arpa configured should now return DNS answers which have the authenticated data bit set.
+        Any resolver which has the [DNSSEC](Request-DNSSEC-delegation.md#dnssec-delegations) public key for e164.arpa configured should now return DNS answers which have the authenticated data bit set.
 
 ### Additional Notes
 
 From time to time, you may have to roll the keys in your zone. When you do this, make sure that you also update the ds-rdata information. This places a new DS record in the parent zone.
 
-For further details on rolling keys and other important information on [DNSSEC](16-Request-DNSSEC-delegation.md#dnssec-delegations) operational practices we recommend reading [RFC 4641](https://www.ietf.org/rfc/rfc4641.txt).
+For further details on rolling keys and other important information on [DNSSEC](Request-DNSSEC-delegation.md#dnssec-delegations) operational practices we recommend reading [RFC 4641](https://www.ietf.org/rfc/rfc4641.txt).
 

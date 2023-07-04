@@ -1,3 +1,7 @@
+---
+permalink: /Set-Objects
+---
+
 # Set Objects
 
 Throughout this section we have used the **as-set** object as an example. The same rules apply to all the different set object types.

@@ -1,3 +1,7 @@
+---
+permalink: /Types-of-Queries/Other-Query-Flags
+---
+
 # Other Query Flags
 
 * [The “-T” (“--select-types”) Query Flag](#the--t---select-types-query-flag)
@@ -30,11 +34,11 @@ There are some exceptions to this:
 
 ## The “-t” (“--template”) Query Flag
 
-The “-t” (“--template”) query flag returns a template of the specified object type as shown for each object in the section [RPSL Object Types](../04.RPSL-Object-Types/README.md#rpsl-object-types).
+The “-t” (“--template”) query flag returns a template of the specified object type as shown for each object in the section [RPSL Object Types](../RPSL-Object-Types/README.md#rpsl-object-types).
 
 ## The “-v” (“--verbose”) Query Flag
 
-The “-v” (“--verbose”) query flag returns a verbose description of the specified object type as shown for each object in the section [RPSL Object Types](../04.RPSL-Object-Types/README.md#rpsl-object-types).
+The “-v” (“--verbose”) query flag returns a verbose description of the specified object type as shown for each object in the section [RPSL Object Types](../RPSL-Object-Types/README.md#rpsl-object-types).
 
 ## The “-q” Query Flag
 

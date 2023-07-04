@@ -9,6 +9,8 @@ This documentation is built automatically from nothing more than markdown files 
 
 The docs can be edited directly within Gitlab or by cloning the repository, changing the files locally and checking them back in.
 
+To avoid variation numbers from the link, it is advised to utilise permalinks.
+
 # Editing in Gitlab
 
 GitLab has handy built in editor that undestands most of the markdown that is in the markdown files. There are a few excetions that are particular to VuePress:
@@ -34,4 +36,4 @@ This command is going to launch a local server in http://localhost:8080/docs/
 
 # Legal
 
-**IMPORTANT!** Any change done to [legal](./docs/24.Legal-Information.md), [T&C](./docs/24.HTML-Terms-And-Conditions.md) or [AUP](./docs/23.RIPE-Database-Acceptable-Use-Policy.md) require approval from Legal. So please don't edit those files unless you have the permission from Legal.
+**IMPORTANT!** Any change done to [legal](./docs/Legal-Information.md), [T&C](./docs/25.HTML-Terms-And-Conditions.md) or [AUP](./docs/RIPE-Database-Acceptable-Use-Policy.md) require approval from Legal. So please don't edit those files unless you have the permission from Legal.
