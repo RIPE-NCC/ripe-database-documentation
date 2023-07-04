@@ -1,3 +1,7 @@
+---
+permalink: /01.introduction-to-the-RIPE-Database/01-RIPE-Database-Documentation-Overview
+---
+
 # RIPE Database Documentation Overview
 
 This is the starting point for information about the RIPE Database. Everything that you need to know to use the RIPE Database will be described within these pages. If anything is missing or unclear, please [contact us](https://www.ripe.net/contact-form?topic=ripe_dbm) and we will do our best to help.
