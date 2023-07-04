@@ -6,22 +6,22 @@ permalink: /Database-Support/Database-Security
 
 **A collection of documents designed to help with security of whois data stored in the RIPE Database**
 
-* [Recommendations for protecting your data in the RIPE Database](../10.Authorisation/01-Authorisation-Model.md#authorisation-model)
+* [Recommendations for protecting your data in the RIPE Database](../Authorisation/Authorisation-Model.md#authorisation-model)
 This page provides best practices and recommendations for protecting your objects in the RIPE Database.
 
-* [Security and the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#using-the-authorisation-methods)
+* [Security and the RIPE Database](../Authorisation/Using-the-Authorisation-Methods.md#using-the-authorisation-methods)
 Protecting your objects in the RIPE Database.
 
-* [Requesting Change of Authorisation of a Maintainer Object](../17.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object)
+* [Requesting Change of Authorisation of a Maintainer Object](../How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object)
 Lost your maintainer MD5 password? This [web interface](https://apps.db.ripe.net/db-web-ui/query) allows you to recover a lost password. Please note that you will be required to log in with your RIPE NCC Access (SSO) account. You can create one if you do not have one yet.
 
-* [Using PGP with the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#pgp-key)
+* [Using PGP with the RIPE Database](../Authorisation/Using-the-Authorisation-Methods.md#pgp-key)
 This page explains how to set up PGP authentication for the RIPE Database, which is recommended for sending updates via email.
 
-* [IRT Object - Technical How To Guide](../10.Authorisation/13-IRT-Object.md#irt-object)
+* [IRT Object - Technical How To Guide](../Authorisation/IRT-Object.md#irt-object)
 How to handle the Incident Response Team (IRT) object in the RIPE Database
 
-* [IRT Object - Frequently Asked Questions](../10.Authorisation/13-IRT-Object.md#irt-object)
+* [IRT Object - Frequently Asked Questions](../Authorisation/IRT-Object.md#irt-object)
 Help with the Incident Response Team (IRT) object in the RIPE Database
 
 
@@ -36,7 +36,7 @@ The maintainer (**mntner**) object is used to protect other objects in the RIPE 
 
 ![](~@imgs/copy5_of_maintainerbasics.png)
 
-Maintainers are anonymous. Other than the authentication references they contain, there is nothing that ties them to a specific person, group or organisation. Authentication is handled as a "logical OR", meaning that if you know one of several credentials associated with a maintainer, you can make changes to the objects that refer to it. In the example above, two people can use their RIPE NCC Access (single sing-on) account to make changes to the **inet6num** object, or the PGP key can be used. Which authentication method is best for your use case is explained in a separate section: [Protecting your data in the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#using-the-authorisation-methods).
+Maintainers are anonymous. Other than the authentication references they contain, there is nothing that ties them to a specific person, group or organisation. Authentication is handled as a "logical OR", meaning that if you know one of several credentials associated with a maintainer, you can make changes to the objects that refer to it. In the example above, two people can use their RIPE NCC Access (single sing-on) account to make changes to the **inet6num** object, or the PGP key can be used. Which authentication method is best for your use case is explained in a separate section: [Protecting your data in the RIPE Database](../Authorisation/Using-the-Authorisation-Methods.md#using-the-authorisation-methods).
 
 Most commonly, a maintainer object is maintained by itself, meaning that the "mnt-by:" attribute of the maintainer refers to the same object. If you want to edit details, for example add or remove an authentication, you simply need to use one of the existing authentication methods. In the example above, one of the three authentications can be used to add a forth, such as new colleague joining the team.
 
@@ -67,7 +67,7 @@ Keep in mind that sharing a maintainer doesn't mean sharing the credentials as w
 
 ### Delegating Authorisation Using Maintainers
 
-The idea behing delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation](04-Configuring-Reverse-DNS.md#configuring-reverse-dns) by creating a **domain** object and nothing else.
+The idea behing delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation](Configuring-Reverse-DNS.md#configuring-reverse-dns) by creating a **domain** object and nothing else.
 
 For this purpose, three attributes exist:
 
