@@ -1,6 +1,10 @@
+---
+permalink: /Authorisation/Protection-of-Reverse-Delegation-Objects
+---
+
 # Protection of Reverse Delegation Objects
 
-Protection of the reverse domain object space for "in-addr.arpa" and "ip6.arpa" domains is done with separate methods for creation, deletion and modification. The **domain** object creation is described in a [flow chart](../20.Appendices/05-Appendix-E--Domain-Object-Creation-Flowchart.md#domain-object-creation-flowchart).
+Protection of the reverse domain object space for "in-addr.arpa" and "ip6.arpa" domains is done with separate methods for creation, deletion and modification. The **domain** object creation is described in a [flow chart](../Appendices/Appendix-E--Domain-Object-Creation-Flowchart.md#domain-object-creation-flowchart).
 
 The creation of **domain** objects for "in-addr.arpa" and “ip6.arpa" domains must satisfy several authorisation criteria. As with all objects, it must satisfy its own **mntner** object references in the “mnt-by:” attributes. It must also satisfy a hierarchical authorisation. Both authorisations must be passed for the object to be created. For modification and deletion of a **domain** object, only its own **mntner** object in the “mnt-by:” attributes needs to authorise the operation. Where a deletion fails, **mntner** objects referenced in a "mnt-domains", "mnt-lower" or "mnt-by" attribute of the corresponding **inet(6)num** object can authorise the deletion. They will be checked in this order. The first attribute type found will be taken as the only one to use.
 

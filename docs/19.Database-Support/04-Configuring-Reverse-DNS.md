@@ -1,3 +1,7 @@
+---
+permalink: /Database-Support/Configuring-Reverse-DNS
+---
+
 # Configuring Reverse DNS
 
 **Computer networks use the Domain Name System (DNS) to determine the IP address associated with a domain name. This process is also known as forward DNS resolution. Reverse DNS (rDNS) is the inverse process of this: the resolution of an IP address to its designated domain name. This document explains how reverse DNS works and how to configure it for your zone**
@@ -65,7 +69,7 @@ For example, an allocation such as 2001:db8::/29 will result in eight reverse zo
 
 
 ### Step 1: Set up authorisation
-The creation and maintenance of **domain** objects must be handled by a designated maintainer. You can use an existing maintainer or create a specific one for the people who will be creating and managing **domain** objects. You should refer to this maintainer using the "mnt-domains:" attribute in **inetnum** object for the address block that you hold. You will be able to add the "mnt-domains:" attribute in the RIPE Database, for example using [webupdates](https://apps.db.ripe.net/db-web-ui/query). If you are an LIR, you may need to select your [default maintainer](03-Database-Security.md#the-default-maintainer) first, before you can add this attribute.
+The creation and maintenance of **domain** objects must be handled by a designated maintainer. You can use an existing maintainer or create a specific one for the people who will be creating and managing **domain** objects. You should refer to this maintainer using the "mnt-domains:" attribute in **inetnum** object for the address block that you hold. You will be able to add the "mnt-domains:" attribute in the RIPE Database, for example using [webupdates](https://apps.db.ripe.net/db-web-ui/query). If you are an LIR, you may need to select your [default maintainer](Database-Security.md#the-default-maintainer) first, before you can add this attribute.
 
 ### Step 2: Configure your DNS server
 Configure your DNS servers in such a way that you will pass all the tests that we will perform. Here are some recommendations to help you:

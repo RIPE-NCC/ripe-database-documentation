@@ -1,3 +1,7 @@
+---
+permalink: /How-to-Query-the-RIPE-Database/Command-Line-Queries
+---
+
 # Command Line Queries
 
 Queries can be run from almost any computer (connected to the Internet) using standard features built into most operating systems. Some common methods include Netcat, Telnet and a Whois Client.

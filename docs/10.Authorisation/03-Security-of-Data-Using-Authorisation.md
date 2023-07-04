@@ -1,3 +1,7 @@
+---
+permalink: /Authorisation/Security-of-Data-Using-Authorisation
+---
+
 # Security of Data Using Authorisation
 
 Individual data objects must be protected with a **mntner** object. The **mntner** is referenced by the "mnt-by:" attribute in the object. This attribute is defined as multiple in all object types, so several **mntner** objects can be used to protect one object.

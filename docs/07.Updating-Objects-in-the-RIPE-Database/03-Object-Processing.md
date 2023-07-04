@@ -1,3 +1,7 @@
+---
+permalink: /Updating-Objects-in-the-RIPE-Database/Object-Processing
+---
+
 # Object Processing
 
 When an update message contains multiple objects, the order of processing the objects in the message only changes in specific situations. The database software tries to process the objects one by one, starting with the first recognised object in the message. The order can matter, however, the database software has limited options for changing the order. The only condition the software can recognise is when an auto-generation process is used for certain object primary keys. “AUTO-n” primary key values can be included for generation and can also be referenced by other objects in the same update message. These will be resolved, as long as the number “n” is consistent and there are no circular references. If an object that references a value ‘AUTO-1' is listed in the update message before the object where the value ‘AUTO-1' is generated, the ordering will be changed. The referencing object will be pushed to the end of the list, by which time the object crating the ‘AUTO-1' value will have been processed.

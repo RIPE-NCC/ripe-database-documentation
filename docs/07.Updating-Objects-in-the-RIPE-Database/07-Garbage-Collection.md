@@ -1,3 +1,7 @@
+---
+permalink: /Updating-Objects-in-the-RIPE-Database/Garbage-Collection
+---
+
 # Garbage Collection
 When specific objects of a certain type have existed in the database unreferenced for a continuous period of time, it becomes eligible for automatic deletion.
 
