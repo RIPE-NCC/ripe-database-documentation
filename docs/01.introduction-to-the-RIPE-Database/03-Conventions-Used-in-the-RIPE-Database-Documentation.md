@@ -1,3 +1,7 @@
+---
+permalink: /introduction-to-the-RIPE-Database/Conventions-Used-in-the-RIPE-Database-Documentation
+---
+
 # Conventions Used in the RIPE Database Documentation
 
 The following conventions are used:

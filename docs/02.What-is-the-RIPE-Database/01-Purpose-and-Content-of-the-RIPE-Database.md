@@ -1,11 +1,15 @@
+---
+permalink: /What-is-the-RIPE-Database/Purpose-and-Content-of-the-RIPE-Database
+---
+
 # Purpose and Content of the RIPE Database
 
 The RIPE NCC has been tasked by the RIPE community to maintain a database of Internet resource information. Some of this information is confidential between the RIPE NCC and the resource holder and some of it is publically available. The RIPE Network Management Database, more often referred to as the RIPE Database, provides the public view of this data. Some of the management details for maintaining Internet resources in this database are also confidential, for example MD5 password hashes. The RIPE Database provides access to this private data for resource holders.
 
 The RIPE Database holds data for three separate registries:
 
-* [RIPE Internet Number Registry (RIPE INR)](../22.Glossary.md#ripe-internet-number-registry-ripe-inr)
-* [RIPE Internet Routing Registry (RIPE IRR)](../22.Glossary.md#ripe-internet-routing-registry-ripe-irr)
+* [RIPE Internet Number Registry (RIPE INR)](../Glossary.md#ripe-internet-number-registry-ripe-inr)
+* [RIPE Internet Routing Registry (RIPE IRR)](../Glossary.md#ripe-internet-routing-registry-ripe-irr)
 * Reverse Delegation and ENUM Registry
 
 These could be three independent databases, however the information in each of them is related to each other. It was therefore decided to integrate the three registries into one logical database. In practise, it is also one physical database.
@@ -141,4 +145,4 @@ Changes can be proposed to the RIPE Database purpose and content by anyone from 
 
 ## Terms and Conditions
 
-The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../24.Legal-Information.md#). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
+The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../Legal-Information.md#). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
