@@ -4,6 +4,7 @@ permalink: /What-is-the-RIPE-Database/History-of-the-RIPE-Database
 
 # History of the RIPE Database
 
+
 * [Background of the RIPE Database](#background-of-the-ripe-database)
 * [Versions of the RIPE Database](#versions-of-the-ripe-database)
 

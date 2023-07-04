@@ -92,7 +92,7 @@ By default the response object is filtered as described in
 
 ### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing the object, which is filtered by default.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#whoisresources) containing the object, which is filtered by default.
 
 ### HTTP status Codes
 
@@ -540,7 +540,7 @@ This can be run in the same ways as the REST API Lookup. This search provides th
 
 Offers the well-known whois search via a rest-like interface.
 
-[Documentation on the standard RIPE Database query flags](../13.Types-of-Queries/README.md#types-of-queries).
+[Documentation on the standard RIPE Database query flags](../Types-of-Queries/README.md#types-of-queries).
 
 As with the lookup, any spaces in the command must be encoded. The response will be returned in XML format by default. Alternatively, JSON or text/plain can be returned.
 
@@ -578,7 +578,7 @@ None.
 
 ### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing the query result.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#whoisresources) containing the query result.
 
 ### HTTP Status Codes
 |code|description|
@@ -587,7 +587,7 @@ A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisr
 |400|Illegal input - incorrect value in one or more of the parameters|
 |404|No object(s) found|
 
-Note that search response can be enormous. Hence, it is streamed on the server side, which means that if there is any error during processing your search, the HTTP response will still be 200. In this case, there will be the corresponding error messages inside the errormessages element in the response body (see [Whois Resources](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources)).
+Note that search response can be enormous. Hence, it is streamed on the server side, which means that if there is any error during processing your search, the HTTP response will still be 200. In this case, there will be the corresponding error messages inside the errormessages element in the response body (see [Whois Resources](../RIPE-Database-Structure/REST-API-Data-model.md#whoisresources)).
 
 
 ### Examples
@@ -643,7 +643,7 @@ None.
 
 #### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing all available sources.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#whoisresources) containing all available sources.
 
 #### HTTP Status Codes
 
@@ -733,7 +733,7 @@ Returns the RPSL template for given object type.
 
 #### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing the template of the specified type.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#whoisresources) containing the template of the specified type.
 
 #### HTTP Status Codes
 |code |description                             |
@@ -780,7 +780,7 @@ None.
 	
 ### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#whoisresources) containing locator URIs to matching objects.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#whoisresources) containing locator URIs to matching objects.
 
 For non-200 OK responses, the response body will be in plaintext.
 
@@ -869,7 +869,7 @@ Show a specific version of a RIPE Database object.
 	
 ### Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#template-resources) containing the requested version of the object or the error message in case of Bad request (see [GET](#api-lookup)).
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#template-resources) containing the requested version of the object or the error message in case of Bad request (see [GET](#api-lookup)).
 
 
 ### Status Codes
@@ -909,7 +909,7 @@ Lists all versions of RIPE Database object, including the date and operation for
 	
 ### Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#template-resources) containing information about updates for the requested object or the error message in case of Bad request (see [GET](#api-lookup)).
+A [WhoisResource](../RIPE-Database-Structure/11-REST-API-Data-model.md#template-resources) containing information about updates for the requested object or the error message in case of Bad request (see [GET](#api-lookup)).
 
 #### Status Codes
 |code|description|

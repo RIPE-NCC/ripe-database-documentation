@@ -1,3 +1,7 @@
+---
+permalink: /Installation-and-Development/Getting-started-on-OSX
+---
+
 # Getting Started on OSX
 
 * For Mac OS X create or update the file `~/.bash_profile`.
@@ -72,7 +76,7 @@ There are multiple ways to install MariaDB on OS X.
 
 ### Configuration
 
-[Configure MariaDB](04-Configure-MariaDB.md#configure-mariadb)
+[Configure MariaDB](Configure-MariaDB.md#configure-mariadb)
 
 ## Prepare /export directory
 
@@ -84,4 +88,4 @@ Some tests need /export directory to be readable/writable by your user:
 
 > Note that since Catalina, it is not possible to directly create directories under `/` as it is now read only. See this [guide](https://derflounder.wordpress.com/2020/01/18/creating-root-level-directories-and-symbolic-links-on-macos-catalina/) on how to create `/export`
 
-[Continue to Development](03-Building-whois.md#building-whois)
+[Continue to Development](Building-whois.md#building-whois)
