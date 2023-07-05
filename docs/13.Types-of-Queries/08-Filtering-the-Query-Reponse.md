@@ -1,3 +1,7 @@
+---
+permalink: /Types-of-Queries/Filtering-the-Query-Reponse
+---
+
 # Filtering the Query Response
 
 A filtering process restricts some data from the default query response. This applies to email contact data. When a user is searching for abuse contact data, they sometimes take all email addresses found in all objects in the query response. This may include the correct address. However, it often also includes many other addresses for people who are not responsible for handling such complaints.

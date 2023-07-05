@@ -1,7 +1,11 @@
+---
+permalink: /Database-Support/Clean-up-of-Unreferenced-Data
+---
+
 # Clean-up of Unreferenced Data
 ## Introduction
 
-Any data entered into the RIPE Database must comply with the [RIPE Database Terms and Conditions](../23.Terms-And-Conditions.md#ripe-database-terms-and-conditions). Over a period of time, data is changed and references are removed. This often results in many of the secondary objects (for example **organisation**, **person**, **role** and **mntner** objects) being left in the database and serving no useful purpose. In order to keep the database clean and to comply with data protection rules, this unnecessary data must be removed. New personal data should not be stored in the RIPE Database beyond a reasonable "work in progress" period before it is referenced by operation data objects.
+Any data entered into the RIPE Database must comply with the [RIPE Database Terms and Conditions](../Terms-And-Conditions.md#ripe-database-terms-and-conditions). Over a period of time, data is changed and references are removed. This often results in many of the secondary objects (for example **organisation**, **person**, **role** and **mntner** objects) being left in the database and serving no useful purpose. In order to keep the database clean and to comply with data protection rules, this unnecessary data must be removed. New personal data should not be stored in the RIPE Database beyond a reasonable "work in progress" period before it is referenced by operation data objects.
 
 
 ## Authority

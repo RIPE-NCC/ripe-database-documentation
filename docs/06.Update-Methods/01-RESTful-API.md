@@ -1,9 +1,13 @@
+---
+permalink: /Update-Methods/RESTful-API
+---
+
 # RIPE Database RESTful API
 
 For more information about the REST paradigm, see https://en.wikipedia.org/wiki/Representational_state_transfer.
-If you used the old (beta) API, consider reading [migration guide for old API users](../19.Database-Support/07-Migration-guide.md#whois-rest-api-migration-guide)
+If you used the old (beta) API, consider reading [migration guide for old API users](../Database-Support/Migration-guide.md#whois-rest-api-migration-guide)
 All the services are accessible via HTTPS.
-Use of the Whois REST API is governed by the RIPE Database [terms and conditions](../24.Legal-Information.md#)
+Use of the Whois REST API is governed by the RIPE Database [terms and conditions](../Legal-Information.md#)
 
 ## RESTful URI format
 
@@ -51,7 +55,7 @@ HTTPS is mandatory.
 
 #### HTTP Request Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the object to be created.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model) containing the object to be created.
 
 The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
 
@@ -66,7 +70,7 @@ Clients can also append an extension of `.xml` or `.json` to the request URL ins
 
 #### HTTP Response Body
 
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the newly created, unfiltered object.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model) containing the newly created, unfiltered object.
 
 
 #### HTTP Status Codes
@@ -139,7 +143,7 @@ HTTPS is mandatory.
 |dry-run|Optional. Perform validation but don't perform the update. |
 
 #### HTTP Request Body
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the new version of the specified objects.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model) containing the new version of the specified objects.
 
 The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
 
@@ -153,7 +157,7 @@ The possible values that you can specify for the Accept/Content-Type header are:
 Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension.
 
 #### HTTP Response Body
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing either the newly created, unfiltered object or the error message in case of a bad/unauthorized request.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model) containing either the newly created, unfiltered object or the error message in case of a bad/unauthorized request.
 
 
 #### HTTP Status Codes
@@ -178,7 +182,7 @@ Possible reasons for varios HTTP status codes are as follows:
 
 #### Error Response
 
-If the request fails, any error messages will be returned in the response body, using the request Accept format (XML or JSON). This element will not be included on a successful response. Examples in [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model).
+If the request fails, any error messages will be returned in the response body, using the request Accept format (XML or JSON). This element will not be included on a successful response. Examples in [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model).
 
 
 
@@ -260,7 +264,7 @@ The possible values that you can specify for the Accept/Content-Type header are:
 Clients can also append an extension of `.xml` or `.json` to the request URL instead of setting an `Accept:` header. The server will return a response in the appropriate format for that given extension.
 
 #### HTTP Response Body
-A [WhoisResource](../03.RIPE-Database-Structure/11-REST-API-Data-model.md#rest-api-data-model) containing the (filtered) deleted object.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model) containing the (filtered) deleted object.
 
 
 #### HTTP Status Codes
@@ -316,6 +320,6 @@ It could take up to 10 seconds before an update becomes visible for lookup or se
 
 A way to work around this limitation is to rely on the response of the muting operation in REST API (PUT, POST, DELETE). These all return the object as it appears in the database in their response body after the successful update. This object is never filtered or altered in any way.
 
-Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter “password=”. One parameter should be used for each password supplied. The pseudo attribute “password:” cannot be used in the HTTP request body. See ["Email Updates"](04-Email-Updates.md#email-updates) for more information.
+Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter “password=”. One parameter should be used for each password supplied. The pseudo attribute “password:” cannot be used in the HTTP request body. See ["Email Updates"](Email-Updates.md#email-updates) for more information.
 
 

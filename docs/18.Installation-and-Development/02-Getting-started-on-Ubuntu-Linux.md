@@ -1,3 +1,7 @@
+---
+permalink: /Installation-and-Development/Getting-started-on-Ubuntu-Linux
+---
+
 # Getting started on Ubuntu Linux
 
 ## Install packages
@@ -8,7 +12,7 @@ As root, install a set of packages already available in the Ubuntu Linux reposit
 
 ## Configure MariaDB
 
-[Configure MariaDB](04-Configure-MariaDB.md#configure-mariadb)
+[Configure MariaDB](Configure-MariaDB.md#configure-mariadb)
 
 ## System
 

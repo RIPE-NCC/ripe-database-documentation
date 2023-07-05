@@ -1,3 +1,7 @@
+---
+permalink: /How-to-Query-the-RIPE-Database/Registration-Data-Access-Protocol
+---
+
 # Registration Data Access Protocol (RDAP)
 
 The **Registration Data Access Protocol** (RDAP) is an alternative protocol to WHOIS that specifies how to access internet resource registration data. It is specifically designed to address various shortcomings in WHOIS. It makes use of HTTPS and follows a RESTful (representational state transfer) web services model.

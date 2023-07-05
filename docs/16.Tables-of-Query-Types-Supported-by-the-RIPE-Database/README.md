@@ -1,3 +1,7 @@
+---
+permalink: /Tables-of-Query-Types-Supported-by-the-RIPE-Database
+---
+
 # Tables of Query Types Supported by the RIPE Database
 
 ## Table 1: Queries Using Primary and Lookup Keys

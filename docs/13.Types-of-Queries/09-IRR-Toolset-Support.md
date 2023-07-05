@@ -1,3 +1,7 @@
+---
+permalink: /Types-of-Queries/IRR-Toolset-Support
+---
+
 # IRR Toolset Support
 
 The IRRToolset is a third-party suite of routing policy analysis tools. Some of the tools in this set access Routing Registry servers through an authorisation whois interface.
@@ -15,4 +19,4 @@ The RIPE Database server does not support this and it is up to the client to per
 * Return **route** and **route6** objects that exactly match a specified prefix - whois –BGxTroute,route6 193.0.0.0/21
 * Return **route** and **route6** objects that exactly match a specified prefix (as above), but return only the “route:” or “route6:” attributes prefix - whois –KxTroute,route6 193.0.0.0/21
 
-See [Table 4: Query Support For Tools](../16.Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#table-4-query-support-for-tools)
+See [Table 4: Query Support For Tools](../Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#table-4-query-support-for-tools)

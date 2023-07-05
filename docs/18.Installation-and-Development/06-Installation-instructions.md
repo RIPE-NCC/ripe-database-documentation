@@ -1,3 +1,7 @@
+---
+permalink: /Installation-and-Development/Installation-instructions
+---
+
 # Installation instructions
 
 In this section we show how to make a standard setup of whois once you compiled the shaded `whois.jar`.
@@ -8,8 +12,8 @@ Ensure `/export` directory has been created.
   - Note on MacOS, Catalina introduced read-only root. Hence creating `export` is not straightforward. See this [post](https://derflounder.wordpress.com/2020/01/18/creating-root-level-directories-and-symbolic-links-on-macos-catalina/), on how to go about doing this. 
 
 Ensure MariaDB and the needed databases are created and populated
-  - See [Getting Started on OSX](01-Getting-started-on-OSX.md#getting-started-on-osx) for installation information.
-  - See [Configure MariaDB](04-Configure-MariaDB.md#configure-mariadb) for instructions how to create and grant user permission.
+  - See [Getting Started on OSX](Getting-started-on-OSX.md#getting-started-on-osx) for installation information.
+  - See [Configure MariaDB](Configure-MariaDB.md#configure-mariadb) for instructions how to create and grant user permission.
 
 ## Requirements
 
@@ -17,7 +21,7 @@ Ensure MariaDB and the needed databases are created and populated
 * the shaded jar produced by release build, located at `whois-db/target/`
 * create a role user to run whois server (by default, `dbase`)
 * whois root directory, owned by role user
-* MariaDB set up (for more instructions, see [Getting Started with development manuals](01-Getting-started-on-OSX.md#getting-started-on-osx))
+* MariaDB set up (for more instructions, see [Getting Started with development manuals](Getting-started-on-OSX.md#getting-started-on-osx))
 * `jmxterm-1.0-alpha-4-uber.jar`, downloadable from http://wiki.cyclopsgroup.org/jmxterm.
    * For MAC OSX the 1.0-alpha-4 version of jmxterm has a problem but there is a fix here: https://github.com/jiaqi/jmxterm. You can checkout the latest version and build the jar using mvn clean package.
    * For SDK 17 the 1.0-alpha-4 version of jmxterm has a problem. As a workaround you can add `--add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED` to Java for jmxterm to make use of the jconsole module.
@@ -95,12 +99,12 @@ if you want to add content, you can use the `TEST-DBM-MNT` mntner whose password
       curl http://localhost:1080/whois/test/mntner/TEST-DBM-MNT?password=emptypassword
 
 
-you can check the instructions in [WHOIS-REST-API](../06.Update-Methods/01-RESTful-API.md#ripe-database-restful-api) for more info about the REST API
+you can check the instructions in [WHOIS-REST-API](../Update-Methods/RESTful-API.md#ripe-database-restful-api) for more info about the REST API
 
 
 ## How to allow unlimited queries
 
-The Whois server can block a client's IP as explained [here](../13.Types-of-Queries/12-Access-Control-for-Queries.md#access-control-for-queries).
+The Whois server can block a client's IP as explained [here](../Types-of-Queries/Access-Control-for-Queries.md#access-control-for-queries).
 
 You can allow unlimited queries from a certain IP by running a few queries as follows.
 

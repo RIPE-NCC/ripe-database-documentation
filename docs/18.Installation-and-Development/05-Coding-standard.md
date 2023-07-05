@@ -1,3 +1,7 @@
+---
+permalink: /Installation-and-Development/Coding-standard
+---
+
 # Coding standard
 
 In general, we follow the standard Java Coding Standard: [Code Conventions for the Java Programming Language](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html), with the following additions.
