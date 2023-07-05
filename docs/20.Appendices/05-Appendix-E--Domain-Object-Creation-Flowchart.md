@@ -1,6 +1,7 @@
 ---
 theme: svg theme
 title: Appendix-E--Domain-Object-Creation-Flowchart
+permalink: /Appendices/Appendix-E--Domain-Object-Creation-Flowchart
 ---
 <script setup>
     import svgZoomComponent from '../.vuepress/components/SvgZoom.vue'

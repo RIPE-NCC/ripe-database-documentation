@@ -1,3 +1,7 @@
+---
+permalink: /Updating-Objects-in-the-RIPE-Database/Update-Operations
+---
+
 # Update Operations
 
 There are three update operations that can be performed on an object:

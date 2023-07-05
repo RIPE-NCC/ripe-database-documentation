@@ -1,8 +1,13 @@
+---
+permalink: /RIPE-Database-Structure/How-to-Organise-Your-Data
+---
+
+
 # How to Organize Your Data
 
 There are many different types of objects in the RIPE Database. Some of them can be used in different ways. How you use them makes a big difference to the workload needed to maintain the data.
 
-The RIPE Database is intended for those who have, or will soon have Internet resources. This database is a public registry with a well-defined purpose. See ['Purpose of the RIPE Database'](../02.What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database.md#purpose-of-the-ripe-database) for more details. You can create many objects in the RIPE Database without any resources. But if these objects are not referenced by any resource object within a specified time period they will all be deleted. See the section on [Garbage Collection](../07.Updating-Objects-in-the-RIPE-Database/07-Garbage-Collection.md#garbage-collection) for more details.
+The RIPE Database is intended for those who have, or will soon have Internet resources. This database is a public registry with a well-defined purpose. See ['Purpose of the RIPE Database'](../What-is-the-RIPE-Database/Purpose-and-Content-of-the-RIPE-Database.md#purpose-of-the-ripe-database) for more details. You can create many objects in the RIPE Database without any resources. But if these objects are not referenced by any resource object within a specified time period they will all be deleted. See the section on [Garbage Collection](../Updating-Objects-in-the-RIPE-Database/Garbage-Collection.md#garbage-collection) for more details.
 
 Resource holders using the RIPE Database need a basic set of objects:
 
@@ -79,7 +84,7 @@ There is a query flag (“-c“) which will return the **irt** object, if one ex
 
 This is one of those areas that some users don't pay much attention to, but it is one of the most important questions regarding the use of the RIPE Database. Anyone authorised to maintain your data can cause serious damage to your network, your business and the business of your customers if they make a mistake. Authorisation is an all or nothing concept. You cannot authorise someone to create and modify customer's details but not delete it, for example.
 
-For details of the technical workings of authorisation see the section, ['Authorisation'](../10.Authorisation/README.md#authorisation). This section is about how to set up who can authorise what.
+For details of the technical workings of authorisation see the section, ['Authorisation'](../Authorisation/README.md#authorisation). This section is about how to set up who can authorise what.
 
 The authorisation model is based on the **mntner** object. This is a box that holds credentials. There are different types of credentials with passwords, PGP certificates and single sign-on (SSO) usernames being the main ones. At the time of writing, these credentials don't need to match anyone who is registered in the RIPE Database with a **person** object. They are simply lists of credentials that can belong to anyone. It is therefore not possible for the database software to identify ‘who' authorised an update. The introduction of SSO as a credential is a step in this direction.
 
@@ -100,7 +105,7 @@ You may also want to control who can grant authority to manage your data. Normal
 
 You can use notifications to keep track of changes to your data. This section details how to set up who gets notified of what.
 
-The ['Notifications'](../09.Notifications/README.md#notifications) section details the technical workings of notifications and how to set up who gets notified of what.
+The ['Notifications'](../Notifications/README.md#notifications) section details the technical workings of notifications and how to set up who gets notified of what.
 
 There are many ways to set up notifications. If you want to know everything, you should use the **mntner** objects. All of your data is maintained by one or more **mntner** objects. These objects have a mandatory attribute “upd-to:”. This lets you know if someone is trying to hack into your data. Any update to objects maintained by this **mntner** object that fails on authorisation gets notified to this email address. There is also an optional attribute “mnt-nfy” in the **mntner** object. This notifies you of every successful update to any object maintained by this **mntner** object.
 

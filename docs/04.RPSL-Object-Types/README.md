@@ -1,3 +1,7 @@
+---
+permalink: /RPSL-Object-Types
+---
+
 # RPSL Object Types
 
 In this section, the many types of objects in the RIPE Database are described. Objects contain a piece of information relating to an Internet resource or a supporting or administrative function.

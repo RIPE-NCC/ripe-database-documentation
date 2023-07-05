@@ -1,3 +1,7 @@
+---
+permalink: /Database-Support/Migration-guide
+---
+
 # WHOIS REST API Migration Guide
 
 ## Introduction
@@ -86,7 +90,7 @@ The new service is accessible at:
 
 * The xlink element `<whois-resources .../><link xlink:type="locator" xlink:href=... />` has been dropped in lookup response. 
 
-* The abuse-finder service has been replaced by abuse-contact (which implements policy RIPE-563). Refer to the new documentation [here.](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-abuse-contact)
+* The abuse-finder service has been replaced by abuse-contact (which implements policy RIPE-563). Refer to the new documentation [here.](../How-to-Query-the-RIPE-Database/RESTful-API-Queries.md#rest-api-abuse-contact)
 
 ## Testing
 
@@ -99,7 +103,7 @@ Use the following examples for testing your client implementation. (These tests 
 ### Create
 
 * Create a new object  
-    * Use the an example request on [WHOIS-REST-API-create](../06.Update-Methods/01-RESTful-API.md#post) 
+    * Use the an example request on [WHOIS-REST-API-create](../Update-Methods/RESTful-API.md#post) 
     * Change the _source_ attribute to TEST
     * Change the _mntner_ attribute to TEST-DBM-MNT
     * POST HTTP method
@@ -117,12 +121,12 @@ Use the following examples for testing your client implementation. (These tests 
     * Request header: "Content-Type: application/xml" for an XML response
     * Request header: "Content-Type: application/json" for a JSON response
     * Expect a 200 response status code.
-    * More information [here](../06.Update-Methods/01-RESTful-API.md#put)
+    * More information [here](../Update-Methods/RESTful-API.md#put)
 
 ### Read
 
 * View an existing object
-    * Request URL https://rest-test.db.ripe.net/TEST/person/NIC-HDL. See [documentation](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-lookup) for more information.
+    * Request URL https://rest-test.db.ripe.net/TEST/person/NIC-HDL. See [documentation](../How-to-Query-the-RIPE-Database/RESTful-API-Queries.md#rest-api-lookup) for more information.
     * GET HTTP method
     * Request header: "Content-Type: application/xml" for an XML response
     * Request header: "Content-Type: application/json" for a JSON response
@@ -136,7 +140,7 @@ Use the following examples for testing your client implementation. (These tests 
     * Request header: "Content-Type: application/xml" for an XML response
     * Request header: "Content-Type: application/json" for a JSON response
     * Expect a 200 response status code and the full object as payload
-    * More example searches [here](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-search)
+    * More example searches [here](../How-to-Query-the-RIPE-Database/RESTful-API-Queries.md#rest-api-search)
 
 ### Versions
 * See when an object was created/updated
@@ -144,7 +148,7 @@ Use the following examples for testing your client implementation. (These tests 
     * GET HTTP method
     * Request header: "Content-Type: application/xml" for an XML response
     * Request header: "Content-Type: application/json" for a JSON response
-    * Expect a 200 response status code and the payload as described [here](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-versions).
+    * Expect a 200 response status code and the payload as described [here](../How-to-Query-the-RIPE-Database/RESTful-API-Queries.md#rest-api-versions).
 
 ### Version 
 * View a particular version of an object
@@ -153,7 +157,7 @@ Use the following examples for testing your client implementation. (These tests 
     * Request header: "Content-Type: application/xml" for an XML response
     * Request header: "Content-Type: application/json" for a JSON response
     * Expect a 200 response status code and the full object as payload.
-    * More information [here](../11.How-to-Query-the-RIPE-Database/03-RESTful-API-Queries.md#rest-api-version)  
+    * More information [here](../How-to-Query-the-RIPE-Database/RESTful-API-Queries.md#rest-api-version)  
 
 ### Delete
 
@@ -161,5 +165,5 @@ Use the following examples for testing your client implementation. (These tests 
     * Request URL https://rest-test.db.ripe.net/TEST/person/NIC-HDL?password=emptypassword
     * DELETE HTTP method
     * Expect a 204 response status code
-    * More information [here](../06.Update-Methods/01-RESTful-API.md#delete)
+    * More information [here](../Update-Methods/RESTful-API.md#delete)
 

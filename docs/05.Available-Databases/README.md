@@ -1,3 +1,7 @@
+---
+permalink: /Available-Databases
+---
+
 # Available Databases
 
 An update is the submission of information for entry into, or removal from, a database. As the database records are RPSL objects, these updates create, modify or delete one or more objects.

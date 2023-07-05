@@ -1,3 +1,7 @@
+---
+permalink: /Types-of-Queries/Persistent-Connections-and-Keeping-State
+---
+
 # Persistent Connections and Keeping State
 
 If you are carrying out batched queries, your database client can request a persistent connection. The server will not close this connection after sending a reply to your client. This avoids having to set up a new TCP connection for every query.

@@ -1,3 +1,7 @@
+---
+permalink: /Update-Methods
+---
+
 # Update Methods
 
 The available options for updating the RIPE Database are:

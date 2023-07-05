@@ -1,3 +1,7 @@
+---
+permalink: /Update-Methods/Email-Updates
+---
+
 # Email Updates
 
 Email updates were the original method of updating the RIPE Database. They are still used by many people, although synchronous updates by the other methods now account for the majority of updates.

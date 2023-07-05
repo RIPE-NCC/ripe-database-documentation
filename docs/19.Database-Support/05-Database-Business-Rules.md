@@ -1,3 +1,7 @@
+---
+permalink: /Database-Support/Database-Business-Rules
+---
+
 # Database Business Rules
 
 **The RIPE Database contains objects formatted according to the Routing Policy Specification Language (RPSL), which has a set of syntax rules you have to comply with when creating, updating or deleting objects. In addition, the RIPE NCC enforces certain business rules to ensure data integrity and registry accuracy. This document gives an overview of all current business rules.**

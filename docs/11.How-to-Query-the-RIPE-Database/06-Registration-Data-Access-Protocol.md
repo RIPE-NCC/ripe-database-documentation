@@ -1,3 +1,7 @@
+---
+permalink: /How-to-Query-the-RIPE-Database/Registration-Data-Access-Protocol
+---
+
 # Registration Data Access Protocol (RDAP)
 
 The **Registration Data Access Protocol** (RDAP) is an alternative protocol to WHOIS that specifies how to access internet resource registration data. It is specifically designed to address various shortcomings in WHOIS. It makes use of HTTPS and follows a RESTful (representational state transfer) web services model.
@@ -39,6 +43,12 @@ The RDAP protocol is specified in the RFCs:
  * [RFC 9083](https://datatracker.ietf.org/doc/rfc9083/) – JSON Responses for the Registration Data Access Protocol (RDAP)
  * [RFC 7484](https://www.rfc-editor.org/rfc/rfc7484) – Finding the Authoritative Registration Data (RDAP) Service
  * [RFC 7485](https://www.rfc-editor.org/rfc/rfc7485) – Inventory and Analysis of WHOIS Registration Objects
+
+ ## RDAP profiles
+
+In addition to the base RDAP specification, we also implement the following profiles
+ 
+ * [NRO RDAP Profile](https://bitbucket.org/nroecg/nro-rdap-profile/raw/v1/nro-rdap-profile.txt).
 
 ## Known Issues
 

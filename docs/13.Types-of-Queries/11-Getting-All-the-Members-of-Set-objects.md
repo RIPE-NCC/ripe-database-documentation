@@ -1,6 +1,10 @@
+---
+permalink: /Types-of-Queries/Getting-All-the-Members-of-Set-objects
+---
+
 # Getting All the Members of Set Objects
 
-In [RPSL](../04.RPSL-Object-Types/README.md#rpsl-object-types), an object can be a member of a set object in two ways.
+In [RPSL](../RPSL-Object-Types/README.md#rpsl-object-types), an object can be a member of a set object in two ways.
 
 * You can list objects in a “members:” attribute in the set object.
 
