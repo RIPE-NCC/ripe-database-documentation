@@ -202,12 +202,18 @@ The format expresses addresses as a 128-bit number in hexadecimal groups of two 
 * **“org:”** – single valued to make sure that only one organisation is responsible for this resource. This is a required attribute. In some cases, there are business rules to ensure that it is present. If the **inet6num** object is (jointly) maintained by the RIPE NCC then the object must have an “org:” attribute.
 * **“sponsoring-org:”** – references an **organisation** object representing the sponsoring organisation that is administratively responsible for the resource. If a resource is no longer subject to a contract with the sponsoring organisation, or a contract is signed with a new sponsoring organisation, this will be updated in the registry information for this resource. The **inet6num** object in the RIPE Database will then be synchronised with the changes. A user cannot set, remove or change this value. An **inet6num** object can be created without this attribute. The software will generate the correct value if it is required. The RIPE NCC will remove the attribute during a period in-between the ending of a contract with one sponsoring organisation and the signing of a contract with a new sponsoring organisation.
 * **“abuse-c:”** – This attribute references an abuse contact object. If present, this overrides any existing referenced **organisation**, or **"abuse-c:"** attribute present in the hierarchy of this object . This can only be a **role** object that contains an "abuse-mailbox:" attribute. Making this reference will remove any query limits for that **role** object, which must only include business data (no personal information).
-* **“status:”** – The status is used to show the different types of data stored in an **inetnum** object and the relative positions within a hierarchy. It can take one of these values:
+* **“status:”** – The status is used to show the different types of data stored in an **inet6num** object and the relative positions within a hierarchy. It can not be changed after creating the object and it can take one of these values:
     * ALLOCATED-BY-RIR – This is mostly used to identify blocks of addresses for which the RIPE NCC is administratively responsible and allocations made to members by the RIPE NCC.
-    * ALLOCATED-BY-LIR – This is equivalent to the **inetnum** status ‘SUB-ALLOCATED PA'. A member can sub-allocate part of an allocation to another organisation. The other organisation may take over some of the management of this sub-allocation. However, the RIPE NCC member is still responsible for the whole of their registered resources, even if some parts of it have been sub-allocated to another organisation. Provisions have been built in to the RIPE Database software to ensure that the member is always technically in control of their allocated address space.
-With the **inet6num** object there is no equivalent to the **inetnum** ‘LIR-PARTITIONED' status values allowing partitioning of an allocation by a member for internal business reasons.
-    * AGGREGATED-BY-LIR – With IPv6, it is not necessary to document each individual End User assignment in the RIPE Database. If you have a group of End Users who all require blocks of addresses of the same size, say a /56, then you can create a large, single block with this status. The “assignment-size:” attribute specifies the size of the End User blocks. All assignments made from this block must have that size. It is possible to have two levels of ‘AGGREGATED-BY-LIR'.
+    * ALLOCATED-BY-LIR – This is equivalent to the **inet6num** status ‘SUB-ALLOCATED PA'. A member can sub-allocate part of an allocation to another organisation. The other organisation may take over some of the management of this sub-allocation. However, the RIPE NCC member is still responsible for the whole of their registered resources, even if some parts of it have been sub-allocated to another organisation. Provisions have been built in to the RIPE Database software to ensure that the member is always technically in control of their allocated address space. Within such allocation, it is still required to document assignments using the status "AGGREGATED-BY-LIR" or "ASSIGNED".
+With the **inet6num** object there is no equivalent to the **inet6num** ‘LIR-PARTITIONED' status values allowing partitioning of an allocation by a member for internal business reasons.
+    * AGGREGATED-BY-LIR – With IPv6, it is not necessary to document each individual End User assignment in the RIPE Database. If you have a group of End Users who all require blocks of addresses of the same size, say a /56, then you can create a large, single block with this status. The “assignment-size:” attribute specifies the size of the End User blocks. All assignments made from this block must have that size. It is possible to have two levels of ‘AGGREGATED-BY-LIR'. The "assignment-size" value cannot be changed after the **inet6num** object has been created.
+
+    ![](~@imgs/assignment-size.png)
+
     * ASSIGNED – These are assignments made by a member from their allocations to an End User.
+
+    ![](~@imgs/assigned.png)
+
     * ASSIGNED PI – These are assignments made by the RIPE NCC directly to an End User. In most cases, there is a member acting as the sponsoring organisation who handles the administrative processes on behalf of the End User. The sponsoring organisation may also manage the resource and related objects in the RIPE Database for the End User.
     * ASSIGNED ANYCAST – This address space has been assigned for use in TLD anycast networks. 
 * **“assignment-size:”** – This specifies the common size of all individual assignments aggregated into one block with the status ‘AGGREGATED-BY-LIR'. This attribute is required to be present if the **inet6num** object has this status. The individual assignments do not need to be represented in the RIPE Database. But one or more assignments may be included if the member wishes to specify them for any reason.
@@ -346,6 +352,8 @@ Authorisation for creating **route** objects is quite complex. There are multipl
 
 Please refer to [RFC 2622](https://tools.ietf.org/html/rfc2622) for more information on the specific routing information attributes in the **route** object. 
 
+The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistences in the RIPE Database.
+
 **Description of Attributes Specific to the ROUTE Object**
 
 
@@ -402,6 +410,8 @@ A **route6** object contains routing information for IPv6 address space resource
 Each interAS route (also known as an interdomain route) originated by an Autonomous System can be specified by using a **route6** object for IPv6 addresses.
 
 Authorisation for creating **route6** objects is quite complex. There are four scenarios depending on who administers the address space and the AS Number. Because the RIPE INR and IRR are part of the same logical database, they can both be used for authorisation if the address space and/or AS Number are RIPE NCC administered resources. Where one or both are not administered by the RIPE NCC authorisation is bypassed but with the illusion of being genuine authorisation. For more details see the section ['Authorisation'](../Authorisation/README.md#authorisation).
+
+The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistences in the RIPE Database.
 
 **Example ROUTE6 object including all optional attributes:**
 
