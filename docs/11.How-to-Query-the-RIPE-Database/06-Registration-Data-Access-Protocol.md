@@ -44,6 +44,12 @@ The RDAP protocol is specified in the RFCs:
  * [RFC 7484](https://www.rfc-editor.org/rfc/rfc7484) – Finding the Authoritative Registration Data (RDAP) Service
  * [RFC 7485](https://www.rfc-editor.org/rfc/rfc7485) – Inventory and Analysis of WHOIS Registration Objects
 
+ ## RDAP profiles
+
+In addition to the base RDAP specification, we also implement the following profiles
+ 
+ * [NRO RDAP Profile](https://bitbucket.org/nroecg/nro-rdap-profile/raw/v1/nro-rdap-profile.txt).
+
 ## Known Issues
 
 Known issues with the RDAP implementation for RIPE Database can be found on [GitHub](https://github.com/RIPE-NCC/whois/blob/master/README.RDAP.md).
