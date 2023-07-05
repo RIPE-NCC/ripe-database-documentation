@@ -46,7 +46,7 @@ The RDAP protocol is specified in the RFCs:
 
  ## RDAP profiles
 
-In additionally to RDAP Specification, we implement the following RFCs:
+In addition to the base RDAP specification, we also implement the following profiles
  
  * [NRO RDAP Profile](https://bitbucket.org/nroecg/nro-rdap-profile/raw/v1/nro-rdap-profile.txt).
 
