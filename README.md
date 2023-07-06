@@ -13,12 +13,12 @@ To avoid variation numbers from the link, it is advised to utilise permalinks.
 
 # Editing in Gitlab
 
-GitLab has handy built in editor that undestands most of the markdown that is in the markdown files. There are a few excetions that are particular to VuePress:
+GitLab has a handy built-in editor that understands most of the markdown that is in the markdown files. There are a few exceptions that are particular to VuePress:
 
-| **Gitlab markdown** | **Vuepress markdown** |
-| --- | --- |
+| **Gitlab markdown**                                                                                                                  | **Vuepress markdown** |
+|--------------------------------------------------------------------------------------------------------------------------------------| --- |
 | collapsible sections are rendered with &lt;details&gt;&lt;summary&gt;&lt;/summary&gt;&lt;content&gt;&lt;/content&gt;&lt;/details&gt; | collapsible sections rendered same as gitlab OR by ::: details summaryText contentText ::: |
-Embedded vue components are ignored | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered |
+| Embedded vue components are ignored                                                                                                  | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered |
 
 # Running commands
 

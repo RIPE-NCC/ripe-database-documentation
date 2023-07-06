@@ -4,7 +4,7 @@ permalink: /What-is-the-RIPE-Database/Purpose-and-Content-of-the-RIPE-Database
 
 # Purpose and Content of the RIPE Database
 
-The RIPE NCC has been tasked by the RIPE community to maintain a database of Internet resource information. Some of this information is confidential between the RIPE NCC and the resource holder and some of it is publically available. The RIPE Network Management Database, more often referred to as the RIPE Database, provides the public view of this data. Some of the management details for maintaining Internet resources in this database are also confidential, for example MD5 password hashes. The RIPE Database provides access to this private data for resource holders.
+The RIPE NCC has been tasked by the RIPE community to maintain a database of Internet resource information. Some of this information is confidential between the RIPE NCC and the resource holder and some of it is publicly available. The RIPE Network Management Database, more often referred to as the RIPE Database, provides the public view of this data. Some of the management details for maintaining Internet resources in this database are also confidential, for example MD5 password hashes. The RIPE Database provides access to this private data for resource holders.
 
 The RIPE Database holds data for three separate registries:
 
@@ -98,7 +98,7 @@ The following databases are mirrored:
  * AFRINIC
  * APNIC
  * ARIN
- * Jpirr
+ * JPIRR
  * LACNIC
  * RADb
  * (RIPE GRS)
@@ -117,7 +117,7 @@ Before importing the data we transform objects into RIPE RPSL syntax by carrying
 * Converting attributes values
 * All these transformations are marked by "End Of Line" comments in the objects
 
-To use GRS from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropiate radio button below the search box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
+To use GRS from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropriate radio button below the search box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
 
 ![](~@imgs/GRSquery.png)
 

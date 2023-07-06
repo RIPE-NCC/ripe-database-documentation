@@ -26,8 +26,8 @@ For IPv4 address space, the query argument can be specified with either prefix o
 
 We use three terms in these types of queries. These are all defined relative to the specified(reference) range:
 * An exact match refers to a range that is identical to the reference range.
-* A more specic range is contained within the reference range and is smaller. It contains fewer IP addresses than the reference range. We also call this a sub range.
-* A less specic range contains the whole of the reference range and is bigger. It has a greater number of IP addresses than the reference range. We also call this an encompassing range.
+* A more specific range is contained within the reference range and is smaller. It contains fewer IP addresses than the reference range. We also call this a sub range.
+* A less specific range contains the whole of the reference range and is bigger. It has a greater number of IP addresses than the reference range. We also call this an encompassing range.
 
 There are a number of options that describe how you can retrieve different types of information relative to a particular range of IP addresses (IPv4 or IPv6) including more and less specific queries.
 

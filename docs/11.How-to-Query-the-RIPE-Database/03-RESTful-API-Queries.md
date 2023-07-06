@@ -60,20 +60,20 @@ A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#whoisresourc
 
 Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
 
-Possible reasons for varios HTTP status codes are as follows:
+Possible reasons for various HTTP status codes are as follows:
 
-|code|description|
-|----|-----------|
-|OK (200)|Successful update|
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
-|Authentication failure (401)| Incorrect password|
-|Forbidden (403)| Query limit exceeded.|
-|Too Many Request (429)| Query limit exceeded.|
-|Not Found (404)|No results were found (on a search request), or object specified in URI does not exist.|
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.|
-|Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
-|Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
-|Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
+|code| description                                                                                         |
+|----|-----------------------------------------------------------------------------------------------------|
+|OK (200)| Successful update                                                                                   |
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
+|Authentication failure (401)| Incorrect password                                                                                  |
+|Forbidden (403)| Query limit exceeded.                                                                               |
+|Too Many Request (429)| Query limit exceeded.                                                                               |
+|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
+|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
+|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 ### Examples
 

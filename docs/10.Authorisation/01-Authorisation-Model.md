@@ -23,12 +23,12 @@ Visit [this section](../Database-Support/Database-Security.md#maintainers) to kn
 
 Given the flexibility of the RIPE Database and the maintainer system, there can be cases where you find yourself unable to authenticate. Currently, only certain combinations of authentication and update methods are compatible, as shown in this table:
 
-||**SSO**|**PGP**|**MD5**|
-| --- | --- | --- | --- |
+|                            |**SSO**|**PGP**|**MD5**|
+|----------------------------| --- | --- | --- |
 | Webupdates (Web interface) | Yes | No | Yes* |
-| Email | No | Yes | Yes* |
-| API | No | No | Yes |
-| Syncupdates | No | Yes | Yes*
+| Email                      | No | Yes | Yes* |
+| API                        | No | No | Yes |
+| Syncupdates                | No | Yes | Yes*|
 
 \*It works, but is not recommended
 

@@ -46,7 +46,7 @@ Each **role** objects describe a business function. Each object has a unique NIC
 
 **Maintainer** objects protect object in the RIPE Database. They contain the information needed to authorise creation, deletion or modification of the objects they protect.
 
-You can create your first **role** and **maintainer** objects using the [object creationg tool](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/role/self).
+You can create your first **role** and **maintainer** objects using the [object creation tool](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/role/self).
 
 Choose a name for your **maintainer** object and enter it in the "mntner" field which will be the primary key.
 
@@ -56,7 +56,7 @@ When you receive the message "Your objects have been successfully created", make
 
 You can use your **role** object's primary key (NIC handle) in the "admin-c:", "tech-c:" and "zone-c:" fields of the RIPE Database Template.
 
-You can use yor **mntner** onject's primary key in the "mnt-by:" field of the RIPE Database Template.
+You can use yor **mntner** object's primary key in the "mnt-by:" field of the RIPE Database Template.
 
 You can create additional **person**, **role** and **mntner** objects and also change the objects you already created using [RIPE Database Webupdates](https://apps.db.ripe.net/webupdates).
 

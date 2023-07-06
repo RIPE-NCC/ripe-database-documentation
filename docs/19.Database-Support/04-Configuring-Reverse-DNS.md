@@ -21,9 +21,9 @@ Before you can submit the **domain** object to the RIPE Database, you will first
 
 ### Mapping IP addresses into the DNS name hierarchy
 
-For IPv4, te mapping of the reverse address space can only happen on "byte" boundaries, i.e. multiples of 8 bits. This means that you should take the four octets - the decimal numbers between the dots - of an IP address range, put them in reverse order and then map them into the in-addr.arpa domain.
+For IPv4, the mapping of the reverse address space can only happen on "byte" boundaries, i.e. multiples of 8 bits. This means that you should take the four octets - the decimal numbers between the dots - of an IP address range, put them in reverse order and then map them into the in-addr.arpa domain.
 
-For example, an address (A) record for mail.example.com points to the IP address 192.0.2.5. In pointer record of the reverse database, this IP address is stored as the domain name 5.2.0.192.in-addr.arpa. poiting back to its designated host name mail.example.com. The resulting PRT record would look like this:
+For example, an address (A) record for mail.example.com points to the IP address 192.0.2.5. In pointer record of the reverse database, this IP address is stored as the domain name 5.2.0.192.in-addr.arpa. pointing back to its designated host name mail.example.com. The resulting PRT record would look like this:
 
     5.2.0.192.in-addr.arpa. 3600 IN PTR mail.example.com
 
@@ -93,7 +93,7 @@ When you are satisfied with your configuration, we recommend that you perform a 
 
 
 ### Step 3a: Create your domain objects using webupdates
-When you submit a **domain** object you are requesting reverse delegation, asking the RIPE NCC to enter NS records poiting to your name servers in RIPE NCC's parent zone. The **domain** object has the following mandatory attributes:
+When you submit a **domain** object you are requesting reverse delegation, asking the RIPE NCC to enter NS records pointing to your name servers in RIPE NCC's parent zone. The **domain** object has the following mandatory attributes:
 
     domain:   <zone name>
     admin-c:  <nic-handle for administrative contact>
@@ -104,7 +104,7 @@ When you submit a **domain** object you are requesting reverse delegation, askin
     mnt-by:   <your maintainer>
     source:   RIPE
 
-In the [web interface](https://apps.db.ripe.net/db-web-ui/webupdates/select) for the RIPE Database, there is a wizard that will automatically create one or more **domain** objects for you. It allows you to fill in an IPv4 or IPv6 prefix and the wizard will take care of creating one or multiple reverse zones out of it. After filling in your name servers, the wizard will also perform a basic check to see if the name servers are online. The full set of tests will happen after you submit the form. A [one-minute video](https://www.youtube.com/watch?v=7JzapYkca-Y&ab_channel=RIPENCC) with a demostration is available online.
+In the [web interface](https://apps.db.ripe.net/db-web-ui/webupdates/select) for the RIPE Database, there is a wizard that will automatically create one or more **domain** objects for you. It allows you to fill in an IPv4 or IPv6 prefix and the wizard will take care of creating one or multiple reverse zones out of it. After filling in your name servers, the wizard will also perform a basic check to see if the name servers are online. The full set of tests will happen after you submit the form. A [one-minute video](https://www.youtube.com/watch?v=7JzapYkca-Y&ab_channel=RIPENCC) with a demonstration is available online.
 
 
 ![](~@imgs/create_domain_object.png)
@@ -133,7 +133,7 @@ If the update was successful, you should then be able to query for your object i
 
 To allow for the exchange of DNSSEC-related information, the **domain** object includes a "ds-rdata:" attribute.
 
-In DNSSEC, the Delegation Signer (DS) resource record is created from a DNSkey resource record by comparing it with the public key. The parent publshes the DS resource record. The "ds-rdata:" attribute contains the RDATA of the DS resource records related to the domain, as shown in the "domain:" attribute.
+In DNSSEC, the Delegation Signer (DS) resource record is created from a DNSkey resource record by comparing it with the public key. The parent publishes the DS resource record. The "ds-rdata:" attribute contains the RDATA of the DS resource records related to the domain, as shown in the "domain:" attribute.
 
     ds-rdata: 64431 5 1 278BF194C29A812B33935BB2517E17D1486210FA
 
@@ -153,20 +153,20 @@ keep in mind that these tests will only be done for "ds-rdata:" attributes using
 
 ## Automated update of DNSSEC Delegations
 
-Whenever you want to change the DNSSEC key whose digest is in the "ds-rdata:" attribute, it is necessary to update the attribute. This can be done manually using any means of RIPE Database udpate methods or automatically using a special Child Delegation Signed (CDS) DNS record. This procedure works as follows:
+Whenever you want to change the DNSSEC key whose digest is in the "ds-rdata:" attribute, it is necessary to update the attribute. This can be done manually using any means of RIPE Database update methods or automatically using a special Child Delegation Signed (CDS) DNS record. This procedure works as follows:
 
 * The reverse domain has to be already DNSSEC-secured.
 * Whenever a change in "ds-rdata:" attribute is required, you should publish a CDS record at the apex (root) of your reverse zone.
 * RIPE NCC regularly scans all DNSSEC-secured reverse domains for CDS records.
-* If a CDS record is found whose contents differ from the current "ds-rdata:" attribute and all safety measures (see below) are filfilled, RIPE NCC will update the **domain** object on your behalf.
+* If a CDS record is found whose contents differ from the current "ds-rdata:" attribute and all safety measures (see below) are fulfilled, RIPE NCC will update the **domain** object on your behalf.
 
-There are some additional requirements mandated by RFC 7344 in order to ensure the process is hardened agains accidents and abuse:
+There are some additional requirements mandated by RFC 7344 in order to ensure the process is hardened against accidents and abuse:
 
 * The CDS record set is properly signed by a key represented in the DS record of the parent zone. This usually means that the CDS record set has to be signed by Key-Signing Key (KSK) instead of Zone-Signing Key (ZSK).
 * Applying the CDS record must not break the DNSSEC delegation. Therefore for each DNSSEC algorithm present in the CDS record set, there has to be at least one matching key in the DSNKEY record set with a proper signature.
 * The inception date of the DNSSEC signature of the CDS record set must not be older than the date stored in the "last- modified:" attribute of the **domain** object.
 
-It is also possible to switch to insecure delegation by publishing a special CDS record containing "0 0 0 00". Olease note that this is a one way process. Once the reverse domain is switched to insecure, you have to add the "ds-rdata:" attribute manually to activate DNSSEC again.
+It is also possible to switch to insecure delegation by publishing a special CDS record containing "0 0 0 00". Please note that this is a one way process. Once the reverse domain is switched to insecure, you have to add the "ds-rdata:" attribute manually to activate DNSSEC again.
 
 
 ## Reverse DNS Troubleshooting
