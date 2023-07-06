@@ -414,7 +414,7 @@ Authorisation for creating **route6** objects is quite complex. There are four s
 
 The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistencies in the RIPE Database.
 
-The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistences in the RIPE Database.
+The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistencies in the RIPE Database.
 
 **Example ROUTE6 object including all optional attributes:**
 

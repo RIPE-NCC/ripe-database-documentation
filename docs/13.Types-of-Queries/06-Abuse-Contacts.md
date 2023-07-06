@@ -10,7 +10,7 @@ To solve this issue, an “abuse-c:" attribute is available in the **organisatio
 
 By default, any query for an Internet resource object will return the related abuse email address. This appears in the query output as a comment line (starting with the % 'characters).
 
-There is also a “-b” query flag to find the “abuse-mailbox:” attributes for any specic range. It returns the resource primary key with any abuse contact email address found. Also the prefix of any corresponding **route** or **route6** objects, followed by the “abuse-mailbox:” attributes.
+There is also a “-b” query flag to find the “abuse-mailbox:” attributes for any specific range. It returns the resource primary key with any abuse contact email address found. Also the prefix of any corresponding **route** or **route6** objects, followed by the “abuse-mailbox:” attributes.
 
 If no abuse contact is found in any encompassing objects then no object summaries will be returned.
 

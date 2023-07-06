@@ -71,7 +71,7 @@ Please also see an announcement recently sent to the [RIPE Database Working Grou
     domain:     64.67.10.in-addr.arpa 
     nserver:    a.ns.64.67.10.in-addr.arpa 10.46.210.1.in-addr.arpa 
     nserver:    ns1.64.67.10.in-addr.arpa 2001:db8::1.ip6.arpa
-* IPv6 glue values are canonicalised.
+* IPv6 glue values are canonical.
 * The glue IP address always represents a single IP address.
 * So no ranges or prefixes are allowed.
 * Any trailing dots are removed from nserver: host names.
@@ -102,7 +102,7 @@ Please also see an announcement recently sent to the [RIPE Database Working Grou
 ## Changes related to KEY-CERT objects
 
 * Expired certificates generate warnings, but are still accepted.
-* Values for "method:", "owner:" and "fingerpr:" are all generated from the key data. Any values supplied by the user are ignored. These attributes can be omitted on create and modify and will be generated. If you include the attributes they cannot be blank. Tthey must contain a syntactically correct value.
+* Values for "method:", "owner:" and "fingerpr:" are all generated from the key data. Any values supplied by the user are ignored. These attributes can be omitted on create and modify and will be generated. If you include the attributes they cannot be blank. They must contain a syntactically correct value.
 * Sub keys are allowed in a key. So the key data can contain a master key and multiple sub keys.
 * The primary key value for a PGP KEY-CERT object (the "key-cert:" attribute value) does NOT have to be the key id matching the key data. It must match the syntax rules, PGPKEY-&lt;number&gt;, where number is any 8 digit hex value. This allows you to change the key data so the same object can represent a different public key without having to create a new object and change all the references.
 * We preserved the 2 spaces in the middle of the "fingerpr:" value, even though it seems to be an oddity of GPG.

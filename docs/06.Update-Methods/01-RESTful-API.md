@@ -403,7 +403,7 @@ HTTPS is mandatory.
 
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model) containing the object to be created.
 
-The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
+The client should specify the desired response format using the `Accept:` header in the HTTP request. If unspecified, the response defaults to XML.
 
 The HTTP request must include a `Content-Type:` header for POST, PUT and DELETE. The HTTP response will include a `Content-Type:` header, and the response body will be encoded in the requested format.
 
@@ -422,20 +422,20 @@ A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-dat
 #### HTTP Status Codes
 Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
 
-Possible reasons for varios HTTP status codes are as follows:
+Possible reasons for various HTTP status codes are as follows:
 
-|code|description|
-|----|-----------|
-|OK (200)|Successful update|
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
-|Authentication failure (401)| Incorrect password|
-|Forbidden (403)| Query limit exceeded.|
-|Too Many Request (429)| Query limit exceeded.|
-|Not Found (404)|No results were found (on a search request), or object specified in URI does not exist.|
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.|
-|Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
-|Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
-|Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
+|code| description                                                                                         |
+|----|-----------------------------------------------------------------------------------------------------|
+|OK (200)| Successful update                                                                                   |
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
+|Authentication failure (401)| Incorrect password                                                                                  |
+|Forbidden (403)| Query limit exceeded.                                                                               |
+|Too Many Request (429)| Query limit exceeded.                                                                               |
+|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
+|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
+|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 
 
@@ -491,7 +491,7 @@ HTTPS is mandatory.
 #### HTTP Request Body
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-data-model) containing the new version of the specified objects.
 
-The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
+The client should specify the desired response format using the `Accept:` header in the HTTP request. If unspecified, the response defaults to XML.
 
 The HTTP request must include a `Content-Type:` header for POST, PUT and DELETE. The HTTP response will include a `Content-Type:` header, and the response body will be encoded in the requested format.
 
@@ -509,20 +509,20 @@ A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-dat
 #### HTTP Status Codes
 Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
 
-Possible reasons for varios HTTP status codes are as follows:
+Possible reasons for various HTTP status codes are as follows:
 
-|code|description|
-|----|-----------|
-|OK (200)|Successful update|
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
-|Authentication failure (401)| Incorrect password|
-|Forbidden (403)| Query limit exceeded.|
-|Too Many Request (429)| Query limit exceeded.|
-|Not Found (404)|No results were found (on a search request), or object specified in URI does not exist.|
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.|
-|Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
-|Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
-|Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
+|code| description                                                                                         |
+|----|-----------------------------------------------------------------------------------------------------|
+|OK (200)| Successful update                                                                                   |
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
+|Authentication failure (401)| Incorrect password                                                                                  |
+|Forbidden (403)| Query limit exceeded.                                                                               |
+|Too Many Request (429)| Query limit exceeded.                                                                               |
+|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
+|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
+|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 
 
@@ -598,7 +598,7 @@ HTTPS is mandatory.
 
 #### HTTP Request Body
 
-The client should specify the desired reponse format using the `Accept:` header in the HTTP request. If unspecified, the reponse defaults to XML.
+The client should specify the desired response format using the `Accept:` header in the HTTP request. If unspecified, the response defaults to XML.
 
 The HTTP request must include a `Content-Type:` header for POST, PUT and DELETE. The HTTP response will include a `Content-Type:` header, and the response body will be encoded in the requested format.
 
@@ -616,20 +616,20 @@ A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model.md#rest-api-dat
 #### HTTP Status Codes
 Client applications should use the HTTP status code to detect the result of an operation. Any error messages will be included in the response body (see below).
 
-Possible reasons for varios HTTP status codes are as follows:
+Possible reasons for various HTTP status codes are as follows:
 
-|code|description|
-|----|-----------|
-|OK (200)|Successful update|
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request.|
-|Authentication failure (401)| Incorrect password|
-|Forbidden (403)| Query limit exceeded.|
-|Too Many Request (429)| Query limit exceeded.|
-|Not Found (404)|No results were found (on a search request), or object specified in URI does not exist.|
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.|
-|Conflict (409)|Integrity constraint was violated (e.g. when creating, object already exists).|
-|Unsupported Media Type (415)|Unsupported/missing value for Accept/Content-Type header.|
-|Internal Server Error (500)|The server encountered an unexpected condition which precented it from fulfilling the request.|
+|code| description                                                                                         |
+|----|-----------------------------------------------------------------------------------------------------|
+|OK (200)| Successful update                                                                                   |
+|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
+|Authentication failure (401)| Incorrect password                                                                                  |
+|Forbidden (403)| Query limit exceeded.                                                                               |
+|Too Many Request (429)| Query limit exceeded.                                                                               |
+|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
+|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
+|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
+|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 
 ### Examples

@@ -15,14 +15,14 @@ Near Real Time Mirroring (NRTM) is a mechanism that allows any client to receive
 
 The NRTM database made available by the RIPE NCC does not include any custom software or proprietary database engine with which to utilise the data.
 
-NOTE that it is not possible for users to mirror any of the RIPE NCC mirrored databases (for instance, other RIR databases). If you need a NRTM data stream from any other source you must contact that souce directly.
+NOTE that it is not possible for users to mirror any of the RIPE NCC mirrored databases (for instance, other RIR databases). If you need a NRTM data stream from any other source you must contact that source directly.
 
 
 ## NRTM Protocols
 
 Currently there are two versions of the NRTM protocols available, Version 2 and Version 3. There is backwards compatibility between the two versions.
 
-The RIPE Database server generates a serial number every time it processes an update in the database. When generating these serial numbers, the server describes all mofifications to the database in terms of two atomic operations: deletion and addition.
+The RIPE Database server generates a serial number every time it processes an update in the database. When generating these serial numbers, the server describes all modifications to the database in terms of two atomic operations: deletion and addition.
 
 Version 2 sends some data from every serial in the data stream. Where the real data is excluded, dummy data must be sent to maintain the sequence of serials.
 
@@ -62,9 +62,9 @@ All the data from the "optional" attributes has been removed from the files for 
 
 The single file is a merged data set of all the individual data files in a single text file. It contains the excluded **organisation** and **mntner** objects as dummy objects and a single **person** and **role** dummy object. This can be accessed here: ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
 
-All of these files are produced on a daily basis. Only the most recent file is available from the dtp site. Each database update has a serial number and these serials define the data pulled from an NRTM data strem. The latest update serial included in the data files is held in a separate text file on the FTP site: ftp://ftp.ripe.net/ripe/dbase/RIPE.CURRENTSERIAL
+All of these files are produced on a daily basis. Only the most recent file is available from the dtp site. Each database update has a serial number and these serials define the data pulled from an NRTM data stream. The latest update serial included in the data files is held in a separate text file on the FTP site: ftp://ftp.ripe.net/ripe/dbase/RIPE.CURRENTSERIAL
 
-You will need this serial number to know which serial to start pulling from the NRTM data strem. Note that only update serials from the previous 14 days can be pulled from the RIPE NRTM Database server. If you have not pulled any data from the NRTM stream for more than 14 days, you will need to download the above text files again, reinitialise your database and start from the new serial number. You may want to keep track of the serials that you pull from the NRTM data strem. If you have any gaps that are older than 14 days, then you will need to download all the text files again.
+You will need this serial number to know which serial to start pulling from the NRTM data stream. Note that only update serials from the previous 14 days can be pulled from the RIPE NRTM Database server. If you have not pulled any data from the NRTM stream for more than 14 days, you will need to download the above text files again, reinitialise your database and start from the new serial number. You may want to keep track of the serials that you pull from the NRTM data stream. If you have any gaps that are older than 14 days, then you will need to download all the text files again.
 
 
 ## Accessing the Data Stream

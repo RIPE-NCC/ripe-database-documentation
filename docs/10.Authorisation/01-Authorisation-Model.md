@@ -43,8 +43,4 @@ Depending on your use case, it is important to carefully consider which authenti
 
 For cases 1 and 2, you need to ask the administrative or technical contact of the maintainer to give you the appropriate access. For case 2, you can use another update method that does support your authentication, such as email.
 
-<<<<<<< HEAD
 Lastly, in case your maintainer is protected with a MD5 password that you forgot, you can [reset it here](../How-to-Recover-Access-to-a-Maintainer-Object/#how-to-recover-access-to-a-maintainer-mntner-object).
-=======
-Lastly, in case your maintainer is protected with a MD5 password that you forgot, you can [reset it here](../How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object).
->>>>>>> cf8ecc0 (Add permalinks)
