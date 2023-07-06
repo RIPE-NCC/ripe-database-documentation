@@ -41,15 +41,15 @@ There are two ways to set up a mirror of the RIPE database.
             ...
 
 
-    Start whois, using either the `./whois.init start` command or something like the following command:
+    Start whois, using the next command:
 
 
-        java -Dwhois -Xms1024m -Xmx8g -XX:PermSize=256m -XX:MaxPermSize=256m -XX:+UseG1GC -Dwhois.config=properties -Dlog4j.configuration=file:log4j.xml -jar whois.jar
+        /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
 
 
     - The GRS import will run automatically every midnight. Or, connect to the process using JMX, and start the GRS import.
 
-            $ java -jar jmxterm-<version>-uber.jar
+            $ java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
             > open <pid>
             > bean net.ripe.db.whois:name=GrsImport
             > run grsImport "RIPE-GRS" "test"
@@ -77,8 +77,8 @@ There are two ways to set up a mirror of the RIPE database.
     - Create a LOCAL database, and a WHOIS_MIRROR_RIPE_GRS database, and create tables in both using the whois_schema.sql script.
     - Download a snapshot of the RIPE DB here: ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
     - Save the serial number that corresponds to the above snapshot from here: ftp://ftp.ripe.net/ripe/dbase/RIPE.CURRENTSERIAL
-    -  Both snapshot and RIPE.CURRENTSERIAL are updated every night. 
-    -  If you want to use automatic updates using NRTM, the dump should be at most 2 weeks old.
+    - Both snapshot and RIPE.CURRENTSERIAL are updated every night. 
+    - If you want to use automatic updates using NRTM, the dump should be at most 2 weeks old.
     - Configure the properties file as follows (you will need to customise the example whois.properties):
     
             whois.source=LOCAL
@@ -101,11 +101,13 @@ There are two ways to set up a mirror of the RIPE database.
             whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
             whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
     
-    - Start the whois server using `./whois.init start`
+    - Start the whois server using the following command:
+
+        /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=&gt;Specify the required MB for the dump&lt; -jar whois.jar
+
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
-    - if jmxterm complains about JDK version or similar, check the [Installation-instructions](../Installation-and-Development/Installation-instructions.md#installation-instructions) because it could be a bug in jmxterm.
     
-            ./whois.init jmx
+            java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
             bean net.ripe.db.whois:name=Bootstrap
             run loadDump initialimport <path to ripe.db.gz>
     
@@ -118,7 +120,7 @@ There are two ways to set up a mirror of the RIPE database.
 
     - Now you need to stop the server and copy the LOCAL database to WHOIS_MIRROR_RIPE_GRS. 
     
-            ./whois.init stop
+            kill <PID>
             mysqldump -udbint -p  LOCAL > LOCAL.sql
             mysql -udbint -p WHOIS_MIRROR_RIPE_GRS < LOCAL.sql
     
@@ -134,14 +136,13 @@ There are two ways to set up a mirror of the RIPE database.
 
     - Start the server and check that the mirrored source is working:
 
-    
-            ./whois.init start
+            start whois with the previous command
             <wait>
             telnet localhost 1043
             -s RIPE-GRS 193.0.0.1 - 193.0.7.255
     
 
-    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](Near-Real-Time-Mirroring.md#near-real-time-Mirroring(nrtm)). 
+    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](Near-Real-Time-Mirroring.md#near-real-time-Mirroring). 
 
 
 
