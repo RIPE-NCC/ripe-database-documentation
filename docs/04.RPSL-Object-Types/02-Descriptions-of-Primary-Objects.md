@@ -352,7 +352,7 @@ Authorisation for creating **route** objects is quite complex. There are multipl
 
 Please refer to [RFC 2622](https://tools.ietf.org/html/rfc2622) for more information on the specific routing information attributes in the **route** object. 
 
-The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistences in the RIPE Database.
+The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistencies in the RIPE Database.
 
 **Description of Attributes Specific to the ROUTE Object**
 
@@ -411,7 +411,7 @@ Each interAS route (also known as an interdomain route) originated by an Autonom
 
 Authorisation for creating **route6** objects is quite complex. There are four scenarios depending on who administers the address space and the AS Number. Because the RIPE INR and IRR are part of the same logical database, they can both be used for authorisation if the address space and/or AS Number are RIPE NCC administered resources. Where one or both are not administered by the RIPE NCC authorisation is bypassed but with the illusion of being genuine authorisation. For more details see the section ['Authorisation'](../Authorisation/README.md#authorisation).
 
-The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistences in the RIPE Database.
+The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistencies in the RIPE Database.
 
 **Example ROUTE6 object including all optional attributes:**
 
@@ -459,7 +459,7 @@ The address can only be specified as a prefix. It can be one or more addresses.
 * **“components:”** – This attribute defines the component routes used to form the aggregate.
 * **“mnt-lower:”** - Provides a set of authorisation tokens used for hierarchical object creation. These tokens are used to authorise the creation of the one level more specific (child) objects to the **route6** with the “mnt-lower:” attribute. This is only used if the parent **route6** object does not contain an “mnt-routes:” attribute. If there is no “mnt-routes:” or “mnt-lower:” attribute, the “mnt-by:” authorises the creation of the child objects. For more details see the section ['Authorisation'](../Authorisation/README.md#authorisation).
 * **“mnt-routes:”** - Provides a set of authorisation tokens that may be used for exact match or more specific **route6** object creation. For an exact match **route6** object- if there is no “mnt-routes:” attribute, the “mnt-by:” is used. For a more specific **route6** object- the “mnt-lower may also be used, if present. 
-The "mnt-routes:" attribute can include an optional list of prefix ranges inside curly backets ("{}") or the keyword "ANY". This should follow the reference to the maintainer. The default, when no additional set items are specified, is "ANY" or all more specifics.
+The "mnt-routes:" attribute can include an optional list of prefix ranges inside curly brackets ("{}") or the keyword "ANY". This should follow the reference to the maintainer. The default, when no additional set items are specified, is "ANY" or all more specifics.
 
 
 

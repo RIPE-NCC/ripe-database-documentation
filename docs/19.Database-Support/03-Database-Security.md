@@ -51,7 +51,7 @@ Given this flexibility, you must ensure you make the right choices when setting 
 
 ### The Default Maintainer
 
-If you are an LIR and you have received Internet Number Resources, several objects are created by the RIPE NCC in the RIPE Database to reflect this. These objects are managed by the RIPE NCC, but you have control over some of the attributes, such as setting the administrative and technical contact person. In order to allow you to make these changes, an additional maintainer will be present on the object, the so called "default" maintainer. You have to select this maintainer on the [Account Details](https://my.ripe.net/#/account-details) page and this will be reflected on all existing and new objects that have joint reponsibility: allocations for IP resources and the **organisation** object.
+If you are an LIR and you have received Internet Number Resources, several objects are created by the RIPE NCC in the RIPE Database to reflect this. These objects are managed by the RIPE NCC, but you have control over some of the attributes, such as setting the administrative and technical contact person. In order to allow you to make these changes, an additional maintainer will be present on the object, the so called "default" maintainer. You have to select this maintainer on the [Account Details](https://my.ripe.net/#/account-details) page and this will be reflected on all existing and new objects that have joint responsibility: allocations for IP resources and the **organisation** object.
 
 After selecting the default maintainer, you can change all of the attributes you could previously modify by using the Object Editors - such as technical, administrative and abuse contact details - Through the RIPE Database itself. You can use any update method you like, e.g. webupdates, syncupdates or email updates.
 
@@ -67,7 +67,7 @@ Keep in mind that sharing a maintainer doesn't mean sharing the credentials as w
 
 ### Delegating Authorisation Using Maintainers
 
-The idea behing delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation](Configuring-Reverse-DNS.md#configuring-reverse-dns) by creating a **domain** object and nothing else.
+The idea behind delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation](Configuring-Reverse-DNS.md#configuring-reverse-dns) by creating a **domain** object and nothing else.
 
 For this purpose, three attributes exist:
 
@@ -75,9 +75,9 @@ For this purpose, three attributes exist:
     * "mnt-routes:", for the creation of **route(6)** objects in the IRR
     * "mnt-domains:", for requesting Reverse Delegation of DNS by creating a **domain** object
 
-The "mnt-lower:" attribute specifies an existing **mntner** object used for hierarchical authorsation. It controls creation of objects one level more specific in the hierarchy of an object type (this only applies to **inetnum**, **inet6num**, **as-block**, **aut-num**, **route**, **route6**, or **domain** objects).
+The "mnt-lower:" attribute specifies an existing **mntner** object used for hierarchical authorisation. It controls creation of objects one level more specific in the hierarchy of an object type (this only applies to **inetnum**, **inet6num**, **as-block**, **aut-num**, **route**, **route6**, or **domain** objects).
 
-The most common ocurrance of the "mnt-lower:" attribute is in the IP address allocation(s) that you have received from the RIPE NCC. For example, if you are an LIR and you have an IPv6 allocation, it is represented in the RIPE Database as an **inet6num** object. Because the allocation is managed by the RIPE NCC, one of the "mnt-by:" attributes is set to RIPE-NCC-HM-MNT and the other is set by you after choosing the [default maintainer](#maintainers). These are some of the attributes you would see:
+The most common occurrence of the "mnt-lower:" attribute is in the IP address allocation(s) that you have received from the RIPE NCC. For example, if you are an LIR and you have an IPv6 allocation, it is represented in the RIPE Database as an **inet6num** object. Because the allocation is managed by the RIPE NCC, one of the "mnt-by:" attributes is set to RIPE-NCC-HM-MNT and the other is set by you after choosing the [default maintainer](#maintainers). These are some of the attributes you would see:
 
     inet6num:   2001:db8::/32
     org:        LIR-ORG-RIPE
@@ -85,7 +85,7 @@ The most common ocurrance of the "mnt-lower:" attribute is in the IP address all
     mnt-by:     RIPE-NCC-HM-MNT
     mnt-by:     LIR-NOC-MNT 
 
-The RIPE-NCC-HM-MNT maintainer prevents you from making changes to some of the attributes that are part of the RIPE NCC's registry management, such as the "netname:". Your LIR's defailt maintainer allows you to make changes to attributes you manage, such as the "admin-c:" and "tech-c:". In addition, it allows you to create assignments, as well as **route(6)** and **domain** objects under this parent block. However, if you wish to delegate the creation of child resource objects to a separate group, you can do so by creating an additional maintainer for them and specify it as "mnt-lower:":
+The RIPE-NCC-HM-MNT maintainer prevents you from making changes to some of the attributes that are part of the RIPE NCC's registry management, such as the "netname:". Your LIR's default maintainer allows you to make changes to attributes you manage, such as the "admin-c:" and "tech-c:". In addition, it allows you to create assignments, as well as **route(6)** and **domain** objects under this parent block. However, if you wish to delegate the creation of child resource objects to a separate group, you can do so by creating an additional maintainer for them and specify it as "mnt-lower:":
 
     inet6num:   2001:db8::/32
     org:        LIR-ORG-RIPE

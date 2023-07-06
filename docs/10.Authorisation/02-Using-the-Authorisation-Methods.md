@@ -42,7 +42,7 @@ For your PGP-signed update to pass authorisation checks, you must have your publ
 
 PGP authentication can be activated by setting the value of an "auth:" attribute to PGPKEY-&lt;id&gt; where &lt;id&gt; is the PGP key ID to be used for authentication. This string is the same one which is used in the corresponding **key-cert** object's "key-cert:" attribute.
 
-Remember that if you have multiple "auth:" attributes in a **maintainer** or if you have multiple "mnt-by:" attributes in an object, all possible authentication methods are combined by a logical OR which means that any single one of the specified authentication methods can be used. There is not security advantage in using PGP authentication with an object which can also be updated with a crypted password authentication.
+Remember that if you have multiple "auth:" attributes in a **maintainer** or if you have multiple "mnt-by:" attributes in an object, all possible authentication methods are combined by a logical OR which means that any single one of the specified authentication methods can be used. There is not security advantage in using PGP authentication with an object which can also be updated with password authentication.
 
 There are currently no referential integrity checks carried out on the "auth:" attribute values. If you change your "auth:" to refer to a non existent **key-cert** object, or someone else's **key-cert** object you have locked your **mntner**. You will then have to [contact us](../How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object) for assistance to un-lock it. Also, if you delete your **key-cert** object you will again lock your **mntner** until you re-create the **key-cert** object.
 

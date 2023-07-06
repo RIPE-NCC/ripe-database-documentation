@@ -37,7 +37,7 @@ permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring
         UPDATE serials SET serial_id = RIPE.CURRENTSERIAL WHERE serial_id = max_serial_id;
         ALTER TABLE serials AUTO_INCREMENT = RIPE.CURRENTSERIAL;
 
-* Start whois using `./whois.init start` and check the ouput (var/console.log) for updates. 
+* Start whois using `./whois.init start` and check the output (var/console.log) for updates. 
 
 you should see a log line like this:
 
@@ -96,9 +96,9 @@ Transferring and/or making available of the NRTM Service and/or the data downloa
 * The user obtains prior written permission from the RIPE NCC
 * The user ensures that third party accepts the [RIPE Database Terms and Conditions](../Legal-Information.md#) for this purpose.
 * The user identifies the RIPE NCC as the source of the data and will explicitly state that this data is near-real time and may not reflect the latest data contained in the RIPE Database.
-* The user maintains the overall integrity of the data (e.g. will not misrepresent, falsify or exlude any data).
+* The user maintains the overall integrity of the data (e.g. will not misrepresent, falsify or exclude any data).
 
-The RIPE NCC reserves the right to revoke this permission at any time if the user fails to meet any of these consitions.
+The RIPE NCC reserves the right to revoke this permission at any time if the user fails to meet any of these conditions.
 
 
 ## Contact
