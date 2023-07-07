@@ -142,7 +142,7 @@ There are two ways to set up a mirror of the RIPE database.
                 % -s RIPE-GRS 193.0.0.1 - 193.0.7.255
     
 
-    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](Near-Real-Time-Mirroring.md#near-real-time-Mirroring). 
+    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](Near-Real-Time-Mirroring/#near-real-time-mirroring). 
 
 
 
