@@ -10,7 +10,7 @@ There are two ways to set up a mirror of the RIPE database.
 
     The GRS Import method is updated once per day.
 
-    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions.md#installation-instructions), to have a working whois installation. 
+    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions), to have a working whois installation. 
 
     - Create a LOCAL database, and a WHOIS_MIRROR_RIPE_GRS database, and create tables in both using the whois_schema.sql script.
 
@@ -73,7 +73,7 @@ There are two ways to set up a mirror of the RIPE database.
 
     This page describes the process of loading the empty mirror database with a nightly export of the RIPE database.
 
-    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions.md#installation-instructions) here, to have a working whois installation. 
+    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) here, to have a working whois installation. 
     - Create a LOCAL database, and a WHOIS_MIRROR_RIPE_GRS database, and create tables in both using the whois_schema.sql script.
     - Download a snapshot of the RIPE DB here: ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
     - Save the serial number that corresponds to the above snapshot from here: ftp://ftp.ripe.net/ripe/dbase/RIPE.CURRENTSERIAL
@@ -106,6 +106,10 @@ There are two ways to set up a mirror of the RIPE database.
             /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
 
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
+<<<<<<< HEAD
+=======
+    - if jmxterm complains about JDK version or similar, check the [Installation-instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) because it could be a bug in jmxterm.
+>>>>>>> main
     
             % java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
             > bean net.ripe.db.whois:name=Bootstrap
@@ -142,7 +146,7 @@ There are two ways to set up a mirror of the RIPE database.
             > -s RIPE-GRS 193.0.0.1 - 193.0.7.255
     
 
-    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](Near-Real-Time-Mirroring/#near-real-time-mirroring). 
+    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](../15.RIPE-Database-Mirror/Near-Real-Time-Mirroring/#near-real-time-Mirroring).
 
 
 

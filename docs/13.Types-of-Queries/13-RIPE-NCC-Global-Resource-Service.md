@@ -6,11 +6,11 @@ permalink: /Types-of-Queries/RIPE-NCC-Global-Resource-Service
 
 The RIPE NCC mirrors several other databases, in near real-time, that are considered useful to anyone who queries the RIPE Database. These include the other Regional Internet Registries (RIRs). This allows queries to the RIPE Database to retrieve information from one or more of the mirrored databases. A local copy is maintained of each mirrored database. Daily updates are obtained from the mirrored databases to keep the local copies up-to-date.
 
-The mirrored databases are referenced by the source of the data. A list of currently available sources can be obtained by using [the “-q” query flag](Other-Query-Flags.md#the--q-query-flag).
+The mirrored databases are referenced by the source of the data. A list of currently available sources can be obtained by using [the “-q” query flag](../Types-of-Queries/Other-Query-Flags/#the--q-query-flag).
 
 All mirrored databases are made available by the RIPE NCC in RPSL syntax with the same RPSL extensions as the RIPE Database. If the mirrored data stream has some other syntax, it is converted into RIPE Database syntax before submission to the local database copy. This means that the data returned to a user who queries a RIPE NCC mirror may not be in the same format as data returned by querying the original data source directly.
 
-Users can query the RIPE NCC mirrored databases as if they were querying the RIPE Database by adding the [“-s” query flag](Other-Query-Flags.md#the--s---sources-query-flag) or [“-a” query flag](Other-Query-Flags.md#the--a---all-sources-query-flag). Bulk access to any of the mirrored databases is not possible. The access control mechanism, described in the section on Access to Personal Data, applies to all data returned, regardless of the source.
+Users can query the RIPE NCC mirrored databases as if they were querying the RIPE Database by adding the [“-s” query flag](../Types-of-Queries/Other-Query-Flags/#the--s---sources-query-flag) or [“-a” query flag](../Types-of-Queries/Other-Query-Flags/#the--a---all-sources-query-flag). Bulk access to any of the mirrored databases is not possible. The access control mechanism, described in the section on Access to Personal Data, applies to all data returned, regardless of the source.
 
 The mirrors of the other RIRs' databases only contain the resource information. They do not include all the personal data. To access the personal data users must query the other RIR databases directly.
 

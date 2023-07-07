@@ -46,7 +46,7 @@ Leading zeroes (AS1 - AS065536) are not allowed and will be removed (AS1 - AS655
 
 * **"as-block:"** – the range of AS Numbers covered by this block.
 * **“descr:”** - A short description related to the object.
-* **“mnt-lower:”** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../Authorisation/README.md#authorisation) for more information.
+* **“mnt-lower:”** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../Authorisation/#authorisation) for more information.
 
 
 
@@ -180,7 +180,7 @@ To update an object protected by a **mntner** the authorisation must be passed f
 
 The "mnt-lower:", "mnt-routes:" and "mnt-domains:" attributes all provide for hierarchical authorisation. These also work in a logical 'OR' when multiple values are included in an object. How they are used is described in the object descriptions where these attributes are valid.
 
-For more detailed information about using mntner attributes, see the section [‘Authorisation'](../Authorisation/README.md#authorisation).
+For more detailed information about using mntner attributes, see the section [‘Authorisation'](../Authorisation/#authorisation).
 
 **Description of Attributes Specific to the MNTNER Object**
 

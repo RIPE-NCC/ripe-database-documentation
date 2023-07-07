@@ -915,7 +915,7 @@ A set of available _grs-source_ for the RIPE database
 ***
 
 #### Versions: 
-Enumeration of the changes of a particular object. Will only be in the [versions](../How-to-Query-the-RIPE-Database/RESTful-API-Queries.md#rest-api-versions) response payload. Consists of _type_ (see Type), _key_ (see Primary key) and _version_.
+Enumeration of the changes of a particular object. Will only be in the [versions](../How-to-Query-the-RIPE-Database/RESTful-API-Queries/#rest-api-versions) response payload. Consists of _type_ (see Type), _key_ (see Primary key) and _version_.
 * Version: information about a particular version of the object. It can either be _deleted_, in which case there's only a date, or show information about the revision.
 
 

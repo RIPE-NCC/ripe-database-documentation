@@ -18,7 +18,7 @@ The results are limited to 250 objects. If your query exceeds this, the output i
 
 If you are looking for a specific piece of information and you don't know one of the values required to find what you are looking for, you may consider using the [Full Text Search](https://apps.db.ripe.net/search/full-text.html) instead of doing a standard query. [Full Text Search](https://apps.db.ripe.net/search/full-text.html) treats the entire database as a flat text file and allows you to search for anything. The search is done on object text without regard for any relationships. As such, results may be very unstructured, but it can provide a good starting point for more specific standard queries later on. Keep in mind that [Full Text Search](https://apps.db.ripe.net/search/full-text.html) is only available on the RIPE NCC website and not in other methods to query the RIPE Database.
 
-Personal data may be returned by the Full Text search API. You may be blocked if excessive amounts of personal data is returned. For more information refer to [blocking access section](../Access-to-Personal-Data/README.md#blocking-access-to-the-ripe-database)
+Personal data may be returned by the Full Text search API. You may be blocked if excessive amounts of personal data is returned. For more information refer to [blocking access section](../Access-to-Personal-Data/#blocking-access-to-the-ripe-database)
 
 ### URI Format: /fulltextsearch/select?...
 

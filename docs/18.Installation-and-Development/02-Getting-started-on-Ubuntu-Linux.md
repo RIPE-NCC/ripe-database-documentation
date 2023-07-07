@@ -12,7 +12,7 @@ As root, install a set of packages already available in the Ubuntu Linux reposit
 
 ## Configure MariaDB
 
-[Configure MariaDB](Configure-MariaDB.md#configure-mariadb)
+[Configure MariaDB](../Installation-and-Development/Configure-MariaDB/#configure-mariadb)
 
 ## System
 
