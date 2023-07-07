@@ -109,7 +109,7 @@ This can be run in the same ways as the REST API Lookup. This search provides th
 
 Offers the well-known whois search via a rest-like interface.
 
-[Documentation on the standard RIPE Database query flags](../Types-of-Queries/README/#types-of-queries).
+[Documentation on the standard RIPE Database query flags](../Types-of-Queries/#types-of-queries).
 
 As with the lookup, any spaces in the command must be encoded. The response will be returned in XML format by default. Alternatively, JSON or text/plain can be returned.
 

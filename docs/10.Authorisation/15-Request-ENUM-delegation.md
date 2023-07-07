@@ -56,11 +56,11 @@ The RIPE NCC provides DNS operations for [e164.arpa](https://www.rfc-editor.org/
 
         Please [contact us](https://www.ripe.net/contact-form?topic=ripe_dbm) if, six hours after the appearance of your **domain** object in the database, your delegation does not appear. Include the details such as name server addresses and the **domain** object in your request. Also include the full response, including headers, as received from the database.
 
-        Any resolver which has the [DNSSEC](Request-DNSSEC-delegation/#dnssec-delegations) public key for e164.arpa configured should now return DNS answers which have the authenticated data bit set.
+        Any resolver which has the [DNSSEC](../Authorisation/Request-DNSSEC-delegation/#dnssec-delegations) public key for e164.arpa configured should now return DNS answers which have the authenticated data bit set.
 
 ### Additional Notes
 
 From time to time, you may have to roll the keys in your zone. When you do this, make sure that you also update the ds-rdata information. This places a new DS record in the parent zone.
 
-For further details on rolling keys and other important information on [DNSSEC](Request-DNSSEC-delegation/#dnssec-delegations) operational practices we recommend reading [RFC 4641](https://www.ietf.org/rfc/rfc4641.txt).
+For further details on rolling keys and other important information on [DNSSEC](../Authorisation/Request-DNSSEC-delegation/#dnssec-delegations) operational practices we recommend reading [RFC 4641](https://www.ietf.org/rfc/rfc4641.txt).
 

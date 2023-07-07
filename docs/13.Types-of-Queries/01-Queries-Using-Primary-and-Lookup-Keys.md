@@ -14,7 +14,7 @@ The terminology is a bit confusing. A query using a primary key is really a ‘l
 
 There are several query flags that can filter or limit the objects contained in the response.
 
-Examples of all queries using primary and lookup keys are shown in the next table. See [Table 1: Queries Using Primary and Lookup Keys](../Tables-of-Query-Types-Supported-by-the-RIPE-Database/README/#table-1-queries-using-primary-and-lookup-keys)
+Examples of all queries using primary and lookup keys are shown in the next table. See [Table 1: Queries Using Primary and Lookup Keys](../Tables-of-Query-Types-Supported-by-the-RIPE-Database/#table-1-queries-using-primary-and-lookup-keys)
 
 
 

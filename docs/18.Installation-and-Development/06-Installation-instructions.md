@@ -12,8 +12,8 @@ Ensure `/export` directory has been created.
   - Note on MacOS, Catalina introduced read-only root. Hence creating `export` is not straightforward. See this [post](https://derflounder.wordpress.com/2020/01/18/creating-root-level-directories-and-symbolic-links-on-macos-catalina/), on how to go about doing this. 
 
 Ensure MariaDB and the needed databases are created and populated
-  - See [Getting Started on OSX](Getting-started-on-OSX/#getting-started-on-osx) for installation information.
-  - See [Configure MariaDB](Configure-MariaDB/#configure-mariadb) for instructions how to create and grant user permission.
+  - See [Getting Started on OSX](../Installation-and-Development/Getting-started-on-OSX/#getting-started-on-osx) for installation information.
+  - See [Configure MariaDB](../Installation-and-Development/Configure-MariaDB/#configure-mariadb) for instructions how to create and grant user permission.
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Ensure MariaDB and the needed databases are created and populated
 * the shaded jar produced by release build, located at `whois-db/target/`
 * create a role user to run whois server (by default, `dbase`)
 * whois root directory, owned by role user
-* MariaDB set up (for more instructions, see [Getting Started with development manuals](Getting-started-on-OSX/##getting-started-on-osx))
+* MariaDB set up (for more instructions, see [Getting Started with development manuals](../Installation-and-Development/Getting-started-on-OSX/##getting-started-on-osx))
 * `jmxterm-1.0-alpha-4-uber.jar`, downloadable from http://wiki.cyclopsgroup.org/jmxterm.
    * For MAC OSX the 1.0-alpha-4 version of jmxterm has a problem but there is a fix here: https://github.com/jiaqi/jmxterm. You can checkout the latest version and build the jar using mvn clean package.
    * For SDK 17 the 1.0-alpha-4 version of jmxterm has a problem. As a workaround you can add `--add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED` to Java for jmxterm to make use of the jconsole module.
