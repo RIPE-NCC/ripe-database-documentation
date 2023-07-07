@@ -166,7 +166,8 @@ module.exports = {
             const pageBreak = '<hr class="page-break" />\n\n'
             return pages
               .reduce((acc, current) => {
-                const contentWithoutFrontmatter = current.replace(frontmatterRegex, '')
+                const contentWithCorrectLinks = module.exports.referencesOtherPageFormatter(current)
+                const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
                 return `${acc}${module.exports.referencesOtherPageFormatter(contentWithoutFrontmatter)}\n\n${pageBreak}`
               }, disableSideNavBar)
           }
