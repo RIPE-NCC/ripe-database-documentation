@@ -209,7 +209,7 @@ module.exports = {
 	],
   markdown: {
     toc: {
-      includeLevel: [1,2],
+      includeLevel: [1,2,3],
     },
     extendMarkdown: md => {
       md.use(require('markdown-it-html5-embed'), {
