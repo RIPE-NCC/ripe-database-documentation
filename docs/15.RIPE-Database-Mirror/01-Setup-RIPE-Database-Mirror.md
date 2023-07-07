@@ -103,18 +103,18 @@ There are two ways to set up a mirror of the RIPE database.
     
     - Start the whois server using the following command:
 
-                /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
+            /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
 
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
     
-            java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
-            bean net.ripe.db.whois:name=Bootstrap
-            run loadDump initialimport <path to ripe.db.gz>
+            % java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
+            > bean net.ripe.db.whois:name=Bootstrap
+            > run loadDump initialimport <path to ripe.db.gz>
     
     - When the import is finished exit the jmx console, and test that it worked by executing a query using telnet:
     
-            telnet localhost 1043
-            193.0.0.1 - 193.0.7.255
+            % telnet localhost 1043
+            > 193.0.0.1 - 193.0.7.255
     
     The above jmx call will load the LOCAL database with the snapshot of the objects from the FTP dump.
 
@@ -136,10 +136,10 @@ There are two ways to set up a mirror of the RIPE database.
 
     - Start the server and check that the mirrored source is working:
 
-                % /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
-                <wait>
-                % telnet localhost 1043
-                % -s RIPE-GRS 193.0.0.1 - 193.0.7.255
+            % /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
+            <wait>
+            % telnet localhost 1043
+            > -s RIPE-GRS 193.0.0.1 - 193.0.7.255
     
 
     - If the query is successful, we can proceed with [Setup automatic updating with NRTM](Near-Real-Time-Mirroring/#near-real-time-mirroring). 

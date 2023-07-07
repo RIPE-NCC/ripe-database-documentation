@@ -14,7 +14,7 @@ permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring
 
 ## Steps
 
-* Stop whois using kill &gt;PID&lt;
+* Stop whois using kill &lt;PID&gt;
 
         # NRTM server
         nrtm.enabled=false
