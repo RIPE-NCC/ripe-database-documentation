@@ -36,4 +36,4 @@ This command is going to launch a local server in http://localhost:8080/docs/
 
 # Legal
 
-**IMPORTANT!** Any change done to [legal](./docs/Legal-Information.md), [T&C](./docs/25.HTML-Terms-And-Conditions.md) or [AUP](./docs/RIPE-Database-Acceptable-Use-Policy.md) require approval from Legal. So please don't edit those files unless you have the permission from Legal.
+**IMPORTANT!** Any change done to [legal](./docs/25.Legal-Information.md), [T&C](./docs/25.HTML-Terms-And-Conditions.md) or [AUP](./docs/24.RIPE-Database-Acceptable-Use-Policy.md) require approval from Legal. So please don't edit those files unless you have the permission from Legal.

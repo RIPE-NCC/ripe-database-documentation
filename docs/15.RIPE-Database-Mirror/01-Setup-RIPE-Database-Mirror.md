@@ -10,7 +10,7 @@ There are two ways to set up a mirror of the RIPE database.
 
     The GRS Import method is updated once per day.
 
-    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions.md#installation-instructions), to have a working whois installation. 
+    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions), to have a working whois installation. 
 
     - Create a LOCAL database, and a WHOIS_MIRROR_RIPE_GRS database, and create tables in both using the whois_schema.sql script.
 
@@ -73,7 +73,7 @@ There are two ways to set up a mirror of the RIPE database.
 
     This page describes the process of loading the empty mirror database with a nightly export of the RIPE database.
 
-    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions.md#installation-instructions) here, to have a working whois installation. 
+    - First follow the whois [installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) here, to have a working whois installation. 
     - Create a LOCAL database, and a WHOIS_MIRROR_RIPE_GRS database, and create tables in both using the whois_schema.sql script.
     - Download a snapshot of the RIPE DB here: ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
     - Save the serial number that corresponds to the above snapshot from here: ftp://ftp.ripe.net/ripe/dbase/RIPE.CURRENTSERIAL
@@ -103,7 +103,7 @@ There are two ways to set up a mirror of the RIPE database.
     
     - Start the whois server using `./whois.init start`
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
-    - if jmxterm complains about JDK version or similar, check the [Installation-instructions](../Installation-and-Development/Installation-instructions.md#installation-instructions) because it could be a bug in jmxterm.
+    - if jmxterm complains about JDK version or similar, check the [Installation-instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) because it could be a bug in jmxterm.
     
             ./whois.init jmx
             bean net.ripe.db.whois:name=Bootstrap
@@ -141,7 +141,7 @@ There are two ways to set up a mirror of the RIPE database.
             -s RIPE-GRS 193.0.0.1 - 193.0.7.255
     
 
-    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](Near-Real-Time-Mirroring.md#near-real-time-Mirroring(nrtm)). 
+    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](../15.RIPE-Database-Mirror/Near-Real-Time-Mirroring/#near-real-time-Mirroring). 
 
 
 

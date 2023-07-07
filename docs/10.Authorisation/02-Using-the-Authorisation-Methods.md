@@ -22,12 +22,12 @@ In the single text area form of Webupdates, the “password:” pseudo-attribute
 
 Using the Syncupdates web form there is no ‘Session Passwords' field but again the “password:” pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the “password:” pseudo-attribute must be supplied as part of the message body.
 
-With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../Update-Methods/RESTful-API.md#ripe-database-restful-api).
+With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../Update-Methods/RESTful-API/#ripe-database-restful-api).
 
 
 ## PGP Key
 
-To use PGP authorisation you must first create a private/public key pair. There are many third-party applications that will allow you to do this. You must keep the private key secure. The public key is entered into the RIPE Database in a **key-cert** object. (See ['Description of the key-cert Object'](../RPSL-Object-Types/Descriptions-of-Secondary-Objects.md#description-of-the-key-cert-object) for details.)
+To use PGP authorisation you must first create a private/public key pair. There are many third-party applications that will allow you to do this. You must keep the private key secure. The public key is entered into the RIPE Database in a **key-cert** object. (See ['Description of the key-cert Object'](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) for details.)
 
 Some email clients allow you to import your private key into the client. This can then be used to sign any email update you submit. Alternatively, you can use third-party software to sign an update with your private key and paste the signed update into the body of an email.
 
@@ -44,7 +44,7 @@ PGP authentication can be activated by setting the value of an "auth:" attribute
 
 Remember that if you have multiple "auth:" attributes in a **maintainer** or if you have multiple "mnt-by:" attributes in an object, all possible authentication methods are combined by a logical OR which means that any single one of the specified authentication methods can be used. There is not security advantage in using PGP authentication with an object which can also be updated with password authentication.
 
-There are currently no referential integrity checks carried out on the "auth:" attribute values. If you change your "auth:" to refer to a non existent **key-cert** object, or someone else's **key-cert** object you have locked your **mntner**. You will then have to [contact us](../How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object) for assistance to un-lock it. Also, if you delete your **key-cert** object you will again lock your **mntner** until you re-create the **key-cert** object.
+There are currently no referential integrity checks carried out on the "auth:" attribute values. If you change your "auth:" to refer to a non existent **key-cert** object, or someone else's **key-cert** object you have locked your **mntner**. You will then have to [contact us](../How-to-Recover-Access-to-a-Maintainer-Object/#how-to-recover-access-to-a-maintainer-mntner-object) for assistance to un-lock it. Also, if you delete your **key-cert** object you will again lock your **mntner** until you re-create the **key-cert** object.
 
 This is an example of a valid **mntner** object which uses PGP authentication:
 

@@ -44,9 +44,9 @@ If there are compilation errors, make sure to perform a maven build first, since
 ### Running whois from within Intellij
 
 - Ensure MariaDB and the needed databases are created and populated
-  - See [Getting Started on OSX](Getting-started-on-OSX.md#getting-started-on-osx) for installation information.
-  - See [Configure MariaDB](Configure-MariaDB.md#configure-mariadb) for instructions how to create and grant user permission.
-  - See [Installation instructions](Installation-instructions.md#installation-instructions) for instructions on how to create and populate needed databases.
+  - See [Getting Started on OSX](../Installation-and-Development/Getting-started-on-OSX/#getting-started-on-osx) for installation information.
+  - See [Configure MariaDB](../Installation-and-Development/Configure-MariaDB/#configure-mariadb) for instructions how to create and grant user permission.
+  - See [Installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) for instructions on how to create and populate needed databases.
 - Ensure `whois/tools` directory is populated with the following files.
   - hazelcast.xml
   - log4j2.xml
