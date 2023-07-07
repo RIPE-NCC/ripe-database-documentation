@@ -9,7 +9,7 @@ This procedure is in addition to the normal procedure for requesting reverse del
 ## The DOMAIN Object
 You can request reverse delegation by submitting **domain** objects. DNSSEC will not mean any change the existing authorisation mechanisms. The [delegation checker](http://dnscheck.ripe.net/) will only carry out DNSSEC specific tests if DNSSEC related information is being exchanged.
 
-To allow for the exchange of DNSSEC related information, the **domain** object now includes a ["ds-rdata:" attribute](../RPSL-Object-Types/Descriptions-of-Primary-Objects.md#description-of-the-domain-object). 
+To allow for the exchange of DNSSEC related information, the **domain** object now includes a ["ds-rdata:" attribute](../RPSL-Object-Types/Descriptions-of-Primary-Objects/#description-of-the-domain-object). 
 
 
 ## Delegation Checks
