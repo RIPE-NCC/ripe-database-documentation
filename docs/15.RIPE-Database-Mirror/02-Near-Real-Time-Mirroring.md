@@ -8,8 +8,8 @@ permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring
 
 ## Pre-conditions:
 
-* You have a working installation of whois. Check the [installation instructions](../Installation-and-Development/Installation-instructions.md#installation-instructions).
-* You have already imported an export from the RIPE Database using Setup a [RIPE GRS mirror using Bootstrap and NRTM](Setup-RIPE-Database-Mirror.md#setup-ripe-database-mirror).
+* You have a working installation of whois. Check the [installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions).
+* You have already imported an export from the RIPE Database using Setup a [RIPE GRS mirror using Bootstrap and NRTM](../RIPE-Database-Mirror/Setup-RIPE-Database-Mirror/#setup-ripe-database-mirror).
 * You have kept the RIPE.CURRENTSERIAL that corresponds to the snapshot you downloaded.
 
 ## Steps
@@ -84,17 +84,17 @@ There is no support in the NRTM protocol for polling, so a client or server may 
 
 ## How to access the NRTM stream
 
-You will find all technical requirements to access the stream and more information about NRTM [in this document](Access-to-NRTM.md#access-to-nrtm).
+You will find all technical requirements to access the stream and more information about NRTM [in this document](../RIPE-Database-Mirror/Access-to-NRTM/#access-to-nrtm).
 
 
 ## Legal Framework
 
-The RIPE NCC NRTM Service and its use is regulated bu the [RIPE Database Terms and Conditions](../Legal-Information.md#) and [RIPE Database Acceptable Use Policy](../RIPE-Database-Acceptable-Use-Policy.md#ripe-database-acceptable-use-policy).
+The RIPE NCC NRTM Service and its use is regulated by the [RIPE Database Terms and Conditions](../Legal-Information/#) and [RIPE Database Acceptable Use Policy](../RIPE-Database-Acceptable-Use-Policy/#ripe-database-acceptable-use-policy).
 
 Transferring and/or making available of the NRTM Service and/or the data downloaded therefrom to a third party is only allowed, provided the following conditions are met:
 
 * The user obtains prior written permission from the RIPE NCC
-* The user ensures that third party accepts the [RIPE Database Terms and Conditions](../Legal-Information.md#) for this purpose.
+* The user ensures that third party accepts the [RIPE Database Terms and Conditions](../Legal-Information/#) for this purpose.
 * The user identifies the RIPE NCC as the source of the data and will explicitly state that this data is near-real time and may not reflect the latest data contained in the RIPE Database.
 * The user maintains the overall integrity of the data (e.g. will not misrepresent, falsify or exclude any data).
 
