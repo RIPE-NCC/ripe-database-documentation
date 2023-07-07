@@ -1,6 +1,5 @@
 ---
 permalink: /introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview
-mergeSort: 1
 ---
 
 # RIPE Database Documentation Overview

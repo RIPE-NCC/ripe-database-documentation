@@ -168,7 +168,7 @@ module.exports = {
               .reduce((acc, current) => {
                 const contentWithCorrectLinks = module.exports.referencesOtherPageFormatter(current)
                 const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
-                return `${acc}${module.exports.referencesOtherPageFormatter(contentWithoutFrontmatter)}\n\n${pageBreak}`
+                return `${acc}${contentWithoutFrontmatter}\n\n${pageBreak}`
               }, disableSideNavBar)
           }
         }
