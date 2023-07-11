@@ -61,9 +61,9 @@ Ensure MariaDB and the needed databases are created and populated
       use INTERNALS_LOCAL;
       source ./whois-commons/src/main/resources/internals_data.sql
 
-* Start whois by executing the following command:
+* Start whois by executing the following command. Use -Ddump.total.size.limit to specify the dump size:
 
-      /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
+      /usr/bin/java -Dwhois -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -jar whois.jar
 
    * If the test query for `193.0.0.1` does not result in an inetnum returned, the init script will return a failure. If your database is empty for example, this is normal. You might want to adjust the test whois query to match your needs.
    * Ignore exceptions in the log starting with [DatabaseVersionCheck] Error checking datasource...  

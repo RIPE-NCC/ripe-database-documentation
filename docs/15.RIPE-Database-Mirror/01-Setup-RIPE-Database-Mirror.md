@@ -19,44 +19,44 @@ There are two ways to set up a mirror of the RIPE database.
 
     - Configure the properties file as follows (you will need to customise the example whois.properties):
 
+    ```
+      whois.source=LOCAL
+      ...
+      grs.sources=RIPE-GRS
+      grs.sources.dummify=
+      ...
+      grs.import.sources=RIPE-GRS
+      grs.import.enabled=true
+      ...
+      grs.import.ripe.resourceDataUrl=ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest
+      grs.import.ripe.download=ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
+      grs.import.ripe.source=RIPE-GRS
+      ...
+      whois.db.master.url=jdbc:mariadb://localhost/LOCAL;driver=org.mariadb.jdbc.Driver
+      ...
+      whois.db.slave.url=jdbc:mariadb://localhost/LOCAL
+      ...
+      whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+      whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
+      ...
+   ```
 
-            whois.source=LOCAL
-            ...
-            grs.sources=RIPE-GRS
-            grs.sources.dummify=
-            ...
-            grs.import.sources=RIPE-GRS
-            grs.import.enabled=true
-            ...
-            grs.import.ripe.resourceDataUrl=ftp://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest
-            grs.import.ripe.download=ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
-            grs.import.ripe.source=RIPE-GRS
-            ...
-            whois.db.master.url=jdbc:mariadb://localhost/LOCAL;driver=org.mariadb.jdbc.Driver
-            ...
-            whois.db.slave.url=jdbc:mariadb://localhost/LOCAL
-            ...
-            whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
-            whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
-            ...
+    Start whois, using the next command. Use -Ddump.total.size.limit to specify the dump size:
 
+   ```
+   /usr/bin/java -Dwhois -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -jar whois.jar
+   ```
 
-    Start whois, using the next command:
-
-
-        /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
-
-
-    - The GRS import will run automatically every midnight. Or, connect to the process using JMX, and start the GRS import.
-
-            $ java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
-            > open <pid>
-            > bean net.ripe.db.whois:name=GrsImport
-            > run grsImport "RIPE-GRS" "test"
-            #calling operation grsImport of mbean net.ripe.db.whois:name=GrsImport
-            #operation returns:
-            GRS import started
-
+   - The GRS import will run automatically every midnight. Or, connect to the process using JMX, and start the GRS import.
+   ```
+     $ java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-<version>-uber.jar -v verbose
+     >    open <pid>
+     >    bean net.ripe.db.whois:name=GrsImport
+     >    run grsImport "RIPE-GRS" "test"
+     #calling operation grsImport of mbean net.ripe.db.whois:name=GrsImport
+     #operation returns:
+     GRS import started
+   ```
 
     - Monitor progress by checking the log4j console output, the import will take around 2 hours to complete.
 
@@ -101,13 +101,13 @@ There are two ways to set up a mirror of the RIPE database.
             whois.db.grs.master.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
             whois.db.grs.slave.baseurl=jdbc:mariadb://localhost/WHOIS_MIRROR
     
-    - Start the whois server using the following command:
+    - Start the whois server using the following command. Use -Ddump.total.size.limit to specify the dump size:
 
-            /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
+            /usr/bin/java -Dwhois -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -jar whois.jar
 
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
     
-            % java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
+            % java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-<version>-uber.jar -v verbose
             > bean net.ripe.db.whois:name=Bootstrap
             > run loadDump initialimport <path to ripe.db.gz>
     
@@ -133,14 +133,13 @@ There are two ways to set up a mirror of the RIPE database.
     
     have to be like that, because they are dynamically suffixed by the grs.sources (RIPE-GRS)
 
-
     - Start the server and check that the mirrored source is working:
-
-            % /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
-            <wait>
-            % telnet localhost 1043
-            > -s RIPE-GRS 193.0.0.1 - 193.0.7.255
-    
+   ```
+      % /usr/bin/java -Dwhois -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -jar whois.jar
+      <wait>
+      % telnet localhost 1043
+      > -s RIPE-GRS 193.0.0.1 - 193.0.7.255
+   ``` 
 
     - If the query is successful, we can proceed with [Setup automatic updating with NRTM](../15.RIPE-Database-Mirror/Near-Real-Time-Mirroring/#near-real-time-Mirroring).
 
