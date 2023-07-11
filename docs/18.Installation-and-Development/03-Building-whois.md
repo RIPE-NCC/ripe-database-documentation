@@ -47,10 +47,8 @@ If there are compilation errors, make sure to perform a maven build first, since
   - See [Getting Started on OSX](../Installation-and-Development/Getting-started-on-OSX/#getting-started-on-osx) for installation information.
   - See [Configure MariaDB](../Installation-and-Development/Configure-MariaDB/#configure-mariadb) for instructions how to create and grant user permission.
   - See [Installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) for instructions on how to create and populate needed databases.
-- Ensure `whois/tools` directory is populated with the following files.
-  - hazelcast.xml
-  - log4j2.xml
-- Ensure a local property is available in `tools` directory. Copy `whois/whois-commons/src/main/resources/whois.properties` into `whois/tools` directory and ensure the following properties are updated to allow running locally, for example have the following:
+- Ensure `whois/tools` directory is populated with hazelcast.xml file.
+- Ensure a local property is available in `tools` directory. Copy `whois/whois-commons/src/test/resources/whois.properties` and `whois/whois-commons/src/test/resources/log4j2.xml` into `whois/tools` directory and ensure the following properties are updated to allow running locally, for example have the following:
 
     port.query=1043
     port.api=1080
@@ -64,7 +62,7 @@ Also ensure database username and password matches what you have locally. (Norma
     -Dhazelcast.config=./tools/hazelcast.xml
     -Dlog4j.configurationFile=file:./tools/log4j2.xml
 
-- Run `mvn clean install -Prelease` to ensure property variables set in `version.properties` is available.
+- Run `mvn clean install -Prelease` to ensure property variables set in `whois.version.properties` is available.
 - Start whois by running the Main class `net.ripe.db.whois.db.WhoisServer`
 
 ### Importing multiple maven sub-projects under one project

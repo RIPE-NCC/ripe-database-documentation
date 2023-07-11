@@ -14,7 +14,7 @@ permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring
 
 ## Steps
 
-* Stop whois using `./whois.init stop`
+* Stop whois using kill &lt;PID&gt;
 
         # NRTM server
         nrtm.enabled=false
@@ -37,7 +37,9 @@ permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring
         UPDATE serials SET serial_id = RIPE.CURRENTSERIAL WHERE serial_id = max_serial_id;
         ALTER TABLE serials AUTO_INCREMENT = RIPE.CURRENTSERIAL;
 
-* Start whois using `./whois.init start` and check the output (var/console.log) for updates. 
+* Start whois using using the following command and check the output. Use -Ddump.total.size.limit to specify the dump size:
+
+      /usr/bin/java -Dwhois -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -jar whois.jar
 
 you should see a log line like this:
 
