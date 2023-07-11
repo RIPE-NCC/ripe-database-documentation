@@ -106,10 +106,6 @@ There are two ways to set up a mirror of the RIPE database.
             /usr/bin/java -Dwhois -XX:-HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/tmp -XX:ErrorFile=var/hs_err_pid%p.log -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -Ddump.total.size.limit=<Specify the required MB for the dump> -jar whois.jar
 
     - Initiate the loading of the dump file using the Bootstrap command from JMX. The import could take several hours.
-<<<<<<< HEAD
-=======
-    - if jmxterm complains about JDK version or similar, check the [Installation-instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) because it could be a bug in jmxterm.
->>>>>>> main
     
             % java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
             > bean net.ripe.db.whois:name=Bootstrap
