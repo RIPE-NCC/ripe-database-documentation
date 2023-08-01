@@ -240,7 +240,7 @@ The member **organisation** objects are partly managed by the RIPE NCC and partl
 **Description of Attributes Specific to the ORGANISATION Object**
 
 
-* **"organisation:"** – This attribute specifies the ID of an **organisation** object. When creating an object, you must specify an "AUTO" ID by setting the value of the attribute to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;", so the database will assign the ID automatically. The ID will always start with the string ‘ORG-‘. If deleted, it is not possible to recreate an **organisation** object with the same ID.
+* **"organisation:"** – This attribute specifies the ID of an **organisation** object. When creating an object, you must specify an "AUTO" ID by setting the value of the attribute to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;" ,so the database will assign the ID automatically. The ID will always start with the string ‘ORG-‘ prefix, followed by 2 to 4 letters, digits, a dash and the database source. If deleted, it is not possible to recreate an **organisation** object with the same ID.
 * **“org-name:”** – This attribute specifies the name of the organisation that this **organisation** object represents in the RIPE Database.
 * **“org-type:”** – This attribute specifies the type of the organisation. It takes one of the following fixed values. Uses can only create organisation objects with the type ‘OTHER'. The rest of the values can only be set by the RIPE NCC.
     * 'IANA' – Only used for Internet Assigned Numbers Authority

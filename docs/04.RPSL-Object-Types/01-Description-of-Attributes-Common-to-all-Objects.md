@@ -5,7 +5,7 @@ permalink: /RPSL-Object-Types/Description-of-Attributes-Common-to-all-Objects
 # Description of Attributes Common to all Objects
 
 * **“org:” –** this optional attribute references the primary key, or id, of an **organisation** object that currently exists in the database.
-The referenced object contains details of the organisation that holds Internet resources or secondary objects to help manage resources in the RIPE Database. In some situations, this attribute is required.
+The referenced object contains details of the organisation that holds Internet resources or secondary objects to help manage resources in the RIPE Database or specifies business relations. This attribute is required on the **inet(6)num** objects  with ALLOCATED-BY-RIR, ALLOCATED PA, ALOCATED PI and ALLOCATED UNESPECIFIED values.
 
 * **“admin-c:” –** this attribute is optional in some objects and mandatory in others. It references the primary key, or NIC Handle, of either a **role** or **person** object. It should always reference a **role** object, except in the **role** object where it optionally references nested **role** objects or a **person** object.
 The reference must be the contact details of an on-site administrative contact. This contact may be a single person, or it may be a role within the organisation that more than one person takes on. These people may or may not be listed in the role object.
