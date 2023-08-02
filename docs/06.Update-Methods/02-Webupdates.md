@@ -81,4 +81,4 @@ When you receive this message: "Your object has been successfully created". For 
 You can use the organisation ID in the "org:" field.
 
 Please note that **organisation** objects with IANA, RIR, NIR or LIR can only be created by the RIPE NCC. Any other 
-entity must use OTHER in the **org-type:** when creation **organisation** objects.
+entity must use OTHER in the "org-type:" when creation **organisation** objects.
