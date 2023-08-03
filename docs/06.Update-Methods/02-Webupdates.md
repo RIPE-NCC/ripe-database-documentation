@@ -36,46 +36,46 @@ You need to create a number of objects in the RIPE Database in order to fill in 
 Please follow the steps below in order to create them.
 
 1. RIPE NCC Access Account
-You need to have a RIPE NCC Access account in order to be able to use the web interface of the RIPE Database.
+    You need to have a RIPE NCC Access account in order to be able to use the web interface of the RIPE Database.
 
-You can create your RIPE NCC Access account using https://access.ripe.net/registration
+    You can create your RIPE NCC Access account using https://access.ripe.net/registration
 
 
 1. **Role** Object and **Maintainer** Object
-Each **role** objects describe a business function. Each object has a unique NIC handle as primary key.
+    Each **role** objects describe a business function. Each object has a unique NIC handle as primary key.
 
-**Maintainer** objects protect object in the RIPE Database. They contain the information needed to authorise creation, deletion or modification of the objects they protect.
+    **Maintainer** objects protect object in the RIPE Database. They contain the information needed to authorise creation, deletion or modification of the objects they protect.
 
-You can create your first **role** and **maintainer** objects using the [object creation tool](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/role/self).
+    You can create your first **role** and **maintainer** objects using the [object creation tool](https://apps.db.ripe.net/db-web-ui/webupdates/create/RIPE/role/self).
 
-Choose a name for your **maintainer** object and enter it in the "mntner" field which will be the primary key.
+    Choose a name for your **maintainer** object and enter it in the "mntner" field which will be the primary key.
 
     ![](~@imgs/assignment-size.png)
 
-When you receive the message "Your objects have been successfully created", make a note of your **role** object's primary key and **mntner** object's primary key.
+    When you receive the message "Your objects have been successfully created", make a note of your **role** object's primary key and **mntner** object's primary key.
 
-You can use your **role** object's primary key (NIC handle) in the "admin-c:", "tech-c:" and "zone-c:" fields of the RIPE Database Template.
+    You can use your **role** object's primary key (NIC handle) in the "admin-c:", "tech-c:" and "zone-c:" fields of the RIPE Database Template.
 
-You can use yor **mntner** object's primary key in the "mnt-by:" field of the RIPE Database Template.
+    You can use yor **mntner** object's primary key in the "mnt-by:" field of the RIPE Database Template.
 
-You can create additional **person**, **role** and **mntner** objects and also change the objects you already created using [RIPE Database Webupdates](https://apps.db.ripe.net/webupdates).
+    You can create additional **person**, **role** and **mntner** objects and also change the objects you already created using [RIPE Database Webupdates](https://apps.db.ripe.net/webupdates).
 
 
 1. **Organisation** Object
-**Organisation** objects contain information about organisations. Each object has a unique organisation ID ("organisation").
+    **Organisation** objects contain information about organisations. Each object has a unique organisation ID ("organisation").
 
-You can create **organisation** object using [RIPE Database Webupdates](https://apps.db.ripe.net/webupdates)
+    You can create **organisation** object using [RIPE Database Webupdates](https://apps.db.ripe.net/webupdates)
 
     ![](~@imgs/object_selection.png)
 
     ![](~@imgs/organisation_object.png)
 
-Keep "AUTO-1" in the "organisation" field. The organisation ID will be created automatically.
-Enter the primary key of your **mntner** object in the "mnt-ref" field.
-Use the "bell" icon to fill in the "abuse-c" field.
+    Keep "AUTO-1" in the "organisation" field. The organisation ID will be created automatically.
+    Enter the primary key of your **mntner** object in the "mnt-ref" field.
+    Use the "bell" icon to fill in the "abuse-c" field.
 
     ![](~@imgs/abuse-c.png)
 
-When you receive this message: "Your object has been successfully created". For example, "organisation ORG-XYZ-RIPE", make a note of the new organisation ID (ORG-XYZ-RIPE).
+    When you receive this message: "Your object has been successfully created". For example, "organisation ORG-XYZ-RIPE", make a note of the new organisation ID (ORG-XYZ-RIPE).
 
-You can use the organisation ID in the "org:" field.
+    You can use the organisation ID in the "org:" field.
