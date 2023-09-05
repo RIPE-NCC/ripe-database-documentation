@@ -79,3 +79,6 @@ Please follow the steps below in order to create them.
     When you receive this message: "Your object has been successfully created". For example, "organisation ORG-XYZ-RIPE", make a note of the new organisation ID (ORG-XYZ-RIPE).
 
     You can use the organisation ID in the "org:" field.
+
+    Please note that **organisation** objects with IANA, RIR, NIR or LIR can only be created by the RIPE NCC. Any other 
+    entity must use OTHER in the "org-type:" when creation **organisation** objects.
