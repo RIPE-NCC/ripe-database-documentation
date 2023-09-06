@@ -1,3 +1,7 @@
+---
+permalink: /Updating-Objects-in-the-RIPE-Database/Dry-run
+---
+
 # Dry-run
 
 The TEST Database has always been promoted as the place to "try" an update to see what happens. But the TEST Database has very little data. It is also reset every 24 hours. So if you want to test anything that has dependencies on other data, you have to reproduce it all in the TEST Database to do the test. That in itself can be a major effort. And tomorrow it is all gone.

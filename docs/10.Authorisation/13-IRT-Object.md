@@ -1,3 +1,7 @@
+---
+permalink: /Authorisation/IRT-Object
+---
+
 # IRT Object
 
 **IRT**: **I**ncident **R**esponse **T**eam - handles security incidents and/or cases of abuse of omputer networks or its components.
@@ -76,7 +80,7 @@ You can use the text above as a template.
 
 You start the process of creating an **irt** object by sending a completed template by e-mail to the RIPE NCC. As creation of an **irt** object is a manual process, you should address your email to [ripe-dbm@ripe.net](mailto:ripe-dbm@ripe.net)
 
-In your mail, you need to explain why you want to create a new **irt** object. To prevent misuse of the object, the RIPE NCC will need to check your request, so include a full explanation. A good idea is the listing of the **inet(6)num** objects you, as an IRT, are respondible for and from which you want to link to from your new **irt** object.
+In your mail, you need to explain why you want to create a new **irt** object. To prevent misuse of the object, the RIPE NCC will need to check your request, so include a full explanation. A good idea is the listing of the **inet(6)num** objects you, as an IRT, are responsible for and from which you want to link to from your new **irt** object.
 
 You will get a reply from the RIPE NCC asking you to acknowledge your request.
 

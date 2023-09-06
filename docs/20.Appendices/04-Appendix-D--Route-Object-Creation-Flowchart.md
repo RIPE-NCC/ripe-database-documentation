@@ -1,6 +1,7 @@
 ---
 theme: svg theme
 title: Appendix-D--Route-Object-Creation-Flowchart
+permalink: /Appendices/Appendix-D--Route-Object-Creation-Flowchart
 ---
 <script setup>
     import svgZoomComponent from '../.vuepress/components/SvgZoom.vue'

@@ -1,3 +1,7 @@
+---
+permalink: /RPSL-Object-Types/Descriptions-of-Secondary-Objects
+---
+
 # Descriptions of Secondary Objects
 
 * [Description of the AS-BLOCK Object](#description-of-the-as-block-object)
@@ -42,7 +46,7 @@ Leading zeroes (AS1 - AS065536) are not allowed and will be removed (AS1 - AS655
 
 * **"as-block:"** – the range of AS Numbers covered by this block.
 * **“descr:”** - A short description related to the object.
-* **“mnt-lower:”** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../10.Authorisation/README.md#authorisation) for more information.
+* **“mnt-lower:”** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../Authorisation/#authorisation) for more information.
 
 
 
@@ -70,6 +74,7 @@ Below is the object template for the **irt** object. It lists all possible attri
     irt-nfy:        optional   multiple   inverse key
     notify:         optional   multiple   inverse key
     mnt-by:         mandatory  multiple   inverse key
+    mnt-ref:        optional   multiple   inverse key
     created:        generated  single
     last-modified:  generated  single
     source:         mandatory  single   
@@ -94,7 +99,7 @@ The contact details provided by an **irt** object must be business information a
 * **“encryption:”** – This attribute references a **key-cert** object in the RIPE Database representing a public key used to encrypt correspondence sent to the CSIRT team.
 * **“auth:”** – This attribute defines the authentication scheme to be used to authorise the addition of a reference to this **irt** object. It has the same authentication options as described in the the sub-section ['Description of the mntner Object'](#description-of-the-mntner-object).
 * **“irt-nfy:”** – This attribute specifies a business email address to be notified when a reference to this **irt** object is added or removed.
-
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **irt** object in any other object.
 
 
 
@@ -159,7 +164,8 @@ Below is the object template for the **mntner** object. It lists all possible at
     auth:           mandatory  multiple   inverse key
     remarks:        optional   multiple  
     notify:         optional   multiple   inverse key
-    mnt-by:         mandatory  multiple   inverse key   
+    mnt-by:         mandatory  multiple   inverse key
+    mnt-ref:        optional   multiple   inverse key 
     created:        generated  single
     last-modified:  generated  single
     source:         mandatory  single  
@@ -174,7 +180,7 @@ To update an object protected by a **mntner** the authorisation must be passed f
 
 The "mnt-lower:", "mnt-routes:" and "mnt-domains:" attributes all provide for hierarchical authorisation. These also work in a logical 'OR' when multiple values are included in an object. How they are used is described in the object descriptions where these attributes are valid.
 
-For more detailed information about using mntner attributes, see the section [‘Authorisation'](../10.Authorisation/README.md#authorisation).
+For more detailed information about using mntner attributes, see the section [‘Authorisation'](../Authorisation/#authorisation).
 
 **Description of Attributes Specific to the MNTNER Object**
 
@@ -183,6 +189,7 @@ For more detailed information about using mntner attributes, see the section [�
 * **“descr:”** – A short description related to the object.
 * **“upd-to:”** – This attribute specifies an email address where a notification will be sent when an attempt to update an object protected by this **mntner** is unsuccessful due to authorisation failure. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
 * **“mnt-nfy:”** – This attribute specifies the email address where a notification will be sent when an object protected by this **mntner** is successfully updated. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **mntner** object in any other object.
 * **“auth:”** – This attribute defines an authentication scheme to be used. Any of the current authentication schemes used by the RIPE Database are allowed.
 
 
@@ -233,7 +240,7 @@ The member **organisation** objects are partly managed by the RIPE NCC and partl
 **Description of Attributes Specific to the ORGANISATION Object**
 
 
-* **"organisation:"** – This attribute specifies the ID of an **organisation** object. When creating an object, you must specify an "AUTO" ID by setting the value of the attribute to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;", so the database will assign the ID automatically. The ID will always start with the string ‘ORG-‘. If deleted, it is not possible to recreate an **organisation** object with the same ID.
+* **"organisation:"** – This attribute specifies the ID of an **organisation** object. When creating an object, you must specify an "AUTO" ID by setting the value of the attribute to "AUTO-1" or "AUTO-1&lt;letterCombination&gt;" ,so the database will assign the ID automatically. The ID will always start with the string ‘ORG-‘ prefix, followed by 2 to 4 letters, digits, a dash and the database source. If deleted, it is not possible to recreate an **organisation** object with the same ID.
 * **“org-name:”** – This attribute specifies the name of the organisation that this **organisation** object represents in the RIPE Database.
 * **“org-type:”** – This attribute specifies the type of the organisation. It takes one of the following fixed values. Uses can only create organisation objects with the type ‘OTHER'. The rest of the values can only be set by the RIPE NCC.
     * 'IANA' – Only used for Internet Assigned Numbers Authority
@@ -275,6 +282,7 @@ Below is the object template for the **person** object. It lists all possible at
     remarks:          optional   multiple  
     notify:           optional   multiple   inverse key
     mnt-by:           mandatory  multiple   inverse key
+    mnt-ref:          optional   multiple   inverse key
     created:          generated  single
     last-modified:    generated  single
     source:           mandatory  single  
@@ -294,6 +302,7 @@ If a **person** object is deleted, it is not possible to recreate it with the sa
 * **“fax-no:”** – This is a fax number for the contact represented by this object.
 * **“e-mail:”** – This is an email address for the contact represented by this object.
 * **“nic-hdl:”** – This attribute specifies the ID of a **person** object. When creating an object, you can specify an "AUTO" ID by setting the value of the attribute to ‘AUTO-1' or ‘AUTO-1&lt;letterCombination&gt;', so the database will assign the ID automatically. If an AUTO ID is requested, it will always end with the source name, e.g. ‘-RIPE'. If you choose the value yourself you can use a two-letter international country code instead of the source at the end or you can just leave out this suffix. For example DW-RIPE, DW-NL and DW are all valid NIC Handles.
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **person** object in any other object.
 
 
 
@@ -371,6 +380,7 @@ Below is the object template for the **role** object. It lists all possible attr
     notify:         optional   multiple   inverse key
     abuse-mailbox:  optional   single     inverse key
     mnt-by:         mandatory  multiple   inverse key
+    mnt-ref:        optional   multiple   inverse key
     created:        generated  single
     last-modified:  generated  single
     source:         mandatory  single   
@@ -395,3 +405,4 @@ References to **person** objects is optional. A help desk can be represented by 
 * **“e-mail:”** – This is an email address for the role represented by this object.
 * **“abuse-mailbox:”** – The **role** object is the only place that this attribute should be used. It represents the email address to be used when someone wants to report abuse from an Internet resource. A **role** object with an “abuse-mailbox:” attribute can be referenced by an “abuse-c:” attribute in an **organisation** object. For more details see the section on Abuse Handling.
 * **“nic-hdl:”** – This attribute specifies the ID of a **role** object. When creating an object, you can specify an "AUTO" ID by setting the value of the attribute to ‘AUTO-1' or ‘AUTO-1&lt;letterCombination&gt;', so the database will assign the ID automatically. If an AUTO ID is requested, it will always end with the source name, e.g. ‘-RIPE'. If you choose the value yourself you can use a two-letter international country code instead of the source at the end or you can just leave out this suffix. For example DW-RIPE, DW-NL and DW are all valid NIC handles.
+* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **role** object in any other object.

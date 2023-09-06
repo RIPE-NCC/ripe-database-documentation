@@ -1,3 +1,7 @@
+---
+permalink: /Types-of-Queries/Referenced-Objects-in-Query-Response
+---
+
 # Referenced Objects in Query Response
 
 A standard query will return a set of secondary objects that are directly referenced from the objects in the query response. For example, if the query response returns an **inetnum** object then, by default, the response will also include any directly referenced **organisation**, **person** and **role** objects. The **person** and **role** objects are subject to daily limits. A user can find themselves blocked for excessive querying of personal data objects even if they did not want that information.

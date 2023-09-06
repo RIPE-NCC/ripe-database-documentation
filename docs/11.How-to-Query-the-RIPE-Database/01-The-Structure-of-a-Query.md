@@ -1,3 +1,7 @@
+---
+permalink: /How-to-Query-the-RIPE-Database/The-Structure-of-a-Query
+---
+
 # The Structure of a Query
 
 The general format of a query is:
@@ -26,7 +30,7 @@ The query argument is not case-sensitive. As shown in the examples above, it can
     -rBG –Tinetnum,inet6num –imb ripe-ncc-hm-mnt
 
     -rBG –T inetnum,inet6num –i MB ripe-ncc-hm-mnt
-A list of query flags and query flag arguments are [available](../16.Tables-of-Query-Types-Supported-by-the-RIPE-Database/README.md#tables-of-query-types-supported-by-the-ripe-database).
+A list of query flags and query flag arguments are [available](../Tables-of-Query-Types-Supported-by-the-RIPE-Database/#tables-of-query-types-supported-by-the-ripe-database).
 
 If you type an IP range you will get an exact match IP range if it exists. Otherwise smallest IP range containing it. (**inetnum/inet6num** and **route/route6** objects).
 

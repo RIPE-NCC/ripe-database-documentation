@@ -1,3 +1,8 @@
+---
+permalink: /Authorisation/Protection-of-Route-Object-Space
+---
+
+
 # Protection of Route(6) Object Space
 
 
@@ -18,11 +23,11 @@ The IRR that the RIPE NCC operated is tightly coupled with the RIPE Database, wh
 
 To create a **route(6)** (i.e. a **route** or **route(6)**) object in the RIPE database, you must authenticate against the address space you are referring to. Only address space within the RIPE region can be referred to.
 
-When creating a **route(6)** object you must authenticate against multiple [maintainers](../19.Database-Support/03-Database-Security.md#maintainers) to verify that you have control over the address space you are referring to. This means the related **inet(6)num** object must exist in the RIPE Database and you can authenticate against it, before you can create a **route(6)** object in the IRR.
+When creating a **route(6)** object you must authenticate against multiple [maintainers](../Database-Support/Database-Security/#maintainers) to verify that you have control over the address space you are referring to. This means the related **inet(6)num** object must exist in the RIPE Database and you can authenticate against it, before you can create a **route(6)** object in the IRR.
 
 When you submit a new **route(6)** object, the following validation process is triggered:
 
-* The maintainer of any existing **route(6)** object that is exactly matching or covering a less specific prefix is checked. If there is none, the maintainer of the **inet(6)num** object that is exactly matching or coering a less specific prefix is checked.
+* The maintainer of any existing **route(6)** object that is exactly matching or covering a less specific prefix is checked. If there is none, the maintainer of the **inet(6)num** object that is exactly matching or covering a less specific prefix is checked.
 * If successful, the maintainer of the **route(6)** object you are creating is verified.
 
 The order in which the RIPE Database will verify available maintainers is:
@@ -33,11 +38,11 @@ The order in which the RIPE Database will verify available maintainers is:
 
 This means that if a **route(6)** or **inet(6)num** object has all three kinds of maintainers defined, you **must** use the "mnt-routes:" attributes to authenticate. In this case, you cannot use the "mnt-lower:" or "mnt-by:" attributes. Likewise, if you have a "mnt-lower:" and a "mnt-by:" attribute on the objects, the "mnt-lower:" attribute must be used.
 
-Here is a [flowchart outlining the entire authorisation process](../20.Appendices/04-Appendix-D--Route-Object-Creation-Flowchart.md#route-object-creation-flowchart).
+Here is a [flowchart outlining the entire authorisation process](../Appendices/Appendix-D--Route-Object-Creation-Flowchart/#route-object-creation-flowchart).
 
 You can only create a **route(6)** object for a prefix you manage. If these objects are maintained by your organisation's single shared maintainer, you just need to supply one credentials to satisfy all of the requirements. However, when you use multiple maintainers, you may need to supply different credentials to create a single **route(6)** objects.
 
-If you wish to avoid having to supply multiple credentials, it is best to set up [hierarchical authorisation](../19.Database-Support/03-Database-Security.md#maintainers) by adding a "mnt-routes:" attribute to all of your resource objects and consistently use this maintainer to create and manage **route(6)** objects.
+If you wish to avoid having to supply multiple credentials, it is best to set up [hierarchical authorisation](../Database-Support/Database-Security/#maintainers) by adding a "mnt-routes:" attribute to all of your resource objects and consistently use this maintainer to create and manage **route(6)** objects.
 
 
 ## Creating route objects referring to resources you don't manage
@@ -58,7 +63,7 @@ This change was introduced by NWI-5, which is documented in a RIPE Labs article:
 
 When the RIPE Database gets authorisation from the address space for the creation your new **route(6)** object, it will first check if there is an exact matching or less specific **route(6)** object. If this route object has a maintainer that you do not have the credentials for, it can block you from creating a new **route(6)** object. In this case you, as the resource holder, can simply delete the blocking **route(6)** object.
 
-Normally an object can only be deleted if the operation is authorised by one of the maintainers in the "mnt-by:" attributes of the object to be deleted. However, the [force delete](../10.Authorisation/14-Force-Delete-Functionality.md#force-delete-functionality) funtionality also looks for the eact matching, encompassing or less specific address space object that was allocated or assigned by the RIPE NCC in the hierarchy of the object that is to be deleted.
+Normally an object can only be deleted if the operation is authorised by one of the maintainers in the "mnt-by:" attributes of the object to be deleted. However, the [force delete](../Authorisation/Force-Delete-Functionality/#force-delete-functionality) functionality also looks for the exact matching, encompassing or less specific address space object that was co-maintained by the RIPE NCC in the hierarchy of the object that is to be deleted. Co-maintained objects include resources that were allocated or assigned by the RIPE NCC, and also legacy resources under contract.
 
 The result is that the "mnt-lower:" attribute of an allocation, or the "mnt-by:" attribute of a PI or anycast assignment, has the authority to reclaim any more specific or related object. Practically, this means a **route** object can be deleted by:
 
@@ -66,4 +71,4 @@ The result is that the "mnt-lower:" attribute of an allocation, or the "mnt-by:"
 * the mnt-routes: attribute of the parent **inet(6)num** that was allocated or assigned by the RIPE NCC
 * the mnt-lower: attribute of the parent **inet(6)num** that was allocated or assigned by the RIPE NCC
 
-It is important to undestand that this functionality only works when the parent **inet(6)num** object is protected by the [RIPE-NCC-HM-MNT](https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=RIPE-NCC-HM-MNT&type=mntner) maintainer. If not, the system will look up in the hierarchy until it finds an **inet(6)num** which has a RIPE NCC maintainer on it, after which it will look at the "mnt-lower:" or "mnt-routes:" attributes on that **inet(6)num** object and use them for the authentication.
+It is important to understand that this functionality only works when the parent **inet(6)num** object is protected by the [RIPE-NCC-HM-MNT](https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=RIPE-NCC-HM-MNT&type=mntner) or [RIPE-NCC-LEGACY-MNT](https://apps.db.ripe.net/db-web-ui/lookup?source=ripe&key=RIPE-NCC-LEGACY-MNT&type=mntner) maintainer. If not, the system will look up in the hierarchy until it finds an **inet(6)num** which has a RIPE NCC maintainer on it, after which it will look at the "mnt-lower:" or "mnt-routes:" attributes on that **inet(6)num** object and use them for the authentication.
