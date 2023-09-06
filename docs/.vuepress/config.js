@@ -53,7 +53,7 @@ module.exports = {
   ],
   themeConfig: {
     nav: [],
-    sidebar: sidebar.filter(s => s !== 'HTML-Terms-And-Conditions'),
+    sidebar: sidebar.filter(s => s !== '25.HTML-Terms-And-Conditions'),
     // setting activeHeaderLinks to true automagically
     // opens the sidebar if it's closed when scrolling along
     // a new anchor.
