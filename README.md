@@ -26,7 +26,9 @@ Once you download the repository in your local machine you have to run the next 
 
     npm install
 
-This command is going to install the required dependencies for vuepress and those dependencies specified in package-lock.json file. The output of this command is a new folder called node_modules that contains all the installed dependencies.
+**IMPORTANT** for npm version 8.x.x it is necessary to add "--legacy-peer-deps" parameter, or to upgrade npm to version 9.x.x
+
+This command is going to install the required dependencies for vuepress and those dependencies specified in package.json file. The output of this command is a new folder called node_modules that contains all the installed dependencies.
 
     npm run docs:dev
 
