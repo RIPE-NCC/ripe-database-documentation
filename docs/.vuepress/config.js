@@ -140,11 +140,11 @@ module.exports = {
             return pages
               .reduce((acc, current) => {
                 const contentWithCorrectLinks = module.exports.referencesInsidePageFormatter(current)
-                const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
-                const contentWithoutCustomScripts= contentWithoutFrontmatter.replace(scriptRegex, '')
+                //const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
+                const contentWithoutCustomScripts= contentWithCorrectLinks.replace(scriptRegex, '')
                 const contentWithoutCustomComponent = contentWithoutCustomScripts.replace(customComponentRegex, '')
 
-                return `${acc}${current}\n\n${pageBreak}`
+                return `${acc}${contentWithoutCustomComponent}\n\n${pageBreak}`
               }, initialValue)
           }
         },
