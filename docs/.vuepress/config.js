@@ -129,7 +129,7 @@ module.exports = {
             const initialValue = `${disableSideNavBar}# Entire Documentation HTML\n\n[[TOC]]\n${pageBreak}`
 
             //frontmatter always start with --- and finish with ---
-            var frontmatterRegex=/(^(?!|)*---(.|\n)*---)/g;
+            //var frontmatterRegex=/(^(?!|)*---(.|\n)*---)/g;
 
             //we dont want to apply any markdown custom script
             var scriptRegex=/(<script(.|\n)*<\/script>)/g;
@@ -140,8 +140,8 @@ module.exports = {
             return pages
               .reduce((acc, current) => {
                 const contentWithCorrectLinks = module.exports.referencesInsidePageFormatter(current)
-                const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
-                const contentWithoutCustomScripts= contentWithoutFrontmatter.replace(scriptRegex, '')
+                //const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
+                const contentWithoutCustomScripts= contentWithCorrectLinks.replace(scriptRegex, '')
                 const contentWithoutCustomComponent = contentWithoutCustomScripts.replace(customComponentRegex, '')
 
                 return `${acc}${contentWithoutCustomComponent}\n\n${pageBreak}`
