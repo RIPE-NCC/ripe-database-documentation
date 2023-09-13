@@ -142,9 +142,9 @@ module.exports = {
                 const contentWithCorrectLinks = module.exports.referencesInsidePageFormatter(current)
                 const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
                 const contentWithoutCustomScripts= contentWithoutFrontmatter.replace(scriptRegex, '')
-                //const contentWithoutCustomComponent = contentWithoutCustomScripts.replace(customComponentRegex, '')
+                const contentWithoutCustomComponent = contentWithoutCustomScripts.replace(customComponentRegex, '')
 
-                return `${acc}${contentWithoutCustomScripts}\n\n${pageBreak}`
+                return `${acc}${current}\n\n${pageBreak}`
               }, initialValue)
           }
         },
