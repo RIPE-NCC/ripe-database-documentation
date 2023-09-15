@@ -6,6 +6,13 @@ permalink: /How-to-Query-the-RIPE-Database/RESTful-API-Queries
 
 Queries are supported by the RESTful API using the GET method. There are two ways of using the API. One way looks up a specific object and only returns a single object. The other searches for objects matching specified criteria. The search may return large numbers of objects.
 
+The possible values that you can specify for the Accept/Content-Type header are:
+
+* application/xml for XML
+* application/json for JSON
+* text/plain for TEXT
+
+Clients can also append an extension of ".xml", ".json" or ".txt" to the request URL path instead of setting an Accept: header. The server will return a response in the appropriate format for that given extension. XML format is the default one.
 
 ## REST API Lookup
 
@@ -17,7 +24,6 @@ Returns an object from the RIPE Database.
 
 
 Any spaces in the command must be encoded. The response will be returned by default in XML format. Alternatively JSON or text/plain can be returned:
-
 
     curl -H 'Accept: application/json'
 
