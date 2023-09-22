@@ -2,6 +2,8 @@
 permalink: /Appendices/Appendix-G--Object-Types-with-Personal-Data
 ---
 
+# Appendix G- Object Types with Personal Data
+
 Personal Contact Details are only held in these object types:
 * **person**
 * **role**
