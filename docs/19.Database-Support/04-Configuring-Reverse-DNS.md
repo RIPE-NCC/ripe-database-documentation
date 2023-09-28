@@ -139,16 +139,7 @@ In DNSSEC, the Delegation Signer (DS) resource record is created from a DNSkey r
 
 The tools provided with BIND (version 9.3.0 and later) will generate a "ds set" during signing. You should copy the DS RDATA into the "ds-data:" attributes.
 
-When we receive a **domain** object with DNSSEC-related information, we will carry out additional tests. These are the most important: 
-
-* There should be a matching DNSKEY available in the DNS for each "ds-rdata:" attribute that is submitted in the **domain** object
-* There should be a valid RRSIG made with the DNSKEY matching the "ds-rdata:" attribute
-* Although it is not mandatory, the DNSKEY should have the "SEP" flag set. If it is not, a warning will be produced, but the "ds-rdata:" content will still be copied to the zone
-* Lastly, we check if the signature validity period is close to expiring and whether the Times To Live (TTLs) are a reasonable fraction on the signature validity period. The test requires the TTL to ve at least two times smaller than the signature validity period.
-
-keep in mind that these tests will only be done for "ds-rdata:" attributes using digest type 1 (SHA1). If the "ds-rdata:" attribute uses an unsupported digest type, you will see a warning message, but the "ds-rdata:" content will still be copied into the parent zone.
-
-    NOTE: The domain objects wizard in the webupdates does not support requesting DNSSEC delegations yet. However, you will be able to use webupdates to add the "ds-rdata:" attribute to an existing domain object.
+When we receive a **domain** object with DNSSEC-related information, we will carry out [additional tests](../Authorisation/Request-DNSSEC-delegation/#delegation-checks).
 
 
 ## Automated update of DNSSEC Delegations
