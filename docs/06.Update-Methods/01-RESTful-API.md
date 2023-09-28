@@ -5,7 +5,6 @@ permalink: /Update-Methods/RESTful-API
 # RIPE Database RESTful API
 
 For more information about the REST paradigm, see https://en.wikipedia.org/wiki/Representational_state_transfer.
-If you used the old (beta) API, consider reading [migration guide for old API users](../Database-Support/Migration-guide/#whois-rest-api-migration-guide)
 All the services are accessible via HTTPS.
 Use of the Whois REST API is governed by the RIPE Database [terms and conditions](../Legal-Information/#)
 
