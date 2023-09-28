@@ -1,0 +1,58 @@
+---
+permalink: /Appendices/Appendix-F--Special-Considerations-for-Object-Types
+---
+
+# Appendix F- Special Considerations for Object Types
+
+This is a list of actions required of the Maintainer in a situation where one of the following object types references 
+the **person** object to be removed and:
+* This is the only **person** or **role** object referenced in the object.
+* There are no options available for changing the reference.
+
+<br/>
+
+**Forward domain** <br/>
+This is a Top-Level Domain (TLD) problem. If the TLD is not responsive, the TLD should remove its data from the RIPE Database.
+
+**Reverse domain** <br/>
+These objects should be deleted and removed from the DNS system.
+
+**inet(6)num** <br/>
+The address space must be returned to the appropriate Internet Registry and then the object can be deleted.
+
+The RIPE NCC will take no action until the Data Subject has cancelled any routing arrangements for the address space to 
+be returned and any related **route(6)** objects have been deleted.
+
+**aut-num** <br/>
+These objects should be deleted.
+
+The RIPE NCC will take no action until the Data Subject has cancelled any routing arrangements
+where this AS number is the origin and any related **route(6)** objects have been deleted.
+
+**role** <br/>
+If the role object only references this one **person** object, find all the references to the **role** object and 
+consider them as if they were direct references to the **person** object.
+
+**mntner** <br/>
+Find all objects that reference this **mntner** object and carry out the following actions on each of these objects:
+
+* Where there are references to more than one **mntner** object in the same attribute type, remove the reference to 
+  this **mntner** object.
+* If it is referenced in an optional attribute, remove the attribute.
+* Where an object references only this **mntner** object in a single instance of a mandatory
+  attribute, consider this object as if it had a single reference to the **person** object to be deleted. This object 
+  may also need to be deleted and then follow the chain of references to this object and handle all referencing objects 
+  according to this list.
+
+When all references to the **mntner** object have been removed, delete the **mntner** object.
+
+**key-cert** <br/>
+References to **person** objects are optional, so remove any reference to this **person** object from the **key-cert** 
+object.
+
+**irt** <br/>
+Remove references to this **irt** object from **inet(6)num** objects, then delete the **irt** object.
+
+**organisation** <br/>
+References to **person** objects are optional, so remove any reference to this **person** object from the 
+**organisation** object.
