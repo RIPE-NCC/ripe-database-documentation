@@ -29,7 +29,7 @@ Only one ack message is returned for each update message. However, there may be 
 
 ## MIME Support
 
-The database software supports MIME. This means that you can cryptographically sign an update message using email agents that attach the signature in a separate MIME part, not in the body of the message. However, encryption of the text is not allowed. All update messages must be sent in plain text.
+The database software supports the MIME format. This means that you can cryptographically sign an update message using email agents that attach the signature in a separate MIME part, not in the body of the message. However, encryption of the text is not allowed. All update messages must be sent in plain text.
 
 Nested signing of messages is possible, allowing an update message to be signed by one user, sent to another user who signs it again and submits the update.
 
