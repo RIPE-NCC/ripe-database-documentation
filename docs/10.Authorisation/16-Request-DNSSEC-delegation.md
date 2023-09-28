@@ -20,6 +20,10 @@ When it receives an update, the update engine will perform a number of checks. T
 * Does the DNSKEY has its "SEP" flag set? Setting the SEP flag is not mandatory. If it is not set, a warning will be produced, however the "ds-rdata:" content will still be copied to the zone.
 * Is the signature validity period close to expiring and are the Times To Live (TTLs) a reasonable fraction of the signature validity period? We suggest the Maximum Zone TTL of your zone data to be a fraction of your signature validity period. If the TTL would be of similar order as the signature validity period, then all RRsets fetched during the validity period would be cached until the signature expiration time. Section 7.1 of [Resource Records for the DNS Security Extension](http://www.ietf.org/rfc/rfc4034.txt) suggests that "the resolver may use the time remaining before expiration of the signature validity period of a signed RRset as an upper bound for the TTL". As a result query load on authoritative servers would peak at signature expiration time, as this is also the time at which records simultaneously expire from caches. To avoid query load peaks we suggest the TTL on all the RRs in your zone to be at least a few times smaller than your signature validity period. We currently test on the TTL being at least two times smaller than the signature validity period.
 
-These tests will only be done for "ds-rdata:" attributes using supported digest types, [section 5.1.3 from RFC4033](https://www.ietf.org/rfc/rfc4033.txt). Currently we support digest type 1(SHA1).
+These tests will only be done for "ds-rdata:" attributes using supported digest types, [section 5.1.3 from RFC4033]
+(https://www.ietf.org/rfc/rfc4033.txt). A [Zonemaster](https://zonemaster.ripe.net/) check determines 
+whether the digest type is supported.
 
 If the "ds-rdata:" attribute uses an unsupported digest type, you will see a warning message, however the "ds-rdata:" content will still be copied into the parent zone.
+
+NOTE: The domain objects wizard in the webupdates does not support requesting DNSSEC delegations yet. However, you will be able to use webupdates to add the "ds-rdata:" attribute to an existing domain object.
