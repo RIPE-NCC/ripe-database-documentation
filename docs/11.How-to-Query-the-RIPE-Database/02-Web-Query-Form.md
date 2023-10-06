@@ -10,6 +10,7 @@ This is part of the RIPE Database web interface that also includes Webupdates.
 
 The query argument is entered into the form. Many of the query flags can be selected with check boxes. The database source can also be selected this way. If you know the query flags you want, you can also type them into the form with the query argument.
 
+Querying objects with multiple **mntner** separated by a comma in the "mnt-xxx" attribute will appear as a separated "mnt-xxx" attribute.
 
 ## Using Full Text Search
 

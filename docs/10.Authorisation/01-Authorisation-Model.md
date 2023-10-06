@@ -30,7 +30,7 @@ Given the flexibility of the RIPE Database and the maintainer system, there can 
 | API                        | No      | No      | Yes     |
 | Syncupdates                | No      | Yes     | Yes*    |
 
-\*It works, but is not recommended
+*It works, but is not recommended
 
 We recommend that if you predominantly use the web interface, you only use the SSO, and if you mainly use syncupdates or email updates, you use PGP.
 
