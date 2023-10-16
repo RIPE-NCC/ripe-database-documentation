@@ -174,7 +174,7 @@ Objects in the RIPE Database are protected using **mntner** objects. A **mntner*
 
 Objects are protected by a **mntner**, if they contain a reference to the **mntner** in the object. This is done by including a "mnt-by:" attribute. Other “mnt-xxx:” attributes offer hierarchical protection. The "mnt-by:" attribute is mandatory in all object types.
 
-A **mntner** object can be referenced either by comma-separated list of **mntner** or by a single **mntner** in the "mnt-xxx:" attributes.
+A **mntner** object can be referenced either as a single mntner or comma-separated list of **mntners**.
 
 Most users set the "mnt-by:" value in a **mntner** to reference itself. That makes it maintain itself. But this is not always the case. There are situations where someone wants to control who maintains a set of objects. This can be done by using mnt-a to maintain mnt-b. The object mnt-b contains the credentials to maintain a set of data. These credentials are set up by mnt-a.
 
