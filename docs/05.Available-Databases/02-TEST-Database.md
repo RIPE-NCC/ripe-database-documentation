@@ -5,8 +5,8 @@ permalink: /Available-Databases/TEST-Database
 # TEST Database
 
 This database is provided as an operational service to all users. It allows anyone to try out updates or changes to 
-their data, for more information refer to [update methods](../Update-Methods/#update-methods). New users can set up any 
-data they like and practise making updates and doing queries.
+their data. New users can set up any data they like and practise making [updates](../Update-Methods/#update-methods) and 
+doing [queries](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database).
 
 The TEST Database works in exactly the same way as the production service, for most of its operations. Some rules are 
 relaxed and some **mntner** objects have the password included in a “remarks:” attribute. This allows users to create 
