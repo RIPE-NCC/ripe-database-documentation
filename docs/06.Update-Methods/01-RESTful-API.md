@@ -36,7 +36,7 @@ Create an object in the RIPE database.
 HTTPS is mandatory.
 
 #### METHOD: POST
-#### URI Format: /{source}/{objectType}?password={password}...
+#### URI Format: /{source}/{objectType}
 #### Path Parameters
 | name       | description                          |
 |------------|--------------------------------------|
@@ -132,7 +132,7 @@ HTTPS is mandatory.
 
 #### Method: PUT
 
-#### URI Format: /{source}/{objectType}/{key}?password={password}...
+#### URI Format: /{source}/{objectType}/{key}
 
 #### Path Parameters
 | name       | description                          |
@@ -247,7 +247,7 @@ HTTPS is mandatory.
 
 #### Method: DELETE
 
-#### URI Format: /{source}/{objectType}/{key}?password={password}...&reason={reason}
+#### URI Format: /{source}/{objectType}/{key}
 
 #### Path Parameters
 
