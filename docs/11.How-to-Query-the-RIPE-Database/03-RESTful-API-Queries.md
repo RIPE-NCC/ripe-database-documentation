@@ -46,17 +46,23 @@ Additional resources:
 ### URI Format: /{source}/{objectType}/{key}
 
 ### Path Parameters
-|name|description|
-|----|-----------|
-|source|Source name (RIPE, TEST or a GRS source name).|
-|objectType|Type of given object.|
-|key|Primary key of the given object.|
+| name       | description                                    |
+|------------|------------------------------------------------|
+| source     | Source name (RIPE, TEST or a GRS source name). |
+| objectType | Type of given object.                          |
+| key        | Primary key of the given object.               |
 
 ### Query Parameters
-|name|description|
-|----|-----------|
-|unfiltered|The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed).|
-|unformatted|Return the resource in its original formatting (including spaces, end-of-lines).|
+| name        | description                                                                                                                                                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| password    | Password for maintainer authentication (one or more values).                                                                                               |
+| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed). The correct password is required for unfiltered results |
+| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                           |
+
+### Headers
+| name          | description                                                                                |
+|---------------|--------------------------------------------------------------------------------------------|
+| Authorization | Basic HTTP Authentication. Base64 content composed by mntner name and password is expected |
 
 ### HTTP Response Body
 
@@ -68,18 +74,18 @@ Client applications should use the HTTP status code to detect the result of an o
 
 Possible reasons for various HTTP status codes are as follows:
 
-|code| description                                                                                         |
-|----|-----------------------------------------------------------------------------------------------------|
-|OK (200)| Successful update                                                                                   |
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
-|Authentication failure (401)| Incorrect password                                                                                  |
-|Forbidden (403)| Query limit exceeded.                                                                               |
-|Too Many Request (429)| Query limit exceeded.                                                                               |
-|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
-|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
-|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
+| code                         | description                                                                                         |
+|------------------------------|-----------------------------------------------------------------------------------------------------|
+| OK (200)                     | Successful update                                                                                   |
+| Bad request (400)            | Incorrect value for object type or key. The server is unable to understand and process the request. |
+| Authentication failure (401) | Incorrect password                                                                                  |
+| Forbidden (403)              | Query limit exceeded.                                                                               |
+| Too Many Request (429)       | Query limit exceeded.                                                                               |
+| Not Found (404)              | No results were found (on a search request), or object specified in URI does not exist.             |
+| Method not Allowed (405)     | No results were found (on a search request), or object specified in URI does not exist.             |
+| Conflict (409)               | Integrity constraint was violated (e.g. when creating, object already exists).                      |
+| Unsupported Media Type (415) | Unsupported/missing value for Accept/Content-Type header.                                           |
+| Internal Server Error (500)  | The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 ### Examples
 
@@ -98,6 +104,14 @@ Possible reasons for various HTTP status codes are as follows:
 * Example unfiltered request:
 
     curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
+
+* Example unfiltered using password parameter request:
+
+    curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?password=AA1-TEST-PASSWORD&unfiltered'
+
+* Example unfiltered using Basic Auth header request:
+
+    curl -H 'Authorization: basic AA1-TEST:AA1-TEST-PASSWORD' 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
 
 * Example bad request when source is incorrect:
 
