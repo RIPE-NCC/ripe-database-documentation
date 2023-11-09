@@ -106,7 +106,7 @@ Possible reasons for various HTTP status codes are as follows:
 
     curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
 
-* Example Request using Basic Auth (Basic AA1-TEST:AA1-TEST):
+* Example Request using Basic authorisation (Basic AA1-TEST:AA1-TEST):
 
     curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person'
 
@@ -219,7 +219,7 @@ If the request fails, any error messages will be returned in the response body, 
     curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...'
 
 
-* Example unfiltered using Basic Auth header request (Basic AA1-TEST:AA1-TEST):
+* Example unfiltered using Basic authorisation header request (Basic AA1-TEST:AA1-TEST):
 
     curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json'  -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
@@ -312,7 +312,7 @@ Possible reasons for various HTTP status codes are as follows:
 
     curl -X DELETE 'https://rest.db.ripe.net/ripe/person/pp1-ripe?password=123'
 
-* Example Request using Basic Auth (Basic AA1-TEST:AA1-TEST):
+* Example Request using Basic authorisation (Basic AA1-TEST:AA1-TEST):
 
     curl -X DELETE -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
