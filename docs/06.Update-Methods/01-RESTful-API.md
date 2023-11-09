@@ -52,9 +52,9 @@ HTTPS is mandatory.
 | dry-run     | Optional. Perform validation but don't perform the update.                              |
 
 ### Headers
-| name          | description                                                                                |
-|---------------|--------------------------------------------------------------------------------------------|
-| Authorization | Basic HTTP Authentication. Base64 content composed by mntner name and password is expected |
+| name          | description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
 
 #### HTTP Request Body
 
@@ -106,9 +106,9 @@ Possible reasons for various HTTP status codes are as follows:
 
     curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
 
-* Example Request using Basic Auth:
+* Example Request using Basic Auth (Basic AA1-TEST:AA1-TEST):
 
-    curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Authorization: basic pp1-ripe:pp1-ripe-PASSWORD' --data @form.txt 'http://rest-test.db.ripe.net/test/person'
+    curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person'
 
 * Example dry-run requests:
 
@@ -149,9 +149,9 @@ HTTPS is mandatory.
 | dry-run     | Optional. Perform validation but don't perform the update.                             |
 
 ### Headers
-| name          | description                                                                                |
-|---------------|--------------------------------------------------------------------------------------------|
-| Authorization | Basic HTTP Authentication. Base64 content composed by mntner name and password is expected |
+| name          | description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
 
 #### HTTP Request Body
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#rest-api-data-model) containing the new version of the specified objects.
@@ -219,9 +219,9 @@ If the request fails, any error messages will be returned in the response body, 
     curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...'
 
 
-* Example unfiltered using Basic Auth header request:
+* Example unfiltered using Basic Auth header request (Basic AA1-TEST:AA1-TEST):
 
-    curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json'  -H 'Authorization: basic AA1-TEST:AA1-TEST-PASSWORD' --data @form.txt 'http://rest-test.db.ripe.net/test/person/PP1-RIPE'
+    curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json'  -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
 
 * Example dry-run requests:
@@ -266,9 +266,9 @@ HTTPS is mandatory.
 | dry-run  | Optional. Perform validation but don't delete the object.               |
 
 ### Headers
-| name          | description                                                                                |
-|---------------|--------------------------------------------------------------------------------------------|
-| Authorization | Basic HTTP Authentication. Base64 content composed by mntner name and password is expected |
+| name          | description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
 
 #### HTTP Request Body
 
@@ -312,9 +312,9 @@ Possible reasons for various HTTP status codes are as follows:
 
     curl -X DELETE 'https://rest.db.ripe.net/ripe/person/pp1-ripe?password=123'
 
-* Example Request using Basic Auth:
+* Example Request using Basic Auth (Basic AA1-TEST:AA1-TEST):
 
-    curl -X DELETE -H 'Authorization: basic pp1-ripe:pp1-ripe-PASSWORD' 'http://rest-test.db.ripe.net/test/person/pp1-ripe'
+    curl -X DELETE -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
 * Example dry-run requests:
 
