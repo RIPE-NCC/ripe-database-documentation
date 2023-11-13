@@ -36,21 +36,25 @@ Create an object in the RIPE database.
 HTTPS is mandatory.
 
 #### METHOD: POST
-#### URI Format: /{source}/{objectType}?password={password}...
+#### URI Format: /{source}/{objectType}
 #### Path Parameters
-|name|description|
-|----|-----------|
-|source|RIPE or TEST (depending on location)|
-|objectType|object type.|
+| name       | description                          |
+|------------|--------------------------------------|
+| source     | RIPE or TEST (depending on location) |
+| objectType | object type.                         |
 
 
 #### Query Parameters
-|name|description|
-|----|-----------|
-|password|Password for maintainer authentication (one or more values).|
-|unformatted|Keep the formatting of the resource as provided in the request (spaces, end-of-lines) .|
-|dry-run|Optional. Perform validation but don't perform the update. |
+| name        | description                                                                             |
+|-------------|-----------------------------------------------------------------------------------------|
+| password    | Password for maintainer authentication (one or more values).                            |
+| unformatted | Keep the formatting of the resource as provided in the request (spaces, end-of-lines) . |
+| dry-run     | Optional. Perform validation but don't perform the update.                              |
 
+### Headers
+| name          | description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
 
 #### HTTP Request Body
 
@@ -77,18 +81,18 @@ Client applications should use the HTTP status code to detect the result of an o
 
 Possible reasons for various HTTP status codes are as follows:
 
-|code| description                                                                                         |
-|----|-----------------------------------------------------------------------------------------------------|
-|OK (200)| Successful update                                                                                   |
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
-|Authentication failure (401)| Incorrect password                                                                                  |
-|Forbidden (403)| Query limit exceeded.                                                                               |
-|Too Many Request (429)| Query limit exceeded.                                                                               |
-|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
-|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
-|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
+| code                         | description                                                                                         |
+|------------------------------|-----------------------------------------------------------------------------------------------------|
+| OK (200)                     | Successful update                                                                                   |
+| Bad request (400)            | Incorrect value for object type or key. The server is unable to understand and process the request. |
+| Authentication failure (401) | Incorrect password                                                                                  |
+| Forbidden (403)              | Query limit exceeded.                                                                               |
+| Too Many Request (429)       | Query limit exceeded.                                                                               |
+| Not Found (404)              | No results were found (on a search request), or object specified in URI does not exist.             |
+| Method not Allowed (405)     | No results were found (on a search request), or object specified in URI does not exist.             |
+| Conflict (409)               | Integrity constraint was violated (e.g. when creating, object already exists).                      |
+| Unsupported Media Type (415) | Unsupported/missing value for Accept/Content-Type header.                                           |
+| Internal Server Error (500)  | The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 
 
@@ -102,6 +106,9 @@ Possible reasons for various HTTP status codes are as follows:
 
     curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
 
+* Example Request using Basic authorisation (Basic AA1-TEST:AA1-TEST):
+
+    curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person'
 
 * Example dry-run requests:
 
@@ -128,18 +135,23 @@ HTTPS is mandatory.
 #### URI Format: /{source}/{objectType}/{key}
 
 #### Path Parameters
-|name|description|
-|----|-----------|
-|source|RIPE or TEST (depending on location)|
-|objectType|The object type|
-|key|Requested object key|
+| name       | description                          |
+|------------|--------------------------------------|
+| source     | RIPE or TEST (depending on location) |
+| objectType | The object type                      |
+| key        | Requested object key                 |
 
 #### Query Parameters
-|name|description|
-|----|-----------|
-|password|Password for maintainer authentication (one or more values).|
-|unformatted|Keep the formatting of the resource as provided in the request (spaces, end-of-lines).|
-|dry-run|Optional. Perform validation but don't perform the update. |
+| name        | description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| password    | Password for maintainer authentication (one or more values).                           |
+| unformatted | Keep the formatting of the resource as provided in the request (spaces, end-of-lines). |
+| dry-run     | Optional. Perform validation but don't perform the update.                             |
+
+### Headers
+| name          | description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
 
 #### HTTP Request Body
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#rest-api-data-model) containing the new version of the specified objects.
@@ -164,18 +176,18 @@ Client applications should use the HTTP status code to detect the result of an o
 
 Possible reasons for various HTTP status codes are as follows:
 
-|code| description                                                                                         |
-|----|-----------------------------------------------------------------------------------------------------|
-|OK (200)| Successful update                                                                                   |
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
-|Authentication failure (401)| Incorrect password                                                                                  |
-|Forbidden (403)| Query limit exceeded.                                                                               |
-|Too Many Request (429)| Query limit exceeded.                                                                               |
-|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
-|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
-|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
+| code                         | description                                                                                         |
+|------------------------------|-----------------------------------------------------------------------------------------------------|
+| OK (200)                     | Successful update                                                                                   |
+| Bad request (400)            | Incorrect value for object type or key. The server is unable to understand and process the request. |
+| Authentication failure (401) | Incorrect password                                                                                  |
+| Forbidden (403)              | Query limit exceeded.                                                                               |
+| Too Many Request (429)       | Query limit exceeded.                                                                               |
+| Not Found (404)              | No results were found (on a search request), or object specified in URI does not exist.             |
+| Method not Allowed (405)     | No results were found (on a search request), or object specified in URI does not exist.             |
+| Conflict (409)               | Integrity constraint was violated (e.g. when creating, object already exists).                      |
+| Unsupported Media Type (415) | Unsupported/missing value for Accept/Content-Type header.                                           |
+| Internal Server Error (500)  | The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 
 
@@ -202,10 +214,14 @@ If the request fails, any error messages will be returned in the response body, 
     curl -X PUT -H 'Content-Type: application/xml' --data @form.txt 'https://rest.db.ripe.net/ripe/mntner/PP1-RIPE?password=...'
 
 
-
 * Example of a bad JSON request when updating a mntner object using as request the person object from the first example:
 
     curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...'
+
+
+* Example unfiltered using Basic authorisation header request (Basic AA1-TEST:AA1-TEST):
+
+    curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json'  -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
 
 * Example dry-run requests:
@@ -231,23 +247,28 @@ HTTPS is mandatory.
 
 #### Method: DELETE
 
-#### URI Format: /{source}/{objectType}/{key}?password={password}...&reason={reason}
+#### URI Format: /{source}/{objectType}/{key}
 
 #### Path Parameters
 
-|name|description|
-|----|-----------|
-|source|RIPE or TEST (depending on location)|
-|objectType|object type.|
-|key|Requested RPSL Object primary key.|
+| name       | description                          |
+|------------|--------------------------------------|
+| source     | RIPE or TEST (depending on location) |
+| objectType | object type.                         |
+| key        | Requested RPSL Object primary key.   |
 
 ### Query Parameters
 
-|name|description|
-|----|-----------|
-|password|Password for maintainer authentication (one or more values). Mandatory.|
-|reason|Reason for deleting given object. Optional.|
-|dry-run|Optional. Perform validation but don't delete the object. |
+| name     | description                                                             |
+|----------|-------------------------------------------------------------------------|
+| password | Password for maintainer authentication (one or more values). Mandatory. |
+| reason   | Reason for deleting given object. Optional.                             |
+| dry-run  | Optional. Perform validation but don't delete the object.               |
+
+### Headers
+| name          | description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
 
 #### HTTP Request Body
 
@@ -271,18 +292,18 @@ Client applications should use the HTTP status code to detect the result of an o
 
 Possible reasons for various HTTP status codes are as follows:
 
-|code| description                                                                                         |
-|----|-----------------------------------------------------------------------------------------------------|
-|OK (200)| Successful update                                                                                   |
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
-|Authentication failure (401)| Incorrect password                                                                                  |
-|Forbidden (403)| Query limit exceeded.                                                                               |
-|Too Many Request (429)| Query limit exceeded.                                                                               |
-|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
-|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
-|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
+| code                         | description                                                                                         |
+|------------------------------|-----------------------------------------------------------------------------------------------------|
+| OK (200)                     | Successful update                                                                                   |
+| Bad request (400)            | Incorrect value for object type or key. The server is unable to understand and process the request. |
+| Authentication failure (401) | Incorrect password                                                                                  |
+| Forbidden (403)              | Query limit exceeded.                                                                               |
+| Too Many Request (429)       | Query limit exceeded.                                                                               |
+| Not Found (404)              | No results were found (on a search request), or object specified in URI does not exist.             |
+| Method not Allowed (405)     | No results were found (on a search request), or object specified in URI does not exist.             |
+| Conflict (409)               | Integrity constraint was violated (e.g. when creating, object already exists).                      |
+| Unsupported Media Type (415) | Unsupported/missing value for Accept/Content-Type header.                                           |
+| Internal Server Error (500)  | The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 
 ### Examples
@@ -290,6 +311,10 @@ Possible reasons for various HTTP status codes are as follows:
 * Example Request:
 
     curl -X DELETE 'https://rest.db.ripe.net/ripe/person/pp1-ripe?password=123'
+
+* Example Request using Basic authorisation (Basic AA1-TEST:AA1-TEST):
+
+    curl -X DELETE -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
 * Example dry-run requests:
 
