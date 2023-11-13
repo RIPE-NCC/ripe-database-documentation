@@ -46,17 +46,23 @@ Additional resources:
 ### URI Format: /{source}/{objectType}/{key}
 
 ### Path Parameters
-|name|description|
-|----|-----------|
-|source|Source name (RIPE, TEST or a GRS source name).|
-|objectType|Type of given object.|
-|key|Primary key of the given object.|
+| name       | description                                    |
+|------------|------------------------------------------------|
+| source     | Source name (RIPE, TEST or a GRS source name). |
+| objectType | Type of given object.                          |
+| key        | Primary key of the given object.               |
 
 ### Query Parameters
-|name|description|
-|----|-----------|
-|unfiltered|The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed).|
-|unformatted|Return the resource in its original formatting (including spaces, end-of-lines).|
+| name        | description                                                                                                                                                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| password    | Password for maintainer authentication (one or more values).                                                                                               |
+| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed). The correct password is required for unfiltered results |
+| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                           |
+
+### Headers
+| name          | description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
 
 ### HTTP Response Body
 
@@ -68,18 +74,18 @@ Client applications should use the HTTP status code to detect the result of an o
 
 Possible reasons for various HTTP status codes are as follows:
 
-|code| description                                                                                         |
-|----|-----------------------------------------------------------------------------------------------------|
-|OK (200)| Successful update                                                                                   |
-|Bad request (400)| Incorrect value for object type or key. The server is unable to understand and process the request. |
-|Authentication failure (401)| Incorrect password                                                                                  |
-|Forbidden (403)| Query limit exceeded.                                                                               |
-|Too Many Request (429)| Query limit exceeded.                                                                               |
-|Not Found (404)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Method not Allowed (405)| No results were found (on a search request), or object specified in URI does not exist.             |
-|Conflict (409)| Integrity constraint was violated (e.g. when creating, object already exists).                      |
-|Unsupported Media Type (415)| Unsupported/missing value for Accept/Content-Type header.                                           |
-|Internal Server Error (500)| The server encountered an unexpected condition which prevented it from fulfilling the request.      |
+| code                         | description                                                                                         |
+|------------------------------|-----------------------------------------------------------------------------------------------------|
+| OK (200)                     | Successful update                                                                                   |
+| Bad request (400)            | Incorrect value for object type or key. The server is unable to understand and process the request. |
+| Authentication failure (401) | Incorrect password                                                                                  |
+| Forbidden (403)              | Query limit exceeded.                                                                               |
+| Too Many Request (429)       | Query limit exceeded.                                                                               |
+| Not Found (404)              | No results were found (on a search request), or object specified in URI does not exist.             |
+| Method not Allowed (405)     | No results were found (on a search request), or object specified in URI does not exist.             |
+| Conflict (409)               | Integrity constraint was violated (e.g. when creating, object already exists).                      |
+| Unsupported Media Type (415) | Unsupported/missing value for Accept/Content-Type header.                                           |
+| Internal Server Error (500)  | The server encountered an unexpected condition which prevented it from fulfilling the request.      |
 
 ### Examples
 
@@ -98,6 +104,14 @@ Possible reasons for various HTTP status codes are as follows:
 * Example unfiltered request:
 
     curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
+
+* Example unfiltered using password parameter request:
+
+    curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?password=AA1-TEST-PASSWORD&unfiltered'
+
+* Example unfiltered using Basic authorisation header request (Basic AA1-TEST:AA1-TEST):
+
+    curl -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
 
 * Example bad request when source is incorrect:
 
@@ -135,32 +149,32 @@ As with the lookup, any spaces in the command must be encoded. The response will
 None.
 
 ### URI Query Parameters
-|name|description            |
-|:---------------------|:-----------------------|
-| `source`               | Optional, default is RIPE for `http://rest.db.ripe.net`. Can specify RIPE or GRS source names. It's possible to specify multiple sources (one source per parameter). Use `http://rest-test.db.ripe.net` to search the TEST datasource.|
-| `query-string`         | The search term. Mandatory.|
-| `inverse-attribute`    | Optional. If specified the query is an inverse lookup on the given attribute, if not specified the query is a direct lookup search.|
-| `include-tag`          | Optional. Only show RPSL objects with given tags. Can be multiple.|
-| `exclude-tag`          | Optional. Only show RPSL objects that do not have given tags. Can be multiple.|
-| `type-filter`          | Optional. If specified the results will be filtered by object-type, multiple type-filters can be specified.|
-| `flags`                | Optional query-flags. Use separate flags parameters for each option (see examples)|
-|`unformatted`           | Don't reformat RPSL objects, preserve all spaces, tabs and newlines in attribute values. |
-|`managed-attributes`    | Flag which RPSL attributes are managed by the RIPE NCC. |
-|`resource-holder`       | Include the resource holder Organisation (id and name). |
-|`abuse-contact`         | Include the Abuse contact email address of the resource, if applicable. |
-|`limit`                 | Maximum number of RPSL objects to return in the response. |
-|`offset`                | Return RPSL objects from a specified offset. This allows for paging. |
+| name                 | description                                                                                                                                                                                                                            |
+|:---------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `source`             | Optional, default is RIPE for `http://rest.db.ripe.net`. Can specify RIPE or GRS source names. It's possible to specify multiple sources (one source per parameter). Use `http://rest-test.db.ripe.net` to search the TEST datasource. |
+| `query-string`       | The search term. Mandatory.                                                                                                                                                                                                            |
+| `inverse-attribute`  | Optional. If specified the query is an inverse lookup on the given attribute, if not specified the query is a direct lookup search.                                                                                                    |
+| `include-tag`        | Optional. Only show RPSL objects with given tags. Can be multiple.                                                                                                                                                                     |
+| `exclude-tag`        | Optional. Only show RPSL objects that do not have given tags. Can be multiple.                                                                                                                                                         |
+| `type-filter`        | Optional. If specified the results will be filtered by object-type, multiple type-filters can be specified.                                                                                                                            |
+| `flags`              | Optional query-flags. Use separate flags parameters for each option (see examples)                                                                                                                                                     |
+| `unformatted`        | Don't reformat RPSL objects, preserve all spaces, tabs and newlines in attribute values.                                                                                                                                               |
+| `managed-attributes` | Flag which RPSL attributes are managed by the RIPE NCC.                                                                                                                                                                                |
+| `resource-holder`    | Include the resource holder Organisation (id and name).                                                                                                                                                                                |
+| `abuse-contact`      | Include the Abuse contact email address of the resource, if applicable.                                                                                                                                                                |
+| `limit`              | Maximum number of RPSL objects to return in the response.                                                                                                                                                                              |
+| `offset`             | Return RPSL objects from a specified offset. This allows for paging.                                                                                                                                                                   |
 
 ### HTTP Response Body
 
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources) containing the query result.
 
 ### HTTP Status Codes
-|code|description|
-|----|-----------|
-|200|Search successful|
-|400|Illegal input - incorrect value in one or more of the parameters|
-|404|No object(s) found|
+| code | description                                                      |
+|------|------------------------------------------------------------------|
+| 200  | Search successful                                                |
+| 400  | Illegal input - incorrect value in one or more of the parameters |
+| 404  | No object(s) found                                               |
 
 Note that search response can be enormous. Hence, it is streamed on the server side, which means that if there is any error during processing your search, the HTTP response will still be 200. In this case, there will be the corresponding error messages inside the errormessages element in the response body (see [Whois Resources](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources)).
 
