@@ -857,15 +857,15 @@ Show a specific version of a RIPE Database object.
 
 ### Method: GET
 
-### URI Format: /{source}/{objecttype}/{key}/version/{versionnumber}
+### URI Format: /{source}/{objecttype}/{key}/versions/{versionnumber}
 
 ### URI Parameters
-|name|description|
-|----|-----------|
-|source|RIPE or TEST|
-|objecttype|Object type|
-|key|RPSL object key|
-|version|Object version|
+| name          |description|
+|---------------|-----------|
+| source        |RIPE or TEST|
+| objecttype    |Object type|
+| key           |RPSL object key|
+| versionnumber |Object version|
 	
 ### Response Body
 
@@ -905,6 +905,8 @@ Lists all versions of RIPE Database object, including the date and operation for
 ### URI Parameters
 |name|description|
 |----|-----------|
+| source        |RIPE or TEST|
+| objecttype    |Object type|
 |key|Requested RPSL Object primary key|
 	
 ### Response Body
@@ -922,7 +924,7 @@ A [WhoisResource](../RIPE-Database-Structure/11-REST-API-Data-model/#template-re
 
 Example Request:
 
-    curl 'http://rest-test.db.ripe.net/TEST/aut-num/AS102/versions'
+    curl 'https://rest-test.db.ripe.net/TEST/aut-num/AS102/versions'
 
 
 
