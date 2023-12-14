@@ -12,7 +12,7 @@ The access control mechanism used is based on the number of these objects that a
 
 Sometimes an IP address may be acting as a proxy and submitting queries on behalf of other IP addresses (for example, a webserver providing an interface to the RIPE Database). The database software provides a facility for proxy operators, which allows accounting to be based on the IP address of the End Users using the proxy to query the RIPE Database, and not on the IP address of the proxy operator. This is done using the `-V` flag as follows:
 
--V &lt;version&gt;,&lt;ip-address&gt;
+    -V &lt;version&gt;,&lt;ip-address&gt;
 
 * &lt;version&gt; is a client tag that can be any text string chosen by the proxy operator. Operators often use a string, showing the version of the software that the proxy operator uses, or, sometimes, they use an identifying string for the proxy operator.
 * &lt;ip-address&gt; is the IPv4 or IPv6 address of the End User that queries the database using the proxy service
