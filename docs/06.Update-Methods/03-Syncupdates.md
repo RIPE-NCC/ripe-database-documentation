@@ -16,7 +16,7 @@ This variable can be either yes or no. If it contains yes, the update will fail 
 * **HELP** <br> 
 This variable can be either yes or no. If it contains yes, the help message of the whois server will be given as the output.
 
-Multiple objects are accepted in the body, and any required passwords must also be supplied in the body using the “password:” attribute.
+Multiple objects are accepted in the body, and any required passwords must also be supplied in the body using the "password:" attribute.
 
 After composing the input and sending it as a **POST** or a **GET** request, the server will return the usual http response headers and the body if an acknowledgement exists.
 

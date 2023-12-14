@@ -6,14 +6,14 @@ permalink: /Types-of-Queries/Abuse-Contacts
 
 There are many attributes in objects within the RIPE Database containing e-mail addresses. These addresses cover a number of functions. A growing concern to engineers and administrators that maintain networks is receiving spam and abuse complaints that are sent to every e-mail address displayed. This will get the message to the right person,but it also causes more spam and abuse to people who are not responsible for solving these problems.
 
-To solve this issue, an “abuse-c:" attribute is available in the **organisation** object. This optional attribute references a role object which is required to contain an “abuse-mailbox:” attribute. Any Internet resource object (**inetnum**, **inet6num**, **aut-num**) that references this **organisation** object is then “covered” by this abuse email address.
+To solve this issue, an "abuse-c:" attribute is available in the **organisation** object. This optional attribute references a role object which is required to contain an "abuse-mailbox:" attribute. Any Internet resource object (**inetnum**, **inet6num**, **aut-num**) that references this **organisation** object is then "covered" by this abuse email address.
 
 By default, any query for an Internet resource object will return the related abuse email address. This appears in the query output as a comment line (starting with the % 'characters).
 
-There is also a “-b” query flag to find the “abuse-mailbox:” attributes for any specific range. It returns the resource primary key with any abuse contact email address found. Also the prefix of any corresponding **route** or **route6** objects, followed by the “abuse-mailbox:” attributes.
+There is also a `-b` query flag to find the "abuse-mailbox:" attributes for any specific range. It returns the resource primary key with any abuse contact email address found. Also the prefix of any corresponding **route** or **route6** objects, followed by the "abuse-mailbox:" attributes.
 
 If no abuse contact is found in any encompassing objects then no object summaries will be returned.
 
 A complaint will not be handled any quicker by copying your message to any other e-mail address found in the database.
 
-The “-b” query flag cannot be used with many other query flags.
+The `-b` query flag cannot be used with many other query flags.

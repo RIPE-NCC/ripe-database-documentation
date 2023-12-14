@@ -77,7 +77,7 @@ When sending data to a client using the Version 2 protocol, the server will send
 
 With the Version 3 protocol the serial follows the operation string ("ADD" or "DEL") on the same line. All other returned data is the same as for Version 2.
 
-After connecting to the server, the client can request data by using the “-g” query flag. The arguments to this query flag are:
+After connecting to the server, the client can request data by using the `-g` query flag. The arguments to this query flag are:
     -g &lt;source&gt; :&lt;NRTM_Protocol_version_#&gt;:&lt;first&gt;-&lt;last&gt;
 
 where
@@ -115,9 +115,9 @@ This is an example of accessing the NRTM data stream using telnet and pulling th
     last-modified: 2017-12-04T14:42:31Z
     source: RIPE
 
-A client may request a persistent connection by including the “-k“ query flag with a mirroring request (“-g“ query flag). In this case, the last argument is ignored and the server supplies the new object as soon as they are processed. The client is responsible for closing the connection. A persistent connection for mirroring does not time out, but the connection may break if there is a server error.
+A client may request a persistent connection by including the `-k` query flag with a mirroring request (`-g` query flag). In this case, the last argument is ignored and the server supplies the new object as soon as they are processed. The client is responsible for closing the connection. A persistent connection for mirroring does not time out, but the connection may break if there is a server error.
 
-A client can use the “-q sources“ flag with the mirror server to retrieve information regarding available mirroring possibilities. Please see [this section](../Types-of-Queries/RIPE-NCC-Global-Resource-Service/#ripe-ncc-global-resource-service) for more details.
+A client can use the `-q sources` flag with the mirror server to retrieve information regarding available mirroring possibilities. Please see [this section](../Types-of-Queries/RIPE-NCC-Global-Resource-Service/#ripe-ncc-global-resource-service) for more details.
 
 At the beginning of the data stream, the server will send the following string:
 

@@ -16,4 +16,4 @@ The mirrors of the other RIRs' databases only contain the resource information. 
 
 The resource information received from the other RIRs in the daily data dumps is cross-referenced with the daily statistics published by each RIR. These statistics detail all the resources that each RIR is administratively responsible for. Only resources listed in these statistics are entered into the mirrored database. This eliminates any placeholder objects or aggregated blocks used administratively by the RIR. The result is a set of databases containing a global view of Internet resources administered by the RIRs.
 
-This global database view can be queried collectively using the query flag “—resource”. This will return a single response from the RIR that claims to be administratively responsible for this resource.
+This global database view can be queried collectively using the query flag `—resource`. This will return a single response from the RIR that claims to be administratively responsible for this resource.

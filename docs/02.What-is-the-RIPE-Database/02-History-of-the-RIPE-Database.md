@@ -24,7 +24,7 @@ Transparency and accountability about the administration of Internet number reso
 The registry plays an important part in the operational coordination between Internet operators.
 The Internet Routing Registry (IRR) was established in 1995. Its purpose is to ensure stability and consistency of the Internet-wide routing by sharing information between network operators.
 
-Originally, the RIPE Database was used by many Domain Name Registries as their ccTLD authoritative registry database. For some of the larger ccTLD registries, the RIPE Database was not their authoritative database but held a lot of duplicated information from the Domain Registries. In some cases, it just held a top-level forward domain object and used a “refer:” attribute to re-direct any queries to their authoritative whois service. Because this was a mixed up and incomplete system, it was decided at RIPE 57 in October 2008 to remove all forward domain information from the RIPE Database. This was completed in January 2011.
+Originally, the RIPE Database was used by many Domain Name Registries as their ccTLD authoritative registry database. For some of the larger ccTLD registries, the RIPE Database was not their authoritative database but held a lot of duplicated information from the Domain Registries. In some cases, it just held a top-level forward domain object and used a "refer:" attribute to re-direct any queries to their authoritative whois service. Because this was a mixed up and incomplete system, it was decided at RIPE 57 in October 2008 to remove all forward domain information from the RIPE Database. This was completed in January 2011.
 
 
 
