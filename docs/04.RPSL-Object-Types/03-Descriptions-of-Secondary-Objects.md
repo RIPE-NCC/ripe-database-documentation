@@ -173,8 +173,6 @@ Objects are protected by a **mntner**, if they contain a reference to the **mntn
 
 A **mntner** object can be referenced either as a single mntner or comma-separated list of **mntners**.
 
-A **mntner** object can be referenced either as a single mntner or comma-separated list of **mntners**.
-
 Most users set the "mnt-by:" value in a **mntner** to reference itself. That makes it maintain itself. But this is not always the case. There are situations where someone wants to control who maintains a set of objects. This can be done by using mnt-a to maintain mnt-b. The object mnt-b contains the credentials to maintain a set of data. These credentials are set up by mnt-a.
 
 To update an object protected by a **mntner** the authorisation must be passed from one of the "auth:" values in the **mntner** object referenced in one of the "mnt-by:" attributes of the updated object. This means that the correct credential for one of the "auth:" values must be supplied as part of the update. If an object references more than one **mntner** in the "mnt-by:" attributes, they act as a logical 'OR'. If the authorisation is passed by any "auth:" value from any of the referenced **mntner* objects, then the update will be authorised.

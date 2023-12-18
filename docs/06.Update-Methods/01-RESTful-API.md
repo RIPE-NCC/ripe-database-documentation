@@ -691,5 +691,5 @@ It could take up to 10 seconds before an update becomes visible for lookup or se
 
 A way to work around this limitation is to rely on the response of the muting operation in REST API (PUT, POST, DELETE). These all return the object as it appears in the database in their response body after the successful update. This object is never filtered or altered in any way.
 
-Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter “password=”. One parameter should be used for each password supplied. The pseudo attribute “password:” cannot be used in the HTTP request body. See ["Email Updates"](../Update-Methods/Email-Updates/#email-updates) for more information.
+Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter "password=". One parameter should be used for each password supplied. The pseudo attribute "password:" cannot be used in the HTTP request body. See ["Email Updates"](../Update-Methods/Email-Updates/#email-updates) for more information.
 
