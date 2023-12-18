@@ -26,7 +26,7 @@ Objects up to a maximum size of 10MB can be managed through the Webupdates inter
 
 There is no maximum amount of time for an update operation to be completed. You should set your timeout to the highest possible value. Problems sometimes occur with reverse **domain** objects. Because of all the DNS checks made, reverse **domain** objects sometimes take longer to process, and your connection may occasionally time out. The update will still be completed by the database server, but no acknowledgement will be returned if the connection has timed out. Notification messages are always sent by email, and will be sent regardless of your connection status.
 
-Any required passwords must also be supplied. These can be entered via the form password field. When using the text area input mode, passwords can also be included the message body using the “password:” attribute. More information about passwords is available in ['Email Updates'](../Update-Methods/Email-Updates/#email-updates)
+Any required passwords must also be supplied. These can be entered via the form password field. When using the text area input mode, passwords can also be included the message body using the "password:" attribute. More information about passwords is available in ['Email Updates'](../Update-Methods/Email-Updates/#email-updates)
 
 
 ## Creating Basic RIPE Database Objects

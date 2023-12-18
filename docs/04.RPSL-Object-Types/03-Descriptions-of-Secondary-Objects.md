@@ -45,8 +45,8 @@ Leading zeroes (AS1 - AS065536) are not allowed and will be removed (AS1 - AS655
 
 
 * **"as-block:"** – the range of AS Numbers covered by this block.
-* **“descr:”** - A short description related to the object.
-* **“mnt-lower:”** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../Authorisation/#authorisation) for more information.
+* **"descr:"** - A short description related to the object.
+* **"mnt-lower:"** – This attribute controls who is able to create **aut-num** objects in the RIPE Database for the range of AS Numbers covered by this **as-block** object. See the section ['Authorisation'](../Authorisation/#authorisation) for more information.
 
 
 
@@ -83,7 +83,7 @@ The **irt** object was introduced to represent a Computer Security Incident Resp
 
 The **irt** object may only be referenced from **inetnum** and **inet6num** objects to show which CSIRT is responsible for handling computer and network incidents for that address range. Use is made of the hierarchical nature of address space. Any reference in an **inet(6)num** object to an **irt** object applies not only to the referencing object but also to all more specific address space. So the more specific objects inherit the reference to the **irt** object. When querying address space for an **irt** reference, the query software takes account of this inheritance and queries up the hierarchy looking for the nearest applicable **irt** object reference. This information is returned when any more specific **inet(6)num** object is queried. Where **irt** references are made at multiple points in an address space hierarchy, the closest less specific reference applies.
 
-Adding a reference to an **irt** object requires authorisation from the maintainer of the **irt** object. This is handled using the “auth:” attribute of the **irt** object. Although the reference to an **irt** object from an **inet(6)num** object is made using the “mnt-irt:” attribute, it should be clear that the **irt** object is not a **mntner** object. The **irt** object contains contact information and is more similar to a **role** object than a **mntner** object.
+Adding a reference to an **irt** object requires authorisation from the maintainer of the **irt** object. This is handled using the "auth:" attribute of the **irt** object. Although the reference to an **irt** object from an **inet(6)num** object is made using the "mnt-irt:" attribute, it should be clear that the **irt** object is not a **mntner** object. The **irt** object contains contact information and is more similar to a **role** object than a **mntner** object.
 
 The contact details provided by an **irt** object must be business information and must not contain any personal information.
 
@@ -91,15 +91,15 @@ The contact details provided by an **irt** object must be business information a
 
 
 * **"irt:"** – This attribute is a single word name for the response team starting with ‘IRT-‘.
-* **“address:”** - This is a full postal address for the business contact represented by this **irt** object.
-* **“phone:”** – This is a phone number for the business contact represented by this **irt** object. It specifies a telephone number in international format. It must start with a '+' followed by the international country code, area code and number, optionally followed by an extension number.
-* **“fax-no:”** - This is a fax number for the business contact represented by this **irt** object.
-* **“e-mail:”** – This is an email address of a business role, organisation or CSIRT team represented by this **irt** object.
-* **“signature:”** – This attribute references a **key-cert** object in the RIPE Database representing a public key used by the CSIRT team to sign their correspondence.
-* **“encryption:”** – This attribute references a **key-cert** object in the RIPE Database representing a public key used to encrypt correspondence sent to the CSIRT team.
-* **“auth:”** – This attribute defines the authentication scheme to be used to authorise the addition of a reference to this **irt** object. It has the same authentication options as described in the the sub-section ['Description of the mntner Object'](#description-of-the-mntner-object).
-* **“irt-nfy:”** – This attribute specifies a business email address to be notified when a reference to this **irt** object is added or removed.
-* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **irt** object in any other object.
+* **"address:"** - This is a full postal address for the business contact represented by this **irt** object.
+* **"phone:"** – This is a phone number for the business contact represented by this **irt** object. It specifies a telephone number in international format. It must start with a '+' followed by the international country code, area code and number, optionally followed by an extension number.
+* **"fax-no:"** - This is a fax number for the business contact represented by this **irt** object.
+* **"e-mail:"** – This is an email address of a business role, organisation or CSIRT team represented by this **irt** object.
+* **"signature:"** – This attribute references a **key-cert** object in the RIPE Database representing a public key used by the CSIRT team to sign their correspondence.
+* **"encryption:"** – This attribute references a **key-cert** object in the RIPE Database representing a public key used to encrypt correspondence sent to the CSIRT team.
+* **"auth:"** – This attribute defines the authentication scheme to be used to authorise the addition of a reference to this **irt** object. It has the same authentication options as described in the the sub-section ['Description of the mntner Object'](#description-of-the-mntner-object).
+* **"irt-nfy:"** – This attribute specifies a business email address to be notified when a reference to this **irt** object is added or removed.
+* **"mnt-ref:"** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **irt** object in any other object.
 
 
 
@@ -129,20 +129,20 @@ A **key-cert** object holds a public key certificate, available by querying the 
 
 Currently, the RIPE Database supports two types of keys, PGP and X.509.
 
-The PGP certificate can be used to authorise updates to the RIPE Database and for signing and encrypting correspondence with a CSIRT using an **irt** object (see the sub-sections ['Description of the irt Object'](#description-of-the-irt-object) and [‘Description of the mntner Object'](#description-of-the-mntner-object) for more details). The “key-cert:” attribute takes the format ‘PGP-nnnnnnnn' where the key-id nnnnnnnn is a hexadecimal number. These keys are compliant with the Open PGP Message Format. PGP keys using an Elliptic Curve algorithm are not currently supported (e.g. Curve 25519, NIST, SECG, ECC Brainpool etc.).
+The PGP certificate can be used to authorise updates to the RIPE Database and for signing and encrypting correspondence with a CSIRT using an **irt** object (see the sub-sections ['Description of the irt Object'](#description-of-the-irt-object) and [‘Description of the mntner Object'](#description-of-the-mntner-object) for more details). The "key-cert:" attribute takes the format ‘PGP-nnnnnnnn' where the key-id nnnnnnnn is a hexadecimal number. These keys are compliant with the Open PGP Message Format. PGP keys using an Elliptic Curve algorithm are not currently supported (e.g. Curve 25519, NIST, SECG, ECC Brainpool etc.).
 
-The X.509 certificate can be used to sign and encrypt correspondence with a CSIRT using an **irt** object. It may work in some circumstances for authorising updates to the RIPE Database but we cannot guarantee this. The “key-cert:” attribute takes the format ‘X509-nnn' where key-id nnn is an integer number starting with 1. If you want to create an X.509 **key-cert** object, you should specify the value as ‘AUTO-xx'. The next available number will be assigned by the software. If you delete an X.509 **key-cert** object, it is not possible to recreate it with the same key-id.
+The X.509 certificate can be used to sign and encrypt correspondence with a CSIRT using an **irt** object. It may work in some circumstances for authorising updates to the RIPE Database but we cannot guarantee this. The "key-cert:" attribute takes the format ‘X509-nnn' where key-id nnn is an integer number starting with 1. If you want to create an X.509 **key-cert** object, you should specify the value as ‘AUTO-xx'. The next available number will be assigned by the software. If you delete an X.509 **key-cert** object, it is not possible to recreate it with the same key-id.
 
 The "method:", "owner:" and "fingerpr:" attributes are all generated by the software. It is not necessary to include these attributes when you create or modify one of these objects. If any of them are supplied, the software will check the values. If the value is wrong for any reason, the software will replace the supplied values with generated values. In this case, a warning will be returned to the user.
 
 **Description of Attributes Specific to the KEY-CERT Object**
 
 
-* **"key-cert:"** – This attribute specifies the key-id. This is used in “auth:” attributes of the mntner and irt objects.
-* **“method:”** – This attribute defines the type of the public key. Currently, only PGP and X509 are supported.
-* **“owner:”** – This attribute specifies the owner of the public key. This information must be supplied when you create the key. The RIPE Database software extracts this information from the key data when the **key-cert** object is created.
-* **“fingerpr:”** – This attribute is an identifier of the public key. The RIPE Database software extracts this information from the key data when the **key-cert** object is created.
-* **“certif:”** – The value of the public key should be supplied either using multiple "certif:" attributes, or in one "certif:" attribute. In the first case, this is easily done by exporting the key from your local key ring in ASCII-armored format and adding the string "certif:" to the start of each line of the key. In the second case, line continuation should be used to represent an ASCII-armored format of the key. All the lines of the exported key must be included, not forgetting the begin and end markers and the empty line that separates the header from the key body.
+* **"key-cert:"** – This attribute specifies the key-id. This is used in "auth:" attributes of the mntner and irt objects.
+* **"method:"** – This attribute defines the type of the public key. Currently, only PGP and X509 are supported.
+* **"owner:"** – This attribute specifies the owner of the public key. This information must be supplied when you create the key. The RIPE Database software extracts this information from the key data when the **key-cert** object is created.
+* **"fingerpr:"** – This attribute is an identifier of the public key. The RIPE Database software extracts this information from the key data when the **key-cert** object is created.
+* **"certif:"** – The value of the public key should be supplied either using multiple "certif:" attributes, or in one "certif:" attribute. In the first case, this is easily done by exporting the key from your local key ring in ASCII-armored format and adding the string "certif:" to the start of each line of the key. In the second case, line continuation should be used to represent an ASCII-armored format of the key. All the lines of the exported key must be included, not forgetting the begin and end markers and the empty line that separates the header from the key body.
 
 
 
@@ -172,7 +172,7 @@ Below is the object template for the **mntner** object. It lists all possible at
 
 Objects in the RIPE Database are protected using **mntner** objects. A **mntner** object is an anonymous box containing the credentials needed to authorise creation, deletion or modification of any objects that it protects by whomever maintains this data. Currently, these credentials are MD5 passwords or PGP keys or Single Sign-On user names from the RIPE NCC Access system. The syntax also allows for X.509 certificates, but these are not fully implemented throughout the whois software.
 
-Objects are protected by a **mntner**, if they contain a reference to the **mntner** in the object. This is done by including a "mnt-by:" attribute. Other “mnt-xxx:” attributes offer hierarchical protection. The "mnt-by:" attribute is mandatory in all object types.
+Objects are protected by a **mntner**, if they contain a reference to the **mntner** in the object. This is done by including a "mnt-by:" attribute. Other "mnt-xxx:" attributes offer hierarchical protection. The "mnt-by:" attribute is mandatory in all object types.
 
 A **mntner** object can be referenced either as a single mntner or comma-separated list of **mntners**.
 
@@ -188,11 +188,11 @@ For more detailed information about using mntner attributes, see the section [�
 
 
 * **"mntner:"** – This attribute specifies the name of the **mntner** object. It should end in ‘-mnt', but the software has never enforced this.
-* **“descr:”** – A short description related to the object.
-* **“upd-to:”** – This attribute specifies an email address where a notification will be sent when an attempt to update an object protected by this **mntner** is unsuccessful due to authorisation failure. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
-* **“mnt-nfy:”** – This attribute specifies the email address where a notification will be sent when an object protected by this **mntner** is successfully updated. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
-* **“mnt-ref:”** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **mntner** object in any other object.
-* **“auth:”** – This attribute defines an authentication scheme to be used. Any of the current authentication schemes used by the RIPE Database are allowed.
+* **"descr:"** – A short description related to the object.
+* **"upd-to:"** – This attribute specifies an email address where a notification will be sent when an attempt to update an object protected by this **mntner** is unsuccessful due to authorisation failure. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
+* **"mnt-nfy:"** – This attribute specifies the email address where a notification will be sent when an object protected by this **mntner** is successfully updated. If there are multiple attributes, all specified email addresses will receive a direct email to that address.
+* **"mnt-ref:"** – This attribute references **mntner** objects that provide a set of authorisation tokens used for creating references to this **mntner** object in any other object.
+* **"auth:"** – This attribute defines an authentication scheme to be used. Any of the current authentication schemes used by the RIPE Database are allowed.
 
 
 
@@ -235,9 +235,9 @@ The **organisation** object should only contain business information. Even if th
 
 Adding references to an **organisation** object requires authorisation from the organisation. Removing them does not need any authorisation. The maintainer of the **organisation** object can choose to be notified when any reference is added or removed.
 
-This object is created for new members by the RIPE NCC with “org-type: LIR”. These objects are required to include an “abuse-c:” attribute referencing an abuse contact object.
+This object is created for new members by the RIPE NCC with "org-type: LIR". These objects are required to include an "abuse-c:" attribute referencing an abuse contact object.
 
-The member **organisation** objects are partly managed by the RIPE NCC and partly by the member. Because of this joint management, with the RIPE NCC **mntner** as the “mnt-by:”, these objects are locked out of normal updates by members. The parts that the member can change can only be edited in the [LIR Portal](https://lirportal.ripe.net/) Object Editors.
+The member **organisation** objects are partly managed by the RIPE NCC and partly by the member. Because of this joint management, with the RIPE NCC **mntner** as the "mnt-by:", these objects are locked out of normal updates by members. The parts that the member can change can only be edited in the [LIR Portal](https://lirportal.ripe.net/) Object Editors.
 
 **Description of Attributes Specific to the ORGANISATION Object**
 
@@ -289,9 +289,9 @@ Below is the object template for the **person** object. It lists all possible at
     last-modified:    generated  single
     source:           mandatory  single  
 
-The **person** object provides information about a real person. The original intention was that this should only be used for contacts responsible for technical or administrative issues relating to Internet resources registered in the RIPE Database. However, the business model used by many resource holders is to also document End User customers who have been assigned a resource. One of its purposes is defined as a contact database for people who manage resources. It is not easy to distinguish between customers and contacts from the **person** object, unless it is documented in “remarks:”. The **person** object is the only object in the RIPE Database that should contain any personal information. The "person:" attribute is not the primary key of this object, even though it is the first attribute. The name in the “person:” attribute can be changed by the user.
+The **person** object provides information about a real person. The original intention was that this should only be used for contacts responsible for technical or administrative issues relating to Internet resources registered in the RIPE Database. However, the business model used by many resource holders is to also document End User customers who have been assigned a resource. One of its purposes is defined as a contact database for people who manage resources. It is not easy to distinguish between customers and contacts from the **person** object, unless it is documented in "remarks:". The **person** object is the only object in the RIPE Database that should contain any personal information. The "person:" attribute is not the primary key of this object, even though it is the first attribute. The name in the "person:" attribute can be changed by the user.
 
-The **person** and **role** objects are the only objects where the first attribute is not (even part of) the primary key of the database object. For these objects the primary key is the “nic-hdl:” attribute. Both these objects ‘share' the use of the primary key. So it is not possible to have a **person** object with the same “nic-hdl:” value as a **role** object. The two objects have become almost interchangeable and in most situations either can be used. But it is not possible to convert one into the other. It is not possible to determine if an object is a **person** or **role** object from the “nic-hdl:”.
+The **person** and **role** objects are the only objects where the first attribute is not (even part of) the primary key of the database object. For these objects the primary key is the "nic-hdl:" attribute. Both these objects ‘share' the use of the primary key. So it is not possible to have a **person** object with the same “nic-hdl:” value as a **role** object. The two objects have become almost interchangeable and in most situations either can be used. But it is not possible to convert one into the other. It is not possible to determine if an object is a **person** or **role** object from the “nic-hdl:”.
 
 If a **person** object is deleted, it is not possible to recreate it with the same NIC Handle. This rule was only introduced in 2009. Before that date, the NIC Handles could be re-used. Some caution should be exercised when looking at the history of objects that reference NIC Handles. A **person** or **role** object in the database that currently has that NIC handle may not be the same person or contact as the one using this NIC Handle in the historical reference.
 

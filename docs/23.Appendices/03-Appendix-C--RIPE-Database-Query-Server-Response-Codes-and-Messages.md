@@ -28,13 +28,13 @@ Example:
 No entries were found in the selected source(s).
 
 **%ERROR:102: unknown source**
-Unknown source was supplied as argument to the “-s” query ag. Use “-q sources” for a list of available sources.
+Unknown source was supplied as argument to the `-s` query ag. Use `-q sources` for a list of available sources.
 
 **%ERROR:103: unknown object type** 
-Unknown object type is specified as an argument to the “-T” query flag.
+Unknown object type is specified as an argument to the `-T` query flag.
 
 **%ERROR:104: unknown attribute**
-Unknown argument is specified to the inverse query flag (“-I”). See [Queryingthe RIPE Database](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database) for more information.
+Unknown argument is specified to the inverse query flag (`-I`). See [Queryingthe RIPE Database](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database) for more information.
 
 **%ERROR:105: attribute is not searchable**
 The argument specified for the inverse query flag is not a searchable attribute. See [Queryingthe RIPE Database](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database) for more information.
@@ -58,7 +58,7 @@ The same flag cannot be used multiple times.
 Query flag that does not exist was given. Use the help query to see the valid options.
 
 **%ERROR:112: unsupported query**
-“-mM” query options are not allowed on very large ranges/prefixes.
+`-mM` query options are not allowed on very large ranges/prefixes.
 
 **%ERROR:114: unsupported query**
 Search key doesn't match any known query types.
@@ -82,7 +82,7 @@ Access from the host has been temporarily or permanently denied because of exces
 Limit of returned objects has been reached. The connection is terminated. Continued attempts to excessively query the database will result in permanent denial of service. See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries/#access-control-for-queries) for more information.
 
 **%ERROR:203: address passing not allowed** 
-The host is not registered as a proxy and is not allowed to pass addresses on the query line (“-V” ag). See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries/#access-control-for-queries) for more information.
+The host is not registered as a proxy and is not allowed to pass addresses on the query line (`-V` ag). See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries/#access-control-for-queries) for more information.
 
 
 ## Connection Errors
