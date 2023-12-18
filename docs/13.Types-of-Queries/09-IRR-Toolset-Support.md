@@ -11,12 +11,12 @@ The RIPE Database server includes support for these query types. This section de
 * Return the prefixes of all **route** and **route6** objects with a specified origin – whois -Ki origin&lt;asn&gt;
 * Return only the primary keys of the **route** and **route6** objects, not full objects – whois –KTroute,route6 &lt;prefix&gt;
 * Return the prefixes of all **route** and **route6** objects referenced in a given route-set – whois –K &lt;route-set&gt;
-* Return all the members (**aut-num** or **as-set** object) of a specified **as-set**. This returns only the “members:” attributes, not the full object – whois –K &lt;as-set&gt;
+* Return all the members (**aut-num** or **as-set** object) of a specified **as-set**. This returns only the "members:" attributes, not the full object – whois –K &lt;as-set&gt;
 * Optionally, include support for expansion of the previous query, if the returned value contains references to as-sets, so that the result contains only a list of **aut-num** objects.
 
 The RIPE Database server does not support this and it is up to the client to perform the expansion. The IRRToolset currently does the expansion.
 
 * Return **route** and **route6** objects that exactly match a specified prefix - whois –BGxTroute,route6 193.0.0.0/21
-* Return **route** and **route6** objects that exactly match a specified prefix (as above), but return only the “route:” or “route6:” attributes prefix - whois –KxTroute,route6 193.0.0.0/21
+* Return **route** and **route6** objects that exactly match a specified prefix (as above), but return only the "route:" or "route6:" attributes prefix - whois –KxTroute,route6 193.0.0.0/21
 
 See [Table 4: Query Support For Tools](../Tables-of-Query-Types-Supported-by-the-RIPE-Database/#table-4-query-support-for-tools)

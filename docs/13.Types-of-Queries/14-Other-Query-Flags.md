@@ -20,31 +20,31 @@ permalink: /Types-of-Queries/Other-Query-Flags
 
 ## The “-T” (“--select-types”) Query Flag
 
-This query flag restricts the type of the objects returned to those specified. The query flag argument is a comma-separated list of object types. A space after “T” is optional but the list cannot contain any spaces.
+This query flag restricts the type of the objects returned to those specified. The query flag argument is a comma-separated list of object types. A space after "T" is optional but the list cannot contain any spaces.
 
 ## The “-K” (“--primary-keys”) Query Flag
 
-The “-K” (“--primary-keys”) query flag returns only the primary keys of each object in the query response.
+The `-K` (`--primary-keys`) query flag returns only the primary keys of each object in the query response.
 
 There are some exceptions to this:
 
 * With **set** objects, the "members:" attributes will also be returned.
-* With **route** and **route6** objects both the prefix and the “origin:” attribute are returned as these jointly provide the primary key.
+* With **route** and **route6** objects both the prefix and the "origin:" attribute are returned as these jointly provide the primary key.
 * No information is returned for **person**, **role** or **organisation** objects.
 
 ## The “-t” (“--template”) Query Flag
 
-The “-t” (“--template”) query flag returns a template of the specified object type as shown for each object in the section [RPSL Object Types](../RPSL-Object-Types/#rpsl-object-types).
+The `-t` (`--template`) query flag returns a template of the specified object type as shown for each object in the section [RPSL Object Types](../RPSL-Object-Types/#rpsl-object-types).
 
 ## The “-v” (“--verbose”) Query Flag
 
-The “-v” (“--verbose”) query flag returns a verbose description of the specified object type as shown for each object in the section [RPSL Object Types](../RPSL-Object-Types/#rpsl-object-types).
+The `-v` (`--verbose`) query flag returns a verbose description of the specified object type as shown for each object in the section [RPSL Object Types](../RPSL-Object-Types/#rpsl-object-types).
 
 ## The “-q” Query Flag
 
-The RIPE Database server supports the retrieval of certain information about itself and the data sets served, using a “-q” query flag.
+The RIPE Database server supports the retrieval of certain information about itself and the data sets served, using a `-q` query flag.
 
-The “-q” query flag requests the server to reply with information about the system setup. It does not return any information extracted from any of the databases that it serves. This query flag takes a single argument, which has three possible values:
+The `-q` query flag requests the server to reply with information about the system setup. It does not return any information extracted from any of the databases that it serves. This query flag takes a single argument, which has three possible values:
 
 * **Version** (usage: -q version). This will display version information for the server software
 * **Types** (usage: -q types). This will list all the object types recognised by the RIPE Database
@@ -52,16 +52,16 @@ The “-q” query flag requests the server to reply with information about the 
 
 ## The “-a” (“--all-sources”) Query Flag
 
-The “-a” (“--all-sources”) query flag requests that the server searches all the sources available to it and the response will include any output found from any of the available sources. These are the sources listed by using the “–q sources” query.
+The `-a` (`--all-sources`) query flag requests that the server searches all the sources available to it and the response will include any output found from any of the available sources. These are the sources listed by using the `–q sources` query.
 
 ## The “-s” (“--sources”) Query Flag
 
-The “-s” (“--sources”) query flag requests that the server searches all the sources specified and the response will include any output found from any of these sources. The available sources are the sources listed by using the “–q sources” query. The argument to this flag can be a comma-separated list of sources. They will be queried in the order specified by the user. Search other **mirrored** databases, not only the RIPE Database.
+The `-s` (`--sources`) query flag requests that the server searches all the sources specified and the response will include any output found from any of these sources. The available sources are the sources listed by using the `–q sources` query. The argument to this flag can be a comma-separated list of sources. They will be queried in the order specified by the user. Search other **mirrored** databases, not only the RIPE Database.
 
 
 ## The “-S” (“--resources) Query Flag
 
-The “-S” (“--resources”) query flag search in other **mirrored** databases, such as: RIPE-GRS or ARIN-GRS, not only the RIPE Database.
+The `-S` (`--resources`) query flag search in other **mirrored** databases, such as: RIPE-GRS or ARIN-GRS, not only the RIPE Database.
     For example:
         whois -S ARIN-GRS 193.201.1.1
 
