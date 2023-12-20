@@ -34,7 +34,11 @@ This command is going to install the required dependencies for vuepress and thos
 
     npm run docs:dev
 
-This command is going to launch a local server in http://localhost:8080/docs/
+This command is going to launch a local server in http://localhost:8080/docs/.
+If you have a problem running this command, you should run
+
+  export NODE_OPTIONS=--openssl-legacy-provider
+
 
 # Legal
 
