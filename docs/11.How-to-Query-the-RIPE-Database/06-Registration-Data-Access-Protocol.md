@@ -91,6 +91,7 @@ In addition to the base RDAP specification, we also implement the following prof
  * [NRO RDAP Profile](https://bitbucket.org/nroecg/nro-rdap-profile/raw/v1/nro-rdap-profile.txt).
  * [NRO RDAP cidr](https://bitbucket.org/nroecg/nro-rdap-cidr/src/master/nro-rdap-cidr.txt).
  * [Redacted](https://datatracker.ietf.org/doc/draft-ietf-regext-rdap-redacted/).
+ * [RIR search](https://datatracker.ietf.org/doc/draft-ietf-regext-rdap-rir-search/)
 
 ## Known Issues
 
