@@ -30,8 +30,7 @@ Any role object used for abuse contacts with an "abuse-mailbox:" attribute is an
 
 We restrict access to the RIPE Database to stop people from using it to collect excessive amounts of contact data. 
 If the number of personal contact objects returned by all your queries in a day (defined by UTC) from one IP address 
-exceeds the limits defined in the [Acceptable Use Policy (AUP)](..
-/RIPE-Database-Acceptable-Use-Policy/#ripe-database-acceptable-use-policy), that IP address's access will be blocked.
+exceeds the limits defined in the [Acceptable Use Policy (AUP)](../RIPE-Database-Acceptable-Use-Policy/#ripe-database-acceptable-use-policy), that IP address's access will be blocked.
 If your access is blocked, you will unable to query the RIPE Database for any object types - you are not just 
 blocked from accessing contact data objects. This temporary block will be automatically released at midnight (UTC) to allow querying to continue. There is also a limit on the number of times an IP address can be blocked and recover. When this limit is reached, that IP address is permanently blocked from accessing the RIPE Database. This permanent block will not be removed automatically.
 
