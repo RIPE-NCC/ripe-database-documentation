@@ -6,3 +6,4 @@ yarn.lock
 builds
 package-lock.json
 .idea/
+ripe-docs.iml
