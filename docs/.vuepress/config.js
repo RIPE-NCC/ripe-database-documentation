@@ -70,8 +70,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@imgs': path.resolve(__dirname, '../assets/imgs'),
-        '@assets': path.resolve(__dirname, '.vuepress')
+        '@imgs': path.resolve(__dirname, '../assets/imgs')
       }
     }
   },
