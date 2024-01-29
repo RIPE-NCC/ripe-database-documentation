@@ -5,7 +5,7 @@
     </div>
 </template>
 <script>
-
+import Panzoom from '@panzoom/panzoom'
 export default {
     name: "svgZoomComponent",
     mounted() {
@@ -13,10 +13,14 @@ export default {
         let insideDiv = document.getElementById("svg_inside_div");
         div.parentNode.insertBefore(insideDiv,div);
 
+
+        this.panzoom = Panzoom(document.querySelector("div[id^='mermaid']"), {
+            maxScale: 5
+        })
     },
     methods: {
         zoom(event){
-            event === -1
+            event === -1 ? this.panzoom.zoomOut() : this.panzoom.zoomIn()
         }
     }
 }
