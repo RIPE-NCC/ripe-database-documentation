@@ -82,8 +82,6 @@
 
     "@technical-design/ripe-app-webcomponents": "^3.3.0",
 
-    "dayjs": "^1.11.3",
-
     "markdown-it-html5-embed": "^1.0.0",
 
     "markdown-it-html5-media": "^0.7.0",
@@ -95,6 +93,8 @@
     "vuepress-bar": "^0.4.2",
 
     "vuepress-plugin-code-copy": "^1.0.6",
+
+    "vuepress-plugin-flowchart": "^1.5.0",
 
     "vuepress-plugin-full-searchbar": "git+https://gitlab.ripe.net/ssuess/vuepress-plugin-full-searchbar",
 
