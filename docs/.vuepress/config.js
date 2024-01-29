@@ -201,6 +201,16 @@ module.exports = {
        }],
     ['@mr-hope/vuepress-plugin-components'],
     ['full-searchbar', { encode: 'icase', tokenize: 'full' }],
+    ['@vuepress/last-updated', {
+      transformer: (timestamp, lang) => {
+        const dayjs = require('dayjs')
+        const utc = require('dayjs/plugin/utc')
+
+        dayjs.extend(utc)
+
+        return dayjs(timestamp).utc(true).format()
+      }
+    }],
     ['@renovamen/vuepress-plugin-mermaid']
 	],
   markdown: {

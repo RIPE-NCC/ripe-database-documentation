@@ -82,13 +82,13 @@
 
     "@technical-design/ripe-app-webcomponents": "^3.3.0",
 
+    "dayjs": "^1.11.3",
+
     "markdown-it-html5-embed": "^1.0.0",
 
     "markdown-it-html5-media": "^0.7.0",
 
     "node-fetch": "^3.1.0",
-
-    "vue-cookies": "^1.8.1",
 
     "vuepress-bar": "^0.4.2",
 
