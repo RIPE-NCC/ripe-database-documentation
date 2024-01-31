@@ -51,7 +51,7 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/icons/favicon-32x32.png"}],
     ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/icons/favicon-16x16.png"}],
   ],
-  prefetch: false,
+  shouldPrefetch: () => false,
   themeConfig: {
     nav: [],
     sidebar: sidebar.filter(s => s !== '25.HTML-Terms-And-Conditions'),
