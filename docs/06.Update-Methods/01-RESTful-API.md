@@ -31,6 +31,7 @@ Create an object in the RIPE database.
 #### Locations
 * `https://rest.db.ripe.net`
 * `https://rest-test.db.ripe.net`
+* `https://rest-cert.db.ripe.net`
 
 
 HTTPS is mandatory.
@@ -127,6 +128,7 @@ Updates an existing object in the RIPE Database.
 
 * `https://rest.db.ripe.net`
 * `https://rest-test.db.ripe.net`
+* `https://rest-cert.db.ripe.net`
 
 HTTPS is mandatory.
 
@@ -242,6 +244,7 @@ Deletes an object from the Database.
 
 * `https://rest.db.ripe.net`
 * `https://rest-test.db.ripe.net`
+* `https://rest-cert.db.ripe.net`
 
 HTTPS is mandatory.
 
