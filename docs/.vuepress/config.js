@@ -89,11 +89,7 @@ module.exports = {
       }
 
       if (typeof thirdMatchingPart !== 'undefined') { // links starting by #
-        let contentNoMoreThanOneDashInLinks = thirdMatchingPart.replace(dashRegex, '-');
-        if (contentNoMoreThanOneDashInLinks.startsWith("#x509")) {
-          contentNoMoreThanOneDashInLinks = contentNoMoreThanOneDashInLinks.replace('#x509', '#x-509')
-        }
-        return firstMatchingPart+ '](' + contentNoMoreThanOneDashInLinks + ')';
+        return firstMatchingPart+ '](' + thirdMatchingPart.replace(dashRegex, '-') + ')'; //remove extra dashes
       }
 
       return matchingWord + ')'; //dont change absolute links
