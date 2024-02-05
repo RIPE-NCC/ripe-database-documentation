@@ -108,7 +108,7 @@ module.exports = {
         return firstMatchingPart+ '](' + "acceptable-use-policy"+ ')';
       }
       if (typeof thirdMatchingPart !== 'undefined') { // links starting by #
-        return firstMatchingPart+ '](' + "entire-documentation-HTML" + thirdMatchingPart;
+        return firstMatchingPart+ '](' + "entire-documentation-HTML" + thirdMatchingPart + ')';
       }
 
       return matchingWord + ')'; //dont change absolute links
