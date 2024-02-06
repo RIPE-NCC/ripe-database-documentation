@@ -23,14 +23,22 @@ Where:
     * Use the `nic-hdl` attribute value for person or role object types.
     * Combine the `route(6)` attribute value and `origin` attribute value for route or route6 object types (e.g. route 193.0.22.0/23AS3333).
 
+### Environments
+
+| Environment | Protocol | Client cert | Endpoint                           |
+|-------------|----------|-------------|------------------------------------|
+| TEST        | HTTP     | No          | http://rest-test.db.ripe.net       |
+| TEST        | HTTPS    | No          | https://rest-test.db.ripe.net      |
+| TEST        | HTTPS    | Yes         | https://rest-cert-test.db.ripe.net |
+| RIPE        | HTTP     | No          | http://rest.db.ripe.net            |
+| RIPE        | HTTPS    | No          | https://rest.db.ripe.net           |
+| RIPE        | HTTPS    | Yes         | https://rest-cert.db.ripe.net      |
+
+
 
 ### POST
 
 Create an object in the RIPE database.
-
-#### Locations
-* `https://rest.db.ripe.net`
-* `https://rest-test.db.ripe.net`
 
 
 HTTPS is mandatory.
@@ -122,11 +130,6 @@ Possible reasons for various HTTP status codes are as follows:
 ### PUT
 
 Updates an existing object in the RIPE Database.
-
-#### Locations
-
-* `https://rest.db.ripe.net`
-* `https://rest-test.db.ripe.net`
 
 HTTPS is mandatory.
 
@@ -238,11 +241,6 @@ If the request fails, any error messages will be returned in the response body, 
 
 Deletes an object from the Database.
 
-#### Locations
-
-* `https://rest.db.ripe.net`
-* `https://rest-test.db.ripe.net`
-
 HTTPS is mandatory.
 
 #### Method: DELETE
@@ -347,3 +345,16 @@ A way to work around this limitation is to rely on the response of the muting op
 Any required passwords must also be supplied as part of the Uniform Resource identifier (URI) using the URI query parameter "password=". One parameter should be used for each password supplied. The pseudo attribute "password:" cannot be used in the HTTP request body. See ["Email Updates"](../Update-Methods/Email-Updates/#email-updates) for more information.
 
 
+## Client Certificate Authentication
+
+[Client Certificate Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Client_certificate_authentication)
+is supported by our REST API. To use the client certificate service, you must have your own certificate: either from a certificate authority (CA) such as Let's Encrypt, or you can generate one yourself.
+
+### Examples
+
+- Create your own certificate:
+  - Generate the private key: openssl genrsa -out client.key 2048
+  - Generate the Certificate Signing Request (CSR): openssl req -new -key client.key -out client.csr
+  - Generate the self-signed certificate using the CSR: openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt
+- Example using curl and previous certificate: 
+  - curl --cert client.crt --key client.key -X PUT --data @form.txt'https://rest-cert.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
