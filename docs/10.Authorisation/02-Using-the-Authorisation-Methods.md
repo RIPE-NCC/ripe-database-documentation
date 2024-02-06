@@ -7,7 +7,7 @@ permalink: /Authorisation/Using-the-Authorisation-Methods
 
 * [MD5 Password](#md5-password)
 * [PGP Key](#pgp-key)
-* [X.509 Certificate](#x509-certificate)
+* [X.509 Certificate](#x-509-certificate)
 * [Single Sign-On](#single-sign-on)
 
 
