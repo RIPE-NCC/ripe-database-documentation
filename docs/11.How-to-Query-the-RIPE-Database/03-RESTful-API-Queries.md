@@ -136,7 +136,7 @@ As with the lookup, any spaces in the command must be encoded. The response will
 
 ### Locations
 
-[environment endpoint](/Update-Methods/RESTful-API/#Environments)/search
+[Location](/Update-Methods/RESTful-API/#environments)/search
 
 ### HTTP Method: GET
 
@@ -215,7 +215,7 @@ List available sources.
 
 #### Locations
 
-[environment endpoint](/Update-Methods/RESTful-API/#Environments)/metadata/sources
+[Location](/Update-Methods/RESTful-API/#environments)/metadata/sources
 
 #### HTTP Method: GET
 
@@ -300,7 +300,7 @@ Returns the RPSL template for given object type.
 
 #### Resources
 
-[environment endpoint](/Update-Methods/RESTful-API/#Environments)/metadata/templates
+[Location](/Update-Methods/RESTful-API/#environments)/metadata/templates
 
 #### HTTP Method: GET
 
@@ -341,7 +341,7 @@ For further background information on the Geolocation feature, refer to the RIPE
 
 ### Locations
 
-[environment endpoint](/Update-Methods/RESTful-API/#Environments)/geolocation
+[Location](/Update-Methods/RESTful-API/#environments)/geolocation
 
 ### HTTP Method: GET
 
@@ -384,7 +384,7 @@ Lookup abuse contact email for an internet resource (IPv4 address, range or pref
 
 ### Locations
 
-[environment endpoint](/Update-Methods/RESTful-API/#Environments)/abuse-contact
+[Location](/Update-Methods/RESTful-API/#environments)/abuse-contact
 
 ### HTTP Method: GET
 
@@ -425,7 +425,7 @@ Show a specific version of a RIPE Database object.
 
 ### Resources
 
-[Resources endpoints](/Update-Methods/RESTful-API/#Environments)
+[Resource](/Update-Methods/RESTful-API/#environments)
 
 ### Method: GET
 
@@ -465,7 +465,7 @@ Lists all versions of RIPE Database object, including the date and operation for
 
 ### Resources
 
-[Resources endpoints](/Update-Methods/RESTful-API/#Environments)
+[Resource](/Update-Methods/RESTful-API/#environments)
 
 ### Method: GET
 
