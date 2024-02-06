@@ -88,11 +88,11 @@ module.exports = {
         return firstMatchingPart+ '](' + "#ripe-database-terms-and-conditions"+ ')';
       }
 
-      if (matchingWord.includes('#')) {
-        let selfReferenceLink = matchingWord.substring(matchingWord.indexOf('#'));
+      if (secondMatchingPart.includes('#')) {
+        let selfReferenceLink = secondMatchingPart.substring(secondMatchingPart.indexOf('#'));
         return firstMatchingPart+ '](' + selfReferenceLink.replace(dashRegex, '-'); //remove extra dashes
       }
-      
+
       return matchingWord; //dont change absolute links
     })
   },
@@ -108,8 +108,8 @@ module.exports = {
       if(secondMatchingPart.startsWith("](../RIPE-Database-Acceptable-Use-Policy") || secondMatchingPart.startsWith("](RIPE-Database-Acceptable-Use-Policy")){
         return firstMatchingPart+ '](' + "acceptable-use-policy"+ ')';
       }
-      if (matchingWord.includes('#')) {
-        let selfReferenceLink = matchingWord.substring(matchingWord.indexOf('#'));
+      if (secondMatchingPart.includes('#')) {
+        let selfReferenceLink = secondMatchingPart.substring(secondMatchingPart.indexOf('#'));
         return firstMatchingPart+ '](' + "entire-documentation-HTML" + selfReferenceLink;
       }
 
