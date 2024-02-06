@@ -497,6 +497,21 @@ Example Request:
 
 
 
+## Authentication
+
+RESTful API queries can be authenticated in order to retrieve the full object details, e.g. maintainers.
+
+RESTful API queries can be authenticated using the following methods:
+
+- Password: You can choose between using password query parameter or basic authentication. 
+- SSO cookie: If you are using the web application you can automatically be authenticated in one mntner if that mntner 
+  is associated to your SSO account.
+- Client certificate: You can supply your own certificate, and it is checked against the queried object's mntner 
+  key-certs
+
+
+
+
 
 
 
