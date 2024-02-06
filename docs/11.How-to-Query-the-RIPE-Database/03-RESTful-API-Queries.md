@@ -42,13 +42,6 @@ Additional resources:
 
 ***
 
-### Environments
-* `http://rest.db.ripe.net`
-* `https://rest.db.ripe.net`
-* `http://rest-test.db.ripe.net`
-* `https://rest-test.db.ripe.net`
-* `https://rest-cert.db.ripe.net`
-
 ### Method: GET
 
 ### URI Format: /{source}/{objectType}/{key}
@@ -143,11 +136,7 @@ As with the lookup, any spaces in the command must be encoded. The response will
 
 ### Locations
 
-* `http://rest.db.ripe.net/search`
-* `https://rest.db.ripe.net/search`
-* `http://rest-test.db.ripe.net/search`
-* `https://rest-test.db.ripe.net/search`
-* `https://rest-cert.db.ripe.net/search`
+[environment endpoint](/Update-Methods/RESTful-API/#Environments)/search
 
 ### HTTP Method: GET
 
@@ -226,11 +215,7 @@ List available sources.
 
 #### Locations
 
-* `http://rest.db.ripe.net/metadata/sources`
-* `https://rest.db.ripe.net/metadata/sources`
-* `http://rest-test.db.ripe.net/metadata/sources`
-* `https://rest-test.db.ripe.net/metadata/sources`
-* `https://rest-cert.db.ripe.net/metadata/sources`
+[environment endpoint](/Update-Methods/RESTful-API/#Environments)/metadata/sources
 
 #### HTTP Method: GET
 
@@ -315,11 +300,7 @@ Returns the RPSL template for given object type.
 
 #### Resources
 
-* `http://rest.db.ripe.net/metadata/templates`
-* `https://rest.db.ripe.net/metadata/templates`
-* `http://rest-test.db.ripe.net/metadata/templates`
-* `https://rest-test.db.ripe.net/metadata/templates`
-* `https://rest-cert.db.ripe.net/metadata/templates`
+[environment endpoint](/Update-Methods/RESTful-API/#Environments)/metadata/templates
 
 #### HTTP Method: GET
 
@@ -360,11 +341,7 @@ For further background information on the Geolocation feature, refer to the RIPE
 
 ### Locations
 
-* `http://rest.db.ripe.net/geolocation`
-* `https://rest.db.ripe.net/geolocation`
-* `http://rest-test.db.ripe.net/geolocation`
-* `https://rest-test.db.ripe.net/geolocation`
-* `https://rest-cert.db.ripe.net/geolocation`
+[environment endpoint](/Update-Methods/RESTful-API/#Environments)/geolocation
 
 ### HTTP Method: GET
 
@@ -407,11 +384,7 @@ Lookup abuse contact email for an internet resource (IPv4 address, range or pref
 
 ### Locations
 
-* `http://rest.db.ripe.net/abuse-contact`
-* `https://rest.db.ripe.net/abuse-contact`
-* `http://rest-test.db.ripe.net/abuse-contact`
-* `https://rest-test.db.ripe.net/abuse-contact`
-* `https://rest-cert.db.ripe.net/abuse-contact`
+[environment endpoint](/Update-Methods/RESTful-API/#Environments)/abuse-contact
 
 ### HTTP Method: GET
 
@@ -452,11 +425,7 @@ Show a specific version of a RIPE Database object.
 
 ### Resources
 
-* `http://rest.db.ripe.net`
-* `https://rest.db.ripe.net`
-* `http://rest-test.db.ripe.net`
-* `https://rest-test.db.ripe.net`
-* `https://rest-cert.db.ripe.net`
+[Resources endpoints](/Update-Methods/RESTful-API/#Environments)
 
 ### Method: GET
 
@@ -496,11 +465,7 @@ Lists all versions of RIPE Database object, including the date and operation for
 
 ### Resources
 
-* `http://rest.db.ripe.net`
-* `https://rest.db.ripe.net`
-* `http://rest-test.db.ripe.net`
-* `https://rest-test.db.ripe.net`
-* `https://rest-cert.db.ripe.net`
+[Resources endpoints](/Update-Methods/RESTful-API/#Environments)
 
 ### Method: GET
 
