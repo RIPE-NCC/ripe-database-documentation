@@ -42,12 +42,6 @@ Additional resources:
 
 ***
 
-### Environments
-* `http://rest.db.ripe.net`
-* `https://rest.db.ripe.net`
-* `http://rest-test.db.ripe.net`
-* `https://rest-test.db.ripe.net`
-
 ### Method: GET
 
 ### URI Format: /{source}/{objectType}/{key}
@@ -530,7 +524,6 @@ RESTful API queries can be authenticated using the following methods:
   is associated to your SSO account.
 - Client certificate: You can supply your own certificate, and it is checked against the queried object's mntner 
   key-certs
-=======
 
 
 
@@ -546,10 +539,7 @@ As with the lookup, any spaces in the command must be encoded. The response will
 
 ### Locations
 
-* `http://rest.db.ripe.net/search`
-* `https://rest.db.ripe.net/search`
-* `http://rest-test.db.ripe.net/search`
-* `https://rest-test.db.ripe.net/search`
+[Environment endpoint](/Update-Methods/RESTful-API/#environments)/search
 
 ### HTTP Method: GET
 
@@ -628,10 +618,7 @@ List available sources.
 
 #### Locations
 
-* `http://rest.db.ripe.net/metadata/sources`
-* `https://rest.db.ripe.net/metadata/sources`
-* `http://rest-test.db.ripe.net/metadata/sources`
-* `https://rest-test.db.ripe.net/metadata/sources`
+[Environment endpoint](/Update-Methods/RESTful-API/#environments)/metadata/sources
 
 #### HTTP Method: GET
 
@@ -647,9 +634,9 @@ A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources
 
 #### HTTP Status Codes
 
-|code|description|
-|----|-----------|
-|200|Request successful|
+| code | description        |
+|------|--------------------|
+| 200  | Request successful |
 
 #### Examples
 
@@ -716,10 +703,7 @@ Returns the RPSL template for given object type.
 
 #### Resources
 
-* `http://rest.db.ripe.net/metadata/templates`
-* `https://rest.db.ripe.net/metadata/templates`
-* `http://rest-test.db.ripe.net/metadata/templates`
-* `https://rest-test.db.ripe.net/metadata/templates`
+[Environment endpoint](/Update-Methods/RESTful-API/#environments)/metadata/templates
 
 #### HTTP Method: GET
 
@@ -727,19 +711,19 @@ Returns the RPSL template for given object type.
 
 #### URI Path Parameters
 
-|name       |description                                         |type|default|
-|-----------|----------------------------------------------------|----|-------|
-|objectType |The object type for which the template is requested |
+| name       | description                                         | 
+|------------|-----------------------------------------------------|
+| objectType | The object type for which the template is requested |
 
 #### HTTP Response Body
 
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources) containing the template of the specified type.
 
 #### HTTP Status Codes
-|code |description                             |
-|-----|----------------------------------------|
-| 200 | Request successful|
-| 400 | Illegal input - incorrect objectType|
+| code | description                          |
+|------|--------------------------------------|
+| 200  | Request successful                   |
+| 400  | Illegal input - incorrect objectType |
 
 #### Examples
 
@@ -760,10 +744,7 @@ For further background information on the Geolocation feature, refer to the RIPE
 
 ### Locations
 
-* `http://rest.db.ripe.net/geolocation`
-* `https://rest.db.ripe.net/geolocation`
-* `http://rest-test.db.ripe.net/geolocation`
-* `https://rest-test.db.ripe.net/geolocation`
+[Environment endpoint](/Update-Methods/RESTful-API/#environments)/geolocation
 
 ### HTTP Method: GET
 
@@ -774,9 +755,9 @@ For further background information on the Geolocation feature, refer to the RIPE
 None.
 
 ### URI Query Parameters
-|name|description|
-|----|-----------|
-|key|IPv4 or IPv6 address|
+| name | description          |
+|------|----------------------|
+| key  | IPv4 or IPv6 address |
 	
 ### HTTP Response Body
 
@@ -785,10 +766,10 @@ A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources
 For non-200 OK responses, the response body will be in plaintext.
 
 ### HTTP Status Codes
-|code|description|
-|----|-----------|
-|200|Geolocation and/or language data was found for the specified address|
-|404|No geolocation data found, or the address does not exist|
+| code | description                                                          |
+|------|----------------------------------------------------------------------|
+| 200  | Geolocation and/or language data was found for the specified address |
+| 404  | No geolocation data found, or the address does not exist             |
 
 
 ### Examples
@@ -806,10 +787,7 @@ Lookup abuse contact email for an internet resource (IPv4 address, range or pref
 
 ### Locations
 
-* `http://rest.db.ripe.net/abuse-contact`
-* `https://rest.db.ripe.net/abuse-contact`
-* `http://rest-test.db.ripe.net/abuse-contact`
-* `https://rest-test.db.ripe.net/abuse-contact`
+[Environment endpoint](/Update-Methods/RESTful-API/#environments)/abuse-contact
 
 ### HTTP Method: GET
 
@@ -817,9 +795,9 @@ Lookup abuse contact email for an internet resource (IPv4 address, range or pref
 
 ### URI Path Parameters
 
-|name|description|
-|----|-----------|
-|resource|IPv4 address, range or prefix, IPv6 address or prefix, AS number|
+| name     | description                                                      |
+|----------|------------------------------------------------------------------|
+| resource | IPv4 address, range or prefix, IPv6 address or prefix, AS number |
 
 ### URI Query Parameters
 
@@ -830,10 +808,10 @@ None.
 An [AbuseResources](#api-abuse-contact) containing locator URIs to matching objects.
 
 ### HTTP Status Codes
-|code|description|
-|----|-----------|
-|200|Matching resource found and abuse contact returned correctly|
-|404|Resource specified was not found|
+| code | description                                                  |
+|------|--------------------------------------------------------------|
+| 200  | Matching resource found and abuse contact returned correctly |
+| 404  | Resource specified was not found                             |
 
 
 ### Examples
@@ -850,22 +828,19 @@ Show a specific version of a RIPE Database object.
 
 ### Resources
 
-* `http://rest.db.ripe.net`
-* `https://rest.db.ripe.net`
-* `http://rest-test.db.ripe.net`
-* `https://rest-test.db.ripe.net`
+[Environment endpoint](/Update-Methods/RESTful-API/#environments)
 
 ### Method: GET
 
 ### URI Format: /{source}/{objecttype}/{key}/versions/{versionnumber}
 
 ### URI Parameters
-| name          |description|
-|---------------|-----------|
-| source        |RIPE or TEST|
-| objecttype    |Object type|
-| key           |RPSL object key|
-| versionnumber |Object version|
+| name          | description     |
+|---------------|-----------------|
+| source        | RIPE or TEST    |
+| objecttype    | Object type     |
+| key           | RPSL object key |
+| versionnumber | Object version  |
 	
 ### Response Body
 
@@ -873,11 +848,11 @@ A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#template-resou
 
 
 ### Status Codes
-|code|description|
-|----|-----------|
-|200|Version was found|
-|400|Bad request - invalid source, key or version|
-|404|Requested object version not found|
+| code | description                                  |
+|------|----------------------------------------------|
+| 200  | Version was found                            |
+| 400  | Bad request - invalid source, key or version |
+| 404  | Requested object version not found           |
 
 ### Examples
 
@@ -893,38 +868,60 @@ Lists all versions of RIPE Database object, including the date and operation for
 
 ### Resources
 
-* `http://rest.db.ripe.net`
-* `https://rest.db.ripe.net`
-* `http://rest-test.db.ripe.net`
-* `https://rest-test.db.ripe.net`
+[Environment endpoint](/Update-Methods/RESTful-API/#environments)
 
 ### Method: GET
 
 ### URI Format: /{source}/{objecttype}/{key}/versions
 
 ### URI Parameters
-|name|description|
-|----|-----------|
-| source        |RIPE or TEST|
-| objecttype    |Object type|
-|key|Requested RPSL Object primary key|
+| name       | description                       |
+|------------|-----------------------------------|
+| source     | RIPE or TEST                      |
+| objecttype | Object type                       |
+| key        | Requested RPSL Object primary key |
 	
 ### Response Body
 
 A [WhoisResource](../RIPE-Database-Structure/11-REST-API-Data-model/#template-resources) containing information about updates for the requested object or the error message in case of Bad request (see [GET](#api-lookup)).
 
 #### Status Codes
-|code|description|
-|----|-----------|
-|200|Success (object found)|
-|400|Illegal input - incorrect key syntax|
-|404|Object not found|
+| code | description                          |
+|------|--------------------------------------|
+| 200  | Success (object found)               |
+| 400  | Illegal input - incorrect key syntax |
+| 404  | Object not found                     |
 
 ### Examples
 
 Example Request:
 
     curl 'https://rest-test.db.ripe.net/TEST/aut-num/AS102/versions'
+
+
+
+## Authentication
+
+RESTful API queries can be authenticated in order to retrieve the full object details, e.g. maintainers.
+
+RESTful API queries can be authenticated using the following methods:
+
+- Password: You can choose between using password query parameter or basic authentication. 
+- SSO cookie: If you are using the web application you can automatically be authenticated in one mntner if that mntner 
+  is associated to your SSO account.
+- Client certificate: You can supply your own certificate, and it is checked against the queried object's mntner 
+  key-certs
+
+
+
+
+
+
+
+
+
+
+
 
 
 
