@@ -72,7 +72,6 @@ export default {
          .split(/[^\p{L}\p{N}_]+/iu)
          .filter(t => t)
        return result
-      return this.query
     },
     showSuggestions() {
       return this.focused && this.suggestions && this.suggestions.length
@@ -126,7 +125,6 @@ export default {
          // augment suggestions with user-provided function
          suggestions = await hooks.processSuggestions(suggestions, this.query, this.queryTerms)
        }
-       console.log(suggestions)
       this.suggestions = suggestions.map(s => ({
         ...s,
         headingDisplay: highlight(s.headingStr, s.headingHighlight),
