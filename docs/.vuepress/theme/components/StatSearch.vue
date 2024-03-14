@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import flexsearchSvc from '../services/flexsearchSvc'
+import flexsearchSvc from 'vuepress-plugin-full-searchbar/services/flexsearchSvc.js'
 
 // see https://vuepress.vuejs.org/plugin/option-api.html#clientdynamicmodules
 import hooks from '@dynamic/hooks'
