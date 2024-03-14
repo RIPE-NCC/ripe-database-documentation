@@ -13,7 +13,7 @@
       @blur="focused = false"
       @keyup.enter="go(focusIndex)"
       @keyup.up="onUp"
-      @keyup.down="onDown" 
+      @keyup.down="onDown"
     ></mwc-textfield>
     <ul v-if="showSuggestions" class="suggestions" :class="{ 'align-right': alignRight }" @mouseleave="unfocus">
       <li
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import flexsearchSvc from '../services/flexsearchSvc'
+//import flexsearchSvc from '../services/flexsearchSvc'
 
 // see https://vuepress.vuejs.org/plugin/option-api.html#clientdynamicmodules
 import hooks from '@dynamic/hooks'
@@ -67,11 +67,12 @@ export default {
   computed: {
     queryTerms() {
       if (!this.query) return []
-      const result = flexsearchSvc
-        .normalizeString(this.query)
-        .split(/[^\p{L}\p{N}_]+/iu)
-        .filter(t => t)
-      return result
+      // const result = flexsearchSvc
+      //   .normalizeString(this.query)
+      //   .split(/[^\p{L}\p{N}_]+/iu)
+      //   .filter(t => t)
+      // return result
+      return this.query
     },
     showSuggestions() {
       return this.focused && this.suggestions && this.suggestions.length
@@ -93,7 +94,7 @@ export default {
   mounted() {
     import("@material/mwc-textfield").then(() => {})
     const options = OPTIONS || {}
-    flexsearchSvc.buildIndex(this.$site.pages, options)
+//    flexsearchSvc.buildIndex(this.$site.pages, options)
     this.placeholder = this.$site.themeConfig.searchPlaceholder || ''
     document.addEventListener('keydown', this.onHotkey)
 
@@ -116,15 +117,15 @@ export default {
         this.suggestions = []
         return
       }
-      let suggestions = await flexsearchSvc.match(
-        this.query,
-        this.queryTerms,
-        this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS,
-      )
-      if (hooks.processSuggestions) {
-        // augment suggestions with user-provided function
-        suggestions = await hooks.processSuggestions(suggestions, this.query, this.queryTerms)
-      }
+      // let suggestions = await flexsearchSvc.match(
+      //   this.query,
+      //   this.queryTerms,
+      //   this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS,
+      // )
+      // if (hooks.processSuggestions) {
+      //   // augment suggestions with user-provided function
+      //   suggestions = await hooks.processSuggestions(suggestions, this.query, this.queryTerms)
+      // }
       // console.log(suggestions)
       this.suggestions = suggestions.map(s => ({
         ...s,
@@ -250,7 +251,7 @@ mwc-textfield {
   width: 100%;
   margin: 0;
   padding:0;
-  /* 
+  /*
 display inline-block
   position relative
   margin-right 0rem
@@ -285,7 +286,7 @@ display inline-block
     padding 0rem
     list-style-type none
     left 200px
-    /* 
+    /*
 &.align-right
       right 0
  */
