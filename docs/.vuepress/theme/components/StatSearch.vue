@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import flexsearchSvc from 'vuepress-plugin-full-searchbar/services/flexsearchSvc.js'
+import flexsearchSvc from 'vuepress-plugin-full-searchbar/services/flexsearchSvc'
 
 // see https://vuepress.vuejs.org/plugin/option-api.html#clientdynamicmodules
 import hooks from '@dynamic/hooks'
@@ -125,6 +125,7 @@ export default {
          // augment suggestions with user-provided function
          suggestions = await hooks.processSuggestions(suggestions, this.query, this.queryTerms)
        }
+       console.log(suggestions)
       this.suggestions = suggestions.map(s => ({
         ...s,
         headingDisplay: highlight(s.headingStr, s.headingHighlight),
