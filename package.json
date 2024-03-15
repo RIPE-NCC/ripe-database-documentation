@@ -48,11 +48,11 @@
 
   "devDependencies": {
 
-    "@xiaopanda/vuepress-plugin-code-copy": "^1.0.3",
+    "@xiaopanda/vuepress-plugin-code-copy": "1.0.3",
 
-    "vuepress": "^1.9.0",
+    "vuepress": "1.9.0",
 
-    "vuepress-plugin-dehydrate": "^1.1.5",
+    "vuepress-plugin-dehydrate": "1.1.5",
 
     "vuepress-plugin-flexsearch": "0.3.0",
 
@@ -76,13 +76,13 @@
 
     "@mr-hope/vuepress-plugin-components": "1.21.0",
 
-    "@panzoom/panzoom": "^4.5.1",
+    "@panzoom/panzoom": "4.5.1",
 
-    "@renovamen/vuepress-plugin-mermaid": "^0.3.0",
+    "@renovamen/vuepress-plugin-mermaid": "0.3.0",
 
     "@technical-design/ripe-app-webcomponents": "3.3.0",
 
-    "dayjs": "^1.11.3",
+    "dayjs": "1.11.3",
 
     "markdown-it-html5-embed": "1.0.0",
 
