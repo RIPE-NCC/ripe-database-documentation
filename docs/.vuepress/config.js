@@ -51,6 +51,7 @@ module.exports = {
     ['link', { rel: "icon", type: "image/png", sizes: "32x32", href: "/icons/favicon-32x32.png"}],
     ['link', { rel: "icon", type: "image/png", sizes: "16x16", href: "/icons/favicon-16x16.png"}],
   ],
+  shouldPrefetch: () => false,
   themeConfig: {
     nav: [],
     sidebar: sidebar.filter(s => s !== '25.HTML-Terms-And-Conditions'),
@@ -116,83 +117,6 @@ module.exports = {
     })
   },
   plugins: [
-    [
-      'vuepress-plugin-merge-pages',
-      {
-        bundles: [{
-          path: 'entire-documentation-HTML',
-          filter: (pages) => {
-            return pages.filter(({ path }) => path.match(new RegExp('/*')) && !path.includes('Legal-Information'))
-          },
-          mergePages: pages => {
-            const pageBreak = '<hr class="page-break" />\n\n'
-            const initialValue = `${disableSideNavBar}# Entire Documentation HTML\n\n[[TOC]]\n${pageBreak}`
-
-            //frontmatter always start with --- and finish with ---
-            var frontmatterRegex=/(^(?!\|)---\n(.*\n)*---)/g;
-
-            //we dont want to apply any markdown custom script
-            var scriptRegex=/(<script(.|\n)*<\/script>)/g;
-
-            //we dont want to apply any markdown custom component
-            var customComponentRegex=/(.+?(?=Component \/>)Component \/>)/g;
-
-            return pages
-              .reduce((acc, current) => {
-                const contentWithCorrectLinks = module.exports.referencesInsidePageFormatter(current)
-                const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
-                const contentWithoutCustomScripts= contentWithoutFrontmatter.replace(scriptRegex, '')
-                const contentWithoutCustomComponent = contentWithoutCustomScripts.replace(customComponentRegex, '')
-
-                return `${acc}${contentWithoutCustomComponent}\n\n${pageBreak}`
-              }, initialValue)
-          }
-        },
-        {
-          path: 'terms-conditions',
-          filter: (pages) => {
-            return pages.filter(({ path }) => path.includes('HTML-Terms-And-Conditions'))
-          },
-          mergePages: pages => {
-            var frontmatterRegex=/(^(?!\|)---\n(.*\n)*---)/g;
-            const pageBreak = '<hr class="page-break" />\n\n'
-            return pages
-              .reduce((acc, current) => {
-                const contentWithCorrectLinks = module.exports.referencesOtherPageFormatter(current)
-                const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
-                return `${acc}${contentWithoutFrontmatter}\n\n${pageBreak}`
-              }, disableSideNavBar)
-          }
-        },
-        {
-          path: 'acceptable-use-policy',
-          filter: (pages) => {
-            return pages.filter(({ path }) => path.includes('RIPE-Database-Acceptable-Use-Policy'))
-          },
-          mergePages: pages => {
-            //frontmatter always start with --- and finish with ---
-            var frontmatterRegex=/(^(?!\|)---\n(.*\n)*---)/g;
-            const pageBreak = '<hr class="page-break" />\n\n'
-            return pages
-              .reduce((acc, current) => {
-                const contentWithCorrectLinks = module.exports.referencesOtherPageFormatter(current)
-                const contentWithoutFrontmatter = contentWithCorrectLinks.replace(frontmatterRegex, '')
-                return `${acc}${contentWithoutFrontmatter}\n\n${pageBreak}`
-              }, disableSideNavBar)
-          }
-        }
-      ]
-      }
-    ],
-    [
-      'vuepress-plugin-dehydrate',{
-        noScript: [
-          '**/entire-documentation',
-          '**/terms-conditions',
-          '**/acceptable-use-policy',
-        ],
-      },
-    ],
     ['@xiaopanda/vuepress-plugin-code-copy', {
         buttonStaticIcon: true,
         buttonIconTitle: 'Copy',
@@ -201,17 +125,6 @@ module.exports = {
        }],
     ['@mr-hope/vuepress-plugin-components'],
     ['full-searchbar', { encode: 'icase', tokenize: 'full' }],
-    ['@vuepress/last-updated', {
-      transformer: (timestamp, lang) => {
-        const dayjs = require('dayjs')
-        const utc = require('dayjs/plugin/utc')
-
-        dayjs.extend(utc)
-
-        return dayjs(timestamp).utc(true).format()
-      }
-    }],
-    ['@renovamen/vuepress-plugin-mermaid']
 	],
   markdown: {
     toc: {
