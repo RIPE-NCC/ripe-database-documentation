@@ -165,6 +165,7 @@ export default {
     return {
       isSidebarOpen: false,
       dynamicComponent: null,
+      ripeComponentsLoaded: false,
     };
   },
   computed: {
@@ -217,13 +218,19 @@ export default {
         this.isSidebarOpen = !this.isSidebarOpen;
         this.$emit("toggle-sidebar", this.isSidebarOpen);
       });
+      this.ripeComponentsLoaded = true;
       // minimize slow loading logo fill in your svg logo id below, and add opacity=0 to the style declaration of your svg logo
-      document.getElementById("svglogo").style.opacity=1
+      document.getElementById("svglogo").style.opacity = 1;
     });
 
     this.$router.afterEach(() => {
       this.isSidebarOpen = false;
     });
+  },
+  updated() {
+    if (this.ripeComponentsLoaded) {
+      document.getElementById("svglogo").style.opacity = 1;
+    }
   },
   methods: {
     toggleSidebar(to) {
