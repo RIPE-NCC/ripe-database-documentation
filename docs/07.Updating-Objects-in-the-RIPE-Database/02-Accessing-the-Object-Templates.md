@@ -28,7 +28,7 @@ For example, getting the template for an **inetnum** object using these methods:
     geoloc:         [optional]   [single]     [ ]
     language:       [optional]   [multiple]   [ ]
     org:            [optional]   [single]     [inverse key]
-    sponsoring-org: [optional]   [single]     [ ]
+    sponsoring-org: [optional]   [single]     [inverse key]
     admin-c:        [mandatory]  [multiple]   [inverse key]
     tech-c:         [mandatory]  [multiple]   [inverse key]
     abuse-c:        [optional]   [single]     [inverse key]

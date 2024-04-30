@@ -37,7 +37,7 @@ Below is the object template for the **aut-num** object. It lists all possible a
     mp-default:      optional   multiple  
     remarks:         optional   multiple  
     org:             optional   single     inverse
-    sponsoring-org:  optional   single
+    sponsoring-org:  optional   single     inverse
     admin-c:         mandatory  multiple   inverse
     tech-c:          mandatory  multiple   inverse
     abuse-c:         optional   single     inverse
