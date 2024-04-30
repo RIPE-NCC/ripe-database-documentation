@@ -207,13 +207,9 @@ The format expresses addresses as a 128-bit number in hexadecimal groups of two 
     * ALLOCATED-BY-LIR – This is equivalent to the **inetnum** status ‘SUB-ALLOCATED PA'. A member can sub-allocate part of an allocation to another organisation. The other organisation may take over some of the management of this sub-allocation. However, the RIPE NCC member is still responsible for the whole of their registered resources, even if some parts of it have been sub-allocated to another organisation. Provisions have been built in to the RIPE Database software to ensure that the member is always technically in control of their allocated address space. Within such allocation, it is still required to document assignments using the status "AGGREGATED-BY-LIR" or "ASSIGNED".
 With the **inet6num** object there is no equivalent to the **inetnum** ‘LIR-PARTITIONED' status values allowing partitioning of an allocation by a member for internal business reasons.
     * AGGREGATED-BY-LIR – With IPv6, it is not necessary to document each individual End User assignment in the RIPE Database. If you have a group of End Users who all require blocks of addresses of the same size, say a /56, then you can create a large, single block with this status. The “assignment-size:” attribute specifies the size of the End User blocks. All assignments made from this block must have that size. It is possible to have two levels of ‘AGGREGATED-BY-LIR'. The "assignment-size" value cannot be changed after the **inet6num** object has been created.
-
     ![](~@imgs/assignment-size.png)
-
     * ASSIGNED – These are assignments made by a member from their allocations to an End User.
-
     ![](~@imgs/assigned.png)
-
     * ASSIGNED PI – These are assignments made by the RIPE NCC directly to an End User. In most cases, there is a member acting as the sponsoring organisation who handles the administrative processes on behalf of the End User. The sponsoring organisation may also manage the resource and related objects in the RIPE Database for the End User.
     * ASSIGNED ANYCAST – This address space has been assigned for use in TLD anycast networks. 
 * **“assignment-size:”** – This specifies the common size of all individual assignments aggregated into one block with the status ‘AGGREGATED-BY-LIR'. This attribute is required to be present if the **inet6num** object has this status. The individual assignments do not need to be represented in the RIPE Database. But one or more assignments may be included if the member wishes to specify them for any reason. The maximum assignment size is 128.
@@ -267,7 +263,7 @@ The next level down in the hierarchy after the root object includes placeholder 
 
 The different types of data can be recognised by the “status:” and “mnt-lower:” attribute values. The root object and all the placeholder objects will have a status ‘ALLOCATED UNSPECIFIED'. But some of the member allocations may also have this status. If it has this status and has a RIPE NCC **mntner** as the “mnt-lower:”, then it is an administrative block. All the legacy objects will have the status ‘LEGACY'.
 
-The RIPE NCC has directly issued address space to its members and End Users from the placeholder administrative objects. Again, these are recognised by the “status:” and “mnt-lower:” attribute values. Most allocations to members have a status ‘ALLOCATED PA'. But a few will also have the status ‘ALLOCATED UNSPECIFIED'. They will all have the members **mntner** as “mnt-lower:”. The assignments made by the RIPE NCC will have a status ‘ASSIGNED PI' or ‘ASSIGNED ANYCAST'.
+The RIPE NCC has directly issued address space to its members and End Users from the placeholder administrative objects. Again, these are recognised by the “status:” and “mnt-lower:” attribute values. Most allocations to members have a status ‘ALLOCATED PA'. But a few will also have the status ‘ALLOCATED UNSPECIFIED'. They will all have the members **mntner** as “mnt-lower:”. The assignments made by the RIPE NCC will have a status ‘ASSIGNED PI' or ‘ASSIGNED ANYCAST'. An allocation can also contain a single assignment with the same prefix length as the allocation, this combined object has the status 'ALLOCATED-ASSIGNED PA'.
 
 Within the hierarchy, these allocations and assignments made from the administrative blocks are on the same level. They all have the placeholder objects as their parent. All of these allocations and assignments are required to have a reference to an **organisation** object. Although the “org:” attribute is syntactically optional in an **inetnum** object, this requirement is set by software business rules.
 
@@ -301,6 +297,7 @@ The range notation expresses addresses as 32-bit whole numbers in dotted quad no
 * **“status:”** – The status is used to show the different types of data stored in an **inetnum** object and the relative positions within a hierarchy. It can take one of these values:
     * ‘ALLOCATED UNSPECIFIED' – This is mostly used to identify blocks of addresses for which the RIPE NCC is administratively responsible. Historically, a small number of allocations made to members have this status also.
     * ‘ALLOCATED PA' – These are allocations made to members by the RIPE NCC.
+    * 'ALLOCATED-ASSIGNED PA' - An allocation with a single assignment of the same prefix length.
     * ‘LIR-PARTITIONED PA' – This is to allow partitioning of an allocation by a member for internal business reasons.
     * ‘SUB-ALLOCATED PA' – A member can sub-allocate a part of an allocation to another organisation. The other organisation may take over some of the management of this sub-allocation. However, the RIPE NCC member is still responsible for the whole of their registered resources, even if parts of it have been sub-allocated. Provisions have been built in to the RIPE Database software to ensure that the member is always technically in control of their allocated address space.
     * ‘ASSIGNED PA' – These are assignments made by a member from their allocations to an End User.

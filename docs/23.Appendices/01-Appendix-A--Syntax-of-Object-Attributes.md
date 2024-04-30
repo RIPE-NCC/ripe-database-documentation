@@ -370,7 +370,12 @@ Specifies the name servers of the domain, optionally followed by a glue record.
 
 **org:** &lt;org-id&gt;
 
-This optional attribute may be used in any object type. It references an existing **organisation** object. For some resource objects, it is a required attribute. In these cases, the referenced organisation object represents the entity that holds the resource. In other objects, it can be used to specify a business relationship. The value of this attribute is the ID of the **organisation** object. It is required in the **inetnum** and **inet6num** objects with ‘ALLOCATED-BY-RIR', ‘ALLOCATED PA', ‘ALLOCATED PI' and ‘ALLOCATED UNSPECIFIED' status values.
+This optional attribute may be used in any object type. It references an existing **organisation** object. For some resource objects, it is a required attribute. In these cases, the referenced organisation object represents the entity that holds the resource. In other objects, it can be used to specify a business relationship. The value of this attribute is the ID of the **organisation** object. It is required in the **inetnum** and **inet6num** objects with the following status values:
+* ALLOCATED-BY-RIR 
+* ALLOCATED PA
+* ALLOCATED-ASSIGNED PA 
+* ALLOCATED PI
+* ALLOCATED UNSPECIFIED
 
 The "org:" attribute is single-valued in the **inetnum**, **inet6num** and **aut-num** objects, and it is multi-valued in all other objects.
 
