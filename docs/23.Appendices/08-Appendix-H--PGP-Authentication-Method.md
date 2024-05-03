@@ -59,8 +59,6 @@ created:         2013-12-10T17:02:02Z
 last-modified:   2019-09-09T15:24:06Z
 source:          RIPE
 password: *****-MNT
-
-
 ```
 
 * Once the [key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) 
