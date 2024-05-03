@@ -79,3 +79,5 @@ The aim of this service is to provide updates around the clock, except for maint
 "Updates are unavailable at the moment. Please try again later."
 
 Behind Syncupdates, the software has a separate handler to the one used for both the RESTful API and Webupdates. This handler is the same for both scripted access to Syncupdates or the web form access. This handler will accept multiple objects in the same update. This allows for a different type of usage to the RESTful API. A single response is returned to the user with the results of processing all the objects in the update message. The same timing issue applies across the whole update as referred to in the Webupdates description above. If an update has a very long list of objects and the http connection times out during the update, the processing of the update will still run to completion. No response message will be returned to the user after an http timeout. Notification emails will always be sent on completion.
+
+To modify data without affecting the underlying database, you can use [dry-run](../Updating-Objects-in-the-RIPE-Database/Dry-run/#dry-run)

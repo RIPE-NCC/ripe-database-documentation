@@ -27,7 +27,7 @@ With the RESTful API, any required passwords must be included in the URI query p
 
 ## PGP Key
 
-To use PGP authorisation you must first create a private/public key pair. There are many third-party applications that will allow you to do this. You must keep the private key secure. The public key is entered into the RIPE Database in a **key-cert** object. (See ['Description of the key-cert Object'](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) for details.)
+To use PGP authentication you must first create a private/public key pair. There are many third-party applications that will allow you to do this. You must keep the private key secure. The public key is entered into the RIPE Database in a **key-cert** object. (See ['Description of the key-cert Object'](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) for details.)
 
 Some email clients allow you to import your private key into the client. This can then be used to sign any email update you submit. Alternatively, you can use third-party software to sign an update with your private key and paste the signed update into the body of an email.
 
@@ -35,7 +35,9 @@ A signed update message can also be pasted into the Syncupdates web form. When u
 
 PGP-signed updates cannot be submitted using the RESTful API. As Webupdates uses the API in the background, you cannot paste a signed update into a Webupdates text area either.
 
-For your PGP-signed update to pass authorisation checks, you must have your public key in the database in a **key-cert** object.
+For your PGP-signed update to pass authentication checks, you must have your public key in the database in a **key-cert** object.
+
+PGP authentication creation steps are in the [appendix](../Appendices/Appendix-H--PGP-Authentication-Method/#appendix-h-pgp-authentication-method).
 
 
 ### Use in the MAINTAINER object
