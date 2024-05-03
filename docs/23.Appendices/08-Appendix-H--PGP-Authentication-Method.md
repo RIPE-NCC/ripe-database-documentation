@@ -7,7 +7,7 @@ permalink: /Appendices/Appendix-H--PGP-Authentication-Method
 In this section, we provide an example of the PGP authentication method. For this example we will start from the 
 beginning, supposing that there is no a previous [mntner object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-mntner-object)
 created.
-* [Create the first mntner and role object](./Database-Support/Create-First-Role-Mntner/#what-is-a-role-object).
+* [Create the first mntner and role object](../Database-Support/Create-First-Role-Mntner/#what-is-a-role-object).
 * Install gpg or a similar tool. In this example, gpg will be used. `brew install gpg`
 * Run the next command to create public and private key `gpg --gen-key`. The output of this command should contain the next 
   piece of text:
@@ -64,45 +64,45 @@ password: *****-MNT
 * Once the [key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) 
 is created you need to update your previous [mntner object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-mntner-object) 
 adding a new "auth:" attribute pointing to the created key-cert.
-  * Finally, now that the [key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) 
-  is created and associated with the mntner. The last step is to perform an update authenticated with the key-cert 
-    object. In this example [syncupdates](../Update-Methods/Syncupdates/#syncupdates) is 
-    used for it.
-    * You need to create a file with the updated object.
-    * This file must be signed by your private key running the next command: `gpg --clearsign --armor --default-key 
-      <last 8 hexadecimal values> file `. This command will generate an .asc.
-    ```
-    gpg: using "F9C96367" as default secret key for signing
-    edtop:~ $
-    edtop:~ $ cat file.asc
-    -----BEGIN PGP SIGNED MESSAGE-----
-    Hash: SHA512
+* Finally, now that the [key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) 
+is created and associated with the mntner. The last step is to perform an update authenticated with the key-cert 
+  object. In this example [syncupdates](../Update-Methods/Syncupdates/#syncupdates) is 
+  used for it.
+  * You need to create a file with the updated object.
+  * This file must be signed by your private key running the next command: `gpg --clearsign --armor --default-key 
+    <last 8 hexadecimal values> file `. This command will generate an .asc.
+  ```
+  gpg: using "F9C96367" as default secret key for signing
+  edtop:~ $
+  edtop:~ $ cat file.asc
+  -----BEGIN PGP SIGNED MESSAGE-----
+  Hash: SHA512
   
-    person:          Name Removed
-    address:         ***UPDATED***
-    address:         ***
-    address:         The Netherlands
-    e-mail:          ***@nonexistant.org
-    phone:           +31 20 ... ....
-    remarks:         ***
-    remarks:         ***
-    remarks:         ***
-    remarks:         ***
-    remarks:         ***
-    nic-hdl:         ****-RIPE
-    mnt-by:          ****-MNT
-    created:         2013-12-10T16:54:20Z
-    last-modified:   2023-09-06T14:47:15Z
-    source:          RIPE
-    -----BEGIN PGP SIGNATURE-----
-    Comment: GPGTools - http://gpgtools.org
+  person:          Name Removed
+  address:         ***UPDATED***
+  address:         ***
+  address:         The Netherlands
+  e-mail:          ***@nonexistant.org
+  phone:           +31 20 ... ....
+  remarks:         ***
+  remarks:         ***
+  remarks:         ***
+  remarks:         ***
+  remarks:         ***
+  nic-hdl:         ****-RIPE
+  mnt-by:          ****-MNT
+  created:         2013-12-10T16:54:20Z
+  last-modified:   2023-09-06T14:47:15Z
+  source:          RIPE
+  -----BEGIN PGP SIGNATURE-----
+  Comment: GPGTools - http://gpgtools.org
   
-    iHUEARYKAB0WIQRqnf4PLJI57wfK2kpL0y0c+cljZwUCZjSZ8QAKCRBL0y0c+clj
-    Z93+AQCrvZZzcRHh8m8vj9a0Byea41xcthfKP11CQt5tmBR1ggEA4mSgCaMpClSu
-    Wbpg95npLZo+LQB7PdK4Fb+ydsewGA0=
-    =Hc7R
-    -----END PGP SIGNATURE-----
-    ```
-    * The last step is to perform the update, in this example `curl` is used: `curl -v --data-urlencode DATA@file.asc 
-      https://syncupdates.db.ripe.net`. Whois will authenticate this signature using the public key in the 
-  [key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object).
+  iHUEARYKAB0WIQRqnf4PLJI57wfK2kpL0y0c+cljZwUCZjSZ8QAKCRBL0y0c+clj
+  Z93+AQCrvZZzcRHh8m8vj9a0Byea41xcthfKP11CQt5tmBR1ggEA4mSgCaMpClSu
+  Wbpg95npLZo+LQB7PdK4Fb+ydsewGA0=
+  =Hc7R
+  -----END PGP SIGNATURE-----
+  ```
+  * The last step is to perform the update, in this example `curl` is used: `curl -v --data-urlencode DATA@file.asc 
+    https://syncupdates.db.ripe.net`. Whois will authenticate this signature using the public key in the 
+[key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object).
