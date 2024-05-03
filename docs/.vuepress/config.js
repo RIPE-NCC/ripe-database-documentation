@@ -130,7 +130,7 @@ module.exports = {
             const initialValue = `${disableSideNavBar}# Entire Documentation HTML\n\n[[TOC]]\n${pageBreak}`
 
             //frontmatter always start with --- and finish with ---
-            var frontmatterRegex=/(^(?!\|)---\n(.*\n)*---)/g;
+            var frontmatterRegex=/---\s*(.*?)\s*permalink:\s*(\/[\w\/-]+)\s*---/g;
 
             //we dont want to apply any markdown custom script
             var scriptRegex=/(<script(.|\n)*<\/script>)/g;
@@ -155,7 +155,7 @@ module.exports = {
             return pages.filter(({ path }) => path.includes('HTML-Terms-And-Conditions'))
           },
           mergePages: pages => {
-            var frontmatterRegex=/(^(?!\|)---\n(.*\n)*---)/g;
+            var frontmatterRegex=/---\s*(.*?)\s*permalink:\s*(\/[\w\/-]+)\s*---/g;
             const pageBreak = '<hr class="page-break" />\n\n'
             return pages
               .reduce((acc, current) => {
@@ -172,7 +172,7 @@ module.exports = {
           },
           mergePages: pages => {
             //frontmatter always start with --- and finish with ---
-            var frontmatterRegex=/(^(?!\|)---\n(.*\n)*---)/g;
+            var frontmatterRegex=/---\s*(.*?)\s*permalink:\s*(\/[\w\/-]+)\s*---/g;
             const pageBreak = '<hr class="page-break" />\n\n'
             return pages
               .reduce((acc, current) => {
