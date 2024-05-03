@@ -13,9 +13,9 @@ created.
   piece of text:
   ```
   pub   ed25519 2024-05-03 [SC] [expires: 2027-05-03]
-  <public_key>
+  6A9DFE0F2C9239EF07CADA4A4BD32D1CF9C96367
   ```
-* Before creating the key-cert object `gpg --export --armor <public-key>` need to be executed. This command will 
+* Before creating the key-cert object `gpg --export --armor 6A9DFE0F2C9239EF07CADA4A4BD32D1CF9C96367` need to be executed. This command will 
   export the public key in plain text.
 ``` 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -35,10 +35,10 @@ os2DfBlmAP9VdqYSQAdqzoQcUWS8j+AIkmmGe/wzKRg3lVEjX6CMBg==
 ```
 * Now is time to create the [key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object). 
 For that you can use one of the [update methods](../Update-Methods/#update-methods). It is recommended to use the 
-  last 8 digits from the `<public-key>` for  "key-cert:" attribute. For example:
+  last 8 digits from the `6A9DFE0F2C9239EF07CADA4A4BD32D1CF9C96367` for  "key-cert:" attribute. For example:
 
 ``` 
-key-cert:        PGPKEY-<public-key>
+key-cert:        PGPKEY-F9C96367
 certif:          -----BEGIN PGP PUBLIC KEY BLOCK-----
 certif:          Comment: GPGTools - http://gpgtools.org
 certif:
@@ -69,8 +69,7 @@ is created and associated with the mntner. The last step is to perform an update
   object. In this example [syncupdates](../Update-Methods/Syncupdates/#syncupdates) is 
   used for it.
   * You need to create a file with the updated object.
-  * This file must be signed by your private key running the next command: `gpg --clearsign --armor --default-key 
-    <last 8 hexadecimal values> file `. This command will generate an .asc.
+  * This file must be signed by your private key running the next command: `gpg --clearsign --armor --default-key F9C96367 file `. This command will generate an .asc.
   ```
   gpg: using "F9C96367" as default secret key for signing
   edtop:~ $
