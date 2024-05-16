@@ -79,6 +79,7 @@ permalink: /Tables-of-Query-Types-Supported-by-the-RIPE-Database
 | -i zc  (zone-c)                      | NIC handle                                      | Objects whose "zone-c:" attribute matches the query argument.                                                                                                                                                                                                                 |
 | -i rn  (ref-nfy)                     | Email                                           | Objects whose "notify" attribute matches the query argument.                                                                                                                                                                                                                  |
 | -i fr  (form)                        | Poetic form                                     | **Poetic form** objects whose matches the query argument.                                                                                                                                                                                                                     |
+| -i sp  (sponsoring-org)              | Organisation ID                                 | Objects whose "sponsoring-org:" attribute matches the query argument.                                                                                                                                                                                                         |
 
 
 

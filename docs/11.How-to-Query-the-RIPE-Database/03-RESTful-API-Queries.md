@@ -162,6 +162,7 @@ None.
 | `abuse-contact`      | Include the Abuse contact email address of the resource, if applicable.                                                                                                                                                                |
 | `limit`              | Maximum number of RPSL objects to return in the response.                                                                                                                                                                              |
 | `offset`             | Return RPSL objects from a specified offset. This allows for paging.                                                                                                                                                                   |
+| `roa-check`          | Validate route(6) objects against RPKI ROAs and report on any conflicts.                                                                                                                                                               |
 
 ### HTTP Response Body
 
