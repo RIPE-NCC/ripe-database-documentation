@@ -82,3 +82,7 @@ The “-c” (“--irt”) query flag can only be used with queries for address 
 ## The “-C” (“--no-irt”) Query Flag
 
 The “-C” (“--no-irt”) query flag turns off the behaviour given with the “-c” query flag. Related irt objects are **not** returned by default.
+
+## The “-Z” (“--charset”) Query Flag
+
+The "-Z" ("--charset") query flag specifies which character set the client expects. The default is latin-1 (ISO-8859-1) encoding.
