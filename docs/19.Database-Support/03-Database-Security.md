@@ -51,9 +51,16 @@ Given this flexibility, you must ensure you make the right choices when setting 
 
 ### The Default Maintainer
 
-If you are an LIR and you have received Internet Number Resources, several objects are created by the RIPE NCC in the RIPE Database to reflect this. These objects are managed by the RIPE NCC, but you have control over some of the attributes, such as setting the administrative and technical contact person. In order to allow you to make these changes, an additional maintainer will be present on the object, the so called "default" maintainer. You have to select this maintainer on the [Account Details](https://my.ripe.net/#/account-details) page and this will be reflected on all existing and new objects that have joint responsibility: allocations for IP resources and the **organisation** object.
+If you are an LIR and you have received Internet Number Resources, several objects are created by the RIPE NCC in the RIPE Database to reflect this. 
+These objects are managed by the RIPE NCC, but you have control over some attributes, such as setting the administrative and technical contact person. 
+In order to allow you to make these changes, an additional maintainer will be present on the object, the so-called "default" maintainer. 
+You have to select this maintainer on the [Account Details](https://my.ripe.net/#/account-details) page and this will be reflected in the "mnt-by:" attribute 
+on all existing and new objects that have joint responsibility: top level allocations for IP resources (**inet(6)num** and **aut-num** objects) and the 
+**organisation** object. If you had a previous default maintainer the new default maintainer will replace your previous one.
 
-After selecting the default maintainer, you can change all of the attributes you could previously modify by using the Object Editors - such as technical, administrative and abuse contact details - Through the RIPE Database itself. You can use any update method you like, e.g. webupdates, syncupdates or email updates.
+After selecting the default maintainer, you can change all of the attributes you could previously modify by using the Object Editors - such as technical, 
+administrative and abuse contact details - Through the RIPE Database itself. You can use any update method you like, e.g. webupdates, syncupdates or 
+email updates.
 
 
 ### Personal Maintainers Versus Shared Maintainers
