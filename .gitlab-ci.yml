@@ -26,7 +26,9 @@ include:
 
 stages:
   - build
+  - release
   - deploy
+
 
 
 cache:
@@ -42,3 +44,31 @@ build:
   artifacts:
     paths:
       - builds/
+
+build-container:
+  tags:
+    - whois
+  stage: build
+  before_script:
+    - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+  script:
+    - >
+        docker build
+        --pull
+        --build-arg CI_COMMIT_SHA=$CI_COMMIT_SHA
+        --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  when: manual
+
+release-container:
+    stage: release
+    only:
+        - tags
+    before_script:
+      - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+    script:
+      - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+      - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+      - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    when: manual
