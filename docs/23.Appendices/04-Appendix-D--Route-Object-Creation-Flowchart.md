@@ -20,7 +20,7 @@ B --> |No| D{Is there a less <br> specific route?}:::decisionNodes
 C --> |No| F[Check authorisation using maintainers <br> in 'mnt-by' of exact match route]:::operationNodes
 C --> |Yes| E[Check authorisation using maintainers <br> in 'mnt-routes']:::operationNodes
 
-D --> |Yes| G{Does less specific route <br> have 'mnt-rutes'?}:::decisionNodes
+D --> |Yes| G{Does less specific route <br> have 'mnt-routes'?}:::decisionNodes
 D --> |No| H{Is there an exact <br> match inetnum?}:::decisionNodes
 G --> |Yes| E[Check authorisation using maintainers <br> in 'mnt-routes']:::operationNodes
 G --> |No| I{Does less specific route <br> have 'mnt-lower'?}:::decisionNodes
