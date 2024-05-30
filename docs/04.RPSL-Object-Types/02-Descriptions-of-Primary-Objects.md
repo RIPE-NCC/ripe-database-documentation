@@ -240,6 +240,7 @@ Below is the object template for the **inetnum** object. It lists all possible a
     tech-c:           mandatory  multiple   inverse key
     abuse-c:          optional   single     inverse key
     status:           mandatory  single    
+    assignment-size:  optional   single 
     remarks:          optional   multiple  
     notify:           optional   multiple   inverse key
     mnt-by:           mandatory  multiple   inverse key
@@ -298,6 +299,9 @@ The range notation expresses addresses as 32-bit whole numbers in dotted quad no
     * ‘ALLOCATED UNSPECIFIED' – This is mostly used to identify blocks of addresses for which the RIPE NCC is administratively responsible. Historically, a small number of allocations made to members have this status also.
     * ‘ALLOCATED PA' – These are allocations made to members by the RIPE NCC.
     * 'ALLOCATED-ASSIGNED PA' - An allocation with a single assignment of the same prefix length.
+    * AGGREGATED-BY-LIR – It is not necessary to document each individual End User assignment in the RIPE Database. 
+      If you have a group of End Users who all require blocks of addresses of the same size, say a /24, then you can 
+      create a large, single block with this status. The “assignment-size:” attribute specifies the size of the End User blocks. All assignments made from this block must have that size. It is possible to have two levels of ‘AGGREGATED-BY-LIR'. The "assignment-size" value cannot be changed after the **inetnum** object has been created.
     * ‘LIR-PARTITIONED PA' – This is to allow partitioning of an allocation by a member for internal business reasons.
     * ‘SUB-ALLOCATED PA' – A member can sub-allocate a part of an allocation to another organisation. The other organisation may take over some of the management of this sub-allocation. However, the RIPE NCC member is still responsible for the whole of their registered resources, even if parts of it have been sub-allocated. Provisions have been built in to the RIPE Database software to ensure that the member is always technically in control of their allocated address space.
     * ‘ASSIGNED PA' – These are assignments made by a member from their allocations to an End User.
