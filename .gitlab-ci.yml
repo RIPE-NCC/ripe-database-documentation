@@ -59,7 +59,7 @@ release-container:
         --cache-from $CI_REGISTRY_IMAGE:latest
         --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
         --tag $CI_REGISTRY_IMAGE:latest
-        images/whois-build
+        .
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
     - docker push $CI_REGISTRY_IMAGE:latest
   only:
