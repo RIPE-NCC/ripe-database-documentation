@@ -16,13 +16,13 @@ permalink: /Installation-and-Development/Getting-started-on-macOS
 
 Java can be installed on macOS in one of the 3 offered ways
 
-#### Using [Brew](http://brew.sh)
+### Using [Brew](http://brew.sh)
 * Run `brew install java`
 
-#### Using [MacPorts](https://www.macports.org/)
+### Using [MacPorts](https://www.macports.org/)
 * Run `port install java`
 
-#### Manually
+### Manually
 * Download and manually install OpenJDK from https://adoptium.net/
 
 Make sure after installation that running 'java -version' reports the correct Java version.
@@ -31,13 +31,13 @@ Make sure after installation that running 'java -version' reports the correct Ja
 
 Maven can be installed on macOS in one of the 3 offered ways
 
-#### Using [Brew](http://brew.sh)
+### Using [Brew](http://brew.sh)
 * Run `brew install maven`
 
-#### Using [MacPorts](https://www.macports.org/)
+### Using [MacPorts](https://www.macports.org/)
 * Run `port install maven`
 
-#### Manually
+### Manually
 * Download and install manually Maven 3 (http://maven.apache.org)
 
 Maven needs more memory by default to complete the build.
