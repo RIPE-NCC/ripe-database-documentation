@@ -53,10 +53,7 @@ Read the formulae's caveats for instructions on how to activate bash-completion 
 
 ### Installation
 
-There are multiple ways to install MariaDB on macOS.
-
-#### Using [Brew](http://brew.sh)
- * `brew install mariadb`
+The easiest way of installing MariaDB is through [Brew](http://brew.sh): run `brew install mariadb`
 
 ### Configuration
 
