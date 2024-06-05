@@ -20,16 +20,7 @@ Make sure after installation that running 'java -version' reports the correct Ja
 
 ## Maven
 
-Maven can be installed on macOS in one of the 3 offered ways
-
-### Using [Brew](http://brew.sh)
-* Run `brew install maven`
-
-### Manually
-* Download and install manually Maven 3 (http://maven.apache.org)
-
-Maven needs more memory by default to complete the build.
- * Update ~/.bash_profile and add: export MAVEN_OPTS=-Xmx1024m
+Maven can be installed through [Brew](http://brew.sh): run `brew install maven`
 
 ## Git
 [Git](https://git-scm.com/) can be installed via Apple's Xcode Command Line Tools, Brew or MacPorts.
