@@ -23,9 +23,9 @@ Java can be installed on OS X on one of the 3 offered ways
 * Run `port install java`
 
 #### Manually
-* Download and manually install OpenJDK 8 from https://adoptopenjdk.net
+* Download and manually install OpenJDK from https://adoptium.net/
 
-Make sure after installation that running 'java -version' reports Java 1.8.
+Make sure after installation that running 'java -version' reports the correct Java version.
 
 ## Maven
 
