@@ -44,7 +44,9 @@ Maven needs more memory by default to complete the build.
  * Update ~/.bash_profile and add: export MAVEN_OPTS=-Xmx1024m
 
 ## Git
-* Download and install Git (http://git-scm.com)
+[Git](https://git-scm.com/) can be installed via Apple's Xcode Command Line Tools, Brew or MacPorts.
+
+If Brew or MacPorts is installed, Git should already be installed, as they both require Apple's Xcode Command Line Tools.
 
 ### Git Bash completion (optional)
 Bash can complete Git commands, but it needs additional setup.
