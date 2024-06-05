@@ -5,8 +5,8 @@ permalink: /Installation-and-Development/Getting-started-on-macOS
 # Getting Started on macOS
 
 <i>It is recommended that for quick installation of necessary following binaries use one of package managers:
-  * Brew(http://brew.sh)
-  * MacPorts(https://www.macports.org/)</i>
+  * [Brew](http://brew.sh)
+  * [MacPorts](https://www.macports.org/)</i>
 
 ## Java
 
