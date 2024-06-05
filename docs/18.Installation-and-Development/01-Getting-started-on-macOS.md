@@ -23,9 +23,9 @@ Make sure after installation that running 'java -version' reports the correct Ja
 Maven can be installed through [Brew](http://brew.sh): run `brew install maven`
 
 ## Git
-[Git](https://git-scm.com/) can be installed via Apple's Xcode Command Line Tools, Brew or MacPorts.
+[Git](https://git-scm.com/) can be installed via Apple's Xcode Command Line Tools or Brew.
 
-If Brew or MacPorts is installed, Git should already be installed, as they both require Apple's Xcode Command Line Tools.
+If Brew is installed, Git should already be installed, as it requires Apple's Xcode Command Line Tools.
 
 ### Git Bash completion (optional)
 Bash can complete Git commands, but it needs additional setup.
