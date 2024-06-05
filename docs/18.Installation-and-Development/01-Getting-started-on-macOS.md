@@ -14,7 +14,7 @@ permalink: /Installation-and-Development/Getting-started-on-macOS
 
 ## Java
 
-Java can be installed on macOS on one of the 3 offered ways
+Java can be installed on macOS in one of the 3 offered ways
 
 #### Using [Brew](http://brew.sh)
 * Run `brew install java`
@@ -29,7 +29,7 @@ Make sure after installation that running 'java -version' reports the correct Ja
 
 ## Maven
 
-Maven can be installed on macOS on one of the 3 offered ways
+Maven can be installed on macOS in one of the 3 offered ways
 
 #### Using [Brew](http://brew.sh)
 * Run `brew install maven`
