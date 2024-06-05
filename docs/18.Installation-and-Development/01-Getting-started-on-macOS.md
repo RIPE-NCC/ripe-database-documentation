@@ -8,15 +8,21 @@ It is recommended to use [Brew](http://brew.sh) for quick installation of requir
 
 ## Java
 
+### Installation
+
 Install OpenJDK 17 or higher.
 
-### Using [Brew](http://brew.sh)
+#### Using [Brew](http://brew.sh)
 * Run `brew install openjdk`
 
-### Manually
+#### Manually
 * Download and manually install OpenJDK from https://adoptium.net/
 
 Make sure after installation that running 'java -version' reports the correct Java version.
+
+### Multiple Java versions
+
+If you have multiple Java versions installed, ensure that you have `$JAVA_HOME` set, and that the `$PATH` contains `$JAVA_HOME/bin`.
 
 ## Maven
 
