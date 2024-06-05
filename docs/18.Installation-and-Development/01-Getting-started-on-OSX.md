@@ -58,7 +58,7 @@ Maven needs more memory by default to complete the build.
         PS1='\u@local:\w$(__git_ps1 " (%s)")\$ '
 
 
-## MariaDB 10.2
+## MariaDB
 
 ### Installation
 
