@@ -4,10 +4,6 @@ permalink: /Installation-and-Development/Getting-started-on-macOS
 
 # Getting Started on macOS
 
-* For macOS create or update the file `~/.bash_profile`.
-* Some paths may need to be modified based on your local configuration.
-* Source init script after making changes: `. ~/.bash_profile`.
-
 <i>It is recommended that for quick installation of necessary following binaries use one of package managers:
   * Brew(http://brew.sh)
   * MacPorts(https://www.macports.org/)</i>
