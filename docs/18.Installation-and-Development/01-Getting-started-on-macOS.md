@@ -46,17 +46,18 @@ Maven needs more memory by default to complete the build.
 ## Git
 * Download and install Git (http://git-scm.com)
 
-### Bash extension (optional)
-* Download Git completion (https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
-* Follow instructions in `git-completion.bash` for installation
-* Download and install Git bash (https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
-* Update `~/.bash_profile`
+### Git Bash completion (optional)
+Bash can complete Git commands, but it needs additional setup.
 
-        # Git
-        . /usr/local/git/contrib/completion/git-completion.bash
-        . /usr/local/git/contrib/completion/git-prompt.sh
-        PS1='\u@local:\w$(__git_ps1 " (%s)")\$ '
+#### Using [Brew](http://brew.sh)
+The Git formulae ships Git's bash completion:
+* Run `brew install git`
 
+bash-completion is required for bash completion to work. Depending on which bash is used, a different formulae must be installed:
+* for Homebrew's `bash` (>= v4): Run `brew install bash-completion@2`
+* for macOS's `bash` (v3.2.57): Run `brew install bash-completion`
+
+Read the formulae's caveats for instructions on how to activate bash-completion by adding a line in your `.bash_profile`.
 
 ## MariaDB
 
