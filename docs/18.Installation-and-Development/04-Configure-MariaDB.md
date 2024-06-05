@@ -40,8 +40,8 @@ Restart MariaDB once all configuration changes have been made.
 ## Configure access to the database
 
 * Check if MariaDB is running `mysqladmin -u root -p ping`
-* Login to mysql using `mysql -u root -p`
-* Create user dbint with no (empty) password
+* Login to mysql using `mysql -u root -p` (or `mysql` with the default setup)
+* Create users:
 
 ``` sql
 CREATE USER 'dbint'@'localhost' IDENTIFIED BY '';
