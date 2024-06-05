@@ -45,10 +45,10 @@ Restart MariaDB once all configuration changes have been made.
 
 ``` sql
 CREATE USER 'dbint'@'localhost' IDENTIFIED BY '';
-GRANT ALL PRIVILEGES ON \*.\* TO 'dbint'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'dbint'@'localhost';
 
 CREATE USER 'rdonly'@'localhost' IDENTIFIED BY '';
-GRANT SELECT PRIVILEGES ON \*.\* TO 'rdonly'@'localhost';
+GRANT SELECT PRIVILEGES ON *.* TO 'rdonly'@'localhost';
 ```
   
 Logout with `CTRL+D`
