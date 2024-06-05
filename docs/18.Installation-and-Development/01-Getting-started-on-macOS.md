@@ -1,10 +1,10 @@
 ---
-permalink: /Installation-and-Development/Getting-started-on-OSX
+permalink: /Installation-and-Development/Getting-started-on-macOS
 ---
 
-# Getting Started on OSX
+# Getting Started on macOS
 
-* For Mac OS X create or update the file `~/.bash_profile`.
+* For macOS create or update the file `~/.bash_profile`.
 * Some paths may need to be modified based on your local configuration.
 * Source init script after making changes: `. ~/.bash_profile`.
 
@@ -14,7 +14,7 @@ permalink: /Installation-and-Development/Getting-started-on-OSX
 
 ## Java
 
-Java can be installed on OS X on one of the 3 offered ways
+Java can be installed on macOS on one of the 3 offered ways
 
 #### Using [Brew](http://brew.sh)
 * Run `brew install java`
@@ -29,7 +29,7 @@ Make sure after installation that running 'java -version' reports the correct Ja
 
 ## Maven
 
-Maven can be installed on OS X on one of the 3 offered ways
+Maven can be installed on macOS on one of the 3 offered ways
 
 #### Using [Brew](http://brew.sh)
 * Run `brew install maven`
@@ -62,7 +62,7 @@ Maven needs more memory by default to complete the build.
 
 ### Installation
 
-There are multiple ways to install MariaDB on OS X.
+There are multiple ways to install MariaDB on macOS.
 
 #### Using [Brew](http://brew.sh)
  * `brew install mariadb`
