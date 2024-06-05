@@ -4,9 +4,7 @@ permalink: /Installation-and-Development/Getting-started-on-macOS
 
 # Getting Started on macOS
 
-<i>It is recommended that for quick installation of necessary following binaries use one of package managers:
-  * [Brew](http://brew.sh)
-  * [MacPorts](https://www.macports.org/)</i>
+It is recommended to use [Brew](http://brew.sh) for quick installation of required binaries.
 
 ## Java
 
@@ -14,9 +12,6 @@ Java can be installed on macOS in one of the 3 offered ways
 
 ### Using [Brew](http://brew.sh)
 * Run `brew install java`
-
-### Using [MacPorts](https://www.macports.org/)
-* Run `port install java`
 
 ### Manually
 * Download and manually install OpenJDK from https://adoptium.net/
@@ -29,9 +24,6 @@ Maven can be installed on macOS in one of the 3 offered ways
 
 ### Using [Brew](http://brew.sh)
 * Run `brew install maven`
-
-### Using [MacPorts](https://www.macports.org/)
-* Run `port install maven`
 
 ### Manually
 * Download and install manually Maven 3 (http://maven.apache.org)
@@ -65,13 +57,6 @@ There are multiple ways to install MariaDB on macOS.
 
 #### Using [Brew](http://brew.sh)
  * `brew install mariadb`
-
-#### Using [MacPorts](https://www.macports.org/)
- * `port install mariadb; port install mariadb-server`
- * Optionally, you can load mariadb to start it and also with every boot of the system
-  * `sudo port load mariadb-server`
- * Start MariaDB manually
-  * `cd /opt/local; sudo /opt/local/lib/mariadb/bin/mysqld_safe --datadir='/opt/local/var/db/mariadb' &`
 
 ### Configuration
 
