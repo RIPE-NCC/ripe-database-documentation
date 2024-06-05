@@ -8,10 +8,10 @@ It is recommended to use [Brew](http://brew.sh) for quick installation of requir
 
 ## Java
 
-Java can be installed on macOS in one of the 3 offered ways
+Install OpenJDK 17 or higher.
 
 ### Using [Brew](http://brew.sh)
-* Run `brew install java`
+* Run `brew install openjdk`
 
 ### Manually
 * Download and manually install OpenJDK from https://adoptium.net/
