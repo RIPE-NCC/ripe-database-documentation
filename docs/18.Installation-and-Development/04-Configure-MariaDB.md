@@ -10,6 +10,20 @@ Installing a MariaDB server is useful for development, or for running your own W
 
 Set the following variables in the MariaDB configuration (location varies depending on installation, the configuration file is normally called my.cnf).
 
+### Development machine
+If MariaDB was installed through brew on an Apple Silicon machine, new configuration files can be added under `/opt/homebrew/etc/my.cnf.d/`.
+
+Add the following configuration (e.g. in `ripedb.cnf`):
+```
+[server]
+default-time-zone=+00:00
+innodb_file_per_table = OFF
+max_connections=1000
+```
+
+### Running your own Whois server
+If you wish to run your own Whois server, you need additional variables to be modified:
+
 * max_allowed_packet = 20M
   * We need big packet sizes as some objects are very big
   * Default is 1M 
