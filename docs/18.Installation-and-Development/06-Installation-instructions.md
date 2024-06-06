@@ -36,27 +36,36 @@ Ensure MariaDB and the needed databases are created and populated
    * for the example below we use port.query=1043 and port.api=1080 and port.nrtm=1044
 * Create the databases WHOIS_LOCAL, MAILUPDATES_LOCAL, ACL_LOCAL, INTERNALS_LOCAL.
 
-   For example:
-
-      mysql
-      create database WHOIS_LOCAL;
+```sql
+CREATE DATABASE WHOIS_LOCAL;
+CREATE DATABASE MAILUPDATES_LOCAL;
+CREATE DATABASE ACL_LOCAL;
+CREATE DATABASE INTERNALS_LOCAL;
+```
 
    <i>Explanation: Firstly connect to mysql server with `mysql` command and then create database one by one with `create database DATABASE_NAME` command</i>
 * For each of the above databases, run the _schema.sql scripts found in ./whois/whois-commons/src/main/resources/.
 
-   For example:
-
-      use WHOIS_LOCAL;
-      source ./whois-commons/src/main/resources/whois_schema.sql
+```sql
+use WHOIS_LOCAL;
+source ./whois-commons/src/main/resources/whois_schema.sql
+use MAILUPDATES_LOCAL;
+source ./whois-commons/src/main/resources/mailupdates_schema.sql
+use ACL_LOCAL;
+source ./whois-commons/src/main/resources/acl_schema.sql
+use INTERNALS_LOCAL;
+source ./whois-commons/src/main/resources/internals_schema.sql
+```
 
    <i>Explanation: Select database with command `use DATABASE_NAME` to be able to run schema on it with command `source PATH_TO_SCHEMA`</i>
-* Also run the matching _data.sql scripts found in ./whois/whois-commons/src/main/resources/.
-   For example: 
+* For the ones that match, run their _data.sql script equivalents found in ./whois/whois-commons/src/main/resources/.
 
-      use WHOIS_LOCAL;
-      source ./whois-commons/src/main/resources/whois_data.sql
-      use INTERNALS_LOCAL;
-      source ./whois-commons/src/main/resources/internals_data.sql
+```sql
+use WHOIS_LOCAL;
+source ./whois-commons/src/main/resources/whois_data.sql
+use INTERNALS_LOCAL;
+source ./whois-commons/src/main/resources/internals_data.sql
+```
 
 * Start whois by executing the following command. Use -Ddump.total.size.limit to specify the dump size:
 
