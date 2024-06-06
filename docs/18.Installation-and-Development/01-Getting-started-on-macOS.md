@@ -3,13 +3,10 @@ permalink: /Installation-and-Development/Getting-started-on-macOS
 ---
 
 # Getting Started on macOS
-
 It is recommended to use [Brew](http://brew.sh) for quick installation of required binaries.
 
 ## Java
-
 ### Installation
-
 Install OpenJDK 17 or higher.
 
 #### Using [Brew](http://brew.sh)
@@ -21,11 +18,9 @@ Install OpenJDK 17 or higher.
 Make sure after installation that running 'java -version' reports the correct Java version.
 
 ### Multiple Java versions
-
 If you have multiple Java versions installed, ensure that you have `$JAVA_HOME` set, and that the `$PATH` contains `$JAVA_HOME/bin`.
 
 ## Maven
-
 Maven can be installed through [Brew](http://brew.sh): run `brew install maven`
 
 ## Git
@@ -49,9 +44,7 @@ Read the formulae's caveats for instructions on how to activate bash-completion 
 ## MariaDB
 
 ### Installation
-
 The easiest way of installing MariaDB is through [Brew](http://brew.sh): run `brew install mariadb`
 
 ### Configuration
-
 [Configure MariaDB](../Installation-and-Development/Configure-MariaDB/#configure-mariadb)
