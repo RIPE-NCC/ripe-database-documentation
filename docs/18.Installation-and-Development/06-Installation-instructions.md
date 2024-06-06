@@ -76,6 +76,10 @@ source ./whois-commons/src/main/resources/nrtm_data.sql
       /usr/bin/java -Dwhois -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -jar whois.jar
 
    * If the test query for `193.0.0.1` does not result in an inetnum returned, the init script will return a failure. If your database is empty for example, this is normal. You might want to adjust the test whois query to match your needs.
+
+      telnet localhost 1043
+      193.0.0.1
+
    * Ignore exceptions in the log starting with [DatabaseVersionCheck] Error checking datasource...  
 * The logs will be printed in the console, notifying about the progress
 * Kill the process to stop the server
