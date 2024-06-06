@@ -30,8 +30,8 @@ Ensure MariaDB and the needed databases are created and populated
 * Copy `whois-commons/src/test/resources/whois.properties` from the repo to whois root directory and rename to `properties`
 * Copy downloaded `jmxterm` jar to the Whois root directory.
 * Adjust `properties` to match your setup (e.g. JDBC URLs, port numbers, etc...)
-   * for the example below we use port.query=1043 and port.api=1080 and port.nrtm=1081
-* Create the databases WHOIS_LOCAL, MAILUPDATES_LOCAL, ACL_LOCAL, INTERNALS_LOCAL.
+   * for the example below we use `port.query=1043` and `port.api=1080` and `port.nrtm=1081`
+* Create the databases `WHOIS_LOCAL`, `MAILUPDATES_LOCAL`, `ACL_LOCAL`, `INTERNALS_LOCAL`.
 
 ```sql
 CREATE DATABASE WHOIS_LOCAL;
@@ -42,7 +42,7 @@ CREATE DATABASE NRTM_LOCAL;
 ```
 
    <i>Explanation: Firstly connect to mysql server with `mysql` command and then create database one by one with `create database DATABASE_NAME` command</i>
-* For each of the above databases, run the _schema.sql scripts found in ./whois/whois-commons/src/main/resources/.
+* For each of the above databases, run the `*_schema.sql` scripts found in `./whois/whois-commons/src/main/resources/`.
 
 ```sql
 use WHOIS_LOCAL;
@@ -58,7 +58,7 @@ source ./whois-commons/src/main/resources/nrtm_schema.sql
 ```
 
    <i>Explanation: Select database with command `use DATABASE_NAME` to be able to run schema on it with command `source PATH_TO_SCHEMA`</i>
-* For the ones that match, run their _data.sql script equivalents found in ./whois/whois-commons/src/main/resources/.
+* For the ones that match, run their `*_data.sql` script equivalents found in `./whois/whois-commons/src/main/resources/`.
 
 ```sql
 use WHOIS_LOCAL;
@@ -69,7 +69,7 @@ use NRTM_LOCAL;
 source ./whois-commons/src/main/resources/nrtm_data.sql
 ```
 
-* Start whois by executing the following command. Use -Ddump.total.size.limit to specify the dump size:
+* Start whois by executing the following command. Use `-Ddump.total.size.limit` to specify the dump size:
 
       /usr/bin/java -Dwhois -Djsse.enableSNIExtension=false -Dcom.sun.management.jmxremote -Dhazelcast.jmx=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=1099 -Xms1024m -Xmx8g -Dwhois.config=properties -Duser.timezone=UTC -Dhazelcast.config=hazelcast.xml -Dlog4j.configurationFile=file:log4j2.xml -jar whois.jar
 
@@ -130,7 +130,7 @@ The database ACL_LOCAL contains tables related to access control logic in whois.
       VALUES
       ('192.168.0.1/32', -1, 'a comment', 10000000);
 
-Also make sure there is no other line with the same prefix ('192.168.0.1/32') in this table.
+Also make sure there is no other line with the same prefix (`192.168.0.1/32`) in this table.
 
 Also run the following, just in case this IP is permanently denied:
 

@@ -15,7 +15,7 @@ Install OpenJDK 17 or higher.
 #### Manually
 * Download and manually install OpenJDK from https://adoptium.net/
 
-Make sure after installation that running 'java -version' reports the correct Java version.
+Make sure after installation that running `java -version` reports the correct Java version.
 
 ### Multiple Java versions
 If you have multiple Java versions installed, ensure that you have `$JAVA_HOME` set, and that the `$PATH` contains `$JAVA_HOME/bin`.
