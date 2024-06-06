@@ -30,7 +30,7 @@ Ensure MariaDB and the needed databases are created and populated
 * Copy `whois-commons/src/test/resources/whois.properties` from the repo to whois root directory and rename to `properties`
 * Copy downloaded `jmxterm` jar to the Whois root directory.
 * Adjust `properties` to match your setup (e.g. JDBC URLs, port numbers, etc...)
-   * for the example below we use port.query=1043 and port.api=1080 and port.nrtm=1044
+   * for the example below we use port.query=1043 and port.api=1080 and port.nrtm=1081
 * Create the databases WHOIS_LOCAL, MAILUPDATES_LOCAL, ACL_LOCAL, INTERNALS_LOCAL.
 
 ```sql
