@@ -19,9 +19,8 @@ Ensure MariaDB and the needed databases are created and populated
 * create a role user to run whois server (by default, `dbase`)
 * whois root directory, owned by role user
 * MariaDB configured
-* `jmxterm-1.0-alpha-4-uber.jar`, downloadable from http://wiki.cyclopsgroup.org/jmxterm.
-   * For MAC OSX the 1.0-alpha-4 version of jmxterm has a problem but there is a fix here: https://github.com/jiaqi/jmxterm. You can checkout the latest version and build the jar using mvn clean package.
-   * For SDK 17 the 1.0-alpha-4 version of jmxterm has a problem. As a workaround you can add `--add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED` to Java for jmxterm to make use of the jconsole module.
+* [`jmxterm-1.0.4-uber.jar`](https://github.com/jiaqi/jmxterm/releases/download/v1.0.4/jmxterm-1.0.4-uber.jar), downloadable from the GitHub project linked on http://wiki.cyclopsgroup.org/jmxterm.
+   * For JDK 17, jmxterm has a problem. As a workaround you can add `--add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED` to Java for jmxterm to make use of the jconsole module.
 * `pgrep`
 * `/usr/lib/sendmail`-compatible mailer, like exim
 
