@@ -86,9 +86,11 @@ source ./whois-commons/src/main/resources/nrtm_data.sql
 * make sure that in `properties` the `port.query` and `port.api` are not zero (e.g. 1043, 1080 respectively).
 * copy the file `whois-scheduler/src/test/resources/TEST.db` to the whois root directory
   * The file TEST.db contains an initial set of RPSL objects used for testing purposes.
-* while the server is running, use JMX to load the database with the content of TEST.db:
+* while the server is running, use `pgrep` to find the server's PID (`pgrep java`)
+* now knowing the PID, while the server is still running, use JMX to load the database with the content of TEST.db:
 
       java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
+      open (PID HERE)
       bean net.ripe.db.whois:name=Bootstrap
       run loadDump comment TEST.db
 
