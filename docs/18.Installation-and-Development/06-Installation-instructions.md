@@ -15,8 +15,8 @@ Ensure MariaDB and the needed databases are created and populated
 ## Requirements
 
 * A server with 8GB RAM, 8GB swap, and 120GB disk space is recommended to run Whois.
-* create a role user to run whois server (by default, `dbase`)
-* whois root directory, owned by role user
+* Create a role user to run whois server (by default, `dbase`)
+* Whois root directory, owned by role user
 * MariaDB configured
 * [`jmxterm-1.0.4-uber.jar`](https://github.com/jiaqi/jmxterm/releases/download/v1.0.4/jmxterm-1.0.4-uber.jar), downloadable from the GitHub project linked on http://wiki.cyclopsgroup.org/jmxterm.
    * For JDK 17, jmxterm has a problem. As a workaround you can add `--add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED` to Java for jmxterm to make use of the jconsole module.
@@ -130,7 +130,7 @@ The database ACL_LOCAL contains tables related to access control logic in whois.
       VALUES
       ('192.168.0.1/32', -1, 'a comment', 10000000);
 
-also make sure there is no other line with the same prefix ('192.168.0.1/32') in this table.
+Also make sure there is no other line with the same prefix ('192.168.0.1/32') in this table.
 
 Also run the following, just in case this IP is permanently denied:
 
@@ -139,6 +139,6 @@ Also run the following, just in case this IP is permanently denied:
 
 If MariaDB says that no row was affected, it is fine.
 
-if your client has IPv6, use the IPv6/64 prefix.
+If your client has IPv6, use the IPv6/64 prefix.
 
 Commit the changes and in a couple of minutes the Whois server will pick it up and will not block that IP again.

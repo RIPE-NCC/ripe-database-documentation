@@ -36,8 +36,8 @@ The Git formulae ships Git's bash completion:
 * Run `brew install git`
 
 bash-completion is required for bash completion to work. Depending on which bash is used, a different formulae must be installed:
-* for Homebrew's `bash` (>= v4): Run `brew install bash-completion@2`
-* for macOS's `bash` (v3.2.57): Run `brew install bash-completion`
+* For Homebrew's `bash` (>= v4): Run `brew install bash-completion@2`
+* For macOS's `bash` (v3.2.57): Run `brew install bash-completion`
 
 Read the formulae's caveats for instructions on how to activate bash-completion by adding a line in your `.bash_profile`.
 
