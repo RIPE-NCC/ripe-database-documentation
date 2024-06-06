@@ -98,13 +98,14 @@ source ./whois-commons/src/main/resources/nrtm_data.sql
       bean net.ripe.db.whois:name=Bootstrap
       run loadDump comment TEST.db
 
-* When the import is finished you should see a message in output like `220 succeeded` (objects)
-* exit the jmx console, and test that it worked by executing a query using telnet:
+* When the import is finished you should see a message in output like `220 succeeded` (objects).
+* Exit the JMX console
+* Test that it worked by executing a query using telnet:
 
       telnet localhost 1043
       10.11.11.0
 
-      test the REST API with curl:
+* Test the REST API with curl:
 
       curl http://localhost:1080/whois/test/inetnum/10.11.11.0/24
 
