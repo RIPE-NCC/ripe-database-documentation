@@ -8,9 +8,6 @@ In this section we show how to make a standard setup of whois once you compiled 
 
 ## Prerequisite 
 
-Ensure `/export` directory has been created. 
-  - Note on MacOS, Catalina introduced read-only root. Hence creating `export` is not straightforward. See this [post](https://derflounder.wordpress.com/2020/01/18/creating-root-level-directories-and-symbolic-links-on-macos-catalina/), on how to go about doing this. 
-
 Ensure MariaDB and the needed databases are created and populated
   - See [Getting Started on OSX](../Installation-and-Development/Getting-started-on-OSX/#getting-started-on-osx) for installation information.
   - See [Configure MariaDB](../Installation-and-Development/Configure-MariaDB/#configure-mariadb) for instructions how to create and grant user permission.
