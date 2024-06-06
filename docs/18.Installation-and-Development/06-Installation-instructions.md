@@ -84,12 +84,12 @@ source ./whois-commons/src/main/resources/nrtm_data.sql
 * Use `java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose` to access the administrative interface exported via JMX
 
 ## Load local whois with initial test content
-* for testing purposes, use `source=TEST` in the `properties` file
-* make sure that in `properties` the `port.query` and `port.api` are not zero (e.g. 1043, 1080 respectively).
-* copy the file `whois-scheduler/src/test/resources/TEST.db` to the whois root directory
+* For testing purposes, use `source=TEST` in the `properties` file
+* Make sure that in `properties` the `port.query` and `port.api` are not zero (e.g. 1043, 1080 respectively).
+* Copy the file `whois-scheduler/src/test/resources/TEST.db` to the whois root directory
   * The file TEST.db contains an initial set of RPSL objects used for testing purposes.
-* while the server is running, use `pgrep` to find the server's PID (`pgrep java`)
-* now knowing the PID, while the server is still running, use JMX to load the database with the content of TEST.db:
+* While the server is running, use `pgrep` to find the server's PID (`pgrep java`)
+* Now knowing the PID, while the server is still running, use JMX to load the database with the content of TEST.db:
 
       java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
       open (PID HERE)
@@ -108,13 +108,13 @@ source ./whois-commons/src/main/resources/nrtm_data.sql
       curl http://localhost:1080/whois/test/inetnum/10.11.11.0/24
 
 
-if you want to add content, you can use the `TEST-DBM-MNT` mntner whose password (emptypassword) is the `remarks` line.
+If you want to add content, you can use the `TEST-DBM-MNT` mntner whose password (emptypassword) is the `remarks` line.
 
 
       curl http://localhost:1080/whois/test/mntner/TEST-DBM-MNT?password=emptypassword
 
 
-you can check the instructions in [WHOIS-REST-API](../Update-Methods/RESTful-API/#ripe-database-restful-api) for more info about the REST API
+You can check the instructions in [WHOIS-REST-API](../Update-Methods/RESTful-API/#ripe-database-restful-api) for more info about the REST API
 
 
 ## How to allow unlimited queries
