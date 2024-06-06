@@ -40,6 +40,7 @@ CREATE DATABASE WHOIS_LOCAL;
 CREATE DATABASE MAILUPDATES_LOCAL;
 CREATE DATABASE ACL_LOCAL;
 CREATE DATABASE INTERNALS_LOCAL;
+CREATE DATABASE NRTM_LOCAL;
 ```
 
    <i>Explanation: Firstly connect to mysql server with `mysql` command and then create database one by one with `create database DATABASE_NAME` command</i>
@@ -54,6 +55,8 @@ use ACL_LOCAL;
 source ./whois-commons/src/main/resources/acl_schema.sql
 use INTERNALS_LOCAL;
 source ./whois-commons/src/main/resources/internals_schema.sql
+use NRTM_LOCAL;
+source ./whois-commons/src/main/resources/nrtm_schema.sql
 ```
 
    <i>Explanation: Select database with command `use DATABASE_NAME` to be able to run schema on it with command `source PATH_TO_SCHEMA`</i>
@@ -64,6 +67,8 @@ use WHOIS_LOCAL;
 source ./whois-commons/src/main/resources/whois_data.sql
 use INTERNALS_LOCAL;
 source ./whois-commons/src/main/resources/internals_data.sql
+use NRTM_LOCAL;
+source ./whois-commons/src/main/resources/nrtm_data.sql
 ```
 
 * Start whois by executing the following command. Use -Ddump.total.size.limit to specify the dump size:
