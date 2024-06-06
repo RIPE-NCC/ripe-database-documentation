@@ -75,8 +75,8 @@ source ./whois-commons/src/main/resources/nrtm_data.sql
 
    * If the test query for `193.0.0.1` does not result in an inetnum returned, the init script will return a failure. If your database is empty for example, this is normal. You might want to adjust the test whois query to match your needs.
 
-      telnet localhost 1043
-      193.0.0.1
+         telnet localhost 1043
+         193.0.0.1
 
    * Ignore exceptions in the log starting with [DatabaseVersionCheck] Error checking datasource...  
 * The logs will be printed in the console, notifying about the progress
