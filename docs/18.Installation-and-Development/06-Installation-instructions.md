@@ -4,7 +4,7 @@ permalink: /Installation-and-Development/Installation-instructions
 
 # Installation instructions
 
-In this section we show how to make a standard setup of whois once you compiled the shaded `whois.jar`.
+In this section we show how to make a standard setup of whois.
 
 ## Prerequisite 
 
@@ -15,7 +15,6 @@ Ensure MariaDB and the needed databases are created and populated
 ## Requirements
 
 * A server with 8GB RAM, 8GB swap, and 120GB disk space is recommended to run Whois.
-* the shaded jar produced by release build, located at `whois-db/target/`
 * create a role user to run whois server (by default, `dbase`)
 * whois root directory, owned by role user
 * MariaDB configured
@@ -25,8 +24,7 @@ Ensure MariaDB and the needed databases are created and populated
 * `/usr/lib/sendmail`-compatible mailer, like exim
 
 ## Setup
-* create a "fat"/shaded  jar using:
-`mvn clean install -Prelease`
+* Create a "fat"/shaded jar using `mvn clean install -Prelease`. If you have issues, check the [build page](../Installation-and-Development/Building-whois/).
 * Copy `whois-db/target/whois-db-<version>.jar` to whois root directory and rename to `whois.jar`
 * Copy the files `tools/hazelcast.xml`, `whois-commons/src/test/resources/log4j2.xml` from the repo to the whois root directory
 * Copy `whois-commons/src/test/resources/whois.properties` from the repo to whois root directory and rename to `properties`
