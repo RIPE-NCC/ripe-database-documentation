@@ -25,6 +25,7 @@ max_connections=1000
 If you wish to run your own Whois server, you need additional variables to be modified:
 
 * `max_allowed_packet = 20M`
+
 * `innodb_buffer_pool_size = 2G`
   * as we only have innodb databases, this should be set to use all the remaining memory available
   * leave some memory for the OS, and the Whois Java process, and check for swap activity
