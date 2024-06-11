@@ -44,10 +44,10 @@ If there are compilation errors, make sure to perform a maven build first, since
 ### Running whois from within Intellij
 
 - Ensure MariaDB and the needed databases are created and populated
-  - See [Getting Started on OSX](../Installation-and-Development/Getting-started-on-OSX/#getting-started-on-osx) for installation information.
+  - See [Getting Started on macOS](../Installation-and-Development/Getting-started-on-macOS/#getting-started-on-macos) for installation information.
   - See [Configure MariaDB](../Installation-and-Development/Configure-MariaDB/#configure-mariadb) for instructions how to create and grant user permission.
   - See [Installation instructions](../Installation-and-Development/Installation-instructions/#installation-instructions) for instructions on how to create and populate needed databases.
-- Ensure `whois/tools` directory is populated with hazelcast.xml file.
+- Ensure `whois/tools` directory is populated with `hazelcast.xml` file.
 - Ensure a local property is available in `tools` directory. Copy `whois/whois-commons/src/test/resources/whois.properties` and `whois/whois-commons/src/test/resources/log4j2.xml` into `whois/tools` directory and ensure the following properties are updated to allow running locally, for example have the following:
 
     port.query=1043
@@ -67,8 +67,8 @@ Also ensure database username and password matches what you have locally. (Norma
 
 ### Importing multiple maven sub-projects under one project
 Unlike other IDEs, in IntelliJ you can have only one project. However, you can import multiple projects as modules. If you want to import the whois project with its modules and also another maven project, e.g. whois-related follow the steps:   
-* From the terminal use mvn clean install to build both projects.
-* Create a new Java project (e.g. root-project) in IntelliJ using the suggested options from the wizard. 
+* From the terminal use `mvn clean install` to build both projects.
+* Create a new Java project (e.g. `root-project`) in IntelliJ using the suggested options from the wizard.
 * Select Import module, and navigate to whois project pom.
 * Check the option to import recursively maven projects.
 * Select root-project from the project explorer and repeat step 3 and 4 to import the whois-related project.
@@ -79,7 +79,7 @@ If you upgrade to a newer version of IntelliJ, it will ask you to upgrade your o
 If there are problems in the project just remove the IntelliJ files and re-import the projects:
 * Quit IntelliJ
 * Go to the projects folder
-* Delete ".idea" folders and "*.iml" files
+* Delete `.idea` folders and `*.iml` files
 * Re-import the projects as described above. 
 
 If you want to delete all your IntelliJ project files you can use the following commands:
