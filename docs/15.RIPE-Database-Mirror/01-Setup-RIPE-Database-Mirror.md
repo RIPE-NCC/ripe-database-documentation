@@ -166,7 +166,7 @@ A server with 16GB RAM, 8 GB swap, and 160GB disk space is recommended for mirro
      involves configuring the URLs for [Snapshot Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#snapshot-file), [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file), and the [Update Notification File](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#update-notification-file). 
      Ensure that IRRd is set up to server these files over HTTPS.
    ```
-   # NRTMv4 specific settings for the EXAMPLE database
+   # NRTMv4 specific settings for the RIPE database
    nrtm:
       version: 4  # NRTMv4 version
       url:
@@ -189,7 +189,7 @@ A server with 16GB RAM, 8 GB swap, and 160GB disk space is recommended for mirro
      - Use `irrd-client`and `irrd-shell` to query objects and updates.
      - Fetch and view the [Snapshot Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#snapshot-file) and [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file) to understand the current state and changes in the 
        database.
-   - **Update Notifications**: Monitor the [Update Notification File](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#update-notification-file) and [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file) to stay updates with 
+   - **Update Notifications**: Monitor the [Update Notification File](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#update-notification-file) and [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file) to stay updated with 
      changes in the database. Configure IRRd to regularly publish these files according to the [NRTMv4 specifications](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#near-real-time-mirroring-v4).
    - **Handling Updates**: Process [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file) to apply incremental updates to your local instance of IRRd, 
      ensuring synchronisation with the latest changes in the database.

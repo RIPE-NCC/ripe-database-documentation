@@ -19,7 +19,7 @@ refer to
 
 To enable NRTMv4 we generate and configure a private Ed25519 key and provide the corresponding public 
 key, the IRR Database name, and the publication URL of the [Update Notification File](#update-notification-file). The
-public key must be base64 encoded. 
+public key is base64 encoded. 
 
 * URL:
 
@@ -40,11 +40,11 @@ We keep the public keys in FTP server as well.
 
 *This is still in progress*. 
 
-The public key will approximately once a year for security reasons. The process for 
+The public key will rotate approximately once a year for security reasons. The process for 
 in-band key rotation involves:
 1. Generating and configuring a new key as the upcoming signing key.
 2. Including this key in the `next_signing_key` field of the Update Notification File, which propagates to mirror clients within 24 hours.
-3. Optionally refreshing the Notification Update File earlier to start propagation sooner.
+3. Optionally refreshing the Notification Update File earlier.
 4. Mirror clients store the new key from the `next_signing_key` field upon retrieving the Update Notification File.
 5. After a week, the server operator makes the new key active and removes the old key. Future Notification Files will be signed with the new key and will not include a `next_signing_key` field.
 6. If a client's signature validation fails, it must attempt to verify using the previously encountered `next_signing_key` and update its configuration if successful.
@@ -76,10 +76,10 @@ and the RIPE Database. It provides:
 
 The Update Notification File ensure efficient and accurate synchronisation between the RIPE database and the client's 
 database by providing clear metadata, previse change details, and robust validation mechanisms. Clients must rely on 
-this file to maintain up-tp-date copies of the RIPE Database.
+this file to maintain up-to-date copies of the RIPE Database.
 
 1. `nrtm_version`: must be 4
-2. `timestamp`: should adhere to [RFC3339](https://www.rfc-editor.org/rfc/rfc3339) format, providing an accurate 
+2. `timestamp`: is adhered to [RFC3339](https://www.rfc-editor.org/rfc/rfc3339) format, providing an accurate 
    timestamp of when the Update Notification File was generated.
 3. `type`: must be "notification".
 4. `next_signing_key`: (optional) if present, denotes that public key for future key rotation.
@@ -143,12 +143,12 @@ More information [here](https://htmlpreview.github.io/?https://github.com/mxsash
 The Snapshot File contains the complete and current contents of the RIPE Database, and clients should use it to
 initialise or reinitialise their local Database copies.
 
-To avoid issues where a client retrieves an [Update Notification File](#update-notification-file) just before it is updates, servers should
-retain old Snapshot Files for at least 5 minutes after a new [Update Notification File](#update-notification-file) is published. This allows
+To avoid issues where a client retrieves an [Update Notification File](#update-notification-file) just before it is 
+updated, servers should retain old Snapshot Files for at least 5 minutes after a new [Update Notification File](#update-notification-file) is published. This allows
 clients to complete the retrieval of the snapshot without encountering inconsistencies.
 
 The Snapshot File is formatted as [JSON Text Sequences](https://www.rfc-editor.org/rfc/rfc7464). It contains one or
-more records. THe first record is the header, followed by the RPSL records.
+more records. The first record is the header, followed by the RPSL records.
 
 1.  A new Snapshot File will be generated every day between 1 am and 2 am.
 2. `nrtm_version`: must be set to 4.
