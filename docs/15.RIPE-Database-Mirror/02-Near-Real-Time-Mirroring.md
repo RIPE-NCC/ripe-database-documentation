@@ -4,7 +4,7 @@ permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring
 
 # Near Real Time Mirroring
 
-**The RIPE NCC NRTM** is a publicly available service that allows authorised users to receive a stream of available data from the RIPE Database on a server. The user will receive a stream of data from the server with near real time updates. This service does not include any personal data.
+**The RIPE NCC NRTM** is a publicly available service that allows users to receive a stream of available data from the RIPE Database on a server. The user will receive a stream of data from the server with near real time updates. This service does not include any personal data.
 
 ## Pre-conditions:
 
@@ -93,6 +93,7 @@ You will find all technical requirements to access the stream and more informati
 
 The RIPE NCC NRTM Service and its use is regulated by the [RIPE Database Terms and Conditions](../Legal-Information/#) and [RIPE Database Acceptable Use Policy](../RIPE-Database-Acceptable-Use-Policy/#ripe-database-acceptable-use-policy).
 
+### Transferring To A Third Party 
 Transferring and/or making available of the NRTM Service and/or the data downloaded therefrom to a third party is only allowed, provided the following conditions are met:
 
 * The user obtains prior written permission from the RIPE NCC
