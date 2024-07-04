@@ -81,14 +81,6 @@ Configure your DNS servers in such a way that you will pass all the tests that w
 * The SOA should contain a valid "RNAME" (the contact address)
 * The timing parameters should be reasonable
 
-Keep in mind that, for a /16 (v4) and /32 (v6), you can use ns.ripe.net the secondary server. In both cases, you have to allow zone transfers from the name server listed in the SOA resource record's MNAME field to the RIPE NCC distribution servers. The IP addresses of the two servers are:
-
-    193.0.19.190 / 2001:67c:2e8:11::c100:13be
-
-    93.175.159.250 / 2001:67c:2d7c:66::53
-
-IF your servers are configured to send DNS notify messages and you would like ns.ripe.net to update promptly, please send them to the IP addresses listed here. Any notify messages sent directly to the addresses of ns.ripe.net will not be seen. Also bear in mind that we do not support any non-standard configurations (such as port numbers other than 53, TSIG keys and so on).
-
 When you are satisfied with your configuration, we recommend that you perform a test fo your setup using the [DNSCheck](https://dnscheck.ripe.net/domain_check) tool so you can find and resolve any problems.
 
 
