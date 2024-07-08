@@ -4,10 +4,6 @@ permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4
 
 # Near Real Time Mirroring v4
 
-**The RIPE NCC NRTM** is a publicly available service that allows authorised users to receive a stream of available data 
-from the RIPE Database on a server. The user will receive a stream of data from the server with near real time updates. 
-This service does not include any personal data.
-
 NRTMv4 is a protocol for IRR mirroring that improves upon existing protocols by publishing records via an HTTPS 
 endpoint, using periodic [Snapshots Files](#snapshot-file) and regular [Delta Files](#delta-file). It includes integrity checks through 
 signing and enhances scalability by generating files once and distributing them over HTTPS. For more information, 
@@ -17,17 +13,16 @@ refer to
 
 ## Key Configuration
 
-To enable NRTMv4 we generate and configure a private Ed25519 key and provide the corresponding public 
-key, the IRR Database name, and the publication URL of the [Update Notification File](#update-notification-file). The
-public key is base64 encoded. 
+To enable NRTMv4 we generate and configure a private Ed25519 key and provide the corresponding public key, the IRR 
+Database name, and the publication URL of the [Update Notification File](#update-notification-file). The public key is base64 encoded. 
 
 * URL:
 
 
-| Environment | Public key URL                                                              |
-|-------------|-----------------------------------------------------------------------------|
-| PROD        | https://nrtm.db.ripe.net/nrtmv4/RIPE/update-notification-file.json.sig      |
-| RC          | https://nrtm-rc.db.ripe.net/nrtmv4/RIPE/update-notification-file.json.sig   |
+| Environment | Update notification file content signed by private key                    |
+|-------------|---------------------------------------------------------------------------|
+| PROD        | https://nrtm.db.ripe.net/nrtmv4/RIPE/update-notification-file.json.sig    |
+| RC          | https://nrtm-rc.db.ripe.net/nrtmv4/RIPE/update-notification-file.json.sig |
 
 We keep the public keys in FTP server as well. 
 
