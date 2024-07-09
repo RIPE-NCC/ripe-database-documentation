@@ -106,23 +106,19 @@ Possible reasons for various HTTP status codes are as follows:
 
 #### Examples
 
-* Example XML Request:
+* Example XML Request (Basic AA1-TEST:AA1-TEST):
 
-    curl -X POST -H 'Content-Type: application/xml' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
+    curl -X POST -H 'Content-Type: application/xml' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person'
 
-* Example JSON Request:
+* Example JSON Request (Basic AA1-TEST:AA1-TEST):
 
-    curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person?password=...'
-
-* Example Request using Basic authorisation (Basic AA1-TEST:AA1-TEST):
-
-    curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person'
+    curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person'
 
 * Example dry-run requests:
 
-    curl -X POST --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run&password=...'
+    curl -X POST 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run'
 
-    curl -X POST --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run=true&password=...'
+    curl -X POST 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person?dry-run=true'
 
 
 
@@ -202,24 +198,24 @@ If the request fails, any error messages will be returned in the response body, 
 
 #### Examples
 
-* Example XML Request:
+* Example XML Request (Basic AA1-TEST:AA1-TEST):
 
-    curl -X PUT -H 'Content-Type: application/xml' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...'
+    curl -X PUT -H 'Content-Type: application/xml' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE'
 
   
-* Example JSON Request:
+* Example JSON Request (Basic AA1-TEST:AA1-TEST):
 
-    curl -X PUT -H 'Content-Type: application/json' -H 'Accept:application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...'
-
-
-* Example of a bad XML request when updating a mntner object using as request the person object from the first example:
-
-    curl -X PUT -H 'Content-Type: application/xml' --data @form.txt 'https://rest.db.ripe.net/ripe/mntner/PP1-RIPE?password=...'
+    curl -X PUT -H 'Content-Type: application/json' -H 'Accept:application/json' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE'
 
 
-* Example of a bad JSON request when updating a mntner object using as request the person object from the first example:
+* Example of a bad XML request when updating a mntner object using as request the person object from the first example (Basic AA1-TEST:AA1-TEST):
 
-    curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE?password=...'
+    curl -X PUT -H 'Content-Type: application/xml' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/mntner/PP1-RIPE'
+
+
+* Example of a bad JSON request when updating a mntner object using as request the person object from the first example (Basic AA1-TEST:AA1-TEST):
+
+    curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json' -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person/PP1-RIPE'
 
 
 * Example unfiltered using Basic authorisation header request (Basic AA1-TEST:AA1-TEST):
@@ -227,11 +223,11 @@ If the request fails, any error messages will be returned in the response body, 
     curl -X PUT -H 'Content-Type: application/json'  -H 'Accept:application/json'  -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
 
-* Example dry-run requests:
+* Example dry-run requests (Basic AA1-TEST:AA1-TEST):
 
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
+    curl -X PUT -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run'
 
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true&password=...'
+    curl -X PUT -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true'
 
 
 
@@ -306,19 +302,15 @@ Possible reasons for various HTTP status codes are as follows:
 
 ### Examples
 
-* Example Request:
-
-    curl -X DELETE 'https://rest.db.ripe.net/ripe/person/pp1-ripe?password=123'
-
 * Example Request using Basic authorisation (Basic AA1-TEST:AA1-TEST):
 
     curl -X DELETE -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' 'http://rest-test.db.ripe.net/test/person/AA1-TEST'
 
-* Example dry-run requests:
+* Example dry-run requests (Basic AA1-TEST:AA1-TEST):
 
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
+    curl -X PUT -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run'
 
-    curl -X PUT --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true&password=...'
+    curl -X PUT -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' --data @form.txt 'https://rest.db.ripe.net/ripe/person/TP1-RIPE?dry-run=true'
 
 
 
@@ -357,4 +349,4 @@ is supported by our REST API. To use the client certificate service, you must ha
   - Generate the Certificate Signing Request (CSR): openssl req -new -key client.key -out client.csr
   - Generate the self-signed certificate using the CSR: openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt
 - Example using curl and previous certificate: 
-  - curl --cert client.crt --key client.key -X PUT --data @form.txt'https://rest-cert.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
+  - curl --cert client.crt --key client.key -X PUT --data @form.txt'https://rest-cert.db.ripe.net/ripe/person/TP1-RIPE?dry-run'

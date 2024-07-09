@@ -106,10 +106,6 @@ Possible reasons for various HTTP status codes are as follows:
 
     curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'
 
-* Example unfiltered using password parameter request:
-
-    curl 'http://rest-test.db.ripe.net/test/person/AA1-TEST?password=AA1-TEST-PASSWORD&unfiltered'
-
 * Example unfiltered using Basic authorisation header request (Basic AA1-TEST:AA1-TEST):
 
     curl -H 'Authorization: Basic QUExLVRFU1Q6QUExLVRFU1QtUEFTU1dPUkQ=' 'http://rest-test.db.ripe.net/test/person/AA1-TEST?unfiltered'

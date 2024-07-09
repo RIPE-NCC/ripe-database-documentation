@@ -110,9 +110,7 @@ source ./whois-commons/src/main/resources/nrtm_data.sql
 
 If you want to add content, you can use the `TEST-DBM-MNT` mntner whose password (emptypassword) is the `remarks` line.
 
-
-      curl http://localhost:1080/whois/test/mntner/TEST-DBM-MNT?password=emptypassword
-
+    curl -H 'Authorization: Basic TUhNLU1OVDplbXB0eXBhc3N3b3Jk' http://localhost:1080/whois/test/mntner/TEST-DBM-MNT 
 
 You can check the instructions in [WHOIS-REST-API](../Update-Methods/RESTful-API/#ripe-database-restful-api) for more info about the REST API
 
