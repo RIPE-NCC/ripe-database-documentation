@@ -2,47 +2,15 @@
 permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4
 ---
 
+*This is still in progress*.
+
 # Near Real Time Mirroring v4
 
-NRTMv4 is a protocol for IRR mirroring that improves upon existing protocols by publishing records via an HTTPS 
+NRTMv4 is a protocol for database mirroring that improves upon existing protocols by publishing records via an HTTPS 
 endpoint, using periodic [Snapshots Files](#snapshot-file) and regular [Delta Files](#delta-file). It includes integrity checks through 
 signing and enhances scalability by generating files once and distributing them over HTTPS. For more information, 
 refer to 
 [draft-ietf-grow-nrtm-v4.html](https://htmlpreview.github.io/?https://github.com/mxsasha/nrtmv4/blob/main/draft-ietf-grow-nrtm-v4.html)
-
-
-## Key Configuration
-
-To enable NRTMv4 we generate and configure a private Ed25519 key and provide the corresponding public key, the IRR 
-Database name, and the publication URL of the [Update Notification File](#update-notification-file). The public key is base64 encoded. 
-
-* URL:
-
-
-| Environment | Update notification file content signed by private key                    |
-|-------------|---------------------------------------------------------------------------|
-| PROD        | https://nrtm.db.ripe.net/nrtmv4/RIPE/update-notification-file.json.sig    |
-| RC          | https://nrtm-rc.db.ripe.net/nrtmv4/RIPE/update-notification-file.json.sig |
-
-We keep the public keys in FTP server as well. 
-
-| Environment | Public key URL                                                  |
-|-------------|-----------------------------------------------------------------|
-| PROD        | https://ftp.ripe.net/ripe/dbase/nrtmv4/nrtmv4_public_key.txt    |
-| RC          | https://ftp.ripe.net/ripe/dbase/nrtmv4/nrtmv4_public_key_rc.txt |
-
-### Key Rotation
-
-*This is still in progress*. 
-
-The public key will rotate approximately once a year for security reasons. The process for 
-in-band key rotation involves:
-1. Generating and configuring a new key as the upcoming signing key.
-2. Including this key in the `next_signing_key` field of the Update Notification File, which propagates to mirror clients within 24 hours.
-3. Optionally refreshing the Notification Update File earlier.
-4. Mirror clients store the new key from the `next_signing_key` field upon retrieving the Update Notification File.
-5. After a week, the server operator makes the new key active and removes the old key. Future Notification Files will be signed with the new key and will not include a `next_signing_key` field.
-6. If a client's signature validation fails, it must attempt to verify using the previously encountered `next_signing_key` and update its configuration if successful.
 
 ## Snapshot Initialization
 
@@ -169,13 +137,6 @@ More information [here](https://htmlpreview.github.io/?https://github.com/mxsash
 {"object": "route: 2001:db8::/32\norigin: AS65530\nsource: RIPE"}
 ```
 
-* URL:
-
-| Environment | Public key URL                                            |
-|-------------|-----------------------------------------------------------|
-| PROD        | https://nrtm.db.ripe.net/nrtmv4/RIPE/nrtm-snapshot.x      |
-| RC          | https://nrtm-rc.db.ripe.net/nrtmv4/RIPE/nrtm-snapshot.x   |
-
 
 ### Delta File
 
@@ -224,12 +185,32 @@ More information [here](https://htmlpreview.github.io/?https://github.com/mxsash
   "object": "route: 2001:db8::/32\norigin: AS65530\nsource: RIPE"
 }
 ```
-* URL:
 
-| Environment | Public key URL                                         |
-|-------------|--------------------------------------------------------|
-| PROD        | https://nrtm.db.ripe.net/nrtmv4/RIPE/nrtm-delta.x      |
-| RC          | https://nrtm-rc.db.ripe.net/nrtmv4/RIPE/nrtm-delta.x   |
+
+## Key Configuration
+
+To enable NRTMv4 we generate and configure a private Ed25519 key and provide the corresponding public key, the IRR
+Database name, and the publication URL of the [Update Notification File](#update-notification-file). The public key is base64 encoded.
+The key is available in the `next_signing_key` attribute in the notification file.
+
+We provide the public key file on a separate server.
+
+| Environment | Public key URL                                                  |
+|-------------|-----------------------------------------------------------------|
+| PROD        | https://ftp.ripe.net/ripe/dbase/nrtmv4/nrtmv4_public_key.txt    |
+| RC          | https://ftp.ripe.net/ripe/dbase/nrtmv4/nrtmv4_public_key_rc.txt |
+
+### Key Rotation
+
+The public key will rotate approximately once a year for security reasons. The process for
+in-band key rotation involves:
+1. Generating and configuring a new key as the upcoming signing key.
+2. Including this key in the `next_signing_key` field of the Update Notification File, which propagates to mirror clients within 24 hours.
+3. Optionally refreshing the Notification Update File earlier.
+4. Mirror clients store the new key from the `next_signing_key` field upon retrieving the Update Notification File.
+5. After a week, the server operator makes the new key active and removes the old key. Future Notification Files will be signed with the new key and will not include a `next_signing_key` field.
+6. If a client's signature validation fails, it must attempt to verify using the previously encountered `next_signing_key` and update its configuration if successful.
+
 
 
 
