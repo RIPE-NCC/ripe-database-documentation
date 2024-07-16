@@ -2,15 +2,15 @@
 permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4
 ---
 
-*This is still in progress*.
 
 # Near Real Time Mirroring v4
 
 NRTMv4 is a protocol for database mirroring that improves upon existing protocols by publishing records via an HTTPS 
 endpoint, using periodic [Snapshots Files](#snapshot-file) and regular [Delta Files](#delta-file). It includes integrity checks through 
 signing and enhances scalability by generating files once and distributing them over HTTPS. For more information, 
-refer to 
-[draft-ietf-grow-nrtm-v4.html](https://htmlpreview.github.io/?https://github.com/mxsasha/nrtmv4/blob/main/draft-ietf-grow-nrtm-v4.html)
+refer to [draft-ietf-grow-nrtm-v4.html](https://htmlpreview.github.io/?https://github.com/mxsasha/nrtmv4/blob/main/draft-ietf-grow-nrtm-v4.html).
+
+This protocol has draft RFC status and is subject to change.
 
 ## Snapshot Initialization
 
