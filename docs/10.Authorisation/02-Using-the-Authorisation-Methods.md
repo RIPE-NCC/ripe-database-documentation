@@ -82,7 +82,8 @@ If your email client supports S/MIME you can import the certificate and private 
 
 A signed update message can also be pasted into the Syncupdates web form. When using the HTTP POST and GET requests for Syncupdates, the signed update must be supplied in the message body.
 
-X.509 signed updates cannot be submitted using the RESTful API. As Webupdates uses the API in the background, you cannot paste a signed update into a Webupdates text area either.
+X.509 signed updates cannot be submitted via the RESTful API. Additionally, since Webupdates utilizes the API in the background, you are unable to paste a signed update into a Webupdates text area. 
+However, you can submit updates through the RESTful API using [Client Certificate Authentication](../Appendices/Appendix-I--Client-Certificate-Authentication/#appendix-i-client-certificate-authentication).
 
 For your X.509 signed update to pass authorisation checks, you must have your certificate in the database in a **key-cert** object.
 
