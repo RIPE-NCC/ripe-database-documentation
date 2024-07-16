@@ -49,10 +49,6 @@ Leading zeroes (AS1 - AS065536) are not allowed and will be removed (AS1 - AS655
 
 
 
-
-
-
-
 ## Description of the IRT Object
 
 Below is the object template for the **irt** object. It lists all possible attributes that are allowed in this object type.
@@ -351,6 +347,7 @@ A **poetic-form** object defines the supported poem types. A new ‘poetic form'
 * **"poetic-form:"** – This attribute starts with "FORM-". It is followed by the name of an internationally recognised poetic format of humorous writing. For example, limerick or haiku.
 * **“descr:”** – This attribute describes the style of the poetic form, written in the form style. For example, if it is a FORM-LIMERICK, the description will be written as a limerick.
 * **"mnt-by:"** - The poetic-form object must contain a single "mnt-by:" attribute. The object must be maintained by RIPE-DBM-MNT.
+
 
 
 ## Description of the ROLE Object
