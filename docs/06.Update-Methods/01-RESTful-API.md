@@ -355,6 +355,9 @@ designated validity period. This involves comparing the current date against the
 or has expired (`notAfter`), it is considered invalid and an error is raised. This validation ensures that the certificate is only used within 
 its valid time frame, maintaining secure and reliable authentication.
 
+Additionally, signed updates are only considered valid for an hour after they are signed. After that the 
+authentication will fail.
+
 ### Examples
 
 - Create your own certificate:
