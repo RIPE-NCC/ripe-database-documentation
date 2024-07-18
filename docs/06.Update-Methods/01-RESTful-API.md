@@ -682,6 +682,14 @@ Any required passwords must also be supplied as part of the Uniform Resource ide
 [Client Certificate Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Client_certificate_authentication)
 is supported by our REST API. To use the client certificate service, you must have your own certificate: either from a certificate authority (CA) such as Let's Encrypt, or you can generate one yourself.
 
+The **key-cert** object's client certificate status is validated by checking its `notBefore` and `notAfter` dates to ensure it is within its 
+designated validity period. This involves comparing the current date against these dates: if the certificate is not yet valid (`notBefore`) 
+or has expired (`notAfter`), it is considered invalid and an error is raised. This validation ensures that the certificate is only used within 
+its valid time frame, maintaining secure and reliable authentication.
+
+Additionally, signed updates are only considered valid for an hour after they are signed. After that the 
+authentication will fail.
+
 ### Examples
 
 - Create your own certificate:
