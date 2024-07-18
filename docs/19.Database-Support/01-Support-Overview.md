@@ -26,6 +26,8 @@ How to handle the **Incident Response Team(IRT) object** in the RIPE Database
 
 * [Clean-up of Unreferenced Data - Detailed explanation with examples](../Database-Support/Clean-up-of-Unreferenced-Data/#clean-up-of-unreferenced-data)
 Database cleanup process described in detail with examples of data subject to deletion.
+* [Near Real Time Mirroring v3](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v3/#near-real-time-Mirroring-v3)
+**NRTM** allows any authorised clients to receive a stream of available data from a database on a server.
 * [Near Real Time Mirroring](../RIPE-Database-Mirror/Near-Real-Time-Mirroring/#near-real-time-Mirroring)
 **NRTM** allows any client to receive a stream of available data from a database on a server.
 

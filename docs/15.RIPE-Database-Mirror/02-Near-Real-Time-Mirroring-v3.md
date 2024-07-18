@@ -1,8 +1,8 @@
 ---
-permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring
+permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring-v3
 ---
 
-# Near Real Time Mirroring
+# Near Real Time Mirroring v3
 
 **The RIPE NCC NRTM** is a publicly available service that allows users to receive a stream of available data from the RIPE Database on a server. The user will receive a stream of data from the server with near real time updates. This service does not include any personal data.
 
