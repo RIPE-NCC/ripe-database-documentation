@@ -108,10 +108,16 @@ Now add the authentication method to the maintainer with an additional "auth:" a
 
 Now update an object using the certificate to authenticate.
 
-First lookup a PERSON object ES7554-RIPE as JSON and save to file.json.
+First lookup a PERSON object ES7554-RIPE as JSON and save to file.json. You must use the `unfiltered` query parameter to request the full object including attributes that may contain personal data.
 
 ```
 $ curl -o file.json https://rest.db.ripe.net/ripe/person/ES7554-RIPE.json?unfiltered
+```
+
+You can also authenticate a MNTNER lookup with a client certificate, which will return the mntner including full `auth:` attribute values. Be sure to also include the `unfiltered` query parameter to return attributes that may contain personal data.
+
+```
+$ curl -o file.json --key client-key.pem --cert client-cert.pem https://rest-cert.db.ripe.net/ripe/person/ES7554-RIPE.json?unfiltered
 ```
 
 ### Update An Object
