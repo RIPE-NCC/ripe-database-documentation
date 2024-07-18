@@ -4,7 +4,7 @@ permalink: /RIPE-Database-Mirror/Setup-RIPE-Database-Mirror
 
 # Setup RIPE Database Mirror
 
-There are two ways to set up a mirror of the RIPE database.
+There are three ways to set up a mirror of the RIPE database.
 
 1. Using GRS import. 
 
@@ -67,7 +67,7 @@ There are two ways to set up a mirror of the RIPE database.
 
 
 
-2. Using Bootstrap and NRTM. 
+2. Using Bootstrap and NRTMv3. 
   
     With this method the mirror database gets updated in near real time.
 
@@ -141,9 +141,57 @@ There are two ways to set up a mirror of the RIPE database.
       > -s RIPE-GRS 193.0.0.1 - 193.0.7.255
    ``` 
 
-    - If the query is successful, we can proceed with [Setup automatic updating with NRTM](../RIPE-Database-Mirror/Near-Real-Time-Mirroring/#near-real-time-Mirroring).
+    - If the query is successful, we can proceed with [Setup automatic updating with NRTMv3](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v3/#near-real-time-Mirroring-v3).
 
 
 
 A server with 16GB RAM, 8 GB swap, and 160GB disk space is recommended for mirroring.
 *Please note that running your own mirror is not supported!*
+
+
+
+3. Using [IRRd](https://github.com/irrdnet/irrd) with [NRTMv4](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#near-real-time-Mirroring-v4). 
+
+   *This feature is in development and is subject to change.*
+
+   With this method the mirror database gets updated in near real time.
+
+   This section outline the essential steps for configuring, initializing, and maintaining synchronisation 
+   using [Snapshot Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#snapshot-file) and [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file). By following these protocols, mirror clients ensure accurate and 
+   timely updates of RIPE Database information, while maintaining security and integrity through cryptographic 
+   verification processes.
+
+   - Install [IRRd](https://github.com/irrdnet/irrd).
+   - **Configure IRRd for NRTMv4**: Modify your IRRd configuration to enable support for NRTMv4. This typically 
+     involves configuring the URLs for [Snapshot Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#snapshot-file), [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file), and the [Update Notification File](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#update-notification-file). 
+     Ensure that IRRd is set up to server these files over HTTPS.
+   ```
+   # NRTMv4 specific settings for the RIPE database
+   nrtm:
+      version: 4  # NRTMv4 version
+      url:
+         snapshot: https://nrtm.db.ripe.net/nrtmv4/RIPE/nrtm-snapshot  # URL for Snapshot Files
+         deltas: https://nrtm.db.ripe.net/nrtmv4/RIPE/nrtm-deltas      # URL for Delta Files
+         update_notification: https://nrtm.db.ripe.net/nrtmv4/RIPE/update-notification-file.json  # URL for Update Notification File
+      keys:
+         public: https://nrtm.db.ripe.net/nrtmv4/RIPE/update-notification-file.json.sig  # Path to the public key for signature verification
+   ```
+   - **Initialise IRRd**: Initialise IRRd with the necessary IRR database that supports NRTMv4. This involves 
+     loading the initial dataset and setting up the necessary configurations.
+   ```
+   # IRR database configuration
+   databases:
+      - name: RIPE # RIPE database settings
+   import_sources:
+      - https://nrtm.db.ripe.net/nrtmv4/RIPE/nrtm-snapshot.1.RIPE.x.y.json.gz  #Import initial data from an HTTPS source
+   ```
+   - **Querying Data**: Use the IRRd command-line tools or APIs to query data from the NRTMv4 database. For example:
+     - Use `irrd-client`and `irrd-shell` to query objects and updates.
+     - Fetch and view the [Snapshot Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#snapshot-file) and [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file) to understand the current state and changes in the 
+       database.
+   - **Update Notifications**: Monitor the [Update Notification File](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#update-notification-file) and [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file) to stay updated with 
+     changes in the database. Configure IRRd to regularly publish these files according to the [NRTMv4 specifications](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#near-real-time-mirroring-v4).
+   - **Handling Updates**: Process [Delta Files](../RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/#delta-file) to apply incremental updates to your local instance of IRRd, 
+     ensuring synchronisation with the latest changes in the database.
+
+   For more detailed explanations about how to use IRRd client please refer to their [documentation](https://github.com/irrdnet/irrd)
