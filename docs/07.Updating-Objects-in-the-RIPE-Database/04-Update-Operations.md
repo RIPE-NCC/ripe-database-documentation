@@ -32,4 +32,7 @@ For the RESTful API and also Webupdates, the delete method is used. For mail and
 Objects can still be deleted from the database even if they are not syntactically correct. This allows for old objects to be deleted long after the syntax has been changed. If the object was to be modified, any syntax errors would need to be corrected.
 
 Following [Acceptable use policy](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-acceptable-use-policy/), we strive to detect 
-potential attacks. If a DoS attack is detected, we temporarily block the user's IP address.
+potential attacks. If a DoS attack is detected, we temporarily block the user's IP address. 
+
+Additionally, a user exhibiting malicious behavior may be permanently blocked from the system. In such cases, the user will receive a
+notification indicating that they are permanently blocked whenever they attempt to make an update.
