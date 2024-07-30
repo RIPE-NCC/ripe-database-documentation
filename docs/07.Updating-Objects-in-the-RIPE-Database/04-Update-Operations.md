@@ -34,5 +34,7 @@ Objects can still be deleted from the database even if they are not syntacticall
 Following [Acceptable use policy](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-acceptable-use-policy/), we strive to detect 
 potential attacks. If a DoS attack is detected, we temporarily block the user's IP address. 
 
-Additionally, a user exhibiting malicious behavior may be permanently blocked from the system. In such cases, the user will receive a
-notification indicating that they are permanently blocked whenever they attempt to make an update.
+[The RIPE Database Terms and Conditions](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-acceptable-use-policy/)
+allow the RIPE NCC to block or suspend access to the RIPE Database services for any user engaging in abuse or suspected abuse. Users exhibiting 
+suspected abusive behavior may be permanently blocked from the system. If a user is permanently blocked, they will receive a notification 
+informing them of the block whenever they attempt to make an update.
