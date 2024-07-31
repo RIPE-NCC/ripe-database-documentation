@@ -15,7 +15,6 @@
 
 image: $CI_REGISTRY/swe-database-team/gitlab-ci/whois-build:c6f5e5bd
 
-
 variables:
   PROJECT_NAME: "ripe-database-documentation"
   ARTIFACT_NAME: "ripe-database-documentation"
@@ -23,11 +22,13 @@ variables:
 include:
     - project: 'swe-database-team/gitlab-ci'
       file: '/templates/deployment-template.yml'
+    - project: 'swe-database-team/gitlab-ci'
+      file: '/templates/deployment-template-docker.yml'
 
 stages:
   - build
+  - release
   - deploy
-
 
 cache:
   paths:
@@ -42,3 +43,23 @@ build:
   artifacts:
     paths:
       - builds/
+
+release-container:
+  tags:
+    - whois
+  stage: release
+  before_script:
+    - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+    # TODO: [FM] Delete /docs path config. Remove this line after moving to docs.db.ripe.net completely
+    - sed -i '47d' docs/.vuepress/config.js
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:latest || true
+    - >
+        docker build
+        --pull
+        --cache-from $CI_REGISTRY_IMAGE:latest
+        --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+        --tag $CI_REGISTRY_IMAGE:latest
+        .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    - docker push $CI_REGISTRY_IMAGE:latest
