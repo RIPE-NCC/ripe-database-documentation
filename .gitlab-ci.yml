@@ -27,7 +27,6 @@ include:
 
 stages:
   - build
-  - release
   - deploy
 
 cache:
@@ -44,10 +43,10 @@ build:
     paths:
       - builds/
 
-release-container:
+build-container:
   tags:
     - whois
-  stage: release
+  stage: build
   before_script:
     - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
     # TODO: [FM] Delete /docs path config. Remove this line after moving to docs.db.ripe.net completely
