@@ -49,8 +49,6 @@ build-container:
   stage: build
   before_script:
     - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
-    # TODO: [FM] Delete /docs path config. Remove this line after moving to docs.db.ripe.net completely
-    - sed -i '47d' docs/.vuepress/config.js
   script:
     - docker pull $CI_REGISTRY_IMAGE:latest || true
     - >
