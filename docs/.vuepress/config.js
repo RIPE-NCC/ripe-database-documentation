@@ -44,7 +44,6 @@ module.exports = {
   title: "Docs",
   description: "The Database Docs Center",
   dest: process.env.BETA ? 'builds/docsbeta' : 'builds/docs',
-  base: process.env.BETA ? '/docsbeta/' : '/docs/',
   head: [
     ['link', { rel: "icon", type: "image/png", sizes: "128x128", href: "/icons/favicon-128x128.png"}],
     ['link', { rel: "icon", type: "image/png", sizes: "96x96", href: "/icons/favicon-96x96.png"}],
@@ -103,14 +102,14 @@ module.exports = {
     return current.content.replace(regex, function(matchingWord,firstMatchingPart,secondMatchingPart){
       //We could call from one static class to another, for example from t&c static page we could call aup page. We can not target to current page, we have to modify the reference to target the correct page
       if(secondMatchingPart.startsWith("](../Legal-Information") || secondMatchingPart.startsWith("](Legal-Information")){
-        return firstMatchingPart+ '](' + "terms-conditions"+ ')';
+        return firstMatchingPart+ '](' + "terms-conditions.html"+ ')';
       }
       if(secondMatchingPart.startsWith("](../RIPE-Database-Acceptable-Use-Policy") || secondMatchingPart.startsWith("](RIPE-Database-Acceptable-Use-Policy")){
-        return firstMatchingPart+ '](' + "acceptable-use-policy" + ')';
+        return firstMatchingPart+ '](' + "acceptable-use-policy.html" + ')';
       }
       if (secondMatchingPart.includes('#')) {
         let selfReferenceLink = secondMatchingPart.substring(secondMatchingPart.indexOf('#'));
-        return firstMatchingPart+ '](' + "entire-documentation-HTML" + selfReferenceLink + ')';
+        return firstMatchingPart+ '](' + "entire-documentation-HTML.html" + selfReferenceLink + ')';
       }
 
       return matchingWord; //dont change absolute links
@@ -121,7 +120,7 @@ module.exports = {
       'vuepress-plugin-merge-pages',
       {
         bundles: [{
-          path: 'entire-documentation-HTML',
+          path: 'entire-documentation-HTML.html',
           filter: (pages) => {
             return pages.filter(({ path }) => path.match(new RegExp('/*')) && !path.includes('Legal-Information'))
           },
@@ -150,7 +149,7 @@ module.exports = {
           }
         },
         {
-          path: 'terms-conditions',
+          path: 'terms-conditions.html',
           filter: (pages) => {
             return pages.filter(({ path }) => path.includes('HTML-Terms-And-Conditions'))
           },
@@ -166,7 +165,7 @@ module.exports = {
           }
         },
         {
-          path: 'acceptable-use-policy',
+          path: 'acceptable-use-policy.html',
           filter: (pages) => {
             return pages.filter(({ path }) => path.includes('RIPE-Database-Acceptable-Use-Policy'))
           },
