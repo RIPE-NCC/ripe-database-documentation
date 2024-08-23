@@ -6,7 +6,7 @@
     @touchend="onTouchEnd"
   >
     <ClientOnly>
-      <ripe-header open logo="ris" lighttheme homeurl="/" v-if="$page.frontmatter.navbar !== false">
+      <ripe-header open logo="ris" lighttheme homeurl="/docs/" v-if="$page.frontmatter.navbar !== false">
       <svg id="svglogo" slot="logo-app" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 5820.92 550.74" style="enable-background:new 0 0 5820.92 550.74;opacity:0;" xml:space="preserve">
       <style type="text/css">
@@ -110,9 +110,9 @@
         <slot name="sidebar-bottom" />
         <!-- Add static path to reach the generated documentation-->
         <ul class="sidebar-links">
-          <li><a href="/terms-conditions.html" aria-current="page" class="sidebar-link">Terms and Conditions</a></li>
-          <li><a href="/acceptable-use-policy.html" aria-current="page" class="sidebar-link">Acceptable Use Policy</a></li>
-          <li><a href="/entire-documentation-HTML.html" aria-current="page" class="sidebar-link">Entire Documentation HTML</a></li>
+          <li><a href="/docs/terms-conditions" aria-current="page" class="sidebar-link">Terms and Conditions</a></li>
+          <li><a href="/docs/acceptable-use-policy" aria-current="page" class="sidebar-link">Acceptable Use Policy</a></li>
+          <li><a href="/docs/entire-documentation-HTML" aria-current="page" class="sidebar-link">Entire Documentation HTML</a></li>
         </ul>
       </template>
     </Sidebar>
@@ -132,7 +132,7 @@
     </Page>
 
     <component is="noscript" v-if="$page.frontmatter.navbar !== false">
-      <meta http-equiv="refresh" content="0; url='/entire-documentation-HTML'" />
+      <meta http-equiv="refresh" content="0; url='/docs/entire-documentation-HTML'" />
     </component>
 
   </div>
