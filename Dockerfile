@@ -9,6 +9,9 @@ RUN npm install --legacy-peer-deps
 
 COPY ./docs ./docs
 
+# vuepress/last-updated plugin depends on .git
+COPY ./.git ./.git
+
 RUN npm run docs:build
 
 # Final stage
