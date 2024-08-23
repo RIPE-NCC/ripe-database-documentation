@@ -6,7 +6,7 @@
     @touchend="onTouchEnd"
   >
     <ClientOnly>
-      <ripe-header open logo="stat" lighttheme homeurl="/">
+      <ripe-header open logo="stat" lighttheme homeurl="/docs/">
 		<svg slot="logo-app" version="1.1" height="34px" width="271.11px" id="svglogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 4742.49 594.76" style="enable-background:new 0 0 4742.49 594.76;opacity:0;" xml:space="preserve">
 <style type="text/css">
@@ -105,7 +105,7 @@
         </h1>
         <p>
           This document does not exist. Use the searchbar above or go
-          to the <a href="/">home page</a>.
+          to the <a href="/docs/">home page</a>.
         </p>
         </div>
       </template>
