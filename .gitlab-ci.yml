@@ -21,8 +21,6 @@ variables:
 
 include:
     - project: 'swe-database-team/gitlab-ci'
-      file: '/templates/deployment-template.yml'
-    - project: 'swe-database-team/gitlab-ci'
       file: '/templates/deployment-template-docker.yml'
 
 stages:
@@ -36,21 +34,8 @@ cache:
 
 build:
   stage: build
-  script:
-    - npm install --legacy-peer-deps
-    - npm run docs:build
-  artifacts:
-    paths:
-      - builds/
-
-build-container:
-  tags:
-    - whois
-  stage: build
   before_script:
     - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
-    # TODO: [FM] Delete /docs path config. Remove this line after moving to docs.db.ripe.net completely
-    - sed -i '47d' docs/.vuepress/config.js
   script:
     - docker pull $CI_REGISTRY_IMAGE:latest || true
     - >
