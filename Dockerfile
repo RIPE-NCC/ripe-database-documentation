@@ -20,6 +20,8 @@ FROM nginx:alpine
 # Clean the default nginx html directory
 RUN rm -rf /usr/share/nginx/html/*
 
+COPY http.conf /etc/nginx/conf.d/default.conf
+
 COPY --from=build /src/builds/docs /usr/share/nginx/html
 
 WORKDIR /usr/share/nginx/html
