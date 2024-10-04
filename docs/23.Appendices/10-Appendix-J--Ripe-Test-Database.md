@@ -18,7 +18,7 @@ situations in this TEST environment safely.
 
 ## Creating Objects in the TEST Database
 
-There are different ways to create an objects in the TEST database
+There are different ways to create objects in the TEST database
 
 |               |                                                                                                                                                                                                                                                                    |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
