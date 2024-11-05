@@ -9,30 +9,27 @@ The **Registration Data Access Protocol** (RDAP) is an alternative protocol to W
 ## Using RDAP to query the RIPE Database
 
 The contents of RIPE database can be accessed using RDAP via `https://rdap.db.ripe.net/{objectType}/{key}` where `
-{objectType}` must be one of the object types listed below.
+{objectType}` must be one of the object types listed below, and the value of `{key}` depends on the object type.
 
 List of supported object types
 
-| Object Type | Description                                                                                                                      |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------|
-| autnum      | AUT-NUM and AS-BLOCK objects. Example: https://rdap.db.ripe.net/autnum/3333                                                      |
-| domain      | DOMAIN objects. Example: https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa                                                |
+| Object Type | Description                                                                                                                     |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------|
+| autnum      | AUT-NUM objects. Example: https://rdap.db.ripe.net/autnum/3333                                                      |
+| domain      | DOMAIN objects. Example: https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa                                               |
 | ip          | INETNUM and INET6NUM objects. Example: https://rdap.db.ripe.net/ip/193.0.0.0/21 or https://rdap.db.ripe.net/ip/2001:67c:2e8::/48 |
-| entity      | PERSON, ROLE and MNTNER objects. Example: https://rdap.db.ripe.net/entity/RIPE-NCC-MNT                                           |
+| entity      | PERSON, ROLE, ORGANISATION and MNTNER objects. Example: https://rdap.db.ripe.net/entity/RIPE-NCC-MNT                            |
 
-The value of `{key}` depends on the object type.
-
-For example:
+For example, a query for IP information:
 ```
 curl -v https://rdap.db.ripe.net/ip/2001:67c:2e8:9::c100:14e6
 ```
-queries for IP information, while
+and an example query for domain information:
 ```
 curl -v https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa
 ```
-queries for domain information.
 
-If the RIPE Database is not authoritative for the requested resource, the response will redirect to the authoritative RIR.
+If the RIPE Database is not authoritative for the requested resource, the response will redirect to the authoritative RIR with a HTTP 301 response status.
 
 ## Entity Search
 
