@@ -1,8 +1,13 @@
+---
+permalink: /Authorisation/Using-the-Authorisation-Methods
+---
+
+
 # Using the Authorisation Methods
 
 * [MD5 Password](#md5-password)
 * [PGP Key](#pgp-key)
-* [X.509 Certificate](#x509-certificate)
+* [X.509 Certificate](#x-509-certificate)
 * [Single Sign-On](#single-sign-on)
 
 
@@ -13,16 +18,16 @@ An MD5 password can be used by any of the update methods currently in use. See s
 For email updates, password authorisation information is supplied using a "password:" pseudo-attribute. The value of this attribute is a clear-text passphrase, corresponding to the encrypted hash. It can appear anywhere in the body of the message, but not within mail headers. Line continuation is not allowed for this attribute. The attribute and the passphrase should fit on one line. If you split the passphrase across multiple lines, this will be treated as a syntax error. If you have a very long passphrase, please note that some email clients split lines at a pre-defined character position. If multiple passwords are required, a "password:" pseudo-attribute must be included in the update for each password. 
 The Webupdates web form includes a ‘Session Passwords' field. Many passwords can be added, one at a time, using this field, up to a pre-defined limit. For any update in this session, all session passwords will be added to the update that is performed via the web form.
 
-In the single text area form of Webupdates, the “password:” pseudo-attribute can be added as part of the update body, in the text area, in the same way as with an email update. The session passwords also apply in this case.
+In the single text area form of Webupdates, the "password:" pseudo-attribute can be added as part of the update body, in the text area, in the same way as with an email update. The session passwords also apply in this case.
 
-Using the Syncupdates web form there is no ‘Session Passwords' field but again the “password:” pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the “password:” pseudo-attribute must be supplied as part of the message body.
+Using the Syncupdates web form there is no ‘Session Passwords' field but again the "password:" pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the "password:" pseudo-attribute must be supplied as part of the message body.
 
-With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../06.Update-Methods/01-RESTful-API.md#ripe-database-restful-api).
+With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../Update-Methods/RESTful-API/#ripe-database-restful-api).
 
 
 ## PGP Key
 
-To use PGP authorisation you must first create a private/public key pair. There are many third-party applications that will allow you to do this. You must keep the private key secure. The public key is entered into the RIPE Database in a **key-cert** object. (See ['Description of the key-cert Object'](../04.RPSL-Object-Types/03-Descriptions-of-Secondary-Objects.md#description-of-the-key-cert-object) for details.)
+To use PGP authentication you must first create a private/public key pair. There are many third-party applications that will allow you to do this. You must keep the private key secure. The public key is entered into the RIPE Database in a **key-cert** object. (See ['Description of the key-cert Object'](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object) for details.)
 
 Some email clients allow you to import your private key into the client. This can then be used to sign any email update you submit. Alternatively, you can use third-party software to sign an update with your private key and paste the signed update into the body of an email.
 
@@ -30,16 +35,18 @@ A signed update message can also be pasted into the Syncupdates web form. When u
 
 PGP-signed updates cannot be submitted using the RESTful API. As Webupdates uses the API in the background, you cannot paste a signed update into a Webupdates text area either.
 
-For your PGP-signed update to pass authorisation checks, you must have your public key in the database in a **key-cert** object.
+For your PGP-signed update to pass authentication checks, you must have your public key in the database in a **key-cert** object.
+
+PGP authentication creation steps are in the [appendix](../Appendices/Appendix-H--PGP-Authentication-Method/#appendix-h-pgp-authentication-method).
 
 
 ### Use in the MAINTAINER object
 
 PGP authentication can be activated by setting the value of an "auth:" attribute to PGPKEY-&lt;id&gt; where &lt;id&gt; is the PGP key ID to be used for authentication. This string is the same one which is used in the corresponding **key-cert** object's "key-cert:" attribute.
 
-Remember that if you have multiple "auth:" attributes in a **maintainer** or if you have multiple "mnt-by:" attributes in an object, all possible authentication methods are combined by a logical OR which means that any single one of the specified authentication methods can be used. There is not security advantage in using PGP authentication with an object which can also be updated with a crypted password authentication.
+Remember that if you have multiple "auth:" attributes in a **maintainer** or if you have multiple "mnt-by:" attributes in an object, all possible authentication methods are combined by a logical OR which means that any single one of the specified authentication methods can be used. There is not security advantage in using PGP authentication with an object which can also be updated with password authentication.
 
-There are currently no referential integrity checks carried out on the "auth:" attribute values. If you change your "auth:" to refer to a non existent **key-cert** object, or someone else's **key-cert** object you have locked your **mntner**. You will then have to [contact us](../17.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object) for assistance to un-lock it. Also, if you delete your **key-cert** object you will again lock your **mntner** until you re-create the **key-cert** object.
+There are currently no referential integrity checks carried out on the "auth:" attribute values. If you change your "auth:" to refer to a non existent **key-cert** object, or someone else's **key-cert** object you have locked your **mntner**. You will then have to [contact us](../How-to-Recover-Access-to-a-Maintainer-Object/#how-to-recover-access-to-a-maintainer-mntner-object) for assistance to un-lock it. Also, if you delete your **key-cert** object you will again lock your **mntner** until you re-create the **key-cert** object.
 
 This is an example of a valid **mntner** object which uses PGP authentication:
 
@@ -69,13 +76,14 @@ PGP can be used with updates submitted by e-mail or using the syncupdates facili
 
 ## X.509 Certificate
 
-This is handled in a similar way to PGP. You need a certificate and private key. There is third-party software available to generate these as well as command-line tools, for example OpenSSL. The certificate must be included in a **key-cert** object in the database. The generated certificate and private key are in binary files. The OpenSSL tool will convert the certificate into plain text to be included in the **key-cert** object. For X.509 **key-cert** objects, you must specify the “key-cert:” value as ‘AUTO-1'. The database software will then set this value. These values cannot be reused. Once deleted, an X.509 **key-cert** object cannot be recreated.
+This is handled in a similar way to PGP. You need a certificate and private key. There is third-party software available to generate these as well as command-line tools, for example OpenSSL. The certificate must be included in a **key-cert** object in the database. The generated certificate and private key are in binary files. The OpenSSL tool will convert the certificate into plain text to be included in the **key-cert** object. For X.509 **key-cert** objects, you must specify the "key-cert:" value as ‘AUTO-1'. The database software will then set this value. These values cannot be reused. Once deleted, an X.509 **key-cert** object cannot be recreated.
 
 If your email client supports S/MIME you can import the certificate and private key into the client. Email updates can now be signed with your X.509 private key. Alternatively, you can sign your update using your private key with OpenSSL and paste it into the email message body.
 
 A signed update message can also be pasted into the Syncupdates web form. When using the HTTP POST and GET requests for Syncupdates, the signed update must be supplied in the message body.
 
-X.509 signed updates cannot be submitted using the RESTful API. As Webupdates uses the API in the background, you cannot paste a signed update into a Webupdates text area either.
+X.509 signed updates cannot be submitted via the RESTful API. Additionally, since Webupdates utilizes the API in the background, you are unable to paste a signed update into a Webupdates text area. 
+However, you can submit updates through the RESTful API using [Client Certificate Authentication](../Appendices/Appendix-I--Client-Certificate-Authentication/#appendix-i-client-certificate-authentication).
 
 For your X.509 signed update to pass authorisation checks, you must have your certificate in the database in a **key-cert** object.
 

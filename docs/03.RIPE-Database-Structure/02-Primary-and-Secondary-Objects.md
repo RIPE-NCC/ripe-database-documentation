@@ -1,3 +1,7 @@
+---
+permalink: /RIPE-Database-Structure/Primary-and-Secondary-Objects
+---
+
 # Primary and Secondary Objects
 
 Objects in the RIPE Database naturally fall into two categories, primary and secondary.

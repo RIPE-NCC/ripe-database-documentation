@@ -1,3 +1,7 @@
+---
+permalink: /Notifications/Acknowledgment-Message
+---
+
 # Acknowledgment Message
 
 The acknowledgement (ack) message is always returned to the user who submitted the update to the database, however, the ack message is a unique notification because it is returned via the same method that was used to submit the update. So, for an email update, the ack message is returned to the email address that sent the update. For any other update method, the ack message is returned as an HTTP response.
@@ -98,7 +102,7 @@ There are many reasons why the operation may fail for an object, including synta
 
 There are only two differences between an ack message returned from a Syncupdate update and an ack message returned from an email update. The ‘SUCCESS' or ‘FAILED' result shown in the email's subject line is now shown as a code in the first line of a Syncupdates response. However, this response code does not provide the same information. An update that fails with an authorisation error will return response code 403. Any other object update failure,or success, will return response code 200. This indicates that the update was successfully processed. It does not mean that all the objects in the update message were successful operations. This must be determined from the numbers of successes and failures in the SUMMARY part of the message output.
 
-If you use Syncupdates via the web form (see the section ['Syncupdates'](../06.Update-Methods/03-Syncupdates.md#syncupdates)) there is no response code. All information has to be interpreted using the content of the ack message.
+If you use Syncupdates via the web form (see the section ['Syncupdates'](../Update-Methods/Syncupdates/#syncupdates)) there is no response code. All information has to be interpreted using the content of the ack message.
 
 The second difference is also in the first section of the ack message. Whereas the email ack message gives details of the received email, the Syncupdates ack message gives details of the IP address sending in the update.
 

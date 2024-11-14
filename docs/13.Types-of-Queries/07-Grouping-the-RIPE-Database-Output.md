@@ -1,3 +1,8 @@
+---
+permalink: /Types-of-Queries/Grouping-the-RIPE-Database-Output
+---
+
+
 # Grouping the RIPE Database Output
 
 There are two ways to order the objects in a query response.
@@ -60,4 +65,4 @@ One way is for the first part of the response to list the objects that are the d
     person:         Denis Walker
     nic-hdl:        DW6465-RIPE
 
-The default response is grouped. If you include the “-G” or “--no-grouping” query flag then the output will not be grouped.
+The default response is grouped. If you include the `-G` or `--no-grouping` query flag then the output will not be grouped.

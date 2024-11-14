@@ -1,3 +1,7 @@
+---
+permalink: /Set-Objects
+---
+
 # Set Objects
 
 Throughout this section we have used the **as-set** object as an example. The same rules apply to all the different set object types.
@@ -6,7 +10,7 @@ Throughout this section we have used the **as-set** object as an example. The sa
 
 Newly created as-set names must be hierarchical. The hierarchy consists of a series of other as-set names separated by colons (`:`). Anything to the left of a colon is considered a parent, anything to the right is considered a child. At each stage, the whole of the hierarchy, including the colons, is considered as a single string that forms an object name. The set hierarchy can optionally start with an AS number reference as the top-level parent.
 
-Existing as-set names can be short (i.e. with a name only, e.g. AS-TEST) or hierarchical (i.e. with a name and AS number reference(s), e.g. AS3333:AS-TEST). It is now mandatory to use hierarchical names to create an **as-set** object, so that the creation is authenticated by the AS number holder. This restriction does not apply to the other set types.
+Existing as-set names can be short (i.e. with a name only, e.g. AS-TEST) or hierarchical (i.e. with a name and AS number reference(s), e.g. AS3333:AS-TEST). It is now mandatory to only use hierarchical names to create an **as-set** object, so that the creation is authenticated by the AS number holder. This restriction does not apply to the other set types.
 
 AS-LIST1:AS-CUST
 
@@ -24,7 +28,7 @@ Therefore, if we were to create a new set "AS3333:AS-RIPE:AS-APNIC:AS-CUSTOMERS"
 
 If an AS number is the first element in the hierarchical set name (the top-level parent) then the corresponding **aut-num** object must exist in order to create the next level in the hierarchy as this is the parent object. However, it is only needed for authorisation.
 
-Therefore, to create the set "AS3333:AS-RIPE", the **aut-num** object “AS3333” must exist to provide authorisation.
+Therefore, to create the set "AS3333:AS-RIPE", the **aut-num** object "AS3333" must exist to provide authorisation.
 
 If an AS number appears anywhere else in the set name hierarchy it is treated as part of a set name and the **aut-num** object does not need to exist. You cannot have AS numbers as the first two levels in the name hierarchy. The second level could not be created, as there must be at least one element starting with "AS-" in the set name.
 
@@ -64,7 +68,7 @@ If there are any **aut-num** objects with "member-of:" attributes referencing an
 
 A "mbrs-by-ref:" attribute can be removed from an **as-set** object even if there are "member-of:" references to this **as-set** object. The "mbrs-by-ref:" attribute is only needed for validation of an object's claim to membership of the set. A modification to an **aut-num** object with a "member-of:" reference to this **as-set** object will fail unless the "member-of:" reference is removed from the **aut-num** object.
 
-The **as-set** object can be deleted if it has "members:" listed in the object that do exist. However, if there are "member-of:" references to the set in other objects, this set object cannot be deleted, even if you first remove the “mbrs-by-ref:” attributes.
+The **as-set** object can be deleted if it has "members:" listed in the object that do exist. However, if there are "member-of:" references to the set in other objects, this set object cannot be deleted, even if you first remove the "mbrs-by-ref:" attributes.
 
 
 ## The ROUTE-SET Object

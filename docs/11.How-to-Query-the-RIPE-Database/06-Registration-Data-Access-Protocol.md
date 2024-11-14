@@ -1,37 +1,78 @@
+---
+permalink: /How-to-Query-the-RIPE-Database/Registration-Data-Access-Protocol
+---
+
 # Registration Data Access Protocol (RDAP)
 
 The **Registration Data Access Protocol** (RDAP) is an alternative protocol to WHOIS that specifies how to access internet resource registration data. It is specifically designed to address various shortcomings in WHOIS. It makes use of HTTPS and follows a RESTful (representational state transfer) web services model.
 
-## Using RDAP to query RIPE Database
+## Using RDAP to query the RIPE Database
 
-The contents of RIPE database can be accessed using RDAP via `https://rdap.db.ripe.net/{objectType}/{key}` where `{objectType}` must be one of the Object Types listed below.
+The contents of RIPE database can be accessed using RDAP via `https://rdap.db.ripe.net/{objectType}/{key}` where `
+{objectType}` must be one of the object types listed below, and the value of `{key}` depends on the object type.
 
 List of supported object types
 
-| Object Type | Description                    |
-|-------------|---------------------------------|
-| autnum      | AUT-NUM objects                 |
-| domain      | DOMAIN objects                  |
-| ip          | INETNUM and INET6NUM objects    |
-| entity      | PERSON, ROLE and MNTNER objects |
+| Object Type | Description                                                                                                                     |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------|
+| autnum      | AUT-NUM objects. Example: https://rdap.db.ripe.net/autnum/3333                                                      |
+| domain      | DOMAIN objects. Example: https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa                                               |
+| ip          | INETNUM and INET6NUM objects. Example: https://rdap.db.ripe.net/ip/193.0.0.0/21 or https://rdap.db.ripe.net/ip/2001:67c:2e8::/48 |
+| entity      | PERSON, ROLE, ORGANISATION and MNTNER objects. Example: https://rdap.db.ripe.net/entity/RIPE-NCC-MNT                            |
 
+For example, a query for IP information:
+```
+curl -v https://rdap.db.ripe.net/ip/2001:67c:2e8:9::c100:14e6
+```
+and an example query for domain information:
+```
+curl -v https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa
+```
 
-The value of `{key}` depends on the object type.
+If the RIPE Database is not authoritative for the requested resource, the response will redirect to the authoritative RIR with a HTTP 301 response status.
 
-For example:
+## Entity Search
 
-    curl -v https://rdap.db.ripe.net/ip/2001:67c:2e8:9::c100:14e6
+The entities path segment allows searching for matching entities based on a term. The output is an array with objects in RDAP format.
 
-queries IP information, while
+Syntax:
 
-    curl -v https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa
-queries domain information.
+```
+https://rdap.db.ripe.net/entities?fn={fn}&handle={handle}
+```
 
-If the RIPE Database is not authoritative for the requested resource, the response will redirect to the authoritative RIR.
+Where:
+* fn: Returns all the matches for **person:**, **role:**, and **org-name:** attributes. 
+  * Example: https://rdap.db.ripe.net/entities?fn=RIPE-RIPE
+* handle: Returns all the matches for **organisation:**, **nic-hdl:** attributes. 
+  * Example: https://rdap.db.ripe.net/entities?handle=RIPE-RIPE
+
+## Domain Search
+
+The domains path segment allows searching for matches based on a term. The output is an array with objects in RDAP format.
+
+Syntax:
+
+```
+https://rdap.db.ripe.net/domains?name={name}
+```
+
+Where:
+* name: Returns all the matches for the **domain:** attribute
+  * Example: https://rdap.db.ripe.net/domains?name=196.46.95.in-addr.arpa
+
+## Help
+
+The help path segment return a valid RDAP object containing the default set of notices for the service. The rdapConformance element in the response include the extension identifiers for all the extensions implemented.
+
+Syntax:
+```
+https://rdap.db.ripe.net/help
+```
 
 ## RDAP Specification
 
-The RDAP protocol is specified in the RFCs:
+The RDAP protocol is specified in the following RFCs:
 
  * [RFC 7480](https://www.rfc-editor.org/rfc/rfc7480) – HTTP Usage in the Registration Data Access Protocol (RDAP)
  * [RFC 7481](https://www.rfc-editor.org/rfc/rfc7481) – Security Services for the Registration Data Access Protocol (RDAP)
@@ -39,6 +80,15 @@ The RDAP protocol is specified in the RFCs:
  * [RFC 9083](https://datatracker.ietf.org/doc/rfc9083/) – JSON Responses for the Registration Data Access Protocol (RDAP)
  * [RFC 7484](https://www.rfc-editor.org/rfc/rfc7484) – Finding the Authoritative Registration Data (RDAP) Service
  * [RFC 7485](https://www.rfc-editor.org/rfc/rfc7485) – Inventory and Analysis of WHOIS Registration Objects
+
+ ## RDAP profiles
+
+In addition to the base RDAP specification, we also implement the following profiles:
+ 
+ * [NRO RDAP Profile](https://bitbucket.org/nroecg/nro-rdap-profile/raw/v1/nro-rdap-profile.txt).
+ * [NRO RDAP cidr](https://bitbucket.org/nroecg/nro-rdap-cidr/src/master/nro-rdap-cidr.txt).
+ * [Redacted](https://datatracker.ietf.org/doc/draft-ietf-regext-rdap-redacted/).
+ * [RIR search](https://datatracker.ietf.org/doc/draft-ietf-regext-rdap-rir-search/)
 
 ## Known Issues
 

@@ -1,3 +1,7 @@
+---
+permalink: /RIPE-Database-Mirror/Access-to-NRTM
+---
+
 # Access to NRTM
 
 ## Abstract
@@ -11,14 +15,14 @@ Near Real Time Mirroring (NRTM) is a mechanism that allows any client to receive
 
 The NRTM database made available by the RIPE NCC does not include any custom software or proprietary database engine with which to utilise the data.
 
-NOTE that it is not possible for users to mirror any of the RIPE NCC mirrored databases (for instance, other RIR databases). If you need a NRTM data stream from any other source you must contact that souce directly.
+NOTE that it is not possible for users to mirror any of the RIPE NCC mirrored databases (for instance, other RIR databases). If you need a NRTM data stream from any other source you must contact that source directly.
 
 
 ## NRTM Protocols
 
 Currently there are two versions of the NRTM protocols available, Version 2 and Version 3. There is backwards compatibility between the two versions.
 
-The RIPE Database server generates a serial number every time it processes an update in the database. When generating these serial numbers, the server describes all mofifications to the database in terms of two atomic operations: deletion and addition.
+The RIPE Database server generates a serial number every time it processes an update in the database. When generating these serial numbers, the server describes all modifications to the database in terms of two atomic operations: deletion and addition.
 
 Version 2 sends some data from every serial in the data stream. Where the real data is excluded, dummy data must be sent to maintain the sequence of serials.
 
@@ -58,9 +62,9 @@ All the data from the "optional" attributes has been removed from the files for 
 
 The single file is a merged data set of all the individual data files in a single text file. It contains the excluded **organisation** and **mntner** objects as dummy objects and a single **person** and **role** dummy object. This can be accessed here: ftp://ftp.ripe.net/ripe/dbase/ripe.db.gz
 
-All of these files are produced on a daily basis. Only the most recent file is available from the dtp site. Each database update has a serial number and these serials define the data pulled from an NRTM data strem. The latest update serial included in the data files is held in a separate text file on the FTP site: ftp://ftp.ripe.net/ripe/dbase/RIPE.CURRENTSERIAL
+All of these files are produced on a daily basis. Only the most recent file is available from the dtp site. Each database update has a serial number and these serials define the data pulled from an NRTM data stream. The latest update serial included in the data files is held in a separate text file on the FTP site: ftp://ftp.ripe.net/ripe/dbase/RIPE.CURRENTSERIAL
 
-You will need this serial number to know which serial to start pulling from the NRTM data strem. Note that only update serials from the previous 14 days can be pulled from the RIPE NRTM Database server. If you have not pulled any data from the NRTM stream for more than 14 days, you will need to download the above text files again, reinitialise your database and start from the new serial number. You may want to keep track of the serials that you pull from the NRTM data strem. If you have any gaps that are older than 14 days, then you will need to download all the text files again.
+You will need this serial number to know which serial to start pulling from the NRTM data stream. Note that only update serials from the previous 14 days can be pulled from the RIPE NRTM Database server. If you have not pulled any data from the NRTM stream for more than 14 days, you will need to download the above text files again, reinitialise your database and start from the new serial number. You may want to keep track of the serials that you pull from the NRTM data stream. If you have any gaps that are older than 14 days, then you will need to download all the text files again.
 
 
 ## Accessing the Data Stream
@@ -73,7 +77,7 @@ When sending data to a client using the Version 2 protocol, the server will send
 
 With the Version 3 protocol the serial follows the operation string ("ADD" or "DEL") on the same line. All other returned data is the same as for Version 2.
 
-After connecting to the server, the client can request data by using the “-g” query flag. The arguments to this query flag are:
+After connecting to the server, the client can request data by using the `-g` query flag. The arguments to this query flag are:
     -g &lt;source&gt; :&lt;NRTM_Protocol_version_#&gt;:&lt;first&gt;-&lt;last&gt;
 
 where
@@ -111,9 +115,9 @@ This is an example of accessing the NRTM data stream using telnet and pulling th
     last-modified: 2017-12-04T14:42:31Z
     source: RIPE
 
-A client may request a persistent connection by including the “-k“ query flag with a mirroring request (“-g“ query flag). In this case, the last argument is ignored and the server supplies the new object as soon as they are processed. The client is responsible for closing the connection. A persistent connection for mirroring does not time out, but the connection may break if there is a server error.
+A client may request a persistent connection by including the `-k` query flag with a mirroring request (`-g` query flag). In this case, the last argument is ignored and the server supplies the new object as soon as they are processed. The client is responsible for closing the connection. A persistent connection for mirroring does not time out, but the connection may break if there is a server error.
 
-A client can use the “-q sources“ flag with the mirror server to retrieve information regarding available mirroring possibilities. Please see [this section](../13.Types-of-Queries/13-RIPE-NCC-Global-Resource-Service.md#ripe-ncc-global-resource-service) for more details.
+A client can use the `-q sources` flag with the mirror server to retrieve information regarding available mirroring possibilities. Please see [this section](../Types-of-Queries/RIPE-NCC-Global-Resource-Service/#ripe-ncc-global-resource-service) for more details.
 
 At the beginning of the data stream, the server will send the following string:
 

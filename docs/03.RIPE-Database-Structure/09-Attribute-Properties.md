@@ -1,3 +1,7 @@
+---
+permalink: /RIPE-Database-Structure/Attribute-Properties
+---
+
 # Attribute Properties
 
 Attributes can be used in different ways in different objects. Currently, there are three properties that apply to all attributes:
@@ -6,12 +10,12 @@ Attributes can be used in different ways in different objects. Currently, there 
 * Repeat
 * Indexed
 
-The allowed attributes for any object type are shown in the object templates (see the section ['RPSL Object Types'](../04.RPSL-Object-Types/README.md#rpsl-object-types)).
+The allowed attributes for any object type are shown in the object templates (see the section ['RPSL Object Types'](../RPSL-Object-Types/#rpsl-object-types)).
 
 
 ## Presence
 
-Not all allowed attributes need to be present in every instance of the object type. The table below shows how presence is defined for an attribute. The same attribute name may have a different presence defined in different object types. For example “status:” is mandatory in an **inetnum** object, but generated in an **aut-num** object.
+Not all allowed attributes need to be present in every instance of the object type. The table below shows how presence is defined for an attribute. The same attribute name may have a different presence defined in different object types. For example "status:" is mandatory in an **inetnum** object, but generated in an **aut-num** object.
 
 **Types of ‘presence' of an Attribute**
 

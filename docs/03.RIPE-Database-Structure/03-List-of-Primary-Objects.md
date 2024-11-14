@@ -1,18 +1,22 @@
+---
+permalink: /RIPE-Database-Structure/List-of-Primary-Objects
+---
+
 # List of Primary Objects
 
 These are the currently supported objects in the RIPE Database that are considered to be primary data.
 
-| Object Type | Short name | Description |
-| --- | --- | --- |
-| **aut-num** | an | Holds information about an Automonous System (AS) Number. If it has “status: ASSIGNED” it is an authoritative resource assigned by the RIPE NCC and is part of the number registry (INR). It can also describe the external routing policy of the AS and is then part of the routing registry (IRR). |
-| **domain** | dn | Reverse domain registrations. Any changes made to **domain** objects in the RIPE Database are reflected in the DNS zone files. |
-| **inet6num** | i6 | Allocations and assignments of IPv6 address space. |
-| **inetnum** | in | Allocations and assignments of IPv4 address space. |
-| **route** | rt | IPv4 route advertised on the Internet. |
-| **route6** | r6 | IPv6 route advertised on the Internet. |
-| **as-set** | as | Set of **aut-num** objects. |
-| **filter-set** | fs | Set of routes matched by its filter. |
-| **inet-rtr** | ir | Internet router. |
-| **peering-set** | ps | Set of peerings. |
-| **route-set** | rs | Set of routes. |
-| **rtr-set** | is | Set of routers. |
+| Object Type     | Short name | Description                                                                                                                                                                                                                                                                                          |
+|-----------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **aut-num**     | an         | Holds information about an Autonomous System (AS) Number. If it has "status: ASSIGNED" it is an authoritative resource assigned by the RIPE NCC and is part of the number registry (INR). It can also describe the external routing policy of the AS and is then part of the routing registry (IRR). |
+| **domain**      | dn         | Reverse domain registrations. Any changes made to **domain** objects in the RIPE Database are reflected in the DNS zone files.                                                                                                                                                                       |
+| **inet6num**    | i6         | Allocations and assignments of IPv6 address space.                                                                                                                                                                                                                                                   |
+| **inetnum**     | in         | Allocations and assignments of IPv4 address space.                                                                                                                                                                                                                                                   |
+| **route**       | rt         | IPv4 route advertised on the Internet.                                                                                                                                                                                                                                                               |
+| **route6**      | r6         | IPv6 route advertised on the Internet.                                                                                                                                                                                                                                                               |
+| **as-set**      | as         | Set of **aut-num** objects.                                                                                                                                                                                                                                                                          |
+| **filter-set**  | fs         | Set of routes matched by its filter.                                                                                                                                                                                                                                                                 |
+| **inet-rtr**    | ir         | Internet router.                                                                                                                                                                                                                                                                                     |
+| **peering-set** | ps         | Set of peerings.                                                                                                                                                                                                                                                                                     |
+| **route-set**   | rs         | Set of routes.                                                                                                                                                                                                                                                                                       |
+| **rtr-set**     | is         | Set of routers.                                                                                                                                                                                                                                                                                      |

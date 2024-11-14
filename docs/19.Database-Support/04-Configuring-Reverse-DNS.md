@@ -1,3 +1,7 @@
+---
+permalink: /Database-Support/Configuring-Reverse-DNS
+---
+
 # Configuring Reverse DNS
 
 **Computer networks use the Domain Name System (DNS) to determine the IP address associated with a domain name. This process is also known as forward DNS resolution. Reverse DNS (rDNS) is the inverse process of this: the resolution of an IP address to its designated domain name. This document explains how reverse DNS works and how to configure it for your zone**
@@ -17,9 +21,9 @@ Before you can submit the **domain** object to the RIPE Database, you will first
 
 ### Mapping IP addresses into the DNS name hierarchy
 
-For IPv4, te mapping of the reverse address space can only happen on "byte" boundaries, i.e. multiples of 8 bits. This means that you should take the four octets - the decimal numbers between the dots - of an IP address range, put them in reverse order and then map them into the in-addr.arpa domain.
+For IPv4, the mapping of the reverse address space can only happen on "byte" boundaries, i.e. multiples of 8 bits. This means that you should take the four octets - the decimal numbers between the dots - of an IP address range, put them in reverse order and then map them into the in-addr.arpa domain.
 
-For example, an address (A) record for mail.example.com points to the IP address 192.0.2.5. In pointer record of the reverse database, this IP address is stored as the domain name 5.2.0.192.in-addr.arpa. poiting back to its designated host name mail.example.com. The resulting PRT record would look like this:
+For example, an address (A) record for mail.example.com points to the IP address 192.0.2.5. In pointer record of the reverse database, this IP address is stored as the domain name 5.2.0.192.in-addr.arpa. pointing back to its designated host name mail.example.com. The resulting PTR record would look like this:
 
     5.2.0.192.in-addr.arpa. 3600 IN PTR mail.example.com
 
@@ -65,7 +69,7 @@ For example, an allocation such as 2001:db8::/29 will result in eight reverse zo
 
 
 ### Step 1: Set up authorisation
-The creation and maintenance of **domain** objects must be handled by a designated maintainer. You can use an existing maintainer or create a specific one for the people who will be creating and managing **domain** objects. You should refer to this maintainer using the "mnt-domains:" attribute in **inetnum** object for the address block that you hold. You will be able to add the "mnt-domains:" attribute in the RIPE Database, for example using [webupdates](https://apps.db.ripe.net/db-web-ui/query). If you are an LIR, you may need to select your [default maintainer](03-Database-Security.md#the-default-maintainer) first, before you can add this attribute.
+The creation and maintenance of **domain** objects must be handled by a designated maintainer. You can use an existing maintainer or create a specific one for the people who will be creating and managing **domain** objects. You should refer to this maintainer using the "mnt-domains:" attribute in **inetnum** object for the address block that you hold. You will be able to add the "mnt-domains:" attribute in the RIPE Database, for example using [webupdates](https://apps.db.ripe.net/db-web-ui/query). If you are an LIR, you may need to select your [default maintainer](../Database-Support/Database-Security/#the-default-maintainer) first, before you can add this attribute.
 
 ### Step 2: Configure your DNS server
 Configure your DNS servers in such a way that you will pass all the tests that we will perform. Here are some recommendations to help you:
@@ -77,19 +81,11 @@ Configure your DNS servers in such a way that you will pass all the tests that w
 * The SOA should contain a valid "RNAME" (the contact address)
 * The timing parameters should be reasonable
 
-Keep in mind that, for a /16 (v4) and /32 (v6), you can use ns.ripe.net the secondary server. In both cases, you have to allow zone transfers from the name server listed in the SOA resource record's MNAME field to the RIPE NCC distribution servers. The IP addresses of the two servers are:
-
-    193.0.19.190 / 2001:67c:2e8:11::c100:13be
-
-    93.175.159.250 / 2001:67c:2d7c:66::53
-
-IF your servers are configured to send DNS notify messages and you would like ns.ripe.net to update promptly, please send them to the IP addresses listed here. Any notify messages sent directly to the addresses of ns.ripe.net will not be seen. Also bear in mind that we do not support any non-standard configurations (such as port numbers other than 53, TSIG keys and so on).
-
 When you are satisfied with your configuration, we recommend that you perform a test fo your setup using the [DNSCheck](https://dnscheck.ripe.net/domain_check) tool so you can find and resolve any problems.
 
 
 ### Step 3a: Create your domain objects using webupdates
-When you submit a **domain** object you are requesting reverse delegation, asking the RIPE NCC to enter NS records poiting to your name servers in RIPE NCC's parent zone. The **domain** object has the following mandatory attributes:
+When you submit a **domain** object you are requesting reverse delegation, asking the RIPE NCC to enter NS records pointing to your name servers in RIPE NCC's parent zone. The **domain** object has the following mandatory attributes:
 
     domain:   <zone name>
     admin-c:  <nic-handle for administrative contact>
@@ -100,7 +96,7 @@ When you submit a **domain** object you are requesting reverse delegation, askin
     mnt-by:   <your maintainer>
     source:   RIPE
 
-In the [web interface](https://apps.db.ripe.net/db-web-ui/webupdates/select) for the RIPE Database, there is a wizard that will automatically create one or more **domain** objects for you. It allows you to fill in an IPv4 or IPv6 prefix and the wizard will take care of creating one or multiple reverse zones out of it. After filling in your name servers, the wizard will also perform a basic check to see if the name servers are online. The full set of tests will happen after you submit the form. A [one-minute video](https://www.youtube.com/watch?v=7JzapYkca-Y&ab_channel=RIPENCC) with a demostration is available online.
+In the [web interface](https://apps.db.ripe.net/db-web-ui/webupdates/select) for the RIPE Database, there is a wizard that will automatically create one or more **domain** objects for you. It allows you to fill in an IPv4 or IPv6 prefix and the wizard will take care of creating one or multiple reverse zones out of it. After filling in your name servers, the wizard will also perform a basic check to see if the name servers are online. The full set of tests will happen after you submit the form. A [one-minute video](https://www.youtube.com/watch?v=7JzapYkca-Y&ab_channel=RIPENCC) with a demonstration is available online.
 
 
 ![](~@imgs/create_domain_object.png)
@@ -129,47 +125,38 @@ If the update was successful, you should then be able to query for your object i
 
 To allow for the exchange of DNSSEC-related information, the **domain** object includes a "ds-rdata:" attribute.
 
-In DNSSEC, the Delegation Signer (DS) resource record is created from a DNSkey resource record by comparing it with the public key. The parent publshes the DS resource record. The "ds-rdata:" attribute contains the RDATA of the DS resource records related to the domain, as shown in the "domain:" attribute.
+In DNSSEC, the Delegation Signer (DS) resource record is created from a DNSkey resource record by comparing it with the public key. The parent publishes the DS resource record. The "ds-rdata:" attribute contains the RDATA of the DS resource records related to the domain, as shown in the "domain:" attribute.
 
     ds-rdata: 64431 5 1 278BF194C29A812B33935BB2517E17D1486210FA
 
 The tools provided with BIND (version 9.3.0 and later) will generate a "ds set" during signing. You should copy the DS RDATA into the "ds-data:" attributes.
 
-When we receive a **domain** object with DNSSEC-related information, we will carry out additional tests. These are the most important: 
-
-* There should be a matching DNSKEY available in the DNS for each "ds-rdata:" attribute that is submitted in the **domain** object
-* There should be a valid RRSIG made with the DNSKEY matching the "ds-rdata:" attribute
-* Although it is not mandatory, the DNSKEY should have the "SEP" flag set. If it is not, a warning will be produced, but the "ds-rdata:" content will still be copied to the zone
-* Lastly, we check if the signature validity period is close to expiring and whether the Times To Live (TTLs) are a reasonable fraction on the signature validity period. The test requires the TTL to ve at least two times smaller than the signature validity period.
-
-keep in mind that these tests will only be done for "ds-rdata:" attributes using digest type 1 (SHA1). If the "ds-rdata:" attribute uses an unsupported digest type, you will see a warning message, but the "ds-rdata:" content will still be copied into the parent zone.
-
-    NOTE: The domain objects wizard in the webupdates does not support requesting DNSSEC delegations yet. However, you will be able to use webupdates to add the "ds-rdata:" attribute to an existing domain object.
+When we receive a **domain** object with DNSSEC-related information, we will carry out [additional tests](../Authorisation/Request-DNSSEC-delegation/#delegation-checks).
 
 
 ## Automated update of DNSSEC Delegations
 
-Whenever you want to change the DNSSEC key whose digest is in the "ds-rdata:" attribute, it is necessary to update the attribute. This can be done manually using any means of RIPE Database udpate methods or automatically using a special Child Delegation Signed (CDS) DNS record. This procedure works as follows:
+Whenever you want to change the DNSSEC key whose digest is in the "ds-rdata:" attribute, it is necessary to update the attribute. This can be done manually using any means of RIPE Database update methods or automatically using a special Child Delegation Signed (CDS) DNS record. This procedure works as follows:
 
 * The reverse domain has to be already DNSSEC-secured.
 * Whenever a change in "ds-rdata:" attribute is required, you should publish a CDS record at the apex (root) of your reverse zone.
 * RIPE NCC regularly scans all DNSSEC-secured reverse domains for CDS records.
-* If a CDS record is found whose contents differ from the current "ds-rdata:" attribute and all safety measures (see below) are filfilled, RIPE NCC will update the **domain** object on your behalf.
+* If a CDS record is found whose contents differ from the current "ds-rdata:" attribute and all safety measures (see below) are fulfilled, RIPE NCC will update the **domain** object on your behalf.
 
-There are some additional requirements mandated by RFC 7344 in order to ensure the process is hardened agains accidents and abuse:
+There are some additional requirements mandated by RFC 7344 in order to ensure the process is hardened against accidents and abuse:
 
 * The CDS record set is properly signed by a key represented in the DS record of the parent zone. This usually means that the CDS record set has to be signed by Key-Signing Key (KSK) instead of Zone-Signing Key (ZSK).
-* Applying the CDS record must not break the DNSSEC delegation. Therefore for each DNSSEC algorithm present in the CDS record set, there has to be at least one matching key in the DSNKEY record set with a proper signature.
+* Applying the CDS record must not break the DNSSEC delegation. Therefore for each DNSSEC algorithm present in the CDS record set, there has to be at least one matching key in the DNSKEY record set with a proper signature.
 * The inception date of the DNSSEC signature of the CDS record set must not be older than the date stored in the "last- modified:" attribute of the **domain** object.
 
-It is also possible to switch to insecure delegation by publishing a special CDS record containing "0 0 0 00". Olease note that this is a one way process. Once the reverse domain is switched to insecure, you have to add the "ds-rdata:" attribute manually to activate DNSSEC again.
+It is also possible to switch to insecure delegation by publishing a special CDS record containing "0 0 0 00". Please note that this is a one way process. Once the reverse domain is switched to insecure, you have to add the "ds-rdata:" attribute manually to activate DNSSEC again.
 
 
 ## Reverse DNS Troubleshooting
 
 Here is an overview of the most common warnings and errors that the reverse delegation checker reports, along with the likely causes and suggested solutions.
 
-|**Error**  | **Likely cause and suggested solution** |
+| **Error**                                                                                                                                                                                  | **Likely cause and suggested solution**                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ERROR**: No SOA RR were found.                                                                                                                                                           | No Start of Authority records were found. This tends to indicate that the nominated name servers are not replying correctly for the zone in question. Usually, the fix for this involves reloading all of the name servers.                                                                                                                                                                                                                               |
 | **WARNING**: some of the specified name servers appear to be in the same subnet. According to [RFC 2182](https://www.rfc-editor.org/rfc/rfc2182), they should be geographically separated. | If you supply two or more name servers that appear to be in the same physical location, this warning is a reminder that the zone may not be visible if your connection to the Internet fails. We highly recommend that you have multiple geographically distributed secondary name servers.                                                                                                                                                               |

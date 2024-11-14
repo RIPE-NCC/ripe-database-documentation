@@ -1,7 +1,11 @@
+---
+permalink: /Database-Support/Clean-up-of-Unreferenced-Data
+---
+
 # Clean-up of Unreferenced Data
 ## Introduction
 
-Any data entered into the RIPE Database must comply with the [RIPE Database Terms and Conditions](../23.Terms-And-Conditions.md#ripe-database-terms-and-conditions). Over a period of time, data is changed and references are removed. This often results in many of the secondary objects (for example **organisation**, **person**, **role** and **mntner** objects) being left in the database and serving no useful purpose. In order to keep the database clean and to comply with data protection rules, this unnecessary data must be removed. New personal data should not be stored in the RIPE Database beyond a reasonable "work in progress" period before it is referenced by operation data objects.
+Any data entered into the RIPE Database must comply with the [RIPE Database Terms and Conditions](../Legal-Information/#). Over a period of time, data is changed and references are removed. This often results in many of the secondary objects (for example **organisation**, **person**, **role** and **mntner** objects) being left in the database and serving no useful purpose. In order to keep the database clean and to comply with data protection rules, this unnecessary data must be removed. New personal data should not be stored in the RIPE Database beyond a reasonable "work in progress" period before it is referenced by operation data objects.
 
 
 ## Authority
@@ -12,7 +16,7 @@ The authority to clean-up this data was first given to the RIPE NCC at the [RIPE
 
 The scope was expanded at the [RIPE 41 Meeting in Amsterdam in 2002](https://www.ripe.net/participate/meetings/ripe-meetings/ripe-41)
 
-A [clean-up process](https://www.ripe.net/publications/news/announcements/clean-up-of-unreferenced-data-in-the-ripe-database) to do periodic clean-ups was put in place in 2003. However, this process proved to be inadequate and the number of inreferenced objects continued to grow.
+A [clean-up process](https://www.ripe.net/publications/news/announcements/clean-up-of-unreferenced-data-in-the-ripe-database) to do periodic clean-ups was put in place in 2003. However, this process proved to be inadequate and the number of unreferenced objects continued to grow.
 
 The issue was raised again at the [RIPE 54 Meeting in Tallinn in 2007](https://www.ripe.net/participate/meetings/ripe-meetings/ripe-54), continued on the [RIPE Database Working Group mailing list throughout 2007](https://www.ripe.net/participate/mail/ripe-mailing-lists/db-wg) and then consensus was reached at the [RIPE 56 Meeting in Berlin in 2008](https://www.ripe.net/participate/meetings/ripe-meetings/ripe-56).
 

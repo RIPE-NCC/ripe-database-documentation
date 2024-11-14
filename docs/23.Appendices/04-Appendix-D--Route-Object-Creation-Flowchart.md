@@ -1,6 +1,7 @@
 ---
 theme: svg theme
 title: Appendix-D--Route-Object-Creation-Flowchart
+permalink: /Appendices/Appendix-D--Route-Object-Creation-Flowchart
 ---
 <script setup>
     import svgZoomComponent from '../.vuepress/components/SvgZoom.vue'
@@ -16,15 +17,15 @@ A[Begin]:::initLastNodes --> B{Is there an exact <br> match route?}:::decisionNo
 
 B --> |Yes| C{Does exact match route <br> have 'mnt-routes'?}:::decisionNodes
 B --> |No| D{Is there a less <br> specific route?}:::decisionNodes
-C --> |No| F[Check authorisation using maintainers <br> in 'mnt-by' or exact match route]:::operationNodes
+C --> |No| F[Check authorisation using maintainers <br> in 'mnt-by' of exact match route]:::operationNodes
 C --> |Yes| E[Check authorisation using maintainers <br> in 'mnt-routes']:::operationNodes
 
-D --> |Yes| G{Does less specific route <br> have 'mnt-rutes'?}:::decisionNodes
+D --> |Yes| G{Does less specific route <br> have 'mnt-routes'?}:::decisionNodes
 D --> |No| H{Is there an exact <br> match inetnum?}:::decisionNodes
 G --> |Yes| E[Check authorisation using maintainers <br> in 'mnt-routes']:::operationNodes
 G --> |No| I{Does less specific route <br> have 'mnt-lower'?}:::decisionNodes
 I --> |Yes| J[Check authorisation using maintainers <br> in 'mnt-lower']:::operationNodes
-I --> |No| K[Check authorisation using maintainers <br> in or less specific route]:::operationNodes
+I --> |No| K[Check authorisation using maintainers <br> in of less specific route]:::operationNodes
 
 H --> |Yes| L{Does exact match inetnum <br> have 'mnt-routes'?}:::decisionNodes
 H --> |No| M{Is there a less <br> specific inetnum?}:::decisionNodes

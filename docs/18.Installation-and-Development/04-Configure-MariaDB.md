@@ -1,3 +1,7 @@
+---
+permalink: /Installation-and-Development/Configure-MariaDB
+---
+
 # Configure MariaDB
 
 Installing a MariaDB server is useful for development, or for running your own Whois server.
@@ -6,17 +10,26 @@ Installing a MariaDB server is useful for development, or for running your own W
 
 Set the following variables in the MariaDB configuration (location varies depending on installation, the configuration file is normally called my.cnf).
 
-* max_allowed_packet = 20M
+### Development machine
+If MariaDB was installed through brew on an Apple Silicon machine, new configuration files can be added under `/opt/homebrew/etc/my.cnf.d/`.
+
+Add the following configuration (e.g. in `ripedb.cnf`):
+```
+[server]
+default-time-zone=+00:00
+innodb_file_per_table = OFF
+max_connections=1000
+```
+
+### Running your own Whois server
+If you wish to run your own Whois server, you need additional variables to be modified:
+
+* `max_allowed_packet = 20M`
   * We need big packet sizes as some objects are very big
   * Default is 1M 
   * Ref. https://mariadb.com/kb/en/mariadb/server-system-variables/#max_allowed_packet
 
-* wait_timeout = 31536000
-  * Time in seconds that the server waits for a connection to become active before closing it.
-  * Default is 28800 (8 hours) 
-  * Ref. https://mariadb.com/kb/en/mariadb/server-system-variables/#wait_timeout
-
-* innodb_buffer_pool_size = 2356M
+* `innodb_buffer_pool_size = 2G`
   * as we only have innodb databases, this should be set to use all the remaining memory available
   * leave some memory for the OS, and the Whois Java process, and check for swap activity
   * default is 128MB
@@ -27,14 +40,15 @@ Restart MariaDB once all configuration changes have been made.
 ## Configure access to the database
 
 * Check if MariaDB is running `mysqladmin -u root -p ping`
-* Login to mysql using `mysql -u root -p`
-* Create user dbint with no (empty) password
+* Login to MariaDB using `mysql -u root -p` (or `mysql` with the default setup)
+* Create users:
 
+``` sql
+CREATE USER 'dbint'@'localhost' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'dbint'@'localhost';
 
-  CREATE USER 'dbint'@'localhost' IDENTIFIED BY '';
-  GRANT ALL PRIVILEGES ON *.* TO 'dbint'@'localhost';
-  CREATE USER 'rdonly'@'localhost' IDENTIFIED BY '';
-  GRANT SELECT PRIVILEGES ON *.* TO 'rdonly'@'localhost';
-  FLUSH PRIVILEGES;
+CREATE USER 'rdonly'@'localhost' IDENTIFIED BY '';
+GRANT SELECT PRIVILEGES ON *.* TO 'rdonly'@'localhost';
+```
   
 Logout with `CTRL+D`

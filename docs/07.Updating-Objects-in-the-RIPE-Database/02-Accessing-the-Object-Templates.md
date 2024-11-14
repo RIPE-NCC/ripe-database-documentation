@@ -1,3 +1,7 @@
+---
+permalink: /Updating-Objects-in-the-RIPE-Database/Accessing-the-Object-Templates
+---
+
 # Accessing the Object Templates
 
 To create or modify an object you may need to access the template for that object. These are shown along with a detailed description of each attribute and its value in section 4. RPSL Object Types.
@@ -24,7 +28,7 @@ For example, getting the template for an **inetnum** object using these methods:
     geoloc:         [optional]   [single]     [ ]
     language:       [optional]   [multiple]   [ ]
     org:            [optional]   [single]     [inverse key]
-    sponsoring-org: [optional]   [single]     [ ]
+    sponsoring-org: [optional]   [single]     [inverse key]
     admin-c:        [mandatory]  [multiple]   [inverse key]
     tech-c:         [mandatory]  [multiple]   [inverse key]
     abuse-c:        [optional]   [single]     [inverse key]
@@ -87,7 +91,7 @@ For example, getting the template for an **inetnum** object using these methods:
     Connection closed by foreign host.
     $
 
-To obtain the template with the full description of each attribute and its value, use ‘-v' instead of ‘-t' in the above commands. Once you have the template, it can be copied into an email message or pasted into a web form or added into a script to generate objects. To create an object from the template, you must remove all the attribute lines that you do not want. For the remaining lines, you must replace the description with the value. Where an attribute is multiple, further lines can be added with additional values.
+To obtain the template with the full description of each attribute and its value, use `-v` instead of `-t` in the above commands. Once you have the template, it can be copied into an email message or pasted into a web form or added into a script to generate objects. To create an object from the template, you must remove all the attribute lines that you do not want. For the remaining lines, you must replace the description with the value. Where an attribute is multiple, further lines can be added with additional values.
 
 With some update methods the template is provided for you - for example, when using Webupdates. If you select to create a new object using field mode it presents a set of fields matching all the mandatory attributes for the selected object type. Optional attributes can be selected from a drop-down menu. More instances of any given attribute can be inserted. If you choose the text area mode, a list of all attributes is presented in the text area. The mandatory attributes are in upper case and the optional attributes are in lower case. Delete the optional ones you don't want to use. The software later converts all attribute names to lower case.
 
@@ -95,4 +99,4 @@ The Webupdates text area template can be used to present a template to be cut an
 
     -t inetnum
 
-Using ‘-v' instead of ‘-t' in the Web Query form will present the longer output describing all the attributes.
+Using `-v` instead of `-t` in the Web Query form will present the longer output describing all the attributes.
