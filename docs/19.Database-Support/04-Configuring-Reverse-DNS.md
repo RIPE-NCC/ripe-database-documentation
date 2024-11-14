@@ -23,7 +23,7 @@ Before you can submit the **domain** object to the RIPE Database, you will first
 
 For IPv4, the mapping of the reverse address space can only happen on "byte" boundaries, i.e. multiples of 8 bits. This means that you should take the four octets - the decimal numbers between the dots - of an IP address range, put them in reverse order and then map them into the in-addr.arpa domain.
 
-For example, an address (A) record for mail.example.com points to the IP address 192.0.2.5. In pointer record of the reverse database, this IP address is stored as the domain name 5.2.0.192.in-addr.arpa. pointing back to its designated host name mail.example.com. The resulting PRT record would look like this:
+For example, an address (A) record for mail.example.com points to the IP address 192.0.2.5. In pointer record of the reverse database, this IP address is stored as the domain name 5.2.0.192.in-addr.arpa. pointing back to its designated host name mail.example.com. The resulting PTR record would look like this:
 
     5.2.0.192.in-addr.arpa. 3600 IN PTR mail.example.com
 
