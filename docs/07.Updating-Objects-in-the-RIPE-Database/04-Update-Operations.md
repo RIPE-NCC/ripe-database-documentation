@@ -1,3 +1,7 @@
+---
+permalink: /Updating-Objects-in-the-RIPE-Database/Update-Operations
+---
+
 # Update Operations
 
 There are three update operations that can be performed on an object:
@@ -15,10 +19,24 @@ Webupdates uses the RESTful API as the update method. So it must also follow the
 
 If the operation is modify and the supplied object data is identical to the existing object stored in the database, allowing for white space variations, then the object is not modified. This is considered to be a successful ‘NO OPERATION'.
 
-The delete operation is the same no matter what update method is used. The full version of the object must be supplied exactly as it is stored in the database. The supplied version is checked against the stored version by compressing the white spaces and doing a string comparison. If they don't match, the delete operation fails. If you query for the object before supplying the query result in a delete operation, make sure you use the correct query flags to avoid any filtering of the returned object. See section on Filtering Query Output for more details.
+The delete operation is the same no matter what update method is used. The full version of the object must be 
+supplied exactly as it is stored in the database. The supplied version is checked against the stored version by 
+compressing the white spaces and doing a string comparison. If they don't match, the delete operation fails. If you 
+query for the object before supplying the query result in a delete operation, make sure you use the correct query 
+flags to avoid any filtering of the returned object. See section on [Filtering Query Output](../Types-of-Queries/Filtering-the-Query-Reponse/#filtering-the-query-response) for more details.
 
 To delete an object, there must be no references to it from any other object in the database. A single reference will prevent it from being deleted. Note, however, that not all attributes containing primary keys of other objects are hard references. The routing policy attributes in an **aut-num** object can list other AS Numbers but these are not considered as references for the delete operation.
 
-For the RESTful API and also Webupdates, the delete method is used. For mail and Syncupdates the pseudo attribute “delete: some reason text” must be added to the object data. As these update methods allow multiple objects in an update message, this pseudo-attribute must be part of the object itself to ensure a strong association with this pseudo-attribute and a specific object. Each object that is to be deleted must have a “delete:” pseudo attribute attached to it. It can be added at any point within the object or immediately before or after the object.
+For the RESTful API and also Webupdates, the delete method is used. For mail and Syncupdates the pseudo attribute "delete: some reason text" must be added to the object data. As these update methods allow multiple objects in an update message, this pseudo-attribute must be part of the object itself to ensure a strong association with this pseudo-attribute and a specific object. Each object that is to be deleted must have a "delete:" pseudo attribute attached to it. It can be added at any point within the object or immediately before or after the object.
 
 Objects can still be deleted from the database even if they are not syntactically correct. This allows for old objects to be deleted long after the syntax has been changed. If the object was to be modified, any syntax errors would need to be corrected.
+
+Following [Acceptable use policy](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-acceptable-use-policy/), we strive to detect 
+potential attacks. If a DoS attack is detected, we temporarily block the user's IP address. 
+
+[The RIPE Database Terms and Conditions](https://www.ripe.net/manage-ips-and-asns/db/support/documentation/ripe-database-acceptable-use-policy/)
+allow the RIPE NCC to block or suspend access to the RIPE Database services for any suspected abuse. Users exhibiting 
+suspected abusive behavior may be permanently blocked from the system. If a user is permanently blocked, they will receive a notification 
+informing them of the block whenever they attempt to make an update.
+
+If you wish to be unblocked, please contact the RIPE Database administration team [ripe-dbm@ripe.net](mailto:ripe-dbm@ripe.net) to discuss further.

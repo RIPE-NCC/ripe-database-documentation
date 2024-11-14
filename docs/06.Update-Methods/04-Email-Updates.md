@@ -1,14 +1,18 @@
+---
+permalink: /Update-Methods/Email-Updates
+---
+
 # Email Updates
 
 Email updates were the original method of updating the RIPE Database. They are still used by many people, although synchronous updates by the other methods now account for the majority of updates.
 
 Email update messages must be in plain text and can be MIME-encoded. If encoded messages are multipart/signed, the signature part will be associated with the corresponding MIME text part. When an encoded message is received, the database software will take each valid MIME part (including any related signature part) and merge them into one update message. Please see section ['MIME Support'](#mime-support) for more information.
 
-Passwords needed for authorising the updates of all objects in the message must be included somewhere in the message. This is done with the pseudo-attribute “password:”, for example:
+Passwords needed for authorising the updates of all objects in the message must be included somewhere in the message. This is done with the pseudo-attribute "password:", for example:
 
     password: some clear text
 
-This “password:” pseudo-attribute can be placed anywhere in the message. One attribute is needed for each required password. If the message is MIME-encoded the passwords can be in any MIME part. When it is all merged into a single update message, all passwords found will apply to all objects in the update. Passwords can also be contained within the text part of a signed update message and apply to objects outside the signed part. All credentials will be extracted before any authorisation checks are made. The “password:” pseudo-attributes will be removed before any of the objects are processed. This ensures that they will never be considered as part of any object.
+This "password:" pseudo-attribute can be placed anywhere in the message. One attribute is needed for each required password. If the message is MIME-encoded the passwords can be in any MIME part. When it is all merged into a single update message, all passwords found will apply to all objects in the update. Passwords can also be contained within the text part of a signed update message and apply to objects outside the signed part. All credentials will be extracted before any authorisation checks are made. The "password:" pseudo-attributes will be removed before any of the objects are processed. This ensures that they will never be considered as part of any object.
 
 Acknowledgements (ack) containing the result of the update are returned to the sender of the email based on the "Reply-to:" and "From:" fields in the email header. Notifications (notif) may also be sent based on email addresses found in the attributes within each object in the update message and the related **mntner** objects. See section on Notifications.
 
@@ -25,7 +29,7 @@ Only one ack message is returned for each update message. However, there may be 
 
 ## MIME Support
 
-The database software supports MIME. This means that you can cryptographically sign an update message using email agents that attach the signature in a separate MIME part, not in the body of the message. However, encryption of the text is not allowed. All update messages must be sent in plain text.
+The database software supports the MIME format. This means that you can cryptographically sign an update message using email agents that attach the signature in a separate MIME part, not in the body of the message. However, encryption of the text is not allowed. All update messages must be sent in plain text.
 
 Nested signing of messages is possible, allowing an update message to be signed by one user, sent to another user who signs it again and submits the update.
 

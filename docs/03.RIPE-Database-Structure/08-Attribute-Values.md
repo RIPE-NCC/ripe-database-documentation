@@ -1,6 +1,10 @@
+---
+permalink: /RIPE-Database-Structure/Attribute-Values
+---
+
 # Attribute Values
 
-The value part of the attribute-value pair starts after the colon (`:`). It can immediately follow the colon, or spaces or tabs may be used to separate them. The format and content of a value is determined by the [syntax definition](../20.Appendices/01-Appendix-A--Syntax-of-Object-Attributes.md#appendix-a-syntax-of-object-attributes) for that attribute within that object type. The same attribute name may be used in more than one object type. Often, the syntax definition will be the same for an attribute regardless of which object type it is used in. For example, the “admin-c:” attribute appears in most object types with the same definition of its syntax. But sometimes the attribute may be defined in a different way in different object types. For example “status:” is used in **inetnum**, **inet6num** and **aut-num** objects. For each of these object types, “status:” has a different meaning with a different pre-defined set of values.
+The value part of the attribute-value pair starts after the colon (`:`). It can immediately follow the colon, or spaces or tabs may be used to separate them. The format and content of a value is determined by the [syntax definition](../Appendices/Appendix-A--Syntax-of-Object-Attributes/#appendix-a-syntax-of-object-attributes) for that attribute within that object type. The same attribute name may be used in more than one object type. Often, the syntax definition will be the same for an attribute regardless of which object type it is used in. For example, the "admin-c:" attribute appears in most object types with the same definition of its syntax. But sometimes the attribute may be defined in a different way in different object types. For example "status:" is used in **inetnum**, **inet6num** and **aut-num** objects. For each of these object types, "status:" has a different meaning with a different pre-defined set of values.
 
 The value can contain some pre-defined keywords at any place within the value as determined by the syntax definition for that attribute within that object type. It can also contain references to other objects and free text. You can refer to other objects by using their primary key values. These references and the keywords have a precisely defined syntax. If the objects you refer to do not already exist in the database, you will see error messages and your update will fail. The free text has no syntax, but may only contain Latin-1 recognisable characters.
 
@@ -43,12 +47,12 @@ Any free form value cannot contain a hash (#) character, as this would be recogn
 
 If split values and end of line comments are used together, the software strips off the end of line comments before the split values are combined.
 
-End of line comments cannot be added to the first attribute value, which defines the object type, or to the primary key attribute(s) value. If this is done the software will strip them off. The update will not fail. These comments are also not allowed on the “source:” attribute value. If one is added here, the update will fail.
+End of line comments cannot be added to the first attribute value, which defines the object type, or to the primary key attribute(s) value. If this is done the software will strip them off. The update will not fail. These comments are also not allowed on the "source:" attribute value. If one is added here, the update will fail.
 
 Long, end of line comments or long, free form attribute values can cause problems. Some email clients automatically break lines at certain points. If your email client does this on an update message then your update will fail. It may not be obvious at first sight that this has happened. Fortunately, there are many other options for submitting updates if this problem occurs.
 
 
 ## List Values
 
-Some attributes allow the value to be a list. This must be a comma-separated list with no spaces allowed. These attributes can be viewed in the [Appendix](../20.Appendices/01-Appendix-A--Syntax-of-Object-Attributes.md#appendix-a-syntax-of-object-attributes).
+Some attributes allow the value to be a list. This must be a comma-separated list with no spaces allowed. These attributes can be viewed in the [Appendix](../Appendices/Appendix-A--Syntax-of-Object-Attributes/#appendix-a-syntax-of-object-attributes).
 

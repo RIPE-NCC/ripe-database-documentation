@@ -1,3 +1,7 @@
+---
+permalink: /RIPE-Database-Structure/The-Attributes-in-Database-Objects
+---
+
 # The Attributes in Database Objects
 
 All objects in the RIPE Database have the same structure. They contain a set of ‘attribute-value' pairs in plain text. These ‘attribute-value' pairs can take different forms. Attributes are sometimes referred to as ‘keys'.

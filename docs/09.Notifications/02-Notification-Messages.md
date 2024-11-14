@@ -1,3 +1,7 @@
+---
+permalink: /Notifications/Notification-Messages
+---
+
 # Notification Messages
 
 There are a number of attributes that may cause notification (notif) messages to be generated:
@@ -35,7 +39,7 @@ The optional "ref-nfy:" attribute is only allowed in an **organisation** object.
 
 The format of a notification message is similar to the ack message for an email update. The first section of the message explains why you are being sent this notification. The next section of the notification message has the email header or IP address details showing where the update came from. The final section shows the changes that were contained in the update message, if it was successful. For a creation it shows the newly created object. For a deletion, it shows the object that was deleted. For a modification, it shows the new version of the object. In this case, a ‘diff' is also included to show the difference between the original object and the new object. If the modification update failed, the current version of the object is shown and the diff shows the change that was being attempted.
 
-If using passwords in an update message, be cautious when entering this. If you mistype the password pseudo-attribute (eg "pasword: clear_password") the notification will include your clear text password.
+If using passwords in an update message, be cautious when entering this. If you mistype the password pseudo-attribute (eg "password: clear_password") the notification will include your clear text password.
 
 The "upd-to:" attribute in a MNTNER object should only include the email address of a person or team in your organisation who deals with security issues. If this team receives a notification containing a clear text password, they should advise the user to change their password.
 

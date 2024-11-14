@@ -1,3 +1,7 @@
+---
+permalink: /Authorisation/Protection-of-Address-Space
+---
+
 # Protection of Address Space
 
 The **inetnum** and **inet6num** objects represent address space allocations and assignments. The "mnt-lower:" attribute is used to reference a **mntner** object that authorises the creation of more specific **inetnum** or **inet6num** objects. If no "mnt-lower:" attribute is present, one of the "mnt-by:" attributes of the parent object will be used instead.

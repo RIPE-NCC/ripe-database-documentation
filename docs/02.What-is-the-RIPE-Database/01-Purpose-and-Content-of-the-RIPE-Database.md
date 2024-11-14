@@ -1,11 +1,15 @@
+---
+permalink: /What-is-the-RIPE-Database/Purpose-and-Content-of-the-RIPE-Database
+---
+
 # Purpose and Content of the RIPE Database
 
-The RIPE NCC has been tasked by the RIPE community to maintain a database of Internet resource information. Some of this information is confidential between the RIPE NCC and the resource holder and some of it is publically available. The RIPE Network Management Database, more often referred to as the RIPE Database, provides the public view of this data. Some of the management details for maintaining Internet resources in this database are also confidential, for example MD5 password hashes. The RIPE Database provides access to this private data for resource holders.
+The RIPE NCC has been tasked by the RIPE community to maintain a database of Internet resource information. Some of this information is confidential between the RIPE NCC and the resource holder and some of it is publicly available. The RIPE Network Management Database, more often referred to as the RIPE Database, provides the public view of this data. Some of the management details for maintaining Internet resources in this database are also confidential, for example MD5 password hashes. The RIPE Database provides access to this private data for resource holders.
 
 The RIPE Database holds data for three separate registries:
 
-* [RIPE Internet Number Registry (RIPE INR)](../22.Glossary.md#ripe-internet-number-registry-ripe-inr)
-* [RIPE Internet Routing Registry (RIPE IRR)](../22.Glossary.md#ripe-internet-routing-registry-ripe-irr)
+* [RIPE Internet Number Registry (RIPE INR)](../Glossary/#ripe-internet-number-registry-ripe-inr)
+* [RIPE Internet Routing Registry (RIPE IRR)](../Glossary/#ripe-internet-routing-registry-ripe-irr)
 * Reverse Delegation and ENUM Registry
 
 These could be three independent databases, however the information in each of them is related to each other. It was therefore decided to integrate the three registries into one logical database. In practise, it is also one physical database.
@@ -42,7 +46,19 @@ Only resources allocated to the RIPE region can be registered in the RIPE IRR.
 The benefits of the IRR are only realised when registered routing policies are kept up-to-date, and reflect routing announcements in the 'real world'.
 
 
-## Reverse Delegation in the RIPE Database
+## Reverse Delegation
+
+### What is Reverse Delegation?
+
+The Domain Name System (DNS) is a globally distributed Internet service. It provides name-to-number (forward) and number-to-name (reverse) translations, using defined client-server and server-server protocols. The DNS is a public service - any Internet user is freely able to query the DNS system for forward or reverse translations.
+
+Reverse DNS delegations allow applications to map to a domain name from an IP address. Reverse delegation is achieved by use of the special domain names in-addr.arpa (IPv4) and ip6.arpa (IPv6).
+
+For all IP address blocks that IANA allocates to the RIPE NCC, they also delegate the corresponding reverse DNS zones within the centrally administered 'in-addr.arpa' and 'ip6.arpa' zones.
+
+The RIPE NCC also publishes 'zone fragments'. These are the parts of zones managed by other parties - the other Regional Internet Registries (RIRs), who share zone management of early registration networks.
+
+### Reverse Delegation in the RIPE Database
 
 The RIPE Database is used as the management database to produce the DNS zones RIPE Internet Number Resources. It can provide the information for each delegated IPv4 and IPv6 range registered in the reverse DNS.
 
@@ -82,7 +98,7 @@ The following databases are mirrored:
  * AFRINIC
  * APNIC
  * ARIN
- * Jpirr
+ * JPIRR
  * LACNIC
  * RADb
  * (RIPE GRS)
@@ -101,7 +117,7 @@ Before importing the data we transform objects into RIPE RPSL syntax by carrying
 * Converting attributes values
 * All these transformations are marked by "End Of Line" comments in the objects
 
-To use GRS from the [web interface](https://apps.db.ripe.net/search/query.html), select the appropiate radio button below the search box. When using telnet or the whois command line client, add the "--resource" flag to your query to query only the dummified GRS databases, or the "-a" flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
+To use GRS from the [web interface](https://apps.db.ripe.net/db-web-ui/query), select the appropriate radio button below the search box. When using telnet or the whois command line client, add the `--resource` flag to your query to query only the dummified GRS databases, or the `-a` flag to query all available databases, i.e. GRS sources and the original RIPE Database combined.
 
 ![](~@imgs/GRSquery.png)
 
@@ -129,4 +145,4 @@ Changes can be proposed to the RIPE Database purpose and content by anyone from 
 
 ## Terms and Conditions
 
-The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../24.Legal-Information.md#). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.
+The legal statement of what the RIPE Database is, and how it can be used is defined in the [RIPE Database Terms and Conditions](../Legal-Information/#). While the information in the RIPE Database is made freely available to the public, it is all subject to these terms and conditions.

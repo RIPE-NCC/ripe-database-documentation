@@ -1,3 +1,7 @@
+---
+permalink: /What-is-the-RIPE-Database/Personal-Data-Database-Management-and-Reponsabilities
+---
+
 # Personal Data, Database Management and Responsibilities
 
 * [Personal Data in the RIPE Database](#personal-data-in-the-ripe-database)
@@ -50,4 +54,4 @@ In terms of managing the RIPE Database public service, there are some things the
  * The RIPE NCC is not responsible for the use of any registered Internet number resources nor is the RIPE NCC responsible for any issues that may arise from this use.
  * The RIPE NCC is not responsible for any issues arising from the use of any information contained within the public RIPE Database.
 
-This list may change over time and is not exhaustive. For further details please refer to the [Terms and Conditions](../24.Legal-Information.md#).
+This list may change over time and is not exhaustive. For further details please refer to the [Terms and Conditions](../Legal-Information/#).

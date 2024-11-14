@@ -1,7 +1,11 @@
+---
+permalink: /Database-Support
+---
+
 # Database Support
 ## RIPE Database Support
 
-The RIPE Database contains registration details of IP addresses and AS Numbers originally allocated by the RIPE NCC. It shows the organisations that hold the respurces, where the allocations were made, and contact details for the networks.
+The RIPE Database contains registration details of IP addresses and AS Numbers originally allocated by the RIPE NCC. It shows the organisations that hold the resources, where the allocations were made, and contact details for the networks.
 
 
 ## Problems with Spam?

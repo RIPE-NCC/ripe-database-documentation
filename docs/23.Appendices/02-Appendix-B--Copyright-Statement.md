@@ -1,3 +1,7 @@
+---
+permalink: /Appendices/Appendix-B--Copyright-Statement
+---
+
 # Appendix B- Copyright Statement
 
 Copyright (c) 1992-2022 the Réseaux IP Européens Network Coordination Centre RIPE NCC. All rights restricted.

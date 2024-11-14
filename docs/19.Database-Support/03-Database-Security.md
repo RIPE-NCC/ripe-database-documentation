@@ -1,23 +1,27 @@
+---
+permalink: /Database-Support/Database-Security
+---
+
 # RIPE Database Security
 
 **A collection of documents designed to help with security of whois data stored in the RIPE Database**
 
-* [Recommendations for protecting your data in the RIPE Database](../10.Authorisation/01-Authorisation-Model.md#authorisation-model)
+* [Recommendations for protecting your data in the RIPE Database](../Authorisation/Authorisation-Model/#authorisation-model)
 This page provides best practices and recommendations for protecting your objects in the RIPE Database.
 
-* [Security and the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#using-the-authorisation-methods)
+* [Security and the RIPE Database](../Authorisation/Using-the-Authorisation-Methods/#using-the-authorisation-methods)
 Protecting your objects in the RIPE Database.
 
-* [Requesting Change of Authorisation of a Maintainer Object](../17.How-to-Recover-Access-to-a-Maintainer-Object.md#how-to-recover-access-to-a-maintainer-mntner-object)
+* [Requesting Change of Authorisation of a Maintainer Object](../How-to-Recover-Access-to-a-Maintainer-Object/#how-to-recover-access-to-a-maintainer-mntner-object)
 Lost your maintainer MD5 password? This [web interface](https://apps.db.ripe.net/db-web-ui/query) allows you to recover a lost password. Please note that you will be required to log in with your RIPE NCC Access (SSO) account. You can create one if you do not have one yet.
 
-* [Using PGP with the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#pgp-key)
+* [Using PGP with the RIPE Database](../Authorisation/Using-the-Authorisation-Methods/#pgp-key)
 This page explains how to set up PGP authentication for the RIPE Database, which is recommended for sending updates via email.
 
-* [IRT Object - Technical How To Guide](../10.Authorisation/13-IRT-Object.md#irt-object)
+* [IRT Object - Technical How To Guide](../Authorisation/IRT-Object/#irt-object)
 How to handle the Incident Response Team (IRT) object in the RIPE Database
 
-* [IRT Object - Frequently Asked Questions](../10.Authorisation/13-IRT-Object.md#irt-object)
+* [IRT Object - Frequently Asked Questions](../Authorisation/IRT-Object/#irt-object)
 Help with the Incident Response Team (IRT) object in the RIPE Database
 
 
@@ -32,7 +36,7 @@ The maintainer (**mntner**) object is used to protect other objects in the RIPE 
 
 ![](~@imgs/copy5_of_maintainerbasics.png)
 
-Maintainers are anonymous. Other than the authentication references they contain, there is nothing that ties them to a specific person, group or organisation. Authentication is handled as a "logical OR", meaning that if you know one of several credentials associated with a maintainer, you can make changes to the objects that refer to it. In the example above, two people can use their RIPE NCC Access (single sing-on) account to make changes to the **inet6num** object, or the PGP key can be used. Which authentication method is best for your use case is explained in a separate section: [Protecting your data in the RIPE Database](../10.Authorisation/02-Using-the-Authorisation-Methods.md#using-the-authorisation-methods).
+Maintainers are anonymous. Other than the authentication references they contain, there is nothing that ties them to a specific person, group or organisation. Authentication is handled as a "logical OR", meaning that if you know one of several credentials associated with a maintainer, you can make changes to the objects that refer to it. In the example above, two people can use their RIPE NCC Access (single sing-on) account to make changes to the **inet6num** object, or the PGP key can be used. Which authentication method is best for your use case is explained in a separate section: [Protecting your data in the RIPE Database](../Authorisation/Using-the-Authorisation-Methods/#using-the-authorisation-methods).
 
 Most commonly, a maintainer object is maintained by itself, meaning that the "mnt-by:" attribute of the maintainer refers to the same object. If you want to edit details, for example add or remove an authentication, you simply need to use one of the existing authentication methods. In the example above, one of the three authentications can be used to add a forth, such as new colleague joining the team.
 
@@ -47,9 +51,16 @@ Given this flexibility, you must ensure you make the right choices when setting 
 
 ### The Default Maintainer
 
-If you are an LIR and you have received Internet Number Resources, several objects are created by the RIPE NCC in the RIPE Database to reflect this. These objects are managed by the RIPE NCC, but you have control over some of the attributes, such as setting the administrative and technical contact person. In order to allow you to make these changes, an additional maintainer will be present on the object, the so called "default" maintainer. You have to select this maintainer on the [Account Details](https://my.ripe.net/#/account-details) page and this will be reflected on all existing and new objects that have joint reponsibility: allocations for IP resources and the **organisation** object.
+If you are an LIR and you have received Internet Number Resources, several objects are created by the RIPE NCC in the RIPE Database to reflect this. 
+These objects are managed by the RIPE NCC, but you have control over some attributes, such as setting the administrative and technical contact person. 
+In order to allow you to make these changes, an additional maintainer will be present on the object, the so-called "default" maintainer. 
+You have to select this maintainer on the [Account Details](https://my.ripe.net/#/account-details) page and this will be reflected in the "mnt-by:" attribute 
+on all existing and new objects that have joint responsibility: top level allocations for IP resources (**inet(6)num** and **aut-num** objects) and the 
+**organisation** object. If you had a previous default maintainer the new default maintainer will replace your previous one.
 
-After selecting the default maintainer, you can change all of the attributes you could previously modify by using the Object Editors - such as technical, administrative and abuse contact details - Through the RIPE Database itself. You can use any update method you like, e.g. webupdates, syncupdates or email updates.
+After selecting the default maintainer, you can change all of the attributes you could previously modify by using the Object Editors - such as technical, 
+administrative and abuse contact details - Through the RIPE Database itself. You can use any update method you like, e.g. webupdates, syncupdates or 
+email updates.
 
 
 ### Personal Maintainers Versus Shared Maintainers
@@ -63,7 +74,7 @@ Keep in mind that sharing a maintainer doesn't mean sharing the credentials as w
 
 ### Delegating Authorisation Using Maintainers
 
-The idea behing delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation](04-Configuring-Reverse-DNS.md#configuring-reverse-dns) by creating a **domain** object and nothing else.
+The idea behind delegation of authorisation is that you can authorise a certain group (either within or outside your organisation) to create objects under a certain parent object that you control. For example, your can allow your colleagues who are responsible for the BGP routing configuration to create **route(6)** objects to register the announcement in the Internet Routing Registry (IRR), and nothing else. Likewise, you can authorise your DNS group to [request Reverse Delegation](../Database-Support/Configuring-Reverse-DNS/#configuring-reverse-dns) by creating a **domain** object and nothing else.
 
 For this purpose, three attributes exist:
 
@@ -71,9 +82,9 @@ For this purpose, three attributes exist:
     * "mnt-routes:", for the creation of **route(6)** objects in the IRR
     * "mnt-domains:", for requesting Reverse Delegation of DNS by creating a **domain** object
 
-The "mnt-lower:" attribute specifies an existing **mntner** object used for hierarchical authorsation. It controls creation of objects one level more specific in the hierarchy of an object type (this only applies to **inetnum**, **inet6num**, **as-block**, **aut-num**, **route**, **route6**, or **domain** objects).
+The "mnt-lower:" attribute specifies an existing **mntner** object used for hierarchical authorisation. It controls creation of objects one level more specific in the hierarchy of an object type (this only applies to **inetnum**, **inet6num**, **as-block**, **aut-num**, **route**, **route6**, or **domain** objects).
 
-The most common ocurrance of the "mnt-lower:" attribute is in the IP address allocation(s) that you have received from the RIPE NCC. For example, if you are an LIR and you have an IPv6 allocation, it is represented in the RIPE Database as an **inet6num** object. Because the allocation is managed by the RIPE NCC, one of the "mnt-by:" attributes is set to RIPE-NCC-HM-MNT and the other is set by you after choosing the [default maintainer](#maintainers). These are some of the attributes you would see:
+The most common occurrence of the "mnt-lower:" attribute is in the IP address allocation(s) that you have received from the RIPE NCC. For example, if you are an LIR and you have an IPv6 allocation, it is represented in the RIPE Database as an **inet6num** object. Because the allocation is managed by the RIPE NCC, one of the "mnt-by:" attributes is set to RIPE-NCC-HM-MNT and the other is set by you after choosing the [default maintainer](#maintainers). These are some of the attributes you would see:
 
     inet6num:   2001:db8::/32
     org:        LIR-ORG-RIPE
@@ -81,7 +92,7 @@ The most common ocurrance of the "mnt-lower:" attribute is in the IP address all
     mnt-by:     RIPE-NCC-HM-MNT
     mnt-by:     LIR-NOC-MNT 
 
-The RIPE-NCC-HM-MNT maintainer prevents you from making changes to some of the attributes that are part of the RIPE NCC's registry management, such as the "netname:". Your LIR's defailt maintainer allows you to make changes to attributes you manage, such as the "admin-c:" and "tech-c:". In addition, it allows you to create assignments, as well as **route(6)** and **domain** objects under this parent block. However, if you wish to delegate the creation of child resource objects to a separate group, you can do so by creating an additional maintainer for them and specify it as "mnt-lower:":
+The RIPE-NCC-HM-MNT maintainer prevents you from making changes to some of the attributes that are part of the RIPE NCC's registry management, such as the "netname:". Your LIR's default maintainer allows you to make changes to attributes you manage, such as the "admin-c:" and "tech-c:". In addition, it allows you to create assignments, as well as **route(6)** and **domain** objects under this parent block. However, if you wish to delegate the creation of child resource objects to a separate group, you can do so by creating an additional maintainer for them and specify it as "mnt-lower:":
 
     inet6num:   2001:db8::/32
     org:        LIR-ORG-RIPE
