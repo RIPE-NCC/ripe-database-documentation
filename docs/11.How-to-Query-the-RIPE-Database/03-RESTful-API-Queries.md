@@ -54,11 +54,11 @@ Additional resources:
 | key        | Primary key of the given object.               |
 
 ### Query Parameters
-| name        | description                                                                                                                                                |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| password    | Password for maintainer authentication (one or more values).                                                                                               |
-| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed). The correct password is required for unfiltered results |
-| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                           |
+| name        | description                                                                                                                                                       |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| password    | Password for maintainer authentication (one or more values).                                                                                                      |
+| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed). |
+| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                                  |
 
 ### Headers
 | name          | description                                                                                                                                                                                                                   |
@@ -67,7 +67,10 @@ Additional resources:
 
 ### HTTP Response Body
 
-A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources) containing the object, which is filtered by default.
+A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources) containing the object.
+
+By default the response object is filtered as described in 
+[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Reponse/#filtering-the-query-response). To return the unfiltered object specify the `unfiltered` query parameter. To obtain an unfiltered maintainer object (including all "auth:" attributes), the request must be authenticated.
 
 ### HTTP status Codes
 
@@ -132,7 +135,10 @@ Offers the well-known whois search via a rest-like interface.
 
 [Documentation on the standard RIPE Database query flags](../Types-of-Queries/#types-of-queries).
 
-As with the lookup, any spaces in the command must be encoded. The response will be returned in XML format by default. Alternatively, JSON or text/plain can be returned.
+As with the lookup, any spaces in the query string must be encoded. The response will be returned in XML format by default. Alternatively, JSON or text/plain can be returned.
+
+By default the response objects are filtered as described in 
+[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Reponse/#filtering-the-query-response). To return unfiltered objects specify the `flags` query parameter with the `B` or `no-filtering` flag value. To obtain an unfiltered maintainer object (including all "auth:" attributes), use the [REST API lookup](#rest-api-lookup).
 
 ### Locations
 
@@ -509,17 +515,4 @@ RESTful API queries can be authenticated using the following methods:
   is associated to your SSO account.
 - Client certificate: You can supply your own certificate, and it is checked against the queried object's mntner 
   key-certs
-
-
-
-
-
-
-
-
-
-
-
-
-
 
