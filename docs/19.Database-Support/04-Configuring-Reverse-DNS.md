@@ -27,7 +27,7 @@ For example, an address (A) record for mail.example.com points to the IP address
 
     5.2.0.192.in-addr.arpa. 3600 IN PTR mail.example.com
 
-Reverse DNS for IPv6 uses the hexadecimal notation on "nibble" boundaries, i.e. multiples of 4 bits. This means you should take the IPv6 address, expand all the zerps, put each hexadecimal number in reverse order and map them into the ip6.arpa domain.
+Reverse DNS for IPv6 uses the hexadecimal notation on "nibble" boundaries, i.e. multiples of 4 bits. This means you should take the IPv6 address, expand all the zeros, put each hexadecimal number in reverse order and map them into the ip6.arpa domain.
 
 For example, the pointer domain name corresponding to the IPv6 address 2001:db8::567:89ab is b.a.9.8.7.6.5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa., which would result in this PTR record:
 
