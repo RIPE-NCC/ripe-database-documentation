@@ -13,12 +13,12 @@ The contents of RIPE database can be accessed using RDAP via `https://rdap.db.ri
 
     List of supported object types
 
-| Object Type | Description                                                                                                                     |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------|
-| autnum      | AUT-NUM objects. Example: https://rdap.db.ripe.net/autnum/3333                                                      |
-| domain      | DOMAIN objects. Example: https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa                                               |
+| Object Type | Description                                                                                                                      |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------|
+| autnum      | AUT-NUM objects. Example: https://rdap.db.ripe.net/autnum/3333                                                                   |
+| domain      | DOMAIN objects. Example: https://rdap.db.ripe.net/domain/193.0.6.139.in-addr.arpa                                                |
 | ip          | INETNUM and INET6NUM objects. Example: https://rdap.db.ripe.net/ip/193.0.0.0/21 or https://rdap.db.ripe.net/ip/2001:67c:2e8::/48 |
-| entity      | PERSON, ROLE, ORGANISATION and MNTNER objects. Example: https://rdap.db.ripe.net/entity/RIPE-NCC-MNT                            |
+| entity      | PERSON, ROLE, ORGANISATION and MNTNER objects. Example: https://rdap.db.ripe.net/entity/RIPE-NCC-MNT                             |
 
 For example, a query for IP information:
 ```
@@ -44,7 +44,7 @@ https://rdap.db.ripe.net/entities?fn={fn}&handle={handle}
 Where:
 * fn: Returns all the matches for **person:**, **role:**, and **org-name:** attributes. 
   * Example: https://rdap.db.ripe.net/entities?fn=RIPE-RIPE
-* handle: Returns all the matches for **organisation:**, **nic-hdl:** attributes. 
+* handle: Returns all the matches for **organisation:**, **nic-hdl:** and **mntner:(maintainer)** attributes. 
   * Example: https://rdap.db.ripe.net/entities?handle=RIPE-RIPE
 
 ## Domain Search
