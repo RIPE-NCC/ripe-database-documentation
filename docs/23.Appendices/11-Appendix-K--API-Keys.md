@@ -6,6 +6,8 @@ API keys are a way to authenticate updates in the RIPE database. They are associ
 
 API keys are a way to authenticate updates in the RIPE Database. They are associated with a user’s RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only make updates using the web interface, then you don’t need API keys!
 
+Before authenticating with an API key, your RIPE NCC Access account must already be associated with the object mntner using an "auth:" SSO attribute.
+
 To start using API keys, go to the Web query page, login to RIPE NCC Access, and go to the API keys page on the left-hand menu.
 https://apps.db.ripe.net/db-web-ui/api-keys
 

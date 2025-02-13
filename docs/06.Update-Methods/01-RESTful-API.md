@@ -348,7 +348,7 @@ Any required passwords must also be supplied as part of the Uniform Resource ide
 ## Client Certificate Authentication
 
 [Client Certificate Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Client_certificate_authentication)
-is supported by our REST API. To use the client certificate service, you must have your own certificate: either from a certificate authority (CA) such as Let's Encrypt, or you can generate one yourself.
+is supported by the Whois REST API. To use the client certificate service, you must have your own certificate: either from a certificate authority (CA) such as Let's Encrypt, or you can generate one yourself.
 
 The **key-cert** object's client certificate status is validated by checking its `notBefore` and `notAfter` dates to ensure it is within its 
 designated validity period. This involves comparing the current date against these dates: if the certificate is not yet valid (`notBefore`) 
@@ -366,3 +366,15 @@ authentication will fail.
   - Generate the self-signed certificate using the CSR: openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt
 - Example using curl and previous certificate: 
   - curl --cert client.crt --key client.key -X PUT --data @form.txt'https://rest-cert.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
+
+## API Key Authentication
+
+API keys are a way to script (automate) authenticated queries and updates using the Whois REST API. They are generated using the web interface and are associated with a user's RIPE NCC Access account. They have a maximum validity of one year.
+
+You can create as many different keys as you’d like. We suggest that you create a separate key for each application that you’d like to provide with access. That way, if you believe the key has been compromised, you can revoke access to that application without affecting other applications that you have provided with access.
+
+API keys created for the RIPE database cannot be used with any other RIPE NCC service.
+
+### Example
+
+For an example of how to use API keys, please see the appendix ["API Keys"](../Appendices/11-Appendix-K--API-Keys). 

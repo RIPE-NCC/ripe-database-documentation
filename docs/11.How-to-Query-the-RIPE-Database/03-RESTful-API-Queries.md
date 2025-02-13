@@ -510,9 +510,7 @@ RESTful API queries can be authenticated in order to retrieve the full object de
 
 RESTful API queries can be authenticated using the following methods:
 
-- Password: You can choose between using password query parameter or basic authentication. 
-- SSO cookie: If you are using the web application you can automatically be authenticated in one mntner if that mntner 
-  is associated to your SSO account.
-- Client certificate: You can supply your own certificate, and it is checked against the queried object's mntner 
-  key-certs
-
+- Password: You can choose between using a "password" query parameter or using basic authentication. Please note that passwords are deprecated and will be removed in future.
+- RIPE NCC Access: If you are using the RIPE database web application you can automatically be authenticated against the objects mntner auth: SSO attribute(s).
+- Client certificate: You can supply your own certificate, and it is verified against the objects mntner auth: key-cert attribute(s).
+- API key: You can submit an API key generated with your RIPE NCC Access account, and it is verified against the objects mntner auth: SSO attribute(s).
