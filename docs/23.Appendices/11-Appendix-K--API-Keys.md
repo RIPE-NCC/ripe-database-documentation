@@ -1,3 +1,7 @@
+---
+permalink: /Appendices/Appendix-K--API-Keys
+---
+
 # Appendix K- API Keys
 
 API keys are a way to authenticate updates in the RIPE database. They are associated with a user’s RIPE NCC Access account, and are intended to help users script (automate) updates to the RIPE Database.
