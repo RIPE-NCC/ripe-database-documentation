@@ -11,14 +11,26 @@ The docs can be edited directly within Gitlab or by cloning the repository, chan
 
 To avoid variation numbers from the link, it is advised to utilise permalinks.
 
+## Links
+
+Since the order of documents can change, we cannot rely on the order number within links referencing them. 
+To ensure stability, we use a permalink in the document headers, providing a static link that remains unchanged. 
+This approach prevents breaking changes.
+
+Additionally, references between pages must include the full path along with the `#` symbol. For example:
+`../Appendices/Appendix-A--Syntax-of-Object-Attributes/#appendix-a-syntax-of-object-attributes`
+
+This is necessary because, when generating the *Entire Documentation HTML*, the plugin misconfigures the links. 
+To resolve this, a script was created to extract the correct reference from the wildcard section.
+
 # Editing in Gitlab
 
 GitLab has a handy built-in editor that understands most of the markdown that is in the markdown files. There are a few exceptions that are particular to VuePress:
 
-| **Gitlab markdown**                                                                                                                  | **Vuepress markdown** |
-|--------------------------------------------------------------------------------------------------------------------------------------| --- |
+| **Gitlab markdown**                                                                                                                  | **Vuepress markdown**                                                                      |
+|--------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | collapsible sections are rendered with &lt;details&gt;&lt;summary&gt;&lt;/summary&gt;&lt;content&gt;&lt;/content&gt;&lt;/details&gt; | collapsible sections rendered same as gitlab OR by ::: details summaryText contentText ::: |
-| Embedded vue components are ignored                                                                                                  | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered |
+| Embedded vue components are ignored                                                                                                  | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered              |
 
 # Running locally
 
