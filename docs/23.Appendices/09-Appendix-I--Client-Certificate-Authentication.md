@@ -4,6 +4,8 @@ permalink: /Appendices/Appendix-I--Client-Certificate-Authentication
 
 # Appendix I- Client Certificate Authentication
 
+## Introduction
+
 In this section, we provide an example of how to use client certificate authentication to make a Whois Update via the REST API.
 
 One advantage of this method is that no secret is shared with the Whois server during the request. However, one drawback is that getting started is more complicated than other authentication methods.
