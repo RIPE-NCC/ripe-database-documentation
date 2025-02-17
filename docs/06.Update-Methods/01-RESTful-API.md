@@ -360,7 +360,7 @@ authentication will fail.
 
 ### Example
 
-For an example of how to use client certificate authentication, please see the appendix ["Client Certificate Authentication"](../Appendices/Appendix-I--Client-Certificate-Authentication/#Introduction). 
+For an example of how to use client certificate authentication, please see the appendix ["Client Certificate Authentication"](../Appendices/Appendix-I--Client-Certificate-Authentication/#introduction). 
 
 
 ## API Key Authentication
@@ -373,6 +373,4 @@ API keys created for the RIPE database cannot be used with any other RIPE NCC se
 
 ### Example
 
-For an example of how to use API keys, please see the appendix ["API Keys"](../Appendices/). 
-
-PGP authentication creation steps are in the [appendix](../Appendices/Appendix-K--API-Keys/#Introduction).
+For an example of how to use API keys, please see the appendix ["API Keys"](../Appendices/Appendix-K--API-Keys/#introduction). 
