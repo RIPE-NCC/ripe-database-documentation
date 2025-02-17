@@ -358,14 +358,10 @@ its valid time frame, maintaining secure and reliable authentication.
 Additionally, signed updates are only considered valid for an hour after they are signed. After that the 
 authentication will fail.
 
-### Examples
+### Example
 
-- Create your own certificate:
-  - Generate the private key: openssl genrsa -out client.key 2048
-  - Generate the Certificate Signing Request (CSR): openssl req -new -key client.key -out client.csr
-  - Generate the self-signed certificate using the CSR: openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt
-- Example using curl and previous certificate: 
-  - curl --cert client.crt --key client.key -X PUT --data @form.txt'https://rest-cert.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
+For an example of how to use client certificate authentication, please see the appendix ["Client Certificate Authentication"](../Appendices/Appendix-I--Client-Certificate-Authentication). 
+
 
 ## API Key Authentication
 
@@ -377,4 +373,5 @@ API keys created for the RIPE database cannot be used with any other RIPE NCC se
 
 ### Example
 
-For an example of how to use API keys, please see the appendix ["API Keys"](../Appendices/11-Appendix-K--API-Keys). 
+For an example of how to use API keys, please see the appendix ["API Keys"](../Appendices/Appendix-K--API-Keys). 
+
