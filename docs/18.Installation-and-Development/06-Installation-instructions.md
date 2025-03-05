@@ -148,7 +148,8 @@ Commit the changes and in a couple of minutes the Whois server will pick it up a
 
 The Whois server supports text searches [full text search](../How-to-Query-the-RIPE-Database/Web-Query-Form/#using-full-text-search).
 To enable this feature, you need to run an [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html) 
-instance either locally or on a server accessible from your machine.
+instance either locally or on a server accessible from your machine. The Elasticsearch version must be compatible with 
+the `elasticsearch.version` property specified in `pom.xml`.
 
 * Configuring Whois to Use Elasticsearch: If your Elasticsearch instance **only supports HTTP** (not HTTPS), you need 
   to modify `ElasticSearchInstance.getEsClient`. You need to update `https` to `http` in the method and rebuild the 
