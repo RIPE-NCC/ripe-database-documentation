@@ -166,6 +166,8 @@ specified in the `pom.xml`.
       elastic.password=<Set the elasticsearch password if needed> 
 
   Ensure the database **schema** contains the necessary source for full-text search.
+
+
 * Creating an Elasticsearch Index: After starting the Whois server, run the following `JMX command` to initialize whois indexes. 
   This will create a necessary index with the format `whois-yyyyMMdd-HHmmss`.
   
@@ -180,6 +182,8 @@ specified in the `pom.xml`.
 
   This will populate the Elasticsearch index with Whois data.
   ElasticFullTextIndex job will run each minute to keep the index updated.
+
+
 * Testing the Full-Text Search: 
   
   To confirm that Elasticsearch is properly indexing data, run:
