@@ -147,17 +147,9 @@ Commit the changes and in a couple of minutes the Whois server will pick it up a
 ## How to enable Full-Text Search queries
 
 The Whois server supports text searches [full text search](../How-to-Query-the-RIPE-Database/Web-Query-Form/#using-full-text-search).
-To enable this feature, you need to run an [Elasticsearch](https://www.elastic.co) instance either locally or on a 
-server accessible from your machine.
+To enable this feature, you need to run an [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html) 
+instance either locally or on a server accessible from your machine.
 
-* Running Elasticsearch: To start an Elasticsearch instance in a Docker container, use:
-
-      docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.16.3
-
-  This will start a single-node Elasticsearch container and expose port **9200** (HTTP) and **9300** (transport). 
-  You can check if Elasticsearch is running with:
-  
-      curl -X GET "http://localhost:9200/
 * Configuring Whois to Use Elasticsearch: If your Elasticsearch instance **only supports HTTP** (not HTTPS), you need 
   to modify `ElasticSearchInstance.getEsClient`. You need to update `https` to `http` in the method and rebuild the 
   Whois JAR with the updated configuration.
@@ -166,7 +158,7 @@ server accessible from your machine.
 
       whois.source=<source>
       whois.db.slave.url=jdbc:mariadb://localhost/<Schema where required sources are>
-      elastic.host=<Host:port where you are running Elasticsearch, localhost:9200 if you are running it locally>
+      elastic.host=<Host:port where you are running Elasticsearch. i.e.: localhost:9200 if you are running it locally>
       elastic.user=<Set the elasticsearch user if needed>
       elastic.password=<Set the elasticsearch password if needed> 
 
@@ -188,7 +180,7 @@ server accessible from your machine.
   
   To confirm that Elasticsearch is properly indexing data, run:
 
-      curl http://localhost:9200/whois/_count
+      curl http://<host>:<port>/whois/_count
   ✔ Expected output: Number of indexed documents
   Perform a Full-Text Search Query
 
