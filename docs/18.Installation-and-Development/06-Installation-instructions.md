@@ -151,7 +151,7 @@ To enable this feature, you need to have a running instance of Elasticsearch eit
 accessible from your machine. For more details on setup Elasticsearch visit: 
 [Elasticsearch setup](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html).
 Ensure that the Elasticsearch version is compatible with the `elasticsearch.version` property 
-specified in `pom.xml`.
+specified in the `pom.xml`.
 
 * Configuring Whois to Use Elasticsearch: If your Elasticsearch instance **only supports HTTP** (not HTTPS), you need 
   to modify `ElasticSearchInstance.getEsClient`. You need to update `https` to `http` in the method and rebuild the 
