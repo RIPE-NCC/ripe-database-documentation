@@ -163,8 +163,8 @@ instance either locally or on a server accessible from your machine.
       elastic.password=<Set the elasticsearch password if needed> 
 
   Ensure the database **schema** contains the necessary source for full-text search.
-* Creating an Elasticsearch Index: Before full-text search can work, an `index` must be created. After starting the 
-  Whois server, run the following `JMX command` to rebuild indexes:
+* Creating an Elasticsearch Index: After starting the Whois server, run the following `JMX command` to initialize whois indexes. 
+  This will create a necessary index with the format `whois-yyyyMMdd-HHmmss`.
   
       java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
 
@@ -175,7 +175,8 @@ instance either locally or on a server accessible from your machine.
       $> run runRebuildIndexes <comment>
       Successfully rebuilt indexes
 
-  This will populate the Elasticsearch index with Whois data
+  This will populate the Elasticsearch index with Whois data.
+  ElasticFullTextIndex job will run each minute to keep the index updated.
 * Testing the Full-Text Search: 
   
   To confirm that Elasticsearch is properly indexing data, run:
