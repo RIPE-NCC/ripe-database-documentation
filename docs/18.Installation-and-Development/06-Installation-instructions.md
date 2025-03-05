@@ -162,7 +162,7 @@ instance either locally or on a server accessible from your machine.
       elastic.user=<Set the elasticsearch user if needed>
       elastic.password=<Set the elasticsearch password if needed> 
 
-  Ensure the database **schema** contains the necessary sources for full-text search.
+  Ensure the database **schema** contains the necessary source for full-text search.
 * Creating an Elasticsearch Index: Before full-text search can work, an `index` must be created. After starting the 
   Whois server, run the following `JMX command` to rebuild indexes:
   
