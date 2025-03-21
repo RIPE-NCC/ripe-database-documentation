@@ -86,3 +86,26 @@ To do this, find the API key on the page and click on the “Revoke” button.
 
 As soon as you revoke a key it cannot be used to authenticate queries or updates in the RIPE database.
 
+## JSON Example
+
+By default, the Whois REST API uses XML format. However you can also use API keys with JSON formatted objects. Either use the ".json" filename extension at the end of the URL path, and/or specify the "application/json" content type.
+ 
+First query for an object to be updated with a JSON response, for example :
+```bash
+$ curl -v --header "Accept: application/json" \
+ -o output \
+ https://rest.db.ripe.net/ripe/person/ES7554-RIPE.json?unfiltered
+```
+
+Then edit the "output" file and make a change to the object.
+
+Then make the update in the database specifying JSON formatted data, for example :
+```bash
+$ curl -v \
+  --header "Authorization: Basic NkhEVORLSFFETVBHVUE5VFpJQjVSRFVCOlc2R2FFdDJTa1Ry
+Rk84eGgyRXFGVTRQaА==" \
+ -X PUT -d @output \
+ --header "Content-type: application/json" \
+ https://rest.db.ripe.net/ripe/person/ES7554-RIPE.json
+```
+
