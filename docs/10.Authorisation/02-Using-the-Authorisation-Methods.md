@@ -13,6 +13,9 @@ permalink: /Authorisation/Using-the-Authorisation-Methods
 
 ## MD5 Password
 
+> [!WARNING]
+> Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.
+
 An MD5 password can be used by any of the update methods currently in use. See section 5.2 Update Methods for more details of these methods.
 
 For email updates, password authorisation information is supplied using a "password:" pseudo-attribute. The value of this attribute is a clear-text passphrase, corresponding to the encrypted hash. It can appear anywhere in the body of the message, but not within mail headers. Line continuation is not allowed for this attribute. The attribute and the passphrase should fit on one line. If you split the passphrase across multiple lines, this will be treated as a syntax error. If you have a very long passphrase, please note that some email clients split lines at a pre-defined character position. If multiple passwords are required, a "password:" pseudo-attribute must be included in the update for each password. 
@@ -87,8 +90,6 @@ However, you can submit updates through the RESTful API using [Client Certificat
 
 For your X.509 signed update to pass authorisation checks, you must have your certificate in the database in a **key-cert** object.
 
-
-
 ## Single Sign-On
 
 The SSO (single sign-on) authorisation is different to all the other methods. This one provides some authentication as well. SSO is based on RIPE NCC Access. To use SSO as an authorisation method in the RIPE Database, you must first create a RIPE NCC Access account. This provides some details about who you are. It is no longer a totally anonymous password in a box (where the box is the **mntner** object).
@@ -96,3 +97,13 @@ The SSO (single sign-on) authorisation is different to all the other methods. Th
 The RIPE NCC Access account username, which is your email address, becomes the authorisation credential used by the database software. If you change your RIPE NCC Access username to a different email address, this is immediately reflected in the **mntner** object.
 
 Currently SSO authorisation only works with web-based update methods. This includes Webupdates and the Syncupdates web form. You need to sign in to your RIPE NCC Access account in order to authorise an update.
+
+## API Keys
+
+API keys are a new way to authenticate updates in the RIPE Database. They are associated with a user’s RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only use webupdates then you don't need API keys!
+
+To create an API key, login to [Webupdates](https://apps.db.ripe.net/) using RIPE NCC Access and choose API keys from the left-hand menu. Then click Create an API Key. When the key is created you will see a popup. You must copy the API key details as they will only be shown once. Store the copied credential securely.
+
+Before using an API key, you must add your RIPE NCC Access account to a maintainer using an auth: SSO attribute.
+
+To authenticate a query or update using an API key, send the credential using [HTTP Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).</p><p>For an example, please refer to the [appendix](../Appendices/Appendix-K--API-Keys/#introduction).
