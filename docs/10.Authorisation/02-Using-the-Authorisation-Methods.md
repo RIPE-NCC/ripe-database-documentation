@@ -13,8 +13,9 @@ permalink: /Authorisation/Using-the-Authorisation-Methods
 
 ## MD5 Password
 
-> [!WARNING]
-> Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.
+::: warning
+Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.
+:::
 
 An MD5 password can be used by any of the update methods currently in use. See section 5.2 Update Methods for more details of these methods.
 
