@@ -4,3 +4,5 @@ yarn.lock
 builds
 .idea/
 ripe-docs.iml
+package.json
+package-lock.json
