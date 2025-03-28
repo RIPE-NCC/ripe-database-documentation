@@ -1,5 +1,12 @@
 ---
 permalink: /Notifications/Acknowledgment-Message
+lastUpdated: 1688729039000
+prev:
+  text: 08 Dry run
+  link: /Updating-Objects-in-the-RIPE-Database/08-Dry-run/
+next:
+  text: 02 Notification Messages
+  link: /Notifications/02-Notification-Messages/
 ---
 
 # Acknowledgment Message

@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages
+lastUpdated: 1702898267000
+prev:
+  text: 02 Appendix B  Copyright Statement
+  link: /Appendices/02-Appendix-B--Copyright-Statement/
+next:
+  text: 04 Appendix D  Route Object Creation Flowchart
+  link: /Appendices/04-Appendix-D--Route-Object-Creation-Flowchart/
 ---
 
 # Appendix C- RIPE Database Query Server Response Codes and Messages

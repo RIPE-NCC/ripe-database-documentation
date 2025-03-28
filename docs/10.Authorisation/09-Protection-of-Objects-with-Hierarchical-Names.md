@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Protection-of-Objects-with-Hierarchical-Names
+lastUpdated: 1688729039000
+prev:
+  text: 08 Protection of Reverse Delegation Objects
+  link: /Authorisation/08-Protection-of-Reverse-Delegation-Objects/
+next:
+  text: 10 Protecting Membership of a Set
+  link: /Authorisation/10-Protecting-Membership-of-a-Set/
 ---
 
 # Protection of Objects with Hierarchical Names

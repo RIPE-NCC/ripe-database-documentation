@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring-v3
+lastUpdated: 1721302189000
+prev:
+  text: 01 Setup RIPE Database Mirror
+  link: /RIPE-Database-Mirror/01-Setup-RIPE-Database-Mirror/
+next:
+  text: 03 Near Real Time Mirroring v4
+  link: /RIPE-Database-Mirror/03-Near-Real-Time-Mirroring-v4/
 ---
 
 # Near Real Time Mirroring v3

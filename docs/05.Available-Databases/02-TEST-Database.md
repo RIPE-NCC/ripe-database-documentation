@@ -1,5 +1,12 @@
 ---
 permalink: /Available-Databases/TEST-Database
+lastUpdated: 1705665572000
+prev:
+  text: 01 RIPE Database
+  link: /Available-Databases/01-RIPE-Database/
+next:
+  text: 03 Release Candidate Database
+  link: /Available-Databases/03-Release-Candidate-Database/
 ---
 
 # TEST Database

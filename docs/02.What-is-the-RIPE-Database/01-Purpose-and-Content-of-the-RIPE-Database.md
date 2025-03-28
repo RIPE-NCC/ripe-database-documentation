@@ -1,5 +1,13 @@
 ---
 permalink: /What-is-the-RIPE-Database/Purpose-and-Content-of-the-RIPE-Database
+lastUpdated: 1702898267000
+prev:
+  text: 03 Conventions Used in the RIPE Database Documentation
+  link: >-
+    /introduction-to-the-RIPE-Database/03-Conventions-Used-in-the-RIPE-Database-Documentation/
+next:
+  text: 02 History of the RIPE Database
+  link: /What-is-the-RIPE-Database/02-History-of-the-RIPE-Database/
 ---
 
 # Purpose and Content of the RIPE Database

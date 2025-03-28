@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Force-Delete-Functionality
+lastUpdated: 1688479960000
+prev:
+  text: 13 IRT Object
+  link: /Authorisation/13-IRT-Object/
+next:
+  text: 15 Request ENUM delegation
+  link: /Authorisation/15-Request-ENUM-delegation/
 ---
 
 

@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-I--Client-Certificate-Authentication
+lastUpdated: 1739804327000
+prev:
+  text: 08 Appendix H  PGP Authentication Method
+  link: /Appendices/08-Appendix-H--PGP-Authentication-Method/
+next:
+  text: 10 Appendix J  Ripe Test Database
+  link: /Appendices/10-Appendix-J--Ripe-Test-Database/
 ---
 
 # Appendix I- Client Certificate Authentication

@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Structure/Attributes-in-an-Object
+lastUpdated: 1702898267000
+prev:
+  text: 06 Attribute Names
+  link: /RIPE-Database-Structure/06-Attribute-Names/
+next:
+  text: 08 Attribute Values
+  link: /RIPE-Database-Structure/08-Attribute-Values/
 ---
 
 # Attributes in an Object

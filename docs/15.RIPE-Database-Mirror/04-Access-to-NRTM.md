@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Mirror/Access-to-NRTM
+lastUpdated: 1721302189000
+prev:
+  text: 03 Near Real Time Mirroring v4
+  link: /RIPE-Database-Mirror/03-Near-Real-Time-Mirroring-v4/
+next:
+  text: How to Recover Access to a Maintainer Object
+  link: /How-to-Recover-Access-to-a-Maintainer-Object/
 ---
 
 # Access to NRTM

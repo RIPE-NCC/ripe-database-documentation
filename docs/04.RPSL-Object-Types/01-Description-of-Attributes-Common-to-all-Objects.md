@@ -1,5 +1,11 @@
 ---
-permalink: /RPSL-Object-Types/Description-of-Attributes-Common-to-all-Objects
+lastUpdated: 1715846727000
+prev:
+  text: 11 REST API Data model
+  link: /RIPE-Database-Structure/11-REST-API-Data-model/
+next:
+  text: 02 Descriptions of Primary Objects
+  link: /RPSL-Object-Types/02-Descriptions-of-Primary-Objects/
 ---
 
 # Description of Attributes Common to all Objects

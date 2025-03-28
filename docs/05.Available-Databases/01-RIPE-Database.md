@@ -1,5 +1,12 @@
 ---
 permalink: /Available-Databases/RIPE-Database
+lastUpdated: 1688479960000
+prev:
+  text: 03 Descriptions of Secondary Objects
+  link: /RPSL-Object-Types/03-Descriptions-of-Secondary-Objects/
+next:
+  text: 02 TEST Database
+  link: /Available-Databases/02-TEST-Database/
 ---
 
 # RIPE Database

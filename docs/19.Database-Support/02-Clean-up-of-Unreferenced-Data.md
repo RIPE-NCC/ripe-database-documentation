@@ -1,5 +1,12 @@
 ---
 permalink: /Database-Support/Clean-up-of-Unreferenced-Data
+lastUpdated: 1688729039000
+prev:
+  text: 01 Support Overview
+  link: /Database-Support/01-Support-Overview/
+next:
+  text: 03 Database Security
+  link: /Database-Support/03-Database-Security/
 ---
 
 # Clean-up of Unreferenced Data

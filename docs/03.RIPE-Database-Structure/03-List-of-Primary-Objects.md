@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Structure/List-of-Primary-Objects
+lastUpdated: 1702898267000
+prev:
+  text: 02 Primary and Secondary Objects
+  link: /RIPE-Database-Structure/02-Primary-and-Secondary-Objects/
+next:
+  text: 04 List of Secondary Objects
+  link: /RIPE-Database-Structure/04-List-of-Secondary-Objects/
 ---
 
 # List of Primary Objects

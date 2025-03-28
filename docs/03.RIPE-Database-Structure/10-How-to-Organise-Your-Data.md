@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Structure/How-to-Organise-Your-Data
+lastUpdated: 1702898267000
+prev:
+  text: 09 Attribute Properties
+  link: /RIPE-Database-Structure/09-Attribute-Properties/
+next:
+  text: 11 REST API Data model
+  link: /RIPE-Database-Structure/11-REST-API-Data-model/
 ---
 
 

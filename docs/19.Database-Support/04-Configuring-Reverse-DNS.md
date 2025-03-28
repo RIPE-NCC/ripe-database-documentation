@@ -1,5 +1,12 @@
 ---
 permalink: /Database-Support/Configuring-Reverse-DNS
+lastUpdated: 1731578633000
+prev:
+  text: 03 Database Security
+  link: /Database-Support/03-Database-Security/
+next:
+  text: 05 Database Business Rules
+  link: /Database-Support/05-Database-Business-Rules/
 ---
 
 # Configuring Reverse DNS

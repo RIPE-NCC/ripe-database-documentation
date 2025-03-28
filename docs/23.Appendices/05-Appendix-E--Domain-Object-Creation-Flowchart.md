@@ -2,15 +2,21 @@
 theme: svg theme
 title: Appendix-E--Domain-Object-Creation-Flowchart
 permalink: /Appendices/Appendix-E--Domain-Object-Creation-Flowchart
+lastUpdated: 1695885054000
+prev:
+  text: 04 Appendix D  Route Object Creation Flowchart
+  link: /Appendices/04-Appendix-D--Route-Object-Creation-Flowchart/
+next:
+  text: 06 Appendix F  Special Considerations for Object Types
+  link: /Appendices/06-Appendix-F--Special-Considerations-for-Object-Types/
 ---
 <script setup>
-    import svgZoomComponent from '../.vuepress/components/SvgZoom.vue'
+    import svgZoomComponent from '@components/SvgZoom.vue'
 </script>
-<svgZoomComponent />
 
 # Domain Object Creation Flowchart
 
-```mermaidjs
+```mermaid
 flowchart TB
 A[Begin]:::initLastNodes --> B{Is there an exact <br> match inetnum?}:::decisionNodes
 B --> |Yes| C[I=matching <br> inetnum?]:::operationNodes

@@ -1,5 +1,12 @@
 ---
 permalink: /Update-Methods/Syncupdates
+lastUpdated: 1714747125000
+prev:
+  text: 02 Webupdates
+  link: /Update-Methods/02-Webupdates/
+next:
+  text: 04 Email Updates
+  link: /Update-Methods/04-Email-Updates/
 ---
 
 # Syncupdates

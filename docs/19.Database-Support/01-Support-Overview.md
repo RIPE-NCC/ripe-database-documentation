@@ -1,5 +1,12 @@
 ---
 permalink: /Database-Support/Support-Overview
+lastUpdated: 1721302189000
+prev:
+  text: 06 Installation instructions
+  link: /Installation-and-Development/06-Installation-instructions/
+next:
+  text: 02 Clean up of Unreferenced Data
+  link: /Database-Support/02-Clean-up-of-Unreferenced-Data/
 ---
 
 # Support Overview

@@ -1,5 +1,13 @@
 ---
 permalink: /Updating-Objects-in-the-RIPE-Database/Garbage-Collection
+lastUpdated: 1688479960000
+prev:
+  text: 06 Special Considerations for Object Creation
+  link: >-
+    /Updating-Objects-in-the-RIPE-Database/06-Special-Considerations-for-Object-Creation/
+next:
+  text: 08 Dry run
+  link: /Updating-Objects-in-the-RIPE-Database/08-Dry-run/
 ---
 
 # Garbage Collection

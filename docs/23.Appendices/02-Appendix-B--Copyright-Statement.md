@@ -1,5 +1,13 @@
 ---
 permalink: /Appendices/Appendix-B--Copyright-Statement
+lastUpdated: 1695885054000
+prev:
+  text: 01 Appendix A  Syntax of Object Attributes
+  link: /Appendices/01-Appendix-A--Syntax-of-Object-Attributes/
+next:
+  text: 03 Appendix C  RIPE Database Query Server Response Codes and Messages
+  link: >-
+    /Appendices/03-Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages/
 ---
 
 # Appendix B- Copyright Statement

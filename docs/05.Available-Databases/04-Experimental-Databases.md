@@ -1,5 +1,12 @@
 ---
 permalink: /Available-Databases/Experimental-Databases
+lastUpdated: 1688479960000
+prev:
+  text: 03 Release Candidate Database
+  link: /Available-Databases/03-Release-Candidate-Database/
+next:
+  text: 01 RESTful API
+  link: /Update-Methods/01-RESTful-API/
 ---
 
 # Experimental Databases

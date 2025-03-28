@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Referencing-an-ORGANIZATION-Object
+lastUpdated: 1688479960000
+prev:
+  text: 10 Protecting Membership of a Set
+  link: /Authorisation/10-Protecting-Membership-of-a-Set/
+next:
+  text: 12 Referencing an IRT Object
+  link: /Authorisation/12-Referencing-an-IRT-Object/
 ---
 
 # Referencing an ORGANISATION Object

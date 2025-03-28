@@ -1,5 +1,12 @@
 ---
 permalink: /Installation-and-Development/Installation-instructions
+lastUpdated: 1741178478000
+prev:
+  text: 05 Coding standard
+  link: /Installation-and-Development/05-Coding-standard/
+next:
+  text: 01 Support Overview
+  link: /Database-Support/01-Support-Overview/
 ---
 
 # Installation instructions

@@ -1,5 +1,13 @@
 ---
-permalink: /Updating-Objects-in-the-RIPE-Database/Special-Considerations-for-Object-Creation
+permalink: >-
+  /Updating-Objects-in-the-RIPE-Database/Special-Considerations-for-Object-Creation
+lastUpdated: 1688729039000
+prev:
+  text: 05 Historical Data
+  link: /Updating-Objects-in-the-RIPE-Database/05-Historical-Data/
+next:
+  text: 07 Garbage Collection
+  link: /Updating-Objects-in-the-RIPE-Database/07-Garbage-Collection/
 ---
 
 # Special Considerations for Object Creation

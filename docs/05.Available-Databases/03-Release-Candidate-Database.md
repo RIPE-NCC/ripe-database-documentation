@@ -1,5 +1,12 @@
 ---
 permalink: /Available-Databases/Release-Candidate-Database
+lastUpdated: 1688479960000
+prev:
+  text: 02 TEST Database
+  link: /Available-Databases/02-TEST-Database/
+next:
+  text: 04 Experimental Databases
+  link: /Available-Databases/04-Experimental-Databases/
 ---
 
 # Release Candidate Database (RC)

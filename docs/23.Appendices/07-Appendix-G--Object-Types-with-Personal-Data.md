@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-G--Object-Types-with-Personal-Data
+lastUpdated: 1695885054000
+prev:
+  text: 06 Appendix F  Special Considerations for Object Types
+  link: /Appendices/06-Appendix-F--Special-Considerations-for-Object-Types/
+next:
+  text: 08 Appendix H  PGP Authentication Method
+  link: /Appendices/08-Appendix-H--PGP-Authentication-Method/
 ---
 
 # Appendix G- Object Types with Personal Data

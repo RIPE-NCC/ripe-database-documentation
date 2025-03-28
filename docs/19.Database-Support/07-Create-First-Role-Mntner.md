@@ -1,5 +1,12 @@
 ---
 permalink: /Database-Support/Create-First-Role-Mntner
+lastUpdated: 1702053280000
+prev:
+  text: 06 Highlighted Values in the RIPE Database
+  link: /Database-Support/06-Highlighted-Values-in-the-RIPE-Database/
+next:
+  text: Removal of personal data
+  link: /Removal-of-personal-data/
 ---
 
 # Create the First ROLE and MNTNER Objects

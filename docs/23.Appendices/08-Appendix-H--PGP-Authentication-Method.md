@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-H--PGP-Authentication-Method
+lastUpdated: 1714747125000
+prev:
+  text: 07 Appendix G  Object Types with Personal Data
+  link: /Appendices/07-Appendix-G--Object-Types-with-Personal-Data/
+next:
+  text: 09 Appendix I  Client Certificate Authentication
+  link: /Appendices/09-Appendix-I--Client-Certificate-Authentication/
 ---
 
 # Appendix H- PGP Authentication Method

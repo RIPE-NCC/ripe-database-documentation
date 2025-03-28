@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Grouping-the-RIPE-Database-Output
+lastUpdated: 1702898267000
+prev:
+  text: 06 Abuse Contacts
+  link: /Types-of-Queries/06-Abuse-Contacts/
+next:
+  text: 08 Filtering the Query Reponse
+  link: /Types-of-Queries/08-Filtering-the-Query-Reponse/
 ---
 
 

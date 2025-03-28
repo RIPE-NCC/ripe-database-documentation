@@ -1,5 +1,13 @@
 ---
-permalink: /introduction-to-the-RIPE-Database/Conventions-Used-in-the-RIPE-Database-Documentation
+permalink: >-
+  /introduction-to-the-RIPE-Database/Conventions-Used-in-the-RIPE-Database-Documentation
+lastUpdated: 1702898267000
+prev:
+  text: 02 Intended Audience
+  link: /introduction-to-the-RIPE-Database/02-Intended-Audience/
+next:
+  text: 01 Purpose and Content of the RIPE Database
+  link: /What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database/
 ---
 
 # Conventions Used in the RIPE Database Documentation

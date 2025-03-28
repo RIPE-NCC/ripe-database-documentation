@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Referenced-Objects-in-Query-Response
+lastUpdated: 1702898267000
+prev:
+  text: 14 Other Query Flags
+  link: /Types-of-Queries/14-Other-Query-Flags/
+next:
+  text: 16 Historical Queries
+  link: /Types-of-Queries/16-Historical-Queries/
 ---
 
 # Referenced Objects in Query Response

@@ -1,5 +1,12 @@
 ---
 permalink: /Updating-Objects-in-the-RIPE-Database/Update-Operations
+lastUpdated: 1722429042000
+prev:
+  text: 03 Object Processing
+  link: /Updating-Objects-in-the-RIPE-Database/03-Object-Processing/
+next:
+  text: 05 Historical Data
+  link: /Updating-Objects-in-the-RIPE-Database/05-Historical-Data/
 ---
 
 # Update Operations

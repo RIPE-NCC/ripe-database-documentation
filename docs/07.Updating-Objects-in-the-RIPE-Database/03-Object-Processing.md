@@ -1,5 +1,12 @@
 ---
 permalink: /Updating-Objects-in-the-RIPE-Database/Object-Processing
+lastUpdated: 1702898267000
+prev:
+  text: 02 Accessing the Object Templates
+  link: /Updating-Objects-in-the-RIPE-Database/02-Accessing-the-Object-Templates/
+next:
+  text: 04 Update Operations
+  link: /Updating-Objects-in-the-RIPE-Database/04-Update-Operations/
 ---
 
 # Object Processing

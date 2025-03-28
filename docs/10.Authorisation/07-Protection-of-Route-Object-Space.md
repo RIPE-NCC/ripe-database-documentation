@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Protection-of-Route-Object-Space
+lastUpdated: 1702898267000
+prev:
+  text: 06 Protection of Address Space
+  link: /Authorisation/06-Protection-of-Address-Space/
+next:
+  text: 08 Protection of Reverse Delegation Objects
+  link: /Authorisation/08-Protection-of-Reverse-Delegation-Objects/
 ---
 
 

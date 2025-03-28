@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Getting-All-the-Members-of-Set-objects
+lastUpdated: 1702898267000
+prev:
+  text: 10 Persistent Connections and Keeping State
+  link: /Types-of-Queries/10-Persistent-Connections-and-Keeping-State/
+next:
+  text: 12 Access Control for Queries
+  link: /Types-of-Queries/12-Access-Control-for-Queries/
 ---
 
 # Getting All the Members of Set Objects

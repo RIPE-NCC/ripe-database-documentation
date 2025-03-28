@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Protecting-Membership-of-a-Set
+lastUpdated: 1719383773000
+prev:
+  text: 09 Protection of Objects with Hierarchical Names
+  link: /Authorisation/09-Protection-of-Objects-with-Hierarchical-Names/
+next:
+  text: 11 Referencing an ORGANIZATION Object
+  link: /Authorisation/11-Referencing-an-ORGANIZATION-Object/
 ---
 
 # Protecting Membership of a Set

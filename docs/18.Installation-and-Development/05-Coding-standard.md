@@ -1,5 +1,12 @@
 ---
 permalink: /Installation-and-Development/Coding-standard
+lastUpdated: 1688479960000
+prev:
+  text: 04 Configure MariaDB
+  link: /Installation-and-Development/04-Configure-MariaDB/
+next:
+  text: 06 Installation instructions
+  link: /Installation-and-Development/06-Installation-instructions/
 ---
 
 # Coding standard

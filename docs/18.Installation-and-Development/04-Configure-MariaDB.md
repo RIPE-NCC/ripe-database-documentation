@@ -1,5 +1,12 @@
 ---
 permalink: /Installation-and-Development/Configure-MariaDB
+lastUpdated: 1718096256000
+prev:
+  text: 03 Building whois
+  link: /Installation-and-Development/03-Building-whois/
+next:
+  text: 05 Coding standard
+  link: /Installation-and-Development/05-Coding-standard/
 ---
 
 # Configure MariaDB

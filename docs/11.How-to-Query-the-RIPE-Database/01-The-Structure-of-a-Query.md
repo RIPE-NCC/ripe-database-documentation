@@ -1,5 +1,12 @@
 ---
 permalink: /How-to-Query-the-RIPE-Database/The-Structure-of-a-Query
+lastUpdated: 1688729039000
+prev:
+  text: 16 Request DNSSEC delegation
+  link: /Authorisation/16-Request-DNSSEC-delegation/
+next:
+  text: 02 Web Query Form
+  link: /How-to-Query-the-RIPE-Database/02-Web-Query-Form/
 ---
 
 # The Structure of a Query

@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/IRR-Toolset-Support
+lastUpdated: 1702898267000
+prev:
+  text: 08 Filtering the Query Reponse
+  link: /Types-of-Queries/08-Filtering-the-Query-Reponse/
+next:
+  text: 10 Persistent Connections and Keeping State
+  link: /Types-of-Queries/10-Persistent-Connections-and-Keeping-State/
 ---
 
 # IRR Toolset Support

@@ -1,5 +1,12 @@
 ---
 permalink: /How-to-Query-the-RIPE-Database/Query-Responses
+lastUpdated: 1688729039000
+prev:
+  text: 04 Command Line Queries
+  link: /How-to-Query-the-RIPE-Database/04-Command-Line-Queries/
+next:
+  text: 06 Registration Data Access Protocol
+  link: /How-to-Query-the-RIPE-Database/06-Registration-Data-Access-Protocol/
 ---
 
 # Query Responses

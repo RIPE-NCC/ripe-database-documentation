@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Mirror/Setup-RIPE-Database-Mirror
+lastUpdated: 1721302189000
+prev:
+  text: Geolocation in the RIPE Database
+  link: /Related-Software-and-Tools/Geolocation-in-the-RIPE-Database/
+next:
+  text: 02 Near Real Time Mirroring v3
+  link: /RIPE-Database-Mirror/02-Near-Real-Time-Mirroring-v3/
 ---
 
 # Setup RIPE Database Mirror

@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Protection-of-Address-Space
+lastUpdated: 1688479960000
+prev:
+  text: 05 Protection of AUT NUM Object Space
+  link: /Authorisation/05-Protection-of-AUT-NUM-Object-Space/
+next:
+  text: 07 Protection of Route Object Space
+  link: /Authorisation/07-Protection-of-Route-Object-Space/
 ---
 
 # Protection of Address Space

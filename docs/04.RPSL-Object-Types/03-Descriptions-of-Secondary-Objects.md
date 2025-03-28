@@ -1,5 +1,12 @@
 ---
 permalink: /RPSL-Object-Types/Descriptions-of-Secondary-Objects
+lastUpdated: 1721115393000
+prev:
+  text: 02 Descriptions of Primary Objects
+  link: /RPSL-Object-Types/02-Descriptions-of-Primary-Objects/
+next:
+  text: 01 RIPE Database
+  link: /Available-Databases/01-RIPE-Database/
 ---
 
 # Descriptions of Secondary Objects

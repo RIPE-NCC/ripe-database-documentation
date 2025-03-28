@@ -1,5 +1,13 @@
 ---
 permalink: /What-is-the-RIPE-Database/History-of-the-RIPE-Database
+lastUpdated: 1702898267000
+prev:
+  text: 01 Purpose and Content of the RIPE Database
+  link: /What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database/
+next:
+  text: 03 Personal Data Database Management and Reponsabilities
+  link: >-
+    /What-is-the-RIPE-Database/03-Personal-Data-Database-Management-and-Reponsabilities/
 ---
 
 # History of the RIPE Database

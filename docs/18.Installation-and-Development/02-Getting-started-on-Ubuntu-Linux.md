@@ -1,5 +1,12 @@
 ---
 permalink: /Installation-and-Development/Getting-started-on-Ubuntu-Linux
+lastUpdated: 1688729039000
+prev:
+  text: 01 Getting started on macOS
+  link: /Installation-and-Development/01-Getting-started-on-macOS/
+next:
+  text: 03 Building whois
+  link: /Installation-and-Development/03-Building-whois/
 ---
 
 # Getting started on Ubuntu Linux

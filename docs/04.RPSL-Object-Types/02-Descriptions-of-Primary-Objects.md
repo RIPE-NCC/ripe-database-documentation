@@ -1,5 +1,12 @@
 ---
 permalink: /RPSL-Object-Types/Descriptions-of-Primary-Objects
+lastUpdated: 1732879993000
+prev:
+  text: 01 Description of Attributes Common to all Objects
+  link: /RPSL-Object-Types/01-Description-of-Attributes-Common-to-all-Objects/
+next:
+  text: 03 Descriptions of Secondary Objects
+  link: /RPSL-Object-Types/03-Descriptions-of-Secondary-Objects/
 ---
 
 # Descriptions of Primary Objects

@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Structure/List-of-Secondary-Objects
+lastUpdated: 1721115343000
+prev:
+  text: 03 List of Primary Objects
+  link: /RIPE-Database-Structure/03-List-of-Primary-Objects/
+next:
+  text: 05 The Attributes in Database Objects
+  link: /RIPE-Database-Structure/05-The-Attributes-in-Database-Objects/
 ---
 
 # List of Secondary Objects

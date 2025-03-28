@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Referencing-an-IRT-Object
+lastUpdated: 1688479960000
+prev:
+  text: 11 Referencing an ORGANIZATION Object
+  link: /Authorisation/11-Referencing-an-ORGANIZATION-Object/
+next:
+  text: 13 IRT Object
+  link: /Authorisation/13-IRT-Object/
 ---
 
 # Referencing an IRT Object

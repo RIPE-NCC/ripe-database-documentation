@@ -1,5 +1,12 @@
 ---
 permalink: /Installation-and-Development/Getting-started-on-macOS
+lastUpdated: 1718096256000
+prev:
+  text: How to Recover Access to a Maintainer Object
+  link: /How-to-Recover-Access-to-a-Maintainer-Object/
+next:
+  text: 02 Getting started on Ubuntu Linux
+  link: /Installation-and-Development/02-Getting-started-on-Ubuntu-Linux/
 ---
 
 # Getting Started on macOS

@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-K--API-Keys
+lastUpdated: 1739474757000
+prev:
+  text: 10 Appendix J  Ripe Test Database
+  link: /Appendices/10-Appendix-J--Ripe-Test-Database/
+next:
+  text: Glossary
+  link: /Glossary/
 ---
 
 # Appendix K- API Keys

@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Security-of-Data-Using-Authorisation
+lastUpdated: 1702898267000
+prev:
+  text: 02 Using the Authorisation Methods
+  link: /Authorisation/02-Using-the-Authorisation-Methods/
+next:
+  text: 04 Protection of PERSON and ROLE Objects
+  link: /Authorisation/04-Protection-of-PERSON-and-ROLE-Objects/
 ---
 
 # Security of Data Using Authorisation

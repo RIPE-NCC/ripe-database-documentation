@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Abuse-Contacts
+lastUpdated: 1702898267000
+prev:
+  text: 05 Inverse Queries
+  link: /Types-of-Queries/05-Inverse-Queries/
+next:
+  text: 07 Grouping the RIPE Database Output
+  link: /Types-of-Queries/07-Grouping-the-RIPE-Database-Output/
 ---
 
 # Abuse Contacts

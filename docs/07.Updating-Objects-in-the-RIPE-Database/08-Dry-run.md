@@ -1,5 +1,12 @@
 ---
 permalink: /Updating-Objects-in-the-RIPE-Database/Dry-run
+lastUpdated: 1688479960000
+prev:
+  text: 07 Garbage Collection
+  link: /Updating-Objects-in-the-RIPE-Database/07-Garbage-Collection/
+next:
+  text: 01 Acknowledgment Message
+  link: /Notifications/01-Acknowledgment-Message/
 ---
 
 # Dry-run

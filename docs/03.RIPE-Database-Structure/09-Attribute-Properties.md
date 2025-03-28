@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Structure/Attribute-Properties
+lastUpdated: 1702898267000
+prev:
+  text: 08 Attribute Values
+  link: /RIPE-Database-Structure/08-Attribute-Values/
+next:
+  text: 10 How to Organise Your Data
+  link: /RIPE-Database-Structure/10-How-to-Organise-Your-Data/
 ---
 
 # Attribute Properties

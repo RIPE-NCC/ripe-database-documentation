@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Protection-of-AUT-NUM-Object-Space
+lastUpdated: 1688479960000
+prev:
+  text: 04 Protection of PERSON and ROLE Objects
+  link: /Authorisation/04-Protection-of-PERSON-and-ROLE-Objects/
+next:
+  text: 06 Protection of Address Space
+  link: /Authorisation/06-Protection-of-Address-Space/
 ---
 
 # Protection of AUT-NUM Object Space

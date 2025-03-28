@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Structure/The-Attributes-in-Database-Objects
+lastUpdated: 1688479960000
+prev:
+  text: 04 List of Secondary Objects
+  link: /RIPE-Database-Structure/04-List-of-Secondary-Objects/
+next:
+  text: 06 Attribute Names
+  link: /RIPE-Database-Structure/06-Attribute-Names/
 ---
 
 # The Attributes in Database Objects

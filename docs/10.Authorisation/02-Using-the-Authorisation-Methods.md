@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Using-the-Authorisation-Methods
+lastUpdated: 1721115316000
+prev:
+  text: 01 Authorisation Model
+  link: /Authorisation/01-Authorisation-Model/
+next:
+  text: 03 Security of Data Using Authorisation
+  link: /Authorisation/03-Security-of-Data-Using-Authorisation/
 ---
 
 

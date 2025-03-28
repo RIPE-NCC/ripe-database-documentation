@@ -1,5 +1,12 @@
 ---
 permalink: /Notifications/Notification-Messages
+lastUpdated: 1688637236000
+prev:
+  text: 01 Acknowledgment Message
+  link: /Notifications/01-Acknowledgment-Message/
+next:
+  text: 01 Authorisation Model
+  link: /Authorisation/01-Authorisation-Model/
 ---
 
 # Notification Messages

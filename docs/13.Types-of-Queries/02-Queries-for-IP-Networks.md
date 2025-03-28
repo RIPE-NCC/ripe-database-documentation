@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Queries-for-IP-Networks
+lastUpdated: 1702898267000
+prev:
+  text: 01 Queries Using Primary and Lookup Keys
+  link: /Types-of-Queries/01-Queries-Using-Primary-and-Lookup-Keys/
+next:
+  text: 03 Queries for Autonomous Systems
+  link: /Types-of-Queries/03-Queries-for-Autonomous-Systems/
 ---
 
 # Queries for IP Networks

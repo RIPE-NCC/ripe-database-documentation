@@ -1,5 +1,12 @@
 ---
 permalink: /Updating-Objects-in-the-RIPE-Database/Format-of-the-Update-Message
+lastUpdated: 1702898267000
+prev:
+  text: 04 Email Updates
+  link: /Update-Methods/04-Email-Updates/
+next:
+  text: 02 Accessing the Object Templates
+  link: /Updating-Objects-in-the-RIPE-Database/02-Accessing-the-Object-Templates/
 ---
 
 # Format of the Update Message

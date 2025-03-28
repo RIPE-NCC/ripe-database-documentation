@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Historical-Queries
+lastUpdated: 1688479960000
+prev:
+  text: 15 Referenced Objects in Query Response
+  link: /Types-of-Queries/15-Referenced-Objects-in-Query-Response/
+next:
+  text: Geolocation in the RIPE Database
+  link: /Related-Software-and-Tools/Geolocation-in-the-RIPE-Database/
 ---
 
 # Historical Queries

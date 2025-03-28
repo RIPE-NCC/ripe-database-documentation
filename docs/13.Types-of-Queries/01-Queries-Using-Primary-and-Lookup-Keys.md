@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Queries-Using-Primary-and-Lookup-Keys
+lastUpdated: 1688729039000
+prev:
+  text: 06 Registration Data Access Protocol
+  link: /How-to-Query-the-RIPE-Database/06-Registration-Data-Access-Protocol/
+next:
+  text: 02 Queries for IP Networks
+  link: /Types-of-Queries/02-Queries-for-IP-Networks/
 ---
 
 # Queries Using Primary and Lookup Keys

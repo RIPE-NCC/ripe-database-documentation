@@ -1,5 +1,12 @@
 ---
 permalink: /Installation-and-Development/Building-whois
+lastUpdated: 1718096256000
+prev:
+  text: 02 Getting started on Ubuntu Linux
+  link: /Installation-and-Development/02-Getting-started-on-Ubuntu-Linux/
+next:
+  text: 04 Configure MariaDB
+  link: /Installation-and-Development/04-Configure-MariaDB/
 ---
 
 # Building whois

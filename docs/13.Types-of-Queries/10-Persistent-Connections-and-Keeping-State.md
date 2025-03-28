@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Persistent-Connections-and-Keeping-State
+lastUpdated: 1702898267000
+prev:
+  text: 09 IRR Toolset Support
+  link: /Types-of-Queries/09-IRR-Toolset-Support/
+next:
+  text: 11 Getting All the Members of Set objects
+  link: /Types-of-Queries/11-Getting-All-the-Members-of-Set-objects/
 ---
 
 # Persistent Connections and Keeping State

@@ -1,5 +1,12 @@
 ---
 permalink: /How-to-Query-the-RIPE-Database/Command-Line-Queries
+lastUpdated: 1688479960000
+prev:
+  text: 03 RESTful API Queries
+  link: /How-to-Query-the-RIPE-Database/03-RESTful-API-Queries/
+next:
+  text: 05 Query Responses
+  link: /How-to-Query-the-RIPE-Database/05-Query-Responses/
 ---
 
 # Command Line Queries

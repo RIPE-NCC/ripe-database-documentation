@@ -1,5 +1,13 @@
 ---
 permalink: /RIPE-Database-Structure/Database-Object
+lastUpdated: 1688729039000
+prev:
+  text: 03 Personal Data Database Management and Reponsabilities
+  link: >-
+    /What-is-the-RIPE-Database/03-Personal-Data-Database-Management-and-Reponsabilities/
+next:
+  text: 02 Primary and Secondary Objects
+  link: /RIPE-Database-Structure/02-Primary-and-Secondary-Objects/
 ---
 
 # Database Objects

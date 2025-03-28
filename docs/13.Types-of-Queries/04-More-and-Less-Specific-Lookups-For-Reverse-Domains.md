@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/More-and-Less-Specific-Lookups-For-Reverse-Domains
+lastUpdated: 1702898267000
+prev:
+  text: 03 Queries for Autonomous Systems
+  link: /Types-of-Queries/03-Queries-for-Autonomous-Systems/
+next:
+  text: 05 Inverse Queries
+  link: /Types-of-Queries/05-Inverse-Queries/
 ---
 
 # More and Less Specific Lookups For Reverse Domains

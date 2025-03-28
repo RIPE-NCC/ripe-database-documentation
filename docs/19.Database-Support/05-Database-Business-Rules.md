@@ -1,5 +1,12 @@
 ---
 permalink: /Database-Support/Database-Business-Rules
+lastUpdated: 1715846727000
+prev:
+  text: 04 Configuring Reverse DNS
+  link: /Database-Support/04-Configuring-Reverse-DNS/
+next:
+  text: 06 Highlighted Values in the RIPE Database
+  link: /Database-Support/06-Highlighted-Values-in-the-RIPE-Database/
 ---
 
 # Database Business Rules

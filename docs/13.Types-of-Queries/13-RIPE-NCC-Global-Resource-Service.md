@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/RIPE-NCC-Global-Resource-Service
+lastUpdated: 1702898267000
+prev:
+  text: 12 Access Control for Queries
+  link: /Types-of-Queries/12-Access-Control-for-Queries/
+next:
+  text: 14 Other Query Flags
+  link: /Types-of-Queries/14-Other-Query-Flags/
 ---
 
 # RIPE NCC Global Resource Service

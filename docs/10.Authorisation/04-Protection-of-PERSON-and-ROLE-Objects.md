@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Protection-of-PERSON-and-ROLE-Objects
+lastUpdated: 1695901960000
+prev:
+  text: 03 Security of Data Using Authorisation
+  link: /Authorisation/03-Security-of-Data-Using-Authorisation/
+next:
+  text: 05 Protection of AUT NUM Object Space
+  link: /Authorisation/05-Protection-of-AUT-NUM-Object-Space/
 ---
 
 # Protection of PERSON and ROLE Objects

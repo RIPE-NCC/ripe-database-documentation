@@ -2,15 +2,22 @@
 theme: svg theme
 title: Appendix-D--Route-Object-Creation-Flowchart
 permalink: /Appendices/Appendix-D--Route-Object-Creation-Flowchart
+lastUpdated: 1716891946000
+prev:
+  text: 03 Appendix C  RIPE Database Query Server Response Codes and Messages
+  link: >-
+    /Appendices/03-Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages/
+next:
+  text: 05 Appendix E  Domain Object Creation Flowchart
+  link: /Appendices/05-Appendix-E--Domain-Object-Creation-Flowchart/
 ---
 <script setup>
-    import svgZoomComponent from '../.vuepress/components/SvgZoom.vue'
+    import svgZoomComponent from '@components/SvgZoom.vue'
 </script>
-<svgZoomComponent />
 
 # Route Object Creation Flowchart
 
-```mermaidjs
+```mermaid
 flowchart TB
 A[Begin]:::initLastNodes --> B{Is there an exact <br> match route?}:::decisionNodes
 

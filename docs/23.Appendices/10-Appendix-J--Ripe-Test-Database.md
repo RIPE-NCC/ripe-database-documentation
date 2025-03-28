@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-J--Ripe-Test-Database
+lastUpdated: 1728041302000
+prev:
+  text: 09 Appendix I  Client Certificate Authentication
+  link: /Appendices/09-Appendix-I--Client-Certificate-Authentication/
+next:
+  text: 11 Appendix K  API Keys
+  link: /Appendices/11-Appendix-K--API-Keys/
 ---
 
 # Appendix J- Ripe Test Database

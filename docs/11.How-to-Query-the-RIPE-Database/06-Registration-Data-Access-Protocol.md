@@ -1,5 +1,12 @@
 ---
 permalink: /How-to-Query-the-RIPE-Database/Registration-Data-Access-Protocol
+lastUpdated: 1738675914000
+prev:
+  text: 05 Query Responses
+  link: /How-to-Query-the-RIPE-Database/05-Query-Responses/
+next:
+  text: 01 Queries Using Primary and Lookup Keys
+  link: /Types-of-Queries/01-Queries-Using-Primary-and-Lookup-Keys/
 ---
 
 # Registration Data Access Protocol (RDAP)

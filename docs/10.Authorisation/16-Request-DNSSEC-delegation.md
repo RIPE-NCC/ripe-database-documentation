@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Request-DNSSEC-delegation
+lastUpdated: 1695884973000
+prev:
+  text: 15 Request ENUM delegation
+  link: /Authorisation/15-Request-ENUM-delegation/
+next:
+  text: 01 The Structure of a Query
+  link: /How-to-Query-the-RIPE-Database/01-The-Structure-of-a-Query/
 ---
 
 # DNSSEC Delegations

@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-A--Syntax-of-Object-Attributes
+lastUpdated: 1715846727000
+prev:
+  text: FAQ
+  link: /FAQ/
+next:
+  text: 02 Appendix B  Copyright Statement
+  link: /Appendices/02-Appendix-B--Copyright-Statement/
 ---
 
 # Appendix A- Syntax of Object Attributes

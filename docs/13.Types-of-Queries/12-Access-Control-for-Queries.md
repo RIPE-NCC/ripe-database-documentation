@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Access-Control-for-Queries
+lastUpdated: 1706009739000
+prev:
+  text: 11 Getting All the Members of Set objects
+  link: /Types-of-Queries/11-Getting-All-the-Members-of-Set-objects/
+next:
+  text: 13 RIPE NCC Global Resource Service
+  link: /Types-of-Queries/13-RIPE-NCC-Global-Resource-Service/
 ---
 
 # Access Control for Queries

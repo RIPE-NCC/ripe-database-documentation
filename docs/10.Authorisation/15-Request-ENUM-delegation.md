@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Request-ENUM-delegation
+lastUpdated: 1688729039000
+prev:
+  text: 14 Force Delete Functionality
+  link: /Authorisation/14-Force-Delete-Functionality/
+next:
+  text: 16 Request DNSSEC delegation
+  link: /Authorisation/16-Request-DNSSEC-delegation/
 ---
 
 # Request ENUM Delegation

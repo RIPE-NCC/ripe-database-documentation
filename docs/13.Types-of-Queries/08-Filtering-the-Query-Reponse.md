@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Filtering-the-Query-Reponse
+lastUpdated: 1702898267000
+prev:
+  text: 07 Grouping the RIPE Database Output
+  link: /Types-of-Queries/07-Grouping-the-RIPE-Database-Output/
+next:
+  text: 09 IRR Toolset Support
+  link: /Types-of-Queries/09-IRR-Toolset-Support/
 ---
 
 # Filtering the Query Response

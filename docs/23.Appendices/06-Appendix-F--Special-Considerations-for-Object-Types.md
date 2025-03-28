@@ -1,5 +1,12 @@
 ---
 permalink: /Appendices/Appendix-F--Special-Considerations-for-Object-Types
+lastUpdated: 1695885054000
+prev:
+  text: 05 Appendix E  Domain Object Creation Flowchart
+  link: /Appendices/05-Appendix-E--Domain-Object-Creation-Flowchart/
+next:
+  text: 07 Appendix G  Object Types with Personal Data
+  link: /Appendices/07-Appendix-G--Object-Types-with-Personal-Data/
 ---
 
 # Appendix F- Special Considerations for Object Types

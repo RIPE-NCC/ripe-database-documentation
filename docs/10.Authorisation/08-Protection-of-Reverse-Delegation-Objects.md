@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Protection-of-Reverse-Delegation-Objects
+lastUpdated: 1702898267000
+prev:
+  text: 07 Protection of Route Object Space
+  link: /Authorisation/07-Protection-of-Route-Object-Space/
+next:
+  text: 09 Protection of Objects with Hierarchical Names
+  link: /Authorisation/09-Protection-of-Objects-with-Hierarchical-Names/
 ---
 
 # Protection of Reverse Delegation Objects

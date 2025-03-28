@@ -1,5 +1,12 @@
 ---
 permalink: /Update-Methods/Webupdates
+lastUpdated: 1702898267000
+prev:
+  text: 01 RESTful API
+  link: /Update-Methods/01-RESTful-API/
+next:
+  text: 03 Syncupdates
+  link: /Update-Methods/03-Syncupdates/
 ---
 
 # Webupdates

@@ -1,5 +1,12 @@
 ---
 permalink: /Database-Support/Highlighted-Values-in-the-RIPE-Database
+lastUpdated: 1688479960000
+prev:
+  text: 05 Database Business Rules
+  link: /Database-Support/05-Database-Business-Rules/
+next:
+  text: 07 Create First Role Mntner
+  link: /Database-Support/07-Create-First-Role-Mntner/
 ---
 
 # Highlighted Values in the RIPE Database

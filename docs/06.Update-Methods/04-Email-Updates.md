@@ -1,5 +1,12 @@
 ---
 permalink: /Update-Methods/Email-Updates
+lastUpdated: 1702898267000
+prev:
+  text: 03 Syncupdates
+  link: /Update-Methods/03-Syncupdates/
+next:
+  text: 01 Format of the Update Message
+  link: /Updating-Objects-in-the-RIPE-Database/01-Format-of-the-Update-Message/
 ---
 
 # Email Updates

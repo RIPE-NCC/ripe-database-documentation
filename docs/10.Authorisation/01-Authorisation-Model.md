@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/Authorisation-Model
+lastUpdated: 1721115280000
+prev:
+  text: 02 Notification Messages
+  link: /Notifications/02-Notification-Messages/
+next:
+  text: 02 Using the Authorisation Methods
+  link: /Authorisation/02-Using-the-Authorisation-Methods/
 ---
 
 # Authorisation Model

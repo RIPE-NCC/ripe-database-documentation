@@ -1,5 +1,12 @@
 ---
 permalink: /How-to-Query-the-RIPE-Database/Web-Query-Form
+lastUpdated: 1695901960000
+prev:
+  text: 01 The Structure of a Query
+  link: /How-to-Query-the-RIPE-Database/01-The-Structure-of-a-Query/
+next:
+  text: 03 RESTful API Queries
+  link: /How-to-Query-the-RIPE-Database/03-RESTful-API-Queries/
 ---
 
 # Web Query Form

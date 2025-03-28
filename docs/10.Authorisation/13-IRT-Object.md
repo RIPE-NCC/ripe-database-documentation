@@ -1,5 +1,12 @@
 ---
 permalink: /Authorisation/IRT-Object
+lastUpdated: 1688637236000
+prev:
+  text: 12 Referencing an IRT Object
+  link: /Authorisation/12-Referencing-an-IRT-Object/
+next:
+  text: 14 Force Delete Functionality
+  link: /Authorisation/14-Force-Delete-Functionality/
 ---
 
 # IRT Object

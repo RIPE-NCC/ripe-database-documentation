@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Structure/REST-API-Data-model
+lastUpdated: 1688729039000
+prev:
+  text: 10 How to Organise Your Data
+  link: /RIPE-Database-Structure/10-How-to-Organise-Your-Data/
+next:
+  text: 01 Description of Attributes Common to all Objects
+  link: /RPSL-Object-Types/01-Description-of-Attributes-Common-to-all-Objects/
 ---
 
 # REST API Data model

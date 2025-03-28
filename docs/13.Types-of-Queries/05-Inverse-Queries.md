@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Inverse-Queries
+lastUpdated: 1702898267000
+prev:
+  text: 04 More and Less Specific Lookups For Reverse Domains
+  link: /Types-of-Queries/04-More-and-Less-Specific-Lookups-For-Reverse-Domains/
+next:
+  text: 06 Abuse Contacts
+  link: /Types-of-Queries/06-Abuse-Contacts/
 ---
 
 # Inverse Queries

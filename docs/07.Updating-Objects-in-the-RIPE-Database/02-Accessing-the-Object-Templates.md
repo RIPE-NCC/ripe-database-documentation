@@ -1,5 +1,12 @@
 ---
 permalink: /Updating-Objects-in-the-RIPE-Database/Accessing-the-Object-Templates
+lastUpdated: 1715846727000
+prev:
+  text: 01 Format of the Update Message
+  link: /Updating-Objects-in-the-RIPE-Database/01-Format-of-the-Update-Message/
+next:
+  text: 03 Object Processing
+  link: /Updating-Objects-in-the-RIPE-Database/03-Object-Processing/
 ---
 
 # Accessing the Object Templates

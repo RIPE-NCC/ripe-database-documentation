@@ -1,5 +1,12 @@
 ---
 permalink: /RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4
+lastUpdated: 1721302189000
+prev:
+  text: 02 Near Real Time Mirroring v3
+  link: /RIPE-Database-Mirror/02-Near-Real-Time-Mirroring-v3/
+next:
+  text: 04 Access to NRTM
+  link: /RIPE-Database-Mirror/04-Access-to-NRTM/
 ---
 
 

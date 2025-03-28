@@ -1,5 +1,12 @@
 ---
 permalink: /Update-Methods/RESTful-API
+lastUpdated: 1739807592000
+prev:
+  text: 04 Experimental Databases
+  link: /Available-Databases/04-Experimental-Databases/
+next:
+  text: 02 Webupdates
+  link: /Update-Methods/02-Webupdates/
 ---
 
 # RIPE Database RESTful API

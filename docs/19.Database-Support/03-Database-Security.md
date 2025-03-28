@@ -1,5 +1,12 @@
 ---
 permalink: /Database-Support/Database-Security
+lastUpdated: 1717166249000
+prev:
+  text: 02 Clean up of Unreferenced Data
+  link: /Database-Support/02-Clean-up-of-Unreferenced-Data/
+next:
+  text: 04 Configuring Reverse DNS
+  link: /Database-Support/04-Configuring-Reverse-DNS/
 ---
 
 # RIPE Database Security

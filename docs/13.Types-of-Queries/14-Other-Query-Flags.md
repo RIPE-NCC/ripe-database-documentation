@@ -1,5 +1,12 @@
 ---
 permalink: /Types-of-Queries/Other-Query-Flags
+lastUpdated: 1715846727000
+prev:
+  text: 13 RIPE NCC Global Resource Service
+  link: /Types-of-Queries/13-RIPE-NCC-Global-Resource-Service/
+next:
+  text: 15 Referenced Objects in Query Response
+  link: /Types-of-Queries/15-Referenced-Objects-in-Query-Response/
 ---
 
 # Other Query Flags

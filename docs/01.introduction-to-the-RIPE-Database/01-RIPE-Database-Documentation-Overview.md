@@ -1,5 +1,10 @@
 ---
 permalink: /introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview
+lastUpdated: 1688729039000
+prev: {}
+next:
+  text: 02 Intended Audience
+  link: /introduction-to-the-RIPE-Database/02-Intended-Audience/
 ---
 
 # RIPE Database Documentation Overview

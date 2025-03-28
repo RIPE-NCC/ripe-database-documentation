@@ -1,5 +1,13 @@
 ---
 permalink: /Updating-Objects-in-the-RIPE-Database/Historical-Data
+lastUpdated: 1688729039000
+prev:
+  text: 04 Update Operations
+  link: /Updating-Objects-in-the-RIPE-Database/04-Update-Operations/
+next:
+  text: 06 Special Considerations for Object Creation
+  link: >-
+    /Updating-Objects-in-the-RIPE-Database/06-Special-Considerations-for-Object-Creation/
 ---
 
 # Historical Data
