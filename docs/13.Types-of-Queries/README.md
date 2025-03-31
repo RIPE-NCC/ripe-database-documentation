@@ -1,6 +1,6 @@
 ---
 permalink: /Types-of-Queries
-lastUpdated: 1743175070000
+lastUpdated: 1743422196000
 prev:
   text: Historical Queries
   link: /Types-of-Queries/Historical-Queries/
