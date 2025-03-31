@@ -19,7 +19,7 @@ The RIPE Database contains registration details of IP addresses and AS Numbers o
 
 What can the RIPE NCC do about spam? Who can I report this to? How do I take things further?
 [What you can do about network abuse](https://www.ripe.net/support/abuse/how-to-find-abuse-contact-information)
-![](~@imgs/db_support.png)
+![](/imgs/db_support.png)
 
 
 ## Database Working Group
