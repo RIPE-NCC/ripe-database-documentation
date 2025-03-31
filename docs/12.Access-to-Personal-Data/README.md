@@ -1,12 +1,12 @@
 ---
 permalink: /Access-to-Personal-Data
-lastUpdated: 1705665572000
+lastUpdated: 1743175070000
 prev:
   text: README
   link: /How-to-Query-the-RIPE-Database/README/
 next:
-  text: 01 Queries Using Primary and Lookup Keys
-  link: /Types-of-Queries/01-Queries-Using-Primary-and-Lookup-Keys/
+  text: Queries Using Primary and Lookup Keys
+  link: /Types-of-Queries/Queries-Using-Primary-and-Lookup-Keys/
 ---
 
 # Access to Personal Data

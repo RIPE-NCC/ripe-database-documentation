@@ -1,12 +1,12 @@
 ---
 permalink: /Notifications
-lastUpdated: 1688479960000
+lastUpdated: 1743175070000
 prev:
-  text: 02 Notification Messages
-  link: /Notifications/02-Notification-Messages/
+  text: Notification Messages
+  link: /Notifications/Notification-Messages/
 next:
-  text: 01 Authorisation Model
-  link: /Authorisation/01-Authorisation-Model/
+  text: Authorisation Model
+  link: /Authorisation/Authorisation-Model/
 ---
 
 # Notifications

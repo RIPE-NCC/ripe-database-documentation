@@ -1,12 +1,12 @@
 ---
 permalink: /Authorisation
-lastUpdated: 1688479960000
+lastUpdated: 1743175070000
 prev:
-  text: 16 Request DNSSEC delegation
-  link: /Authorisation/16-Request-DNSSEC-delegation/
+  text: Request DNSSEC delegation
+  link: /Authorisation/Request-DNSSEC-delegation/
 next:
-  text: 01 The Structure of a Query
-  link: /How-to-Query-the-RIPE-Database/01-The-Structure-of-a-Query/
+  text: The Structure of a Query
+  link: /How-to-Query-the-RIPE-Database/The-Structure-of-a-Query/
 ---
 
 # Authorisation

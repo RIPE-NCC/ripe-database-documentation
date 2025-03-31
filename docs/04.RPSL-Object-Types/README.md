@@ -1,12 +1,12 @@
 ---
 permalink: /RPSL-Object-Types
-lastUpdated: 1688479960000
+lastUpdated: 1743175070000
 prev:
-  text: 03 Descriptions of Secondary Objects
-  link: /RPSL-Object-Types/03-Descriptions-of-Secondary-Objects/
+  text: Descriptions of Secondary Objects
+  link: /RPSL-Object-Types/Descriptions-of-Secondary-Objects/
 next:
-  text: 01 RIPE Database
-  link: /Available-Databases/01-RIPE-Database/
+  text: RIPE Database
+  link: /Available-Databases/RIPE-Database/
 ---
 
 # RPSL Object Types

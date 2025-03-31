@@ -1,9 +1,9 @@
 ---
 permalink: /Database-Support
-lastUpdated: 1688637236000
+lastUpdated: 1743175070000
 prev:
-  text: 07 Create First Role Mntner
-  link: /Database-Support/07-Create-First-Role-Mntner/
+  text: Create First Role Mntner
+  link: /Database-Support/Create-First-Role-Mntner/
 next:
   text: Removal of personal data
   link: /Removal-of-personal-data/

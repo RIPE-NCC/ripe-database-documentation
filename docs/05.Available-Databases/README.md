@@ -1,12 +1,12 @@
 ---
 permalink: /Available-Databases
-lastUpdated: 1688479960000
+lastUpdated: 1743175070000
 prev:
-  text: 04 Experimental Databases
-  link: /Available-Databases/04-Experimental-Databases/
+  text: Experimental Databases
+  link: /Available-Databases/Experimental-Databases/
 next:
-  text: 01 RESTful API
-  link: /Update-Methods/01-RESTful-API/
+  text: RESTful API
+  link: /Update-Methods/RESTful-API/
 ---
 
 # Available Databases

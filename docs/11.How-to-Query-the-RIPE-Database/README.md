@@ -1,9 +1,9 @@
 ---
 permalink: /How-to-Query-the-RIPE-Database
-lastUpdated: 1722429042000
+lastUpdated: 1743175070000
 prev:
-  text: 06 Registration Data Access Protocol
-  link: /How-to-Query-the-RIPE-Database/06-Registration-Data-Access-Protocol/
+  text: Registration Data Access Protocol
+  link: /How-to-Query-the-RIPE-Database/Registration-Data-Access-Protocol/
 next:
   text: README
   link: /Access-to-Personal-Data/README/

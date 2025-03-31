@@ -1,12 +1,12 @@
 ---
 permalink: /Set-Objects
-lastUpdated: 1702898267000
+lastUpdated: 1743175070000
 prev:
-  text: 08 Dry run
-  link: /Updating-Objects-in-the-RIPE-Database/08-Dry-run/
+  text: Dry run
+  link: /Updating-Objects-in-the-RIPE-Database/Dry-run/
 next:
-  text: 01 Acknowledgment Message
-  link: /Notifications/01-Acknowledgment-Message/
+  text: Acknowledgment Message
+  link: /Notifications/Acknowledgment-Message/
 ---
 
 # Set Objects

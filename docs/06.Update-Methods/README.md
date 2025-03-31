@@ -1,12 +1,12 @@
 ---
 permalink: /Update-Methods
-lastUpdated: 1688479960000
+lastUpdated: 1743175070000
 prev:
-  text: 04 Email Updates
-  link: /Update-Methods/04-Email-Updates/
+  text: Email Updates
+  link: /Update-Methods/Email-Updates/
 next:
-  text: 01 Format of the Update Message
-  link: /Updating-Objects-in-the-RIPE-Database/01-Format-of-the-Update-Message/
+  text: Format of the Update Message
+  link: /Updating-Objects-in-the-RIPE-Database/Format-of-the-Update-Message/
 ---
 
 # Update Methods

@@ -1,9 +1,9 @@
 ---
 permalink: /Types-of-Queries
-lastUpdated: 1702898267000
+lastUpdated: 1743175070000
 prev:
-  text: 16 Historical Queries
-  link: /Types-of-Queries/16-Historical-Queries/
+  text: Historical Queries
+  link: /Types-of-Queries/Historical-Queries/
 next:
   text: Geolocation in the RIPE Database
   link: /Related-Software-and-Tools/Geolocation-in-the-RIPE-Database/

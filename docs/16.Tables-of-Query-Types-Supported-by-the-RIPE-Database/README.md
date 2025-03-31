@@ -1,9 +1,9 @@
 ---
 permalink: /Tables-of-Query-Types-Supported-by-the-RIPE-Database
-lastUpdated: 1715846727000
+lastUpdated: 1743175070000
 prev:
-  text: 04 Access to NRTM
-  link: /RIPE-Database-Mirror/04-Access-to-NRTM/
+  text: Access to NRTM
+  link: /RIPE-Database-Mirror/Access-to-NRTM/
 next:
   text: How to Recover Access to a Maintainer Object
   link: /How-to-Recover-Access-to-a-Maintainer-Object/

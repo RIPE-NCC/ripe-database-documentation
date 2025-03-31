@@ -1,12 +1,12 @@
 ---
 permalink: /Related-Software-and-Tools
-lastUpdated: 1688729039000
+lastUpdated: 1743175070000
 prev:
   text: Geolocation in the RIPE Database
   link: /Related-Software-and-Tools/Geolocation-in-the-RIPE-Database/
 next:
-  text: 01 Setup RIPE Database Mirror
-  link: /RIPE-Database-Mirror/01-Setup-RIPE-Database-Mirror/
+  text: Setup RIPE Database Mirror
+  link: /RIPE-Database-Mirror/Setup-RIPE-Database-Mirror/
 ---
 
 # Related Software and Tools
