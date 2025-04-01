@@ -4,3 +4,4 @@ yarn.lock
 builds
 .idea/
 ripe-docs.iml
+.vitepress/dist/

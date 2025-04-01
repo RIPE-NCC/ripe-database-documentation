@@ -1,6 +1,6 @@
 ---
 permalink: /Authorisation
-lastUpdated: 1743498918000
+lastUpdated: 1743499939000
 prev:
   text: Request DNSSEC delegation
   link: /Authorisation/Request-DNSSEC-delegation/

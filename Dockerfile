@@ -1,5 +1,5 @@
 # Build stage
-FROM node:16 AS build
+FROM node:18 AS build
 
 WORKDIR /src
 
@@ -12,6 +12,12 @@ COPY ./docs ./docs
 # vuepress/last-updated plugin depends on .git
 COPY ./.git ./.git
 
+COPY ./.vitepress ./.vitepress
+
+COPY ./vpscripts ./vpscripts
+
+COPY ./docs/public/imgs ./imgs
+
 RUN npm run docs:build
 
 # Final stage
@@ -22,7 +28,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY http.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build /src/builds/docs /usr/share/nginx/html
+COPY --from=build /src/.vitepress/dist /usr/share/nginx/html
 
 WORKDIR /usr/share/nginx/html
 
