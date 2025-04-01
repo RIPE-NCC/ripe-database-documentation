@@ -1,6 +1,6 @@
 ---
 permalink: /RPSL-Object-Types
-lastUpdated: 1743427745000
+lastUpdated: 1743494265000
 prev:
   text: Descriptions of Secondary Objects
   link: /RPSL-Object-Types/Descriptions-of-Secondary-Objects/

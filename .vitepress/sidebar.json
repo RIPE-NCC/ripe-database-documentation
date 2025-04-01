@@ -24,16 +24,16 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Purpose and Content of the RIPE Database",
-        "link": "/What-is-the-RIPE-Database/01-Purpose-and-Content-of-the-RIPE-Database/"
+        "text": "Purpose and Content of the RIPE Database",
+        "link": "/What-is-the-RIPE-Database/Purpose-and-Content-of-the-RIPE-Database/"
       },
       {
-        "text": "02 History of the RIPE Database",
-        "link": "/What-is-the-RIPE-Database/02-History-of-the-RIPE-Database/"
+        "text": "History of the RIPE Database",
+        "link": "/What-is-the-RIPE-Database/History-of-the-RIPE-Database/"
       },
       {
-        "text": "03 Personal Data Database Management and Reponsabilities",
-        "link": "/What-is-the-RIPE-Database/03-Personal-Data-Database-Management-and-Reponsabilities/"
+        "text": "Personal Data Database Management and Reponsabilities",
+        "link": "/What-is-the-RIPE-Database/Personal-Data-Database-Management-and-Reponsabilities/"
       }
     ]
   },
@@ -43,48 +43,48 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Database Object",
-        "link": "/RIPE-Database-Structure/01-Database-Object/"
+        "text": "Database Object",
+        "link": "/RIPE-Database-Structure/Database-Object/"
       },
       {
-        "text": "02 Primary and Secondary Objects",
-        "link": "/RIPE-Database-Structure/02-Primary-and-Secondary-Objects/"
+        "text": "Primary and Secondary Objects",
+        "link": "/RIPE-Database-Structure/Primary-and-Secondary-Objects/"
       },
       {
-        "text": "03 List of Primary Objects",
-        "link": "/RIPE-Database-Structure/03-List-of-Primary-Objects/"
+        "text": "List of Primary Objects",
+        "link": "/RIPE-Database-Structure/List-of-Primary-Objects/"
       },
       {
-        "text": "04 List of Secondary Objects",
-        "link": "/RIPE-Database-Structure/04-List-of-Secondary-Objects/"
+        "text": "List of Secondary Objects",
+        "link": "/RIPE-Database-Structure/List-of-Secondary-Objects/"
       },
       {
-        "text": "05 The Attributes in Database Objects",
-        "link": "/RIPE-Database-Structure/05-The-Attributes-in-Database-Objects/"
+        "text": "The Attributes in Database Objects",
+        "link": "/RIPE-Database-Structure/The-Attributes-in-Database-Objects/"
       },
       {
-        "text": "06 Attribute Names",
-        "link": "/RIPE-Database-Structure/06-Attribute-Names/"
+        "text": "Attribute Names",
+        "link": "/RIPE-Database-Structure/Attribute-Names/"
       },
       {
-        "text": "07 Attributes in an Object",
-        "link": "/RIPE-Database-Structure/07-Attributes-in-an-Object/"
+        "text": "Attributes in an Object",
+        "link": "/RIPE-Database-Structure/Attributes-in-an-Object/"
       },
       {
-        "text": "08 Attribute Values",
-        "link": "/RIPE-Database-Structure/08-Attribute-Values/"
+        "text": "Attribute Values",
+        "link": "/RIPE-Database-Structure/Attribute-Values/"
       },
       {
-        "text": "09 Attribute Properties",
-        "link": "/RIPE-Database-Structure/09-Attribute-Properties/"
+        "text": "Attribute Properties",
+        "link": "/RIPE-Database-Structure/Attribute-Properties/"
       },
       {
-        "text": "10 How to Organise Your Data",
-        "link": "/RIPE-Database-Structure/10-How-to-Organise-Your-Data/"
+        "text": "How to Organise Your Data",
+        "link": "/RIPE-Database-Structure/How-to-Organise-Your-Data/"
       },
       {
-        "text": "11 REST API Data model",
-        "link": "/RIPE-Database-Structure/11-REST-API-Data-model/"
+        "text": "REST API Data model",
+        "link": "/RIPE-Database-Structure/REST-API-Data-model/"
       }
     ]
   },
@@ -94,16 +94,16 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Description of Attributes Common to all Objects",
-        "link": "/RPSL-Object-Types/01-Description-of-Attributes-Common-to-all-Objects/"
+        "text": "Description of Attributes Common to all Objects",
+        "link": "/RPSL-Object-Types/Description-of-Attributes-Common-to-all-Objects/"
       },
       {
-        "text": "02 Descriptions of Primary Objects",
-        "link": "/RPSL-Object-Types/02-Descriptions-of-Primary-Objects/"
+        "text": "Descriptions of Primary Objects",
+        "link": "/RPSL-Object-Types/Descriptions-of-Primary-Objects/"
       },
       {
-        "text": "03 Descriptions of Secondary Objects",
-        "link": "/RPSL-Object-Types/03-Descriptions-of-Secondary-Objects/"
+        "text": "Descriptions of Secondary Objects",
+        "link": "/RPSL-Object-Types/Descriptions-of-Secondary-Objects/"
       },
       {
         "text": "README",
@@ -117,20 +117,20 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 RIPE Database",
-        "link": "/Available-Databases/01-RIPE-Database/"
+        "text": "RIPE Database",
+        "link": "/Available-Databases/RIPE-Database/"
       },
       {
-        "text": "02 TEST Database",
-        "link": "/Available-Databases/02-TEST-Database/"
+        "text": "TEST Database",
+        "link": "/Available-Databases/TEST-Database/"
       },
       {
-        "text": "03 Release Candidate Database",
-        "link": "/Available-Databases/03-Release-Candidate-Database/"
+        "text": "Release Candidate Database",
+        "link": "/Available-Databases/Release-Candidate-Database/"
       },
       {
-        "text": "04 Experimental Databases",
-        "link": "/Available-Databases/04-Experimental-Databases/"
+        "text": "Experimental Databases",
+        "link": "/Available-Databases/Experimental-Databases/"
       },
       {
         "text": "README",
@@ -144,20 +144,20 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 RESTful API",
-        "link": "/Update-Methods/01-RESTful-API/"
+        "text": "RESTful API",
+        "link": "/Update-Methods/RESTful-API/"
       },
       {
-        "text": "02 Webupdates",
-        "link": "/Update-Methods/02-Webupdates/"
+        "text": "Webupdates",
+        "link": "/Update-Methods/Webupdates/"
       },
       {
-        "text": "03 Syncupdates",
-        "link": "/Update-Methods/03-Syncupdates/"
+        "text": "Syncupdates",
+        "link": "/Update-Methods/Syncupdates/"
       },
       {
-        "text": "04 Email Updates",
-        "link": "/Update-Methods/04-Email-Updates/"
+        "text": "Email Updates",
+        "link": "/Update-Methods/Email-Updates/"
       },
       {
         "text": "README",
@@ -171,36 +171,36 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Format of the Update Message",
-        "link": "/Updating-Objects-in-the-RIPE-Database/01-Format-of-the-Update-Message/"
+        "text": "Format of the Update Message",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Format-of-the-Update-Message/"
       },
       {
-        "text": "02 Accessing the Object Templates",
-        "link": "/Updating-Objects-in-the-RIPE-Database/02-Accessing-the-Object-Templates/"
+        "text": "Accessing the Object Templates",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Accessing-the-Object-Templates/"
       },
       {
-        "text": "03 Object Processing",
-        "link": "/Updating-Objects-in-the-RIPE-Database/03-Object-Processing/"
+        "text": "Object Processing",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Object-Processing/"
       },
       {
-        "text": "04 Update Operations",
-        "link": "/Updating-Objects-in-the-RIPE-Database/04-Update-Operations/"
+        "text": "Update Operations",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Update-Operations/"
       },
       {
-        "text": "05 Historical Data",
-        "link": "/Updating-Objects-in-the-RIPE-Database/05-Historical-Data/"
+        "text": "Historical Data",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Historical-Data/"
       },
       {
-        "text": "06 Special Considerations for Object Creation",
-        "link": "/Updating-Objects-in-the-RIPE-Database/06-Special-Considerations-for-Object-Creation/"
+        "text": "Special Considerations for Object Creation",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Special-Considerations-for-Object-Creation/"
       },
       {
-        "text": "07 Garbage Collection",
-        "link": "/Updating-Objects-in-the-RIPE-Database/07-Garbage-Collection/"
+        "text": "Garbage Collection",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Garbage-Collection/"
       },
       {
-        "text": "08 Dry run",
-        "link": "/Updating-Objects-in-the-RIPE-Database/08-Dry-run/"
+        "text": "Dry run",
+        "link": "/Updating-Objects-in-the-RIPE-Database/Dry-run/"
       }
     ]
   },
@@ -221,12 +221,12 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Acknowledgment Message",
-        "link": "/Notifications/01-Acknowledgment-Message/"
+        "text": "Acknowledgment Message",
+        "link": "/Notifications/Acknowledgment-Message/"
       },
       {
-        "text": "02 Notification Messages",
-        "link": "/Notifications/02-Notification-Messages/"
+        "text": "Notification Messages",
+        "link": "/Notifications/Notification-Messages/"
       },
       {
         "text": "README",
@@ -240,68 +240,68 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Authorisation Model",
-        "link": "/Authorisation/01-Authorisation-Model/"
+        "text": "Authorisation Model",
+        "link": "/Authorisation/Authorisation-Model/"
       },
       {
-        "text": "02 Using the Authorisation Methods",
-        "link": "/Authorisation/02-Using-the-Authorisation-Methods/"
+        "text": "Using the Authorisation Methods",
+        "link": "/Authorisation/Using-the-Authorisation-Methods/"
       },
       {
-        "text": "03 Security of Data Using Authorisation",
-        "link": "/Authorisation/03-Security-of-Data-Using-Authorisation/"
+        "text": "Security of Data Using Authorisation",
+        "link": "/Authorisation/Security-of-Data-Using-Authorisation/"
       },
       {
-        "text": "04 Protection of PERSON and ROLE Objects",
-        "link": "/Authorisation/04-Protection-of-PERSON-and-ROLE-Objects/"
+        "text": "Protection of PERSON and ROLE Objects",
+        "link": "/Authorisation/Protection-of-PERSON-and-ROLE-Objects/"
       },
       {
-        "text": "05 Protection of AUT NUM Object Space",
-        "link": "/Authorisation/05-Protection-of-AUT-NUM-Object-Space/"
+        "text": "Protection of AUT NUM Object Space",
+        "link": "/Authorisation/Protection-of-AUT-NUM-Object-Space/"
       },
       {
-        "text": "06 Protection of Address Space",
-        "link": "/Authorisation/06-Protection-of-Address-Space/"
+        "text": "Protection of Address Space",
+        "link": "/Authorisation/Protection-of-Address-Space/"
       },
       {
-        "text": "07 Protection of Route Object Space",
-        "link": "/Authorisation/07-Protection-of-Route-Object-Space/"
+        "text": "Protection of Route Object Space",
+        "link": "/Authorisation/Protection-of-Route-Object-Space/"
       },
       {
-        "text": "08 Protection of Reverse Delegation Objects",
-        "link": "/Authorisation/08-Protection-of-Reverse-Delegation-Objects/"
+        "text": "Protection of Reverse Delegation Objects",
+        "link": "/Authorisation/Protection-of-Reverse-Delegation-Objects/"
       },
       {
-        "text": "09 Protection of Objects with Hierarchical Names",
-        "link": "/Authorisation/09-Protection-of-Objects-with-Hierarchical-Names/"
+        "text": "Protection of Objects with Hierarchical Names",
+        "link": "/Authorisation/Protection-of-Objects-with-Hierarchical-Names/"
       },
       {
-        "text": "10 Protecting Membership of a Set",
-        "link": "/Authorisation/10-Protecting-Membership-of-a-Set/"
+        "text": "Protecting Membership of a Set",
+        "link": "/Authorisation/Protecting-Membership-of-a-Set/"
       },
       {
-        "text": "11 Referencing an ORGANIZATION Object",
-        "link": "/Authorisation/11-Referencing-an-ORGANIZATION-Object/"
+        "text": "Referencing an ORGANIZATION Object",
+        "link": "/Authorisation/Referencing-an-ORGANIZATION-Object/"
       },
       {
-        "text": "12 Referencing an IRT Object",
-        "link": "/Authorisation/12-Referencing-an-IRT-Object/"
+        "text": "Referencing an IRT Object",
+        "link": "/Authorisation/Referencing-an-IRT-Object/"
       },
       {
-        "text": "13 IRT Object",
-        "link": "/Authorisation/13-IRT-Object/"
+        "text": "IRT Object",
+        "link": "/Authorisation/IRT-Object/"
       },
       {
-        "text": "14 Force Delete Functionality",
-        "link": "/Authorisation/14-Force-Delete-Functionality/"
+        "text": "Force Delete Functionality",
+        "link": "/Authorisation/Force-Delete-Functionality/"
       },
       {
-        "text": "15 Request ENUM delegation",
-        "link": "/Authorisation/15-Request-ENUM-delegation/"
+        "text": "Request ENUM delegation",
+        "link": "/Authorisation/Request-ENUM-delegation/"
       },
       {
-        "text": "16 Request DNSSEC delegation",
-        "link": "/Authorisation/16-Request-DNSSEC-delegation/"
+        "text": "Request DNSSEC delegation",
+        "link": "/Authorisation/Request-DNSSEC-delegation/"
       },
       {
         "text": "README",
@@ -315,28 +315,28 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 The Structure of a Query",
-        "link": "/How-to-Query-the-RIPE-Database/01-The-Structure-of-a-Query/"
+        "text": "The Structure of a Query",
+        "link": "/How-to-Query-the-RIPE-Database/The-Structure-of-a-Query/"
       },
       {
-        "text": "02 Web Query Form",
-        "link": "/How-to-Query-the-RIPE-Database/02-Web-Query-Form/"
+        "text": "Web Query Form",
+        "link": "/How-to-Query-the-RIPE-Database/Web-Query-Form/"
       },
       {
-        "text": "03 RESTful API Queries",
-        "link": "/How-to-Query-the-RIPE-Database/03-RESTful-API-Queries/"
+        "text": "RESTful API Queries",
+        "link": "/How-to-Query-the-RIPE-Database/RESTful-API-Queries/"
       },
       {
-        "text": "04 Command Line Queries",
-        "link": "/How-to-Query-the-RIPE-Database/04-Command-Line-Queries/"
+        "text": "Command Line Queries",
+        "link": "/How-to-Query-the-RIPE-Database/Command-Line-Queries/"
       },
       {
-        "text": "05 Query Responses",
-        "link": "/How-to-Query-the-RIPE-Database/05-Query-Responses/"
+        "text": "Query Responses",
+        "link": "/How-to-Query-the-RIPE-Database/Query-Responses/"
       },
       {
-        "text": "06 Registration Data Access Protocol",
-        "link": "/How-to-Query-the-RIPE-Database/06-Registration-Data-Access-Protocol/"
+        "text": "Registration Data Access Protocol",
+        "link": "/How-to-Query-the-RIPE-Database/Registration-Data-Access-Protocol/"
       },
       {
         "text": "README",
@@ -361,68 +361,68 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Queries Using Primary and Lookup Keys",
-        "link": "/Types-of-Queries/01-Queries-Using-Primary-and-Lookup-Keys/"
+        "text": "Queries Using Primary and Lookup Keys",
+        "link": "/Types-of-Queries/Queries-Using-Primary-and-Lookup-Keys/"
       },
       {
-        "text": "02 Queries for IP Networks",
-        "link": "/Types-of-Queries/02-Queries-for-IP-Networks/"
+        "text": "Queries for IP Networks",
+        "link": "/Types-of-Queries/Queries-for-IP-Networks/"
       },
       {
-        "text": "03 Queries for Autonomous Systems",
-        "link": "/Types-of-Queries/03-Queries-for-Autonomous-Systems/"
+        "text": "Queries for Autonomous Systems",
+        "link": "/Types-of-Queries/Queries-for-Autonomous-Systems/"
       },
       {
-        "text": "04 More and Less Specific Lookups For Reverse Domains",
-        "link": "/Types-of-Queries/04-More-and-Less-Specific-Lookups-For-Reverse-Domains/"
+        "text": "More and Less Specific Lookups For Reverse Domains",
+        "link": "/Types-of-Queries/More-and-Less-Specific-Lookups-For-Reverse-Domains/"
       },
       {
-        "text": "05 Inverse Queries",
-        "link": "/Types-of-Queries/05-Inverse-Queries/"
+        "text": "Inverse Queries",
+        "link": "/Types-of-Queries/Inverse-Queries/"
       },
       {
-        "text": "06 Abuse Contacts",
-        "link": "/Types-of-Queries/06-Abuse-Contacts/"
+        "text": "Abuse Contacts",
+        "link": "/Types-of-Queries/Abuse-Contacts/"
       },
       {
-        "text": "07 Grouping the RIPE Database Output",
-        "link": "/Types-of-Queries/07-Grouping-the-RIPE-Database-Output/"
+        "text": "Grouping the RIPE Database Output",
+        "link": "/Types-of-Queries/Grouping-the-RIPE-Database-Output/"
       },
       {
-        "text": "08 Filtering the Query Reponse",
-        "link": "/Types-of-Queries/08-Filtering-the-Query-Reponse/"
+        "text": "Filtering the Query Reponse",
+        "link": "/Types-of-Queries/Filtering-the-Query-Reponse/"
       },
       {
-        "text": "09 IRR Toolset Support",
-        "link": "/Types-of-Queries/09-IRR-Toolset-Support/"
+        "text": "IRR Toolset Support",
+        "link": "/Types-of-Queries/IRR-Toolset-Support/"
       },
       {
-        "text": "10 Persistent Connections and Keeping State",
-        "link": "/Types-of-Queries/10-Persistent-Connections-and-Keeping-State/"
+        "text": "Persistent Connections and Keeping State",
+        "link": "/Types-of-Queries/Persistent-Connections-and-Keeping-State/"
       },
       {
-        "text": "11 Getting All the Members of Set objects",
-        "link": "/Types-of-Queries/11-Getting-All-the-Members-of-Set-objects/"
+        "text": "Getting All the Members of Set objects",
+        "link": "/Types-of-Queries/Getting-All-the-Members-of-Set-objects/"
       },
       {
-        "text": "12 Access Control for Queries",
-        "link": "/Types-of-Queries/12-Access-Control-for-Queries/"
+        "text": "Access Control for Queries",
+        "link": "/Types-of-Queries/Access-Control-for-Queries/"
       },
       {
-        "text": "13 RIPE NCC Global Resource Service",
-        "link": "/Types-of-Queries/13-RIPE-NCC-Global-Resource-Service/"
+        "text": "RIPE NCC Global Resource Service",
+        "link": "/Types-of-Queries/RIPE-NCC-Global-Resource-Service/"
       },
       {
-        "text": "14 Other Query Flags",
-        "link": "/Types-of-Queries/14-Other-Query-Flags/"
+        "text": "Other Query Flags",
+        "link": "/Types-of-Queries/Other-Query-Flags/"
       },
       {
-        "text": "15 Referenced Objects in Query Response",
-        "link": "/Types-of-Queries/15-Referenced-Objects-in-Query-Response/"
+        "text": "Referenced Objects in Query Response",
+        "link": "/Types-of-Queries/Referenced-Objects-in-Query-Response/"
       },
       {
-        "text": "16 Historical Queries",
-        "link": "/Types-of-Queries/16-Historical-Queries/"
+        "text": "Historical Queries",
+        "link": "/Types-of-Queries/Historical-Queries/"
       },
       {
         "text": "README",
@@ -451,20 +451,20 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Setup RIPE Database Mirror",
-        "link": "/RIPE-Database-Mirror/01-Setup-RIPE-Database-Mirror/"
+        "text": "Setup RIPE Database Mirror",
+        "link": "/RIPE-Database-Mirror/Setup-RIPE-Database-Mirror/"
       },
       {
-        "text": "02 Near Real Time Mirroring v3",
-        "link": "/RIPE-Database-Mirror/02-Near-Real-Time-Mirroring-v3/"
+        "text": "Near Real Time Mirroring v3",
+        "link": "/RIPE-Database-Mirror/Near-Real-Time-Mirroring-v3/"
       },
       {
-        "text": "03 Near Real Time Mirroring v4",
-        "link": "/RIPE-Database-Mirror/03-Near-Real-Time-Mirroring-v4/"
+        "text": "Near Real Time Mirroring v4",
+        "link": "/RIPE-Database-Mirror/Near-Real-Time-Mirroring-v4/"
       },
       {
-        "text": "04 Access to NRTM",
-        "link": "/RIPE-Database-Mirror/04-Access-to-NRTM/"
+        "text": "Access to NRTM",
+        "link": "/RIPE-Database-Mirror/Access-to-NRTM/"
       }
     ]
   },
@@ -489,28 +489,28 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Getting started on macOS",
-        "link": "/Installation-and-Development/01-Getting-started-on-macOS/"
+        "text": "Getting started on macOS",
+        "link": "/Installation-and-Development/Getting-started-on-macOS/"
       },
       {
-        "text": "02 Getting started on Ubuntu Linux",
-        "link": "/Installation-and-Development/02-Getting-started-on-Ubuntu-Linux/"
+        "text": "Getting started on Ubuntu Linux",
+        "link": "/Installation-and-Development/Getting-started-on-Ubuntu-Linux/"
       },
       {
-        "text": "03 Building whois",
-        "link": "/Installation-and-Development/03-Building-whois/"
+        "text": "Building whois",
+        "link": "/Installation-and-Development/Building-whois/"
       },
       {
-        "text": "04 Configure MariaDB",
-        "link": "/Installation-and-Development/04-Configure-MariaDB/"
+        "text": "Configure MariaDB",
+        "link": "/Installation-and-Development/Configure-MariaDB/"
       },
       {
-        "text": "05 Coding standard",
-        "link": "/Installation-and-Development/05-Coding-standard/"
+        "text": "Coding standard",
+        "link": "/Installation-and-Development/Coding-standard/"
       },
       {
-        "text": "06 Installation instructions",
-        "link": "/Installation-and-Development/06-Installation-instructions/"
+        "text": "Installation instructions",
+        "link": "/Installation-and-Development/Installation-instructions/"
       }
     ]
   },
@@ -520,32 +520,32 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Support Overview",
-        "link": "/Database-Support/01-Support-Overview/"
+        "text": "Support Overview",
+        "link": "/Database-Support/Support-Overview/"
       },
       {
-        "text": "02 Clean up of Unreferenced Data",
-        "link": "/Database-Support/02-Clean-up-of-Unreferenced-Data/"
+        "text": "Clean up of Unreferenced Data",
+        "link": "/Database-Support/Clean-up-of-Unreferenced-Data/"
       },
       {
-        "text": "03 Database Security",
-        "link": "/Database-Support/03-Database-Security/"
+        "text": "Database Security",
+        "link": "/Database-Support/Database-Security/"
       },
       {
-        "text": "04 Configuring Reverse DNS",
-        "link": "/Database-Support/04-Configuring-Reverse-DNS/"
+        "text": "Configuring Reverse DNS",
+        "link": "/Database-Support/Configuring-Reverse-DNS/"
       },
       {
-        "text": "05 Database Business Rules",
-        "link": "/Database-Support/05-Database-Business-Rules/"
+        "text": "Database Business Rules",
+        "link": "/Database-Support/Database-Business-Rules/"
       },
       {
-        "text": "06 Highlighted Values in the RIPE Database",
-        "link": "/Database-Support/06-Highlighted-Values-in-the-RIPE-Database/"
+        "text": "Highlighted Values in the RIPE Database",
+        "link": "/Database-Support/Highlighted-Values-in-the-RIPE-Database/"
       },
       {
-        "text": "07 Create First Role Mntner",
-        "link": "/Database-Support/07-Create-First-Role-Mntner/"
+        "text": "Create First Role Mntner",
+        "link": "/Database-Support/Create-First-Role-Mntner/"
       },
       {
         "text": "README",
@@ -571,40 +571,48 @@
     "collapsed": false,
     "items": [
       {
-        "text": "01 Appendix A  Syntax of Object Attributes",
-        "link": "/Appendices/01-Appendix-A--Syntax-of-Object-Attributes/"
+        "text": "Appendix A  Syntax of Object Attributes",
+        "link": "/Appendices/Appendix-A--Syntax-of-Object-Attributes/"
       },
       {
-        "text": "02 Appendix B  Copyright Statement",
-        "link": "/Appendices/02-Appendix-B--Copyright-Statement/"
+        "text": "Appendix B  Copyright Statement",
+        "link": "/Appendices/Appendix-B--Copyright-Statement/"
       },
       {
-        "text": "03 Appendix C  RIPE Database Query Server Response Codes and Messages",
-        "link": "/Appendices/03-Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages/"
+        "text": "Appendix C  RIPE Database Query Server Response Codes and Messages",
+        "link": "/Appendices/Appendix-C--RIPE-Database-Query-Server-Response-Codes-and-Messages/"
       },
       {
         "text": "Appendix-D--Route-Object-Creation-Flowchart",
-        "link": "/Appendices/04-Appendix-D--Route-Object-Creation-Flowchart/"
+        "link": "/Appendices/Appendix-D--Route-Object-Creation-Flowchart/"
       },
       {
         "text": "Appendix-E--Domain-Object-Creation-Flowchart",
-        "link": "/Appendices/05-Appendix-E--Domain-Object-Creation-Flowchart/"
+        "link": "/Appendices/Appendix-E--Domain-Object-Creation-Flowchart/"
       },
       {
-        "text": "06 Appendix F  Special Considerations for Object Types",
-        "link": "/Appendices/06-Appendix-F--Special-Considerations-for-Object-Types/"
+        "text": "Appendix F  Special Considerations for Object Types",
+        "link": "/Appendices/Appendix-F--Special-Considerations-for-Object-Types/"
       },
       {
-        "text": "07 Appendix G  Object Types with Personal Data",
-        "link": "/Appendices/07-Appendix-G--Object-Types-with-Personal-Data/"
+        "text": "Appendix G  Object Types with Personal Data",
+        "link": "/Appendices/Appendix-G--Object-Types-with-Personal-Data/"
       },
       {
-        "text": "08 Appendix H  PGP Authentication Method",
-        "link": "/Appendices/08-Appendix-H--PGP-Authentication-Method/"
+        "text": "Appendix H  PGP Authentication Method",
+        "link": "/Appendices/Appendix-H--PGP-Authentication-Method/"
       },
       {
-        "text": "09 Appendix I  Client Certificate Authentication",
-        "link": "/Appendices/09-Appendix-I--Client-Certificate-Authentication/"
+        "text": "Appendix I  Client Certificate Authentication",
+        "link": "/Appendices/Appendix-I--Client-Certificate-Authentication/"
+      },
+      {
+        "text": "Appendix J  Ripe Test Database",
+        "link": "/Appendices/Appendix-J--Ripe-Test-Database/"
+      },
+      {
+        "text": "Appendix K  API Keys",
+        "link": "/Appendices/Appendix-K--API-Keys/"
       }
     ]
   },

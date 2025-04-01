@@ -212,3 +212,10 @@ code, pre {
   white-space: pre-wrap;
   tab-size: 4; /* Ensures tabs are not too wide */
 }
+
+/* safari should display logo correctly */
+@media (max-width: 959px) {
+    .VPNavBarTitle {
+        background-color: white !important;
+    }
+}

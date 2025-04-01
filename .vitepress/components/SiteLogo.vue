@@ -1,6 +1,7 @@
 <template>
   <!-- Put your site's logo svg here -->
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1811.13 224">
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1811.13 224"
+     width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
   <defs>
     <linearGradient id="linear-gradient" x1="28.86" y1="4.26" x2="191.52" y2="166.92" gradientTransform="translate(0 223.98) scale(1 -1)" gradientUnits="userSpaceOnUse">
@@ -47,5 +48,10 @@
 
       .st2 {
         fill: #8b8fb0;
+      }
+
+      #Layer_1 {
+        max-width: 250px;
+        height: auto;
       }
 </style>

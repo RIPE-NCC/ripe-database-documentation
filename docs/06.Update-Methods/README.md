@@ -1,6 +1,6 @@
 ---
 permalink: /Update-Methods
-lastUpdated: 1743427745000
+lastUpdated: 1743494265000
 prev:
   text: Email Updates
   link: /Update-Methods/Email-Updates/

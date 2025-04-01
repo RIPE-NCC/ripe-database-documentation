@@ -1,86 +1,65 @@
 {
-  "hash": "4b82c20a",
-  "configHash": "c76cae83",
-  "lockfileHash": "8cfc839b",
-  "browserHash": "b68295ad",
+  "hash": "3621eb0e",
+  "configHash": "042a9023",
+  "lockfileHash": "b2a00c90",
+  "browserHash": "5870f511",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "90d42896",
+      "fileHash": "071faeab",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "1b0271ed",
+      "fileHash": "fe7b320c",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "9b705859",
+      "fileHash": "10d4d330",
       "needsInterop": false
     },
     "@braintree/sanitize-url": {
       "src": "../../../node_modules/@braintree/sanitize-url/dist/index.js",
       "file": "@braintree_sanitize-url.js",
-      "fileHash": "627c2716",
+      "fileHash": "bc0da29c",
       "needsInterop": true
     },
     "dayjs": {
       "src": "../../../node_modules/dayjs/dayjs.min.js",
       "file": "dayjs.js",
-      "fileHash": "1186fe0f",
+      "fileHash": "d18f78c2",
       "needsInterop": true
     },
     "debug": {
       "src": "../../../node_modules/debug/src/browser.js",
       "file": "debug.js",
-      "fileHash": "d521395e",
+      "fileHash": "82cfd0a5",
       "needsInterop": true
     },
     "cytoscape-cose-bilkent": {
       "src": "../../../node_modules/cytoscape-cose-bilkent/cytoscape-cose-bilkent.js",
       "file": "cytoscape-cose-bilkent.js",
-      "fileHash": "2f1783d8",
+      "fileHash": "6b685d3f",
       "needsInterop": true
     },
     "cytoscape": {
       "src": "../../../node_modules/cytoscape/dist/cytoscape.esm.mjs",
       "file": "cytoscape.js",
-      "fileHash": "1e134a87",
+      "fileHash": "b4c02317",
       "needsInterop": false
     },
     "@technical-design/ripe-app-webcomponents": {
       "src": "../../../node_modules/@technical-design/ripe-app-webcomponents/esm/index.js",
       "file": "@technical-design_ripe-app-webcomponents.js",
-      "fileHash": "b47cbcff",
-      "needsInterop": false
-    },
-    "prismjs": {
-      "src": "../../../node_modules/prismjs/prism.js",
-      "file": "prismjs.js",
-      "fileHash": "87c21328",
-      "needsInterop": true
-    },
-    "@material/web/button/filled-button.js": {
-      "src": "../../../node_modules/@material/web/button/filled-button.js",
-      "file": "@material_web_button_filled-button__js.js",
-      "fileHash": "dfcabb0d",
-      "needsInterop": false
-    },
-    "@material/web/button/outlined-button.js": {
-      "src": "../../../node_modules/@material/web/button/outlined-button.js",
-      "file": "@material_web_button_outlined-button__js.js",
-      "fileHash": "874fe7ca",
+      "fileHash": "868bbb50",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-QVEY6347": {
-      "file": "chunk-QVEY6347.js"
-    },
     "chunk-VJWGEPT5": {
       "file": "chunk-VJWGEPT5.js"
     },
