@@ -13,7 +13,7 @@
     "generate-sidebar": "node vpscripts/generate-sidebar.js",
     "prebuild-files": "node vpscripts/prebuild-files.js",
     "generate-combined-doc": "npm run generate-sidebar && npm run prebuild-files && node vpscripts/generate-combined-doc.js",
-    "docs:dev": "npm run generate-sidebar && npm run prebuild-files && vitepress dev",
+    "docs:dev": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && vitepress dev",
     "docs:build": "npm run generate-sidebar && npm run prebuild-files && vitepress build",
     "docs:preview": "vitepress preview"
   },

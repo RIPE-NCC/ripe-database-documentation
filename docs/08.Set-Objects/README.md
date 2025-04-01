@@ -1,6 +1,6 @@
 ---
 permalink: /Set-Objects
-lastUpdated: 1743494265000
+lastUpdated: 1743498918000
 prev:
   text: Dry run
   link: /Updating-Objects-in-the-RIPE-Database/Dry-run/

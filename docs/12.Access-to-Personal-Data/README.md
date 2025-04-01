@@ -1,6 +1,6 @@
 ---
 permalink: /Access-to-Personal-Data
-lastUpdated: 1743494265000
+lastUpdated: 1743498918000
 prev:
   text: README
   link: /How-to-Query-the-RIPE-Database/README/
