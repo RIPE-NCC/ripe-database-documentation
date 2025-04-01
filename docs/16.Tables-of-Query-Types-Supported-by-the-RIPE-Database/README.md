@@ -1,6 +1,6 @@
 ---
 permalink: /Tables-of-Query-Types-Supported-by-the-RIPE-Database
-lastUpdated: 1743422196000
+lastUpdated: 1743427745000
 prev:
   text: Access to NRTM
   link: /RIPE-Database-Mirror/Access-to-NRTM/
