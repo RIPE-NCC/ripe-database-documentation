@@ -17,20 +17,17 @@ Since the order of documents can change, we cannot rely on the order number with
 To ensure stability, we use a permalink in the document headers, providing a static link that remains unchanged. 
 This approach prevents breaking changes.
 
-Additionally, references between pages must include the full path along with the `#` symbol. For example:
-`../Appendices/Appendix-A--Syntax-of-Object-Attributes/#appendix-a-syntax-of-object-attributes`
-
-This is necessary because, when generating the *Entire Documentation HTML*, the plugin misconfigures the links. 
-To resolve this, a script was created to extract the correct reference from the wildcard section.
+It is important to take this into account when creating references between pages. The reference must be the same as
+the permalink. Additionally, `#` symbol can be used to reference a section within the link.
 
 # Editing in Gitlab
 
 GitLab has a handy built-in editor that understands most of the markdown that is in the markdown files. There are a few exceptions that are particular to VuePress:
 
-| **Gitlab markdown**                                                                                                                  | **Vuepress markdown**                                                                      |
+| **Gitlab markdown**                                                                                                                  | **Vitepress markdown**                                                                     |
 |--------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
 | collapsible sections are rendered with &lt;details&gt;&lt;summary&gt;&lt;/summary&gt;&lt;content&gt;&lt;/content&gt;&lt;/details&gt; | collapsible sections rendered same as gitlab OR by ::: details summaryText contentText ::: |
-| Embedded vue components are ignored                                                                                                  | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered              |
+| Embedded vite components are ignored                                                                                                 | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered              |
 
 # Running locally
 
@@ -52,7 +49,7 @@ This command is going to install the required dependencies for vuepress and thos
 npm run docs:dev
 ```
 
-This command is going to launch a local server in http://localhost:8080.
+This command is going to launch a local server, you should be able to see the port in the console.
 If you have a problem running this command, you should run
 
 ```shell
