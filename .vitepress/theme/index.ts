@@ -91,8 +91,6 @@ function expandSidebarForCurrentPath() {
 	}
 	element = element.parentElement as HTMLElement | null;
 	}
-  
-	console.log(`Found ${itemsToExpand.length} collapsed items to expand`);
 
 	// Click the toggle element of each collapsed parent, starting from the top level
 	itemsToExpand.reverse().forEach(item => {
