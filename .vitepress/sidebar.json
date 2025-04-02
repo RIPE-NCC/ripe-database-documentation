@@ -94,6 +94,10 @@
     "collapsed": false,
     "items": [
       {
+        "text": "RPSL Object Types",
+        "link": "/RPSL-Object-Types/RPSL-Object-Types/"
+      },
+      {
         "text": "Description of Attributes Common to all Objects",
         "link": "/RPSL-Object-Types/Description-of-Attributes-Common-to-all-Objects/"
       },
@@ -104,10 +108,6 @@
       {
         "text": "Descriptions of Secondary Objects",
         "link": "/RPSL-Object-Types/Descriptions-of-Secondary-Objects/"
-      },
-      {
-        "text": "README",
-        "link": "/RPSL-Object-Types/README/"
       }
     ]
   },
@@ -116,6 +116,10 @@
     "collapsible": true,
     "collapsed": false,
     "items": [
+      {
+        "text": "Available Databases",
+        "link": "/Available-Databases/Available-Databases/"
+      },
       {
         "text": "RIPE Database",
         "link": "/Available-Databases/RIPE-Database/"
@@ -131,10 +135,6 @@
       {
         "text": "Experimental Databases",
         "link": "/Available-Databases/Experimental-Databases/"
-      },
-      {
-        "text": "README",
-        "link": "/Available-Databases/README/"
       }
     ]
   },
@@ -143,6 +143,10 @@
     "collapsible": true,
     "collapsed": false,
     "items": [
+      {
+        "text": "Update Methods",
+        "link": "/Update-Methods/Update-Methods/"
+      },
       {
         "text": "RESTful API",
         "link": "/Update-Methods/RESTful-API/"
@@ -158,10 +162,6 @@
       {
         "text": "Email Updates",
         "link": "/Update-Methods/Email-Updates/"
-      },
-      {
-        "text": "README",
-        "link": "/Update-Methods/README/"
       }
     ]
   },
@@ -210,8 +210,8 @@
     "collapsed": false,
     "items": [
       {
-        "text": "README",
-        "link": "/Set-Objects/README/"
+        "text": "Set Objects",
+        "link": "/Set-Objects/Set-Objects/"
       }
     ]
   },
@@ -221,16 +221,16 @@
     "collapsed": false,
     "items": [
       {
+        "text": "Notifications",
+        "link": "/Notifications/Notifications/"
+      },
+      {
         "text": "Acknowledgment Message",
         "link": "/Notifications/Acknowledgment-Message/"
       },
       {
         "text": "Notification Messages",
         "link": "/Notifications/Notification-Messages/"
-      },
-      {
-        "text": "README",
-        "link": "/Notifications/README/"
       }
     ]
   },
@@ -239,6 +239,10 @@
     "collapsible": true,
     "collapsed": false,
     "items": [
+      {
+        "text": "Authorisation",
+        "link": "/Authorisation/Authorisation/"
+      },
       {
         "text": "Authorisation Model",
         "link": "/Authorisation/Authorisation-Model/"
@@ -302,10 +306,6 @@
       {
         "text": "Request DNSSEC delegation",
         "link": "/Authorisation/Request-DNSSEC-delegation/"
-      },
-      {
-        "text": "README",
-        "link": "/Authorisation/README/"
       }
     ]
   },
@@ -314,6 +314,10 @@
     "collapsible": true,
     "collapsed": false,
     "items": [
+      {
+        "text": "How to Query the RIPE Database",
+        "link": "/How-to-Query-the-RIPE-Database/How-to-Query-the-RIPE-Database/"
+      },
       {
         "text": "The Structure of a Query",
         "link": "/How-to-Query-the-RIPE-Database/The-Structure-of-a-Query/"
@@ -337,10 +341,6 @@
       {
         "text": "Registration Data Access Protocol",
         "link": "/How-to-Query-the-RIPE-Database/Registration-Data-Access-Protocol/"
-      },
-      {
-        "text": "README",
-        "link": "/How-to-Query-the-RIPE-Database/README/"
       }
     ]
   },
@@ -350,8 +350,8 @@
     "collapsed": false,
     "items": [
       {
-        "text": "README",
-        "link": "/Access-to-Personal-Data/README/"
+        "text": "Access to Personal Data",
+        "link": "/Access-to-Personal-Data/Access-to-Personal-Data/"
       }
     ]
   },
@@ -360,6 +360,10 @@
     "collapsible": true,
     "collapsed": false,
     "items": [
+      {
+        "text": "Types of Queries",
+        "link": "/Types-of-Queries/Types-of-Queries/"
+      },
       {
         "text": "Queries Using Primary and Lookup Keys",
         "link": "/Types-of-Queries/Queries-Using-Primary-and-Lookup-Keys/"
@@ -423,10 +427,6 @@
       {
         "text": "Historical Queries",
         "link": "/Types-of-Queries/Historical-Queries/"
-      },
-      {
-        "text": "README",
-        "link": "/Types-of-Queries/README/"
       }
     ]
   },
@@ -436,12 +436,12 @@
     "collapsed": false,
     "items": [
       {
-        "text": "Geolocation in the RIPE Database",
-        "link": "/Related-Software-and-Tools/Geolocation-in-the-RIPE-Database/"
+        "text": "Related Software and Tools",
+        "link": "/Related-Software-and-Tools/Related-Software-and-Tools/"
       },
       {
-        "text": "README",
-        "link": "/Related-Software-and-Tools/README/"
+        "text": "Geolocation in the RIPE Database",
+        "link": "/Related-Software-and-Tools/Geolocation-in-the-RIPE-Database/"
       }
     ]
   },
@@ -474,8 +474,8 @@
     "collapsed": false,
     "items": [
       {
-        "text": "README",
-        "link": "/Tables-of-Query-Types-Supported-by-the-RIPE-Database/README/"
+        "text": "Tables of Query Types Supported by the RIPE Database",
+        "link": "/Tables-of-Query-Types-Supported-by-the-RIPE-Database/Tables-of-Query-Types-Supported-by-the-RIPE-Database/"
       }
     ]
   },
@@ -520,6 +520,10 @@
     "collapsed": false,
     "items": [
       {
+        "text": "Database Support",
+        "link": "/Database-Support/Database-Support/"
+      },
+      {
         "text": "Support Overview",
         "link": "/Database-Support/Support-Overview/"
       },
@@ -546,10 +550,6 @@
       {
         "text": "Create First Role Mntner",
         "link": "/Database-Support/Create-First-Role-Mntner/"
-      },
-      {
-        "text": "README",
-        "link": "/Database-Support/README/"
       }
     ]
   },
