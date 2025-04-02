@@ -184,7 +184,7 @@ export default withMermaid({
   title: "RIPE NCC DOCS",
   base: baseDir,
   srcDir: `./prebuild`,
-  description: "Vitepress based RIPE Atlas docs",
+  description: "Vitepress based RIPE Docs",
   ignoreDeadLinks: true,
   cleanUrls: true,
   appearance: false,
@@ -209,7 +209,7 @@ export default withMermaid({
   mermaid: {
     startOnLoad: true
   },
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: '/docs/favicon.ico' }]],
   buildEnd() {
   },
   
