@@ -28,7 +28,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 COPY http.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build /src/.vitepress/dist /usr/share/nginx/html/docs
+COPY --from=build /src/.vitepress/dist /usr/share/nginx/html
 
 WORKDIR /usr/share/nginx/html
 

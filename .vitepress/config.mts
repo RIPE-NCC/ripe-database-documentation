@@ -26,7 +26,7 @@ if (fs.existsSync(sidebarPath)) {
 fs.writeFileSync(sidebarPath, newSidebarData);
 console.log('✅ Sidebar updated.');
 
-const baseDir = "/docs"
+const baseDir = "/"
 
 // Search plugin options
 var options = {
@@ -209,7 +209,7 @@ export default withMermaid({
   mermaid: {
     startOnLoad: true
   },
-  head: [['link', { rel: 'icon', href: '/docs/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   buildEnd() {
   },
   
