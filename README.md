@@ -36,6 +36,8 @@ Once you download the repository in your local machine you can run service using
 ## NPM
 
 **Do not use yarn command, it has problems with some dependency**
+**We do recommend Docker approach for testing. Running npm build step is updating the docs adding modifying last 
+update for the header**
 
 ```shell
 npm install
