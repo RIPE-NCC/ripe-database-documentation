@@ -14,6 +14,7 @@ try {
   const visitedLinks = new Set();
   const pathToIdMap = new Map();
   const unresolvedLinks = new Set();
+  const discardedPages = new Set().add("/Legal-Information/");
 
   // Make sure output files are deleted
   ensureOutputFileDeleted(docsDir, baseDir);
@@ -399,6 +400,11 @@ try {
         // Skip the combined doc itself to avoid recursion
         if (item.link.includes('all-docs-combined')) {
           console.log(`${indent}⏩ Skipping the combined doc itself: ${item.link}`);
+          continue;
+        }
+
+        if (discardedPages.has(item.link)){
+          console.log(`${indent}⏩ Skipping discarded page: ${item.link}`);
           continue;
         }
 
