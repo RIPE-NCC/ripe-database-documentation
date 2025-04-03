@@ -482,6 +482,7 @@ try {
   // Create the frontmatter for the combined document
   const frontmatter = `---
 title: All Documentation Combined
+hydrate: false
 outline:
   - 1
   - 1

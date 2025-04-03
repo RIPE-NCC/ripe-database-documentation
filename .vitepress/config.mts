@@ -196,14 +196,23 @@ export default withMermaid({
       prefetchLinks: false, // Disable prefetching
     },
   },
+  transformHtml(html, id, { pageData }) {
+    const frontmatterHydrate = pageData.frontmatter?.hydrate;
+    if (frontmatterHydrate == false) {
+      // Remove <script> tags from the HTML output
+      console.log("processing ", pageData.filePath)
+      return html.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gm, '');
+    }
+    return html;
+  },
   transformPageData(pageData, ctx) {
     // Use frontmatter lastUpdated if it exists
     const frontmatterUpdated = pageData.frontmatter?.lastUpdated;
-  
+
     if (frontmatterUpdated) {
       pageData.lastUpdated = frontmatterUpdated;
     }
-  
+
     return pageData;
   },
   mermaid: {
@@ -212,7 +221,7 @@ export default withMermaid({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   buildEnd() {
   },
-  
+
   // Vue and Vite configurations
   vue: {
     template: {
@@ -227,11 +236,6 @@ export default withMermaid({
   },
   vite: {
     server: {
-      // host: 'docs.atlas.ripe.net', // supply your own hostname and certs below
-      // https: {
-      //   key: fs.readFileSync(path.resolve(__dirname, '../certs/docs.atlas.ripe.net+3-key.pem')),
-      //   cert: fs.readFileSync(path.resolve(__dirname, '../certs/docs.atlas.ripe.net+3.pem')),
-      // },
       watch: {
         usePolling: true, // Ensure file changes are detected
         interval: 100, // Poll every 100ms (adjust if needed)
@@ -255,56 +259,7 @@ export default withMermaid({
       "process.env.RESPONSE_BG_COLOR": JSON.stringify(process.env.RESPONSE_BG_COLOR ?? "#F5F5F5") // set background color for response in RestRepl
     },
       plugins: [
-        // {
-        //   name: 'log-all-modules',
-        //   enforce: 'post',
-        //   load(id) {
-        //     if (id.includes('node_modules')) return null; // Skip node_modules
-        //     console.log(`📦 Module requested: ${id}`);
-        //     return null;
-        //   }
-        // },
         SearchPlugin(options),
-      // {
-      //   name: 'watch-docs-folder',
-      //   apply: 'serve',
-      //   configureServer(server) {
-      //     const docsPath = path.resolve(process.cwd(), 'docs');
-      //     const prebuildPath = path.resolve(process.cwd(), 'prebuild'); // Ignore this
-
-      //     console.log(`🔍 Watching directory: ${docsPath}`);
-
-      //     chokidar
-      //     .watch(docsPath, { 
-      //       ignoreInitial: true,
-      //       ignored: [
-      //         '**/node_modules/**',
-      //         '**/prebuild/**',
-      //         '**/dist/**',
-      //         '**/.git/**'
-      //       ]
-      //     })
-      //     .on('change', (filePath) => {
-      //       // Only trigger rebuilds for markdown files
-      //       if (filePath.endsWith('.md')) {
-      //         console.log(`📂 File changed: ${filePath}`);
-      //         runPrebuildAndSidebar();
-      //       }
-      //     })
-      //     .on('add', (filePath) => {
-      //       if (filePath.endsWith('.md')) {
-      //         console.log(`📂 File added: ${filePath}`);
-      //         runPrebuildAndSidebar();
-      //       }
-      //     })
-      //     .on('unlink', (filePath) => {
-      //       if (filePath.endsWith('.md')) {
-      //         console.log(`📂 File deleted: ${filePath}`);
-      //         runPrebuildAndSidebar();
-      //       }
-      //     });
-      //   },
-      // },
       {
         name: 'inject-file-info',
         enforce: 'pre',
