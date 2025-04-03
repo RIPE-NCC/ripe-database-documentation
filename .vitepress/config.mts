@@ -198,9 +198,7 @@ export default withMermaid({
   },
   transformHtml(html, id, { pageData }) {
     const frontmatterHydrate = pageData.frontmatter?.hydrate;
-    if (frontmatterHydrate == false) {
-      // Remove <script> tags from the HTML output
-      console.log("processing ", pageData.filePath)
+    if (frontmatterHydrate === false) {
       return html.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gm, '');
     }
     return html;
