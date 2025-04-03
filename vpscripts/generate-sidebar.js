@@ -217,10 +217,10 @@ function generateSidebar(dir) {
         try {
           const gitTime = execSync(`git log -1 --format=%ct "${fullPath}"`, { encoding: 'utf-8' }).trim();
           if (gitTime) {
-            //const lastUpdated = Number(gitTime) * 1000; // Convert to ms
+            const lastUpdated = Number(gitTime) * 1000; // Convert to ms
             const fileContent = fs.readFileSync(fullPath, 'utf8');
             const { data, content } = matter(fileContent);
-            //data.lastUpdated = lastUpdated;
+            data.lastUpdated = lastUpdated;
             const updatedContent = matter.stringify(content, data);
             fs.writeFileSync(fullPath, updatedContent, 'utf8');
             console.log(`🕒 Updated lastUpdated in ${fullPath}`);
