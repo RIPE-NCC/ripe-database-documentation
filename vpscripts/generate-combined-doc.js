@@ -482,7 +482,6 @@ try {
   // Create the frontmatter for the combined document
   const frontmatter = `---
 title: All Documentation Combined
-hydrate: false
 outline:
   - 1
   - 1
@@ -495,6 +494,7 @@ vite:
 
   // Create the download button for the combined document
   const downloadButton = [
+    '<script>' +
     '<button id=\'downloadBtn\' onclick="(()=>{',
     'const sidebar=document.querySelector(\'.VPSidebar\');',
     'const contentBody=document.querySelector(\'.container .content-body\');',
@@ -516,7 +516,8 @@ vite:
     'if(sidebar)sidebar.style.display=\'\';',
     'if(contentBody)contentBody.style.display=\'\';',
     'if(divider)divider.style.display=\'\';',
-    '})()">📥 Download This Page as HTML</button>'
+    '})()">📥 Download This Page as HTML</button>' +
+    '</script>'
   ].join('');
 
   // Main function to generate the combined document
