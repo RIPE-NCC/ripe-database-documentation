@@ -494,7 +494,6 @@ vite:
 
   // Create the download button for the combined document
   const downloadButton = [
-    '<script>' +
     '<button id=\'downloadBtn\' onclick="(()=>{',
     'const sidebar=document.querySelector(\'.VPSidebar\');',
     'const contentBody=document.querySelector(\'.container .content-body\');',
@@ -516,8 +515,7 @@ vite:
     'if(sidebar)sidebar.style.display=\'\';',
     'if(contentBody)contentBody.style.display=\'\';',
     'if(divider)divider.style.display=\'\';',
-    '})()">📥 Download This Page as HTML</button>' +
-    '</script>'
+    '})()">📥 Download This Page as HTML</button>'
   ].join('');
 
   // Main function to generate the combined document
@@ -557,7 +555,7 @@ vite:
       // combinedContent = tableOfContents + combinedContent;
 
       console.log('💾 Writing final output file...');
-      fs.writeFileSync(outputFile, frontmatter + downloadButton + combinedContent, { encoding: 'utf8', flag: 'w' });
+      fs.writeFileSync(outputFile, frontmatter + '<script>' + downloadButton + '</script>' + combinedContent, { encoding: 'utf8', flag: 'w' });
       console.log(`✅ Combined document saved to ${outputFile}`);
     }
   }
