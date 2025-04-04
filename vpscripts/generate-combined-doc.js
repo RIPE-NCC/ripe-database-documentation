@@ -518,6 +518,12 @@ vite:
     '})()">📥 Download This Page as HTML</button>'
   ].join('');
 
+
+  const hideButtonWhenNonJS = [
+    ' <noscript><style>#downloadBtn{ display: none; }</style></noscript>'
+  ].join('');
+
+
   // Main function to generate the combined document
   function generateCombinedDoc() {
     console.log('🔄 Starting document generation process');
@@ -555,7 +561,7 @@ vite:
       // combinedContent = tableOfContents + combinedContent;
 
       console.log('💾 Writing final output file...');
-      fs.writeFileSync(outputFile, frontmatter + '<script lang="tsx">' + downloadButton + '</script>' + combinedContent, { encoding: 'utf8', flag: 'w' });
+      fs.writeFileSync(outputFile, frontmatter + downloadButton + hideButtonWhenNonJS + combinedContent, { encoding: 'utf8', flag: 'w' });
       console.log(`✅ Combined document saved to ${outputFile}`);
     }
   }
