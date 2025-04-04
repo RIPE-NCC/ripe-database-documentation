@@ -52,7 +52,8 @@ function processDirectory(srcDir, destDir) {
   files.forEach(file => {
     const srcPath = path.join(srcDir, file);
     const isImage = /\.(png|jpe?g|gif|svg)$/i.test(file);
-    const cleanFileName = isImage ? file : redirectNonJS + removeNumbers(file); // Remove numbers from non-image files
+    const cleanFileName = isImage ? file : removeNumbers(file); // Remove numbers from
+    // non-image files
     const destPath = path.join(destDir, cleanFileName);
 
     if (fs.statSync(srcPath).isDirectory()) {
@@ -162,6 +163,22 @@ function fixNavigationLinks(dir) {
   });
 }
 
+function processNonJS(dir){
+  const files = fs.readdirSync(dir);
+
+  files.forEach(file => {
+    const fullPath = path.join(dir, file);
+
+    if (fs.statSync(fullPath).isDirectory()) {
+      processNonJS(fullPath); // Recurse into subdirectories
+    } else if (file.endsWith('.md')) {
+      const fileContent = fs.readFileSync(fullPath, 'utf8');
+      console.log(fullPath)
+      fs.writeFileSync(fullPath,fileContent + redirectNonJS, 'utf8');
+    }
+  });
+}
+
 function preprocessDocs() {
   console.log('🔄 Cleaning prebuild directory...');
   cleanPrebuildDir(buildDir); // Start fresh
@@ -172,6 +189,9 @@ function preprocessDocs() {
   console.log('🔍 Fixing prev/next links inside _index folders...');
   fixNavigationLinks(buildDir);
   console.log('✅ Prev/next links cleaned.');
+
+  processNonJS(buildDir)
+  console.log('✅ Redirect to All Docs when JS disabled.')
 }
 
 // Run the script
