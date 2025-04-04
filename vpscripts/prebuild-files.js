@@ -158,7 +158,7 @@ function fixNavigationLinks(dir) {
 }
 
 function processNonJS(dir){
-  const redirectNonJS = [
+  const redirectToNonJS = [
     '<noscript>',
     '<meta http-equiv="refresh" content="0;url=/all-docs-combined"/>',
     '</noscript>'
@@ -178,7 +178,7 @@ function processNonJS(dir){
       processNonJS(fullPath); // Recurse into subdirectories
     } else if (file.endsWith('.md') && !nonJSPages.has(file)) {
       const fileContent = fs.readFileSync(fullPath, 'utf8');
-      fs.writeFileSync(fullPath,fileContent + redirectNonJS, 'utf8');
+      fs.writeFileSync(fullPath,fileContent + redirectToNonJS, 'utf8');
     }
   });
 }
