@@ -524,6 +524,7 @@ vite:
     '#downloadBtn{ display: none; }',
     'header.VPNav{ display: none; }',
     'aside.VPSidebar{ display: none; }',
+    'footer.VPDocFooter{ display: none; }',
     '</style></noscript>'
   ].join('');
 
