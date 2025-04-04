@@ -10,12 +10,6 @@ const __dirname = path.dirname(__filename);
 const sourceDir = path.resolve(__dirname, '..', 'docs'); // Source: docs/ (at project root)
 const buildDir = path.resolve(__dirname, '..', 'prebuild'); // Destination: prebuild/ (at project root)
 
-const redirectNonJS = [
-  '<noscript>',
-  '<meta http-equiv="refresh" content="0;url=/all-docs-combined"/>',
-  '</noscript>'
-].join('');
-
 function removeNumbers(str) {
   return str.replace(/(^|\/)\d+\.(?!md)/g, '$1');
 }
@@ -164,6 +158,17 @@ function fixNavigationLinks(dir) {
 }
 
 function processNonJS(dir){
+  const redirectNonJS = [
+    '<noscript>',
+    '<meta http-equiv="refresh" content="0;url=/all-docs-combined"/>',
+    '</noscript>'
+  ].join('');
+
+  const javaScriptSupportedPages = new Set()
+    .add("RIPE-Database-Acceptable-Use-Policy.md")
+    .add("HTML-Terms-And-Conditions.md")
+    .add("all-docs-combined.md");
+
   const files = fs.readdirSync(dir);
 
   files.forEach(file => {
@@ -171,9 +176,8 @@ function processNonJS(dir){
 
     if (fs.statSync(fullPath).isDirectory()) {
       processNonJS(fullPath); // Recurse into subdirectories
-    } else if (file.endsWith('.md')) {
+    } else if (file.endsWith('.md') && !javaScriptSupportedPages.has(file)) {
       const fileContent = fs.readFileSync(fullPath, 'utf8');
-      console.log(fullPath)
       fs.writeFileSync(fullPath,fileContent + redirectNonJS, 'utf8');
     }
   });
