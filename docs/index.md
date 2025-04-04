@@ -1,5 +1,4 @@
 ---
-
 prev:
   text: All docs combined
   link: /all-docs-combined/

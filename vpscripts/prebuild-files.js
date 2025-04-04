@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import {fileURLToPath} from 'url';
 import matter from 'gray-matter';
 
 // Manually define __dirname in ES Modules
@@ -10,6 +10,12 @@ const __dirname = path.dirname(__filename);
 const sourceDir = path.resolve(__dirname, '..', 'docs'); // Source: docs/ (at project root)
 const buildDir = path.resolve(__dirname, '..', 'prebuild'); // Destination: prebuild/ (at project root)
 
+const redirectNonJS = [
+  '<noscript>',
+  '<meta http-equiv="refresh" content="0;url=/all-docs-combined"/>',
+  '</noscript>'
+].join('');
+
 function removeNumbers(str) {
   return str.replace(/(^|\/)\d+\.(?!md)/g, '$1');
 }
@@ -18,7 +24,7 @@ function getSiblingFrontmatter(filePath) {
   try {
     if (fs.existsSync(filePath)) {
       const fileContent = fs.readFileSync(filePath, 'utf8');
-      const { data } = matter(fileContent);
+      const {data} = matter(fileContent);
       return data;
     }
   } catch (error) {
@@ -30,9 +36,9 @@ function getSiblingFrontmatter(filePath) {
 // Recursively delete `prebuild/` before copying new files
 function cleanPrebuildDir(dir) {
   if (fs.existsSync(dir)) {
-    fs.rmSync(dir, { recursive: true, force: true });
+    fs.rmSync(dir, {recursive: true, force: true});
   }
-  fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync(dir, {recursive: true});
 }
 
 function processDirectory(srcDir, destDir) {
@@ -40,13 +46,13 @@ function processDirectory(srcDir, destDir) {
 
   // Ensure destination directory exists
   if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir, { recursive: true });
+    fs.mkdirSync(destDir, {recursive: true});
   }
 
   files.forEach(file => {
     const srcPath = path.join(srcDir, file);
     const isImage = /\.(png|jpe?g|gif|svg)$/i.test(file);
-    const cleanFileName = isImage ? file : removeNumbers(file); // Remove numbers from non-image files
+    const cleanFileName = isImage ? file : redirectNonJS + removeNumbers(file); // Remove numbers from non-image files
     const destPath = path.join(destDir, cleanFileName);
 
     if (fs.statSync(srcPath).isDirectory()) {
@@ -67,7 +73,7 @@ function fixNavigationLinks(dir) {
       fixNavigationLinks(fullPath); // Recurse into subdirectories
     } else if (file.endsWith('.md')) {
       const fileContent = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContent);
+      const {data, content} = matter(fileContent);
 
       let updated = false;
 
@@ -78,6 +84,7 @@ function fixNavigationLinks(dir) {
       function cleanText(text) {
         return removeNumbers(text); // Ensure text also removes numbers
       }
+
       function capitalizeTitle(text) {
         if (!text) return text;
         const cleanedText = text.replace(/-/g, ' ');
