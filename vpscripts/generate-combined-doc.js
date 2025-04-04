@@ -257,8 +257,7 @@ try {
   }
 
   function removeNonScript(content){
-    content.replace(/<noscript>[\s\S]*?<\/noscript>/gi, '')
-    return content;
+    return content.replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/gi, '')
   }
 
   // Process headings to add section-specific anchors
