@@ -256,6 +256,11 @@ try {
     });
   }
 
+  function removeNonScript(content){
+    content.replace(/<noscript>[\s\S]*?<\/noscript>/gi, '')
+    return content;
+  }
+
   // Process headings to add section-specific anchors
   function processHeadings(content, sectionId) {
     // Look for markdown headings (# Heading) and HTML headings (<h1>Heading</h1>)
@@ -434,8 +439,11 @@ try {
           // Add the section ID for navigation
           const sectionId = pathToIdMap.get(item.link);
 
+          // Remove non script to avoid self redirections
+          const nonScriptContent = removeNonScript(content);
+
           // Process content to add all the section-specific anchors
-          const processedContent = processHeadings(content, sectionId);
+          const processedContent = processHeadings(nonScriptContent, sectionId);
 
           combinedContent += `\n\n${'-'.repeat(80)}\n\n<div id="${sectionId}" class="section-title">${item.text || relativeFilePath}</div>\n\n${processedContent.trim()}\n\n${'-'.repeat(80)}\n\n`;
         }
