@@ -196,13 +196,6 @@ export default withMermaid({
       prefetchLinks: false, // Disable prefetching
     },
   },
-  transformHtml(html, id, { pageData }) {
-    const frontmatterHydrate = pageData.frontmatter?.hydrate;
-    if (frontmatterHydrate === false) {
-      return html.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gm, '');
-    }
-    return html;
-  },
   transformPageData(pageData, ctx) {
     // Use frontmatter lastUpdated if it exists
     const frontmatterUpdated = pageData.frontmatter?.lastUpdated;
