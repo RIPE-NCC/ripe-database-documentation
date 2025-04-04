@@ -555,7 +555,7 @@ vite:
       // combinedContent = tableOfContents + combinedContent;
 
       console.log('💾 Writing final output file...');
-      fs.writeFileSync(outputFile, frontmatter + '<script>' + downloadButton + '</script>' + combinedContent, { encoding: 'utf8', flag: 'w' });
+      fs.writeFileSync(outputFile, frontmatter + '<script lang="tsx">' + downloadButton + '</script>' + combinedContent, { encoding: 'utf8', flag: 'w' });
       console.log(`✅ Combined document saved to ${outputFile}`);
     }
   }
