@@ -164,7 +164,7 @@ function processNonJS(dir){
     '</noscript>'
   ].join('');
 
-  const javaScriptSupportedPages = new Set()
+  const nonJSPages = new Set()
     .add("RIPE-Database-Acceptable-Use-Policy.md")
     .add("HTML-Terms-And-Conditions.md")
     .add("all-docs-combined.md");
@@ -176,7 +176,7 @@ function processNonJS(dir){
 
     if (fs.statSync(fullPath).isDirectory()) {
       processNonJS(fullPath); // Recurse into subdirectories
-    } else if (file.endsWith('.md') && !javaScriptSupportedPages.has(file)) {
+    } else if (file.endsWith('.md') && !nonJSPages.has(file)) {
       const fileContent = fs.readFileSync(fullPath, 'utf8');
       fs.writeFileSync(fullPath,fileContent + redirectNonJS, 'utf8');
     }
