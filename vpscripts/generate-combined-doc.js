@@ -519,8 +519,12 @@ vite:
   ].join('');
 
 
-  const hideButtonWhenNonJS = [
-    ' <noscript><style>#downloadBtn{ display: none; }</style></noscript>'
+  const hideComponentsWhenNonJS = [
+    '<noscript><style>',
+    '#downloadBtn{ display: none; }',
+    'header.VPNav{ display: none; }',
+    'aside.VPSidebar{ display: none; }',
+    '</style></noscript>'
   ].join('');
 
 
@@ -561,7 +565,7 @@ vite:
       // combinedContent = tableOfContents + combinedContent;
 
       console.log('💾 Writing final output file...');
-      fs.writeFileSync(outputFile, frontmatter + downloadButton + hideButtonWhenNonJS + combinedContent, { encoding: 'utf8', flag: 'w' });
+      fs.writeFileSync(outputFile, frontmatter + downloadButton + hideComponentsWhenNonJS + combinedContent, { encoding: 'utf8', flag: 'w' });
       console.log(`✅ Combined document saved to ${outputFile}`);
     }
   }
