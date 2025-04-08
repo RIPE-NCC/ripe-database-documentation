@@ -95,10 +95,10 @@ More information [here](https://htmlpreview.github.io/?https://github.com/mxsash
 
 * URL:
 
-| Environment | Public key URL                                                          |
-|-------------|-------------------------------------------------------------------------|
-| PROD        | https://nrtm.db.ripe.net/nrtmv4/RIPE/update-notification-file.json      |
-| RC          | https://nrtm-rc.db.ripe.net/nrtmv4/RIPE/update-notification-file.json   |
+| Environment | Public key URL                                                        |
+|-------------|-----------------------------------------------------------------------|
+| PROD        | https://nrtm.db.ripe.net/nrtmv4/RIPE/update-notification-file.jose    |
+| RC          | https://nrtm-rc.db.ripe.net/nrtmv4/RIPE/update-notification-file.jose |
 
 
 ### Snapshot File
