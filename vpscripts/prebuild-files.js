@@ -160,8 +160,12 @@ function fixNavigationLinks(dir) {
 function processNonJS(dir){
   const redirectToNonJS = [
     '<noscript>',
-    '<meta http-equiv="refresh" content="0;url=/all-docs-combined"/>',
-    '</noscript>'
+    '<meta http-equiv="refresh" content="2000;url=/all-docs-combined"/>',
+    '</noscript>',
+    '<script>',
+    'if (!window.location.search.includes(\'js=true\')) {',
+    'window.location.replace(window.location.pathname + \'?js=true\');}',
+    '</script>'
   ].join('');
 
   const nonJSPages = new Set()
