@@ -161,11 +161,7 @@ function processNonJS(dir){
   const redirectToNonJS = [
     '<noscript>',
     '<meta http-equiv="refresh" content="2000;url=/all-docs-combined"/>',
-    '</noscript>',
-    '<script>',
-    'if (!window.location.search.includes(\'js=true\')) {',
-    'window.location.replace(window.location.pathname + \'?js=true\');}',
-    '</script>'
+    '</noscript>'
   ].join('');
 
   const nonJSPages = new Set()
