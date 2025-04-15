@@ -157,31 +157,6 @@ function fixNavigationLinks(dir) {
   });
 }
 
-function processNonJS(dir){
-  const redirectToNonJS = [
-    '<noscript>',
-    '<meta http-equiv="refresh" content="0;url=/all-docs-combined"/>',
-    '</noscript>'
-  ].join('');
-
-  const nonJSPages = new Set()
-    .add("RIPE-Database-Acceptable-Use-Policy.md")
-    .add("HTML-Terms-And-Conditions.md")
-    .add("all-docs-combined.md");
-
-  const files = fs.readdirSync(dir);
-
-  files.forEach(file => {
-    const fullPath = path.join(dir, file);
-
-    if (fs.statSync(fullPath).isDirectory()) {
-      processNonJS(fullPath); // Recurse into subdirectories
-    } else if (file.endsWith('.md') && !nonJSPages.has(file)) {
-      const fileContent = fs.readFileSync(fullPath, 'utf8');
-      fs.writeFileSync(fullPath,fileContent + redirectToNonJS, 'utf8');
-    }
-  });
-}
 
 function preprocessDocs() {
   console.log('🔄 Cleaning prebuild directory...');
@@ -193,9 +168,6 @@ function preprocessDocs() {
   console.log('🔍 Fixing prev/next links inside _index folders...');
   fixNavigationLinks(buildDir);
   console.log('✅ Prev/next links cleaned.');
-
-  processNonJS(buildDir)
-  console.log('✅ Redirect to All Docs when JS disabled.')
 }
 
 // Run the script
