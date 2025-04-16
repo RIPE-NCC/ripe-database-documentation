@@ -26,6 +26,7 @@ import {
   QuestionMark,
   AppBanner,
 } from '@technical-design/ripe-app-webcomponents';
+import {compileStyles} from "mermaid/dist/rendering-util/rendering-elements/shapes/handDrawnShapeStyles";
 
 // Prevent tree-shaking
 const keepAliveComponents = [

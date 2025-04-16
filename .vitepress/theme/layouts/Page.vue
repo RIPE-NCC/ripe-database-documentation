@@ -22,12 +22,12 @@ defineProps({
         <h1>{{ frontmatter.title || "Custom Doc" }}</h1>
       </div>
     </template>
-    
+
     <!-- Include slots for header customizations -->
     <template #nav-bar-content-after>
       <slot name="nav-bar-content-after"></slot>
     </template>
-    
+
     <template #nav-bar-title-before>
       <slot name="nav-bar-title-before"></slot>
     </template>
