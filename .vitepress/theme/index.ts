@@ -1,9 +1,7 @@
-import { h, onMounted, nextTick, watch, ref } from 'vue'
+import { h, nextTick, watch } from 'vue'
 import { type Theme, useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme-without-fonts'
-import rawSidebar from '../sidebar.json'; 
 import Logo from '../components/SiteLogo.vue';
-
 
 // Import custom layouts
 import PageLayout from './layouts/Page.vue'
@@ -112,8 +110,6 @@ export default {
     const appSwitcher = h('app-switcher', { appenv: 'prod', class: 'gt-xs' })
     const userLogin = h('user-login', { accessurl: 'access.ripe.net' })
     const logo = h(Logo);
-    // console.log("Current frontmatter layout:", frontmatter.value?.layout);
-    // Check if frontmatter specifies `layout: custom`
     if (frontmatter.value?.layout === 'custom') {
         // console.log("USING CUSTOM DOC LAYOUT");
         return h(PageLayout, { frontmatter: frontmatter.value }, {
@@ -147,6 +143,18 @@ export default {
         }
       });
     };
+
+    const jsDetector = async () => {
+      if (typeof window === 'undefined') return;
+
+      const url = new URL(window.location.href);
+      if (url.searchParams.has('js')) return;
+
+      url.searchParams.set('js', 'true');
+      window.location.href = url.toString();
+    }
+
+    jsDetector();
 
     loadMermaid();
 

@@ -55,3 +55,5 @@
         height: auto;
       }
 </style>
+<script setup lang="ts">
+</script>
