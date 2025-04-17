@@ -115,14 +115,14 @@ export default {
         // console.log("USING CUSTOM DOC LAYOUT");
         return h(PageLayout, { frontmatter: frontmatter.value }, {
           // Pass the header components as slots
-          'nav-bar-content-after': () => [appSwitcher, userLogin, jsDetector],
+          'nav-bar-content-after': () => [jsDetector, appSwitcher, userLogin],
           'nav-bar-title-before': () => logo
         })
       } else {
         // console.log("USING DEFAULT LAYOUT");
       }
       return h(DefaultTheme.Layout, null, {
-        'nav-bar-content-after': () => [appSwitcher, userLogin, jsDetector],
+        'nav-bar-content-after': () => [jsDetector, appSwitcher, userLogin],
         'nav-bar-title-before': () => logo
       })
   },
