@@ -2,7 +2,6 @@ import { h, nextTick, watch } from 'vue'
 import { type Theme, useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme-without-fonts'
 import Logo from '../components/SiteLogo.vue';
-import JSDetector from '../components/JSDetector.vue';
 // Import custom layouts
 import PageLayout from './layouts/Page.vue'
 
@@ -110,19 +109,18 @@ export default {
     const appSwitcher = h('app-switcher', { appenv: 'prod', class: 'gt-xs' })
     const userLogin = h('user-login', { accessurl: 'access.ripe.net' })
     const logo = h(Logo);
-    const jsDetector = h(JSDetector);
     if (frontmatter.value?.layout === 'custom') {
         // console.log("USING CUSTOM DOC LAYOUT");
         return h(PageLayout, { frontmatter: frontmatter.value }, {
           // Pass the header components as slots
-          'nav-bar-content-after': () => [jsDetector, appSwitcher, userLogin],
+          'nav-bar-content-after': () => [appSwitcher, userLogin],
           'nav-bar-title-before': () => logo
         })
       } else {
         // console.log("USING DEFAULT LAYOUT");
       }
       return h(DefaultTheme.Layout, null, {
-        'nav-bar-content-after': () => [jsDetector, appSwitcher, userLogin],
+        'nav-bar-content-after': () => [appSwitcher, userLogin],
         'nav-bar-title-before': () => logo
       })
   },
