@@ -12,8 +12,6 @@ Newly created as-set names must be hierarchical. The hierarchy consists of a ser
 
 Existing as-set names can be short (i.e. with a name only, e.g. AS-TEST) or hierarchical (i.e. with a name and AS number reference(s), e.g. AS3333:AS-TEST). It is now mandatory to only use hierarchical names to create an **as-set** object, so that the creation is authenticated by the AS number holder. This restriction does not apply to the other set types.
 
-Existing as-set names can be short (i.e. with a name only, e.g. AS-TEST) or hierarchical (i.e. with a name and AS number reference(s), e.g. AS3333:AS-TEST). It is now mandatory to use hierarchical names to create an **as-set** object, so that the creation is authenticated by the AS number holder. This restriction does not apply to the other set types.
-
 AS-LIST1:AS-CUST
 
 AS3333:AS-RIPE:AS-APNIC

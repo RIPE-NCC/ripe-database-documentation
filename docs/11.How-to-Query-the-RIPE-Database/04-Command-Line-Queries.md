@@ -79,6 +79,8 @@ To query the RIPE database, use the format: whois \<query-string\>
 
     Report bugs to <md+whois@linux.it>.
 
+
+
     $ whois -rBGTroute 193.0.7.35
 
     % This is the RIPE Database query service.
@@ -114,6 +116,7 @@ A query containing spaces must be quoted as one argument to the whois command.
     This program is free software with ABSOLUTELY NO WARRANTY; you may
     redistribute it under the terms of the GNU General Publi Licence
 
+
     $ whois -h whois.ripe.net -- -rBGTroute 193.0.7.35
 
     [Querying whois.ripe.net]
@@ -134,7 +137,6 @@ A query containing spaces must be quoted as one argument to the whois command.
 
     % This query was served by the RIPE Database Query Service version 1.103 (WAGYU)
 
-```
 
 
 

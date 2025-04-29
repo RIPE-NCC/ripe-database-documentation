@@ -25,6 +25,9 @@ max_connections=1000
 If you wish to run your own Whois server, you need additional variables to be modified:
 
 * `max_allowed_packet = 20M`
+  * We need big packet sizes as some objects are very big
+  * Default is 1M 
+  * Ref. https://mariadb.com/kb/en/mariadb/server-system-variables/#max_allowed_packet
 
 * `innodb_buffer_pool_size = 2G`
   * as we only have innodb databases, this should be set to use all the remaining memory available
