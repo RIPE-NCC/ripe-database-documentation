@@ -54,11 +54,11 @@ Additional resources:
 | key        | Primary key of the given object.               |
 
 ### Query Parameters
-| name        | description                                                                                                                                                       |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| password    | Password for maintainer authentication (one or more values).                                                                                                      |
-| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed). |
-| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                                  |
+| name        | description                                                                                                                                                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| password    | Password for maintainer authentication (one or more values).                                                                                               |
+| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed).  |
+| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                           |
 
 ### Headers
 | name          | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -510,7 +510,7 @@ RESTful API queries can be authenticated in order to retrieve the full object de
 
 RESTful API queries can be authenticated using the following methods:
 
-- Password: You can choose between using a "password" query parameter or using basic authentication. Please note that passwords are deprecated and will be removed in future.
+- Password: You can choose between using a "password" query parameter or using HTTP basic authentication. Please note that passwords are deprecated and will be removed in future.
 - RIPE NCC Access: If you are using the RIPE database web application you can automatically be authenticated against the objects mntner auth: SSO attribute(s).
 - Client certificate: You can supply your own certificate, and it is verified against the objects mntner auth: key-cert attribute(s).
-- API key: You can submit an API key generated with your RIPE NCC Access account, and it is verified against the objects mntner auth: SSO attribute(s).
+- API key: You can submit an API key generated with your RIPE NCC Access account using HTTP basic authentication, and it is verified against the objects mntner auth: SSO attribute(s).
