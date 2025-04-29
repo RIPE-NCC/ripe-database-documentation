@@ -8,8 +8,6 @@ permalink: /What-is-the-RIPE-Database/History-of-the-RIPE-Database
 * [Background of the RIPE Database](#background-of-the-ripe-database)
 * [Versions of the RIPE Database](#versions-of-the-ripe-database)
 
-
-
 ## Background of the RIPE Database
 
 From the very first RIPE Meeting in 1989, the need for some sort of registry had been identified. In the early years of RIPE, this consisted of documenting the use of IPv4 address space in the RIPE region on a voluntary basis. The actual address space was not distributed by RIPE.

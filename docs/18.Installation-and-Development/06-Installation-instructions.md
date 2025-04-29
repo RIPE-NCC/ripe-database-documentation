@@ -142,3 +142,55 @@ If MariaDB says that no row was affected, it is fine.
 If your client has IPv6, use the IPv6/64 prefix.
 
 Commit the changes and in a couple of minutes the Whois server will pick it up and will not block that IP again.
+
+
+## How to enable Full-Text Search queries
+
+The Whois server supports text searches [full text search](../How-to-Query-the-RIPE-Database/Web-Query-Form/#using-full-text-search).
+To enable this feature, you need to have a running instance of Elasticsearch either locally or on a server 
+accessible from your machine. For more details on setup Elasticsearch visit: 
+[Elasticsearch setup](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html).
+Ensure that the Elasticsearch version is compatible with the `elasticsearch.version` property 
+specified in the `pom.xml`.
+
+* Configuring Whois to Use Elasticsearch: If your Elasticsearch instance **only supports HTTP** (not HTTPS), you need 
+  to modify `ElasticSearchInstance.getEsClient`. You need to update `https` to `http` in the method and rebuild the 
+  Whois JAR with the updated configuration.
+
+  You need to modify the properties field to include:
+
+      whois.source=<source>
+      whois.db.slave.url=jdbc:mariadb://localhost/<Schema where required sources are>
+      elastic.host=<Host:port where you are running Elasticsearch. i.e.: localhost:9200 if you are running it locally>
+      elastic.user=<Set the elasticsearch user if needed>
+      elastic.password=<Set the elasticsearch password if needed> 
+
+  Ensure the database **schema** contains the necessary source for full-text search.
+
+
+* Creating an Elasticsearch Index: After starting the Whois server, run the following `JMX command` to initialize whois indexes. 
+  This will create a necessary index with the format `whois-yyyyMMdd-HHmmss`.
+  
+      java --add-exports jdk.jconsole/sun.tools.jconsole=ALL-UNNAMED -jar jmxterm-1.0.4-uber.jar -v verbose
+
+  Then, inside JMX:
+  
+      $> open (PID)
+      $> bean net.ripe.db.whois:name=ElasticSearchRebuildIndex
+      $> run runRebuildIndexes <comment>
+      Successfully rebuilt indexes
+
+  This will populate the Elasticsearch index with Whois data.
+  ElasticFullTextIndex job will run each minute to keep the index updated.
+
+
+* Testing the Full-Text Search: 
+  
+  To confirm that Elasticsearch is properly indexing data, run:
+
+      curl http://<host>:<port>/whois/_count
+  ✔ Expected output: Number of indexed documents
+  Perform a Full-Text Search Query
+
+      curl "http://localhost:1080/whois/fulltextsearch/select.json?q=Example&wt=json"
+  ✔ Expected output: JSON results containing Whois records matching "Example"

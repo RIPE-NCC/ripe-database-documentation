@@ -60,9 +60,9 @@ HTTPS is mandatory.
 | dry-run     | Optional. Perform validation but don't perform the update.                              |
 
 ### Headers
-| name          | description                                                                                                                                                                                                                   |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
+| name          | description |
+|---------------|-------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header can be used for either password or API key authentication. <br/>To use password authentication, the value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.<br/>To use API key authentication, the value contains a Base64-encoded value displayed when the API key was created.            |
 
 #### HTTP Request Body
 
@@ -154,7 +154,7 @@ HTTPS is mandatory.
 ### Headers
 | name          | description                                                                                                                                                                                                                   |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header can be used for either password or API key authentication. <br/>To use password authentication, the value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.<br/>To use API key authentication, the value contains a Base64-encoded value displayed when the API key was created. |
 
 #### HTTP Request Body
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#rest-api-data-model) containing the new version of the specified objects.
@@ -266,7 +266,7 @@ HTTPS is mandatory.
 ### Headers
 | name          | description                                                                                                                                                                                                                   |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header can be used for either password or API key authentication. <br/>To use password authentication, the value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.<br/>To use API key authentication, the value contains a Base64-encoded value displayed when the API key was created. |
 
 #### HTTP Request Body
 
@@ -348,7 +348,7 @@ Any required passwords must also be supplied as part of the Uniform Resource ide
 ## Client Certificate Authentication
 
 [Client Certificate Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Client_certificate_authentication)
-is supported by our REST API. To use the client certificate service, you must have your own certificate: either from a certificate authority (CA) such as Let's Encrypt, or you can generate one yourself.
+is supported by the Whois REST API. To use the client certificate service, you must have your own certificate: either from a certificate authority (CA) such as Let's Encrypt, or you can generate one yourself.
 
 The **key-cert** object's client certificate status is validated by checking its `notBefore` and `notAfter` dates to ensure it is within its 
 designated validity period. This involves comparing the current date against these dates: if the certificate is not yet valid (`notBefore`) 
@@ -358,11 +358,19 @@ its valid time frame, maintaining secure and reliable authentication.
 Additionally, signed updates are only considered valid for an hour after they are signed. After that the 
 authentication will fail.
 
-### Examples
+### Example
 
-- Create your own certificate:
-  - Generate the private key: openssl genrsa -out client.key 2048
-  - Generate the Certificate Signing Request (CSR): openssl req -new -key client.key -out client.csr
-  - Generate the self-signed certificate using the CSR: openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt
-- Example using curl and previous certificate: 
-  - curl --cert client.crt --key client.key -X PUT --data @form.txt'https://rest-cert.db.ripe.net/ripe/person/TP1-RIPE?dry-run&password=...'
+For an example of how to use client certificate authentication, please see the appendix ["Client Certificate Authentication"](../Appendices/Appendix-I--Client-Certificate-Authentication/#introduction). 
+
+
+## API Key Authentication
+
+API keys are a way to script (automate) authenticated queries and updates using the Whois REST API. They are generated using the web interface and are associated with a user's RIPE NCC Access account. They have a maximum validity of one year.
+
+You can create as many different keys as you’d like. We suggest that you create a separate key for each application that you’d like to provide with access. That way, if you believe the key has been compromised, you can revoke access to that application without affecting other applications that you have provided with access.
+
+API keys created for the RIPE database cannot be used with any other RIPE NCC service.
+
+### Example
+
+For an example of how to use API keys, please see the appendix ["API Keys"](../Appendices/Appendix-K--API-Keys/#introduction). 

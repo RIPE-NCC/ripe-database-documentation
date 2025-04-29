@@ -54,16 +54,16 @@ Additional resources:
 | key        | Primary key of the given object.               |
 
 ### Query Parameters
-| name        | description                                                                                                                                                       |
-|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| password    | Password for maintainer authentication (one or more values).                                                                                                      |
-| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed). |
-| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                                  |
+| name        | description                                                                                                                                                |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| password    | Password for maintainer authentication (one or more values).                                                                                               |
+| unfiltered  | The returned object should not be filtered ("notify" and "e-mail" attributes will not be removed).  |
+| unformatted | Return the resource in its original formatting (including spaces, end-of-lines).                                                                           |
 
 ### Headers
-| name          | description                                                                                                                                                                                                                   |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. |
+| name          | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Authorization | [Basic HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc7617). The Authorisation request header can be used for either password or API key authentication. <br/>To use password authentication, the value contains 'Basic' followed by the base64 encoding of the maintainer name and password separated by a colon. Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.<br/>To use API key authentication, the value contains a Base64-encoded value displayed when the API key was created. |
 
 ### HTTP Response Body
 
@@ -510,9 +510,7 @@ RESTful API queries can be authenticated in order to retrieve the full object de
 
 RESTful API queries can be authenticated using the following methods:
 
-- Password: You can choose between using password query parameter or basic authentication. 
-- SSO cookie: If you are using the web application you can automatically be authenticated in one mntner if that mntner 
-  is associated to your SSO account.
-- Client certificate: You can supply your own certificate, and it is checked against the queried object's mntner 
-  key-certs
-
+- Password: You can choose between using a "password" query parameter or using HTTP basic authentication. Please note that passwords are deprecated and will be removed in future.
+- RIPE NCC Access: If you are using the RIPE database web application you can automatically be authenticated against the objects mntner auth: SSO attribute(s).
+- Client certificate: You can supply your own certificate, and it is verified against the objects mntner auth: key-cert attribute(s).
+- API key: You can submit an API key generated with your RIPE NCC Access account using HTTP basic authentication, and it is verified against the objects mntner auth: SSO attribute(s).

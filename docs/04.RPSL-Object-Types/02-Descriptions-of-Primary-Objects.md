@@ -410,7 +410,9 @@ A **route6** object contains routing information for IPv6 address space resource
 
 Each interAS route (also known as an interdomain route) originated by an Autonomous System can be specified by using a **route6** object for IPv6 addresses.
 
-Authorisation for creating **route6** objects is quite complex. There are four scenarios depending on who administers the address space and the AS Number. Because the RIPE INR and IRR are part of the same logical database, they can both be used for authorisation if the address space and/or AS Number are RIPE NCC administered resources. Where one or both are not administered by the RIPE NCC authorisation is bypassed but with the illusion of being genuine authorisation. For more details see the section ['Authorisation'](../Authorisation/#authorisation).
+Authorisation for creating **route6** objects is quite complex. There are multiple scenarios depending on who administers the address space. Because the RIPE INR and IRR are part of the same logical database, they can both be used for authorisation if the address space is RIPE NCC administered resources. For more details on this see the section, ['Authorisation'](../Authorisation/#authorisation).
+
+The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistencies in the RIPE Database.
 
 The route consistency can be checked using the [AS routing consistency tool](https://stat.ripe.net/widget/as-routing-consistency). This wizard compares the actual state of the Internet Routing tables (collected by RIS), in order to identify and correct possible inconsistencies in the RIPE Database.
 
