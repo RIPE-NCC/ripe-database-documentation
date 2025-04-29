@@ -18,6 +18,8 @@ COPY ./vpscripts ./vpscripts
 
 COPY ./docs/public/imgs ./imgs
 
+COPY ./docs/public/diagrams ./diagrams
+
 RUN npm run docs:build
 
 # Final stage

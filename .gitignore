@@ -5,3 +5,4 @@ builds
 .idea/
 ripe-docs.iml
 .vitepress/dist/
+docs/public/diagrams/*.svg
