@@ -1,5 +1,4 @@
 import fs from 'fs';
-import { exec } from 'child_process';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import matter from 'gray-matter';
@@ -10,14 +9,6 @@ const __dirname = path.dirname(__filename);
 
 const sourceDir = path.resolve(__dirname, '..', 'docs'); // Source: docs/ (at project root)
 const buildDir = path.resolve(__dirname, '..', 'prebuild'); // Destination: prebuild/ (at project root)
-
-const diagramsDir = path.resolve(__dirname, 'public/diagrams');
-const diagrams = [
-  {
-    input: path.join(diagramsDir, 'route.mmd'),
-    output: path.join(diagramsDir, 'route.svg'),
-  }
-];
 
 function removeNumbers(str) {
   return str.replace(/(^|\/)\d+\.(?!md)/g, '$1');
@@ -166,18 +157,6 @@ function fixNavigationLinks(dir) {
   });
 }
 
-function generateDiagrams() {
-  diagrams.forEach(({ input, output }) => {
-    const cmd = `npx mmdc -i "${input}" -o "${output}"`;
-    exec(cmd, (err, stdout, stderr) => {
-      if (err) {
-        console.error(`Failed to generate diagram from ${input}:`, stderr);
-      } else {
-        console.log(`Generated diagram: ${output}`);
-      }
-    });
-  });
-}
 
 function preprocessDocs() {
   console.log('🔄 Cleaning prebuild directory...');
@@ -189,10 +168,6 @@ function preprocessDocs() {
   console.log('🔍 Fixing prev/next links inside _index folders...');
   fixNavigationLinks(buildDir);
   console.log('✅ Prev/next links cleaned.');
-
-  console.log('🔍 Generating diagrams...');
-  generateDiagrams();
-  console.log('🔍 ...Diagrams generated');
 }
 
 // Run the script
