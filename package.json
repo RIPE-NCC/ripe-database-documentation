@@ -12,9 +12,10 @@
   "scripts": {
     "generate-sidebar": "node vpscripts/generate-sidebar.js",
     "prebuild-files": "node vpscripts/prebuild-files.js",
+    "generate-diagrams": "node vpscripts/generate-diagrams.js",
     "generate-combined-doc": "npm run generate-sidebar && npm run prebuild-files && node vpscripts/generate-combined-doc.js",
-    "docs:dev": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && vitepress dev",
-    "docs:build": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && vitepress build",
+    "docs:dev": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && npm run generate-diagrams && vitepress dev",
+    "docs:build": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && npm run generate-diagrams && vitepress build",
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
