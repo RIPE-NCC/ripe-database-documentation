@@ -111,11 +111,4 @@ watch(() => props.src, async () => {
   background-color: #e0e0e0;
 }
 
-#route-object-creation-flowchart, #domain-object-creation-flowchart{
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  background-color: var(--mdc-text-field-fill-color, white);
-}
-
 </style>
