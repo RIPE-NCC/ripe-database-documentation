@@ -459,7 +459,7 @@ try {
     let toc = '';
 
     if (depth === 0) {
-      toc += '## Table of Contents\n\n';
+      toc += '\n## Table of Contents\n\n';
     }
 
     for (const item of items) {
@@ -569,8 +569,8 @@ vite:
 
       // Table of contents is now optional
       // Uncomment the following lines if you want a TOC
-      // const tableOfContents = generateTableOfContents(sidebar);
-      // combinedContent = tableOfContents + combinedContent;
+      const tableOfContents = generateTableOfContents(sidebar);
+      combinedContent = tableOfContents + combinedContent;
 
       console.log('💾 Writing final output file...');
       fs.writeFileSync(outputFile, frontmatter + downloadButton + hideComponentsWhenNonJS + combinedContent, { encoding: 'utf8', flag: 'w' });
