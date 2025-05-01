@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import matter from 'gray-matter';
-
+import {exec} from "child_process";
 // Manually define __dirname in ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,6 +12,32 @@ const buildDir = path.resolve(__dirname, '..', 'prebuild'); // Destination: preb
 
 function removeNumbers(str) {
   return str.replace(/(^|\/)\d+\.(?!md)/g, '$1');
+}
+
+function transformDiagram(file, srcDir, destDir){
+  const inputPath = path.join(srcDir, file);
+  const outputPath = path.join(destDir, file.replace(/\.mmd$/, '.svg'));
+
+  const cmd = `npx mmdc -i "${inputPath}" -o "${outputPath}" --puppeteerConfigFile ./vpscripts/puppeteer-config.json`;
+  console.log(cmd)
+  exec(cmd, (err, stdout, stderr) => {
+    if (err) {
+      console.error(`Failed to generate diagram from ${inputPath}:`, stderr);
+    } else {
+      console.log(`Generated diagram: ${outputPath}`);
+    }
+  });
+}
+
+function processFile(isImage, isMmd, srcDir, destDir, file){
+  if (!isImage && !isMmd) {
+    return removeNumbers(file); // Remove numbers from
+    // non-image files
+  }
+  if (isMmd) {
+    transformDiagram(file, srcDir, destDir); // Transform .mmd into .svg
+  }
+  return file;
 }
 
 function getSiblingFrontmatter(filePath) {
@@ -46,8 +72,8 @@ function processDirectory(srcDir, destDir) {
   files.forEach(file => {
     const srcPath = path.join(srcDir, file);
     const isImage = /\.(png|jpe?g|gif|svg)$/i.test(file);
-    const cleanFileName = isImage ? file : removeNumbers(file); // Remove numbers from
-    // non-image files
+    const isMmd = /\.(mmd)$/i.test(file);
+    const cleanFileName = processFile(isImage, isMmd, srcDir, destDir, file)
     const destPath = path.join(destDir, cleanFileName);
 
     if (fs.statSync(srcPath).isDirectory()) {

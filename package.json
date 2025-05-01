@@ -14,13 +14,14 @@
     "prebuild-files": "node vpscripts/prebuild-files.js",
     "generate-diagrams": "node vpscripts/generate-diagrams.js",
     "generate-combined-doc": "npm run generate-sidebar && npm run prebuild-files && node vpscripts/generate-combined-doc.js",
-    "docs:dev": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && npm run generate-diagrams && vitepress dev",
-    "docs:build": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && npm run generate-diagrams && vitepress build",
+    "docs:dev": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files  && vitepress dev",
+    "docs:build": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && vitepress build",
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
     "@fontsource-variable/public-sans": "^5.2.5",
     "@material/web": "^2.1.0",
+    "@mermaid-js/mermaid-cli": "^10.0.0",
     "@panzoom/panzoom": "^4.6.0",
     "@technical-design/ncc-vitepress-plugin-search": "^1.0.1",
     "@technical-design/ripe-app-webcomponents": "^4.2.1",
@@ -32,6 +33,7 @@
     "node-fetch": "^3.3.2",
     "path": "^0.12.7",
     "prismjs": "^1.29.0",
+    "puppeteer": "^22.8.2",
     "vue-router": "^4.4.3"
   }
 }

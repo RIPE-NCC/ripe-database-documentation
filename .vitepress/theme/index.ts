@@ -155,7 +155,7 @@ export default {
 
     createJS();
 
-    loadMermaid();
+    //loadMermaid();
 
     nextTick(() => {
       // Set up route change handling for highlighting
@@ -163,16 +163,16 @@ export default {
         () => router.route.path,
         (newPath, oldPath) => {
           // console.log(`🔄 Route changed: ${oldPath} -> ${newPath}`);
-          
+
           // Preserve existing sidebar highlighting logic
           setTimeout(() => {
             highlightSidebar(newPath);
             expandSidebarForCurrentPath();
-            loadMermaid(); // Re-initialize mermaid on route change
+            //loadMermaid(); // Re-initialize mermaid on route change
           }, 300);
         }
       );
-    
+
       // Set up initial sidebar expansion for the current page
       if (typeof window !== 'undefined') {
         // On page load
@@ -180,14 +180,14 @@ export default {
           // console.log("🏁 Page loaded, expanding sidebar");
           setTimeout(() => {
             expandSidebarForCurrentPath();
-            loadMermaid();
+            //loadMermaid();
           }, 300);
         });
-    
+
         // Also try immediately (for cases where the load event might have already fired)
         setTimeout(() => {
           expandSidebarForCurrentPath();
-          loadMermaid();
+          //loadMermaid();
         }, 300);
       }
     });
