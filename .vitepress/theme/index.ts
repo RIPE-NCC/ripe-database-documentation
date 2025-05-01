@@ -4,7 +4,7 @@ import DefaultTheme from 'vitepress/theme-without-fonts'
 import Logo from '../components/SiteLogo.vue';
 // Import custom layouts
 import PageLayout from './layouts/Page.vue'
-
+import SvgZoom from '../components/SvgZoom.vue'
 import '@technical-design/ripe-app-webcomponents/style/ripe-app-colors.css';
 import '@fontsource-variable/public-sans';
 import '@fontsource-variable/public-sans/wght-italic.css'
@@ -130,19 +130,7 @@ export default {
     // Register global components
     // Disable internal prefetch function
     (globalThis as any).__vitepress__usePrefetch = () => false;
-    const loadMermaid = async () => {
-      if (typeof window === 'undefined') return;
-
-      // Find all unprocessed mermaid blocks (those not yet containing an SVG)
-      const mermaidElements = document.querySelectorAll('.mermaid');
-      mermaidElements.forEach((el) => {
-        const rawText = el.textContent?.trim();
-        if (!el.querySelector('svg') && rawText && rawText.length > 0) {
-          window.mermaid.init(undefined, el);
-        }
-      });
-    };
-
+    app.component('SvgZoom', SvgZoom)
     const createJS = () => {
       if (typeof window === 'undefined') return;
 
@@ -155,8 +143,6 @@ export default {
 
     createJS();
 
-    //loadMermaid();
-
     nextTick(() => {
       // Set up route change handling for highlighting
       watch(
@@ -168,7 +154,6 @@ export default {
           setTimeout(() => {
             highlightSidebar(newPath);
             expandSidebarForCurrentPath();
-            //loadMermaid(); // Re-initialize mermaid on route change
           }, 300);
         }
       );
@@ -180,14 +165,12 @@ export default {
           // console.log("🏁 Page loaded, expanding sidebar");
           setTimeout(() => {
             expandSidebarForCurrentPath();
-            //loadMermaid();
           }, 300);
         });
 
         // Also try immediately (for cases where the load event might have already fired)
         setTimeout(() => {
           expandSidebarForCurrentPath();
-          //loadMermaid();
         }, 300);
       }
     });
