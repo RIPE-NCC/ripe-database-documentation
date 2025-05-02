@@ -5,6 +5,9 @@
       <button id="zoom_in" @click="zoom(1)">➕ Zoom In</button>
     </div>
     <div ref="container" class="svg-container" v-html="svgContent" />
+    <noscript>
+      <img :src="props.src" alt="Diagram" />
+    </noscript>
   </div>
 </template>
 <script setup lang="ts">
@@ -25,7 +28,7 @@ let panzoomInstance = null;
 
 const loadSvg = async () => {
   try {
-    const res = await fetch(props.src + "?js=true");
+    const res = await fetch(props.src);
     svgContent.value = await res.text();
   } catch (err) {
     console.error(`Failed to load SVG from ${props.src}:`, err);

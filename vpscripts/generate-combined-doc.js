@@ -439,10 +439,10 @@ try {
           const sectionId = pathToIdMap.get(item.link);
 
           // Remove non script to avoid self redirections
-          const nonScriptContent = removeNonScript(content);
+          //const nonScriptContent = removeNonScript(content);
 
           // Process content to add all the section-specific anchors
-          const processedContent = processHeadings(nonScriptContent, sectionId);
+          const processedContent = processHeadings(content, sectionId);
 
           combinedContent += `\n\n${'-'.repeat(80)}\n\n<div id="${sectionId}" class="section-title">${item.text || relativeFilePath}</div>\n\n${processedContent.trim()}\n\n${'-'.repeat(80)}\n\n`;
         }
