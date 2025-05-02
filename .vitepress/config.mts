@@ -35,6 +35,11 @@ var options = {
   placeholder: "Search docs",
   allow: [],
   ignore: [],
+  synonymMappings: {
+    "RPSL": ["Routing Policy Specification Language"],
+    "Routing Policy Specification Language": ["RPSL"],
+    "config": ["configure", "configuration"]
+  }
 };
 
 function removeNumbers(str) {
