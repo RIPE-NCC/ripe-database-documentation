@@ -4,6 +4,7 @@ import DefaultTheme from 'vitepress/theme-without-fonts'
 import Logo from '../components/SiteLogo.vue';
 // Import custom layouts
 import PageLayout from './layouts/Page.vue'
+import SvgZoom from '../components/SvgZoom.vue'
 import '@technical-design/ripe-app-webcomponents/style/ripe-app-colors.css';
 import '@fontsource-variable/public-sans';
 import '@fontsource-variable/public-sans/wght-italic.css'
@@ -129,6 +130,7 @@ export default {
     // Register global components
     // Disable internal prefetch function
     (globalThis as any).__vitepress__usePrefetch = () => false;
+    app.component('SvgZoom', SvgZoom)
     const createJS = () => {
       if (typeof window === 'undefined') return;
 
