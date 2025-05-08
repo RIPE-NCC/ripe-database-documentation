@@ -74,12 +74,12 @@ https://rdap.db.ripe.net/help
 
 The RDAP protocol is specified in the following RFCs:
 
- * [RFC 7480](https://www.rfc-editor.org/rfc/rfc7480) – HTTP Usage in the Registration Data Access Protocol (RDAP)
- * [RFC 7481](https://www.rfc-editor.org/rfc/rfc7481) – Security Services for the Registration Data Access Protocol (RDAP)
- * [RFC 9082](https://datatracker.ietf.org/doc/rfc9082/) – Registration Data Access Protocol (RDAP) Query Format
- * [RFC 9083](https://datatracker.ietf.org/doc/rfc9083/) – JSON Responses for the Registration Data Access Protocol (RDAP)
- * [RFC 7484](https://www.rfc-editor.org/rfc/rfc7484) – Finding the Authoritative Registration Data (RDAP) Service
- * [RFC 7485](https://www.rfc-editor.org/rfc/rfc7485) – Inventory and Analysis of WHOIS Registration Objects
+ * [RFC 7480](https://www.rfc-editor.org/rfc/rfc7480) - HTTP Usage in the Registration Data Access Protocol (RDAP)
+ * [RFC 7481](https://www.rfc-editor.org/rfc/rfc7481) - Security Services for the Registration Data Access Protocol (RDAP)
+ * [RFC 9082](https://datatracker.ietf.org/doc/rfc9082/) - Registration Data Access Protocol (RDAP) Query Format
+ * [RFC 9083](https://datatracker.ietf.org/doc/rfc9083/) - JSON Responses for the Registration Data Access Protocol (RDAP)
+ * [RFC 7484](https://www.rfc-editor.org/rfc/rfc7484) - Finding the Authoritative Registration Data (RDAP) Service
+ * [RFC 7485](https://www.rfc-editor.org/rfc/rfc7485) - Inventory and Analysis of WHOIS Registration Objects
 
  ## RDAP profiles
 

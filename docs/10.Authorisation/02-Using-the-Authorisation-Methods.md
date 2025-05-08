@@ -20,11 +20,11 @@ Please note that MD5 hashed passwords are deprecated and will be removed by end 
 An MD5 password can be used by any of the update methods currently in use. See section 5.2 Update Methods for more details of these methods.
 
 For email updates, password authorisation information is supplied using a "password:" pseudo-attribute. The value of this attribute is a clear-text passphrase, corresponding to the encrypted hash. It can appear anywhere in the body of the message, but not within mail headers. Line continuation is not allowed for this attribute. The attribute and the passphrase should fit on one line. If you split the passphrase across multiple lines, this will be treated as a syntax error. If you have a very long passphrase, please note that some email clients split lines at a pre-defined character position. If multiple passwords are required, a "password:" pseudo-attribute must be included in the update for each password. 
-The Webupdates web form includes a ‘Session Passwords' field. Many passwords can be added, one at a time, using this field, up to a pre-defined limit. For any update in this session, all session passwords will be added to the update that is performed via the web form.
+The Webupdates web form includes a 'Session Passwords' field. Many passwords can be added, one at a time, using this field, up to a pre-defined limit. For any update in this session, all session passwords will be added to the update that is performed via the web form.
 
 In the single text area form of Webupdates, the "password:" pseudo-attribute can be added as part of the update body, in the text area, in the same way as with an email update. The session passwords also apply in this case.
 
-Using the Syncupdates web form there is no ‘Session Passwords' field but again the "password:" pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the "password:" pseudo-attribute must be supplied as part of the message body.
+Using the Syncupdates web form there is no 'Session Passwords' field but again the "password:" pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the "password:" pseudo-attribute must be supplied as part of the message body.
 
 With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../Update-Methods/RESTful-API/#ripe-database-restful-api).
 
@@ -80,7 +80,7 @@ PGP can be used with updates submitted by e-mail or using the syncupdates facili
 
 ## X.509 Certificate
 
-This is handled in a similar way to PGP. You need a certificate and private key. There is third-party software available to generate these as well as command-line tools, for example OpenSSL. The certificate must be included in a **key-cert** object in the database. The generated certificate and private key are in binary files. The OpenSSL tool will convert the certificate into plain text to be included in the **key-cert** object. For X.509 **key-cert** objects, you must specify the "key-cert:" value as ‘AUTO-1'. The database software will then set this value. These values cannot be reused. Once deleted, an X.509 **key-cert** object cannot be recreated.
+This is handled in a similar way to PGP. You need a certificate and private key. There is third-party software available to generate these as well as command-line tools, for example OpenSSL. The certificate must be included in a **key-cert** object in the database. The generated certificate and private key are in binary files. The OpenSSL tool will convert the certificate into plain text to be included in the **key-cert** object. For X.509 **key-cert** objects, you must specify the "key-cert:" value as 'AUTO-1'. The database software will then set this value. These values cannot be reused. Once deleted, an X.509 **key-cert** object cannot be recreated.
 
 If your email client supports S/MIME you can import the certificate and private key into the client. Email updates can now be signed with your X.509 private key. Alternatively, you can sign your update using your private key with OpenSSL and paste it into the email message body.
 
@@ -101,7 +101,7 @@ Currently SSO authorisation only works with web-based update methods. This inclu
 
 ## API Keys
 
-API keys are a new way to authenticate updates in the RIPE Database. They are associated with a user’s RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only use webupdates then you don't need API keys!
+API keys are a new way to authenticate updates in the RIPE Database. They are associated with a user's RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only use webupdates then you don't need API keys!
 
 To create an API key, login to [Webupdates](https://apps.db.ripe.net/) using RIPE NCC Access and choose API keys from the left-hand menu. Then click Create an API Key. When the key is created you will see a popup. You must copy the API key details as they will only be shown once. Store the copied credential securely.
 

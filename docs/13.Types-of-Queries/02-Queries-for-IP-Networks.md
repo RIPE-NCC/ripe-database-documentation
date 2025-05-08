@@ -39,7 +39,7 @@ If you do not specify one of the following IP related query flags, and your quer
 
 ## Exact Match Queries
 
-If you want to change the default behaviour so that the server returns only an object with an exact match range, you need to use the `–x` (or `--exact`) query flag. This flag stops the server from looking for any less specific ranges if no exact match range exists. Not even the smallest encompassing range will be returned. If no exact match range is found, no object will be returned in the query response.
+If you want to change the default behaviour so that the server returns only an object with an exact match range, you need to use the `-x` (or `--exact`) query flag. This flag stops the server from looking for any less specific ranges if no exact match range exists. Not even the smallest encompassing range will be returned. If no exact match range is found, no object will be returned in the query response.
 
 ## More Specific Range Queries
 

@@ -10,7 +10,7 @@ The following conventions are used:
 * [option] indicates optional text or command argument.
 * **bold font** indicates an object type.
 * "attribute:" indicates an attribute of an object.
-* ‘value' indicates the value of an attribute.
+* 'value' indicates the value of an attribute.
 
 The term "RIPE Database" is used in several ways depending on the context. It may mean the:
 

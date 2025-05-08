@@ -8,7 +8,7 @@ Queries can be run from almost any computer (connected to the Internet) using st
 
 ## Netcat
 
-Netcat is a computer networking service for reading from and writing to network connections, using TCP or UDP. Netcat can be used directly or easily driven by other programs and scripts. Netcat can often be abbreviated to the command ‘nc'. This is an example query using netcat.
+Netcat is a computer networking service for reading from and writing to network connections, using TCP or UDP. Netcat can be used directly or easily driven by other programs and scripts. Netcat can often be abbreviated to the command 'nc'. This is an example query using netcat.
 
     $ nc whois.ripe.net 43
     % This is the RIPE Database query service.

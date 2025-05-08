@@ -16,7 +16,7 @@ When the submit key is clicked, the data is sent via the RESTful API to the data
 
 When deleting objects, the full object is presented to you for verification and you must then enter the reason for the deletion.
 
-When an object is queried using the Webquery form, ‘hover over' buttons are available to take any object from the query results directly into Webupdates to update or delete the object.
+When an object is queried using the Webquery form, 'hover over' buttons are available to take any object from the query results directly into Webupdates to update or delete the object.
 
 Objects up to a maximum size of 10MB can be managed through the Webupdates interface. If any errors occur during the update, the error messages are shown either:
 

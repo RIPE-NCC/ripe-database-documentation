@@ -72,9 +72,9 @@ this maintainer".
 
 For example, create an inetnum with a /21 prefix in the 2/8 range.
 
-The “org:” (organisation) attribute is required for an **inetnum** object with the status ‘ALLOCATED PA’ or ‘ALLOCATED 
-PI’. The mntner password for the organisation "mnt-ref:" attribute must be known in order to make a reference to the organisation. 
-The organisation object must have an "org-type:" attribute with the value ‘LIR’ for the 'ALLOCATED PA' status 
+The "org:" (organisation) attribute is required for an **inetnum** object with the status 'ALLOCATED PA' or 'ALLOCATED 
+PI'. The mntner password for the organisation "mnt-ref:" attribute must be known in order to make a reference to the organisation. 
+The organisation object must have an "org-type:" attribute with the value 'LIR' for the 'ALLOCATED PA' status 
 (for example, use ORG-EIPB1-TEST as an LIR and authenticate with the TEST-DBM-MNT password).
 
 

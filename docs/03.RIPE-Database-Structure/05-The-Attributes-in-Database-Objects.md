@@ -4,7 +4,7 @@ permalink: /RIPE-Database-Structure/The-Attributes-in-Database-Objects
 
 # The Attributes in Database Objects
 
-All objects in the RIPE Database have the same structure. They contain a set of ‘attribute-value' pairs in plain text. These ‘attribute-value' pairs can take different forms. Attributes are sometimes referred to as ‘keys'.
+All objects in the RIPE Database have the same structure. They contain a set of 'attribute-value' pairs in plain text. These 'attribute-value' pairs can take different forms. Attributes are sometimes referred to as 'keys'.
 
 All the database content is currently in Latin-1 encoding. Any characters not in Latin-1 are automatically converted to Latin-1. Any characters without an equivalent in Latin-1 are substituted with a question mark character. One exception is that IDN domain names in email address attributes are automatically converted to Punycode.
 
