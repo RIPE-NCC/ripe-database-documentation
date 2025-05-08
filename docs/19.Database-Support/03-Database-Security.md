@@ -116,7 +116,7 @@ After you have done this, you can achieve fine-grained control over the creation
 
 In this example, **route** and **domain** objects are managed by separate maintainers: LIR-RTRMGMT-MNT and LIR-DNSMGMT-MNT respectively, as specified in the allocation. IN addition, a "nt-lower:" was specified in the aggregate prefix for the broadband pool (2001:db8::/36). This allows for the creation of more specific objects below it by LIR-BROADBAND-MNT:
 
-![](~@imgs/copy_of_maintainershierachy.png)
+![](~@imgs/copy_of_maintainershierarchy.png)
 
 In general, keep in mind that when as **inet(6)num**, **route(6)** or a **domain** object is created, authentication is required from the parent object. If the parent has a "mnt-lower:", "mnt-routes:" or "mnt-domains:" attribute, this is the **mntner** that will need to be authenticated against. Otherwise the parent "mnt-by:" attribute is used.
 
