@@ -1,5 +1,5 @@
 ---
-permalink: /What-is-the-RIPE-Database/Personal-Data-Database-Management-and-Reponsabilities
+permalink: /What-is-the-RIPE-Database/Personal-Data-Database-Management-and-Responsibilities
 ---
 
 # Personal Data, Database Management and Responsibilities
