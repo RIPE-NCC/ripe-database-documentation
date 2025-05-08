@@ -141,7 +141,7 @@ A query containing spaces must be quoted as one argument to the whois command.
 
 
 
-### OSX
+### macOS
 
 Whois is a command-line tool that is installed by default on this platform. As an alternative, Whois can also be installed using the [Homebrew package manager](https://formulae.brew.sh/formula/whois). 
 
