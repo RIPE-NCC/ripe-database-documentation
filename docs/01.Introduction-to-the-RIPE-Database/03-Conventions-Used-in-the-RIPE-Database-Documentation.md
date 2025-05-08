@@ -1,5 +1,5 @@
 ---
-permalink: /introduction-to-the-RIPE-Database/Conventions-Used-in-the-RIPE-Database-Documentation
+permalink: /Introduction-to-the-RIPE-Database/Conventions-Used-in-the-RIPE-Database-Documentation
 ---
 
 # Conventions Used in the RIPE Database Documentation

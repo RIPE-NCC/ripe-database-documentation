@@ -5,7 +5,7 @@ permalink: /Database-Support/Support-Overview
 # Support Overview
 ## User Manuals
 
-* [RIPE Database Document Library](../introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview/#ripe-database-documentation-overview)
+* [RIPE Database Document Library](../Introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview/#ripe-database-documentation-overview)
 Manuals and reference material for new and experienced user of the RIPE Database
 * [Organisation Object in the RIPE Database](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-organisation-object)
 About the **organisation** Object
