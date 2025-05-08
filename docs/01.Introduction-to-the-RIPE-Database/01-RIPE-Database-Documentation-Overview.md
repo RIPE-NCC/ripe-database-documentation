@@ -1,5 +1,5 @@
 ---
-permalink: /introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview
+permalink: /Introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview
 ---
 
 # RIPE Database Documentation Overview

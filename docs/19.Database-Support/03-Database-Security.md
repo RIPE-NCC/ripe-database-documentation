@@ -38,7 +38,7 @@ The maintainer (**mntner**) object is used to protect other objects in the RIPE 
 
 Maintainers are anonymous. Other than the authentication references they contain, there is nothing that ties them to a specific person, group or organisation. Authentication is handled as a "logical OR", meaning that if you know one of several credentials associated with a maintainer, you can make changes to the objects that refer to it. In the example above, two people can use their RIPE NCC Access (single sing-on) account to make changes to the **inet6num** object, or the PGP key can be used. Which authentication method is best for your use case is explained in a separate section: [Protecting your data in the RIPE Database](../Authorisation/Using-the-Authorisation-Methods/#using-the-authorisation-methods).
 
-Most commonly, a maintainer object is maintained by itself, meaning that the "mnt-by:" attribute of the maintainer refers to the same object. If you want to edit details, for example add or remove an authentication, you simply need to use one of the existing authentication methods. In the example above, one of the three authentications can be used to add a forth, such as new colleague joining the team.
+Most commonly, a maintainer object is maintained by itself, meaning that the "mnt-by:" attribute of the maintainer refers to the same object. If you want to edit details, for example add or remove an authentication, you simply need to use one of the existing authentication methods. In the example above, one of the three authentications can be used to add a fourth, such as new colleague joining the team.
 
 What makes the maintainer system flexible is the fact that you have a lot of freedom in:
     * The number of maintainer objects you create
@@ -116,7 +116,7 @@ After you have done this, you can achieve fine-grained control over the creation
 
 In this example, **route** and **domain** objects are managed by separate maintainers: LIR-RTRMGMT-MNT and LIR-DNSMGMT-MNT respectively, as specified in the allocation. IN addition, a "nt-lower:" was specified in the aggregate prefix for the broadband pool (2001:db8::/36). This allows for the creation of more specific objects below it by LIR-BROADBAND-MNT:
 
-![](~@imgs/copy_of_maintainershierachy.png)
+![](~@imgs/copy_of_maintainershierarchy.png)
 
 In general, keep in mind that when as **inet(6)num**, **route(6)** or a **domain** object is created, authentication is required from the parent object. If the parent has a "mnt-lower:", "mnt-routes:" or "mnt-domains:" attribute, this is the **mntner** that will need to be authenticated against. Otherwise the parent "mnt-by:" attribute is used.
 

@@ -5,7 +5,7 @@ permalink: /Appendices/Appendix-H--PGP-Authentication-Method
 # Appendix H- PGP Authentication Method
 
 In this section, we provide an example of the PGP authentication method. For this example we will start from the 
-beginning, supposing that there is no a previous [mntner object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-mntner-object)
+beginning, supposing that there is no previous [mntner object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-mntner-object)
 created.
 * [Create the first mntner and role object](../Database-Support/Create-First-Role-Mntner/#what-is-a-role-object).
 * Install gpg or a similar tool. In this example, gpg will be used. `brew install gpg`

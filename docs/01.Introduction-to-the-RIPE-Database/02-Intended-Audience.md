@@ -1,5 +1,5 @@
 ---
-permalink: /introduction-to-the-RIPE-Database/Intended-Audience
+permalink: /Introduction-to-the-RIPE-Database/Intended-Audience
 ---
 
 # Intended Audience

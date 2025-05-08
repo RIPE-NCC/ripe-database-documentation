@@ -72,7 +72,7 @@ There is no support in the NRTM protocol for polling, so a client or server may 
   * Ref: http://www.manpages.info/linux/tcp.7.html
   * Ref: http://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html
 
-* OSX 
+* macOS 
   * set SO_KEEPALIVE socket option.
   * System-wide default is 2 hours. Read the current value in ms using: /usr/sbin/sysctl net.inet.tcp.keepidle
   * The defaults can be changed on a per-socket basis

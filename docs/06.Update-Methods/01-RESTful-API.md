@@ -367,7 +367,7 @@ For an example of how to use client certificate authentication, please see the a
 
 API keys are a way to script (automate) authenticated queries and updates using the Whois REST API. They are generated using the web interface and are associated with a user's RIPE NCC Access account. They have a maximum validity of one year.
 
-You can create as many different keys as you’d like. We suggest that you create a separate key for each application that you’d like to provide with access. That way, if you believe the key has been compromised, you can revoke access to that application without affecting other applications that you have provided with access.
+You can create as many different keys as you'd like. We suggest that you create a separate key for each application that you'd like to provide with access. That way, if you believe the key has been compromised, you can revoke access to that application without affecting other applications that you have provided with access.
 
 API keys created for the RIPE database cannot be used with any other RIPE NCC service.
 

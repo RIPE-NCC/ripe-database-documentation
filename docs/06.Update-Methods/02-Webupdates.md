@@ -16,7 +16,7 @@ When the submit key is clicked, the data is sent via the RESTful API to the data
 
 When deleting objects, the full object is presented to you for verification and you must then enter the reason for the deletion.
 
-When an object is queried using the Webquery form, ‘hover over' buttons are available to take any object from the query results directly into Webupdates to update or delete the object.
+When an object is queried using the Webquery form, 'hover over' buttons are available to take any object from the query results directly into Webupdates to update or delete the object.
 
 Objects up to a maximum size of 10MB can be managed through the Webupdates interface. If any errors occur during the update, the error messages are shown either:
 
@@ -56,7 +56,7 @@ Please follow the steps below in order to create them.
 
     You can use your **role** object's primary key (NIC handle) in the "admin-c:", "tech-c:" and "zone-c:" fields of the RIPE Database Template.
 
-    You can use yor **mntner** object's primary key in the "mnt-by:" field of the RIPE Database Template.
+    You can use your **mntner** object's primary key in the "mnt-by:" field of the RIPE Database Template.
 
     You can create additional **person**, **role** and **mntner** objects and also change the objects you already created using [RIPE Database Webupdates](https://apps.db.ripe.net/webupdates).
 
