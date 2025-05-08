@@ -1,8 +1,8 @@
 ---
-permalink: /Appendices/Appendix-J--Ripe-Test-Database
+permalink: /Appendices/Appendix-J--RIPE-Test-Database
 ---
 
-# Appendix J- Ripe Test Database
+# Appendix J- RIPE Test Database
 
 ## Introduction
 
