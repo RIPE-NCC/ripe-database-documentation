@@ -50,7 +50,7 @@ For example:
 ```bash
 $ curl -v --header "Accept: application/xml" \
  --header "Authorization: Basic NkhEVORLSFFETVBHVUE5VFpJQjVSRFVCOlc2R2FFdDJTa1Ry
-Rk84eGgyRXFGVTRQaА==" \
+Rk84eGgyRXFGVTRQaA==" \
  https://rest.db.ripe.net/ripe/mntner/shryane-mnt?unfiltered
 ```
 ## Authenticated Updates using an API Key
@@ -70,7 +70,7 @@ For example:
 ```bash
 $ curl -v \
   --header "Authorization: Basic NkhEVORLSFFETVBHVUE5VFpJQjVSRFVCOlc2R2FFdDJTa1Ry
-Rk84eGgyRXFGVTRQaА==" \
+Rk84eGgyRXFGVTRQaA==" \
  -X PUT -d @output \
  --header "Content-type: application/xml" \
  https://rest.db.ripe.net/ripe/person/ES7554-RIPE
@@ -103,7 +103,7 @@ Then make the update in the database specifying JSON formatted data, for example
 ```bash
 $ curl -v \
   --header "Authorization: Basic NkhEVORLSFFETVBHVUE5VFpJQjVSRFVCOlc2R2FFdDJTa1Ry
-Rk84eGgyRXFGVTRQaА==" \
+Rk84eGgyRXFGVTRQaA==" \
  -X PUT -d @output \
  --header "Content-type: application/json" \
  https://rest.db.ripe.net/ripe/person/ES7554-RIPE.json
