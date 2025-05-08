@@ -18,7 +18,7 @@ Various **security methods** available to RIPE Database users
 * [Using PGP with the RIPE Database](../Authorisation/Using-the-Authorisation-Methods/#pgp-key)
 Several links to documents explaining how to use **PGP for authentication**
 * [IRT Object - Technical How To Guide](../Authorisation/IRT-Object/#irt-object)
-How to handle the **Incident Response Team(IRT) object** in the RIPE Database
+How to handle the **Incident Response Team (IRT) object** in the RIPE Database
 
 
 

@@ -10,7 +10,7 @@ The referenced object contains details of the organisation that holds Internet r
   * ALLOCATED PA
   * ALLOCATED-ASSIGNED PA
   * ALLOCATED PI
-  * ALLOCATED UNESPECIFIED
+  * ALLOCATED UNSPECIFIED
 
 * **"admin-c:" –** this attribute is optional in some objects and mandatory in others. It references the primary key, or NIC Handle, of either a **role** or **person** object. It should always reference a **role** object, except in the **role** object where it optionally references nested **role** objects or a **person** object.
 The reference must be the contact details of an on-site administrative contact. This contact may be a single person, or it may be a role within the organisation that more than one person takes on. These people may or may not be listed in the role object.

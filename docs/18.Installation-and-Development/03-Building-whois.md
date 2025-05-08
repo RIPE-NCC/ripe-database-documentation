@@ -41,7 +41,7 @@ If there are compilation errors, make sure to perform a maven build first, since
     mvn clean install
 
 
-### Running whois from within Intellij
+### Running whois from within IntelliJ
 
 - Ensure MariaDB and the needed databases are created and populated
   - See [Getting Started on macOS](../Installation-and-Development/Getting-started-on-macOS/#getting-started-on-macos) for installation information.

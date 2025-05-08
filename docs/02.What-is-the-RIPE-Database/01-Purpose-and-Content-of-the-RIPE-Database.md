@@ -107,7 +107,7 @@ To view the up-to-date list of mirrored databases, perform the following query:
 
     whois.ripe.net -q sources
 
-Because the RIPE NCC is bound by Dutch and European data privacy laws, we are obligated to remove all personal data received from other databases. This is either removed at the source or stripped out and deleted during the transformation process. THe RIPE NCC does not store any personal data from other registries. Where necessary, we create and reference dummy objects to keep data integrity intact.
+Because the RIPE NCC is bound by Dutch and European data privacy laws, we are obligated to remove all personal data received from other databases. This is either removed at the source or stripped out and deleted during the transformation process. The RIPE NCC does not store any personal data from other registries. Where necessary, we create and reference dummy objects to keep data integrity intact.
 
 Before importing the data we transform objects into RIPE RPSL syntax by carrying out the following steps:
 

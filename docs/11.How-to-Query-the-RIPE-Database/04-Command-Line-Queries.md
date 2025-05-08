@@ -114,7 +114,7 @@ A query containing spaces must be quoted as one argument to the whois command.
 
     jwhois version 4.0, Copyright (C) 1999-2007 Free Software Foundation, INC.
     This program is free software with ABSOLUTELY NO WARRANTY; you may
-    redistribute it under the terms of the GNU General Publi Licence
+    redistribute it under the terms of the GNU General Public Licence
 
 
     $ whois -h whois.ripe.net -- -rBGTroute 193.0.7.35

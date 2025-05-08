@@ -56,7 +56,7 @@ Please follow the steps below in order to create them.
 
     You can use your **role** object's primary key (NIC handle) in the "admin-c:", "tech-c:" and "zone-c:" fields of the RIPE Database Template.
 
-    You can use yor **mntner** object's primary key in the "mnt-by:" field of the RIPE Database Template.
+    You can use your **mntner** object's primary key in the "mnt-by:" field of the RIPE Database Template.
 
     You can create additional **person**, **role** and **mntner** objects and also change the objects you already created using [RIPE Database Webupdates](https://apps.db.ripe.net/webupdates).
 

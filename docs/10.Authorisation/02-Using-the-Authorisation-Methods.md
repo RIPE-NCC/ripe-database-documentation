@@ -69,7 +69,7 @@ This is an example of a valid **mntner** object which uses PGP authentication:
 
 PGP signed updates can be sent to the database simply by signing the body of the message containing the updates and sending it to the server. Remember to use ASCII armoring. 
 
-Multiple GP-signed and non-signed parts can be supplied in a single update message, each part is processed separately. You can supply several objects which are protected by different PGP keys in a single update message, providing all required signatures are present.
+Multiple PGP-signed and non-signed parts can be supplied in a single update message, each part is processed separately. You can supply several objects which are protected by different PGP keys in a single update message, providing all required signatures are present.
 
 PGP parts with invalid signatures are handled as plain text. If the object is protected by an authentication method other than PGP, or has multiple authentication schemes in use and the required authentication is present, it will still be authorised. If PGP is the only form of authentication present the authentication will fail. 
 

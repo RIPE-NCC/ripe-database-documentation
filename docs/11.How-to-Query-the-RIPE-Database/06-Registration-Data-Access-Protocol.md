@@ -63,7 +63,7 @@ Where:
 
 ## Help
 
-The help path segment return a valid RDAP object containing the default set of notices for the service. The rdapConformance element in the response include the extension identifiers for all the extensions implemented.
+The help path segment returns a valid RDAP object containing the default set of notices for the service. The rdapConformance element in the response includes the extension identifiers for all the extensions implemented.
 
 Syntax:
 ```
