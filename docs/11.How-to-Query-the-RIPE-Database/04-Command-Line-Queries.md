@@ -8,7 +8,7 @@ Queries can be run from almost any computer (connected to the Internet) using st
 
 ## Netcat
 
-Netcat is a computer networking service for reading from and writing to network connections, using TCP or UDP. Netcat can be used directly or easily driven by other programs and scripts. Netcat can often be abbreviated to the command ‘nc'. This is an example query using netcat.
+Netcat is a computer networking service for reading from and writing to network connections, using TCP or UDP. Netcat can be used directly or easily driven by other programs and scripts. Netcat can often be abbreviated to the command 'nc'. This is an example query using netcat.
 
     $ nc whois.ripe.net 43
     % This is the RIPE Database query service.
@@ -114,7 +114,7 @@ A query containing spaces must be quoted as one argument to the whois command.
 
     jwhois version 4.0, Copyright (C) 1999-2007 Free Software Foundation, INC.
     This program is free software with ABSOLUTELY NO WARRANTY; you may
-    redistribute it under the terms of the GNU General Publi Licence
+    redistribute it under the terms of the GNU General Public Licence
 
 
     $ whois -h whois.ripe.net -- -rBGTroute 193.0.7.35
@@ -141,7 +141,7 @@ A query containing spaces must be quoted as one argument to the whois command.
 
 
 
-### OSX
+### macOS
 
 Whois is a command-line tool that is installed by default on this platform. As an alternative, Whois can also be installed using the [Homebrew package manager](https://formulae.brew.sh/formula/whois). 
 

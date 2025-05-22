@@ -1,5 +1,5 @@
 ---
-permalink: /Types-of-Queries/Filtering-the-Query-Reponse
+permalink: /Types-of-Queries/Filtering-the-Query-Response
 ---
 
 # Filtering the Query Response

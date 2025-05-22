@@ -10,20 +10,20 @@ There are three update operations that can be performed on an object:
 * modify
 * delete
 
-The create and modify share a lot in common. Initially, when an object is presented by either email or Syncupdates, the database software has to decide if the object already exists or not. If it exists, the operation is modify. If it does not exist the operation is create. This issue can be forced with the use of the keyword ‘NEW'. If this keyword is included then the operation is set as create. If the object already exists, it will be an error. An existing object will never be updated when this keyword is included in the update. For email updates, this keyword will be in the ‘Subject' line. For client-based Syncupdates this keyword is passed as a parameter. It is not possible to use the keyword with the web-based Syncupdates form at:
+The create and modify share a lot in common. Initially, when an object is presented by either email or Syncupdates, the database software has to decide if the object already exists or not. If it exists, the operation is modify. If it does not exist the operation is create. This issue can be forced with the use of the keyword 'NEW'. If this keyword is included then the operation is set as create. If the object already exists, it will be an error. An existing object will never be updated when this keyword is included in the update. For email updates, this keyword will be in the 'Subject' line. For client-based Syncupdates this keyword is passed as a parameter. It is not possible to use the keyword with the web-based Syncupdates form at:
 https://apps.db.ripe.net/db-web-ui/syncupdates
 
-The RESTful update method works differently as it follows the standard REST paradigm. If the data is received by a POST method, the ‘NEW' keyword is set and it can only be a create operation. If the data is received by a PUT method it can only be a modify operation. If the method and operation do not match it is an error.
+The RESTful update method works differently as it follows the standard REST paradigm. If the data is received by a POST method, the 'NEW' keyword is set and it can only be a create operation. If the data is received by a PUT method it can only be a modify operation. If the method and operation do not match it is an error.
 
 Webupdates uses the RESTful API as the update method. So it must also follow the REST paradigm. There are additional checks at the Webupdates form level to ensure the right method is used.
 
-If the operation is modify and the supplied object data is identical to the existing object stored in the database, allowing for white space variations, then the object is not modified. This is considered to be a successful ‘NO OPERATION'.
+If the operation is modify and the supplied object data is identical to the existing object stored in the database, allowing for white space variations, then the object is not modified. This is considered to be a successful 'NO OPERATION'.
 
 The delete operation is the same no matter what update method is used. The full version of the object must be 
 supplied exactly as it is stored in the database. The supplied version is checked against the stored version by 
 compressing the white spaces and doing a string comparison. If they don't match, the delete operation fails. If you 
 query for the object before supplying the query result in a delete operation, make sure you use the correct query 
-flags to avoid any filtering of the returned object. See section on [Filtering Query Output](../Types-of-Queries/Filtering-the-Query-Reponse/#filtering-the-query-response) for more details.
+flags to avoid any filtering of the returned object. See section on [Filtering Query Output](../Types-of-Queries/Filtering-the-Query-Response/#filtering-the-query-response) for more details.
 
 To delete an object, there must be no references to it from any other object in the database. A single reference will prevent it from being deleted. Note, however, that not all attributes containing primary keys of other objects are hard references. The routing policy attributes in an **aut-num** object can list other AS Numbers but these are not considered as references for the delete operation.
 

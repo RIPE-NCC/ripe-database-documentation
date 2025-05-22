@@ -21,15 +21,15 @@ The long format is:
     for example, --no-filtering dw-ripe
 When a query includes many query flags, the short and long format options may be mixed. You may list each query flag separately, for example:
 
-    -B –i tech-c --no-grouping DW-RIPE
+    -B -i tech-c --no-grouping DW-RIPE
 You can also group short query flags together. The long query flags must always be separated. When short flags are grouped, only the last flag in a group may have a flag argument, as in:
 
     -Bi TECH-c --no-grouping dw-RIPE
 The query argument is not case-sensitive. As shown in the examples above, it can be in upper case, lower case or a mixed case. Query flags are case-sensitive. This applies to both short- and long-format flags. However, the arguments to the query flags are not case-sensitive. There can be an optional space between a query flag and its argument. However, if the query flag argument is a list, there can be no spaces between elements of the list.
 
-    -rBG –Tinetnum,inet6num –imb ripe-ncc-hm-mnt
+    -rBG -Tinetnum,inet6num -imb ripe-ncc-hm-mnt
 
-    -rBG –T inetnum,inet6num –i MB ripe-ncc-hm-mnt
+    -rBG -T inetnum,inet6num -i MB ripe-ncc-hm-mnt
 
 A list of query flags and query flag arguments are [available](../Tables-of-Query-Types-Supported-by-the-RIPE-Database/#tables-of-query-types-supported-by-the-ripe-database).
 

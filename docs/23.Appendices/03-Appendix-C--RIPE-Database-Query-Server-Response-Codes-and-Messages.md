@@ -28,16 +28,16 @@ Example:
 No entries were found in the selected source(s).
 
 **%ERROR:102: unknown source**
-Unknown source was supplied as argument to the `-s` query ag. Use `-q sources` for a list of available sources.
+Unknown source was supplied as argument to the `-s` query flag. Use `-q sources` for a list of available sources.
 
 **%ERROR:103: unknown object type** 
 Unknown object type is specified as an argument to the `-T` query flag.
 
 **%ERROR:104: unknown attribute**
-Unknown argument is specified to the inverse query flag (`-I`). See [Queryingthe RIPE Database](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database) for more information.
+Unknown argument is specified to the inverse query flag (`-I`). See [Querying the RIPE Database](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database) for more information.
 
 **%ERROR:105: attribute is not searchable**
-The argument specified for the inverse query flag is not a searchable attribute. See [Queryingthe RIPE Database](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database) for more information.
+The argument specified for the inverse query flag is not a searchable attribute. See [Querying the RIPE Database](../How-to-Query-the-RIPE-Database/#how-to-query-the-ripe-database) for more information.
 
 **%ERROR:106: no query argument specified**
 No query argument has been specified in the query.
@@ -82,7 +82,7 @@ Access from the host has been temporarily or permanently denied because of exces
 Limit of returned objects has been reached. The connection is terminated. Continued attempts to excessively query the database will result in permanent denial of service. See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries/#access-control-for-queries) for more information.
 
 **%ERROR:203: address passing not allowed** 
-The host is not registered as a proxy and is not allowed to pass addresses on the query line (`-V` ag). See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries/#access-control-for-queries) for more information.
+The host is not registered as a proxy and is not allowed to pass addresses on the query line (`-V` flag). See section [Access Control for Queries](../Types-of-Queries/Access-Control-for-Queries/#access-control-for-queries) for more information.
 
 
 ## Connection Errors
@@ -114,7 +114,7 @@ This happens when the requested range or part of it is outside the serial number
 
 ## Warnings
 
-**%WARNING:901: duplicate IP ags passed** 
+**%WARNING:901: duplicate IP flags passed** 
 More than one IP flag (-x, -M, -m, -L, -l, -c, or -b) was passed to the server. Only the last one in the list of query flags will be used for this query.
 
 **%WARNING:902: useless IP flag passed**

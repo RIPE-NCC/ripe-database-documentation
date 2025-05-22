@@ -62,7 +62,7 @@ The RIPE NCC also publishes 'zone fragments'. These are the parts of zones manag
 
 The RIPE Database is used as the management database to produce the DNS zones RIPE Internet Number Resources. It can provide the information for each delegated IPv4 and IPv6 range registered in the reverse DNS.
 
-The information is stored in routing policy specification (RPSL) format as **domain** objects. The name of each **domain** object is the reverse DNS zone under in-addr.arpa or ip6.arpa or e164.arpa. The "nserver:" attributes in each **domain** object define the officially delegated DNS name servers- the “NS” in DNS zone contents.
+The information is stored in routing policy specification (RPSL) format as **domain** objects. The name of each **domain** object is the reverse DNS zone under in-addr.arpa or ip6.arpa or e164.arpa. The "nserver:" attributes in each **domain** object define the officially delegated DNS name servers- the "NS" in DNS zone contents.
 
 
 ## Domain Names
@@ -107,7 +107,7 @@ To view the up-to-date list of mirrored databases, perform the following query:
 
     whois.ripe.net -q sources
 
-Because the RIPE NCC is bound by Dutch and European data privacy laws, we are obligated to remove all personal data received from other databases. This is either removed at the source or stripped out and deleted during the transformation process. THe RIPE NCC does not store any personal data from other registries. Where necessary, we create and reference dummy objects to keep data integrity intact.
+Because the RIPE NCC is bound by Dutch and European data privacy laws, we are obligated to remove all personal data received from other databases. This is either removed at the source or stripped out and deleted during the transformation process. The RIPE NCC does not store any personal data from other registries. Where necessary, we create and reference dummy objects to keep data integrity intact.
 
 Before importing the data we transform objects into RIPE RPSL syntax by carrying out the following steps:
 

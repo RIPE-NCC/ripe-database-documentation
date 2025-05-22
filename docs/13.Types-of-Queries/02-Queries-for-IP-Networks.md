@@ -24,7 +24,7 @@ When you query the RIPE Database for information about IP addresses, you can spe
 
 For IPv4 address space, the query argument can be specified with either prefix or range notation. When prefix notation is used, the database software converts this into range notation. An information message is included in the query response showing the conversions performed. For IPv6 address space, the query argument can only be specified in prefix notation. The single IP address is accepted as a short hand notation for a prefix. See [Table 2: Queries For IP Networks table](../Tables-of-Query-Types-Supported-by-the-RIPE-Database/#table-2-queries-for-ip-networks-table)
 
-We use three terms in these types of queries. These are all defined relative to the specified(reference) range:
+We use three terms in these types of queries. These are all defined relative to the specified (reference) range:
 * An exact match refers to a range that is identical to the reference range.
 * A more specific range is contained within the reference range and is smaller. It contains fewer IP addresses than the reference range. We also call this a sub range.
 * A less specific range contains the whole of the reference range and is bigger. It has a greater number of IP addresses than the reference range. We also call this an encompassing range.
@@ -39,7 +39,7 @@ If you do not specify one of the following IP related query flags, and your quer
 
 ## Exact Match Queries
 
-If you want to change the default behaviour so that the server returns only an object with an exact match range, you need to use the `–x` (or `--exact`) query flag. This flag stops the server from looking for any less specific ranges if no exact match range exists. Not even the smallest encompassing range will be returned. If no exact match range is found, no object will be returned in the query response.
+If you want to change the default behaviour so that the server returns only an object with an exact match range, you need to use the `-x` (or `--exact`) query flag. This flag stops the server from looking for any less specific ranges if no exact match range exists. Not even the smallest encompassing range will be returned. If no exact match range is found, no object will be returned in the query response.
 
 ## More Specific Range Queries
 

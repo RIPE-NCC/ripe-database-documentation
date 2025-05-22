@@ -17,7 +17,7 @@ The allowed attributes for any object type are shown in the object templates (se
 
 Not all allowed attributes need to be present in every instance of the object type. The table below shows how presence is defined for an attribute. The same attribute name may have a different presence defined in different object types. For example "status:" is mandatory in an **inetnum** object, but generated in an **aut-num** object.
 
-**Types of ‘presence' of an Attribute**
+**Types of 'presence' of an Attribute**
 
 | Type | Description |
 | --- | --- |
@@ -40,7 +40,7 @@ There is no limit on the number of times a multiple attribute can be added to an
 
 | Type | Description |
 | --- | --- |
-| [single] | Objects can only contain one instance of this ‘attribute–value' pair. |
+| [single] | Objects can only contain one instance of this 'attribute-value' pair. |
 | [multiple] | Objects may contain more than one instance of this attribute. For some attributes, an instance may contain a list of values, separated by commas. |
 
 
@@ -52,11 +52,11 @@ A standard lookup is where you look for an object that contains the specified va
 
 An inverse lookup is where you look for objects that contain the specified value in the list of specified attribute types. (See more about indexed searches in the section on Querying the RIPE Database.)
 
-    whois –i mnt-by,mnt-lower,mnt-routes: AARDVARK-MNT
+    whois -i mnt-by,mnt-lower,mnt-routes: AARDVARK-MNT
 
 Indexes are built internally within the database. This property does not affect nor put any restrictions on the data entered by a user.
 
-**Table 3.5 Types of ‘indexes' of an Attribute**
+**Table 3.5 Types of 'indexes' of an Attribute**
 
 | Type | Description |
 | --- | --- |

@@ -4,11 +4,11 @@ permalink: /Appendices/Appendix-K--API-Keys
 
 # Appendix K- API Keys
 
-API keys are a way to authenticate updates in the RIPE database. They are associated with a user’s RIPE NCC Access account, and are intended to help users script (automate) updates to the RIPE Database.
+API keys are a way to authenticate updates in the RIPE database. They are associated with a user's RIPE NCC Access account, and are intended to help users script (automate) updates to the RIPE Database.
 
 ## Introduction
 
-API keys are a way to authenticate updates in the RIPE Database. They are associated with a user’s RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only make updates using the web interface, then you don’t need API keys!
+API keys are a way to authenticate updates in the RIPE Database. They are associated with a user's RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only make updates using the web interface, then you don't need API keys!
 
 Before authenticating with an API key, your RIPE NCC Access account must already be associated with the object mntner using an "auth:" SSO attribute.
 
@@ -17,7 +17,7 @@ https://apps.db.ripe.net/db-web-ui/api-keys
 
 ## Create a New Database Key
 
-On the API keys page, click on “Create a new Database key”.
+On the API keys page, click on "Create a new Database key".
 
 * Enter a key name (required) : a short description of how the key will be used.
 * Enter an expiration date (required) : when does the API key stop working. Keys are time-limited for security reasons and are valid up to a year in the future.
@@ -50,14 +50,14 @@ For example:
 ```bash
 $ curl -v --header "Accept: application/xml" \
  --header "Authorization: Basic NkhEVORLSFFETVBHVUE5VFpJQjVSRFVCOlc2R2FFdDJTa1Ry
-Rk84eGgyRXFGVTRQaА==" \
+Rk84eGgyRXFGVTRQaA==" \
  https://rest.db.ripe.net/ripe/mntner/shryane-mnt?unfiltered
 ```
 ## Authenticated Updates using an API Key
 
 We will now update a person object that is used as a "tech-c:" attribute by the maintainer.
 
-First query for the unfiltered person object. You don’t need to authenticate this step.
+First query for the unfiltered person object. You don't need to authenticate this step.
 
 ```bash
 $ curl -o output https://rest.db.ripe.net/ripe/person/ES7554-RIPE?unfiltered
@@ -70,7 +70,7 @@ For example:
 ```bash
 $ curl -v \
   --header "Authorization: Basic NkhEVORLSFFETVBHVUE5VFpJQjVSRFVCOlc2R2FFdDJTa1Ry
-Rk84eGgyRXFGVTRQaА==" \
+Rk84eGgyRXFGVTRQaA==" \
  -X PUT -d @output \
  --header "Content-type: application/xml" \
  https://rest.db.ripe.net/ripe/person/ES7554-RIPE
@@ -80,9 +80,9 @@ The person object is updated successfully if the response is 200 OK.
 
 ## Revoking an API Key
 
-If you suspect that an API key has been compromised - e.g. if anyone else could know what it is - then it’s safest to revoke the key and create a new one.  
+If you suspect that an API key has been compromised - e.g. if anyone else could know what it is - then it's safest to revoke the key and create a new one.  
 
-To do this, find the API key on the page and click on the “Revoke” button.
+To do this, find the API key on the page and click on the "Revoke" button.
 
 As soon as you revoke a key it cannot be used to authenticate queries or updates in the RIPE database.
 
@@ -103,7 +103,7 @@ Then make the update in the database specifying JSON formatted data, for example
 ```bash
 $ curl -v \
   --header "Authorization: Basic NkhEVORLSFFETVBHVUE5VFpJQjVSRFVCOlc2R2FFdDJTa1Ry
-Rk84eGgyRXFGVTRQaА==" \
+Rk84eGgyRXFGVTRQaA==" \
  -X PUT -d @output \
  --header "Content-type: application/json" \
  https://rest.db.ripe.net/ripe/person/ES7554-RIPE.json
