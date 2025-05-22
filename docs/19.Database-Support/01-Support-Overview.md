@@ -5,7 +5,7 @@ permalink: /Database-Support/Support-Overview
 # Support Overview
 ## User Manuals
 
-* [RIPE Database Document Library](../introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview/#ripe-database-documentation-overview)
+* [RIPE Database Document Library](../Introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview/#ripe-database-documentation-overview)
 Manuals and reference material for new and experienced user of the RIPE Database
 * [Organisation Object in the RIPE Database](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-organisation-object)
 About the **organisation** Object
@@ -18,7 +18,7 @@ Various **security methods** available to RIPE Database users
 * [Using PGP with the RIPE Database](../Authorisation/Using-the-Authorisation-Methods/#pgp-key)
 Several links to documents explaining how to use **PGP for authentication**
 * [IRT Object - Technical How To Guide](../Authorisation/IRT-Object/#irt-object)
-How to handle the **Incident Response Team(IRT) object** in the RIPE Database
+How to handle the **Incident Response Team (IRT) object** in the RIPE Database
 
 
 

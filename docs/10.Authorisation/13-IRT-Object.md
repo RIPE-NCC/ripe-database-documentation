@@ -4,7 +4,7 @@ permalink: /Authorisation/IRT-Object
 
 # IRT Object
 
-**IRT**: **I**ncident **R**esponse **T**eam - handles security incidents and/or cases of abuse of omputer networks or its components.
+**IRT**: **I**ncident **R**esponse **T**eam - handles security incidents and/or cases of abuse of computer networks or its components.
 
 **TI**: **T**rusted **I**ntroducer - this service is a trustbroker for IRTs. [More information](http://www.trusted-introducer.org/)
 
@@ -12,7 +12,7 @@ permalink: /Authorisation/IRT-Object
 ## How to Create an IRT Object
 ### Manual creation
 #### Requirements
-If you are an IRT and want to create an **irt** object in the RIPE Database, you need to following:
+If you are an IRT and want to create an **irt** object in the RIPE Database, you need to follow:
 
 * A maintainer for that object. This should be a **mntner** object in the RIPE Database
 * A **key-cert** object in the RIPE Database containing a public PGP key
@@ -178,7 +178,7 @@ Now both the team and the maintainer of the **inet(6)num** object have to author
 
 #### If Both Parties Use (different) PGP Keys for Authorisation
 
-Both need to sign the request -mail. It does not matter in which order this signing occurs as long as both parties sign the request.
+Both need to sign the request e-mail. It does not matter in which order this signing occurs as long as both parties sign the request.
 
 
 #### If Only One Party Uses a password or SSO for Authorisation

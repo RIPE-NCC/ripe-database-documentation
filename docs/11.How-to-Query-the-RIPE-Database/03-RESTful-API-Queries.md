@@ -22,7 +22,7 @@ header. The server will return a response in the appropriate format for that giv
 This can be done from the command line using a third party software package, from a script or in a browser. It will only 
 return the one specific object requested. For lookups on address space, it will not return the encompassing object if 
 the specified object does not exist. By default objects are filtered as described in 
-[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Reponse/#filtering-the-query-response).
+[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Response/#filtering-the-query-response).
 
 Returns an object from the RIPE Database.
 
@@ -70,7 +70,7 @@ Additional resources:
 A [WhoisResource](../RIPE-Database-Structure/REST-API-Data-model/#whoisresources) containing the object.
 
 By default the response object is filtered as described in 
-[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Reponse/#filtering-the-query-response). To return the unfiltered object specify the `unfiltered` query parameter. To obtain an unfiltered maintainer object (including all "auth:" attributes), the request must be authenticated.
+[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Response/#filtering-the-query-response). To return the unfiltered object specify the `unfiltered` query parameter. To obtain an unfiltered maintainer object (including all "auth:" attributes), the request must be authenticated.
 
 ### HTTP status Codes
 
@@ -138,7 +138,7 @@ Offers the well-known whois search via a rest-like interface.
 As with the lookup, any spaces in the query string must be encoded. The response will be returned in XML format by default. Alternatively, JSON or text/plain can be returned.
 
 By default the response objects are filtered as described in 
-[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Reponse/#filtering-the-query-response). To return unfiltered objects specify the `flags` query parameter with the `B` or `no-filtering` flag value. To obtain an unfiltered maintainer object (including all "auth:" attributes), use the [REST API lookup](#rest-api-lookup).
+[Filtering the Query Response](../Types-of-Queries/Filtering-the-Query-Response/#filtering-the-query-response). To return unfiltered objects specify the `flags` query parameter with the `B` or `no-filtering` flag value. To obtain an unfiltered maintainer object (including all "auth:" attributes), use the [REST API lookup](#rest-api-lookup).
 
 ### Locations
 
