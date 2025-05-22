@@ -32,11 +32,11 @@ Personal data may be returned by the Full Text search API. You may be blocked if
 |facet|true|Count the object types.|
 
 
-There a some limitations to take care on:
+There are some limitations to take care on:
 
 * Not allowed to fetch more than 10,000 documents per request.
 * There is a maximum of 100,000 results per query (with paging).
-* The maximum highlight characters is trim to 100,000 characters.
+* The maximum highlight characters is trimmed to 100,000 characters.
 
 The possible values that you can specify for the Accept/Content-Type header are:
 
