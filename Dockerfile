@@ -25,7 +25,9 @@ COPY ./package*.json .npmrc ./
 
 RUN npm cache clean --force
 
-RUN npm install
+RUN rm -rf node_modules package-lock.json
+
+RUN npm install --force or --legacy-peer-deps
 
 COPY ./docs ./docs
 

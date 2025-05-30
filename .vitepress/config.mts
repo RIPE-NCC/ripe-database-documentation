@@ -1,14 +1,11 @@
-import { defineConfig } from 'vitepress'
-import { SearchPlugin } from "@technical-design/ncc-vitepress-plugin-search";
+import { SearchPlugin } from "@swe-database/ncc-vitepress-plugin-search";
 import fs from 'fs'
 import path from 'path'
 import yaml from 'js-yaml';
 import matter from 'gray-matter';
 import sidebar from './sidebar.json';
 import { exec } from 'child_process';
-import chokidar from 'chokidar';
 import { withMermaid } from 'vitepress-plugin-mermaid';
-import { execSync } from 'child_process';
 
 const sidebarPath = './sidebar.json';
 const newSidebarData = JSON.stringify(sidebar, null, 2); // Replace with actual sidebar logic
