@@ -1,11 +1,11 @@
 ---
 permalink: /Types-of-Queries/Filtering-the-Query-Reponse
 prev:
-  text: Grouping the RIPE Database Output
-  link: /Types-of-Queries/Grouping-the-RIPE-Database-Output/
+  text: 03 Queries for Autonomous Systems
+  link: /Types-of-Queries/03-Queries-for-Autonomous-Systems/
 next:
-  text: IRR Toolset Support
-  link: /Types-of-Queries/IRR-Toolset-Support/
+  text: Related Software and Tools
+  link: /Related-Software-and-Tools/Related-Software-and-Tools/
 lastUpdated: 1743685701000
 ---
 

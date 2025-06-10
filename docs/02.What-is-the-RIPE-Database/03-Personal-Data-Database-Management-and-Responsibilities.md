@@ -2,12 +2,12 @@
 permalink: >-
   /What-is-the-RIPE-Database/Personal-Data-Database-Management-and-Reponsabilities
 prev:
-  text: History of the RIPE Database
-  link: /What-is-the-RIPE-Database/History-of-the-RIPE-Database/
-next:
-  text: 03 Personal Data Database Management and Responsibilities
+  text: Personal Data Database Management and Reponsabilities
   link: >-
-    /What-is-the-RIPE-Database/03-Personal-Data-Database-Management-and-Responsibilities/
+    /What-is-the-RIPE-Database/Personal-Data-Database-Management-and-Reponsabilities/
+next:
+  text: Database Object
+  link: /RIPE-Database-Structure/Database-Object/
 lastUpdated: 1743685701000
 ---
 

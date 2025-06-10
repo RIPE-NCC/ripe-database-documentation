@@ -14,7 +14,8 @@ try {
   const visitedLinks = new Set();
   const pathToIdMap = new Map();
   const unresolvedLinks = new Set();
-  const discardedPages = new Set().add("/Legal-Information/");
+  // Map between discard page and link substitution
+  const discardedPages = new Map().set("/Legal-Information/", "#ripe-database-terms-and-conditions");
 
   // Make sure output files are deleted
   ensureOutputFileDeleted(docsDir, baseDir);
@@ -199,6 +200,13 @@ try {
         urlAnchor = url.substring(hashIndex);
       }
 
+      // Fix discarded pages generated links
+      discardedPages.forEach((discardedPage, substitution) => {
+        if (urlPath.indexOf('Legal-Information') > -1){
+          return substitution;
+        }
+      });
+
       // Handle relative paths
       let absolutePath;
       if (urlPath.startsWith('/')) {
@@ -254,10 +262,6 @@ try {
       }
       return match;
     });
-  }
-
-  function removeNonScript(content){
-    return content.replace(/<noscript[^>]*>[\s\S]*?<\/noscript>/gi, '')
   }
 
   // Process headings to add section-specific anchors
