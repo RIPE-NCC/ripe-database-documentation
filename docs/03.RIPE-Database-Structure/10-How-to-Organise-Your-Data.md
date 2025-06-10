@@ -86,7 +86,7 @@ This is one of those areas that some users don't pay much attention to, but it i
 
 For details of the technical workings of authorisation see the section, ['Authorisation'](../Authorisation/#authorisation). This section is about how to set up who can authorise what.
 
-The authorisation model is based on the **mntner** object. This is a box that holds credentials. There are different types of credentials with passwords, PGP certificates and single sign-on (SSO) usernames being the main ones. At the time of writing, these credentials don't need to match anyone who is registered in the RIPE Database with a **person** object. They are simply lists of credentials that can belong to anyone. It is therefore not possible for the database software to identify ‘who' authorised an update. The introduction of SSO as a credential is a step in this direction.
+The authorisation model is based on the **mntner** object. This is a box that holds credentials. There are different types of credentials with passwords, PGP certificates and single sign-on (SSO) usernames being the main ones. At the time of writing, these credentials don't need to match anyone who is registered in the RIPE Database with a **person** object. They are simply lists of credentials that can belong to anyone. It is therefore not possible for the database software to identify 'who' authorised an update. The introduction of SSO as a credential is a step in this direction.
 
 Every object in the RIPE Database must now be protected by a **mntner** object referenced by a "mnt-by:" attribute. The **mntner** object is also protected by a "mnt-by:" attribute. Normally, this references itself.
 

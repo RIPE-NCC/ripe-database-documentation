@@ -81,7 +81,7 @@ This is an example of a valid **mntner** object which uses PGP authentication:
 
 PGP signed updates can be sent to the database simply by signing the body of the message containing the updates and sending it to the server. Remember to use ASCII armoring. 
 
-Multiple GP-signed and non-signed parts can be supplied in a single update message, each part is processed separately. You can supply several objects which are protected by different PGP keys in a single update message, providing all required signatures are present.
+Multiple PGP-signed and non-signed parts can be supplied in a single update message, each part is processed separately. You can supply several objects which are protected by different PGP keys in a single update message, providing all required signatures are present.
 
 PGP parts with invalid signatures are handled as plain text. If the object is protected by an authentication method other than PGP, or has multiple authentication schemes in use and the required authentication is present, it will still be authorised. If PGP is the only form of authentication present the authentication will fail. 
 
@@ -92,7 +92,7 @@ PGP can be used with updates submitted by e-mail or using the syncupdates facili
 
 ## X.509 Certificate
 
-This is handled in a similar way to PGP. You need a certificate and private key. There is third-party software available to generate these as well as command-line tools, for example OpenSSL. The certificate must be included in a **key-cert** object in the database. The generated certificate and private key are in binary files. The OpenSSL tool will convert the certificate into plain text to be included in the **key-cert** object. For X.509 **key-cert** objects, you must specify the "key-cert:" value as ‘AUTO-1'. The database software will then set this value. These values cannot be reused. Once deleted, an X.509 **key-cert** object cannot be recreated.
+This is handled in a similar way to PGP. You need a certificate and private key. There is third-party software available to generate these as well as command-line tools, for example OpenSSL. The certificate must be included in a **key-cert** object in the database. The generated certificate and private key are in binary files. The OpenSSL tool will convert the certificate into plain text to be included in the **key-cert** object. For X.509 **key-cert** objects, you must specify the "key-cert:" value as 'AUTO-1'. The database software will then set this value. These values cannot be reused. Once deleted, an X.509 **key-cert** object cannot be recreated.
 
 If your email client supports S/MIME you can import the certificate and private key into the client. Email updates can now be signed with your X.509 private key. Alternatively, you can sign your update using your private key with OpenSSL and paste it into the email message body.
 
@@ -113,7 +113,7 @@ Currently SSO authorisation only works with web-based update methods. This inclu
 
 ## API Keys
 
-API keys are a new way to authenticate updates in the RIPE Database. They are associated with a user’s RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only use webupdates then you don't need API keys!
+API keys are a new way to authenticate updates in the RIPE Database. They are associated with a user's RIPE NCC Access account, and are intended to help you script (automate) updates to the RIPE Database. If you only use webupdates then you don't need API keys!
 
 To create an API key, login to [Webupdates](https://apps.db.ripe.net/) using RIPE NCC Access and choose API keys from the left-hand menu. Then click Create an API Key. When the key is created you will see a popup. You must copy the API key details as they will only be shown once. Store the copied credential securely.
 

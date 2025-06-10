@@ -12,7 +12,7 @@ All timestamps use the UTC timezone.
 
 Any attribute containing email addresses is filtered out from the query response. These may no longer be related to the object and, also, the owner of the email address may not want to receive any further communications concerning this data. It is also not possible to query for historical personal data objects i.e. **person** and **role**.
 
-**“—list-versions”**
+**"—list-versions"**
 
 The response to this is a list of available object versions with a timestamp. This timestamp is the date that an update was processed by the database server to create this version of the object. It is a system-generated timestamp; it is not information supplied by the user. The format looks like this:
 
@@ -39,7 +39,7 @@ The response to this is a list of available object versions with a timestamp. Th
 
 The specified primary key must be an exact match for an object. In the above example, you cannot request the history for 193.0.7.35. Even though this is part of the above range, these queries work on objects not hierarchies. Although this object existed prior to 2003-03-17, that part of the history is not available as it was deleted on this date.
 
-**“—show-version #n”**
+**"—show-version #n"**
 
 This query will return one version of an object from the history list. Taking version #10 from the above example, the query response will look like this:
 
@@ -63,7 +63,7 @@ This query will return one version of an object from the history list. Taking ve
     mnt-by:         RIPE-NCC-MNT
     mnt-lower:      RIPE-NCC-MNT
 
-**“--diff-versions <version-number:version-number>”**
+**"--diff-versions <version-number:version-number>"**
 
 This query will return the textual difference between two versions from the history list. Checking the difference between versions 10 and 11 in the example above will look like this:
 

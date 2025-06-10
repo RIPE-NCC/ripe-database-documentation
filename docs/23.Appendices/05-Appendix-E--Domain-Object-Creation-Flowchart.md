@@ -29,7 +29,7 @@ F --> |No| J{reject creation}:::initLastNodes
 G --> K{Is the <br> authorisation successful?}:::decisionNodes
 H --> |Yes| L[Check the authorisation <br> using the maintainers <br> mentioned in 'mnt-lower']:::operationNodes
 H --> |No| M[Check the authorisation <br> using the maintainers <br> mentioned in 'mnt-by']:::operationNodes
-I --> N{Does 'D' have 'mnt -lower'?}:::decisionNodes
+I --> N{Does 'D' have 'mnt-lower'?}:::decisionNodes
 K --> |Yes| O{accept creation}:::initLastNodes
 K --> |No| F
 L --> K

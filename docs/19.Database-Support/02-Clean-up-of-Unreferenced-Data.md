@@ -23,7 +23,7 @@ The issue was raised again at the [RIPE 54 Meeting in Tallinn in 2007](https://w
 
 ## Process
 
-A simplistic implementation that cleaned up unreferenced person and role objects was started on 26 january 2009. However, since this approach was incomplete (e.g. it did not detect person-maintainer pairs as described below) it was largely ineffective. The process was therefore stopped again on 21 March 2014.
+A simplistic implementation that cleaned up unreferenced person and role objects was started on 26 January 2009. However, since this approach was incomplete (e.g. it did not detect person-maintainer pairs as described below) it was largely ineffective. The process was therefore stopped again on 21 March 2014.
 
 Since 6 September 2016 the RIPE NCC has implemented a more complete clean-up process for the following object types:
 

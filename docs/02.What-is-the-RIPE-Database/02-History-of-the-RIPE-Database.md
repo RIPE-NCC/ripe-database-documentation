@@ -8,8 +8,6 @@ permalink: /What-is-the-RIPE-Database/History-of-the-RIPE-Database
 * [Background of the RIPE Database](#background-of-the-ripe-database)
 * [Versions of the RIPE Database](#versions-of-the-ripe-database)
 
-
-
 ## Background of the RIPE Database
 
 From the very first RIPE Meeting in 1989, the need for some sort of registry had been identified. In the early years of RIPE, this consisted of documenting the use of IPv4 address space in the RIPE region on a voluntary basis. The actual address space was not distributed by RIPE.
@@ -36,7 +34,7 @@ The second version of the RIPE Database was written in PERL and used files to st
 
 Version 3 was released in April 2001. In this version, the old RIPE Database ripe-181 format was converted to the new [RPSL format](https://datatracker.ietf.org/doc/html/rfc2622). The software was written in C and the data was stored in a MySQL database.
 
-The basic design of the data model is still the same now. Since its release several years ago, many additional features have been added. New object types were added in 2004, including the **organisation** object. When the RIPE NCC started to encourage the adoption of IPv6, theRIPE Database software was made fully compliant with IPv6 and additional object types were added for this: **inet6num** and **route6**.
+The basic design of the data model is still the same now. Since its release several years ago, many additional features have been added. New object types were added in 2004, including the **organisation** object. When the RIPE NCC started to encourage the adoption of IPv6, the RIPE Database software was made fully compliant with IPv6 and additional object types were added for this: **inet6num** and **route6**.
 
 Web forms were introduced for both queries and updates shortly after this version was released. These have been constantly revised over the years and are still subject to regular minor improvements and occasional major improvement.
 
