@@ -3,6 +3,7 @@
 import { defineProps } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
+import SearchBar from "../../components/SearchBar.vue";
 
 const { frontmatter } = useData()
 
@@ -18,6 +19,7 @@ defineProps({
   <DefaultTheme.Layout>
     <!-- Your custom doc content -->
     <template #doc-before>
+      <search-bar/>
       <div style="background-color: yellow; padding: 20px; border: 5px solid red; margin-bottom: 20px;">
         <h1>{{ frontmatter.title || "Custom Doc" }}</h1>
       </div>

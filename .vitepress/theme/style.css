@@ -180,13 +180,6 @@
 .VPNavBarTitle {
   background-color: var(--vp-sidebar-bg-color);
 }
-.VPNavBarSearch.search {
-  float: right !important;
-  width: 50px !important;
-  margin-right: 33px !important;
-  flex:none;
-}
-
 
 
 user-login, app-switcher {
