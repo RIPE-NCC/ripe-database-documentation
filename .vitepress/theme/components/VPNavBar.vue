@@ -1,53 +1,172 @@
-<script setup>
-import { ref } from 'vue'
-import Search from "@swe-database/ncc-vitepress-plugin-search/Search.vue";
+<script lang="ts" setup>
+import { useWindowScroll } from '@vueuse/core'
+import {h, ref, watchPostEffect} from 'vue'
+import VPNavBarTitle from 'vitepress/dist/client/theme-default/components/VPNavBarTitle.vue'
 import Logo from '../../components/SiteLogo.vue';
-const isMenuOpen = ref(false)
+import {useSidebar} from "vitepress/theme";
+import Search from "@swe-database/ncc-vitepress-plugin-search/dist/Search.vue";
 
 const appSwitcher = h('app-switcher', { appenv: 'prod', class: 'gt-xs' })
 const userLogin = h('user-login', { accessurl: 'access.ripe.net' })
 
-function toggleMenu() {
-  isMenuOpen.value = !isMenuOpen.value
-}
+const props = defineProps<{
+  isScreenOpen: boolean
+}>()
+
+defineEmits<{
+  (e: 'toggle-screen'): void
+}>()
+
+const { y } = useWindowScroll()
+const { hasSidebar } = useSidebar()
+
+
+const classes = ref<Record<string, boolean>>({})
+
+watchPostEffect(() => {
+  classes.value = {
+    'has-sidebar': hasSidebar.value,
+    'top': y.value === 0,
+    'screen-open': props.isScreenOpen
+  }
+})
 </script>
 
 <template>
-  <nav class="custom-navbar">
-    <div class="navbar-left">
-      <Logo/>
-    </div>
-    <div class="navbar-right">
-      <app-switcher appenv="prod" class="gt-xs" />
-      <user-login accessurl="access.ripe.net" />
-    </div>
-  </nav>
-  <Search />
+  <div class="VPNavBar" :class="classes">
+        <VPNavBarTitle>
+          <template #nav-bar-title-before>
+            <Logo/>
+          </template>
+        </VPNavBarTitle>
+
+      <div class="content-body">
+        <app-switcher appenv="prod" class="gt-xs" />
+        <user-login accessurl="access.ripe.net" />
+      </div>
+  </div>
 </template>
 
+
+
 <style scoped>
-.custom-navbar {
-  background: linear-gradient(90deg, #ff6a00, #ee0979);
-  color: white;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 0 0 15px 15px;
-  user-select: none;
+.VPNavBar {
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 9px rgba(0, 0, 0, .3);
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  left: 0;
+  padding-top: var(--ripe-header-padding-top, 0);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
-.custom-navbar a {
-  color: #f0f0f0;
-  margin: 0 15px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.VPNavBar.screen-open {
+  transition: none;
+  background-color: var(--vp-nav-bg-color);
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 
-.custom-navbar a:hover {
-  color: #ffeb3b;
-  text-shadow: 0 0 5px #ffeb3b;
+.VPNavBar:not(.home) {
+  background-color: var(--vp-nav-bg-color);
 }
+
+user-login, app-switcher {
+  line-height: 14px;
+}
+
+
+.content-body {
+  pointer-events: none;
+}
+
+.content-body :deep(*) {
+  pointer-events: auto;
+}
+
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar .content-body {
+    max-width: 100%;
+  }
+}
+
+.title {
+  flex-shrink: 0;
+  height: calc(var(--vp-nav-height) - 1px);
+  transition: background-color 0.5s;
+}
+
+@media (min-width: 960px) {
+  .VPNavBar.has-sidebar .title {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 32px;
+    width: var(--vp-sidebar-width);
+    height: var(--vp-nav-height);
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPNavBar.has-sidebar .title {
+    padding-left: max(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2));
+    width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px);
+  }
+}
+
+
+.content-body {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding: 0 1.4rem 0 0;
+}
+
+@media (max-width: 767px) {
+  .content-body {
+    column-gap: 0.5rem;
+  }
+}
+
+.menu + .translations::before,
+.menu + .appearance::before,
+.menu + .social-links::before,
+.translations + .appearance::before,
+.appearance + .social-links::before {
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 1px;
+  height: 24px;
+  background-color: var(--vp-c-divider);
+  content: "";
+}
+
+.menu + .appearance::before,
+.translations + .appearance::before {
+  margin-right: 16px;
+}
+
+.appearance + .social-links::before {
+  margin-left: 16px;
+}
+
+.social-links {
+  margin-right: -8px;
+}
+
+
+@media (min-width: 1440px) {
+  .VPNavBar.has-sidebar .divider {
+    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+  }
+}
+
+.VPNavBar:not(.home) .divider-line {
+  background-color: var(--vp-c-gutter);
+}
+
+
 </style>

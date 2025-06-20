@@ -174,18 +174,6 @@
   transition: none !important;
 }
 
-.VPNavBarTitle .title span, button.VPNavBarHamburger {
-  display: none !important;
-}
-.VPNavBarTitle {
-  background-color: var(--vp-sidebar-bg-color);
-}
-
-
-user-login, app-switcher {
-  line-height: 14px;
-}
-
 h1,
 h2,
 h3,
@@ -206,6 +194,15 @@ code, pre {
   tab-size: 4; /* Ensures tabs are not too wide */
 }
 
+body {
+    overflow: auto !important;
+}
+
+.VPNavBarTitle ::slotted(svg) {
+    height: 34px;
+    margin-left: 20px;
+    margin-top: 18px;
+}
 /* safari should display logo correctly */
 @media (max-width: 959px) {
     .VPNavBarTitle {

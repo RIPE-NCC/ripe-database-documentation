@@ -183,7 +183,7 @@ function runPrebuildAndSidebar() {
 
 // VitePress config export
 export default withMermaid({
-  title: "RIPE NCC DOCS",
+  title: "RIPE Database docs",
   base: baseDir,
   srcDir: `./prebuild`,
   description: "Vitepress based RIPE Docs",

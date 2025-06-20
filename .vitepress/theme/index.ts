@@ -1,13 +1,10 @@
-import { h, nextTick, watch } from 'vue'
-import { type Theme, useData } from 'vitepress'
-import DefaultTheme from 'vitepress/theme-without-fonts'
-import Logo from '../components/SiteLogo.vue';
-// Import custom layouts
-import PageLayout from './layouts/Page.vue'
+import { nextTick, watch } from 'vue'
+import { type Theme } from 'vitepress'
 import SvgZoom from '../components/SvgZoom.vue'
 import '@technical-design/ripe-app-webcomponents/style/ripe-app-colors.css';
 import Layout from './Layout.vue'
 import VPNavBar from "./components/VPNavBar.vue";
+import VPNav from "./components/VPNav.vue";
 import '@fontsource-variable/public-sans';
 import '@fontsource-variable/public-sans/wght-italic.css'
 import '@fontsource-variable/public-sans/wght.css';
@@ -15,6 +12,7 @@ import './style.css'
 import './fonts.css'
 // Import web components
 import '@technical-design/ripe-app-webcomponents';
+import Logo from '../components/SiteLogo.vue';
 import {
   AppNavBar,
   AppCookieConsent,
@@ -25,8 +23,6 @@ import {
   QuestionMark,
   AppBanner,
 } from '@technical-design/ripe-app-webcomponents';
-import {compileStyles} from "mermaid/dist/rendering-util/rendering-elements/shapes/handDrawnShapeStyles";
-import CustomLayout from "./layouts/CustomLayout.vue";
 
 // Prevent tree-shaking
 const keepAliveComponents = [
@@ -106,20 +102,6 @@ function expandSidebarForCurrentPath() {
 
 export default {
   Layout,
-  /*Layout: () => {
-    const { frontmatter } = useData()
-
-    const appSwitcher = h('app-switcher', { appenv: 'prod', class: 'gt-xs' })
-    const userLogin = h('user-login', { accessurl: 'access.ripe.net' })
-    const logo = h(Logo);
-    const searchBar = h(Search);
-    return h(CustomLayout, { frontmatter: frontmatter.value }, {
-      'nav-bar-content-after': () => [appSwitcher, userLogin],
-      'nav-bar-title-before': () => logo,
-      'doc-before': () => searchBar
-    })
-  },*/
-
   enhanceApp({ app, router }) {
     // console.log("🚀 enhanceApp is running!");
     // Register global components
@@ -127,6 +109,8 @@ export default {
     (globalThis as any).__vitepress__usePrefetch = () => false;
     app.component('SvgZoom', SvgZoom)
     app.component('VPNavBar', VPNavBar)
+    app.component('VPNav', VPNav)
+    app.component('Logo', Logo)
     const createJS = () => {
       if (typeof window === 'undefined') return;
 
