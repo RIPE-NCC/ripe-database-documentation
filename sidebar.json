@@ -6,15 +6,27 @@
     "items": [
       {
         "text": "RIPE Database Documentation Overview",
-        "link": "/introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview/"
+        "link": "/Introduction-to-the-RIPE-Database/RIPE-Database-Documentation-Overview/"
       },
       {
         "text": "Intended Audience",
-        "link": "/introduction-to-the-RIPE-Database/Intended-Audience/"
+        "link": "/Introduction-to-the-RIPE-Database/Intended-Audience/"
       },
       {
         "text": "Conventions Used in the RIPE Database Documentation",
-        "link": "/introduction-to-the-RIPE-Database/Conventions-Used-in-the-RIPE-Database-Documentation/"
+        "link": "/Introduction-to-the-RIPE-Database/Conventions-Used-in-the-RIPE-Database-Documentation/"
+      },
+      {
+        "text": "01 RIPE Database Documentation Overview",
+        "link": "/Introduction-to-the-RIPE-Database/01-RIPE-Database-Documentation-Overview/"
+      },
+      {
+        "text": "02 Intended Audience",
+        "link": "/Introduction-to-the-RIPE-Database/02-Intended-Audience/"
+      },
+      {
+        "text": "03 Conventions Used in the RIPE Database Documentation",
+        "link": "/Introduction-to-the-RIPE-Database/03-Conventions-Used-in-the-RIPE-Database-Documentation/"
       }
     ]
   },
@@ -34,6 +46,10 @@
       {
         "text": "Personal Data Database Management and Reponsabilities",
         "link": "/What-is-the-RIPE-Database/Personal-Data-Database-Management-and-Reponsabilities/"
+      },
+      {
+        "text": "03 Personal Data Database Management and Responsibilities",
+        "link": "/What-is-the-RIPE-Database/03-Personal-Data-Database-Management-and-Responsibilities/"
       }
     ]
   },
@@ -427,6 +443,14 @@
       {
         "text": "Historical Queries",
         "link": "/Types-of-Queries/Historical-Queries/"
+      },
+      {
+        "text": "03 Queries for Autonomous Systems",
+        "link": "/Types-of-Queries/03-Queries-for-Autonomous-Systems/"
+      },
+      {
+        "text": "08 Filtering the Query Response",
+        "link": "/Types-of-Queries/08-Filtering-the-Query-Response/"
       }
     ]
   },
@@ -621,16 +645,16 @@
     "link": "/Glossary/"
   },
   {
+    "text": "Legal Information",
+    "link": "/Legal-Information/"
+  },
+  {
     "text": "RIPE Database Acceptable Use Policy",
     "link": "/RIPE-Database-Acceptable-Use-Policy/"
   },
   {
     "text": "HTML Terms And Conditions",
     "link": "/HTML-Terms-And-Conditions/"
-  },
-  {
-    "text": "Legal Information",
-    "link": "/Legal-Information/"
   },
   {
     "text": "All Documentation Combined",

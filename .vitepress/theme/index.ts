@@ -6,6 +6,8 @@ import Logo from '../components/SiteLogo.vue';
 import PageLayout from './layouts/Page.vue'
 import SvgZoom from '../components/SvgZoom.vue'
 import '@technical-design/ripe-app-webcomponents/style/ripe-app-colors.css';
+import Layout from './Layout.vue'
+import VPNavBar from "./components/VPNavBar.vue";
 import '@fontsource-variable/public-sans';
 import '@fontsource-variable/public-sans/wght-italic.css'
 import '@fontsource-variable/public-sans/wght.css';
@@ -24,6 +26,7 @@ import {
   AppBanner,
 } from '@technical-design/ripe-app-webcomponents';
 import {compileStyles} from "mermaid/dist/rendering-util/rendering-elements/shapes/handDrawnShapeStyles";
+import CustomLayout from "./layouts/CustomLayout.vue";
 
 // Prevent tree-shaking
 const keepAliveComponents = [
@@ -67,16 +70,16 @@ function expandSidebarForCurrentPath() {
 	// Get the current path
 	const currentPath = window.location.pathname;
 	// console.log(`🚀 Expanding sidebar for path: ${currentPath}`);
-  
+
 	// Find the current page's link element
-	const currentPageLink = document.querySelector(`a[href="${currentPath}"]`) || 
+	const currentPageLink = document.querySelector(`a[href="${currentPath}"]`) ||
 							document.querySelector(`a[href="${currentPath}/"]`);
 
 	if (!currentPageLink) {
 	console.log(`⚠️ Couldn't find link for current path: ${currentPath}`);
 	return;
 	}
-  
+
 	// Identify all parent collapsible items that need expanding
 	let itemsToExpand: HTMLElement[] = [];
 	let element: HTMLElement | null = currentPageLink.parentElement;
@@ -102,28 +105,20 @@ function expandSidebarForCurrentPath() {
 }
 
 export default {
-  extends: DefaultTheme,
-  Layout: () => {
+  Layout,
+  /*Layout: () => {
     const { frontmatter } = useData()
 
     const appSwitcher = h('app-switcher', { appenv: 'prod', class: 'gt-xs' })
     const userLogin = h('user-login', { accessurl: 'access.ripe.net' })
     const logo = h(Logo);
-    if (frontmatter.value?.layout === 'custom') {
-        // console.log("USING CUSTOM DOC LAYOUT");
-        return h(PageLayout, { frontmatter: frontmatter.value }, {
-          // Pass the header components as slots
-          'nav-bar-content-after': () => [appSwitcher, userLogin],
-          'nav-bar-title-before': () => logo
-        })
-      } else {
-        // console.log("USING DEFAULT LAYOUT");
-      }
-      return h(DefaultTheme.Layout, null, {
-        'nav-bar-content-after': () => [appSwitcher, userLogin],
-        'nav-bar-title-before': () => logo
-      })
-  },
+    const searchBar = h(Search);
+    return h(CustomLayout, { frontmatter: frontmatter.value }, {
+      'nav-bar-content-after': () => [appSwitcher, userLogin],
+      'nav-bar-title-before': () => logo,
+      'doc-before': () => searchBar
+    })
+  },*/
 
   enhanceApp({ app, router }) {
     // console.log("🚀 enhanceApp is running!");
@@ -131,6 +126,7 @@ export default {
     // Disable internal prefetch function
     (globalThis as any).__vitepress__usePrefetch = () => false;
     app.component('SvgZoom', SvgZoom)
+    app.component('VPNavBar', VPNavBar)
     const createJS = () => {
       if (typeof window === 'undefined') return;
 
