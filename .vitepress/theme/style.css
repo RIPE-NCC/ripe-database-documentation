@@ -219,13 +219,22 @@ body {
     height: 56px;
     width: 700px;
     border-radius: 8px;
-    margin-left: 100px;
     background: #D0D2DA;
 }
 
-.VPDoc {
+.VitePressLayout.with-top-search .search-box {
+    margin-left: 100px;
+}
+
+.VitePressLayout:not(.with-top-search) .search-box {
+    position: relative;
+    top: 30px;
+}
+
+.VitePressLayout.with-top-search .VPDoc{
     margin-top: 100px;
 }
+
 
 
 /* Ensures header looks as before */

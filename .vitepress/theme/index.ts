@@ -13,6 +13,7 @@ import './fonts.css'
 // Import web components
 import '@technical-design/ripe-app-webcomponents';
 import Logo from '../components/SiteLogo.vue';
+import Search from "@swe-database/ncc-vitepress-plugin-search/Search.vue";
 import {
   AppNavBar,
   AppCookieConsent,
@@ -111,6 +112,7 @@ export default {
     app.component('VPNavBar', VPNavBar)
     app.component('VPNav', VPNav)
     app.component('Logo', Logo)
+    app.component('Search', Search)
     const createJS = () => {
       if (typeof window === 'undefined') return;
 
