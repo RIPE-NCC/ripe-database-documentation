@@ -29,7 +29,7 @@ const baseDir = "/"
 var options = {
   previewLength: 62,
   buttonLabel: "Search",
-  placeholder: "Search docs",
+  placeholder: "Search in documentation",
   allow: [],
   ignore: [],
   synonymMappings: {

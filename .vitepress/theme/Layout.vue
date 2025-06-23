@@ -11,12 +11,11 @@ const { hasSidebar } = useSidebar()
 <template>
   <div class="VitePressLayout">
     <VPNav />
+    <div class="VPSearch">
+      <Search />
+    </div>
     <VPSidebar v-if="hasSidebar" :open="true" class="sidebar" />
-    <VPContent>
-      <template #doc-before>
-        <Search />
-      </template>
-    </VPContent>
+    <VPContent />
     <VPFooter />
   </div>
 </template>

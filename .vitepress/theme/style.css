@@ -198,6 +198,38 @@ body {
     overflow: auto !important;
 }
 
+
+/* Search Bar Styles */
+.VPSearch {
+    position: fixed;
+    display: flex;
+    top: 60px;
+    left: 400px;
+    border-bottom-width: 1px;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+    height: 162px;
+    width: 850px;
+    z-index: 2;
+    background: white;
+}
+
+.search-box {
+    height: 56px;
+    width: 700px;
+    border-radius: 8px;
+    margin-left: 100px;
+    background: #D0D2DA;
+}
+
+.VPDoc {
+    margin-top: 100px;
+}
+
+
+/* Ensures header looks as before */
+
 .VPNavBarTitle {
     display: flex;
     height: 100%;
