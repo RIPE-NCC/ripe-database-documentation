@@ -198,11 +198,20 @@ body {
     overflow: auto !important;
 }
 
-.VPNavBarTitle ::slotted(svg) {
-    height: 34px;
-    margin-left: 20px;
-    margin-top: 18px;
+.VPNavBarTitle {
+    display: flex;
+    height: 100%;
 }
+
+svg#Layer_1 {
+    height: 34px;
+    margin-left: 40px;
+}
+
+.VPNavBarTitle .title span {
+    display: none !important;
+}
+
 /* safari should display logo correctly */
 @media (max-width: 959px) {
     .VPNavBarTitle {

@@ -93,11 +93,6 @@ user-login, app-switcher {
   }
 }
 
-.title {
-  flex-shrink: 0;
-  height: calc(var(--vp-nav-height) - 1px);
-  transition: background-color 0.5s;
-}
 
 @media (min-width: 960px) {
   .VPNavBar.has-sidebar .title {

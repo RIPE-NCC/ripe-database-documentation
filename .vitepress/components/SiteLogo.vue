@@ -1,29 +1,27 @@
 <template>
   <!-- Put your site's logo svg here -->
-  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1811.13 224" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 5820.92 550.74" style="opacity:1;" xml:space="preserve">
     <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
     <defs>
-      <linearGradient id="linear-gradient" x1="28.86" y1="4.26" x2="191.52" y2="166.92" gradientTransform="translate(0 223.98) scale(1 -1)" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#25316a"/>
-        <stop offset=".08" stop-color="#293268"/>
-        <stop offset=".16" stop-color="#353564"/>
-        <stop offset=".24" stop-color="#493b5d"/>
-        <stop offset=".32" stop-color="#654352"/>
-        <stop offset=".4" stop-color="#8a4d45"/>
-        <stop offset=".48" stop-color="#b75a35"/>
-        <stop offset=".55" stop-color="#eb6923"/>
-        <stop offset=".56" stop-color="#f26b21"/>
-        <stop offset="1" stop-color="#9c9c9c"/>
+      <linearGradient id="linear-gradient" gradientUnits="userSpaceOnUse" x1="69.0952" y1="525.8441" x2="458.1069" y2="136.8323">
+        <stop  offset="0" style="stop-color:#24326A"/>
+        <stop  offset="0.0611" style="stop-color:#283369"/>
+        <stop  offset="0.1228" style="stop-color:#333567"/>
+        <stop  offset="0.1848" style="stop-color:#453864"/>
+        <stop  offset="0.2471" style="stop-color:#5B3D5F"/>
+        <stop  offset="0.3095" style="stop-color:#764459"/>
+        <stop  offset="0.3721" style="stop-color:#964E4E"/>
+        <stop  offset="0.4336" style="stop-color:#BF5B3C"/>
+        <stop  offset="0.4872" style="stop-color:#ED6B23"/>
+        <stop  offset="1" style="stop-color:#9C9C9C"/>
       </linearGradient>
     </defs>
-    <path class="st0" d="M400.06,225.77v-0.17l0-146.82L263.6,0L127.14,78.78l0,146.82v0.17L0,299.18l0,157.57l136.46,78.79
+      <path class="st0" d="M400.06,225.77v-0.17l0-146.82L263.6,0L127.14,78.78l0,146.82v0.17L0,299.18l0,157.57l136.46,78.79
       	l127.14-73.41l127.14,73.41l136.46-78.79l0-157.57L400.06,225.77z M263.6,293.63l-108.52-62.65l108.52-62.66l108.52,62.66
       	L263.6,293.63z M145.77,247.28l108.52,62.65l0,125.13l-108.52-62.65L145.77,247.28z M272.91,309.93l108.52-62.65l0,125.13
       	l-108.52,62.65L272.91,309.93z M145.77,89.54L263.6,21.5l117.83,68.03l0,125.31L263.6,146.82l-117.83,68.03L145.77,89.54z
       	 M18.63,445.99l0-136.06l108.52-62.65l0,135.89l117.98,68.12l-108.67,62.74L18.63,445.99z M508.58,445.99l-117.83,68.03
       	l-108.67-62.74l117.98-68.12l0-135.89l108.52,62.65L508.58,445.99z"/>
-
-    <g id="Layer_11" data-name="Layer_1">
       <g>
         <path class="st1" d="M850.97,456.35l-73.88-133.39h-42.44v133.39h-93.8V78.95h163.49c37.2,0,66.02,7.94,89.6,25.41
       		c28.82,21.17,44.02,56.11,44.02,93.69c0,46.05-22.01,91.04-70.74,111.16l85.94,147.15H850.97z M792.28,153.05h-58.16v100.04h58.16
@@ -69,8 +67,6 @@
       		c64.45,0,127.33,35.46,127.33,103.75v69.87H4219.79z M4307.29,279.56c0-29.11-20.44-41.29-42.44-41.29
       		c-24.63,0-45.06,13.76-45.06,44.99v10.06h87.51V279.56z"/>
       </g>
-    </g>
-    <g>
       <path class="st2" d="M4755.47,460.2h-153.91V92.99h152.98c81.93,0,150.33,43.84,150.33,129.19v103.54
       	C4904.71,416.98,4832.73,460.2,4755.47,460.2z M4747.23,168.24h-54.1v217.34h56.59c33.42,0,62.34-21.14,62.34-58.77l0.47-100.9
       	C4812.52,189.85,4783.76,168.24,4747.23,168.24z"/>
@@ -88,23 +84,18 @@
       	c54.1,0,88.62,12.44,115.82,44.31l-54.1,41.2c-15.39-17.57-37-25.81-59.23-25.81c-22.7,0-37,6.22-37,21.14
       	c0,12.44,12.44,15.39,28.92,18.5c4.04,2.64,31.4,5.6,35.6,6.68c5.6,1.55,32.49,8.71,36.53,10.88c38.09,13.37,59.23,39.18,59.23,72.6
       	C5801.9,439.21,5734.89,465.95,5677.68,465.95z"/>
-    </g>
   </svg>
 </template>
 <style scoped>
-#Layer_1 {
-  max-width: 250px;
-  height: auto;
-}
 .st0 {
   fill: url(#linear-gradient);
 }
 
 .st1 {
-  fill: #25316a;
+  fill: #26316A;
 }
 
 .st2 {
-  fill: #8b8fb0;
+  fill: #8B8FB1;
 }
 </style>

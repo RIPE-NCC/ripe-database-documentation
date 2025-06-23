@@ -34,14 +34,15 @@ watchEffect(() => {
 
 <style scoped>
 .VPNav {
-  position: relative;
-  top: var(--vp-layout-top-height, 0px);
-  /*rtl:ignore*/
-  left: 0;
-  z-index: var(--vp-z-index-nav);
+  display: flex;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   width: 100%;
-  pointer-events: none;
-  transition: background-color 0.5s;
+  z-index: 99999;
 }
 
 @media (min-width: 960px) {
