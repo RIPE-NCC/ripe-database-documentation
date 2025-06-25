@@ -222,6 +222,20 @@ body {
     background: #D0D2DA;
 }
 
+.suggestions{
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0 0 !important;
+}
+
+.suggestions a{
+    font-weight: normal !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    text-underline-offset: initial !important;
+    transition: none !important;
+}
+
 .VitePressLayout.with-top-search .search-box {
     margin-left: 100px;
 }
