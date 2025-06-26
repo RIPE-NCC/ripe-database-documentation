@@ -533,9 +533,10 @@ vite:
   const hideComponentsWhenNonJS = [
     '<noscript><style>',
     '#downloadBtn{ display: none; }',
-    'header.VPNav{ display: none; }',
+    'header.VPNav{ display: none !important; }',
     'aside.VPSidebar{ display: none; }',
     'footer.VPDocFooter{ display: none; }',
+    '.VPSearch{display: none;}',
     '</style></noscript>'
   ].join('');
 
