@@ -9,6 +9,7 @@ permalink: /Authorisation/Using-the-Authorisation-Methods
 * [PGP Key](#pgp-key)
 * [X.509 Certificate](#x-509-certificate)
 * [Single Sign-On](#single-sign-on)
+* [API KEYs](#api-keys)
 
 
 ## MD5 Password
