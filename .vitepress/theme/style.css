@@ -204,7 +204,8 @@ body {
     position: fixed;
     display: flex;
     top: 60px;
-    left: 400px;
+    left: 50%;
+    transform: translateX(calc(-50%));
     border-bottom-width: 1px;
     padding: 10px;
     gap: 10px;
@@ -235,6 +236,7 @@ body {
     text-underline-offset: initial !important;
     transition: none !important;
 }
+
 
 .VitePressLayout.with-top-search .search-box {
     margin-left: 110px;
