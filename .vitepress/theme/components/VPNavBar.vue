@@ -41,6 +41,10 @@ watchPostEffect(() => {
         </VPNavBarTitle>
 
       <div class="content-body">
+        <button id="menu-toggle" class="menu-toggle">
+          <span class="menu-text">Menu</span>
+          <span class="vpi-align-left menu-icon"></span>
+        </button>
         <app-switcher appenv="prod" class="gt-xs" />
         <user-login accessurl="access.ripe.net" />
       </div>
@@ -112,18 +116,11 @@ user-login, app-switcher {
   }
 }
 
-
 .content-body {
   align-items: center;
   display: flex;
   height: 100%;
   padding: 0 1.4rem 0 0;
-}
-
-@media (max-width: 767px) {
-  .content-body {
-    column-gap: 0.5rem;
-  }
 }
 
 .menu + .translations::before,
@@ -163,5 +160,17 @@ user-login, app-switcher {
   background-color: var(--vp-c-gutter);
 }
 
+.vpi-align-left {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M21 6H3M15 12H3M17 18H3'/%3E%3C/svg%3E")
+}
+
+[class^=vpi-], [class*=" vpi-"], .vp-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.menu-icon {
+  font-size: 14px;
+}
 
 </style>

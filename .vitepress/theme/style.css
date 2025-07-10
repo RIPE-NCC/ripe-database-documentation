@@ -275,3 +275,57 @@ svg#Layer_1 {
         background-color: white !important;
     }
 }
+
+
+/* Mobile view */
+/* Hide sidebar on mobile */
+
+@media (max-width: 768px) {
+    svg#Layer_1{
+        margin-left: 5px;
+    }
+
+    .VPNavBar .content-body{
+        margin-right: 0.5rem;
+        flex: 0 0 45%;
+        justify-content: flex-end;
+    }
+
+    .VPNavBar .VPNavBarTitle {
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 0 0 55%;
+    }
+
+    .VPNavBarTitle {
+        margin-left: 0.5rem;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    .VPSidebar {
+        display: none;
+    }
+
+    .VPSidebar.show {
+        display: block;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        opacity: 1;
+        border-radius: 6px;
+        padding-left: 8px;
+        gap: 8px;
+    }
+}
+
+/* Hide toggle button on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}

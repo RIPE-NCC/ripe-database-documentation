@@ -6,12 +6,23 @@ import VPFooter from 'vitepress/dist/client/theme-default/components/VPFooter.vu
 import VPSidebar from 'vitepress/dist/client/theme-default/components/VPSidebar.vue'
 import VPNav from "./components/VPNav.vue";
 import Search from "@swe-database/ncc-vitepress-plugin-search/Search.vue";
-import { computed } from 'vue'
+import {computed, onMounted} from 'vue'
 
 const { hasSidebar } = useSidebar()
 const { frontmatter } = useData()
 
 const showTopSearch = computed(() => frontmatter.value.searchPosition !== 'inside')
+
+onMounted(() => {
+  const toggle = document.getElementById('menu-toggle')
+  const sidebar = document.querySelector('.VPSidebar')
+
+  if (toggle && sidebar) {
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('show')
+    })
+  }
+})
 </script>
 
 <template>
