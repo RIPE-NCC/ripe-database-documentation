@@ -220,7 +220,6 @@ body {
     height: 56px;
     width: 700px;
     border-radius: 8px;
-    background: #D0D2DA;
 }
 
 .suggestions{
@@ -244,13 +243,13 @@ body {
 
 .VitePressLayout:not(.with-top-search) .search-box {
     position: relative;
+    flex-direction: inherit;
     top: 30px;
 }
 
 .VitePressLayout.with-top-search .VPDoc{
     margin-top: 100px;
 }
-
 
 
 /* Ensures header looks as before */
@@ -278,9 +277,9 @@ svg#Layer_1 {
 
 
 /* Mobile view */
-/* Hide sidebar on mobile */
 
-@media (max-width: 768px) {
+/* Header and sidebar*/
+@media (max-width: 1290px) {
     svg#Layer_1{
         margin-left: 5px;
     }
@@ -323,8 +322,28 @@ svg#Layer_1 {
     }
 }
 
+/* Search Bar*/
+@media (max-width: 1290px) {
+    .VPSearch {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-box {
+        margin-left: 0 !important;
+    }
+
+    .VitePressLayout:not(.with-top-search) .search-box {
+        padding-right: 20px;
+    }
+
+    .suggestions {
+        width: 100%;
+    }
+}
+
 /* Hide toggle button on desktop */
-@media (min-width: 769px) {
+@media (min-width: 1289px) {
     .menu-toggle {
         display: none;
     }
