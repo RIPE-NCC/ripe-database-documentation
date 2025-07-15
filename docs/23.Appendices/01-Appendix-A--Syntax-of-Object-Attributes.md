@@ -117,7 +117,7 @@ The "components:" attribute defines what component routes are used to form the a
 Please refer to [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) and [RPSLng RFC 4012](https://tools.ietf.org/html/rfc4012) for more information.
 
 **country:** &lt;country-code&gt;  
-Identifies a country. &lt;country-code&gt; must be a valid two-letter ISO 3166 country code.
+Identifies a country. &lt;country-code&gt; must be a valid two-letter ISO 3166 country code or "EU" (exceptionally reserved).
 
 **default:** to &lt;peering&gt; \[action &lt;action&gt;\] \[networks &lt;filter&gt;\]  
 Specifies default routing policies. Please refer to [RPSL RFC 2622](https://tools.ietf.org/html/rfc2622) for more information.
