@@ -11,7 +11,6 @@ permalink: /Authorisation/Using-the-Authorisation-Methods
 * [Single Sign-On](#single-sign-on)
 * [API KEYs](#api-keys)
 
-
 ## MD5 Password
 
 ::: warning

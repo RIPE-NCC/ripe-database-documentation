@@ -5,74 +5,16 @@ VuePress documentation for RIPE Database Documentation.
 
 This documentation is built automatically from nothing more than markdown files in the tree.
 
-# Editing the docs
+# Updating Documentation
 
-The docs can be edited directly within Gitlab or by cloning the repository, changing the files locally and checking them back in.
+We welcome updates to the documentation. Please open a pull request with your changes, or create an issue.
 
-To avoid variation numbers from the link, it is advised to utilise permalinks.
+# VuePress
 
-## Links
+This project depends on VuePress (https://vuepress.vuejs.org) to build the static site from Markdown.
 
-Since the order of documents can change, we cannot rely on the order number within links referencing them. 
-To ensure stability, we use a permalink in the document headers, providing a static link that remains unchanged. 
-This approach prevents breaking changes.
+The VuePress configuration and components are not yet public, so are not included for now.
 
-Additionally, references between pages must include the full path along with the `#` symbol. For example:
-`../Appendices/Appendix-A--Syntax-of-Object-Attributes/#appendix-a-syntax-of-object-attributes`
+# License
 
-This is necessary because, when generating the *Entire Documentation HTML*, the plugin misconfigures the links. 
-To resolve this, a script was created to extract the correct reference from the wildcard section.
-
-# Editing in Gitlab
-
-GitLab has a handy built-in editor that understands most of the markdown that is in the markdown files. There are a few exceptions that are particular to VuePress:
-
-| **Gitlab markdown**                                                                                                                  | **Vuepress markdown**                                                                      |
-|--------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| collapsible sections are rendered with &lt;details&gt;&lt;summary&gt;&lt;/summary&gt;&lt;content&gt;&lt;/content&gt;&lt;/details&gt; | collapsible sections rendered same as gitlab OR by ::: details summaryText contentText ::: |
-| Embedded vue components are ignored                                                                                                  | Embedded vue components (like &lt;RestRepl /&gt;) are recognized and rendered              |
-
-# Running locally
-
-Once you download the repository in your local machine you can run service using NPM or Docker
-
-## NPM
-
-**Do not use yarn command, it has problems with some dependency**
-
-```shell
-npm install
-```
-
-**IMPORTANT** for npm version 8.x.x it is necessary to add "--legacy-peer-deps" parameter, or to upgrade npm to version 9.x.x
-
-This command is going to install the required dependencies for vuepress and those dependencies specified in package.json file. The output of this command is a new folder called node_modules that contains all the installed dependencies.
-
-```shell
-npm run docs:dev
-```
-
-This command is going to launch a local server in http://localhost:8080.
-If you have a problem running this command, you should run
-
-```shell
-export NODE_OPTIONS=--openssl-legacy-provider
-```
-
-## Docker
-
-Use docker build and run
-
-```shell
-docker build -t ripe-docs . && docker run --rm  -p 8080:80 ripe-docs
-```
-
-or use docker compose
-
-```shell
-docker-compose up --build
-```
-
-# Legal
-
-**IMPORTANT!** Any change done to [legal](./docs/26.Legal-Information.md), [T&C](./docs/26.HTML-Terms-And-Conditions.md) or [AUP](./docs/25.RIPE-Database-Acceptable-Use-Policy.md) require approval from Legal. So please don't edit those files unless you have the permission from Legal.
+The documentation is covered by the terms of the [license](LICENSE.md).
