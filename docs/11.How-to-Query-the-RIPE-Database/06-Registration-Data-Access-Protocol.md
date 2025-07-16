@@ -11,7 +11,7 @@ The **Registration Data Access Protocol** (RDAP) is an alternative protocol to W
 The contents of RIPE database can be accessed using RDAP via `https://rdap.db.ripe.net/{objectType}/{key}` where `
 {objectType}` must be one of the object types listed below, and the value of `{key}` depends on the object type.
 
-    List of supported object types
+List of supported object types
 
 | Object Type | Description                                                                                                                      |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------|

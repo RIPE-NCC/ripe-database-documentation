@@ -103,5 +103,5 @@ is created and associated with the mntner. The last step is to perform an update
   -----END PGP SIGNATURE-----
   ```
   * The last step is to perform the update, in this example `curl` is used: `curl -v --data-urlencode DATA@file.asc 
-    https://syncupdates.db.ripe.net`. Whois will authenticate this signature using the public key in the 
+    https://syncupdates.db.ripe.net`. Whois will authenticate this signature using the public key in the
 [key-cert object](../RPSL-Object-Types/Descriptions-of-Secondary-Objects/#description-of-the-key-cert-object).

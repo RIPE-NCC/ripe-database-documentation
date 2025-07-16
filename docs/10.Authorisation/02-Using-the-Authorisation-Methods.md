@@ -9,24 +9,36 @@ permalink: /Authorisation/Using-the-Authorisation-Methods
 * [PGP Key](#pgp-key)
 * [X.509 Certificate](#x-509-certificate)
 * [Single Sign-On](#single-sign-on)
-
+* [API KEYs](#api-keys)
 
 ## MD5 Password
 
 ::: warning
 Please note that MD5 hashed passwords are deprecated and will be removed by end 2025.
+MD5 hashed passwords are no longer available for Webupdates in TEST and RC environment
 :::
 
 An MD5 password can be used by any of the update methods currently in use. See section 5.2 Update Methods for more details of these methods.
 
-For email updates, password authorisation information is supplied using a "password:" pseudo-attribute. The value of this attribute is a clear-text passphrase, corresponding to the encrypted hash. It can appear anywhere in the body of the message, but not within mail headers. Line continuation is not allowed for this attribute. The attribute and the passphrase should fit on one line. If you split the passphrase across multiple lines, this will be treated as a syntax error. If you have a very long passphrase, please note that some email clients split lines at a pre-defined character position. If multiple passwords are required, a "password:" pseudo-attribute must be included in the update for each password. 
-The Webupdates web form includes a 'Session Passwords' field. Many passwords can be added, one at a time, using this field, up to a pre-defined limit. For any update in this session, all session passwords will be added to the update that is performed via the web form.
+For email updates, password authorisation information is supplied using a "password:" pseudo-attribute. 
+The value of this attribute is a clear-text passphrase, corresponding to the encrypted hash. It can appear anywhere in 
+the body of the message, but not within mail headers. Line continuation is not allowed for this attribute. The attribute 
+and the passphrase should fit on one line. If you split the passphrase across multiple lines, this will be treated as a 
+syntax error. If you have a very long passphrase, please note that some email clients split lines at a pre-defined 
+character position. If multiple passwords are required, a "password:" pseudo-attribute must be included in the update 
+for each password. 
+The Webupdates web form includes a ‘Session Passwords' field. Many passwords can be added, one at a time, using this 
+field, up to a pre-defined limit. For any update in this session, all session passwords will be added to the update that
+is performed via the web form.
 
-In the single text area form of Webupdates, the "password:" pseudo-attribute can be added as part of the update body, in the text area, in the same way as with an email update. The session passwords also apply in this case.
+In the single text area form of Webupdates, the "password:" pseudo-attribute can be added as part of the update body, 
+in the text area, in the same way as with an email update. The session passwords also apply in this case.
 
-Using the Syncupdates web form there is no 'Session Passwords' field but again the "password:" pseudo-attribute can be added. When using the HTTP POST and GET requests for Syncupdates, the "password:" pseudo-attribute must be supplied as part of the message body.
+Using the Syncupdates web form there is no ‘Session Passwords' field but again the "password:" pseudo-attribute can be 
+added. When using the HTTP POST and GET requests for Syncupdates, the "password:" pseudo-attribute must be supplied as part of the message body.
 
-With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the [API documentation](../Update-Methods/RESTful-API/#ripe-database-restful-api).
+With the RESTful API, any required passwords must be included in the URI query parameters. For more details see the 
+[API documentation](../Update-Methods/RESTful-API/#ripe-database-restful-api).
 
 
 ## PGP Key

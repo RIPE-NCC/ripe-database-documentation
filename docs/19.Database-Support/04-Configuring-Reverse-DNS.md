@@ -1,6 +1,7 @@
 ---
 permalink: /Database-Support/Configuring-Reverse-DNS
 ---
+
 # Configuring Reverse DNS
 
 **Computer networks use the Domain Name System (DNS) to determine the IP address associated with a domain name. This process is also known as forward DNS resolution. Reverse DNS (rDNS) is the inverse process of this: the resolution of an IP address to its designated domain name. This document explains how reverse DNS works and how to configure it for your zone**

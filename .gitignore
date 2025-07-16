@@ -1,5 +1,6 @@
 .gitignore
 docs/.vuepress
+.gitlab-ci.yml
 node_modules
 yarn.lock
 .DS_Store
