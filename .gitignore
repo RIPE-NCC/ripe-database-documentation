@@ -4,5 +4,7 @@ yarn.lock
 builds
 .idea/
 ripe-docs.iml
-.vitepress/dist/
+.vitepress/
 docs/public/diagrams/*.svg
+package-lock.json
+vpscripts/
