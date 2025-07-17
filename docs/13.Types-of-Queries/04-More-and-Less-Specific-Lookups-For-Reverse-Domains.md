@@ -1,9 +1,0 @@
----
-permalink: /Types-of-Queries/More-and-Less-Specific-Lookups-For-Reverse-Domains
----
-
-# More and Less Specific Lookups For Reverse Domains
-
-The RIPE Database supports IP network queries including the `-x`, `-M`, `-m`, `-L` and `-l` functionality for reverse delegation domains. If you want to include reverse delegation domains in the query response when using the more or less specific or exact match query flags. You must also include the `-d` query flag, this will return all **domain** objects for the address range.
-
-Please note that there is no hierarchy allowed with reverse **domain** objects. These queries work on the address space hierarchies and return the corresponding **domain** object, if found, for any address space objects in the query response.
