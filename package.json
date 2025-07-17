@@ -1,9 +1,0 @@
-{
-  "name": "@swe-database/ripe-database-documentation",
-  "version": "1.0.0",
-  "main": "",
-  "files": ["docs"],
-  "license": "MIT"
-}
-
-
