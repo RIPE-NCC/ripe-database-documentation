@@ -1,9 +1,9 @@
 
 # RIPE Database Documentation
 
-VitePress documentation for RIPE Database Documentation.
+RIPE database documentation in Markdown format.
 
-This documentation is privately built from this markdown files.
+This documentation is privately built from these markdown files.
 
 # Updating Documentation
 
