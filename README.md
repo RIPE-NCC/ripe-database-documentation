@@ -1,19 +1,19 @@
 
 # RIPE Database Documentation
 
-VuePress documentation for RIPE Database Documentation.
+VitePress documentation for RIPE Database Documentation.
 
-This documentation is built automatically from nothing more than markdown files in the tree.
+This documentation is privately built from this markdown files.
 
 # Updating Documentation
 
 We welcome updates to the documentation. Please open a pull request with your changes, or create an issue.
 
-# VuePress
+# VitePress
 
-This project depends on VuePress (https://vuepress.vuejs.org) to build the static site from Markdown.
+This project depends on VuePress (https://vitepress.dev) to build the static site from Markdown.
 
-The VuePress configuration and components are not yet public, so are not included for now.
+The VitePress configuration and components are not public, so are not included.
 
 # License
 
