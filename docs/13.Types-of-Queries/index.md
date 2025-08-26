@@ -2,7 +2,7 @@
 permalink: /Types-of-Queries
 prev:
   text: Access to Personal Data
-  link: /Access-to-Personal-Data/Access-to-Personal-Data/
+  link: /Access-to-Personal-Data/
 next:
   text: Queries Using Primary and Lookup Keys
   link: /Types-of-Queries/Queries-Using-Primary-and-Lookup-Keys/
