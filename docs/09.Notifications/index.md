@@ -2,7 +2,7 @@
 permalink: /Notifications
 prev:
   text: Set Objects
-  link: /Set-Objects/Set-Objects/
+  link: /Set-Objects/
 next:
   text: Acknowledgment Message
   link: /Notifications/Acknowledgment-Message/
