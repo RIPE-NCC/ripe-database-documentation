@@ -4,8 +4,8 @@ prev:
   text: REST API Data model
   link: /RIPE-Database-Structure/REST-API-Data-model/
 next:
-  text: Description of Attributes Common to all Objects
-  link: /RPSL-Object-Types/Description-of-Attributes-Common-to-all-Objects/
+  text: Description of Primary Objects
+  link: /RPSL-Object-Types/Descriptions-of-Primary-Objects/
 lastUpdated: 1743685701000
 ---
 
