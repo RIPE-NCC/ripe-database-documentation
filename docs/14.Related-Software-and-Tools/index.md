@@ -1,8 +1,8 @@
 ---
 permalink: /Related-Software-and-Tools
 prev:
-  text: 08 Filtering the Query Response
-  link: /Types-of-Queries/08-Filtering-the-Query-Response/
+  text: Historical Queries
+  link: /Types-of-Queries/Historical-Queries
 next:
   text: Geolocation in the RIPE Database
   link: /Related-Software-and-Tools/Geolocation-in-the-RIPE-Database/
