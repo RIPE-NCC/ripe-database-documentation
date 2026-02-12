@@ -1,0 +1,5 @@
+# Updating Objects in the RIPE Database
+
+Authorised users can create, modify, or delete objects in the **RIPE Database** in order to maintain accurate registration information. Updates can be submitted through several supported interfaces, including email, web forms, synchronous services, and a RESTful API. Each object in an update request is processed individually by the database software.
+
+During processing, the **RIPE Database** applies a series of validation checks, including syntax, authorisation, referential integrity, and policy compliance. An object is only accepted if all required checks are satisfied; otherwise, it is rejected with an appropriate error message. This section explains how update requests are structured, how objects are processed, and which rules apply when maintaining data in the **RIPE Database**.
