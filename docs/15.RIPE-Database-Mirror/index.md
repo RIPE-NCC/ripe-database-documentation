@@ -1,0 +1,5 @@
+# RIPE Database Mirror
+
+The RIPE Database Mirror service provides a locally hosted copy of the **RIPE Database** for operational and research purposes. By maintaining a mirrored instance, organisations can perform queries against up-to-date RIPE Database data without relying on the public service. This can improve performance, support internal tooling, and ensure continued access to data in environments with specific operational or policy requirements.
+
+Mirrors receive regular updates from the NRTM service to keep their data synchronised with the authoritative database. The service includes mechanisms for initial data transfer, ongoing updates, and integrity verification to ensure consistency and reliability. This section explains how the mirroring process works, the available distribution methods, and the requirements for setting up and maintaining a RIPE Database mirror.

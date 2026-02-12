@@ -1,0 +1,5 @@
+# What is the RIPE Database?
+
+The **RIPE Database** is the authoritative registry of Internet number resources and related data maintained by the RIPE NCC on behalf of the RIPE community. It holds information about allocations and assignments of IPv4 and IPv6 address space, Autonomous System (AS) numbers, routing policies, reverse DNS delegations, and associated contact and administrative details. This information is used operationally by network operators, researchers, and organisations to ensure the unique and accurate registration of Internet resources and to support coordination in the global Internet infrastructure.
+
+The **RIPE Database** can be accessed through web interfaces, WHOIS services, and APIs. These allow users to look up current registration information, review historical changes, and, for authorised resource holders, update their data. The information stored in the **RIPE Database** supports a wide range of operational tools and services used for network management, troubleshooting, and configuration validation.
