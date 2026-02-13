@@ -1,0 +1,45 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "22.13.9",
+    "flexsearch": "0.8.149",
+    "mermaid": "11.12.2",
+    "npm-force-resolutions": "0.0.10",
+    "stylus": "https://github.com/stylus/stylus/archive/refs/tags/0.64.0.tar.gz",
+    "vitepress": "1.6.3",
+    "vitepress-plugin-mermaid": "2.0.17",
+    "vue": "3.5.3"
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "generate-sidebar": "node vpscripts/generate-sidebar.js",
+    "prebuild-files": "node vpscripts/prebuild-files.js",
+    "remove-preload": "node vpscripts/remove-preload.js",
+    "generate-combined-doc": "npm run generate-sidebar && npm run prebuild-files && node vpscripts/generate-combined-doc.js",
+    "docs:dev": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && vitepress dev",
+    "docs:build": "npm run generate-combined-doc && npm run generate-sidebar && npm run prebuild-files && vitepress build && npm run remove-preload",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/public-sans": "5.2.7",
+    "@material/web": "2.1.0",
+    "@mermaid-js/mermaid-cli": "11.12.0",
+    "@panzoom/panzoom": "4.6.0",
+    "@swe-database/ncc-vitepress-plugin-search": "git+https://gitlab.ripe.net/swe-database-team/ncc-vitepress-plugin-search.git",
+    "@technical-design/ripe-app-webcomponents": "4.3.0",
+    "chokidar": "5.0.0",
+    "fast-glob": "3.3.3",
+    "fs": "0.0.1-security",
+    "gray-matter": "4.0.3",
+    "js-yaml": "4.1.1",
+    "node-fetch": "3.3.2",
+    "or": "0.2.0",
+    "path": "0.12.7",
+    "prismjs": "1.29.0",
+    "puppeteer": "24.34.0",
+    "vue-router": "4.4.3"
+  },
+  "resolutions": {
+    "glob": "13.0.0"
+  }
+}
