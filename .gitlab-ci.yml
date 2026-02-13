@@ -85,8 +85,8 @@ build:
     # Tag and push default branch
     - |
       if [ "$CI_COMMIT_BRANCH" = "$CI_DEFAULT_BRANCH" ]; then
-        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:CI_DEFAULT_BRANCH
-        docker push $CI_REGISTRY_IMAGE:CI_DEFAULT_BRANCH
+        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:$CI_DEFAULT_BRANCH
+        docker push $CI_REGISTRY_IMAGE:$CI_DEFAULT_BRANCH
       fi
   artifacts:
     paths:
