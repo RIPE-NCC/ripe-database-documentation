@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "dependencyDashboard": true,
+  "schedule": ["every weekday"],
+  "prConcurrentLimit": 10,
+  "rangeStrategy": "bump",
+  "vulnerabilityAlerts": {
+    "prConcurrentLimit": 0
+  }
+}

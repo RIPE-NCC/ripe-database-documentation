@@ -1,0 +1,172 @@
+---
+# yaml-language-server: $schema=https://gitlab.com/gitlab-org/gitlab-foss/-/raw/master/app/assets/javascripts/editor/schema/ci.json
+image: $CI_REGISTRY/swe-database-team/gitlab-ci/whois-build:v0.0.12
+
+variables:
+  PROJECT_NAME: "ripe-database-documentation"
+  ARTIFACT_NAME: "ripe-database-documentation"
+
+include:
+  # Security scanning
+  - project: swe/gitlab-support
+    file: /templates/security.yml
+    inputs:
+      stage: security
+      needs: [build]
+      scan-mrs: false
+  - project: swe/gitlab-support
+    file: /templates/container.yml
+    inputs:
+      needs: ["build"]
+      name: $CI_PROJECT_NAME
+      stage: security
+      image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+      default_branch_image: $CI_REGISTRY_IMAGE:$CI_DEFAULT_BRANCH
+      dockerfile: ./docker/Dockerfile
+      scan-mrs: false
+
+# Prevent duplicate pipelines - run only tag and branch pipelines
+workflow:
+  rules:
+    # Run for tags
+    - if: "$CI_COMMIT_TAG"
+    # Run for all other branch commits
+    - if: "$CI_COMMIT_BRANCH"
+
+stages:
+  - build
+  - security
+  - test
+  - release
+  - deploy
+
+# Default rules for build/test stages (all commits and tags)
+.default_rules:
+  rules:
+    - if: "$CI_COMMIT_TAG"
+    - if: "$CI_COMMIT_BRANCH"
+
+# Build Job
+build:
+  stage: build
+  image:
+    name: docker:29-dind
+  services:
+    - docker:29-dind
+  before_script:
+    - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY || (echo "Docker login failed" && exit 1)
+  script:
+    # Create and use buildx for improved building
+    - docker buildx create --use --name builder --driver docker-container
+
+    # Build and load image
+    - |
+      docker buildx build \
+        --file ./docker/Dockerfile \
+        --build-arg VCS_REF=$CI_COMMIT_SHORT_SHA \
+        --build-arg VCS_URL=$CI_PROJECT_URL \
+        --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA \
+        --load \
+        .
+
+    # Extract package-lock.json from the image for dependency scanning
+    - docker run --rm -v "$(pwd):/output" $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA sh -c "cp /srv/package-lock.json /output/"
+
+    # Push commit SHA tag
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+    # Tag and push version tags
+    - |
+      if [ "$CI_COMMIT_TAG" ]; then
+        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+        docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+      fi
+
+    # Tag and push default branch
+    - |
+      if [ "$CI_COMMIT_BRANCH" = "$CI_DEFAULT_BRANCH" ]; then
+        docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE:CI_DEFAULT_BRANCH
+        docker push $CI_REGISTRY_IMAGE:CI_DEFAULT_BRANCH
+      fi
+  artifacts:
+    paths:
+      - package-lock.json
+    expire_in: 1 day
+  after_script:
+    - docker buildx rm builder || true
+
+Test Healthcheck:
+  stage: test
+  image: docker:29-dind
+  services:
+    - docker:29-dind
+  needs:
+    - build
+  before_script:
+    - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY || (echo "Docker login failed" && exit 1)
+  script:
+    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+    - docker run -d --rm --name test-container-$CI_JOB_ID $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+
+    # Wait for nginx to start
+    - sleep 5
+
+    # Test if robots-prod.txt is accessible by executing curl inside the container
+    - docker exec test-container-$CI_JOB_ID curl -f http://localhost:8080/robots-prod.txt || (echo "Healthcheck endpoint /robots-prod.txt not accessible" && docker stop test-container-$CI_JOB_ID && exit 1)
+
+    # Stop container (will auto-remove due to --rm)
+    - docker stop test-container-$CI_JOB_ID
+
+    - echo "Healthcheck endpoint test passed successfully"
+  rules:
+    - if: "$CI_COMMIT_TAG"
+    - if: "$CI_COMMIT_BRANCH"
+
+.deploy_docker_template: &deploy_docker_env
+  stage: deploy
+  allow_failure: true
+  before_script:
+    - mkdir -p /root/.ssh
+    - eval $(ssh-agent -s)
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\nAddressFamily inet\n\n" > ~/.ssh/config
+    - echo "$SALT_SSH_KEYS" | tr -d '\r' | ssh-add -
+    - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY
+  script:
+    - echo "machine gitlab.ripe.net login dbase password $DB_OPERATIONAL_DEPLOY_TOKEN" > ~/.netrc
+    - chmod 600 ~/.netrc
+    - git clone https://gitlab.ripe.net/swe-database-team/db-operational.git
+    - cd db-operational/deployment
+    - >
+      if [ "$CI_COMMIT_TAG" ]; then
+       ./deploy-docker.sh -p $PROJECT_NAME -e ${CI_ENVIRONMENT_NAME%/docker} $CI_COMMIT_TAG \;
+      else
+       ./deploy-docker.sh -p $PROJECT_NAME -e ${CI_ENVIRONMENT_NAME%/docker} $CI_COMMIT_SHORT_SHA \;
+      fi
+
+deploy_docker_dev:
+  <<: *deploy_docker_env
+  needs:
+    - job: build
+  environment:
+    name: dev/docker
+  rules:
+    - when: manual
+
+deploy_docker_prepdev:
+  <<: *deploy_docker_env
+  needs:
+    - job: build
+  environment:
+    name: prepdev/docker
+  rules:
+    - when: manual
+
+deploy_docker_prod:
+  <<: *deploy_docker_env
+  environment:
+    name: prod/docker
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: manual
+    - when: never

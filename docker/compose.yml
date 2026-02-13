@@ -1,0 +1,11 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-go/master/schema/compose-spec.json
+services:
+  ripe-database-documentation:
+    image: ripe-database-documentation
+    build:
+      context: ../
+      dockerfile: ${PWD}/docker/Dockerfile
+    container_name: ripe-database-documentation
+    ports:
+      - "8080:8080"
