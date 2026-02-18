@@ -35,7 +35,7 @@
     "node-fetch": "3.3.2",
     "or": "0.2.0",
     "path": "0.12.7",
-    "prismjs": "1.29.0",
+    "prismjs": "1.30.0",
     "puppeteer": "24.34.0",
     "vue-router": "4.4.3"
   },
