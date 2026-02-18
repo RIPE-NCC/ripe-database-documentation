@@ -2,7 +2,7 @@
   "type": "module",
   "devDependencies": {
     "@types/node": "22.13.9",
-    "flexsearch": "0.8.149",
+    "flexsearch": "0.8.212",
     "mermaid": "11.12.2",
     "npm-force-resolutions": "0.0.10",
     "stylus": "https://github.com/stylus/stylus/archive/refs/tags/0.64.0.tar.gz",
