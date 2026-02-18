@@ -37,7 +37,7 @@
     "path": "0.12.7",
     "prismjs": "1.30.0",
     "puppeteer": "24.34.0",
-    "vue-router": "4.4.3"
+    "vue-router": "5.0.2"
   },
   "resolutions": {
     "glob": "13.0.0"
