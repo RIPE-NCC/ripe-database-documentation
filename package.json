@@ -27,8 +27,6 @@
     "@panzoom/panzoom": "4.6.1",
     "@swe-database/ncc-vitepress-plugin-search": "git+https://gitlab.ripe.net/swe-database-team/ncc-vitepress-plugin-search.git",
     "@technical-design/ripe-app-webcomponents": "4.3.0",
-    "chokidar": "5.0.0",
-    "fast-glob": "3.3.3",
     "fs": "0.0.1-security",
     "gray-matter": "4.0.3",
     "js-yaml": "4.1.1",
@@ -36,10 +34,9 @@
     "or": "0.2.0",
     "path": "0.12.7",
     "prismjs": "1.30.0",
-    "puppeteer": "24.34.0",
-    "vue-router": "5.0.2"
+    "puppeteer": "24.34.0"
   },
-  "resolutions": {
-    "glob": "13.0.0"
+  "overrides": {
+    "glob": "11.1.0"
   }
 }
