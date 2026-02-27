@@ -34,9 +34,11 @@
     "or": "0.2.0",
     "path": "0.12.7",
     "prismjs": "1.30.0",
-    "puppeteer": "24.34.0"
+    "puppeteer": "23.11.1"
   },
   "overrides": {
-    "glob": "11.1.0"
+    "glob": "12.0.0",
+    "minimatch": "10.2.3",
+    "rollup": "4.59.0"
   }
 }

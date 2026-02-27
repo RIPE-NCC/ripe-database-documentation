@@ -7,3 +7,4 @@ ripe-docs.iml
 ripe-database-documentation-github.iml
 .vitepress/
 vpscripts/
+package-lock.json
