@@ -25,7 +25,7 @@ COPY ./package*.json .npmrc ./
 
 RUN npm cache clean --force
 
-RUN npm install --force or --legacy-peer-deps
+RUN npm i
 
 RUN git clone --depth 1 https://gitlab.ripe.net/swe-database-team/ripe-database-documentation-components.git docs-components && \
     mv docs-components/.vitepress . && mv docs-components/vpscripts .
