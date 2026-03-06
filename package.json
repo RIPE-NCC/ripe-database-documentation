@@ -1,7 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
-    "@types/node": "22.13.9",
+    "@types/node": "24.12.0",
     "flexsearch": "0.8.212",
     "mermaid": "11.12.2",
     "npm-force-resolutions": "0.0.10",

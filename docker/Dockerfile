@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20.20.0 AS build
+FROM node:24.14.0 AS build
 
 # Install required lib3 dependency for prebuilding mermaid .svg
 RUN apt-get update && apt-get install -y \
