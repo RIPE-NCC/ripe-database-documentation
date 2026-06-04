@@ -8,7 +8,7 @@
     "stylus": "https://github.com/stylus/stylus/archive/refs/tags/0.64.0.tar.gz",
     "vitepress": "1.6.4",
     "vitepress-plugin-mermaid": "2.0.17",
-    "vue": "3.5.3"
+    "vue": "3.5.35"
   },
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
