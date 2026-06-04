@@ -24,7 +24,7 @@
     "@fontsource-variable/public-sans": "5.2.7",
     "@material/web": "2.1.0",
     "@mermaid-js/mermaid-cli": "11.14.0",
-    "@panzoom/panzoom": "4.6.1",
+    "@panzoom/panzoom": "4.6.2",
     "@swe-database/ncc-vitepress-plugin-search": "git+https://gitlab.ripe.net/swe-database-team/ncc-vitepress-plugin-search.git",
     "@technical-design/ripe-app-webcomponents": "4.3.0",
     "fs": "0.0.1-security",
