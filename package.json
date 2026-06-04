@@ -38,7 +38,7 @@
   },
   "overrides": {
     "glob": "13.0.6",
-    "minimatch": "10.2.3",
+    "minimatch": "10.2.5",
     "rollup": "4.59.0",
     "picomatch": "4.0.4"
   }
