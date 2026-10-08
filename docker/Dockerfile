@@ -37,7 +37,7 @@ COPY ./.git ./.git
 RUN npm run docs:build
 
 # Final stage
-FROM nginxinc/nginx-unprivileged:1.31.1-alpine
+FROM nginxinc/nginx-unprivileged:1.31.6-alpine
 
 WORKDIR /srv/docs/
 
