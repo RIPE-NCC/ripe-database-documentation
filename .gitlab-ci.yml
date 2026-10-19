@@ -37,18 +37,12 @@ stages:
   - build
   - security
   - test
-  - release
   - deploy
-
-# Default rules for build/test stages (all commits and tags)
-.default_rules:
-  rules:
-    - if: "$CI_COMMIT_TAG"
-    - if: "$CI_COMMIT_BRANCH"
 
 # Build Job
 build:
   stage: build
+  interruptible: true
   image:
     name: docker:29-dind
   services:
@@ -95,37 +89,31 @@ build:
   after_script:
     - docker buildx rm builder || true
 
-Test Healthcheck:
+# Run the built image and check it serves the documentation
+smoke_test:
   stage: test
+  interruptible: true
   image: docker:29-dind
   services:
     - docker:29-dind
   needs:
     - build
+  variables:
+    SMOKE_CONTAINER: smoke-test-$CI_JOB_ID
   before_script:
     - echo -n $CI_JOB_TOKEN | docker login -u gitlab-ci-token --password-stdin $CI_REGISTRY || (echo "Docker login failed" && exit 1)
   script:
-    - docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-
-    - docker run -d --rm --name test-container-$CI_JOB_ID $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-
-    # Wait for nginx to start
-    - sleep 5
-
-    # Test if robots-prod.txt is accessible by executing curl inside the container
-    - docker exec test-container-$CI_JOB_ID curl -f http://localhost:8080/robots-prod.txt || (echo "Healthcheck endpoint /robots-prod.txt not accessible" && docker stop test-container-$CI_JOB_ID && exit 1)
-
-    # Stop container (will auto-remove due to --rm)
-    - docker stop test-container-$CI_JOB_ID
-
-    - echo "Healthcheck endpoint test passed successfully"
-  rules:
-    - if: "$CI_COMMIT_TAG"
-    - if: "$CI_COMMIT_BRANCH"
+    - docker run -d --name $SMOKE_CONTAINER $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    # Run the checks inside the container (it has curl), against the docs sources of this commit
+    - docker cp docker/smoke-test.sh $SMOKE_CONTAINER:/tmp/smoke-test.sh
+    - docker cp docs $SMOKE_CONTAINER:/tmp/docs
+    - docker exec -w /tmp $SMOKE_CONTAINER sh smoke-test.sh http://localhost:8080 docs
+  after_script:
+    - docker logs $SMOKE_CONTAINER || true
+    - docker rm -f $SMOKE_CONTAINER || true
 
 .deploy_docker_template: &deploy_docker_env
   stage: deploy
-  allow_failure: true
   before_script:
     - mkdir -p /root/.ssh
     - eval $(ssh-agent -s)
@@ -144,29 +132,48 @@ Test Healthcheck:
        ./deploy-docker.sh -p $PROJECT_NAME -e ${CI_ENVIRONMENT_NAME%/docker} $CI_COMMIT_SHORT_SHA \;
       fi
 
+# dev and prepdev: automatic on the default branch, manual on any other branch or tag
+.non_prod_deploy_rules:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - when: manual
+      allow_failure: true
+
 deploy_docker_dev:
   <<: *deploy_docker_env
   needs:
     - job: build
+    - job: smoke_test
   environment:
     name: dev/docker
-  rules:
-    - when: manual
+  resource_group: dev
+  rules: !reference [.non_prod_deploy_rules, rules]
 
 deploy_docker_prepdev:
   <<: *deploy_docker_env
   needs:
     - job: build
+    - job: smoke_test
   environment:
     name: prepdev/docker
-  rules:
-    - when: manual
+  resource_group: prepdev
+  rules: !reference [.non_prod_deploy_rules, rules]
 
+# prod: only from the default branch, after prepdev succeeded
 deploy_docker_prod:
   <<: *deploy_docker_env
+  needs:
+    - job: build
+    - job: smoke_test
+    - job: deploy_docker_prepdev
   environment:
     name: prod/docker
+    url: https://docs.db.ripe.net
+  resource_group: prod
   rules:
-    - if: $CI_COMMIT_TAG
-      when: manual
-    - when: never
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+      when: never
+    # Uncomment to deploy prod automatically after prepdev
+    # - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - when: manual
+      allow_failure: true
