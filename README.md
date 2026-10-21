@@ -67,6 +67,18 @@ or use docker compose (preferred option)
 docker compose -f docker/compose.yml up --build
 ```
 
+### Smoke test
+
+To check that a running site serves every page in `docs/`:
+
+```shell
+docker/smoke-test.sh http://localhost:8080 docs
+```
+
+## Deployment
+
+Every merge to `master` is deployed automatically to [docs.db.ripe.net](https://docs.db.ripe.net), once the image is built and passes the smoke test. Merging a change means publishing it.
+
 ## VitePress
 
 This project depends on [VitePress](https://vitepress.dev) to build the static site from Markdown.

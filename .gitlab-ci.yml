@@ -159,21 +159,15 @@ deploy_docker_prepdev:
   resource_group: prepdev
   rules: !reference [.non_prod_deploy_rules, rules]
 
-# prod: only from the default branch, after prepdev succeeded
+# prod: automatic, only from the default branch
 deploy_docker_prod:
   <<: *deploy_docker_env
   needs:
     - job: build
     - job: smoke_test
-    - job: deploy_docker_prepdev
   environment:
     name: prod/docker
     url: https://docs.db.ripe.net
   resource_group: prod
   rules:
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-      when: never
-    # Uncomment to deploy prod automatically after prepdev
-    # - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - when: manual
-      allow_failure: true
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
