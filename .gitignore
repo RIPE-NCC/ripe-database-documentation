@@ -8,3 +8,4 @@ ripe-database-documentation-github.iml
 .vitepress/
 vpscripts/
 package-lock.json
+docs-components/

@@ -79,11 +79,24 @@ docker/smoke-test.sh http://localhost:8080 docs
 
 Every merge to `master` is deployed automatically to [docs.db.ripe.net](https://docs.db.ripe.net), once the image is built and passes the smoke test. Merging a change means publishing it.
 
+## Security scanning
+
+The pipeline runs dependency scanning, secret detection, container scanning and SAST. This repository contains no source code or lockfile, so the build job exports the scan inputs from the `scan-sources` stage of the [Dockerfile](./docker/Dockerfile):
+
+- `package-lock.json`, for dependency scanning
+- `docs-components/`, the VitePress configuration and build scripts, for SAST (on `master` only)
+
+To inspect them locally (writes both into the working directory, they are git-ignored):
+
+```shell
+docker buildx build -f docker/Dockerfile --target scan-sources --output type=local,dest=. .
+```
+
 ## VitePress
 
 This project depends on [VitePress](https://vitepress.dev) to build the static site from Markdown.
 
-The VitePress configuration and components are kept in a separate internal repository ([ripe-database-documentation-components](https://gitlab.ripe.net/swe-database-team/ripe-database-documentation-components)) and are fetched during the build process. See the [NPM](#npm) section for how to set them up locally.
+The VitePress configuration and components are kept in a separate internal repository ([ripe-database-documentation-components](https://gitlab.ripe.net/swe-database-team/ripe-database-documentation-components)). The Docker build fetches them in its `components` stage. See the [NPM](#npm) section for how to set them up locally.
 
 ## Legal
 

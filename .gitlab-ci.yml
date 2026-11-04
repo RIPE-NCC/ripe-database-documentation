@@ -57,14 +57,12 @@ build:
     - |
       docker buildx build \
         --file ./docker/Dockerfile \
-        --build-arg VCS_REF=$CI_COMMIT_SHORT_SHA \
-        --build-arg VCS_URL=$CI_PROJECT_URL \
         --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA \
         --load \
         .
 
-    # Extract package-lock.json from the image for dependency scanning
-    - docker run --rm -v "$(pwd):/output" $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA sh -c "cp /srv/package-lock.json /output/"
+    # Export the security scan inputs (package-lock.json, docs-components/) from the cached build above
+    - docker buildx build --file ./docker/Dockerfile --target scan-sources --output type=local,dest=. .
 
     # Push commit SHA tag
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
@@ -85,9 +83,16 @@ build:
   artifacts:
     paths:
       - package-lock.json
+      - docs-components/
     expire_in: 1 day
   after_script:
     - docker buildx rm builder || true
+
+# The repository itself has no source code, so the template's `exists` rule never creates the job.
+# It scans the docs-components sources exported by the build job instead.
+gitlab-advanced-sast:
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 # Run the built image and check it serves the documentation
 smoke_test:

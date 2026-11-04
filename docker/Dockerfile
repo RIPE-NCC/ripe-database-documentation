@@ -1,3 +1,8 @@
+# VitePress configuration and build scripts, maintained in a separate repository
+FROM node:24.21.0 AS components
+
+RUN git clone --depth 1 https://gitlab.ripe.net/swe-database-team/ripe-database-documentation-components.git /components
+
 # Build stage
 FROM node:24.21.0 AS build
 
@@ -27,14 +32,23 @@ RUN npm cache clean --force
 
 RUN npm i
 
-RUN git clone --depth 1 https://gitlab.ripe.net/swe-database-team/ripe-database-documentation-components.git docs-components && \
-    mv docs-components/.vitepress . && mv docs-components/vpscripts .
+COPY --from=components /components/.vitepress ./.vitepress
+COPY --from=components /components/vpscripts ./vpscripts
 
 COPY ./docs ./docs
 # vuepress/last-updated plugin depends on .git
 COPY ./.git ./.git
 
 RUN npm run docs:build
+
+# Inputs for the CI security scans, exported with `--target scan-sources --output type=local`
+FROM scratch AS scan-sources
+
+# dependency scanning
+COPY --from=build /src/package-lock.json /
+# SAST, .vitepress is renamed so the analyzer does not skip it as a hidden directory
+COPY --from=components /components/.vitepress /docs-components/vitepress
+COPY --from=components /components/vpscripts /docs-components/vpscripts
 
 # Final stage
 FROM nginx/nginx-unprivileged:1.31.8-alpine
@@ -47,8 +61,5 @@ COPY ./docker/http.conf /etc/nginx/conf.d/default.conf
 RUN touch ./robots-prod.txt
 
 COPY --from=build /src/.vitepress/dist ./
-
-# required for dependency scanning
-COPY --from=build /src/package-lock.json ../
 
 EXPOSE 8080
